@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { supabase, FAQ } from '../lib/supabase';
+import { supabase } from '../lib/supabase';
+import type { FAQ } from '../lib/supabase';
 
 export function useFAQ(pageSlug?: string) {
   const [faqs, setFaqs] = useState<FAQ[]>([]);

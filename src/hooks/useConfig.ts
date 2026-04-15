@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { supabase, Config } from '../lib/supabase';
+import { supabase } from '../lib/supabase';
+import type { Config } from '../lib/supabase';
 
 export function useConfig(key?: string) {
   const [config, setConfig] = useState<Config | Config[] | null>(null);

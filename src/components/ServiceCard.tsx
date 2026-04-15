@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Service } from '../lib/supabase';
+import type { Service } from '../lib/supabase';
 import { ArrowRight } from 'lucide-react';
 
 interface ServiceCardProps {

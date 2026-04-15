@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { supabase, Page } from '../lib/supabase';
+import { supabase } from '../lib/supabase';
+import type { Page } from '../lib/supabase';
 
 export function usePageBySlug(slug: string) {
   const [page, setPage] = useState<Page | null>(null);

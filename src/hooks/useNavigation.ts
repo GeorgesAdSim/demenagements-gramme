@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { supabase, Navigation } from '../lib/supabase';
+import { supabase } from '../lib/supabase';
+import type { Navigation } from '../lib/supabase';
 
 export function useNavigation() {
   const [navigation, setNavigation] = useState<Navigation[]>([]);

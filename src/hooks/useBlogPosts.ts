@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { supabase, BlogPost } from '../lib/supabase';
+import { supabase } from '../lib/supabase';
+import type { BlogPost } from '../lib/supabase';
 
 export function useBlogPosts() {
   const [posts, setPosts] = useState<BlogPost[]>([]);

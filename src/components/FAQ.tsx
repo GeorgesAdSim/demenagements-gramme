@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import { FAQ as FAQType } from '../lib/supabase';
+import type { FAQ as FAQType } from '../lib/supabase';
 
 interface FAQProps {
   faqs: FAQType[];

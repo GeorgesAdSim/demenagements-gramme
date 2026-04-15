@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { BlogPost } from '../lib/supabase';
+import type { BlogPost } from '../lib/supabase';
 import { Calendar } from 'lucide-react';
 
 interface BlogCardProps {
