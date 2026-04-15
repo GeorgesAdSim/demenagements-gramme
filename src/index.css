@@ -10,14 +10,81 @@
   h1, h2, h3, h4, h5, h6 {
     @apply text-gramme-dark-blue font-bold;
   }
+
+  * {
+    scroll-behavior: smooth;
+  }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-gramme-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-gramme-dark-blue transition-colors;
+    @apply bg-gramme-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-gramme-dark-blue transition-all duration-300 hover:-translate-y-0.5 min-h-[44px] inline-flex items-center justify-center;
   }
 
   .btn-secondary {
-    @apply bg-gramme-yellow text-gramme-dark-blue px-6 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors;
+    @apply bg-gramme-yellow text-gramme-dark-blue px-6 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-all duration-300 hover:-translate-y-0.5 min-h-[44px] inline-flex items-center justify-center;
   }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl;
+  }
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Animations personnalisées */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.3s ease-out;
+}
+
+.animate-slide-out-right {
+  animation: slideOutRight 0.3s ease-out;
 }
