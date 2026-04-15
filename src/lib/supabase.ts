@@ -70,3 +70,12 @@ export interface Config {
   value: any;
   updated_at: string;
 }
+
+export interface InternalLink {
+  id: string;
+  source_slug: string;
+  target_slug: string;
+  anchor_text: string;
+  cocon: string | null;
+  created_at: string;
+}
