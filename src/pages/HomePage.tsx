@@ -40,6 +40,14 @@ export function HomePage() {
         title={page.meta_title || page.title}
         description={page.meta_description || undefined}
         ogImage={page.og_image || undefined}
+        isHomePage={true}
+        faqs={faqs.map(faq => ({
+          question: faq.question,
+          answer: faq.answer
+        }))}
+        breadcrumbs={[
+          { name: 'Accueil', url: '/' }
+        ]}
       />
 
       {/* Hero Section */}
