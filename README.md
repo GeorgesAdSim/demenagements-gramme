@@ -1,73 +1,106 @@
-# React + TypeScript + Vite
+# Déménagements Gramme
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site web pour l'entreprise de déménagement Gramme à Liège.
 
-Currently, two official plugins are available:
+## Stack technique
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Frontend**: React + TypeScript + Vite
+- **Routing**: React Router DOM
+- **Styling**: Tailwind CSS
+- **Backend**: Supabase
+- **Icons**: Lucide React
 
-## React Compiler
+## Installation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+\`\`\`bash
+npm install
+\`\`\`
 
-## Expanding the ESLint configuration
+## Configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Créez un fichier \`.env\` à la racine du projet avec vos clés Supabase :
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+\`\`\`env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+\`\`\`
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Développement
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+\`\`\`bash
+npm run dev
+\`\`\`
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Le site sera accessible sur \`http://localhost:5173\`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Build
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+\`\`\`bash
+npm run build
+\`\`\`
+
+## Structure du projet
+
+\`\`\`
+src/
+├── components/       # Composants réutilisables
+│   ├── Layout.tsx
+│   ├── Header.tsx
+│   ├── Footer.tsx
+│   ├── SEO.tsx
+│   ├── FAQ.tsx
+│   ├── ServiceCard.tsx
+│   └── BlogCard.tsx
+├── pages/           # Pages de l'application
+│   ├── HomePage.tsx
+│   ├── DynamicPage.tsx
+│   ├── BlogListPage.tsx
+│   ├── BlogPostPage.tsx
+│   ├── ContactPage.tsx
+│   └── NotFoundPage.tsx
+├── hooks/           # Custom React hooks
+│   ├── usePageBySlug.ts
+│   ├── useBlogPosts.ts
+│   ├── useFAQ.ts
+│   ├── useNavigation.ts
+│   └── useConfig.ts
+├── lib/             # Configuration et utilitaires
+│   └── supabase.ts
+├── App.tsx          # Routing principal
+├── main.tsx         # Point d'entrée
+└── index.css        # Styles Tailwind
+\`\`\`
+
+## Base de données Supabase
+
+Le projet utilise les tables suivantes :
+
+- \`pages\` - Pages du site avec cocons SEO
+- \`blog_posts\` - Articles de blog
+- \`faq\` - Questions fréquentes
+- \`services\` - Services proposés
+- \`navigation\` - Menu de navigation
+- \`config\` - Configuration du site
+- \`media\` - Fichiers médias
+- \`testimonials\` - Témoignages clients
+
+## Cocons SEO
+
+Le site est organisé en 4 cocons sémantiques :
+
+1. **Principal** - Pages principales (accueil, transports, déménagements, garde-meubles)
+2. **Déménagement** - Services de déménagement spécialisés
+3. **International** - Déménagements vers l'étranger
+4. **Garde-meubles** - Solutions de stockage
+
+## Palette de couleurs
+
+- Bleu principal : \`#0c2094\`
+- Jaune accent : \`#fff200\`
+- Bleu foncé texte : \`#0d1c78\`
+- Blanc : \`#ffffff\`
+- Gris clair fond : \`#f5f5f5\`
+
+## License
+
+© DGramme - Tous droits réservés
