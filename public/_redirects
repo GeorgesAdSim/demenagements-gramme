@@ -56,8 +56,6 @@
 /politiques-confidentialites     /politique-confidentialite    301!
 /protection-des-donnees-personnelles/    /protection-donnees   301!
 /protection-des-donnees-personnelles     /protection-donnees   301!
-/mentions-legales/               /mentions-legales             301!
-/conditions-generales/           /conditions-generales         301!
 
 # Anciennes routes internes (legacy React Router)
 /demenagements    /demenagement    301!
