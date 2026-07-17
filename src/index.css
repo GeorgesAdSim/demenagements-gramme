@@ -2,89 +2,172 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply bg-gramme-white text-gray-900 font-sans;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply text-gramme-dark-blue font-bold;
-  }
-
-  * {
-    scroll-behavior: smooth;
-  }
+:root {
+  --navy: #132073;
+  --yellow: #F0B800;
+  --white: #FFFFFF;
+  --offwhite: #F4F2EE;
+  --footer-bg: #0D1020;
+  --muted: #85868C;
+  --text: #333333;
 }
 
-@layer components {
-  .btn-primary {
-    @apply bg-gramme-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-gramme-dark-blue transition-all duration-300 hover:-translate-y-0.5 min-h-[44px] inline-flex items-center justify-center;
-  }
-
-  .btn-secondary {
-    @apply bg-gramme-yellow text-gramme-dark-blue px-6 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-all duration-300 hover:-translate-y-0.5 min-h-[44px] inline-flex items-center justify-center;
-  }
-
-  .card-hover {
-    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl;
-  }
-
-  .scroll-reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  }
-
-  .scroll-reveal.revealed {
-    opacity: 1;
-    transform: translateY(0);
-  }
+* {
+  scroll-behavior: smooth;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Animations personnalisées */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+h1, h2 {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
-@keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
+.btn-primary {
+  letter-spacing: 0.08em;
 }
 
-@keyframes slideOutRight {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(100%);
-  }
+::selection {
+  background: var(--yellow);
+  color: var(--navy);
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
+.prose h1,
+.prose h2 {
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--navy);
 }
 
-.animate-slide-in-right {
-  animation: slideInRight 0.3s ease-out;
+.prose h3 {
+  font-weight: 700;
+  color: var(--navy);
 }
 
-.animate-slide-out-right {
-  animation: slideOutRight 0.3s ease-out;
+.prose p {
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.prose a {
+  color: var(--navy);
+}
+
+.prose a:hover {
+  text-decoration-color: var(--yellow);
+}
+
+.prose blockquote {
+  border-left: 4px solid var(--yellow);
+  background: var(--offwhite);
+  font-style: italic;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.25rem;
+}
+
+[contenteditable]:focus {
+  outline: none;
+}
+
+.tiptap {
+  outline: none;
+  min-height: 380px;
+  cursor: text;
+}
+
+.tiptap h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin: 1rem 0 0.5rem;
+}
+
+.tiptap h2 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin: 1rem 0 0.5rem;
+}
+
+.tiptap h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0.75rem 0 0.5rem;
+}
+
+.tiptap p {
+  color: var(--text);
+  line-height: 1.7;
+  margin: 0.5rem 0;
+}
+
+.tiptap ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.tiptap ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.tiptap li {
+  margin-bottom: 0.25rem;
+}
+
+.tiptap blockquote {
+  border-left: 4px solid var(--yellow);
+  background: var(--offwhite);
+  font-style: italic;
+  margin: 1rem 0;
+  padding: 1rem 1.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.tiptap a {
+  color: var(--navy);
+  text-decoration: underline;
+}
+
+.tiptap img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: var(--muted);
+  pointer-events: none;
+  height: 0;
+}
+
+.ProseMirror {
+  min-height: 380px;
+  outline: none;
+  cursor: text;
 }

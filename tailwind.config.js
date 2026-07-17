@@ -7,14 +7,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        'gramme-blue': '#0c2094',
-        'gramme-yellow': '#fff200',
-        'gramme-dark-blue': '#0d1c78',
-        'gramme-white': '#ffffff',
-        'gramme-gray': '#f5f5f5',
+        navy:       '#132073',
+        yellow:     '#F0B800',
+        offwhite:   '#F4F2EE',
+        muted:      '#85868C',
+        'footer-bg':'#0D1020',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['DM Sans', 'system-ui', 'sans-serif'],
+      },
+      keyframes: {
+        'pulse-cta': {
+          '0%, 100%': { boxShadow: '0 0 0 0 rgba(240,184,0,0)' },
+          '50%':       { boxShadow: '0 0 0 8px rgba(240,184,0,0.25)' },
+        },
+      },
+      animation: {
+        'pulse-cta': 'pulse-cta 3s ease-in-out infinite',
       },
     },
   },

@@ -1,135 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Homepage -->
+  <!-- Pages principales -->
   <url>
     <loc>https://www.demenagements-gramme.be/</loc>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- Pages principales -->
   <url>
-    <loc>https://www.demenagements-gramme.be/transports</loc>
+    <loc>https://www.demenagements-gramme.be/demenagement</loc>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <url>
-    <loc>https://www.demenagements-gramme.be/demenagements</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
   <url>
     <loc>https://www.demenagements-gramme.be/garde-meubles</loc>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://www.demenagements-gramme.be/contact-devis</loc>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <!-- Pages déménagement -->
   <url>
-    <loc>https://www.demenagements-gramme.be/demenagement-international</loc>
+    <loc>https://www.demenagements-gramme.be/transport</loc>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://www.demenagements-gramme.be/demenagement-piano</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.demenagements-gramme.be/demenagement-entreprise</loc>
+    <loc>https://www.demenagements-gramme.be/contact</loc>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://www.demenagements-gramme.be/demontage-remontage-meubles</loc>
+    <loc>https://www.demenagements-gramme.be/monte-meubles</loc>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Pages locales -->
   <url>
-    <loc>https://www.demenagements-gramme.be/demenagement-seraing</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.demenagements-gramme.be/blog</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
+  <!-- Pages satellites — Déménagement -->
   <url>
-    <loc>https://www.demenagements-gramme.be/demenagement-herstal</loc>
+    <loc>https://www.demenagements-gramme.be/demenagement/demenageur-liege</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.demenagements-gramme.be/demenagement/demenagement-liege</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.demenagements-gramme.be/demenagement/demenagement-international</loc>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Pages internationales -->
   <url>
-    <loc>https://www.demenagements-gramme.be/demenagement-belgique-suisse</loc>
+    <loc>https://www.demenagements-gramme.be/demenagement/demenagement-entreprise</loc>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
-    <loc>https://www.demenagements-gramme.be/demenagement-belgique-france</loc>
+    <loc>https://www.demenagements-gramme.be/demenagement/demenagement-seraing</loc>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
-    <loc>https://www.demenagements-gramme.be/demenagement-belgique-espagne</loc>
+    <loc>https://www.demenagements-gramme.be/demenagement/demenagement-herstal</loc>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
-    <loc>https://www.demenagements-gramme.be/demenagement-belgique-italie</loc>
+    <loc>https://www.demenagements-gramme.be/demenagement/demenagement-piano</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.demenagements-gramme.be/demenagement/demontage-remontage-meubles</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Pages satellites — Transport international -->
+  <url>
+    <loc>https://www.demenagements-gramme.be/transport/demenagement-belgique-france</loc>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Garde-meubles -->
   <url>
-    <loc>https://www.demenagements-gramme.be/prix-garde-meubles-liege</loc>
+    <loc>https://www.demenagements-gramme.be/transport/demenagement-belgique-suisse</loc>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.demenagements-gramme.be/transport/demenagement-belgique-espagne</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.demenagements-gramme.be/transport/demenagement-belgique-italie</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Pages satellites — Garde-meubles -->
+  <url>
+    <loc>https://www.demenagements-gramme.be/garde-meubles/garde-meubles-liege</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.demenagements-gramme.be/garde-meubles/prix-garde-meubles-liege</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <!-- Blog -->
   <url>
-    <loc>https://www.demenagements-gramme.be/actualites</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.demenagements-gramme.be/blog/6-conseils-reussir-demenagement</loc>
+    <loc>https://www.demenagements-gramme.be/blog/6-conseils-reussir-demenagement-liege</loc>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <url>
-    <loc>https://www.demenagements-gramme.be/blog/6-conseils-preparer-enfants-demenagement</loc>
+    <loc>https://www.demenagements-gramme.be/blog/preparer-enfants-demenagement-liege</loc>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <url>
-    <loc>https://www.demenagements-gramme.be/blog/6-conseils-reduire-cout-demenagement</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://www.demenagements-gramme.be/blog/6-erreurs-eviter-demenagement</loc>
+    <loc>https://www.demenagements-gramme.be/blog/6-erreurs-eviter-demenagement-liege</loc>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -137,24 +164,25 @@
   <!-- Pages légales -->
   <url>
     <loc>https://www.demenagements-gramme.be/mentions-legales</loc>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-
   <url>
     <loc>https://www.demenagements-gramme.be/politique-confidentialite</loc>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-
   <url>
     <loc>https://www.demenagements-gramme.be/conditions-generales</loc>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-
   <url>
     <loc>https://www.demenagements-gramme.be/protection-donnees</loc>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

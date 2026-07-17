@@ -1,0 +1,71 @@
+# ============================================================
+# REDIRECTIONS 301 — Migration ancien site → nouveau site
+# Déménagements Gramme
+# ============================================================
+
+# Pages principales
+/demenageurs-pour-particuliers-et-entreprises-a-liege/    /demenagement    301!
+/demenageurs-pour-particuliers-et-entreprises-a-liege     /demenagement    301!
+/transport-routier-national-et-international/              /demenagement    301!
+/transport-routier-national-et-international               /demenagement    301!
+/garde-meubles-liege/                                      /garde-meubles/garde-meubles-liege   301!
+/garde-meubles-liege                                       /garde-meubles/garde-meubles-liege   301!
+/prix-garde-meubles-liege-01/                              /garde-meubles/prix-garde-meubles-liege   301!
+/prix-garde-meubles-liege-01                               /garde-meubles/prix-garde-meubles-liege   301!
+/actualites/                                               /blog            301!
+/actualites                                                /blog            301!
+/contact-et-devis-demenagement-transport-grade-meubles/    /contact-devis   301!
+/contact-et-devis-demenagement-transport-grade-meubles     /contact-devis   301!
+
+# Pages de service locales et spécialisées
+/demenagement-piano-01/                                    /demenagement/demenagement-piano   301!
+/demenagement-piano-01                                     /demenagement/demenagement-piano   301!
+/demontage-et-remontage-de-meubles-01/                     /demenagement/demontage-remontage-meubles   301!
+/demontage-et-remontage-de-meubles-01                      /demenagement/demontage-remontage-meubles   301!
+/demenagement-herstal-01/                                  /demenagement/demenagement-herstal   301!
+/demenagement-herstal-01                                   /demenagement/demenagement-herstal   301!
+/demenagement-seraing-01/                                  /demenagement/demenagement-seraing   301!
+/demenagement-seraing-01                                   /demenagement/demenagement-seraing   301!
+/demenagement-d-entreprise-01/                             /demenagement/demenagement-entreprise   301!
+/demenagement-d-entreprise-01                              /demenagement/demenagement-entreprise   301!
+/demenagement-international-01/                            /demenagement/demenagement-international   301!
+/demenagement-international-01                             /demenagement/demenagement-international   301!
+
+# Pages internationales → redirigées vers déménagement international
+/demenagement-international-belgique-suisse/               /demenagement/demenagement-international    301!
+/demenagement-international-belgique-suisse                /demenagement/demenagement-international    301!
+/demenagement-international-belgique-france/               /demenagement/demenagement-international    301!
+/demenagement-international-belgique-france                /demenagement/demenagement-international    301!
+/demenagement-international-belgique-espagne/              /demenagement/demenagement-international    301!
+/demenagement-international-belgique-espagne               /demenagement/demenagement-international    301!
+/demenagement-international-belgique-italie/               /demenagement/demenagement-international    301!
+/demenagement-international-belgique-italie                /demenagement/demenagement-international    301!
+
+# Articles de blog
+/6-conseils-pour-reussir-son-demenagement-a-liege/         /blog/6-conseils-reussir-demenagement-liege       301!
+/6-conseils-pour-reussir-son-demenagement-a-liege          /blog/6-conseils-reussir-demenagement-liege       301!
+/6-conseils-pour-preparer-vos-enfants-au-demenagement-a-liege/  /blog/preparer-enfants-demenagement-liege    301!
+/6-conseils-pour-preparer-vos-enfants-au-demenagement-a-liege   /blog/preparer-enfants-demenagement-liege    301!
+/6-erreurs-a-eviter-pendant-son-demenagement-a-liege/      /blog/6-erreurs-eviter-demenagement-liege         301!
+/6-erreurs-a-eviter-pendant-son-demenagement-a-liege       /blog/6-erreurs-eviter-demenagement-liege         301!
+/6-conseils-pour-reduire-le-cout-de-votre-demenagement-a-liege/  /blog                                       301!
+/6-conseils-pour-reduire-le-cout-de-votre-demenagement-a-liege   /blog                                       301!
+
+# Pages légales
+/politiques-confidentialites/    /politique-confidentialite    301!
+/politiques-confidentialites     /politique-confidentialite    301!
+/protection-des-donnees-personnelles/    /protection-donnees   301!
+/protection-des-donnees-personnelles     /protection-donnees   301!
+/mentions-legales/               /mentions-legales             301!
+/conditions-generales/           /conditions-generales         301!
+
+# Anciennes routes internes (legacy React Router)
+/demenagements    /demenagement    301!
+/transports       /demenagement    301!
+/confidentialite  /politique-confidentialite    301!
+/cgv              /conditions-generales         301!
+
+# ============================================================
+# SPA fallback — doit rester en DERNIER
+# ============================================================
+/*    /index.html    200

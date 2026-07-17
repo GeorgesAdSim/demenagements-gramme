@@ -1,12 +1,53 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>demenagements-gramme</title>
+    <title>Déménagements Gramme — Votre déménageur à Liège depuis 1948</title>
+
+    <!-- Preconnect CDNs critiques -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+
+    <!-- Police : DM Sans uniquement (Plus Jakarta Sans inutilisée, supprimée) -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,900&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Préchargement image hero (LCP) — même URL que HeroSection.tsx -->
+    <link
+      rel="preload"
+      as="image"
+      href="https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=1200&q=75&auto=format&fit=crop"
+      fetchpriority="high"
+    />
+
+    <!-- Préchargement logo WebP -->
+    <link rel="preload" as="image" href="/logo-gramme.webp" type="image/webp" />
+
+    <!-- Noindex sur netlify.app — à retirer une fois www.demenagements-gramme.be branché -->
+    <script>
+      if (window.location.hostname.includes('netlify.app')) {
+        var m = document.createElement('meta');
+        m.name = 'robots';
+        m.content = 'noindex,nofollow';
+        document.head.appendChild(m);
+      }
+    </script>
   </head>
   <body>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:bg-yellow-500 focus:text-blue-900 focus:p-3 focus:rounded focus:z-[100] focus:font-bold">
+      Aller au contenu principal
+    </a>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
