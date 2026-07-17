@@ -88,24 +88,39 @@ export default async function handler(req: Request): Promise<Response> {
     </div>
   `;
 
-  const res = await fetch(RESEND_API_URL, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
+  // Tente d'abord le domaine vérifié ; si pas encore vérifié, fallback
+  // sur resend.dev vers l'adresse du compte (seule autorisée avant vérif)
+  const attempts = [
+    {
       from: 'Gramme Devis <noreply@demenagements-gramme.be>',
       to: ['contact@demenagements-gramme.be'],
-      reply_to: email,
-      subject: `Nouveau devis — ${service} — ${firstName} ${lastName}`,
-      html: htmlBody,
-    }),
-  });
+    },
+    {
+      from: 'Gramme Devis <onboarding@resend.dev>',
+      to: ['georgescordewiener@gmail.com'],
+    },
+  ];
 
-  if (!res.ok) {
-    const err = await res.text();
-    console.error('Resend error:', err);
+  let sent = false;
+  for (const attempt of attempts) {
+    const res = await fetch(RESEND_API_URL, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...attempt,
+        reply_to: email,
+        subject: `Nouveau devis — ${service} — ${firstName} ${lastName}`,
+        html: htmlBody,
+      }),
+    });
+    if (res.ok) { sent = true; break; }
+    console.error('Resend error:', await res.text());
+  }
+
+  if (!sent) {
     return new Response('Email send failed', { status: 502 });
   }
 
