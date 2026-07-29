@@ -3,10 +3,12 @@
   publish = "dist"
   functions = "netlify/functions"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Les redirections vivent toutes dans public/_redirects — un seul endroit,
+# pour éviter qu'une règle en double ici n'en annule une là-bas.
+#
+# Ce fichier contenait un catch-all `/* -> /index.html 200` qui survivait au
+# passage en pages statiques : il court-circuitait le 404.html de Netlify et
+# servait la page d'accueil, en HTTP 200, sur toute URL inexistante.
 
 [build.environment]
   NODE_VERSION = "20"
