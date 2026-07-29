@@ -46,7 +46,7 @@ const fadeUp = {
 const ADVANTAGES = [
   { icon: Shield, label: 'Assurance incluse' },
   { icon: Clock, label: 'Depuis 1948' },
-  { icon: Star, label: 'Note 5/5' },
+  { icon: Star, label: 'Satisfaction +95%' },
   { icon: Users, label: 'Équipe qualifiée' },
 ];
 

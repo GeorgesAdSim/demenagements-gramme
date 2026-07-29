@@ -100,12 +100,7 @@ export default function TestimonialsSection() {
             href="#"
             className="inline-flex items-center gap-3 bg-yellow text-navy font-bold rounded-full px-6 py-3 shadow-md hover:bg-white hover:shadow-lg transition-all duration-200 text-sm"
           >
-            <div className="flex gap-0.5">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 fill-navy text-navy" />
-              ))}
-            </div>
-            5/5 sur Google · 200+ avis vérifiés
+            Satisfaction client supérieure à 95% · avis Google vérifiés
           </a>
         </motion.div>
 

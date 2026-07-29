@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Phone, CircleCheck, Star } from 'lucide-react';
+import { ArrowRight, Phone, CircleCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import type { HomepageContent } from '../lib/types';
 import { SITE_IMAGES } from '../data/images';
@@ -59,13 +59,8 @@ export default function HeroSection({ data }: Props) {
         <motion.div variants={container} initial="hidden" animate="visible" className="flex flex-col gap-6">
 
           <motion.div variants={fadeUp} className="flex items-center gap-2">
-            <div className="flex items-center gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 text-yellow fill-yellow" />
-              ))}
-            </div>
             <span className="bg-yellow text-navy text-[13px] font-bold rounded-full px-3 py-1 border border-yellow/60">
-              5/5 sur Google · +75 ans d'expérience
+              Satisfaction client supérieure à 95% · +75 ans d'expérience
             </span>
           </motion.div>
 
