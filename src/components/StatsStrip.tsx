@@ -7,7 +7,7 @@ const DEFAULT_STATS = [
   { icon: Award,    value: 75,  suffix: '+',   label: "Ans d'expérience" },
   { icon: Truck,    value: 40,  suffix: '+',   label: 'Déménagements / mois' },
   { icon: Package2, value: 100, suffix: ' m³', label: 'Capacité par trajet' },
-  { icon: Star,     value: 5,   suffix: '/5',  label: 'Note moyenne clients' },
+  { icon: Star,     value: 95,  suffix: '%+',  label: 'Satisfaction clients' },
 ];
 
 function useCountUp(target: number, inView: boolean) {
