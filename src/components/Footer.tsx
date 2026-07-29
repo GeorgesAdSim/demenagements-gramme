@@ -39,9 +39,9 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="text-yellow text-[11px] uppercase tracking-[0.2em] font-bold mb-4">
+          <h3 className="text-yellow text-[11px] uppercase tracking-[0.2em] font-bold mb-4">
             NOS SERVICES
-          </h4>
+          </h3>
           <ul className="space-y-2 text-white/60 text-sm">
             <li>
               <Link to="/demenagement" className="hover:text-white transition-colors">
@@ -74,9 +74,9 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="text-yellow text-[11px] uppercase tracking-[0.2em] font-bold mb-4">
+          <h3 className="text-yellow text-[11px] uppercase tracking-[0.2em] font-bold mb-4">
             INFORMATIONS
-          </h4>
+          </h3>
           <ul className="space-y-2 text-white/60 text-sm">
             <li>
               <Link to="/blog" className="hover:text-white transition-colors">
@@ -107,9 +107,9 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="text-yellow text-[11px] uppercase tracking-[0.2em] font-bold mb-4">
+          <h3 className="text-yellow text-[11px] uppercase tracking-[0.2em] font-bold mb-4">
             CONTACT
-          </h4>
+          </h3>
           <ul className="space-y-2 text-white/60 text-sm">
             <li>Rue des Naiveux 64, 4040 Herstal</li>
             <li>
@@ -122,7 +122,7 @@ export default function Footer() {
             </li>
             <li className="pt-1">Lun-Ven : 8h–18h | Sam : 8h–12h</li>
             <li>Dim : Fermé</li>
-            <li className="text-white/40 text-xs">TVA BE 0775.264.382</li>
+            <li className="text-white/60 text-xs">TVA BE 0775.264.382</li>
           </ul>
           <Link
             to="/contact-devis"
@@ -134,10 +134,10 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3">
-        <p className="text-white/40 text-[13px]">
+        <p className="text-white/60 text-[13px]">
           &copy; 2026 Déménagements Gramme. Tous droits réservés.
         </p>
-        <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-white/40 text-[13px]">
+        <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-white/60 text-[13px]">
           <Link to="/mentions-legales" className="hover:text-white transition-colors">Mentions Légales</Link>
           <span>|</span>
           <Link to="/politique-confidentialite" className="hover:text-white transition-colors">Confidentialité</Link>

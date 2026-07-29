@@ -17,9 +17,13 @@ export default {
         sans: ['DM Sans', 'system-ui', 'sans-serif'],
       },
       keyframes: {
+        // Animé via transform, qui est composité par le GPU. La version
+        // précédente animait box-shadow : PageSpeed la signalait comme
+        // « animation non composée », car elle force un recalcul de peinture
+        // à chaque image sur le thread principal.
         'pulse-cta': {
-          '0%, 100%': { boxShadow: '0 0 0 0 rgba(240,184,0,0)' },
-          '50%':       { boxShadow: '0 0 0 8px rgba(240,184,0,0.25)' },
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%':       { transform: 'scale(1.02)' },
         },
       },
       animation: {
