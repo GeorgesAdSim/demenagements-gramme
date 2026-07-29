@@ -36,14 +36,14 @@ export default function ServiceNavbar() {
             </span>
           ) : (
             <picture>
-              <source srcSet="/logo-gramme.webp" type="image/webp" />
+              <source srcSet="/logo-gramme-300.webp" type="image/webp" />
               <img
-                src="/logo-gramme.jpeg"
+                src="/logo-gramme-300.png"
                 alt="Déménagements Gramme"
                 className="h-[56px] md:h-[70px] w-auto"
                 loading="eager"
-                width="2400"
-                height="1792"
+                width="300"
+                height="224"
               />
             </picture>
           )}

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Loader as Loader2 } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import TopBar from '../components/TopBar';
 import ServiceNavbar from '../components/ServiceNavbar';
 import Footer from '../components/Footer';
@@ -91,7 +91,12 @@ const DEFAULT_HTML = `<h1>Conditions Générales de Vente et de Service</h1>
 <p><em>Dernière mise à jour : avril 2026</em></p>`;
 
 export default function CgvPage() {
-  const { content, meta, loading } = useSitePageContent<LegalContent>('cgv');
+  // Pas de blocage sur `loading` : la page rend directement le contenu par
+  // défaut, puis se met à jour si le CMS Supabase renvoie une surcharge.
+  // Nécessaire pour le pré-rendu SSR (scripts/prerender.mjs) : le fetch se fait
+  // dans un useEffect, qui ne s'exécute pas pendant renderToString — bloquer
+  // sur `loading` produisait une page statique sans H1 ni contenu.
+  const { content, meta } = useSitePageContent<LegalContent>('cgv');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -118,16 +123,10 @@ export default function CgvPage() {
               Retour à l'accueil
             </Link>
 
-            {loading ? (
-              <div className="flex items-center justify-center py-20">
-                <Loader2 className="w-8 h-8 animate-spin text-[#132073]" />
-              </div>
-            ) : (
-              <div
+            <div
                 className="prose-section space-y-4 [&_h1]:text-3xl [&_h1]:md:text-4xl [&_h1]:font-black [&_h1]:uppercase [&_h1]:text-navy [&_h1]:mb-10 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-navy [&_h2]:mb-3 [&_h2]:mt-8 [&_p]:text-muted [&_p]:text-[15px] [&_p]:leading-relaxed [&_a]:text-navy [&_a]:hover:underline [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-1 [&_ul]:text-muted [&_ul]:text-[15px] [&_li]:leading-relaxed"
                 dangerouslySetInnerHTML={{ __html: html }}
               />
-            )}
           </div>
         </section>
       </main>

@@ -1,28 +1,33 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-export default defineConfig({
+export default defineConfig(({ isSsrBuild }) => ({
   plugins: [react()],
   build: {
     // Cible les navigateurs modernes pour un bundle plus léger
     target: 'es2020',
     // Augmente le seuil d'avertissement (les chunks admin sont légitimement gros)
     chunkSizeWarningLimit: 600,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          // React core — change rarement, cache navigateur durable
-          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-          // Framer-motion — lourd (~100 KB gz), isolé pour le cache
-          'vendor-motion': ['framer-motion'],
-          // Lucide icons
-          'vendor-icons': ['lucide-react'],
-          // Supabase — chargé uniquement quand nécessaire
-          'vendor-supabase': ['@supabase/supabase-js'],
-          // Date-fns — utilitaires date
-          'vendor-date': ['date-fns'],
+    // Le manualChunks ci-dessous ne s'applique qu'au bundle client : en build
+    // SSR (utilisé par scripts/prerender.mjs), React est externalisé par Vite
+    // et ne peut pas être regroupé dans un chunk manuel.
+    rollupOptions: isSsrBuild
+      ? {}
+      : {
+          output: {
+            manualChunks: {
+              // React core — change rarement, cache navigateur durable
+              'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+              // Framer-motion — lourd (~100 KB gz), isolé pour le cache
+              'vendor-motion': ['framer-motion'],
+              // Lucide icons
+              'vendor-icons': ['lucide-react'],
+              // Supabase — chargé uniquement quand nécessaire
+              'vendor-supabase': ['@supabase/supabase-js'],
+              // Date-fns — utilitaires date
+              'vendor-date': ['date-fns'],
+            },
+          },
         },
-      },
-    },
   },
-})
+}))

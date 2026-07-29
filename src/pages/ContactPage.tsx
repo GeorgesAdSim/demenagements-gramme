@@ -167,7 +167,10 @@ export default function ContactPage() {
     <div className="font-sans">
       <SeoHead
         title={meta?.metaTitle || 'Demandez votre devis gratuit | Déménagements Gramme'}
-        description={meta?.metaDescription || 'Contactez Déménagements Gramme pour un devis gratuit et sans engagement. Réponse garantie sous 24h.'}
+        description={
+          meta?.metaDescription ||
+          "Contactez Déménagements Gramme à Herstal (Liège) : devis gratuit et sans engagement, réponse garantie sous 24h. Téléphone, formulaire en ligne et horaires."
+        }
         canonical={meta?.canonicalUrl || '/contact'}
       />
       <SchemaOrg />

@@ -10,14 +10,14 @@ export default function Footer() {
           <div className="mb-4 inline-block">
             <div className="bg-white rounded-xl px-3 py-1.5">
               <picture>
-                <source srcSet="/logo-gramme.webp" type="image/webp" />
+                <source srcSet="/logo-gramme-300.webp" type="image/webp" />
                 <img
-                  src="/logo-gramme.jpeg"
+                  src="/logo-gramme-300.png"
                   alt="Déménagements Gramme"
                   className="h-10 w-auto"
                   loading="lazy"
-                  width="2400"
-                  height="1792"
+                  width="300"
+                  height="224"
                 />
               </picture>
             </div>

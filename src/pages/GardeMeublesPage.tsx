@@ -85,7 +85,8 @@ export default function GardeMeublesPage() {
       defaults={defaults}
       defaultMeta={{
         title: 'Garde-Meubles à Liège | Déménagements Gramme',
-        description: 'Garde-meubles sécurisé à Liège. Surveillance 24/7, durée flexible. Devis gratuit.',
+        description:
+          "Garde-meubles sécurisé à Liège : boxes de 1 à 30 m³, surveillance 24h/24, accès libre et sans durée minimum imposée. À partir de 30 €/mois. Devis gratuit.",
         canonical: '/garde-meubles',
       }}
     />

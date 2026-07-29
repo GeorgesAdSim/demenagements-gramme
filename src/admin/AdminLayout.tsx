@@ -41,8 +41,8 @@ export default function AdminLayout() {
             {mobileOpen ? <X className="w-6 h-6 text-navy" /> : <Menu className="w-6 h-6 text-navy" />}
           </button>
           <picture>
-            <source srcSet="/logo-gramme.webp" type="image/webp" />
-            <img src="/logo-gramme.jpeg" alt="Gramme" className="h-7 w-auto object-contain" />
+            <source srcSet="/logo-gramme-300.webp" type="image/webp" />
+            <img src="/logo-gramme-300.png" alt="Gramme" className="h-7 w-auto object-contain" />
           </picture>
         </div>
 

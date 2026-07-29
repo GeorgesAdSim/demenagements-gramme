@@ -57,7 +57,8 @@ export default function DemenagementsPage() {
       defaults={defaults}
       defaultMeta={{
         title: 'Déménagements à Liège | Déménagements Gramme',
-        description: 'Déménagements professionnels à Liège. Devis gratuit sous 24h.',
+        description:
+          "Déménagement à Liège pour particuliers et entreprises : emballage, démontage-remontage, monte-meubles et transport assuré. Devis gratuit sous 24h, depuis 1948.",
         canonical: '/demenagement',
       }}
     />
