@@ -68,9 +68,11 @@
 /demenagement-international    /demenagement/demenagement-international    301!
 
 # Cocon transport : fusionné dans le cocon déménagement.
-# La règle /transport/* doit précéder /transport (première correspondance).
-/transport/*      /demenagement/demenagement-international    301!
+# L'URL exacte /transport doit précéder /transport/* : le splat de Netlify
+# matche aussi la chaîne vide, donc placé avant, /transport/* capturait
+# /transport et l'envoyait vers la page internationale au lieu du pilier.
 /transport        /demenagement                               301!
+/transport/*      /demenagement/demenagement-international    301!
 
 # ============================================================
 # Fallback SPA — limité à l'admin, qui est la seule partie du site
