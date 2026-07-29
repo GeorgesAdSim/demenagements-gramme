@@ -58,12 +58,26 @@
 /protection-des-donnees-personnelles     /protection-donnees   301!
 
 # Anciennes routes internes (legacy React Router)
+# Ces redirections étaient jusqu'ici faites côté client (<Navigate>), donc
+# servies en HTTP 200 puis redirigées en JavaScript — un mauvais signal pour
+# les moteurs. Elles sont désormais de vraies 301 côté serveur.
 /demenagements    /demenagement    301!
 /transports       /demenagement    301!
 /confidentialite  /politique-confidentialite    301!
 /cgv              /conditions-generales         301!
+/demenagement-international    /demenagement/demenagement-international    301!
+
+# Cocon transport : fusionné dans le cocon déménagement.
+# La règle /transport/* doit précéder /transport (première correspondance).
+/transport/*      /demenagement/demenagement-international    301!
+/transport        /demenagement                               301!
 
 # ============================================================
-# SPA fallback — doit rester en DERNIER
+# Fallback SPA — limité à l'admin, qui est la seule partie du site
+# rendue uniquement côté client. Toutes les pages publiques sont
+# désormais des fichiers statiques pré-rendus.
+#
+# Conséquence voulue : une URL inconnue n'est plus servie en HTTP 200
+# (soft 404) ; Netlify renvoie dist/404.html avec un vrai statut 404.
 # ============================================================
-/*    /index.html    200
+/admin/*    /app.html    200

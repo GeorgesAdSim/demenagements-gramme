@@ -60,13 +60,22 @@ async function main() {
 
   const template = await readFile(path.join(distDir, 'index.html'), 'utf-8');
 
+  // Coquille vide conservée AVANT d'écraser dist/index.html par l'accueil
+  // pré-rendu. Elle sert de cible au fallback SPA de l'admin (/admin/*) :
+  // sans elle, l'admin s'afficherait une fraction de seconde par-dessus le
+  // HTML de la page d'accueil.
+  await writeFile(path.join(distDir, 'app.html'), template, 'utf-8');
+
   const ssrEntryPath = path.join(distServerDir, 'entry-server.js');
   const { render } = await import(pathToFileUrl(ssrEntryPath));
 
   let ok = 0;
   const failures = [];
 
-  for (const route of ROUTES) {
+  // '/404' n'est pas une route de l'application : le catch-all de
+  // entry-server.tsx renvoie NotFoundPage, que Netlify sert automatiquement
+  // avec un vrai statut HTTP 404 pour toute URL inconnue.
+  for (const route of [...ROUTES, '/404']) {
     try {
       const { html, helmet } = render(route);
 
@@ -108,7 +117,7 @@ async function main() {
     }
   }
 
-  console.log(`Pré-rendu terminé : ${ok}/${ROUTES.length} routes.`);
+  console.log(`Pré-rendu terminé : ${ok}/${ROUTES.length + 1} pages (${ROUTES.length} routes + 404).`);
   if (failures.length > 0) {
     console.error('Échecs :');
     for (const f of failures) console.error(`  - ${f.route}: ${f.error}`);
