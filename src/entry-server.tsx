@@ -23,6 +23,7 @@ import MentionsLegalesPage from './pages/MentionsLegalesPage';
 import ConfidentialitePage from './pages/ConfidentialitePage';
 import CgvPage from './pages/CgvPage';
 import ProtectionDonneesPage from './pages/ProtectionDonneesPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 import DemenageurLiege from './pages/satellites/DemenageurLiege';
 import DemenagementLiege from './pages/satellites/DemenagementLiege';
@@ -72,6 +73,9 @@ function ServerRoutes() {
       <Route path="/politique-confidentialite" element={<ConfidentialitePage />} />
       <Route path="/conditions-generales" element={<CgvPage />} />
       <Route path="/protection-donnees" element={<ProtectionDonneesPage />} />
+
+      {/* Catch-all : permet de pré-rendre la page 404 vers dist/404.html. */}
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 }

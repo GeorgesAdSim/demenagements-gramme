@@ -6,11 +6,20 @@ interface SeoHeadProps {
   canonical: string;
   ogImage?: string;
   ogType?: string;
+  /** Exclut la page de l'index (page 404, pages techniques). */
+  noindex?: boolean;
 }
 
 const BASE_URL = 'https://www.demenagements-gramme.be';
 
-export default function SeoHead({ title, description, canonical, ogImage, ogType = 'website' }: SeoHeadProps) {
+export default function SeoHead({
+  title,
+  description,
+  canonical,
+  ogImage,
+  ogType = 'website',
+  noindex = false,
+}: SeoHeadProps) {
   const fullCanonical = canonical.startsWith('http') ? canonical : `${BASE_URL}${canonical}`;
   // og:image en JPEG 1200x630 : format et ratio attendus par Facebook,
   // LinkedIn, WhatsApp et X (le WebP y est mal ou pas supporté).
@@ -23,7 +32,12 @@ export default function SeoHead({ title, description, canonical, ogImage, ogType
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <link rel="canonical" href={fullCanonical} />
+
+      {/* Pas de canonical sur une page noindex : elle ne doit désigner
+          aucune URL de référence, sous peine de signaux contradictoires. */}
+      {noindex
+        ? <meta name="robots" content="noindex,follow" />
+        : <link rel="canonical" href={fullCanonical} />}
 
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />

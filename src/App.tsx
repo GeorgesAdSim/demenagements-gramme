@@ -15,6 +15,7 @@ const MentionsLegalesPage = lazy(() => import('./pages/MentionsLegalesPage'));
 const ConfidentialitePage = lazy(() => import('./pages/ConfidentialitePage'));
 const CgvPage = lazy(() => import('./pages/CgvPage'));
 const ProtectionDonneesPage = lazy(() => import('./pages/ProtectionDonneesPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 const AdminLayout = lazy(() => import('./admin/AdminLayout'));
 const LoginPage = lazy(() => import('./admin/pages/LoginPage'));
 const DashboardPage = lazy(() => import('./admin/pages/DashboardPage'));
@@ -117,6 +118,10 @@ export default function App() {
               <Route path="media" element={<MediaPage />} />
               <Route path="settings" element={<SettingsPage />} />
             </Route>
+
+            {/* Catch-all — sert la page 404 côté client. Côté serveur, Netlify
+                renvoie dist/404.html avec un vrai statut HTTP 404. */}
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <CookieConsent />
         </Suspense>
