@@ -1,12 +1,27 @@
 // TODO: Remplacer par les vraies photos de Déménagements Gramme
 // (équipe, camions, dépôt) une fois le shooting réalisé.
 
+/** Construit une URL Unsplash à la largeur et à la qualité voulues. */
+const unsplash = (id: string, w: number, q = 70) =>
+  `https://images.unsplash.com/${id}?w=${w}&q=${q}&auto=format&fit=crop`;
+
+/** Génère un srcset à partir d'une liste de largeurs. */
+const srcSet = (id: string, widths: number[], q = 70) =>
+  widths.map((w) => `${unsplash(id, w, q)} ${w}w`).join(', ');
+
+const HERO_ID = 'photo-1600518464441-9154a4dea21b';
+
 export const SITE_IMAGES = {
   hero: {
-    // 1200px suffit pour un bg-cover desktop ; 1920 était excessif (+40% de bande passante)
-    src: 'https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=1200&q=75&auto=format&fit=crop',
-    // Version mobile allégée (~60% plus légère)
-    srcMobile: 'https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=800&q=65&auto=format&fit=crop',
+    // Le navigateur choisit UNE seule largeur via srcset/sizes. Avant, trois
+    // variantes de cette même photo étaient téléchargées : le preload figé à
+    // 1200px, le rendu mobile à 800px, et la carte de service à 1400px —
+    // ~290 Kio pour une seule image (constaté sur PageSpeed Insights).
+    // Qualité 60 : l'image est recouverte d'un aplat bleu à 75 % d'opacité,
+    // sa finesse est invisible. Inutile de payer une compression légère.
+    id: HERO_ID,
+    src: unsplash(HERO_ID, 1200, 60),
+    srcSet: srcSet(HERO_ID, [640, 828, 1200, 1600], 60),
     alt: 'Équipe Déménagements Gramme chargeant un camion à Liège',
   },
   team: {

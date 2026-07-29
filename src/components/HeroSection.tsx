@@ -36,20 +36,33 @@ interface Props {
 }
 
 export default function HeroSection({ data }: Props) {
-  // Image responsive : mobile (800px) vs desktop (1200px) — sert la bonne taille dès le premier rendu
-  const bgImage = data?.background_image || (
-    typeof window !== 'undefined' && window.innerWidth < 768
-      ? SITE_IMAGES.hero.srcMobile
-      : SITE_IMAGES.hero.src
-  );
+  // Surcharge éventuelle depuis le CMS : une URL unique, donc sans srcset.
+  const override = data?.background_image;
 
   const [quickForm, setQuickForm] = useState({ volume: '', date: '', email: '' });
 
   return (
     <section id="accueil" className="relative min-h-screen flex items-center overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${bgImage})` }}
+      {/* Vraie balise <img> et non un background-image CSS.
+          Un background en CSS n'est découvert par le navigateur qu'une fois la
+          feuille de style chargée et l'élément mis en page — d'où 2790 ms de
+          délai avant même le début du téléchargement (mesuré sur PageSpeed).
+          Une <img> présente dans le HTML pré-rendu est découverte tout de
+          suite, accepte fetchpriority="high", et laisse le navigateur choisir
+          une seule largeur via srcset au lieu d'en télécharger plusieurs.
+
+          Le `sizes` demande volontairement moins que la taille d'affichage sur
+          mobile : sinon un écran à densité x3 réclamerait 1200 px pour un
+          viewport de 400 px, alors que l'image est masquée par l'aplat bleu. */}
+      <img
+        src={override || SITE_IMAGES.hero.src}
+        {...(override ? {} : { srcSet: SITE_IMAGES.hero.srcSet })}
+        sizes="(max-width: 767px) 65vw, 100vw"
+        alt=""
+        aria-hidden="true"
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-[#0C2094]/75" />
 

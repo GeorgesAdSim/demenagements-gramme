@@ -2,35 +2,49 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Truck, Warehouse, Globe, ArrowUpFromLine, ArrowRight } from 'lucide-react';
 import type { HomepageContent } from '../lib/types';
+import { SITE_IMAGES } from '../data/images';
 
+// Réutilise exactement le srcset du hero : sur desktop comme sur mobile, le
+// navigateur puise dans les mêmes URLs et sert donc l'image depuis le cache.
+// Auparavant cette carte demandait la même photo en w=1400&q=80 (131 Kio),
+// soit un troisième téléchargement d'une image déjà présente.
 const HERO_CARD = {
   title: 'Déménagement',
   subtitle: 'Particuliers & Entreprises',
   description: 'De la visite technique au dernier carton posé, nos équipes prennent en charge l\'intégralité de votre déménagement. Emballage professionnel, transport sécurisé, démontage et remontage de meubles.',
-  image: 'https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=1400&q=80&auto=format&fit=crop',
+  image: SITE_IMAGES.hero.src,
+  srcSet: SITE_IMAGES.hero.srcSet,
   link: '/demenagement',
   icon: Truck,
 };
+
+// Vignettes affichées en 176 px de haut, au plus ~380 px de large : 600 px en
+// qualité 75 était nettement surdimensionné (PageSpeed relevait 59 Kio
+// récupérables sur la seule vignette Garde-Meubles).
+const card = (id: string) => ({
+  src: `https://images.unsplash.com/${id}?w=400&q=60&auto=format&fit=crop`,
+  srcSet: [300, 400, 600].map((w) => `https://images.unsplash.com/${id}?w=${w}&q=60&auto=format&fit=crop ${w}w`).join(', '),
+});
 
 const SECONDARY_CARDS = [
   {
     title: 'Garde-Meubles',
     description: 'Stockage sécurisé et flexible à Herstal. Box individuels fermés à clé, surveillance 24/7, assurance incluse.',
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=75&auto=format&fit=crop',
+    ...card('photo-1586528116311-ad8dd3c8310d'),
     link: '/garde-meubles',
     icon: Warehouse,
   },
   {
     title: 'International',
     description: 'France, Suisse, Espagne, Italie et toute l\'Europe. Formalités douanières gérées, assurance voyage incluse.',
-    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=75&auto=format&fit=crop',
+    ...card('photo-1436491865332-7a61a109cc05'),
     link: '/demenagement/demenagement-international',
     icon: Globe,
   },
   {
     title: 'Monte-Meubles',
     description: 'Service de monte-meubles pour les étages élevés et les accès difficiles. Jusqu\'au 10e étage.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75&auto=format&fit=crop',
+    ...card('photo-1558618666-fcd25c85cd64'),
     link: '/monte-meubles',
     icon: ArrowUpFromLine,
   },
@@ -75,9 +89,18 @@ export default function ServicesCards({ data }: Props) {
           transition={{ duration: 0.6 }}
           className="relative rounded-2xl overflow-hidden shadow-xl mb-6 group"
         >
-          <div
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-            style={{ backgroundImage: `url(${HERO_CARD.image})` }}
+          {/* `sizes` identique à celui du hero : c'est la même photographie,
+              donc le navigateur retient la même URL du srcset et la sert
+              depuis le cache au lieu de la retélécharger. */}
+          <img
+            src={HERO_CARD.image}
+            srcSet={HERO_CARD.srcSet}
+            sizes="(max-width: 767px) 65vw, 100vw"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-navy/30" />
           <div className="relative z-10 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-end justify-between gap-6 min-h-[260px]">
@@ -119,10 +142,13 @@ export default function ServicesCards({ data }: Props) {
                 {/* Image */}
                 <div className="relative h-44 overflow-hidden">
                   <img
-                    src={card.image}
+                    src={card.src}
+                    srcSet={card.srcSet}
+                    sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
                     alt={card.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-navy/20 group-hover:bg-navy/10 transition-colors duration-300" />
                   {/* Icône flottante */}
