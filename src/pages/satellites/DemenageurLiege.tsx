@@ -38,6 +38,7 @@ export default function DemenageurLiege() {
         { label: 'Déménagement à Liège', to: '/demenagement/demenagement-liege' },
         { label: 'Déménagement à Seraing', to: '/demenagement/demenagement-seraing' },
         { label: 'Déménagement à Herstal', to: '/demenagement/demenagement-herstal' },
+        { label: 'Déménagement de piano', to: '/demenagement/demenagement-piano' },
       ]}
       meta={{
         title: 'Déménageur à Liège | Déménagements Gramme depuis 1948',

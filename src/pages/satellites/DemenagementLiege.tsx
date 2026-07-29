@@ -38,6 +38,7 @@ export default function DemenagementLiege() {
         { label: 'Déménageur à Liège', to: '/demenagement/demenageur-liege' },
         { label: "Déménagement d'entreprise", to: '/demenagement/demenagement-entreprise' },
         { label: 'Démontage et remontage de meubles', to: '/demenagement/demontage-remontage-meubles' },
+        { label: 'Déménagement de piano', to: '/demenagement/demenagement-piano' },
       ]}
       meta={{
         title: 'Déménagement à Liège | Déménagements Gramme',
