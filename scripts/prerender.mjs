@@ -84,9 +84,21 @@ async function main() {
         .replace('</head>', `${headTags}\n  </head>`)
         .replace('<div id="root"></div>', `<div id="root">${html}</div>`);
 
+      // On écrit des fichiers PLATS (`garde-meubles.html`) et non des dossiers
+      // (`garde-meubles/index.html`).
+      //
+      // Raison : avec l'option « Pretty URLs » de Netlify (activée par défaut),
+      // un dossier contenant un index.html déclenche une redirection 301 de
+      // /garde-meubles vers /garde-meubles/. Or le canonical et le sitemap
+      // utilisent la forme SANS slash final — le canonical pointait donc vers
+      // une URL qui redirige, et les outils d'audit classaient la page comme
+      // non indexable.
+      //
+      // Avec un fichier plat, Netlify sert /garde-meubles directement en 200,
+      // sans redirection : canonical, sitemap et URL servie coïncident enfin.
       const outPath = route === '/'
         ? path.join(distDir, 'index.html')
-        : path.join(distDir, route.replace(/^\//, ''), 'index.html');
+        : path.join(distDir, `${route.replace(/^\//, '')}.html`);
 
       await mkdir(path.dirname(outPath), { recursive: true });
       await writeFile(outPath, finalHtml, 'utf-8');
