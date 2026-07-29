@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, ArrowLeft, CircleCheck as CheckCircle2, Phone, Loader as Loader2, ShieldCheck, Info } from 'lucide-react';
+import { ArrowRight, ArrowLeft, CircleCheck as CheckCircle2, Phone, ShieldCheck, Info } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import TopBar from './TopBar';
 import ServiceNavbar from './ServiceNavbar';
@@ -35,26 +35,21 @@ export default function ServicePageLayout({
   defaults,
   defaultMeta,
 }: ServicePageLayoutProps) {
-  const { content, meta, loading } = useSitePageContent<ServicePageContent>(slug);
+  // On ne bloque plus le rendu sur `loading` : la page s'affiche immédiatement
+  // avec le contenu par défaut (`defaults`), puis se met à jour sans à-coup si
+  // le CMS Supabase renvoie une surcharge. Deux raisons à ce choix :
+  // 1. Pré-rendu SSR : `useSitePageContent` ne résout jamais côté serveur
+  //    (le fetch se fait dans un useEffect, qui ne s'exécute pas pendant
+  //    renderToString) — bloquer sur `loading` faisait sortir une page vide
+  //    de scripts/prerender.mjs, sans H1 ni meta.
+  // 2. Confort utilisateur : plus de spinner plein écran à chaque visite.
+  const { content, meta } = useSitePageContent<ServicePageContent>(slug);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const c = content || defaults;
-
-  if (loading) {
-    return (
-      <div className="font-sans">
-        <TopBar />
-        <ServiceNavbar />
-        <div className="flex items-center justify-center py-40">
-          <Loader2 className="w-8 h-8 animate-spin text-[#132073]" />
-        </div>
-        <Footer />
-      </div>
-    );
-  }
 
   return (
     <div className="font-sans">

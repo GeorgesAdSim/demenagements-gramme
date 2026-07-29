@@ -24,7 +24,10 @@ export default function PublicSite() {
     <div className="font-sans">
       <SeoHead
         title={meta?.metaTitle || 'Déménagements Gramme — Votre déménageur à Liège depuis 1948'}
-        description={meta?.metaDescription || 'Déménagements Gramme : déménageur professionnel à Liège depuis 1948. Devis gratuit sous 24h.'}
+        description={
+          meta?.metaDescription ||
+          "Déménageur à Liège depuis 1948 : déménagement de particuliers et d'entreprises, garde-meubles et transport en Belgique et en Europe. Devis gratuit sous 24h."
+        }
         canonical={meta?.canonicalUrl || '/'}
       />
       <SchemaOrg includeFaq />

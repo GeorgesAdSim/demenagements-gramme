@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const BASE_URL = 'https://www.demenagements-gramme.be';
 
@@ -6,7 +6,7 @@ const LOCAL_BUSINESS = {
   '@context': 'https://schema.org',
   '@type': 'MovingCompany',
   name: 'Déménagements Gramme',
-  image: `${BASE_URL}/logo-gramme.webp`,
+  image: `${BASE_URL}/og-image.jpg`,
   url: BASE_URL,
   telephone: '+3242645016',
   email: 'contact@demenagements-gramme.be',
@@ -105,31 +105,23 @@ interface SchemaOrgProps {
   breadcrumbs?: BreadcrumbItem[];
 }
 
-function injectScript(id: string, data: object): HTMLScriptElement {
-  const el = document.createElement('script');
-  el.type = 'application/ld+json';
-  el.textContent = JSON.stringify(data);
-  el.id = id;
-  document.head.appendChild(el);
-  return el;
-}
-
 export default function SchemaOrg({ includeFaq = false, articleData, breadcrumbs }: SchemaOrgProps) {
-  useEffect(() => {
-    const scripts: HTMLScriptElement[] = [];
+  const scripts: Array<{ type: string; innerHTML: string }> = [
+    { type: 'application/ld+json', innerHTML: JSON.stringify(LOCAL_BUSINESS) },
+  ];
 
-    scripts.push(injectScript('schema-local-business', LOCAL_BUSINESS));
+  if (includeFaq) {
+    scripts.push({ type: 'application/ld+json', innerHTML: JSON.stringify(FAQ_SCHEMA) });
+  }
 
-    if (includeFaq) {
-      scripts.push(injectScript('schema-faq', FAQ_SCHEMA));
-    }
-
-    if (articleData) {
-      scripts.push(injectScript('schema-article', {
+  if (articleData) {
+    scripts.push({
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'Article',
         headline: articleData.title,
-        image: articleData.image || `${BASE_URL}/logo-gramme.webp`,
+        image: articleData.image || `${BASE_URL}/og-image.jpg`,
         author: {
           '@type': 'Organization',
           name: 'Déménagements Gramme',
@@ -138,17 +130,20 @@ export default function SchemaOrg({ includeFaq = false, articleData, breadcrumbs
         publisher: {
           '@type': 'Organization',
           name: 'Déménagements Gramme',
-          logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo-gramme.webp` },
+          logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo-gramme-300.png` },
         },
         datePublished: articleData.publishDate,
         dateModified: articleData.publishDate,
         url: articleData.url,
         mainEntityOfPage: { '@type': 'WebPage', '@id': articleData.url },
-      }));
-    }
+      }),
+    });
+  }
 
-    if (breadcrumbs && breadcrumbs.length > 0) {
-      scripts.push(injectScript('schema-breadcrumb', {
+  if (breadcrumbs && breadcrumbs.length > 0) {
+    scripts.push({
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: breadcrumbs.map((crumb, i) => ({
@@ -157,11 +152,11 @@ export default function SchemaOrg({ includeFaq = false, articleData, breadcrumbs
           name: crumb.name,
           item: crumb.url,
         })),
-      }));
-    }
+      }),
+    });
+  }
 
-    return () => scripts.forEach((s) => s.remove());
-  }, [includeFaq, articleData, breadcrumbs]);
-
-  return null;
+  // react-helmet-async fusionne proprement les <script> JSON-LD dans le <head>,
+  // aussi bien côté client (hydratation) que côté serveur (pré-rendu).
+  return <Helmet script={scripts} />;
 }
