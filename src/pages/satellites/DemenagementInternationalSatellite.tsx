@@ -34,10 +34,13 @@ export default function DemenagementInternationalSatellite() {
           answer: "Oui, pour les volumes réduits, nous proposons le transport en groupage qui permet de partager les coûts avec d'autres clients sur la même destination.",
         },
       ]}
+      /* Les anciennes pages par pays (/transport/demenagement-belgique-*) ont
+         été fusionnées dans celle-ci et redirigent donc vers elle : les
+         proposer ici renvoyait le visiteur sur la page qu'il consulte déjà. */
       relatedPages={[
-        { label: 'Belgique - France', to: '/transport/demenagement-belgique-france' },
-        { label: 'Belgique - Suisse', to: '/transport/demenagement-belgique-suisse' },
-        { label: 'Belgique - Espagne', to: '/transport/demenagement-belgique-espagne' },
+        { label: 'Tous nos déménagements', to: '/demenagement' },
+        { label: "Déménagement d'entreprise", to: '/demenagement/demenagement-entreprise' },
+        { label: 'Garde-meubles', to: '/garde-meubles' },
       ]}
       meta={{
         title: "Déménagement International depuis Liège | Déménagements Gramme",
