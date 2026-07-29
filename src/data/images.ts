@@ -24,8 +24,13 @@ export const SITE_IMAGES = {
     srcSet: srcSet(HERO_ID, [640, 828, 1200, 1600], 60),
     alt: 'Équipe Déménagements Gramme chargeant un camion à Liège',
   },
+  // Photo affichée en ~343 px de large sur mobile et ~600 px sur desktop,
+  // mais servie en 900 px fixes et sans srcset. Elle apparaît deux fois
+  // (section « Pourquoi nous » et bloc contact), ce qui en faisait la plus
+  // lourde des images restantes après l'optimisation du hero.
   team: {
-    src: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=900&q=75&auto=format&fit=crop',
+    src: unsplash('photo-1581578731548-c64695cc6952', 600, 65),
+    srcSet: srcSet('photo-1581578731548-c64695cc6952', [400, 600, 900], 65),
     alt: 'Équipe professionnelle de déménageurs Gramme',
   },
   truck: {
