@@ -216,13 +216,43 @@ async function main() {
     }
   }
 
-  // --- 8. Une URL inconnue doit bien tomber en 404
+  // --- 8. Aucun lien interne ne doit pointer vers une URL qui redirige
+  //
+  // Un lien vers une 301 fait perdre un aller-retour au visiteur et dilue le
+  // maillage interne. Surtout : si la redirection ramène à la page courante,
+  // le lien ne mène nulle part — c'était le cas des trois « pages associées »
+  // de /demenagement/demenagement-international.
+  const linkIssues = new Map();
+  for (const rel of pages) {
+    const html = await readFile(path.join(distDir, rel), 'utf-8');
+    const from = fileToUrl(rel);
+    for (const m of html.matchAll(/href="(\/[^"#?]*)"/g)) {
+      const href = m[1];
+      const res = resolve(href, rules, files);
+      if (res.status >= 300 && res.status < 400) {
+        const key = `${href} -> ${res.to}`;
+        if (!linkIssues.has(key)) linkIssues.set(key, { pages: new Set(), self: false });
+        linkIssues.get(key).pages.add(from);
+        if (res.to === from) linkIssues.get(key).self = true;
+      }
+    }
+  }
+  for (const [key, { pages: srcs, self }] of linkIssues) {
+    const where = srcs.size > 3 ? `${srcs.size} pages` : [...srcs].join(', ');
+    if (self) {
+      err(`lien interne "${key}" sur ${where} — la redirection ramène à la page courante, le lien ne mène nulle part.`);
+    } else {
+      warn(`lien interne "${key}" sur ${where} — pointe vers une redirection, vise directement la destination.`);
+    }
+  }
+
+  // --- 9. Une URL inconnue doit bien tomber en 404
   const unknown = resolve('/page-qui-nexiste-pas-' + 'x'.repeat(8), rules, files);
   if (unknown.status !== 404) {
     err(`une URL inconnue renvoie ${unknown.status} (${unknown.to || unknown.file}) au lieu de 404 — soft 404.`);
   }
 
-  // --- 9. L'admin doit rester accessible
+  // --- 10. L'admin doit rester accessible
   const admin = resolve('/admin/login', rules, files);
   if (admin.status !== 200) {
     err(`/admin/login renvoie ${admin.status} — l'admin ne se chargerait plus. Vérifie la règle /admin/*.`);

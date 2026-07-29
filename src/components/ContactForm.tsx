@@ -405,7 +405,7 @@ export default function ContactForm({ data }: Props) {
                     />
                     <span className="text-sm text-muted">
                       J'accepte la{' '}
-                      <Link to="/confidentialite" className="text-navy underline hover:text-navy/70 transition-colors">
+                      <Link to="/politique-confidentialite" className="text-navy underline hover:text-navy/70 transition-colors">
                         politique de confidentialité
                       </Link>
                     </span>

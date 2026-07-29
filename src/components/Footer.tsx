@@ -49,7 +49,9 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/transport" className="hover:text-white transition-colors">
+              {/* /transport redirige en 301 vers /demenagement : on pointe
+                  directement la destination. */}
+              <Link to="/demenagement" className="hover:text-white transition-colors">
                 Transport
               </Link>
             </li>
