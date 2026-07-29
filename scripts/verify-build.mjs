@@ -246,13 +246,39 @@ async function main() {
     }
   }
 
-  // --- 9. Une URL inconnue doit bien tomber en 404
+  // --- 9. Aucune page orpheline
+  //
+  // Une page présente au sitemap mais vers laquelle aucun lien interne ne
+  // pointe est invisible pour qui navigue, et ne reçoit aucune autorité du
+  // reste du site. C'était le cas de /demenagement/demenagement-piano :
+  // pré-rendue, indexable, mais inatteignable autrement qu'en connaissant
+  // son URL.
+  const inbound = new Map();
+  for (const rel of pages) {
+    const html = await readFile(path.join(distDir, rel), 'utf-8');
+    const from = fileToUrl(rel);
+    for (const m of html.matchAll(/href="(\/[^"#?]*)"/g)) {
+      if (m[1] === from) continue; // auto-lien ignoré
+      if (!inbound.has(m[1])) inbound.set(m[1], new Set());
+      inbound.get(m[1]).add(from);
+    }
+  }
+  for (const rel of pages) {
+    if (rel === 'app.html' || rel === '404.html') continue;
+    const url = fileToUrl(rel);
+    if (url === '/') continue; // l'accueil est atteignable par le logo/domaine
+    if (!inbound.has(url) || inbound.get(url).size === 0) {
+      err(`${url} : page orpheline — aucun lien interne n'y mène. Ajoute-la aux pages associées ou à la navigation.`);
+    }
+  }
+
+  // --- 10. Une URL inconnue doit bien tomber en 404
   const unknown = resolve('/page-qui-nexiste-pas-' + 'x'.repeat(8), rules, files);
   if (unknown.status !== 404) {
     err(`une URL inconnue renvoie ${unknown.status} (${unknown.to || unknown.file}) au lieu de 404 — soft 404.`);
   }
 
-  // --- 10. L'admin doit rester accessible
+  // --- 11. L'admin doit rester accessible
   const admin = resolve('/admin/login', rules, files);
   if (admin.status !== 200) {
     err(`/admin/login renvoie ${admin.status} — l'admin ne se chargerait plus. Vérifie la règle /admin/*.`);
