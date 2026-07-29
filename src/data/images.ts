@@ -1,5 +1,5 @@
-// TODO: Remplacer par les vraies photos de Déménagements Gramme
-// (équipe, camions, dépôt) une fois le shooting réalisé.
+// TODO: remplacer les photos restantes (équipe, dépôt, emballage) par de
+// vraies photos de Déménagements Gramme. Le hero, lui, est fait.
 
 /** Construit une URL Unsplash à la largeur et à la qualité voulues. */
 const unsplash = (id: string, w: number, q = 70) =>
@@ -9,20 +9,24 @@ const unsplash = (id: string, w: number, q = 70) =>
 const srcSet = (id: string, widths: number[], q = 70) =>
   widths.map((w) => `${unsplash(id, w, q)} ${w}w`).join(', ');
 
-const HERO_ID = 'photo-1600518464441-9154a4dea21b';
+const HERO_WIDTHS = [640, 828, 1200, 1600];
+/** Srcset local pour la photo du hero, déclinée en public/hero/. */
+const heroSet = (ext: string) =>
+  HERO_WIDTHS.map((w) => `/hero/demenagement-liege-${w}.${ext} ${w}w`).join(', ');
 
 export const SITE_IMAGES = {
+  // Vraie photo d'un camion Gramme, hébergée sur le domaine — plus de
+  // dépendance à Unsplash pour l'image la plus visible du site, et le
+  // marquage de l'entreprise est enfin authentique.
+  //
+  // Déclinée en 4 largeurs et 3 formats (AVIF, WebP, JPEG) : le navigateur
+  // n'en télécharge qu'une. En AVIF, un mobile prend 19 à 31 Kio.
   hero: {
-    // Le navigateur choisit UNE seule largeur via srcset/sizes. Avant, trois
-    // variantes de cette même photo étaient téléchargées : le preload figé à
-    // 1200px, le rendu mobile à 800px, et la carte de service à 1400px —
-    // ~290 Kio pour une seule image (constaté sur PageSpeed Insights).
-    // Qualité 60 : l'image est recouverte d'un aplat bleu à 75 % d'opacité,
-    // sa finesse est invisible. Inutile de payer une compression légère.
-    id: HERO_ID,
-    src: unsplash(HERO_ID, 1200, 60),
-    srcSet: srcSet(HERO_ID, [640, 828, 1200, 1600], 60),
-    alt: 'Équipe Déménagements Gramme chargeant un camion à Liège',
+    src: '/hero/demenagement-liege-1200.jpg',
+    srcSetAvif: heroSet('avif'),
+    srcSetWebp: heroSet('webp'),
+    srcSetJpeg: heroSet('jpg'),
+    alt: 'Camion de déménagement Déménagements Gramme',
   },
   // Photo affichée en ~343 px de large sur mobile et ~600 px sur desktop,
   // mais servie en 900 px fixes et sans srcset. Elle apparaît deux fois

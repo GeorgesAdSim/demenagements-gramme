@@ -171,3 +171,29 @@ h1, h2 {
   outline: none;
   cursor: text;
 }
+
+/* ── Aplat du hero ────────────────────────────────────────────────────────
+   Écrit en CSS explicite et non en classes Tailwind : les variantes du type
+   `md:from-[#0C2094]/93` ne sont PAS générées par Tailwind (vérifié : absentes
+   du CSS produit). Combinées à `md:bg-transparent`, elles supprimaient l'aplat
+   sur desktop sans rien mettre à la place — le titre blanc devenait illisible
+   par-dessus le ciel et la carrosserie claire.
+
+   Mobile : aplat uniforme, le texte occupe toute la largeur.
+   Desktop : dégradé dense à gauche (sous le texte), plus léger à droite pour
+   laisser voir le camion — la carte de devis couvre de toute façon ce côté. */
+.hero-overlay {
+  background-color: rgba(12, 32, 148, 0.80);
+}
+
+@media (min-width: 768px) {
+  .hero-overlay {
+    background-color: transparent;
+    background-image: linear-gradient(
+      to right,
+      rgba(12, 32, 148, 0.94) 0%,
+      rgba(12, 32, 148, 0.88) 42%,
+      rgba(12, 32, 148, 0.72) 100%
+    );
+  }
+}

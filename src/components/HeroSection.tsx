@@ -51,20 +51,38 @@ export default function HeroSection({ data }: Props) {
           suite, accepte fetchpriority="high", et laisse le navigateur choisir
           une seule largeur via srcset au lieu d'en télécharger plusieurs.
 
-          Le `sizes` demande volontairement moins que la taille d'affichage sur
-          mobile : sinon un écran à densité x3 réclamerait 1200 px pour un
-          viewport de 400 px, alors que l'image est masquée par l'aplat bleu. */}
-      <img
-        src={override || SITE_IMAGES.hero.src}
-        {...(override ? {} : { srcSet: SITE_IMAGES.hero.srcSet })}
-        sizes="(max-width: 767px) 65vw, 100vw"
-        alt=""
-        aria-hidden="true"
-        fetchPriority="high"
-        decoding="async"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 bg-[#0C2094]/75" />
+          <picture> ajoute la négociation de format : AVIF si le navigateur le
+          gère (19 à 31 Kio sur mobile), sinon WebP, sinon JPEG. */}
+      {override ? (
+        <img
+          src={override}
+          alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      ) : (
+        <picture>
+          <source type="image/avif" srcSet={SITE_IMAGES.hero.srcSetAvif} sizes="(max-width: 767px) 70vw, 100vw" />
+          <source type="image/webp" srcSet={SITE_IMAGES.hero.srcSetWebp} sizes="(max-width: 767px) 70vw, 100vw" />
+          <img
+            src={SITE_IMAGES.hero.src}
+            srcSet={SITE_IMAGES.hero.srcSetJpeg}
+            sizes="(max-width: 767px) 70vw, 100vw"
+            alt=""
+            aria-hidden="true"
+            fetchPriority="high"
+            decoding="async"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </picture>
+      )}
+      {/* Aplat dégradé plutôt qu'uniforme : sur desktop il reste dense à
+          gauche, où se trouve le texte, et s'allège à droite pour laisser voir
+          le camion. Sur mobile le texte occupe toute la largeur, donc on garde
+          un aplat uniforme pour préserver le contraste. */}
+      <div className="absolute inset-0 hero-overlay" />
 
       <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-8 py-24 grid grid-cols-1 lg:grid-cols-[55%_45%] gap-10 lg:gap-16 items-center">
 
