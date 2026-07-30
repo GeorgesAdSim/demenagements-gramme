@@ -166,3 +166,21 @@ create policy communes_ecriture_authentifiee
   to authenticated
   using (true)
   with check (true);
+
+-- ---------------------------------------------------------------------------
+-- Privilèges
+--
+-- RLS et GRANT sont deux mécanismes indépendants qui se cumulent : la politique
+-- décide QUELLES LIGNES un rôle voit, le GRANT décide s'il a le droit de
+-- regarder la table du tout. Cette section manquait à la première version de
+-- cette migration, et PostgREST retirait la table de son cache de schéma —
+-- l'API répondait « Could not find the table 'public.communes' in the schema
+-- cache » alors que la table existait bel et bien.
+-- ---------------------------------------------------------------------------
+grant usage on schema public to anon, authenticated;
+grant select on table public.communes to anon, authenticated;
+grant insert, update, delete on table public.communes to authenticated;
+
+-- PostgREST ne relit pas le schéma de lui-même après un changement de
+-- privilèges.
+notify pgrst, 'reload schema';
