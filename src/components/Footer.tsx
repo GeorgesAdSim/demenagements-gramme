@@ -128,7 +128,7 @@ export default function Footer() {
                 contact@demenagements-gramme.be
               </a>
             </li>
-            <li className="pt-1">Lun-Ven : 8h–18h | Sam : 8h–12h</li>
+            <li className="pt-1">Lun : 8h–18h | Mar–Ven : 8h–17h</li>
             <li>Dim : Fermé</li>
             <li className="text-white/60 text-xs">TVA BE 0775.264.382</li>
           </ul>

@@ -33,9 +33,9 @@ export const SITE_IMAGES = {
   // (section « Pourquoi nous » et bloc contact), ce qui en faisait la plus
   // lourde des images restantes après l'optimisation du hero.
   team: {
-    src: unsplash('photo-1581578731548-c64695cc6952', 600, 65),
-    srcSet: srcSet('photo-1581578731548-c64695cc6952', [400, 600, 900], 65),
-    alt: 'Équipe professionnelle de déménageurs Gramme',
+    src: unsplash('photo-1566576721346-d4a3b4eaeb55', 600, 65),
+    srcSet: srcSet('photo-1566576721346-d4a3b4eaeb55', [400, 600, 900], 65),
+    alt: 'Camion de déménagement professionnel Déménagements Gramme',
   },
   truck: {
     src: 'https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=900&q=75&auto=format&fit=crop',

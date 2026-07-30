@@ -26,15 +26,15 @@ const LOCAL_BUSINESS = {
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      dayOfWeek: 'Monday',
       opens: '08:00',
       closes: '18:00',
     },
     {
       '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Saturday',
+      dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday'],
       opens: '08:00',
-      closes: '12:00',
+      closes: '17:00',
     },
   ],
   foundingDate: '1948',

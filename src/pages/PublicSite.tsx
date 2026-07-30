@@ -1,5 +1,3 @@
-import { useNavigate } from 'react-router-dom';
-import { Settings } from 'lucide-react';
 import TopBar from '../components/TopBar';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
@@ -20,7 +18,6 @@ import { useSitePageContent } from '../lib/useSitePageContent';
 import type { HomepageContent } from '../lib/types';
 
 export default function PublicSite() {
-  const navigate = useNavigate();
   const { content, meta } = useSitePageContent<HomepageContent>('accueil');
 
   return (
@@ -54,15 +51,6 @@ export default function PublicSite() {
       </main>
       <MobileCTA />
       <Footer />
-
-      <button
-        onClick={() => navigate('/admin/login')}
-        className="fixed bottom-5 right-5 z-50 w-9 h-9 rounded-full bg-gray-200/50 hover:bg-navy text-gray-300 hover:text-white flex items-center justify-center transition-all duration-300 hover:shadow-lg"
-        aria-label="Administration"
-        title="Espace administration"
-      >
-        <Settings className="w-4 h-4" />
-      </button>
     </div>
   );
 }

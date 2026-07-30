@@ -255,8 +255,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-white/50 text-xs uppercase tracking-wider mb-1">Horaires</p>
-                      <p className="text-white/90">Lun-Ven : 8h–18h</p>
-                      <p className="text-white/90 text-sm">Sam : 8h–12h | Dim : Fermé</p>
+                      <p className="text-white/90">Lun : 8h–18h | Mar–Ven : 8h–17h</p>
+                      <p className="text-white/90 text-sm">Sam–Dim : Fermé</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">

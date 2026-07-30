@@ -1,6 +1,4 @@
 {
-  "_source": "Communes et Villes de la Province de Liège (fichier fourni par le client, 84 communes)",
-  "_note": "Source UNIQUE : consommée par src/data/communes.ts (typé) ET par scripts/prerender.mjs (Node). Un fichier JSON évite d'avoir à compiler du TypeScript pour le pré-rendu, et surtout évite deux listes à maintenir.",
   "communes": [
     {
       "id": "amay",
@@ -47,8 +45,8 @@
         "saint-nicolas",
         "liege"
       ],
-      "statut": "published",
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "anthisnes",
@@ -95,8 +93,8 @@
         "fexhe-le-haut-clocher",
         "grace-hollogne"
       ],
-      "statut": "published",
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "aywaille",
@@ -119,8 +117,8 @@
         "theux",
         "stoumont"
       ],
-      "statut": "published",
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "baelen",
@@ -154,8 +152,8 @@
         "juprelle",
         "oupeye"
       ],
-      "statut": "published",
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "berloz",
@@ -186,8 +184,8 @@
         "fleron",
         "soumagne"
       ],
-      "statut": "published",
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "blegny",
@@ -215,8 +213,8 @@
         "herve",
         "beyne-heusay"
       ],
-      "statut": "published",
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "braives",
@@ -296,8 +294,8 @@
         "sprimont",
         "trooz"
       ],
-      "statut": "published",
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "clavier",
@@ -330,8 +328,8 @@
         "ferrieres",
         "hamoir"
       ],
-      "statut": "published",
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "crisnee",
@@ -370,8 +368,8 @@
         "blegny",
         "herve"
       ],
-      "statut": "published",
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "dison",
@@ -425,8 +423,8 @@
         "chaudfontaine",
         "sprimont"
       ],
-      "statut": "published",
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "eupen",
@@ -498,8 +496,8 @@
         "engis",
         "neupre"
       ],
-      "statut": "published",
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "fleron",
@@ -525,8 +523,8 @@
         "trooz",
         "olne"
       ],
-      "statut": "published",
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "geer",
@@ -562,8 +560,8 @@
         "ans",
         "saint-nicolas"
       ],
-      "statut": "published",
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "hamoir",
@@ -580,6 +578,17 @@
       "id": "hannut",
       "nom": "Hannut",
       "arrondissement": "Waremme",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "heron",
+      "nom": "Héron",
+      "arrondissement": "Huy",
       "codesPostaux": [],
       "distanceDepotKm": null,
       "tempsTrajetEstimeMin": null,
@@ -608,9 +617,9 @@
         "juprelle",
         "oupeye"
       ],
-      "statut": "published",
+      "dateVerification": "2026-07-30",
       "pageExistante": "/demenagement/demenagement-herstal",
-      "dateVerification": "2026-07-30"
+      "statut": "published"
     },
     {
       "id": "herve",
@@ -642,25 +651,14 @@
         "marchin",
         "villers-le-bouillet"
       ],
-      "statut": "published",
       "introductionLocale": "Spécialistes du déménagement en région hutoise, nous maîtrisons les spécificités de la vallée de la Meuse pour vous garantir un emménagement sans stress.",
       "informationsLocales": [
         "Mise à disposition de lifts extérieurs, indispensables pour les maisons de maître et les ruelles étroites du centre historique.",
         "Équipements adaptés pour les déménagements sur les rives de la Meuse et les zones en dénivelé.",
         "Service d'emballage professionnel pour protéger vos biens lors des transports sinueux."
       ],
-      "dateVerification": "2026-07-30"
-    },
-    {
-      "id": "heron",
-      "nom": "Héron",
-      "arrondissement": "Huy",
-      "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "jalhay",
@@ -702,46 +700,13 @@
         "oupeye",
         "liege"
       ],
-      "statut": "published",
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "la-calamine",
       "nom": "La Calamine (Kelmis)",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
-    },
-    {
-      "id": "lierneux",
-      "nom": "Lierneux",
-      "arrondissement": "Verviers",
-      "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
-    },
-    {
-      "id": "limbourg",
-      "nom": "Limbourg",
-      "arrondissement": "Verviers",
-      "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
-    },
-    {
-      "id": "lincent",
-      "nom": "Lincent",
-      "arrondissement": "Waremme",
       "codesPostaux": [],
       "distanceDepotKm": null,
       "tempsTrajetEstimeMin": null,
@@ -779,9 +744,42 @@
         "vise",
         "blegny"
       ],
-      "statut": "published",
+      "dateVerification": "2026-07-30",
       "pageExistante": "/demenagement/demenagement-liege",
-      "dateVerification": "2026-07-30"
+      "statut": "published"
+    },
+    {
+      "id": "lierneux",
+      "nom": "Lierneux",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "limbourg",
+      "nom": "Limbourg",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "lincent",
+      "nom": "Lincent",
+      "arrondissement": "Waremme",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
     },
     {
       "id": "lontzen",
@@ -862,8 +860,8 @@
         "esneux",
         "nandrin"
       ],
-      "statut": "published",
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "olne",
@@ -925,8 +923,8 @@
         "juprelle",
         "herstal"
       ],
-      "statut": "published",
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "pepinster",
@@ -1002,8 +1000,8 @@
         "liege",
         "seraing"
       ],
-      "statut": "published",
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "saint-vith",
@@ -1038,7 +1036,6 @@
         "neupre",
         "esneux"
       ],
-      "statut": "published",
       "introductionLocale": "Situés à quelques minutes seulement de Seraing, nos déménageurs interviennent quotidiennement dans toute l'entité sérésienne pour les particuliers et les entreprises.",
       "informationsLocales": [
         "Forte densité urbaine nécessitant souvent la réservation d'un emplacement de stationnement.",
@@ -1046,7 +1043,8 @@
         "Accès rapide depuis notre dépôt, réduisant les frais de déplacement."
       ],
       "dateVerification": "2026-07-30",
-      "pageExistante": "/demenagement/demenagement-seraing"
+      "pageExistante": "/demenagement/demenagement-seraing",
+      "statut": "published"
     },
     {
       "id": "soumagne",
@@ -1074,8 +1072,8 @@
         "fleron",
         "olne"
       ],
-      "statut": "published",
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "spa",
@@ -1111,8 +1109,8 @@
         "pepinster",
         "theux"
       ],
-      "statut": "published",
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "stavelot",
@@ -1201,8 +1199,8 @@
         "pepinster",
         "sprimont"
       ],
-      "statut": "published",
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "verlaine",
@@ -1262,8 +1260,8 @@
         "herstal",
         "liege"
       ],
-      "statut": "published",
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "waimes",
@@ -1310,14 +1308,14 @@
         "berloz",
         "remicourt"
       ],
-      "statut": "published",
       "introductionLocale": "Notre équipe se déplace rapidement en Hesbaye et prend en charge votre déménagement à Waremme, que vous quittiez un appartement au centre ou une maison dans les villages environnants.",
       "informationsLocales": [
         "Accès aisé et rapide pour nos camions via l'autoroute E40.",
         "Prise en charge complète pour les maisons unifamiliales et les nouveaux lotissements de la région.",
         "Autorisation de stationnement à demander au préalable auprès de la zone de police de Hesbaye pour le centre-ville."
       ],
-      "dateVerification": "2026-07-30"
+      "dateVerification": "2026-07-30",
+      "statut": "published"
     },
     {
       "id": "wasseiges",

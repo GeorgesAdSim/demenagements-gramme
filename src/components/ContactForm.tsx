@@ -185,7 +185,7 @@ export default function ContactForm({ data }: Props) {
                 { icon: MapPin, text: 'Rue des Naiveux 64, 4040 Herstal' },
                 { icon: Phone, text: '04 264 50 16', href: 'tel:+3242645016' },
                 { icon: Mail, text: 'contact@demenagements-gramme.be', href: 'mailto:contact@demenagements-gramme.be' },
-                { icon: Clock, text: 'Lun–Ven : 8h–18h | Sam : 8h–12h' },
+                { icon: Clock, text: 'Lun : 8h–18h | Mar–Ven : 8h–17h' },
               ].map(({ icon: Icon, text, href }) => (
                 <div key={text} className="flex items-center gap-3">
                   <Icon className="w-5 h-5 text-yellow flex-shrink-0" />
