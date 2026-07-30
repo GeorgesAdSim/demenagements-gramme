@@ -194,6 +194,27 @@ async function main() {
     }
   });
 
+  // --- 7bis. llms.txt : présent, conforme, et sans lien mort
+  //
+  // Spec llmstxt.org : fichier Markdown à la racine, dont la SEULE section
+  // obligatoire est un H1. Un lien mort ici induit en erreur les assistants
+  // qui lisent ce fichier pour se repérer sur le site.
+  const llmsPath = path.join(distDir, 'llms.txt');
+  if (!existsSync(llmsPath)) {
+    warn('llms.txt absent de dist/ — les assistants IA n\'ont pas de plan du site en Markdown.');
+  } else {
+    const llms = await readFile(llmsPath, 'utf-8');
+    if (!/^#\s+\S/m.test(llms.split('\n')[0] || '')) {
+      err('llms.txt : la première ligne doit être un titre H1 (seule section obligatoire de la spec).');
+    }
+    for (const m of llms.matchAll(/\]\((https:\/\/www\.demenagements-gramme\.be([^)]*))\)/g)) {
+      const res = resolve(m[2] || '/', rules, files);
+      if (res.status !== 200) {
+        err(`llms.txt : le lien ${m[1]} renvoie ${res.status} — corrige-le ou retire-le.`);
+      }
+    }
+  }
+
   // --- 7. Chaque URL du sitemap doit être servie en 200
   const sitemapPath = path.join(distDir, 'sitemap.xml');
   if (!existsSync(sitemapPath)) {

@@ -242,7 +242,10 @@ export default function ContactForm({ data }: Props) {
                 </div>
               )}
 
-              <form method="POST" onSubmit={handleSubmit} className="space-y-5" noValidate>
+              <form method="POST" onSubmit={handleSubmit} className="space-y-5" noValidate
+                toolname="demander_devis_demenagement"
+                tooldescription="Prépare une demande de devis gratuit pour un déménagement ou un garde-meubles chez Déménagements Gramme. Le formulaire est rempli mais reste soumis par la personne : renseigner les champs ne crée aucune demande."
+              >
                 <div className="flex flex-wrap gap-3 mb-2">
                   {serviceOptions.map((s) => (
                     <button
@@ -264,7 +267,7 @@ export default function ContactForm({ data }: Props) {
                   <div>
                     <label htmlFor="cf-firstName" className="sr-only">Prénom</label>
                     <input
-                      id="cf-firstName"
+                      id="cf-firstName" toolparamdescription="Prénom de la personne qui déménage"
                       type="text"
                       name="firstName"
                       required
@@ -278,7 +281,7 @@ export default function ContactForm({ data }: Props) {
                   <div>
                     <label htmlFor="cf-lastName" className="sr-only">Nom</label>
                     <input
-                      id="cf-lastName"
+                      id="cf-lastName" toolparamdescription="Nom de famille"
                       type="text"
                       name="lastName"
                       required
@@ -295,7 +298,7 @@ export default function ContactForm({ data }: Props) {
                   <div>
                     <label htmlFor="cf-email" className="sr-only">Email</label>
                     <input
-                      id="cf-email"
+                      id="cf-email" toolparamdescription="Adresse email pour recevoir le devis"
                       type="email"
                       name="email"
                       required
@@ -309,7 +312,7 @@ export default function ContactForm({ data }: Props) {
                   <div>
                     <label htmlFor="cf-phone" className="sr-only">Téléphone</label>
                     <input
-                      id="cf-phone"
+                      id="cf-phone" toolparamdescription="Numéro de téléphone"
                       type="tel"
                       name="phone"
                       required
@@ -326,7 +329,7 @@ export default function ContactForm({ data }: Props) {
                   <div>
                     <label htmlFor="cf-addressFrom" className="sr-only">Adresse de départ</label>
                     <input
-                      id="cf-addressFrom"
+                      id="cf-addressFrom" toolparamdescription="Adresse complète du logement actuel, point de départ"
                       type="text"
                       name="addressFrom"
                       required
@@ -340,7 +343,7 @@ export default function ContactForm({ data }: Props) {
                   <div>
                     <label htmlFor="cf-addressTo" className="sr-only">Adresse d'arrivée</label>
                     <input
-                      id="cf-addressTo"
+                      id="cf-addressTo" toolparamdescription="Adresse complète du logement d'arrivée"
                       type="text"
                       name="addressTo"
                       required
@@ -357,7 +360,7 @@ export default function ContactForm({ data }: Props) {
                   <div>
                     <label htmlFor="cf-date" className="sr-only">Date souhaitée</label>
                     <input
-                      id="cf-date"
+                      id="cf-date" toolparamdescription="Date souhaitée du déménagement, au format AAAA-MM-JJ"
                       type="date"
                       name="date"
                       required
@@ -370,7 +373,7 @@ export default function ContactForm({ data }: Props) {
                   <div>
                     <label htmlFor="cf-volume" className="sr-only">Volume estimé</label>
                     <select
-                      id="cf-volume"
+                      id="cf-volume" toolparamdescription="Volume estimé à déménager : moins de 20 m³, 20 à 50 m³, 50 à 100 m³, ou inconnu"
                       name="volume"
                       value={form.volume}
                       onChange={(e) => set('volume', e.target.value)}
@@ -387,7 +390,7 @@ export default function ContactForm({ data }: Props) {
                 <div>
                   <label htmlFor="cf-message" className="sr-only">Message</label>
                   <textarea
-                    id="cf-message"
+                    id="cf-message" toolparamdescription="Précisions libres : étage, ascenseur, objets fragiles, contraintes d'accès"
                     name="message"
                     placeholder="Message / précisions (facultatif)"
                     rows={3}
