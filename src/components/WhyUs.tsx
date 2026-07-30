@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { CircleCheck } from 'lucide-react';
 import { SITE_IMAGES } from '../data/images';
 import type { HomepageContent } from '../lib/types';
+import { anneesExperience } from '../lib/anciennete';
 
 const FEATURES = [
   { title: 'Équipe expérimentée', text: 'Plus de 15 ans d\'ancienneté moyenne — vos biens entre des mains expertes.' },
@@ -16,7 +17,7 @@ interface Props {
 }
 
 export default function WhyUs({ data }: Props) {
-  const sectionTitle = data?.sectionTitle || '75 ans de savoir-faire familial liégeois';
+  const sectionTitle = data?.sectionTitle || `${anneesExperience()} ans de savoir-faire familial liégeois`;
   const sectionSubtitle = data?.sectionSubtitle || 'Fondée en 1948, Déménagements Gramme est une entreprise familiale ancrée à Liège. Trois générations au service des particuliers et des entreprises, avec la même exigence de qualité.';
 
   return (
@@ -44,7 +45,7 @@ export default function WhyUs({ data }: Props) {
           </div>
           {/* Badge flottant */}
           <div className="absolute -bottom-5 -right-5 bg-yellow rounded-2xl shadow-xl px-6 py-4 text-center">
-            <span className="font-black text-4xl text-navy leading-none block">75</span>
+            <span className="font-black text-4xl text-navy leading-none block">{anneesExperience()}</span>
             <span className="text-navy/70 text-xs uppercase tracking-wider font-bold">ans</span>
           </div>
         </motion.div>

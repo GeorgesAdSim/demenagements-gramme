@@ -2,33 +2,9 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import type { HomepageContent } from '../lib/types';
+import { FAQ_ACCUEIL } from '../data/faq';
 
-const defaultFaqs: HomepageContent['faq'] = [
-  {
-    q: 'Comment choisir un bon déménageur à Liège ?',
-    a: "Travailler avec une société spécialisée fait toute la différence. Vérifiez que l'entreprise dispose d'une assurance responsabilité civile professionnelle et d'un numéro d'entreprise valide. Chez Gramme, nous sommes actifs depuis 1948, assurés tous risques, et nous fournissons un devis gratuit sous 24h.",
-  },
-  {
-    q: 'Comment faire ses cartons de déménagement ?',
-    a: "Un emballage bien organisé vous fera gagner un temps précieux le jour J et protégera efficacement vos affaires.",
-    list: [
-      "Commencez 2 à 3 semaines avant par les pièces les moins utilisées",
-      "Objets lourds en dessous, légers au-dessus — ne dépassez pas 20 kg par carton",
-      "Protégez la vaisselle et les objets fragiles avec du papier journal ou du papier bulle",
-      "Inscrivez le nom de la pièce de destination et le contenu sur chaque carton",
-      "Préparez un carton essentiel premier jour",
-      "Notre équipe peut se charger de l'emballage complet de votre domicile",
-    ],
-  },
-  {
-    q: 'Quels volumes pouvez-vous déménager ?',
-    a: "Nos véhicules couvrent des volumes allant de 4 m³ (idéal pour un studio) jusqu'à 100 m³ (maison complète). Pour les projets de grande envergure, nous pouvons mobiliser plusieurs véhicules et équipes le même jour.",
-  },
-  {
-    q: 'Intervenez-vous en dehors de Liège ?',
-    a: "Absolument ! Bien que notre siège soit à Liège, nous couvrons l'ensemble de la Belgique ainsi que toute l'Europe.",
-  },
-];
+
 
 interface Props {
   data?: HomepageContent['faq'] | null;
@@ -36,7 +12,7 @@ interface Props {
 
 export default function FAQAccordion({ data }: Props) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const faqs = data || defaultFaqs;
+  const faqs = data || FAQ_ACCUEIL;
 
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
