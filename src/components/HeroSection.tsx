@@ -78,11 +78,11 @@ export default function HeroSection({ data }: Props) {
           />
         </picture>
       )}
-      {/* Aplat dégradé plutôt qu'uniforme : sur desktop il reste dense à
-          gauche, où se trouve le texte, et s'allège à droite pour laisser voir
-          le camion. Sur mobile le texte occupe toute la largeur, donc on garde
-          un aplat uniforme pour préserver le contraste. */}
-      <div className="absolute inset-0 hero-overlay" />
+      {/* Voile bleu uniforme, à l'identique de l'existant : c'est lui qui
+          donne au titre blanc son contraste franc sur toute la largeur. Un
+          dégradé s'allégeant à droite avait été essayé pour mieux montrer le
+          camion, mais il dégradait la lisibilité — la lisibilité primait. */}
+      <div className="absolute inset-0 bg-[#0C2094]/75" />
 
       <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-8 py-24 grid grid-cols-1 lg:grid-cols-[55%_45%] gap-10 lg:gap-16 items-center">
 
