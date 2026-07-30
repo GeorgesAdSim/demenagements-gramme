@@ -4,6 +4,7 @@ import { Loader as Loader2 } from 'lucide-react';
 import { AuthProvider } from './lib/AuthContext';
 import PublicSite from './pages/PublicSite';
 import CookieConsent from './components/CookieConsent';
+import WebMcpTools from './components/WebMcpTools';
 
 const DemenagementsPage = lazy(() => import('./pages/DemenagementsPage'));
 const GardeMeublesPage = lazy(() => import('./pages/GardeMeublesPage'));
@@ -124,6 +125,7 @@ export default function App() {
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <CookieConsent />
+          <WebMcpTools />
         </Suspense>
       </BrowserRouter>
     </AuthProvider>

@@ -316,7 +316,10 @@ export default function ContactPage() {
                 </motion.div>
               )}
 
-              <form method="POST" onSubmit={handleSubmit} noValidate>
+              <form method="POST" onSubmit={handleSubmit} noValidate
+                toolname="demander_devis_demenagement"
+                tooldescription="Prépare une demande de devis gratuit pour un déménagement ou un garde-meubles chez Déménagements Gramme. Le formulaire est rempli mais reste soumis par la personne : renseigner les champs ne crée aucune demande."
+              >
                 <div className="mb-8">
                   <label className="block text-navy font-bold text-sm uppercase tracking-wider mb-3">
                     Type de service
