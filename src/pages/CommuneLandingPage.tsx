@@ -20,6 +20,7 @@ import {
   communeUrl,
   cheminCommune,
   slugDepuisSegment,
+  deCommune,
   RACINE_ZONES,
   RACINE_COMMUNES,
   type CommuneSEO,
@@ -44,15 +45,15 @@ function construireFaq(c: CommuneSEO): Array<{ q: string; a: string }> {
 
   if (c.distanceDepotKm !== null && c.tempsTrajetEstimeMin !== null) {
     faq.push({
-      q: `À quelle distance de ${c.nom} se trouve votre dépôt ?`,
-      a: `Notre dépôt est situé rue des Naiveux 64 à Herstal, à environ ${c.distanceDepotKm} km de ${c.nom}, soit à peu près ${c.tempsTrajetEstimeMin} minutes de route. Cette proximité limite les frais d'approche facturés sur le devis.`,
+      q: `À quelle distance ${deCommune(c.nom)} se trouve votre dépôt ?`,
+      a: `Notre dépôt est situé rue des Naiveux 64 à Herstal, à environ ${c.distanceDepotKm} km ${deCommune(c.nom)}, soit à peu près ${c.tempsTrajetEstimeMin} minutes de route. Cette proximité limite les frais d'approche facturés sur le devis.`,
     });
   }
 
   if (c.villages.length > 0) {
     faq.push({
-      q: `Intervenez-vous dans tous les villages de ${c.nom} ?`,
-      a: `Oui. Nous desservons l'ensemble de l'entité, ${c.villages.join(', ')} compris, au même titre que le centre de ${c.nom}.`,
+      q: `Intervenez-vous dans tous les villages ${deCommune(c.nom)} ?`,
+      a: `Oui. Nous desservons l'ensemble de l'entité, ${c.villages.join(', ')} compris, au même titre que le centre ${deCommune(c.nom)}.`,
     });
   }
 
@@ -258,7 +259,7 @@ export default function CommuneLandingPage() {
                 className="mt-12"
               >
                 <h2 className="text-2xl md:text-3xl font-black uppercase text-navy mb-3">
-                  Les villages de {commune.nom} que nous desservons
+                  Les villages {deCommune(commune.nom)} que nous desservons
                 </h2>
                 <p className="text-muted text-[16px] leading-relaxed mb-5">
                   L'entité ne se limite pas à son centre. Nous intervenons dans
@@ -305,11 +306,11 @@ export default function CommuneLandingPage() {
                 className="mt-12"
               >
                 <h2 className="text-2xl md:text-3xl font-black uppercase text-navy mb-3">
-                  Nous déménageons aussi autour de {commune.nom}
+                  Nous déménageons aussi autour {deCommune(commune.nom)}
                 </h2>
                 <p className="text-muted text-[16px] leading-relaxed mb-5">
                   Notre zone couvre l'ensemble de la province de Liège. Les
-                  communes limitrophes de {commune.nom} font partie de nos
+                  communes limitrophes {deCommune(commune.nom)} font partie de nos
                   interventions courantes :
                 </p>
                 <div className="flex flex-wrap gap-2">

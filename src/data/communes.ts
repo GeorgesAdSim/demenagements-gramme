@@ -212,3 +212,18 @@ export function validerCommunes(communes: CommuneSEO[] = COMMUNES): ProblemeComm
 
   return problemes;
 }
+
+/**
+ * « de Ans » ou « d'Ans » ? Élision devant voyelle.
+ *
+ * Sans ce traitement, les pages affichent « Les villages de Ans que nous
+ * desservons » et « autour de Esneux ». Sur vingt-deux pages publiées, une
+ * faute de liaison à chaque section donne l'impression d'un site fabriqué à la
+ * chaîne — exactement ce qu'on cherche à ne pas laisser croire.
+ *
+ * Le h reste aspiré en usage belge : on écrit « de Herstal » et « de Huy », pas
+ * « d'Herstal ». Seules les voyelles déclenchent l'élision.
+ */
+export function deCommune(nom: string): string {
+  return /^[aeiouyàâäéèêëîïôöùûü]/i.test(nom) ? `d'${nom}` : `de ${nom}`;
+}

@@ -35,13 +35,17 @@
       ],
       "distanceDepotKm": 12,
       "tempsTrajetEstimeMin": 13,
-      "villages": [],
+      "villages": [
+        "Loncin",
+        "Alleur",
+        "Xhendremael"
+      ],
       "communesVoisines": [
-        "liege",
-        "saint-nicolas",
-        "awans",
         "juprelle",
-        "herstal"
+        "awans",
+        "grace-hollogne",
+        "saint-nicolas",
+        "liege"
       ],
       "statut": "draft",
       "dateVerification": "2026-07-30"
@@ -72,11 +76,25 @@
       "id": "awans",
       "nom": "Awans",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4340",
+        "4342"
+      ],
       "distanceDepotKm": 15,
       "tempsTrajetEstimeMin": 13,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Fooz",
+        "Hognoul",
+        "Villers-l'Évêque",
+        "Othée"
+      ],
+      "communesVoisines": [
+        "juprelle",
+        "crisnee",
+        "ans",
+        "fexhe-le-haut-clocher",
+        "grace-hollogne"
+      ],
       "statut": "draft",
       "dateVerification": "2026-07-30"
     },
@@ -84,11 +102,23 @@
       "id": "aywaille",
       "nom": "Aywaille",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4920"
+      ],
       "distanceDepotKm": 46,
       "tempsTrajetEstimeMin": 36,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Sougné-Remouchamps",
+        "Harzé",
+        "Ernonheid"
+      ],
+      "communesVoisines": [
+        "sprimont",
+        "comblain-au-pont",
+        "ferrieres",
+        "theux",
+        "stoumont"
+      ],
       "statut": "draft",
       "dateVerification": "2026-07-30"
     },
@@ -107,11 +137,23 @@
       "id": "bassenge",
       "nom": "Bassenge",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4690"
+      ],
       "distanceDepotKm": 10,
       "tempsTrajetEstimeMin": 15,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Roclenge-sur-Geer",
+        "Boirs",
+        "Glons",
+        "Wonck",
+        "Ében-Émael"
+      ],
+      "communesVoisines": [
+        "vise",
+        "juprelle",
+        "oupeye"
+      ],
       "statut": "draft",
       "dateVerification": "2026-07-30"
     },
@@ -130,11 +172,20 @@
       "id": "beyne-heusay",
       "nom": "Beyne-Heusay",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4610"
+      ],
       "distanceDepotKm": 11,
       "tempsTrajetEstimeMin": 19,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Queue-du-Bois",
+        "Bellaire"
+      ],
+      "communesVoisines": [
+        "blegny",
+        "fleron",
+        "soumagne"
+      ],
       "statut": "draft",
       "dateVerification": "2026-07-30"
     },
@@ -142,11 +193,28 @@
       "id": "blegny",
       "nom": "Blegny",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4670",
+        "4671",
+        "4672"
+      ],
       "distanceDepotKm": 9,
       "tempsTrajetEstimeMin": 13,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Trembleur",
+        "Mortier",
+        "Barchon",
+        "Saive",
+        "Housse",
+        "Saint-Remy"
+      ],
+      "communesVoisines": [
+        "vise",
+        "dalhem",
+        "liege",
+        "herve",
+        "beyne-heusay"
+      ],
       "statut": "draft",
       "dateVerification": "2026-07-30"
     },
@@ -209,11 +277,25 @@
       "id": "chaudfontaine",
       "nom": "Chaudfontaine",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4050",
+        "4051",
+        "4052",
+        "4053"
+      ],
       "distanceDepotKm": 27,
       "tempsTrajetEstimeMin": 24,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Beaufays",
+        "Embourg",
+        "Vaux-sous-Chèvremont"
+      ],
+      "communesVoisines": [
+        "esneux",
+        "fleron",
+        "sprimont",
+        "trooz"
+      ],
       "statut": "draft",
       "dateVerification": "2026-07-30"
     },
@@ -232,11 +314,22 @@
       "id": "comblain-au-pont",
       "nom": "Comblain-au-Pont",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4170",
+        "4171"
+      ],
       "distanceDepotKm": 52,
       "tempsTrajetEstimeMin": 42,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Poulseur"
+      ],
+      "communesVoisines": [
+        "esneux",
+        "sprimont",
+        "aywaille",
+        "ferrieres",
+        "hamoir"
+      ],
       "statut": "draft",
       "dateVerification": "2026-07-30"
     },
@@ -255,11 +348,28 @@
       "id": "dalhem",
       "nom": "Dalhem",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4606",
+        "4607",
+        "4608"
+      ],
       "distanceDepotKm": 10,
       "tempsTrajetEstimeMin": 14,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Feneur",
+        "Bombaye",
+        "Berneau",
+        "Warsage",
+        "Neufchâteau",
+        "Mortroux",
+        "Saint-André"
+      ],
+      "communesVoisines": [
+        "vise",
+        "aubel",
+        "blegny",
+        "herve"
+      ],
       "statut": "draft",
       "dateVerification": "2026-07-30"
     },
@@ -300,11 +410,21 @@
       "id": "esneux",
       "nom": "Esneux",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4130"
+      ],
       "distanceDepotKm": 38,
       "tempsTrajetEstimeMin": 34,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Tilff"
+      ],
+      "communesVoisines": [
+        "seraing",
+        "liege",
+        "neupre",
+        "chaudfontaine",
+        "sprimont"
+      ],
       "statut": "draft",
       "dateVerification": "2026-07-30"
     },
@@ -356,11 +476,28 @@
       "id": "flemalle",
       "nom": "Flémalle",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4400"
+      ],
       "distanceDepotKm": 26,
       "tempsTrajetEstimeMin": 22,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Awirs",
+        "Chokier",
+        "Flémalle-Grande",
+        "Flémalle-Haute",
+        "Gleixhe",
+        "Ivoz-Ramet",
+        "Les Cahottes",
+        "Mons-lez-Liège"
+      ],
+      "communesVoisines": [
+        "grace-hollogne",
+        "saint-georges-sur-meuse",
+        "seraing",
+        "engis",
+        "neupre"
+      ],
       "statut": "draft",
       "dateVerification": "2026-07-30"
     },
@@ -368,11 +505,26 @@
       "id": "fleron",
       "nom": "Fléron",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4620",
+        "4621",
+        "4623",
+        "4624"
+      ],
       "distanceDepotKm": 14,
       "tempsTrajetEstimeMin": 20,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Retinne",
+        "Magnée",
+        "Romsée"
+      ],
+      "communesVoisines": [
+        "beyne-heusay",
+        "soumagne",
+        "chaudfontaine",
+        "trooz",
+        "olne"
+      ],
       "statut": "draft",
       "dateVerification": "2026-07-30"
     },
@@ -391,11 +543,25 @@
       "id": "grace-hollogne",
       "nom": "Grâce-Hollogne",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4460"
+      ],
       "distanceDepotKm": 18,
       "tempsTrajetEstimeMin": 16,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Grâce-Berleur",
+        "Hollogne-aux-Pierres",
+        "Horion-Hozémont",
+        "Velroux",
+        "Bierset"
+      ],
+      "communesVoisines": [
+        "donceel",
+        "fexhe-le-haut-clocher",
+        "awans",
+        "ans",
+        "saint-nicolas"
+      ],
       "statut": "draft",
       "dateVerification": "2026-07-30"
     },
@@ -425,13 +591,26 @@
       "id": "herstal",
       "nom": "Herstal",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4040",
+        "4041",
+        "4042"
+      ],
       "distanceDepotKm": null,
       "tempsTrajetEstimeMin": null,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Vottem",
+        "Liers",
+        "Milmort"
+      ],
+      "communesVoisines": [
+        "liege",
+        "juprelle",
+        "oupeye"
+      ],
       "statut": "draft",
-      "pageExistante": "/demenagement/demenagement-herstal"
+      "pageExistante": "/demenagement/demenagement-herstal",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "herve",
@@ -498,11 +677,31 @@
       "id": "juprelle",
       "nom": "Juprelle",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4450",
+        "4451",
+        "4452",
+        "4453",
+        "4458"
+      ],
       "distanceDepotKm": 14,
       "tempsTrajetEstimeMin": 15,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Slins",
+        "Fexhe-Slins",
+        "Villers-Saint-Siméon",
+        "Voroux-lez-Liers",
+        "Lantin",
+        "Wihogne",
+        "Paifve"
+      ],
+      "communesVoisines": [
+        "bassenge",
+        "awans",
+        "ans",
+        "oupeye",
+        "liege"
+      ],
       "statut": "draft",
       "dateVerification": "2026-07-30"
     },
@@ -554,11 +753,32 @@
       "id": "liege",
       "nom": "Liège",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4000",
+        "4020",
+        "4030",
+        "4031",
+        "4032"
+      ],
       "distanceDepotKm": 11,
       "tempsTrajetEstimeMin": 18,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Wandre",
+        "Jupille-sur-Meuse",
+        "Bressoux",
+        "Grivegnée",
+        "Chênée",
+        "Angleur",
+        "Glain",
+        "Rocourt"
+      ],
+      "communesVoisines": [
+        "ans",
+        "juprelle",
+        "herstal",
+        "vise",
+        "blegny"
+      ],
       "statut": "draft",
       "pageExistante": "/demenagement/demenagement-liege",
       "dateVerification": "2026-07-30"
@@ -622,11 +842,26 @@
       "id": "neupre",
       "nom": "Neupré",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4120",
+        "4121",
+        "4122"
+      ],
       "distanceDepotKm": 31,
       "tempsTrajetEstimeMin": 29,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Neuville-en-Condroz",
+        "Plainevaux",
+        "Rotheux-Rimière",
+        "Éhein"
+      ],
+      "communesVoisines": [
+        "flemalle",
+        "seraing",
+        "engis",
+        "esneux",
+        "nandrin"
+      ],
       "statut": "draft",
       "dateVerification": "2026-07-30"
     },
@@ -667,11 +902,29 @@
       "id": "oupeye",
       "nom": "Oupeye",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4680",
+        "4681",
+        "4682",
+        "4683",
+        "4684"
+      ],
       "distanceDepotKm": 3,
       "tempsTrajetEstimeMin": 5,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Haccourt",
+        "Hermalle-sous-Argenteau",
+        "Vivegnis",
+        "Hermée",
+        "Houtain-Saint-Siméon",
+        "Heure-le-Romain"
+      ],
+      "communesVoisines": [
+        "bassenge",
+        "vise",
+        "juprelle",
+        "herstal"
+      ],
       "statut": "draft",
       "dateVerification": "2026-07-30"
     },
@@ -734,11 +987,21 @@
       "id": "saint-nicolas",
       "nom": "Saint-Nicolas",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4420"
+      ],
       "distanceDepotKm": 17,
       "tempsTrajetEstimeMin": 16,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Tilleur",
+        "Montegnée"
+      ],
+      "communesVoisines": [
+        "ans",
+        "grace-hollogne",
+        "liege",
+        "seraing"
+      ],
       "statut": "draft",
       "dateVerification": "2026-07-30"
     },
@@ -789,11 +1052,28 @@
       "id": "soumagne",
       "nom": "Soumagne",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4630",
+        "4631",
+        "4632",
+        "4633"
+      ],
       "distanceDepotKm": 12,
       "tempsTrajetEstimeMin": 14,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Ayeneux",
+        "Micheroux",
+        "Melen",
+        "Cerexhe-Heuseux",
+        "Évegnée-Tignée"
+      ],
+      "communesVoisines": [
+        "blegny",
+        "beyne-heusay",
+        "herve",
+        "fleron",
+        "olne"
+      ],
       "statut": "draft",
       "dateVerification": "2026-07-30"
     },
@@ -812,11 +1092,25 @@
       "id": "sprimont",
       "nom": "Sprimont",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4140",
+        "4141"
+      ],
       "distanceDepotKm": 42,
       "tempsTrajetEstimeMin": 32,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Louveigné",
+        "Rouvreux",
+        "Dolembreux",
+        "Gomzé-Andoumont"
+      ],
+      "communesVoisines": [
+        "esneux",
+        "chaudfontaine",
+        "trooz",
+        "pepinster",
+        "theux"
+      ],
       "statut": "draft",
       "dateVerification": "2026-07-30"
     },
@@ -890,11 +1184,23 @@
       "id": "trooz",
       "nom": "Trooz",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4870"
+      ],
       "distanceDepotKm": 20,
       "tempsTrajetEstimeMin": 26,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Forêt",
+        "Fraipont",
+        "Nessonvaux"
+      ],
+      "communesVoisines": [
+        "fleron",
+        "olne",
+        "chaudfontaine",
+        "pepinster",
+        "sprimont"
+      ],
       "statut": "draft",
       "dateVerification": "2026-07-30"
     },
@@ -935,11 +1241,27 @@
       "id": "vise",
       "nom": "Visé",
       "arrondissement": "Liège",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4600",
+        "4601",
+        "4602"
+      ],
       "distanceDepotKm": 10,
       "tempsTrajetEstimeMin": 12,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Richelle",
+        "Argenteau",
+        "Cheratte",
+        "Lixhe",
+        "Lanaye"
+      ],
+      "communesVoisines": [
+        "bassenge",
+        "oupeye",
+        "dalhem",
+        "herstal",
+        "liege"
+      ],
       "statut": "draft",
       "dateVerification": "2026-07-30"
     },
