@@ -154,10 +154,11 @@ export default function HeroSection({ data }: Props) {
 
             <div className="space-y-4">
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-navy/70 mb-1.5">
+                <label htmlFor="hero-volume" className="block text-xs font-bold uppercase tracking-wider text-navy/70 mb-1.5">
                   Volume estimé
                 </label>
                 <select
+                  id="hero-volume"
                   value={quickForm.volume}
                   onChange={(e) => setQuickForm({ ...quickForm, volume: e.target.value })}
                   className="w-full border-2 border-gray-200 rounded-lg py-3 px-4 text-navy text-sm focus:border-yellow focus:ring-2 focus:ring-yellow/20 outline-none transition-all"
@@ -168,10 +169,11 @@ export default function HeroSection({ data }: Props) {
               </div>
 
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-navy/70 mb-1.5">
+                <label htmlFor="hero-date" className="block text-xs font-bold uppercase tracking-wider text-navy/70 mb-1.5">
                   Date souhaitée
                 </label>
                 <input
+                  id="hero-date"
                   type="date"
                   value={quickForm.date}
                   onChange={(e) => setQuickForm({ ...quickForm, date: e.target.value })}
@@ -180,10 +182,11 @@ export default function HeroSection({ data }: Props) {
               </div>
 
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-navy/70 mb-1.5">
+                <label htmlFor="hero-email" className="block text-xs font-bold uppercase tracking-wider text-navy/70 mb-1.5">
                   Votre email
                 </label>
                 <input
+                  id="hero-email"
                   type="email"
                   placeholder="vous@exemple.be"
                   value={quickForm.email}
