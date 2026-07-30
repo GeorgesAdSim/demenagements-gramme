@@ -33,8 +33,8 @@
         "4431",
         "4432"
       ],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 12,
+      "tempsTrajetEstimeMin": 13,
       "villages": [],
       "communesVoisines": [
         "liege",
@@ -43,7 +43,8 @@
         "juprelle",
         "herstal"
       ],
-      "statut": "draft"
+      "statut": "draft",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "anthisnes",
@@ -72,22 +73,24 @@
       "nom": "Awans",
       "arrondissement": "Liège",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 15,
+      "tempsTrajetEstimeMin": 13,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "aywaille",
       "nom": "Aywaille",
       "arrondissement": "Liège",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 46,
+      "tempsTrajetEstimeMin": 36,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "baelen",
@@ -105,11 +108,12 @@
       "nom": "Bassenge",
       "arrondissement": "Liège",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 10,
+      "tempsTrajetEstimeMin": 15,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "berloz",
@@ -127,22 +131,24 @@
       "nom": "Beyne-Heusay",
       "arrondissement": "Liège",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 11,
+      "tempsTrajetEstimeMin": 19,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "blegny",
       "nom": "Blegny",
       "arrondissement": "Liège",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 9,
+      "tempsTrajetEstimeMin": 13,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "braives",
@@ -204,11 +210,12 @@
       "nom": "Chaudfontaine",
       "arrondissement": "Liège",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 27,
+      "tempsTrajetEstimeMin": 24,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "clavier",
@@ -226,11 +233,12 @@
       "nom": "Comblain-au-Pont",
       "arrondissement": "Liège",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 52,
+      "tempsTrajetEstimeMin": 42,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "crisnee",
@@ -248,11 +256,12 @@
       "nom": "Dalhem",
       "arrondissement": "Liège",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 10,
+      "tempsTrajetEstimeMin": 14,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "dison",
@@ -292,11 +301,12 @@
       "nom": "Esneux",
       "arrondissement": "Liège",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 38,
+      "tempsTrajetEstimeMin": 34,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "eupen",
@@ -347,22 +357,24 @@
       "nom": "Flémalle",
       "arrondissement": "Liège",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 26,
+      "tempsTrajetEstimeMin": 22,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "fleron",
       "nom": "Fléron",
       "arrondissement": "Liège",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 14,
+      "tempsTrajetEstimeMin": 20,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "geer",
@@ -380,11 +392,12 @@
       "nom": "Grâce-Hollogne",
       "arrondissement": "Liège",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 18,
+      "tempsTrajetEstimeMin": 16,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "hamoir",
@@ -486,11 +499,12 @@
       "nom": "Juprelle",
       "arrondissement": "Liège",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 14,
+      "tempsTrajetEstimeMin": 15,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "la-calamine",
@@ -541,12 +555,13 @@
       "nom": "Liège",
       "arrondissement": "Liège",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 11,
+      "tempsTrajetEstimeMin": 18,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft",
-      "pageExistante": "/demenagement/demenagement-liege"
+      "pageExistante": "/demenagement/demenagement-liege",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "lontzen",
@@ -608,11 +623,12 @@
       "nom": "Neupré",
       "arrondissement": "Liège",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 31,
+      "tempsTrajetEstimeMin": 29,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "olne",
@@ -652,11 +668,12 @@
       "nom": "Oupeye",
       "arrondissement": "Liège",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 3,
+      "tempsTrajetEstimeMin": 5,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "pepinster",
@@ -718,11 +735,12 @@
       "nom": "Saint-Nicolas",
       "arrondissement": "Liège",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 17,
+      "tempsTrajetEstimeMin": 16,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "saint-vith",
@@ -772,11 +790,12 @@
       "nom": "Soumagne",
       "arrondissement": "Liège",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 12,
+      "tempsTrajetEstimeMin": 14,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "spa",
@@ -794,11 +813,12 @@
       "nom": "Sprimont",
       "arrondissement": "Liège",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 42,
+      "tempsTrajetEstimeMin": 32,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "stavelot",
@@ -871,11 +891,12 @@
       "nom": "Trooz",
       "arrondissement": "Liège",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 20,
+      "tempsTrajetEstimeMin": 26,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "verlaine",
@@ -915,11 +936,12 @@
       "nom": "Visé",
       "arrondissement": "Liège",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 10,
+      "tempsTrajetEstimeMin": 12,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "waimes",
