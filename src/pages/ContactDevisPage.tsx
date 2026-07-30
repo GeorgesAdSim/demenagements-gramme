@@ -21,6 +21,7 @@ import Footer from '../components/Footer';
 import SeoHead from '../components/SeoHead';
 import SchemaOrg from '../components/SchemaOrg';
 import { supabase } from '../lib/supabase';
+import { anneesExperience } from '../lib/anciennete';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -230,7 +231,7 @@ export default function ContactDevisPage() {
                   <ul className="space-y-3">
                     {[
                       'Devis gratuit et sans engagement',
-                      "Plus de 75 ans d'expérience",
+                      `Plus de ${anneesExperience()} ans d'expérience`,
                       'Assurance tous risques incluse',
                       'Équipe qualifiée et ponctuelle',
                       'Belgique et international',

@@ -4,6 +4,7 @@ import { ArrowRight, Phone, CircleCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import type { HomepageContent } from '../lib/types';
 import { SITE_IMAGES } from '../data/images';
+import { anneesExperience } from '../lib/anciennete';
 
 const container = {
   hidden: {},
@@ -19,7 +20,7 @@ const TRUST_ITEMS = [
   'Réponse sous 24h',
   'Devis 100% gratuit',
   'Assurance incluse',
-  '+75 ans d\'expérience',
+  `+${anneesExperience()} ans d'expérience`,
 ];
 
 const VOLUMES = [
@@ -91,7 +92,7 @@ export default function HeroSection({ data }: Props) {
 
           <motion.div variants={fadeUp} className="flex items-center gap-2">
             <span className="bg-yellow text-navy text-[13px] font-bold rounded-full px-3 py-1 border border-yellow/60">
-              Satisfaction client supérieure à 95% · +75 ans d'expérience
+              Satisfaction client supérieure à 95% · {`+${anneesExperience()} ans d'expérience`}
             </span>
           </motion.div>
 

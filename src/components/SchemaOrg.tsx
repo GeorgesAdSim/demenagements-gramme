@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { FAQ_ACCUEIL } from '../data/faq';
 
 const BASE_URL = 'https://www.demenagements-gramme.be';
 
@@ -48,43 +49,21 @@ const LOCAL_BUSINESS = {
   priceRange: 'Sur devis',
 };
 
+// Généré depuis la source partagée des questions, et non écrit en dur : Google
+// exige que le balisage FAQPage corresponde au contenu réellement affiché. La
+// version précédente listait 4 questions alors que la page en montre 9.
 const FAQ_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Comment choisir un bon déménageur à Liège ?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: "Travailler avec une société spécialisée fait toute la différence. Nos équipes professionnelles garantissent un déménagement sécurisé, couvert par une assurance, réalisé avec soin.",
-      },
+  mainEntity: FAQ_ACCUEIL.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      // La liste à puces fait partie de la réponse visible : on la reprend.
+      text: [f.a, ...(f.list ?? [])].filter(Boolean).join(' '),
     },
-    {
-      '@type': 'Question',
-      name: 'Comment faire ses cartons de déménagement ?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: "Commencez par les pièces rarement utilisées. Placez les objets lourds en dessous, légers au-dessus. Protégez les fragiles avec du papier bulle. Inscrivez le contenu sur chaque carton.",
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Quels volumes pouvez-vous déménager ?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: "Nos camions déplacent des volumes allant de 4 à 100m³. Nous déménageons également pianos et coffres-forts.",
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Intervenez-vous en dehors de Liège ?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: "Absolument ! Nous intervenons dans toute la Belgique et l'Europe entière : France, Suisse, Espagne, Italie et plus.",
-      },
-    },
-  ],
+  })),
 };
 
 export interface ArticleData {

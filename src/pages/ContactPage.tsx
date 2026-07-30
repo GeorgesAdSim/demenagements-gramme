@@ -21,6 +21,7 @@ import SchemaOrg from '../components/SchemaOrg';
 import { supabase } from '../lib/supabase';
 import { useSitePageContent } from '../lib/useSitePageContent';
 import type { ContactPageContent } from '../lib/types';
+import { anneesExperience } from '../lib/anciennete';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -76,7 +77,7 @@ const defaultContent: ContactPageContent = {
   sidebar: {
     whyChooseUs: [
       'Devis gratuit et sans engagement',
-      "Plus de 75 ans d'expérience",
+      `Plus de ${anneesExperience()} ans d'expérience`,
       'Assurance tous risques incluse',
       'Équipe qualifiée et ponctuelle',
       'Belgique et international',

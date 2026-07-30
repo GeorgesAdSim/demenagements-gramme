@@ -5,17 +5,18 @@ import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { SITE_IMAGES } from '../data/images';
 import type { HomepageContent } from '../lib/types';
+import { anneesExperience } from '../lib/anciennete';
 
 const FACEBOOK_URL = 'https://www.facebook.com/GrammeDemenagements';
 
 const serviceOptions = ['Déménagement', 'Garde-Meubles'];
 const volumes = ['< 20m³', '20–50m³', '50–100m³', 'Je ne sais pas'];
 
-const REASSURANCES = [
+const REASSURANCES = () => [
   'Réponse garantie sous 24h ouvrables',
   'Devis 100 % gratuit et sans engagement',
   'Assurance tous risques incluse',
-  '+75 ans d\'expérience à votre service',
+  `+${anneesExperience()} ans d'expérience à votre service`,
 ];
 
 interface FormData {
@@ -169,7 +170,7 @@ export default function ContactForm({ data }: Props) {
             </div>
 
             <ul className="space-y-3">
-              {REASSURANCES.map((item) => (
+              {REASSURANCES().map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-yellow/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <CircleCheck className="w-4 h-4 text-navy" />

@@ -7,6 +7,9 @@ import StatsStrip from '../components/StatsStrip';
 import ServicesCards from '../components/ServicesCards';
 import WhyUs from '../components/WhyUs';
 import ServiceArea from '../components/ServiceArea';
+import LiegeSection from '../components/LiegeSection';
+import PricingSection from '../components/PricingSection';
+import GoogleReviews from '../components/GoogleReviews';
 import FAQAccordion from '../components/FAQAccordion';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
@@ -23,10 +26,10 @@ export default function PublicSite() {
   return (
     <div className="font-sans">
       <SeoHead
-        title={meta?.metaTitle || 'Déménagements Gramme — Votre déménageur à Liège depuis 1948'}
+        title={meta?.metaTitle || `Déménagement à Liège : devis gratuit 24h | Gramme 1948`}
         description={
           meta?.metaDescription ||
-          "Déménageur à Liège depuis 1948 : déménagement de particuliers et d'entreprises, garde-meubles et transport en Belgique et en Europe. Devis gratuit sous 24h."
+          "Déménagement à Liège depuis 1948 : particuliers et entreprises, tous les quartiers, garde-meubles dès 30 €/mois. Devis gratuit sous 24h, sans engagement."
         }
         canonical={meta?.canonicalUrl || '/'}
       />
@@ -39,6 +42,13 @@ export default function PublicSite() {
         <ServicesCards data={content?.services} />
         <WhyUs data={content?.whyus} />
         <ServiceArea data={content?.service_area} />
+        {/* Contenu local : le déficit principal face au premier résultat sur
+            « déménagement Liège » était le volume de contenu (556 mots contre
+            1800-2000) et l'absence de toute commune citée. */}
+        <LiegeSection />
+        <PricingSection />
+        {/* Les 11 avis existaient déjà dans le code sans être affichés nulle part. */}
+        <GoogleReviews />
         <FAQAccordion data={content?.faq} />
         <ContactForm data={content?.contact} />
       </main>
