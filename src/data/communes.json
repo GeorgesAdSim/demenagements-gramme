@@ -417,7 +417,8 @@
       "tempsTrajetEstimeMin": null,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "pageExistante": "/demenagement/demenagement-herstal"
     },
     {
       "id": "herve",
@@ -435,20 +436,28 @@
       "nom": "Huy",
       "arrondissement": "Huy",
       "codesPostaux": [
-        "4500",
-        "4520"
+        "4500"
       ],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
-      "villages": [],
+      "distanceDepotKm": 35,
+      "tempsTrajetEstimeMin": 35,
+      "villages": [
+        "Ben-Ahin",
+        "Tihange"
+      ],
       "communesVoisines": [
         "amay",
         "wanze",
-        "villers-le-bouillet",
         "marchin",
-        "modave"
+        "villers-le-bouillet"
       ],
-      "statut": "draft"
+      "statut": "published",
+      "introductionLocale": "Spécialistes du déménagement en région hutoise, nous maîtrisons les spécificités de la vallée de la Meuse pour vous garantir un emménagement sans stress.",
+      "informationsLocales": [
+        "Mise à disposition de lifts extérieurs, indispensables pour les maisons de maître et les ruelles étroites du centre historique.",
+        "Équipements adaptés pour les déménagements sur les rives de la Meuse et les zones en dénivelé.",
+        "Service d'emballage professionnel pour protéger vos biens lors des transports sinueux."
+      ],
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "heron",
@@ -536,7 +545,8 @@
       "tempsTrajetEstimeMin": null,
       "villages": [],
       "communesVoisines": [],
-      "statut": "draft"
+      "statut": "draft",
+      "pageExistante": "/demenagement/demenagement-liege"
     },
     {
       "id": "lontzen",
@@ -729,12 +739,33 @@
       "id": "seraing",
       "nom": "Seraing",
       "arrondissement": "Liège",
-      "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "codesPostaux": [
+        "4100",
+        "4101",
+        "4102"
+      ],
+      "distanceDepotKm": 8,
+      "tempsTrajetEstimeMin": 15,
+      "villages": [
+        "Jemeppe-sur-Meuse",
+        "Ougrée",
+        "Boncelles"
+      ],
+      "communesVoisines": [
+        "liege",
+        "flemalle",
+        "neupre",
+        "esneux"
+      ],
+      "statut": "published",
+      "introductionLocale": "Situés à quelques minutes seulement de Seraing, nos déménageurs interviennent quotidiennement dans toute l'entité sérésienne pour les particuliers et les entreprises.",
+      "informationsLocales": [
+        "Forte densité urbaine nécessitant souvent la réservation d'un emplacement de stationnement.",
+        "Interventions fréquentes avec lift (monte-meubles) pour les appartements en centre-ville et à Jemeppe.",
+        "Accès rapide depuis notre dépôt, réduisant les frais de déplacement."
+      ],
+      "dateVerification": "2026-07-30",
+      "pageExistante": "/demenagement/demenagement-seraing"
     },
     {
       "id": "soumagne",
@@ -919,17 +950,30 @@
       "codesPostaux": [
         "4300"
       ],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
-      "villages": [],
-      "communesVoisines": [
-        "berloz",
-        "crisnee",
-        "oreye",
-        "remicourt",
-        "faimes"
+      "distanceDepotKm": 32,
+      "tempsTrajetEstimeMin": 25,
+      "villages": [
+        "Bettincourt",
+        "Bleret",
+        "Bovenistier",
+        "Grand-Axhe",
+        "Lantremange",
+        "Oleye"
       ],
-      "statut": "draft"
+      "communesVoisines": [
+        "faimes",
+        "geer",
+        "berloz",
+        "remicourt"
+      ],
+      "statut": "published",
+      "introductionLocale": "Notre équipe se déplace rapidement en Hesbaye et prend en charge votre déménagement à Waremme, que vous quittiez un appartement au centre ou une maison dans les villages environnants.",
+      "informationsLocales": [
+        "Accès aisé et rapide pour nos camions via l'autoroute E40.",
+        "Prise en charge complète pour les maisons unifamiliales et les nouveaux lotissements de la région.",
+        "Autorisation de stationnement à demander au préalable auprès de la zone de police de Hesbaye pour le centre-ville."
+      ],
+      "dateVerification": "2026-07-30"
     },
     {
       "id": "wasseiges",

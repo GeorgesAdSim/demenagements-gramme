@@ -11,8 +11,13 @@ export interface CommuneSEO {
   /** Slug unique, stable, sans accent. Sert de segment d'URL. */
   id: string;
   nom: string;
-  /** Arrondissement administratif, issu du fichier source du client. */
-  arrondissement: string;
+  /**
+   * Arrondissement administratif, issu du fichier source du client. Conservé
+   * en optionnel bien qu'absent de l'interface validée : c'est une donnée
+   * réelle du fichier Excel, et le seul moyen de regrouper 84 communes en
+   * sections lisibles sur la page des zones d'intervention.
+   */
+  arrondissement?: string;
   /** Tableau : une commune fusionnée couvre souvent plusieurs codes postaux. */
   codesPostaux: string[];
   /** Distance routière depuis le dépôt de Herstal. `null` si non mesurée. */
@@ -27,6 +32,15 @@ export interface CommuneSEO {
   /** Date à laquelle Gramme a validé les données locales. */
   dateVerification?: string;
   /**
+   * URL d'une page satellite déjà publiée et indexée pour cette commune.
+   *
+   * Quand elle est renseignée, aucune page /zones-intervention/ n'est générée :
+   * la page existante reste l'unique URL du site sur la requête. Deux pages
+   * du même domaine visant « déménagement <commune> » se prendraient les
+   * signaux l'une à l'autre.
+   */
+  pageExistante?: string;
+  /**
    * `draft` : page accessible mais en noindex, absente du sitemap et de la page
    * des zones. `published` : données locales réelles et vérifiées.
    */
@@ -34,6 +48,12 @@ export interface CommuneSEO {
 }
 
 export const COMMUNES: CommuneSEO[] = (donnees as { communes: CommuneSEO[] }).communes;
+
+/** Alias conservant le nom employé dans la spécification. */
+export const communesData = COMMUNES;
+
+/** Racine des pages locales générées. Validée avec Georges le 2026-07-30. */
+export const RACINE_ZONES = '/zones-intervention';
 
 export function getCommuneBySlug(slug: string): CommuneSEO | undefined {
   return COMMUNES.find((c) => c.id === slug);
@@ -45,11 +65,28 @@ export function getPublishedCommunes(): CommuneSEO[] {
     .sort((a, b) => a.nom.localeCompare(b.nom, 'fr'));
 }
 
-/** Résout les slugs voisins en objets. Les slugs inconnus sont ignorés. */
+/**
+ * Communes pour lesquelles une page locale doit réellement être générée :
+ * publiées et sans page satellite antérieure.
+ */
+export function getCommunesAGenerer(): CommuneSEO[] {
+  return getPublishedCommunes().filter((c) => !c.pageExistante);
+}
+
+/** URL canonique de la commune : sa page satellite si elle existe, sinon la page générée. */
+export function communeUrl(commune: CommuneSEO): string {
+  return commune.pageExistante ?? `${RACINE_ZONES}/${commune.id}`;
+}
+
+/**
+ * Voisines réellement liables. Filtre sur `published` — proposé par Georges et
+ * retenu : une commune en brouillon est servie en noindex, y renvoyer un lien
+ * interne dépenserait du maillage vers une page que Google ignore.
+ */
 export function getNeighborCommunes(commune: CommuneSEO): CommuneSEO[] {
   return commune.communesVoisines
     .map((slug) => getCommuneBySlug(slug))
-    .filter((c): c is CommuneSEO => Boolean(c));
+    .filter((c): c is CommuneSEO => c !== undefined && c.statut === 'published');
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -86,7 +123,7 @@ export function validerCommunes(communes: CommuneSEO[] = COMMUNES): ProblemeComm
     if (n > 1) problemes.push({ commune: id, gravite: 'erreur', message: `slug présent ${n} fois` });
   }
 
-  const connus = new Set(communes.map((c) => c.id));
+  const connus = new Map(communes.map((c) => [c.id, c]));
 
   for (const c of communes) {
     if (c.communesVoisines.includes(c.id)) {
@@ -120,6 +157,15 @@ export function validerCommunes(communes: CommuneSEO[] = COMMUNES): ProblemeComm
       }
       if (!c.dateVerification) {
         problemes.push({ commune: c.id, gravite: 'avertissement', message: 'publiée sans date de vérification des données' });
+      }
+
+      // Le maillage n'existe que si au moins une voisine est publiée. Une page
+      // locale isolée ne reçoit ni ne transmet de signal : c'est le défaut
+      // classique des grappes de pages locales publiées commune par commune
+      // plutôt que par zone contiguë.
+      const voisinesPubliees = c.communesVoisines.filter((v) => connus.get(v)?.statut === 'published');
+      if (voisinesPubliees.length === 0) {
+        problemes.push({ commune: c.id, gravite: 'avertissement', message: 'aucune voisine publiée — la page n\'aura aucun lien de maillage local' });
       }
     }
   }
