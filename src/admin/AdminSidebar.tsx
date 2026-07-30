@@ -1,11 +1,12 @@
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, FileText, Inbox, Image, Settings, LogOut } from 'lucide-react';
+import { LayoutDashboard, FileText, MapPin, Inbox, Image, Settings, LogOut } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useAuth } from '../lib/AuthContext';
 
 const NAV_ITEMS = [
   { icon: LayoutDashboard, label: 'Dashboard', path: '/admin/dashboard' },
   { icon: FileText, label: 'Pages', path: '/admin/pages' },
+  { icon: MapPin, label: 'Communes', path: '/admin/communes' },
   { icon: Inbox, label: 'Devis', path: '/admin/devis', badge: 3 },
   { icon: Image, label: 'Médias', path: '/admin/media' },
   { icon: Settings, label: 'Paramètres', path: '/admin/settings' },

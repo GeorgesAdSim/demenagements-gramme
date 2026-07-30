@@ -4,6 +4,7 @@ import { Loader as Loader2 } from 'lucide-react';
 import { AuthProvider } from './lib/AuthContext';
 import PublicSite from './pages/PublicSite';
 import CookieConsent from './components/CookieConsent';
+import { useLocation } from 'react-router-dom';
 import WebMcpTools from './components/WebMcpTools';
 
 const DemenagementsPage = lazy(() => import('./pages/DemenagementsPage'));
@@ -26,6 +27,8 @@ const SitePageEditorPage = lazy(() => import('./admin/pages/SitePageEditorPage')
 const DevisListPage = lazy(() => import('./admin/pages/DevisListPage'));
 const MediaPage = lazy(() => import('./admin/pages/MediaPage'));
 const SettingsPage = lazy(() => import('./admin/pages/SettingsPage'));
+const CommunesListPage = lazy(() => import('./admin/pages/CommunesListPage'));
+const CommuneEditorPage = lazy(() => import('./admin/pages/CommuneEditorPage'));
 
 const DemenageurLiege = lazy(() => import('./pages/satellites/DemenageurLiege'));
 const DemenagementLiege = lazy(() => import('./pages/satellites/DemenagementLiege'));
@@ -52,6 +55,21 @@ function AppFallback() {
       <Loader2 className="w-8 h-8 animate-spin text-[#132073]" />
     </div>
   );
+}
+
+/**
+ * N'affiche ses enfants que sur le site public.
+ *
+ * Le bandeau de consentement et les outils WebMCP étaient montés sur toute
+ * l'application, back-office compris. Dans l'admin, le bandeau masquait le bas
+ * de la navigation et demandait un consentement à un utilisateur déjà
+ * authentifié — et WebMCP y exposait des outils à un agent alors que ces pages
+ * ne sont pas destinées à être parcourues automatiquement.
+ */
+function HorsAdmin({ children }: { children: React.ReactNode }) {
+  const { pathname } = useLocation();
+  if (pathname.startsWith('/admin')) return null;
+  return <>{children}</>;
 }
 
 export default function App() {
@@ -129,6 +147,8 @@ export default function App() {
               <Route path="pages" element={<PagesListPage />} />
               <Route path="pages/:id/edit" element={<PageEditorPage />} />
               <Route path="site-pages/:id/edit" element={<SitePageEditorPage />} />
+              <Route path="communes" element={<CommunesListPage />} />
+              <Route path="communes/:id/edit" element={<CommuneEditorPage />} />
               <Route path="devis" element={<DevisListPage />} />
               <Route path="media" element={<MediaPage />} />
               <Route path="settings" element={<SettingsPage />} />
@@ -138,8 +158,10 @@ export default function App() {
                 renvoie dist/404.html avec un vrai statut HTTP 404. */}
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
-          <CookieConsent />
-          <WebMcpTools />
+          <HorsAdmin>
+            <CookieConsent />
+            <WebMcpTools />
+          </HorsAdmin>
         </Suspense>
       </BrowserRouter>
     </AuthProvider>
