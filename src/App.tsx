@@ -39,6 +39,9 @@ const DemontageRemontageMeubles = lazy(() => import('./pages/satellites/Demontag
 const GardeMeublesLiege = lazy(() => import('./pages/satellites/GardeMeublesLiege'));
 const PrixGardeMeublesLiege = lazy(() => import('./pages/satellites/PrixGardeMeublesLiege'));
 
+const ZonesInterventionPage = lazy(() => import('./pages/ZonesInterventionPage'));
+const CommuneLandingPage = lazy(() => import('./pages/CommuneLandingPage'));
+
 const ConseilsDemenagementLiege = lazy(() => import('./pages/blog/ConseilsDemenagementLiege'));
 const PreparerEnfantsDemenagement = lazy(() => import('./pages/blog/PreparerEnfantsDemenagement'));
 const ErreursEviterDemenagement = lazy(() => import('./pages/blog/ErreursEviterDemenagement'));
@@ -93,6 +96,17 @@ export default function App() {
             <Route path="/blog/6-conseils-reussir-demenagement-liege" element={<ConseilsDemenagementLiege />} />
             <Route path="/blog/preparer-enfants-demenagement-liege" element={<PreparerEnfantsDemenagement />} />
             <Route path="/blog/6-erreurs-eviter-demenagement-liege" element={<ErreursEviterDemenagement />} />
+
+            {/* Index des zones : page navigationnelle, laissée à la racine. */}
+            <Route path="/zones-intervention" element={<ZonesInterventionPage />} />
+
+            {/* Pages communes : /demenagement/demenagement-<slug>.
+                React Router 6 n'accepte pas de segment partiellement dynamique
+                (`demenagement-:slug` ne matche jamais), d'où un :slug complet
+                dont le préfixe est découpé dans le composant. Les satellites
+                ci-dessus restent prioritaires : un segment statique l'emporte
+                toujours sur un segment dynamique dans le classement v6. */}
+            <Route path="/demenagement/:slug" element={<CommuneLandingPage />} />
 
             {/* Contact pages */}
             <Route path="/contact" element={<ContactPage />} />

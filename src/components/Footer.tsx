@@ -93,6 +93,14 @@ export default function Footer() {
                 Déménagement à Liège
               </Link>
             </li>
+            {/* Lien présent sur toutes les pages : c'est ce qui donne à la page
+                des zones assez de signaux internes pour porter les pages
+                communes qu'elle liste. */}
+            <li>
+              <Link to="/zones-intervention" className="hover:text-white transition-colors">
+                Zones d'intervention
+              </Link>
+            </li>
             <li>
               <Link to="/demenagement/demenagement-seraing" className="hover:text-white transition-colors">
                 Déménagement Seraing

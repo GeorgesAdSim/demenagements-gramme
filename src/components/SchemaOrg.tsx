@@ -78,19 +78,96 @@ export interface BreadcrumbItem {
   url: string;
 }
 
-interface SchemaOrgProps {
-  includeFaq?: boolean;
-  articleData?: ArticleData;
-  breadcrumbs?: BreadcrumbItem[];
+/** Question réellement affichée sur la page courante. */
+export interface FaqItem {
+  q: string;
+  a: string;
 }
 
-export default function SchemaOrg({ includeFaq = false, articleData, breadcrumbs }: SchemaOrgProps) {
+/** Ville desservie, pour le balisage Service des pages locales. */
+export interface LocalServiceData {
+  ville: string;
+  codesPostaux: string[];
+  url: string;
+}
+
+interface SchemaOrgProps {
+  includeFaq?: boolean;
+  /**
+   * FAQ propre à la page, quand ce ne sont pas les questions de l'accueil.
+   *
+   * Indispensable pour les pages locales : `includeFaq` injecterait les 9
+   * questions de l'accueil sur une page qui n'en affiche aucune, ce que Google
+   * traite comme du balisage non conforme au contenu visible.
+   */
+  customFaq?: FaqItem[];
+  articleData?: ArticleData;
+  breadcrumbs?: BreadcrumbItem[];
+  localService?: LocalServiceData;
+}
+
+export default function SchemaOrg({
+  includeFaq = false,
+  customFaq,
+  articleData,
+  breadcrumbs,
+  localService,
+}: SchemaOrgProps) {
   const scripts: Array<{ type: string; innerHTML: string }> = [
     { type: 'application/ld+json', innerHTML: JSON.stringify(LOCAL_BUSINESS) },
   ];
 
   if (includeFaq) {
     scripts.push({ type: 'application/ld+json', innerHTML: JSON.stringify(FAQ_SCHEMA) });
+  }
+
+  if (customFaq && customFaq.length > 0) {
+    scripts.push({
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: customFaq.map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
+      }),
+    });
+  }
+
+  if (localService) {
+    // Service plutôt qu'une seconde MovingCompany : l'entreprise est unique et
+    // située à Herstal. Déclarer un établissement par commune serait une
+    // fausse déclaration d'implantation locale.
+    scripts.push({
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        serviceType: 'Déménagement',
+        name: `Déménagement à ${localService.ville}`,
+        url: localService.url,
+        provider: {
+          '@type': 'MovingCompany',
+          name: 'Déménagements Gramme',
+          url: BASE_URL,
+          telephone: '+3242645016',
+          address: LOCAL_BUSINESS.address,
+        },
+        areaServed: {
+          '@type': 'City',
+          name: localService.ville,
+          ...(localService.codesPostaux.length > 0 && { postalCode: localService.codesPostaux }),
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: localService.ville,
+            addressRegion: 'Province de Liège',
+            addressCountry: 'BE',
+          },
+        },
+      }),
+    });
   }
 
   if (articleData) {

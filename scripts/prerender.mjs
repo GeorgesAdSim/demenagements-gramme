@@ -22,6 +22,36 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const distDir = path.join(root, 'dist');
 const distServerDir = path.join(root, 'dist-server');
+const BASE_URL = 'https://www.demenagements-gramme.be';
+
+// Communes lues depuis la source unique, et non recopiées ici : c'est
+// exactement le doublon que la spécification demandait d'éviter. Le JSON est
+// lisible par Node sans compilation, contrairement à src/data/communes.ts.
+const { communes } = JSON.parse(
+  await readFile(path.join(root, 'src/data/communes.json'), 'utf-8')
+);
+
+// Seules les communes publiées ET sans page satellite antérieure reçoivent une
+// page pré-rendue.
+//
+// Les 82 communes en brouillon ne sont volontairement PAS déployées. Livrer 82
+// pages quasi vides en noindex, c'est produire exactement le motif de pages
+// satellites sans valeur que Google sanctionne, et cela ferait exploser le
+// contrôle des pages orphelines. Une commune en brouillon reste consultable en
+// `npm run dev` pour relecture ; elle n'existe en production qu'une fois ses
+// données locales vérifiées.
+const COMMUNES_PUBLIEES = communes
+  .filter((c) => c.statut === 'published' && !c.pageExistante)
+  .sort((a, b) => a.nom.localeCompare(b.nom, 'fr'));
+
+// Les pages communes vivent sous /demenagement/demenagement-<slug>, même
+// convention que les satellites déjà publiées. Le préfixe est écrit ici et
+// dans src/data/communes.ts (PREFIXE_COMMUNE) ; le contrôle de build compare
+// les deux, une divergence est bloquante.
+const ROUTES_COMMUNES = [
+  '/zones-intervention',
+  ...COMMUNES_PUBLIEES.map((c) => `/demenagement/demenagement-${c.id}`),
+];
 
 const ROUTES = [
   '/',
@@ -48,6 +78,7 @@ const ROUTES = [
   '/politique-confidentialite',
   '/conditions-generales',
   '/protection-donnees',
+  ...ROUTES_COMMUNES,
 ];
 
 async function main() {
@@ -59,6 +90,21 @@ async function main() {
   }
 
   const template = await readFile(path.join(distDir, 'index.html'), 'utf-8');
+
+  // Garde-fou : dist/index.html sert à la fois de gabarit et de cible du
+  // pré-rendu de l'accueil. Relancé sans `vite build` préalable, le script
+  // prendrait pour gabarit l'accueil déjà pré-rendu et recopierait ses balises
+  // — canonical de l'accueil compris — dans les 27 autres pages. Le contrôle de
+  // build le détecte, mais autant échouer ici avec un message clair.
+  // On teste l'absence du point d'injection exact — la même chaîne que celle
+  // remplacée plus bas. Un test « le root n'est pas vide » se déclencherait à
+  // tort, `</div>` commençant lui aussi par un caractère non blanc.
+  if (!template.includes('<div id="root"></div>')) {
+    throw new Error(
+      'dist/index.html est déjà pré-rendu : relance `npm run build:client` avant le pré-rendu, ' +
+      'sinon toutes les pages héritent des balises de l\'accueil.'
+    );
+  }
 
   // Coquille vide conservée AVANT d'écraser dist/index.html par l'accueil
   // pré-rendu. Elle sert de cible au fallback SPA de l'admin (/admin/*) :
@@ -117,12 +163,63 @@ async function main() {
     }
   }
 
+  await completerSitemap(ROUTES_COMMUNES);
+
   console.log(`Pré-rendu terminé : ${ok}/${ROUTES.length + 1} pages (${ROUTES.length} routes + 404).`);
+  console.log(`  dont ${ROUTES_COMMUNES.length} page(s) de zones : ${ROUTES_COMMUNES.join(', ')}`);
   if (failures.length > 0) {
     console.error('Échecs :');
     for (const f of failures) console.error(`  - ${f.route}: ${f.error}`);
     process.exitCode = 1;
   }
+}
+
+/**
+ * Ajoute les URL des zones dans dist/sitemap.xml.
+ *
+ * On complète le sitemap maintenu à la main plutôt que de le régénérer
+ * entièrement : les 24 entrées existantes portent des `lastmod` et des
+ * `priority` réfléchis qu'une génération automatique écraserait. Seules les
+ * URL absentes sont ajoutées, ce qui rend l'opération idempotente.
+ */
+async function completerSitemap(routes) {
+  const sitemapPath = path.join(distDir, 'sitemap.xml');
+  if (!existsSync(sitemapPath)) {
+    console.warn('  ⚠ dist/sitemap.xml introuvable — zones non ajoutées au sitemap.');
+    return;
+  }
+
+  let xml = await readFile(sitemapPath, 'utf-8');
+  // Date de build : le sitemap est régénéré à chaque déploiement, `lastmod`
+  // doit refléter la dernière mise en production du contenu.
+  const aujourdhui = new Date().toISOString().slice(0, 10);
+
+  const entrees = [];
+  for (const route of routes) {
+    const loc = `${BASE_URL}${route}`;
+    if (xml.includes(`<loc>${loc}</loc>`)) continue;
+    const estIndex = route === '/zones-intervention';
+    entrees.push(
+      `  <url>\n` +
+      `    <loc>${loc}</loc>\n` +
+      `    <lastmod>${aujourdhui}</lastmod>\n` +
+      `    <changefreq>monthly</changefreq>\n` +
+      `    <priority>${estIndex ? '0.8' : '0.7'}</priority>\n` +
+      `  </url>`
+    );
+  }
+
+  if (entrees.length === 0) {
+    console.log('  sitemap : aucune URL de zone à ajouter.');
+    return;
+  }
+
+  xml = xml.replace(
+    '</urlset>',
+    `  <!-- Zones d'intervention — généré par scripts/prerender.mjs -->\n${entrees.join('\n')}\n\n</urlset>`
+  );
+  await writeFile(sitemapPath, xml, 'utf-8');
+  console.log(`  sitemap : ${entrees.length} URL de zone ajoutée(s).`);
 }
 
 function pathToFileUrl(p) {

@@ -36,6 +36,9 @@ import DemontageRemontageMeubles from './pages/satellites/DemontageRemontageMeub
 import GardeMeublesLiege from './pages/satellites/GardeMeublesLiege';
 import PrixGardeMeublesLiege from './pages/satellites/PrixGardeMeublesLiege';
 
+import ZonesInterventionPage from './pages/ZonesInterventionPage';
+import CommuneLandingPage from './pages/CommuneLandingPage';
+
 import ConseilsDemenagementLiege from './pages/blog/ConseilsDemenagementLiege';
 import PreparerEnfantsDemenagement from './pages/blog/PreparerEnfantsDemenagement';
 import ErreursEviterDemenagement from './pages/blog/ErreursEviterDemenagement';
@@ -66,6 +69,10 @@ function ServerRoutes() {
       <Route path="/blog/preparer-enfants-demenagement-liege" element={<PreparerEnfantsDemenagement />} />
       <Route path="/blog/6-erreurs-eviter-demenagement-liege" element={<ErreursEviterDemenagement />} />
 
+      <Route path="/zones-intervention" element={<ZonesInterventionPage />} />
+      {/* Voir App.tsx : segment dynamique complet, préfixe découpé côté composant. */}
+      <Route path="/demenagement/:slug" element={<CommuneLandingPage />} />
+
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/contact-devis" element={<ContactDevisPage />} />
 
@@ -79,6 +86,22 @@ function ServerRoutes() {
     </Routes>
   );
 }
+
+// Réexport à l'usage de scripts/verify-build.mjs.
+//
+// Ce script est un module Node en .mjs : il ne peut pas importer
+// src/data/communes.ts. Sans ce réexport, il faudrait réécrire les règles de
+// validation une seconde fois en JavaScript — deux implémentations qui
+// divergeraient à la première évolution. Le bundle SSR étant déjà compilé au
+// moment du contrôle, le script y consomme l'unique implémentation.
+export {
+  validerCommunes,
+  getCommunesAGenerer,
+  getPublishedCommunes,
+  COMMUNES,
+  PREFIXE_COMMUNE,
+  cheminCommune,
+} from './data/communes';
 
 export function render(url: string): { html: string; helmet: HelmetServerState } {
   const helmetContext: { helmet?: HelmetServerState } = {};

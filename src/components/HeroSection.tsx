@@ -34,11 +34,24 @@ const VOLUMES = [
 
 interface Props {
   data?: HomepageContent['hero'] | null;
+  /**
+   * Nom de la ville à afficher dans le H1, pour les pages locales.
+   *
+   * Absent (cas de l'accueil), le Hero rend exactement le contenu actuel :
+   * c'est la seule façon de réutiliser ce composant sur les pages communes
+   * sans en maintenir une seconde copie qui divergerait à la première
+   * retouche graphique.
+   */
+  cityName?: string;
 }
 
-export default function HeroSection({ data }: Props) {
+export default function HeroSection({ data, cityName }: Props) {
   // Surcharge éventuelle depuis le CMS : une URL unique, donc sans srcset.
   const override = data?.background_image;
+
+  // Liège reste la valeur par défaut : l'accueil ne passe pas de prop et son
+  // rendu doit rester au caractère près celui d'aujourd'hui.
+  const ville = cityName?.trim() || 'Liège';
 
   const [quickForm, setQuickForm] = useState({ volume: '', date: '', email: '' });
 
@@ -101,7 +114,13 @@ export default function HeroSection({ data }: Props) {
             className="text-[2.2rem] sm:text-5xl md:text-6xl leading-[1.08] font-black uppercase text-white"
           >
             Votre déménagement<br />
-            <span className="bg-yellow text-navy px-2 py-0.5 inline-block mt-1">à Liège</span>{' '}
+            {/* Un seul enfant texte (gabarit littéral) et non `à {ville}` :
+                deux enfants adjacents feraient insérer à React un séparateur
+                <!-- --> dans le HTML pré-rendu, modifiant l'accueil sans
+                raison. Le traitement visuel — pastille jaune sur fond navy —
+                est celui déjà en place, plutôt qu'un second style jaune sur
+                bleu qui n'existe nulle part ailleurs sur le site. */}
+            <span className="bg-yellow text-navy px-2 py-0.5 inline-block mt-1">{`à ${ville}`}</span>{' '}
             <span className="text-white">&amp; partout</span><br />
             <span className="text-white/90">en Belgique</span>
           </motion.h1>

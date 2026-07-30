@@ -1,0 +1,1345 @@
+{
+  "_source": "Communes et Villes de la Province de Liège (fichier fourni par le client, 84 communes)",
+  "_note": "Source UNIQUE : consommée par src/data/communes.ts (typé) ET par scripts/prerender.mjs (Node). Un fichier JSON évite d'avoir à compiler du TypeScript pour le pré-rendu, et surtout évite deux listes à maintenir.",
+  "communes": [
+    {
+      "id": "amay",
+      "nom": "Amay",
+      "arrondissement": "Huy",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "ambleve",
+      "nom": "Amblève (Amel)",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "ans",
+      "nom": "Ans",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4430",
+        "4431",
+        "4432"
+      ],
+      "distanceDepotKm": 12,
+      "tempsTrajetEstimeMin": 13,
+      "villages": [
+        "Loncin",
+        "Alleur",
+        "Xhendremael"
+      ],
+      "communesVoisines": [
+        "juprelle",
+        "awans",
+        "grace-hollogne",
+        "saint-nicolas",
+        "liege"
+      ],
+      "statut": "published",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "anthisnes",
+      "nom": "Anthisnes",
+      "arrondissement": "Huy",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "aubel",
+      "nom": "Aubel",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "awans",
+      "nom": "Awans",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4340",
+        "4342"
+      ],
+      "distanceDepotKm": 15,
+      "tempsTrajetEstimeMin": 13,
+      "villages": [
+        "Fooz",
+        "Hognoul",
+        "Villers-l'Évêque",
+        "Othée"
+      ],
+      "communesVoisines": [
+        "juprelle",
+        "crisnee",
+        "ans",
+        "fexhe-le-haut-clocher",
+        "grace-hollogne"
+      ],
+      "statut": "published",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "aywaille",
+      "nom": "Aywaille",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4920"
+      ],
+      "distanceDepotKm": 46,
+      "tempsTrajetEstimeMin": 36,
+      "villages": [
+        "Sougné-Remouchamps",
+        "Harzé",
+        "Ernonheid"
+      ],
+      "communesVoisines": [
+        "sprimont",
+        "comblain-au-pont",
+        "ferrieres",
+        "theux",
+        "stoumont"
+      ],
+      "statut": "published",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "baelen",
+      "nom": "Baelen",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "bassenge",
+      "nom": "Bassenge",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4690"
+      ],
+      "distanceDepotKm": 10,
+      "tempsTrajetEstimeMin": 15,
+      "villages": [
+        "Roclenge-sur-Geer",
+        "Boirs",
+        "Glons",
+        "Wonck",
+        "Ében-Émael"
+      ],
+      "communesVoisines": [
+        "vise",
+        "juprelle",
+        "oupeye"
+      ],
+      "statut": "published",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "berloz",
+      "nom": "Berloz",
+      "arrondissement": "Waremme",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "beyne-heusay",
+      "nom": "Beyne-Heusay",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4610"
+      ],
+      "distanceDepotKm": 11,
+      "tempsTrajetEstimeMin": 19,
+      "villages": [
+        "Queue-du-Bois",
+        "Bellaire"
+      ],
+      "communesVoisines": [
+        "blegny",
+        "fleron",
+        "soumagne"
+      ],
+      "statut": "published",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "blegny",
+      "nom": "Blegny",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4670",
+        "4671",
+        "4672"
+      ],
+      "distanceDepotKm": 9,
+      "tempsTrajetEstimeMin": 13,
+      "villages": [
+        "Trembleur",
+        "Mortier",
+        "Barchon",
+        "Saive",
+        "Housse",
+        "Saint-Remy"
+      ],
+      "communesVoisines": [
+        "vise",
+        "dalhem",
+        "liege",
+        "herve",
+        "beyne-heusay"
+      ],
+      "statut": "published",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "braives",
+      "nom": "Braives",
+      "arrondissement": "Waremme",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "bullange",
+      "nom": "Bullange (Büllingen)",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "burdinne",
+      "nom": "Burdinne",
+      "arrondissement": "Huy",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "burg-reuland",
+      "nom": "Burg-Reuland",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "butgenbach",
+      "nom": "Butgenbach (Bütgenbach)",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "chaudfontaine",
+      "nom": "Chaudfontaine",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4050",
+        "4051",
+        "4052",
+        "4053"
+      ],
+      "distanceDepotKm": 27,
+      "tempsTrajetEstimeMin": 24,
+      "villages": [
+        "Beaufays",
+        "Embourg",
+        "Vaux-sous-Chèvremont"
+      ],
+      "communesVoisines": [
+        "esneux",
+        "fleron",
+        "sprimont",
+        "trooz"
+      ],
+      "statut": "published",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "clavier",
+      "nom": "Clavier",
+      "arrondissement": "Huy",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "comblain-au-pont",
+      "nom": "Comblain-au-Pont",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4170",
+        "4171"
+      ],
+      "distanceDepotKm": 52,
+      "tempsTrajetEstimeMin": 42,
+      "villages": [
+        "Poulseur"
+      ],
+      "communesVoisines": [
+        "esneux",
+        "sprimont",
+        "aywaille",
+        "ferrieres",
+        "hamoir"
+      ],
+      "statut": "published",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "crisnee",
+      "nom": "Crisnée",
+      "arrondissement": "Waremme",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "dalhem",
+      "nom": "Dalhem",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4606",
+        "4607",
+        "4608"
+      ],
+      "distanceDepotKm": 10,
+      "tempsTrajetEstimeMin": 14,
+      "villages": [
+        "Feneur",
+        "Bombaye",
+        "Berneau",
+        "Warsage",
+        "Neufchâteau",
+        "Mortroux",
+        "Saint-André"
+      ],
+      "communesVoisines": [
+        "vise",
+        "aubel",
+        "blegny",
+        "herve"
+      ],
+      "statut": "published",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "dison",
+      "nom": "Dison",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "donceel",
+      "nom": "Donceel",
+      "arrondissement": "Waremme",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "engis",
+      "nom": "Engis",
+      "arrondissement": "Huy",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "esneux",
+      "nom": "Esneux",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4130"
+      ],
+      "distanceDepotKm": 38,
+      "tempsTrajetEstimeMin": 34,
+      "villages": [
+        "Tilff"
+      ],
+      "communesVoisines": [
+        "seraing",
+        "liege",
+        "neupre",
+        "chaudfontaine",
+        "sprimont"
+      ],
+      "statut": "published",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "eupen",
+      "nom": "Eupen",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "faimes",
+      "nom": "Faimes",
+      "arrondissement": "Waremme",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "ferrieres",
+      "nom": "Ferrières",
+      "arrondissement": "Huy",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "fexhe-le-haut-clocher",
+      "nom": "Fexhe-le-Haut-Clocher",
+      "arrondissement": "Waremme",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "flemalle",
+      "nom": "Flémalle",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4400"
+      ],
+      "distanceDepotKm": 26,
+      "tempsTrajetEstimeMin": 22,
+      "villages": [
+        "Awirs",
+        "Chokier",
+        "Flémalle-Grande",
+        "Flémalle-Haute",
+        "Gleixhe",
+        "Ivoz-Ramet",
+        "Les Cahottes",
+        "Mons-lez-Liège"
+      ],
+      "communesVoisines": [
+        "grace-hollogne",
+        "saint-georges-sur-meuse",
+        "seraing",
+        "engis",
+        "neupre"
+      ],
+      "statut": "published",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "fleron",
+      "nom": "Fléron",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4620",
+        "4621",
+        "4623",
+        "4624"
+      ],
+      "distanceDepotKm": 14,
+      "tempsTrajetEstimeMin": 20,
+      "villages": [
+        "Retinne",
+        "Magnée",
+        "Romsée"
+      ],
+      "communesVoisines": [
+        "beyne-heusay",
+        "soumagne",
+        "chaudfontaine",
+        "trooz",
+        "olne"
+      ],
+      "statut": "published",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "geer",
+      "nom": "Geer",
+      "arrondissement": "Waremme",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "grace-hollogne",
+      "nom": "Grâce-Hollogne",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4460"
+      ],
+      "distanceDepotKm": 18,
+      "tempsTrajetEstimeMin": 16,
+      "villages": [
+        "Grâce-Berleur",
+        "Hollogne-aux-Pierres",
+        "Horion-Hozémont",
+        "Velroux",
+        "Bierset"
+      ],
+      "communesVoisines": [
+        "donceel",
+        "fexhe-le-haut-clocher",
+        "awans",
+        "ans",
+        "saint-nicolas"
+      ],
+      "statut": "published",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "hamoir",
+      "nom": "Hamoir",
+      "arrondissement": "Huy",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "hannut",
+      "nom": "Hannut",
+      "arrondissement": "Waremme",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "herstal",
+      "nom": "Herstal",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4040",
+        "4041",
+        "4042"
+      ],
+      "distanceDepotKm": 0,
+      "tempsTrajetEstimeMin": 0,
+      "villages": [
+        "Vottem",
+        "Liers",
+        "Milmort"
+      ],
+      "communesVoisines": [
+        "liege",
+        "juprelle",
+        "oupeye"
+      ],
+      "statut": "published",
+      "pageExistante": "/demenagement/demenagement-herstal",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "herve",
+      "nom": "Herve",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "huy",
+      "nom": "Huy",
+      "arrondissement": "Huy",
+      "codesPostaux": [
+        "4500"
+      ],
+      "distanceDepotKm": 35,
+      "tempsTrajetEstimeMin": 35,
+      "villages": [
+        "Ben-Ahin",
+        "Tihange"
+      ],
+      "communesVoisines": [
+        "amay",
+        "wanze",
+        "marchin",
+        "villers-le-bouillet"
+      ],
+      "statut": "published",
+      "introductionLocale": "Spécialistes du déménagement en région hutoise, nous maîtrisons les spécificités de la vallée de la Meuse pour vous garantir un emménagement sans stress.",
+      "informationsLocales": [
+        "Mise à disposition de lifts extérieurs, indispensables pour les maisons de maître et les ruelles étroites du centre historique.",
+        "Équipements adaptés pour les déménagements sur les rives de la Meuse et les zones en dénivelé.",
+        "Service d'emballage professionnel pour protéger vos biens lors des transports sinueux."
+      ],
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "heron",
+      "nom": "Héron",
+      "arrondissement": "Huy",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "jalhay",
+      "nom": "Jalhay",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "juprelle",
+      "nom": "Juprelle",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4450",
+        "4451",
+        "4452",
+        "4453",
+        "4458"
+      ],
+      "distanceDepotKm": 14,
+      "tempsTrajetEstimeMin": 15,
+      "villages": [
+        "Slins",
+        "Fexhe-Slins",
+        "Villers-Saint-Siméon",
+        "Voroux-lez-Liers",
+        "Lantin",
+        "Wihogne",
+        "Paifve"
+      ],
+      "communesVoisines": [
+        "bassenge",
+        "awans",
+        "ans",
+        "oupeye",
+        "liege"
+      ],
+      "statut": "published",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "la-calamine",
+      "nom": "La Calamine (Kelmis)",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "lierneux",
+      "nom": "Lierneux",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "limbourg",
+      "nom": "Limbourg",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "lincent",
+      "nom": "Lincent",
+      "arrondissement": "Waremme",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "liege",
+      "nom": "Liège",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4000",
+        "4020",
+        "4030",
+        "4031",
+        "4032"
+      ],
+      "distanceDepotKm": 11,
+      "tempsTrajetEstimeMin": 18,
+      "villages": [
+        "Wandre",
+        "Jupille-sur-Meuse",
+        "Bressoux",
+        "Grivegnée",
+        "Chênée",
+        "Angleur",
+        "Glain",
+        "Rocourt"
+      ],
+      "communesVoisines": [
+        "ans",
+        "juprelle",
+        "herstal",
+        "vise",
+        "blegny"
+      ],
+      "statut": "published",
+      "pageExistante": "/demenagement/demenagement-liege",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "lontzen",
+      "nom": "Lontzen",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "malmedy",
+      "nom": "Malmedy",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "marchin",
+      "nom": "Marchin",
+      "arrondissement": "Huy",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "modave",
+      "nom": "Modave",
+      "arrondissement": "Huy",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "nandrin",
+      "nom": "Nandrin",
+      "arrondissement": "Huy",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "neupre",
+      "nom": "Neupré",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4120",
+        "4121",
+        "4122"
+      ],
+      "distanceDepotKm": 31,
+      "tempsTrajetEstimeMin": 29,
+      "villages": [
+        "Neuville-en-Condroz",
+        "Plainevaux",
+        "Rotheux-Rimière",
+        "Éhein"
+      ],
+      "communesVoisines": [
+        "flemalle",
+        "seraing",
+        "engis",
+        "esneux",
+        "nandrin"
+      ],
+      "statut": "published",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "olne",
+      "nom": "Olne",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "oreye",
+      "nom": "Oreye",
+      "arrondissement": "Waremme",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "ouffet",
+      "nom": "Ouffet",
+      "arrondissement": "Huy",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "oupeye",
+      "nom": "Oupeye",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4680",
+        "4681",
+        "4682",
+        "4683",
+        "4684"
+      ],
+      "distanceDepotKm": 3,
+      "tempsTrajetEstimeMin": 5,
+      "villages": [
+        "Haccourt",
+        "Hermalle-sous-Argenteau",
+        "Vivegnis",
+        "Hermée",
+        "Houtain-Saint-Siméon",
+        "Heure-le-Romain"
+      ],
+      "communesVoisines": [
+        "bassenge",
+        "vise",
+        "juprelle",
+        "herstal"
+      ],
+      "statut": "published",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "pepinster",
+      "nom": "Pepinster",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "plombieres",
+      "nom": "Plombières",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "raeren",
+      "nom": "Raeren",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "remicourt",
+      "nom": "Remicourt",
+      "arrondissement": "Waremme",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "saint-georges-sur-meuse",
+      "nom": "Saint-Georges-sur-Meuse",
+      "arrondissement": "Waremme",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "saint-nicolas",
+      "nom": "Saint-Nicolas",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4420"
+      ],
+      "distanceDepotKm": 17,
+      "tempsTrajetEstimeMin": 16,
+      "villages": [
+        "Tilleur",
+        "Montegnée"
+      ],
+      "communesVoisines": [
+        "ans",
+        "grace-hollogne",
+        "liege",
+        "seraing"
+      ],
+      "statut": "published",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "saint-vith",
+      "nom": "Saint-Vith (Sankt Vith)",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "seraing",
+      "nom": "Seraing",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4100",
+        "4101",
+        "4102"
+      ],
+      "distanceDepotKm": 22,
+      "tempsTrajetEstimeMin": 20,
+      "villages": [
+        "Jemeppe-sur-Meuse",
+        "Ougrée",
+        "Boncelles"
+      ],
+      "communesVoisines": [
+        "liege",
+        "flemalle",
+        "neupre",
+        "esneux"
+      ],
+      "statut": "published",
+      "introductionLocale": "Situés à quelques minutes seulement de Seraing, nos déménageurs interviennent quotidiennement dans toute l'entité sérésienne pour les particuliers et les entreprises.",
+      "informationsLocales": [
+        "Forte densité urbaine nécessitant souvent la réservation d'un emplacement de stationnement.",
+        "Interventions fréquentes avec lift (monte-meubles) pour les appartements en centre-ville et à Jemeppe.",
+        "Accès rapide depuis notre dépôt, réduisant les frais de déplacement."
+      ],
+      "dateVerification": "2026-07-30",
+      "pageExistante": "/demenagement/demenagement-seraing"
+    },
+    {
+      "id": "soumagne",
+      "nom": "Soumagne",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4630",
+        "4631",
+        "4632",
+        "4633"
+      ],
+      "distanceDepotKm": 12,
+      "tempsTrajetEstimeMin": 14,
+      "villages": [
+        "Ayeneux",
+        "Micheroux",
+        "Melen",
+        "Cerexhe-Heuseux",
+        "Évegnée-Tignée"
+      ],
+      "communesVoisines": [
+        "blegny",
+        "beyne-heusay",
+        "herve",
+        "fleron",
+        "olne"
+      ],
+      "statut": "published",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "spa",
+      "nom": "Spa",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "sprimont",
+      "nom": "Sprimont",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4140",
+        "4141"
+      ],
+      "distanceDepotKm": 42,
+      "tempsTrajetEstimeMin": 32,
+      "villages": [
+        "Louveigné",
+        "Rouvreux",
+        "Dolembreux",
+        "Gomzé-Andoumont"
+      ],
+      "communesVoisines": [
+        "esneux",
+        "chaudfontaine",
+        "trooz",
+        "pepinster",
+        "theux"
+      ],
+      "statut": "published",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "stavelot",
+      "nom": "Stavelot",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "stoumont",
+      "nom": "Stoumont",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "theux",
+      "nom": "Theux",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "thimister-clermont",
+      "nom": "Thimister-Clermont",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "tinlot",
+      "nom": "Tinlot",
+      "arrondissement": "Huy",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "trois-ponts",
+      "nom": "Trois-Ponts",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "trooz",
+      "nom": "Trooz",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4870"
+      ],
+      "distanceDepotKm": 20,
+      "tempsTrajetEstimeMin": 26,
+      "villages": [
+        "Forêt",
+        "Fraipont",
+        "Nessonvaux"
+      ],
+      "communesVoisines": [
+        "fleron",
+        "olne",
+        "chaudfontaine",
+        "pepinster",
+        "sprimont"
+      ],
+      "statut": "published",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "verlaine",
+      "nom": "Verlaine",
+      "arrondissement": "Huy",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "verviers",
+      "nom": "Verviers",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "villers-le-bouillet",
+      "nom": "Villers-le-Bouillet",
+      "arrondissement": "Huy",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "vise",
+      "nom": "Visé",
+      "arrondissement": "Liège",
+      "codesPostaux": [
+        "4600",
+        "4601",
+        "4602"
+      ],
+      "distanceDepotKm": 10,
+      "tempsTrajetEstimeMin": 12,
+      "villages": [
+        "Richelle",
+        "Argenteau",
+        "Cheratte",
+        "Lixhe",
+        "Lanaye"
+      ],
+      "communesVoisines": [
+        "bassenge",
+        "oupeye",
+        "dalhem",
+        "herstal",
+        "liege"
+      ],
+      "statut": "published",
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "waimes",
+      "nom": "Waimes",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "wanze",
+      "nom": "Wanze",
+      "arrondissement": "Huy",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "waremme",
+      "nom": "Waremme",
+      "arrondissement": "Waremme",
+      "codesPostaux": [
+        "4300"
+      ],
+      "distanceDepotKm": 32,
+      "tempsTrajetEstimeMin": 25,
+      "villages": [
+        "Bettincourt",
+        "Bleret",
+        "Bovenistier",
+        "Grand-Axhe",
+        "Lantremange",
+        "Oleye"
+      ],
+      "communesVoisines": [
+        "faimes",
+        "geer",
+        "berloz",
+        "remicourt"
+      ],
+      "statut": "published",
+      "introductionLocale": "Notre équipe se déplace rapidement en Hesbaye et prend en charge votre déménagement à Waremme, que vous quittiez un appartement au centre ou une maison dans les villages environnants.",
+      "informationsLocales": [
+        "Accès aisé et rapide pour nos camions via l'autoroute E40.",
+        "Prise en charge complète pour les maisons unifamiliales et les nouveaux lotissements de la région.",
+        "Autorisation de stationnement à demander au préalable auprès de la zone de police de Hesbaye pour le centre-ville."
+      ],
+      "dateVerification": "2026-07-30"
+    },
+    {
+      "id": "wasseiges",
+      "nom": "Wasseiges",
+      "arrondissement": "Waremme",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    },
+    {
+      "id": "welkenraedt",
+      "nom": "Welkenraedt",
+      "arrondissement": "Verviers",
+      "codesPostaux": [],
+      "distanceDepotKm": null,
+      "tempsTrajetEstimeMin": null,
+      "villages": [],
+      "communesVoisines": [],
+      "statut": "draft"
+    }
+  ]
+}
