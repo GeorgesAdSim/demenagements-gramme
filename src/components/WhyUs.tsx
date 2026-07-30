@@ -34,9 +34,12 @@ export default function WhyUs({ data }: Props) {
           <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
             <img
               src={SITE_IMAGES.team.src}
+              srcSet={SITE_IMAGES.team.srcSet}
+              sizes="(min-width: 1024px) 600px, 100vw"
               alt={SITE_IMAGES.team.alt}
               className="w-full h-full object-cover"
               loading="lazy"
+              decoding="async"
             />
           </div>
           {/* Badge flottant */}

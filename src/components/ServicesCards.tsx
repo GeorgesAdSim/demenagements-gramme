@@ -4,16 +4,17 @@ import { Truck, Warehouse, Globe, ArrowUpFromLine, ArrowRight } from 'lucide-rea
 import type { HomepageContent } from '../lib/types';
 import { SITE_IMAGES } from '../data/images';
 
-// Réutilise exactement le srcset du hero : sur desktop comme sur mobile, le
-// navigateur puise dans les mêmes URLs et sert donc l'image depuis le cache.
-// Auparavant cette carte demandait la même photo en w=1400&q=80 (131 Kio),
-// soit un troisième téléchargement d'une image déjà présente.
+// Même photo et mêmes fichiers que le hero : le navigateur la sert depuis le
+// cache au lieu de la retélécharger. Auparavant cette carte demandait la même
+// photographie en w=1400&q=80 (131 Kio), soit un troisième téléchargement.
 const HERO_CARD = {
   title: 'Déménagement',
   subtitle: 'Particuliers & Entreprises',
   description: 'De la visite technique au dernier carton posé, nos équipes prennent en charge l\'intégralité de votre déménagement. Emballage professionnel, transport sécurisé, démontage et remontage de meubles.',
   image: SITE_IMAGES.hero.src,
-  srcSet: SITE_IMAGES.hero.srcSet,
+  srcSetAvif: SITE_IMAGES.hero.srcSetAvif,
+  srcSetWebp: SITE_IMAGES.hero.srcSetWebp,
+  srcSetJpeg: SITE_IMAGES.hero.srcSetJpeg,
   link: '/demenagement',
   icon: Truck,
 };
@@ -90,18 +91,22 @@ export default function ServicesCards({ data }: Props) {
           className="relative rounded-2xl overflow-hidden shadow-xl mb-6 group"
         >
           {/* `sizes` identique à celui du hero : c'est la même photographie,
-              donc le navigateur retient la même URL du srcset et la sert
-              depuis le cache au lieu de la retélécharger. */}
-          <img
-            src={HERO_CARD.image}
-            srcSet={HERO_CARD.srcSet}
-            sizes="(max-width: 767px) 65vw, 100vw"
-            alt=""
-            aria-hidden="true"
-            loading="lazy"
-            decoding="async"
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          />
+              donc le navigateur retient la même URL et la sert depuis le
+              cache au lieu de la retélécharger. */}
+          <picture>
+            <source type="image/avif" srcSet={HERO_CARD.srcSetAvif} sizes="(max-width: 767px) 70vw, 100vw" />
+            <source type="image/webp" srcSet={HERO_CARD.srcSetWebp} sizes="(max-width: 767px) 70vw, 100vw" />
+            <img
+              src={HERO_CARD.image}
+              srcSet={HERO_CARD.srcSetJpeg}
+              sizes="(max-width: 767px) 70vw, 100vw"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-navy/30" />
           <div className="relative z-10 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-end justify-between gap-6 min-h-[260px]">
             <div className="max-w-xl">
