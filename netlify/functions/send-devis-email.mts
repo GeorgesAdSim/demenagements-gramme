@@ -93,7 +93,7 @@ export default async function handler(req: Request): Promise<Response> {
   const attempts = [
     {
       from: 'Gramme Devis <noreply@demenagements-gramme.be>',
-      to: ['contact@demenagements-gramme.be'],
+      to: ['js@groupespiroux.com'],
     },
     {
       from: 'Gramme Devis <onboarding@resend.dev>',
