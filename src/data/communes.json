@@ -47,7 +47,7 @@
         "saint-nicolas",
         "liege"
       ],
-      "statut": "draft",
+      "statut": "published",
       "dateVerification": "2026-07-30"
     },
     {
@@ -95,7 +95,7 @@
         "fexhe-le-haut-clocher",
         "grace-hollogne"
       ],
-      "statut": "draft",
+      "statut": "published",
       "dateVerification": "2026-07-30"
     },
     {
@@ -119,7 +119,7 @@
         "theux",
         "stoumont"
       ],
-      "statut": "draft",
+      "statut": "published",
       "dateVerification": "2026-07-30"
     },
     {
@@ -154,7 +154,7 @@
         "juprelle",
         "oupeye"
       ],
-      "statut": "draft",
+      "statut": "published",
       "dateVerification": "2026-07-30"
     },
     {
@@ -186,7 +186,7 @@
         "fleron",
         "soumagne"
       ],
-      "statut": "draft",
+      "statut": "published",
       "dateVerification": "2026-07-30"
     },
     {
@@ -215,7 +215,7 @@
         "herve",
         "beyne-heusay"
       ],
-      "statut": "draft",
+      "statut": "published",
       "dateVerification": "2026-07-30"
     },
     {
@@ -296,7 +296,7 @@
         "sprimont",
         "trooz"
       ],
-      "statut": "draft",
+      "statut": "published",
       "dateVerification": "2026-07-30"
     },
     {
@@ -330,7 +330,7 @@
         "ferrieres",
         "hamoir"
       ],
-      "statut": "draft",
+      "statut": "published",
       "dateVerification": "2026-07-30"
     },
     {
@@ -370,7 +370,7 @@
         "blegny",
         "herve"
       ],
-      "statut": "draft",
+      "statut": "published",
       "dateVerification": "2026-07-30"
     },
     {
@@ -425,7 +425,7 @@
         "chaudfontaine",
         "sprimont"
       ],
-      "statut": "draft",
+      "statut": "published",
       "dateVerification": "2026-07-30"
     },
     {
@@ -498,7 +498,7 @@
         "engis",
         "neupre"
       ],
-      "statut": "draft",
+      "statut": "published",
       "dateVerification": "2026-07-30"
     },
     {
@@ -525,7 +525,7 @@
         "trooz",
         "olne"
       ],
-      "statut": "draft",
+      "statut": "published",
       "dateVerification": "2026-07-30"
     },
     {
@@ -562,7 +562,7 @@
         "ans",
         "saint-nicolas"
       ],
-      "statut": "draft",
+      "statut": "published",
       "dateVerification": "2026-07-30"
     },
     {
@@ -596,8 +596,8 @@
         "4041",
         "4042"
       ],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 0,
+      "tempsTrajetEstimeMin": 0,
       "villages": [
         "Vottem",
         "Liers",
@@ -608,7 +608,7 @@
         "juprelle",
         "oupeye"
       ],
-      "statut": "draft",
+      "statut": "published",
       "pageExistante": "/demenagement/demenagement-herstal",
       "dateVerification": "2026-07-30"
     },
@@ -702,7 +702,7 @@
         "oupeye",
         "liege"
       ],
-      "statut": "draft",
+      "statut": "published",
       "dateVerification": "2026-07-30"
     },
     {
@@ -779,7 +779,7 @@
         "vise",
         "blegny"
       ],
-      "statut": "draft",
+      "statut": "published",
       "pageExistante": "/demenagement/demenagement-liege",
       "dateVerification": "2026-07-30"
     },
@@ -862,7 +862,7 @@
         "esneux",
         "nandrin"
       ],
-      "statut": "draft",
+      "statut": "published",
       "dateVerification": "2026-07-30"
     },
     {
@@ -925,7 +925,7 @@
         "juprelle",
         "herstal"
       ],
-      "statut": "draft",
+      "statut": "published",
       "dateVerification": "2026-07-30"
     },
     {
@@ -1002,7 +1002,7 @@
         "liege",
         "seraing"
       ],
-      "statut": "draft",
+      "statut": "published",
       "dateVerification": "2026-07-30"
     },
     {
@@ -1074,7 +1074,7 @@
         "fleron",
         "olne"
       ],
-      "statut": "draft",
+      "statut": "published",
       "dateVerification": "2026-07-30"
     },
     {
@@ -1111,7 +1111,7 @@
         "pepinster",
         "theux"
       ],
-      "statut": "draft",
+      "statut": "published",
       "dateVerification": "2026-07-30"
     },
     {
@@ -1201,7 +1201,7 @@
         "pepinster",
         "sprimont"
       ],
-      "statut": "draft",
+      "statut": "published",
       "dateVerification": "2026-07-30"
     },
     {
@@ -1262,7 +1262,7 @@
         "herstal",
         "liege"
       ],
-      "statut": "draft",
+      "statut": "published",
       "dateVerification": "2026-07-30"
     },
     {
