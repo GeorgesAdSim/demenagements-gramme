@@ -39,6 +39,9 @@ const DemontageRemontageMeubles = lazy(() => import('./pages/satellites/Demontag
 const GardeMeublesLiege = lazy(() => import('./pages/satellites/GardeMeublesLiege'));
 const PrixGardeMeublesLiege = lazy(() => import('./pages/satellites/PrixGardeMeublesLiege'));
 
+const ZonesInterventionPage = lazy(() => import('./pages/ZonesInterventionPage'));
+const CommuneLandingPage = lazy(() => import('./pages/CommuneLandingPage'));
+
 const ConseilsDemenagementLiege = lazy(() => import('./pages/blog/ConseilsDemenagementLiege'));
 const PreparerEnfantsDemenagement = lazy(() => import('./pages/blog/PreparerEnfantsDemenagement'));
 const ErreursEviterDemenagement = lazy(() => import('./pages/blog/ErreursEviterDemenagement'));
@@ -93,6 +96,12 @@ export default function App() {
             <Route path="/blog/6-conseils-reussir-demenagement-liege" element={<ConseilsDemenagementLiege />} />
             <Route path="/blog/preparer-enfants-demenagement-liege" element={<PreparerEnfantsDemenagement />} />
             <Route path="/blog/6-erreurs-eviter-demenagement-liege" element={<ErreursEviterDemenagement />} />
+
+            {/* Zones d'intervention — la route exacte est déclarée AVANT la
+                route paramétrée, sans quoi /zones-intervention serait capté
+                par :slug et rendrait une commune nommée « zones-intervention ». */}
+            <Route path="/zones-intervention" element={<ZonesInterventionPage />} />
+            <Route path="/zones-intervention/:slug" element={<CommuneLandingPage />} />
 
             {/* Contact pages */}
             <Route path="/contact" element={<ContactPage />} />
