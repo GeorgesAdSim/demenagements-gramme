@@ -320,10 +320,12 @@ export default function ContactPage() {
                 toolname="demander_devis_demenagement"
                 tooldescription="Prépare une demande de devis gratuit pour un déménagement ou un garde-meubles chez Déménagements Gramme. Le formulaire est rempli mais reste soumis par la personne : renseigner les champs ne crée aucune demande."
               >
-                <div className="mb-8">
-                  <label className="block text-navy font-bold text-sm uppercase tracking-wider mb-3">
+                <div className="mb-8" role="group" aria-labelledby="cp-service-label">
+                  {/* Intitulé d'un groupe de boutons, pas d'un champ : un <label> sans
+                      contrôle associé est invalide. On nomme donc le groupe. */}
+                  <p id="cp-service-label" className="block text-navy font-bold text-sm uppercase tracking-wider mb-3">
                     Type de service
-                  </label>
+                  </p>
                   <div className="grid grid-cols-2 gap-3">
                     {serviceOptions.map(({ label, value, icon: Icon }) => (
                       <button
@@ -346,51 +348,51 @@ export default function ContactPage() {
                 <div className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-navy mb-1.5">Prénom *</label>
-                      <input type="text" name="firstName" required placeholder="Votre prénom" value={form.firstName} onChange={(e) => set('firstName', e.target.value)} className={inputClass('firstName')} />
+                      <label htmlFor="cp-firstName" className="block text-sm font-medium text-navy mb-1.5">Prénom *</label>
+                      <input id="cp-firstName" type="text" name="firstName" required placeholder="Votre prénom" value={form.firstName} onChange={(e) => set('firstName', e.target.value)} className={inputClass('firstName')} />
                       {submitted && errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>}
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-navy mb-1.5">Nom *</label>
-                      <input type="text" name="lastName" required placeholder="Votre nom" value={form.lastName} onChange={(e) => set('lastName', e.target.value)} className={inputClass('lastName')} />
+                      <label htmlFor="cp-lastName" className="block text-sm font-medium text-navy mb-1.5">Nom *</label>
+                      <input id="cp-lastName" type="text" name="lastName" required placeholder="Votre nom" value={form.lastName} onChange={(e) => set('lastName', e.target.value)} className={inputClass('lastName')} />
                       {submitted && errors.lastName && <p className="text-red-500 text-xs mt-1">{errors.lastName}</p>}
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-navy mb-1.5">Email *</label>
-                      <input type="email" name="email" required placeholder="votre@email.com" value={form.email} onChange={(e) => set('email', e.target.value)} className={inputClass('email')} />
+                      <label htmlFor="cp-email" className="block text-sm font-medium text-navy mb-1.5">Email *</label>
+                      <input id="cp-email" type="email" name="email" required placeholder="votre@email.com" value={form.email} onChange={(e) => set('email', e.target.value)} className={inputClass('email')} />
                       {submitted && errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-navy mb-1.5">Téléphone *</label>
-                      <input type="tel" name="phone" required placeholder="+32 4XX XX XX XX" value={form.phone} onChange={(e) => set('phone', e.target.value)} className={inputClass('phone')} />
+                      <label htmlFor="cp-phone" className="block text-sm font-medium text-navy mb-1.5">Téléphone *</label>
+                      <input id="cp-phone" type="tel" name="phone" required placeholder="+32 4XX XX XX XX" value={form.phone} onChange={(e) => set('phone', e.target.value)} className={inputClass('phone')} />
                       {submitted && errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-navy mb-1.5">Ville de départ *</label>
-                      <input type="text" name="addressFrom" required placeholder="Ex : Liège" value={form.cityFrom} onChange={(e) => set('cityFrom', e.target.value)} className={inputClass('cityFrom')} />
+                      <label htmlFor="cp-addressFrom" className="block text-sm font-medium text-navy mb-1.5">Ville de départ *</label>
+                      <input id="cp-addressFrom" type="text" name="addressFrom" required placeholder="Ex : Liège" value={form.cityFrom} onChange={(e) => set('cityFrom', e.target.value)} className={inputClass('cityFrom')} />
                       {submitted && errors.cityFrom && <p className="text-red-500 text-xs mt-1">{errors.cityFrom}</p>}
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-navy mb-1.5">Ville d'arrivée *</label>
-                      <input type="text" name="addressTo" required placeholder="Ex : Bruxelles" value={form.cityTo} onChange={(e) => set('cityTo', e.target.value)} className={inputClass('cityTo')} />
+                      <label htmlFor="cp-addressTo" className="block text-sm font-medium text-navy mb-1.5">Ville d'arrivée *</label>
+                      <input id="cp-addressTo" type="text" name="addressTo" required placeholder="Ex : Bruxelles" value={form.cityTo} onChange={(e) => set('cityTo', e.target.value)} className={inputClass('cityTo')} />
                       {submitted && errors.cityTo && <p className="text-red-500 text-xs mt-1">{errors.cityTo}</p>}
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-navy mb-1.5">Date souhaitée</label>
-                      <input type="date" name="date" required value={form.date} onChange={(e) => set('date', e.target.value)} className={inputClass('date')} />
+                      <label htmlFor="cp-date" className="block text-sm font-medium text-navy mb-1.5">Date souhaitée</label>
+                      <input id="cp-date" type="date" name="date" required value={form.date} onChange={(e) => set('date', e.target.value)} className={inputClass('date')} />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-navy mb-1.5">Volume estimé</label>
-                      <select name="volume" value={form.volume} onChange={(e) => set('volume', e.target.value)} className={inputClass('volume')}>
+                      <label htmlFor="cp-volume" className="block text-sm font-medium text-navy mb-1.5">Volume estimé</label>
+                      <select id="cp-volume" name="volume" value={form.volume} onChange={(e) => set('volume', e.target.value)} className={inputClass('volume')}>
                         <option value="">Sélectionnez un volume</option>
                         {volumes.map((v) => (
                           <option key={v.value} value={v.value}>{v.label}</option>
@@ -400,8 +402,8 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-navy mb-1.5">Message / Précisions</label>
-                    <textarea name="message" placeholder="Décrivez votre projet : nombre de pièces, étage, accès difficile, objets spéciaux..." rows={5} value={form.message} onChange={(e) => set('message', e.target.value)} className={inputClass('message')} />
+                    <label htmlFor="cp-message" className="block text-sm font-medium text-navy mb-1.5">Message / Précisions</label>
+                    <textarea id="cp-message" name="message" placeholder="Décrivez votre projet : nombre de pièces, étage, accès difficile, objets spéciaux..." rows={5} value={form.message} onChange={(e) => set('message', e.target.value)} className={inputClass('message')} />
                   </div>
 
                   <div>

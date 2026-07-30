@@ -8,7 +8,10 @@
   --white: #FFFFFF;
   --offwhite: #F4F2EE;
   --footer-bg: #0D1020;
-  --muted: #85868C;
+  /* Assombri de #85868C à #67686E pour respecter WCAG AA : l ancienne teinte
+     ne donnait que 3,63:1 sur blanc et 3,25:1 sur beige, sous le minimum de
+     4,50 exigé pour du texte courant. Désormais 5,55:1 sur blanc, 4,97:1 sur beige et 4,71:1 sur le fond jaune teinté des encarts. */
+  --muted: #67686E;
   --text: #333333;
 }
 

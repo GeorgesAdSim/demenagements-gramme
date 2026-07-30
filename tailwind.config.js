@@ -10,7 +10,8 @@ export default {
         navy:       '#132073',
         yellow:     '#F0B800',
         offwhite:   '#F4F2EE',
-        muted:      '#85868C',
+        // Voir le commentaire dans src/index.css : contraste WCAG AA.
+        muted:      '#67686E',
         'footer-bg':'#0D1020',
       },
       fontFamily: {
