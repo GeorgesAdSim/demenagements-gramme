@@ -300,9 +300,16 @@ async function main() {
   // Le validateur n'est pas réimplémenté ici : il est importé du bundle SSR
   // déjà compilé, seule implémentation des règles (voir src/entry-server.tsx).
   try {
-    const { validerCommunes, getCommunesAGenerer, COMMUNES } = await import(
-      new URL(`file://${path.join(root, 'dist-server/entry-server.js')}`).href
-    );
+    const { validerCommunes, getCommunesAGenerer, COMMUNES, PREFIXE_COMMUNE, cheminCommune } =
+      await import(new URL(`file://${path.join(root, 'dist-server/entry-server.js')}`).href);
+
+    // Le préfixe d'URL est écrit à deux endroits : ici via le bundle, et en dur
+    // dans scripts/prerender.mjs. On vérifie qu'ils coïncident, sinon le
+    // pré-rendu produirait des fichiers à des chemins que l'application ne
+    // reconnaît pas — 27 pages en 404 silencieuses.
+    if (PREFIXE_COMMUNE !== 'demenagement-') {
+      err(`préfixe d'URL des communes désynchronisé : « ${PREFIXE_COMMUNE} » côté application, « demenagement- » côté pré-rendu.`);
+    }
 
     for (const p of validerCommunes()) {
       const msg = `commune « ${p.commune} » : ${p.message}`;
@@ -315,7 +322,7 @@ async function main() {
     // 12a. Chaque commune publiée doit avoir une page réellement servie en 200,
     // dont le canonical correspond à l'URL servie.
     for (const c of aGenerer) {
-      const url = `/zones-intervention/${c.id}`;
+      const url = cheminCommune(c.id);
       const r = resolve(url, rules, files);
       if (r.status !== 200) {
         err(`${url} : commune publiée mais l'URL renvoie ${r.status} — page non pré-rendue ?`);
@@ -335,19 +342,31 @@ async function main() {
       }
     }
 
-    // 12b. Aucune page locale ne doit être livrée pour une commune qui possède
+    // Chemins déjà occupés par une page satellite antérieure. Depuis que les
+    // pages communes suivent la même convention que les satellites, le chemin
+    // calculé d'une commune coïncide souvent avec sa satellite — ce n'est pas
+    // un doublon mais la même URL, et c'est précisément l'intérêt d'avoir
+    // unifié la convention.
+    const cheminsSatellites = new Set(
+      COMMUNES.filter((x) => x.pageExistante).map((x) => x.pageExistante)
+    );
+
+    // 12b. Aucune SECONDE URL ne doit être livrée pour une commune qui possède
     // déjà une page satellite : ce serait la cannibalisation que toute
     // l'architecture cherche à éviter.
     for (const c of COMMUNES.filter((x) => x.pageExistante)) {
-      const url = `/zones-intervention/${c.id}`;
+      const url = cheminCommune(c.id);
+      if (url === c.pageExistante) continue; // même URL, rien à signaler
       if (resolve(url, rules, files).status === 200) {
         err(`${url} est servie alors que ${c.nom} a déjà ${c.pageExistante} — deux URL sur la même requête.`);
       }
     }
 
-    // 12c. Aucune commune en brouillon ne doit être déployée, ni liée.
+    // 12c. Aucune commune en brouillon ne doit être déployée — sauf si son
+    // chemin est celui d'une satellite préexistante, page légitime et indexée.
     for (const c of COMMUNES.filter((x) => x.statut !== 'published')) {
-      const url = `/zones-intervention/${c.id}`;
+      const url = cheminCommune(c.id);
+      if (cheminsSatellites.has(url)) continue;
       if (resolve(url, rules, files).status === 200) {
         err(`${url} est déployée alors que ${c.nom} est en brouillon.`);
       }

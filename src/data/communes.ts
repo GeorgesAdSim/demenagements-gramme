@@ -52,8 +52,48 @@ export const COMMUNES: CommuneSEO[] = (donnees as { communes: CommuneSEO[] }).co
 /** Alias conservant le nom employé dans la spécification. */
 export const communesData = COMMUNES;
 
-/** Racine des pages locales générées. Validée avec Georges le 2026-07-30. */
+/**
+ * Page index listant l'ensemble des communes. Reste à la racine : son intention
+ * est navigationnelle, et « zones d'intervention » est bien le terme que sa
+ * propre URL doit porter.
+ */
 export const RACINE_ZONES = '/zones-intervention';
+
+/**
+ * Les pages communes vivent sous /demenagement/demenagement-<slug>, exactement
+ * comme les satellites déjà publiées.
+ *
+ * Deux raisons, dans cet ordre d'importance. D'abord une seule convention pour
+ * tout le site : /demenagement/demenagement-seraing et
+ * /zones-intervention/huy côte à côte, c'étaient deux grammaires d'URL pour un
+ * même type de page. Ensuite le silo : /demenagement existe déjà comme page
+ * mère, les communes en héritent du regroupement thématique. La présence du
+ * mot-clé dans l'URL, elle, ne pèse que très peu au classement — c'est le
+ * bénéfice le plus visible mais le plus faible des trois.
+ *
+ * ⚠️ React Router 6 n'accepte pas de segment partiellement dynamique : le motif
+ * `/demenagement/demenagement-:slug` ne matche jamais (vérifié sur 6.26). La
+ * route déclarée est donc `/demenagement/:slug` et le préfixe est découpé par
+ * `slugDepuisSegment` ci-dessous.
+ */
+export const PREFIXE_COMMUNE = 'demenagement-';
+export const RACINE_COMMUNES = '/demenagement';
+
+/** Chemin d'une page commune générée, sans tenir compte des satellites. */
+export function cheminCommune(slug: string): string {
+  return `${RACINE_COMMUNES}/${PREFIXE_COMMUNE}${slug}`;
+}
+
+/**
+ * Extrait le slug de commune d'un segment d'URL. Renvoie `undefined` si le
+ * segment ne porte pas le préfixe attendu, afin que /demenagement/n-importe-quoi
+ * tombe en 404 plutôt que d'être traité comme une commune inconnue.
+ */
+export function slugDepuisSegment(segment: string | undefined): string | undefined {
+  if (!segment || !segment.startsWith(PREFIXE_COMMUNE)) return undefined;
+  const slug = segment.slice(PREFIXE_COMMUNE.length);
+  return slug || undefined;
+}
 
 export function getCommuneBySlug(slug: string): CommuneSEO | undefined {
   return COMMUNES.find((c) => c.id === slug);
@@ -75,7 +115,7 @@ export function getCommunesAGenerer(): CommuneSEO[] {
 
 /** URL canonique de la commune : sa page satellite si elle existe, sinon la page générée. */
 export function communeUrl(commune: CommuneSEO): string {
-  return commune.pageExistante ?? `${RACINE_ZONES}/${commune.id}`;
+  return commune.pageExistante ?? cheminCommune(commune.id);
 }
 
 /**

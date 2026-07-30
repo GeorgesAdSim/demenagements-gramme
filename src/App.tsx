@@ -97,11 +97,16 @@ export default function App() {
             <Route path="/blog/preparer-enfants-demenagement-liege" element={<PreparerEnfantsDemenagement />} />
             <Route path="/blog/6-erreurs-eviter-demenagement-liege" element={<ErreursEviterDemenagement />} />
 
-            {/* Zones d'intervention — la route exacte est déclarée AVANT la
-                route paramétrée, sans quoi /zones-intervention serait capté
-                par :slug et rendrait une commune nommée « zones-intervention ». */}
+            {/* Index des zones : page navigationnelle, laissée à la racine. */}
             <Route path="/zones-intervention" element={<ZonesInterventionPage />} />
-            <Route path="/zones-intervention/:slug" element={<CommuneLandingPage />} />
+
+            {/* Pages communes : /demenagement/demenagement-<slug>.
+                React Router 6 n'accepte pas de segment partiellement dynamique
+                (`demenagement-:slug` ne matche jamais), d'où un :slug complet
+                dont le préfixe est découpé dans le composant. Les satellites
+                ci-dessus restent prioritaires : un segment statique l'emporte
+                toujours sur un segment dynamique dans le classement v6. */}
+            <Route path="/demenagement/:slug" element={<CommuneLandingPage />} />
 
             {/* Contact pages */}
             <Route path="/contact" element={<ContactPage />} />

@@ -44,9 +44,13 @@ const COMMUNES_PUBLIEES = communes
   .filter((c) => c.statut === 'published' && !c.pageExistante)
   .sort((a, b) => a.nom.localeCompare(b.nom, 'fr'));
 
+// Les pages communes vivent sous /demenagement/demenagement-<slug>, même
+// convention que les satellites déjà publiées. Le préfixe est écrit ici et
+// dans src/data/communes.ts (PREFIXE_COMMUNE) ; le contrôle de build compare
+// les deux, une divergence est bloquante.
 const ROUTES_COMMUNES = [
   '/zones-intervention',
-  ...COMMUNES_PUBLIEES.map((c) => `/zones-intervention/${c.id}`),
+  ...COMMUNES_PUBLIEES.map((c) => `/demenagement/demenagement-${c.id}`),
 ];
 
 const ROUTES = [

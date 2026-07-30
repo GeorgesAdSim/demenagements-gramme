@@ -69,9 +69,9 @@ function ServerRoutes() {
       <Route path="/blog/preparer-enfants-demenagement-liege" element={<PreparerEnfantsDemenagement />} />
       <Route path="/blog/6-erreurs-eviter-demenagement-liege" element={<ErreursEviterDemenagement />} />
 
-      {/* Route exacte avant la route paramétrée : mêmes raisons que dans App.tsx. */}
       <Route path="/zones-intervention" element={<ZonesInterventionPage />} />
-      <Route path="/zones-intervention/:slug" element={<CommuneLandingPage />} />
+      {/* Voir App.tsx : segment dynamique complet, préfixe découpé côté composant. */}
+      <Route path="/demenagement/:slug" element={<CommuneLandingPage />} />
 
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/contact-devis" element={<ContactDevisPage />} />
@@ -94,7 +94,14 @@ function ServerRoutes() {
 // validation une seconde fois en JavaScript — deux implémentations qui
 // divergeraient à la première évolution. Le bundle SSR étant déjà compilé au
 // moment du contrôle, le script y consomme l'unique implémentation.
-export { validerCommunes, getCommunesAGenerer, getPublishedCommunes, COMMUNES } from './data/communes';
+export {
+  validerCommunes,
+  getCommunesAGenerer,
+  getPublishedCommunes,
+  COMMUNES,
+  PREFIXE_COMMUNE,
+  cheminCommune,
+} from './data/communes';
 
 export function render(url: string): { html: string; helmet: HelmetServerState } {
   const helmetContext: { helmet?: HelmetServerState } = {};

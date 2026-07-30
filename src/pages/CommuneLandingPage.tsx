@@ -18,7 +18,10 @@ import {
   getCommuneBySlug,
   getNeighborCommunes,
   communeUrl,
+  cheminCommune,
+  slugDepuisSegment,
   RACINE_ZONES,
+  RACINE_COMMUNES,
   type CommuneSEO,
 } from '../data/communes';
 
@@ -62,12 +65,16 @@ function construireFaq(c: CommuneSEO): Array<{ q: string; a: string }> {
 }
 
 export default function CommuneLandingPage() {
-  const { slug } = useParams<{ slug: string }>();
+  // Le segment d'URL porte le préfixe « demenagement- » : React Router 6 ne
+  // sait pas le retirer lui-même, un segment ne peut pas être partiellement
+  // dynamique. On le découpe ici.
+  const { slug: segment } = useParams<{ slug: string }>();
+  const slug = slugDepuisSegment(segment);
   const commune = slug ? getCommuneBySlug(slug) : undefined;
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [slug]);
+  }, [segment]);
 
   // Slug inconnu : véritable 404, et non une page vide en statut 200. Le script
   // de contrôle du build refuse les soft 404.
@@ -108,7 +115,7 @@ export default function CommuneLandingPage() {
   }
 
   const brouillon = commune.statut === 'draft';
-  const url = `${RACINE_ZONES}/${commune.id}`;
+  const url = cheminCommune(commune.id);
   const faq = construireFaq(commune);
   const voisinesLiables = getNeighborCommunes(commune);
   // Voisines encore en brouillon : citées en texte, sans lien. Un lien vers une
@@ -144,8 +151,8 @@ export default function CommuneLandingPage() {
             ? undefined
             : [
                 { name: 'Accueil', url: `${BASE_URL}/` },
-                { name: "Zones d'intervention", url: `${BASE_URL}${RACINE_ZONES}` },
-                { name: commune.nom, url: `${BASE_URL}${url}` },
+                { name: 'Déménagement', url: `${BASE_URL}${RACINE_COMMUNES}` },
+                { name: `Déménagement à ${commune.nom}`, url: `${BASE_URL}${url}` },
               ]
         }
       />
@@ -161,7 +168,7 @@ export default function CommuneLandingPage() {
             <nav aria-label="Fil d'Ariane" className="text-sm text-muted mb-8">
               <Link to="/" className="hover:text-navy underline">Accueil</Link>
               <span className="mx-2">/</span>
-              <Link to={RACINE_ZONES} className="hover:text-navy underline">Zones d'intervention</Link>
+              <Link to={RACINE_COMMUNES} className="hover:text-navy underline">Déménagement</Link>
               <span className="mx-2">/</span>
               <span className="text-navy font-medium">{commune.nom}</span>
             </nav>

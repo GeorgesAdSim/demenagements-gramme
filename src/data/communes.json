@@ -14,7 +14,7 @@
       "statut": "draft"
     },
     {
-      "id": "ambleve-amel",
+      "id": "ambleve",
       "nom": "Amblève (Amel)",
       "arrondissement": "Verviers",
       "codesPostaux": [],
@@ -156,7 +156,7 @@
       "statut": "draft"
     },
     {
-      "id": "bullange-bullingen",
+      "id": "bullange",
       "nom": "Bullange (Büllingen)",
       "arrondissement": "Verviers",
       "codesPostaux": [],
@@ -189,7 +189,7 @@
       "statut": "draft"
     },
     {
-      "id": "butgenbach-butgenbach",
+      "id": "butgenbach",
       "nom": "Butgenbach (Bütgenbach)",
       "arrondissement": "Verviers",
       "codesPostaux": [],
@@ -493,7 +493,7 @@
       "statut": "draft"
     },
     {
-      "id": "la-calamine-kelmis",
+      "id": "la-calamine",
       "nom": "La Calamine (Kelmis)",
       "arrondissement": "Verviers",
       "codesPostaux": [],
@@ -725,7 +725,7 @@
       "statut": "draft"
     },
     {
-      "id": "saint-vith-sankt-vith",
+      "id": "saint-vith",
       "nom": "Saint-Vith (Sankt Vith)",
       "arrondissement": "Verviers",
       "codesPostaux": [],
