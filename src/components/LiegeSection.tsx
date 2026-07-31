@@ -185,7 +185,7 @@ export default function LiegeSection() {
             Les communes de la province que nous desservons
           </h3>
           <p className="text-muted text-[16px] leading-relaxed mb-5">
-            Notre dépôt de Herstal nous place à quelques minutes de la plupart
+            Notre dépôt nous place à quelques minutes de la plupart
             des communes de l'arrondissement. Nous intervenons régulièrement à :
           </p>
           <div className="flex flex-wrap gap-2">

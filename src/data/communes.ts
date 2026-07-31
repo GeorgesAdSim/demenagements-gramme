@@ -20,7 +20,12 @@ export interface CommuneSEO {
   arrondissement?: string;
   /** Tableau : une commune fusionnée couvre souvent plusieurs codes postaux. */
   codesPostaux: string[];
-  /** Distance routière depuis le dépôt de Herstal. `null` si non mesurée. */
+  /**
+   * Distance routière depuis le dépôt d'où partent les camions — rue de la
+   * Digue à Oupeye, et NON le siège social rue des Naiveux à Herstal. La
+   * confusion entre les deux avait faussé les 37 premiers relevés.
+   * `null` si non mesurée.
+   */
   distanceDepotKm: number | null;
   /** Temps de trajet indicatif. `null` si non mesuré. */
   tempsTrajetEstimeMin: number | null;

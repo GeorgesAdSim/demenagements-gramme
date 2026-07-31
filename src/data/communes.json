@@ -5,8 +5,8 @@
       "nom": "Amay",
       "arrondissement": "Huy",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 35,
+      "tempsTrajetEstimeMin": 31,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -16,8 +16,8 @@
       "nom": "Amblève (Amel)",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 70,
+      "tempsTrajetEstimeMin": 55,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -32,7 +32,7 @@
         "4432"
       ],
       "distanceDepotKm": 12,
-      "tempsTrajetEstimeMin": 13,
+      "tempsTrajetEstimeMin": 15,
       "villages": [
         "Loncin",
         "Alleur",
@@ -53,8 +53,8 @@
       "nom": "Anthisnes",
       "arrondissement": "Huy",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 46,
+      "tempsTrajetEstimeMin": 44,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -64,8 +64,8 @@
       "nom": "Aubel",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 27,
+      "tempsTrajetEstimeMin": 27,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -78,8 +78,8 @@
         "4340",
         "4342"
       ],
-      "distanceDepotKm": 15,
-      "tempsTrajetEstimeMin": 13,
+      "distanceDepotKm": 16,
+      "tempsTrajetEstimeMin": 14,
       "villages": [
         "Fooz",
         "Hognoul",
@@ -103,8 +103,8 @@
       "codesPostaux": [
         "4920"
       ],
-      "distanceDepotKm": 46,
-      "tempsTrajetEstimeMin": 36,
+      "distanceDepotKm": 47,
+      "tempsTrajetEstimeMin": 39,
       "villages": [
         "Sougné-Remouchamps",
         "Harzé",
@@ -125,8 +125,8 @@
       "nom": "Baelen",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 33,
+      "tempsTrajetEstimeMin": 29,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -162,8 +162,8 @@
       "codesPostaux": [
         "4257"
       ],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 38,
+      "tempsTrajetEstimeMin": 27,
       "villages": [
         "Berloz",
         "Rosoux-Crenwick",
@@ -184,7 +184,7 @@
         "4610"
       ],
       "distanceDepotKm": 11,
-      "tempsTrajetEstimeMin": 19,
+      "tempsTrajetEstimeMin": 20,
       "villages": [
         "Queue-du-Bois",
         "Bellaire"
@@ -206,8 +206,8 @@
         "4671",
         "4672"
       ],
-      "distanceDepotKm": 9,
-      "tempsTrajetEstimeMin": 13,
+      "distanceDepotKm": 10,
+      "tempsTrajetEstimeMin": 15,
       "villages": [
         "Trembleur",
         "Mortier",
@@ -235,8 +235,8 @@
         "4261",
         "4263"
       ],
-      "distanceDepotKm": 44,
-      "tempsTrajetEstimeMin": 32,
+      "distanceDepotKm": 45,
+      "tempsTrajetEstimeMin": 34,
       "villages": [
         "Braives",
         "Tourinne",
@@ -263,8 +263,8 @@
       "nom": "Bullange (Büllingen)",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 79,
+      "tempsTrajetEstimeMin": 65,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -274,8 +274,8 @@
       "nom": "Burdinne",
       "arrondissement": "Huy",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 51,
+      "tempsTrajetEstimeMin": 38,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -285,8 +285,8 @@
       "nom": "Burg-Reuland",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 83,
+      "tempsTrajetEstimeMin": 63,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -296,8 +296,8 @@
       "nom": "Butgenbach (Bütgenbach)",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 68,
+      "tempsTrajetEstimeMin": 63,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -312,8 +312,8 @@
         "4052",
         "4053"
       ],
-      "distanceDepotKm": 27,
-      "tempsTrajetEstimeMin": 24,
+      "distanceDepotKm": 28,
+      "tempsTrajetEstimeMin": 26,
       "villages": [
         "Beaufays",
         "Embourg",
@@ -333,8 +333,8 @@
       "nom": "Clavier",
       "arrondissement": "Huy",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 52,
+      "tempsTrajetEstimeMin": 49,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -348,7 +348,7 @@
         "4171"
       ],
       "distanceDepotKm": 52,
-      "tempsTrajetEstimeMin": 42,
+      "tempsTrajetEstimeMin": 44,
       "villages": [
         "Poulseur"
       ],
@@ -369,8 +369,8 @@
       "codesPostaux": [
         "4367"
       ],
-      "distanceDepotKm": 21,
-      "tempsTrajetEstimeMin": 16,
+      "distanceDepotKm": 22,
+      "tempsTrajetEstimeMin": 18,
       "villages": [
         "Crisnée",
         "Odeur",
@@ -383,7 +383,7 @@
         "awans",
         "remicourt"
       ],
-      "introductionLocale": "Crisnée est, de tout l'arrondissement de Waremme, l'entité la plus proche de notre dépôt de Herstal. Elle réunit cinq villages — Crisnée, Odeur, Kemexhe, Fize-le-Marsal et Thys — sous le code postal 4367.",
+      "introductionLocale": "Crisnée réunit cinq villages sous le code postal 4367 : Crisnée, Odeur, Kemexhe, Fize-le-Marsal et Thys. L'entité borde Awans, dans l'arrondissement de Liège, et nous desservons les cinq villages au même titre que le centre.",
       "dateVerification": "2026-07-31",
       "statut": "published"
     },
@@ -396,8 +396,8 @@
         "4607",
         "4608"
       ],
-      "distanceDepotKm": 10,
-      "tempsTrajetEstimeMin": 14,
+      "distanceDepotKm": 11,
+      "tempsTrajetEstimeMin": 17,
       "villages": [
         "Feneur",
         "Bombaye",
@@ -421,8 +421,8 @@
       "nom": "Dison",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 21,
+      "tempsTrajetEstimeMin": 20,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -434,8 +434,8 @@
       "codesPostaux": [
         "4357"
       ],
-      "distanceDepotKm": 28,
-      "tempsTrajetEstimeMin": 23,
+      "distanceDepotKm": 29,
+      "tempsTrajetEstimeMin": 24,
       "villages": [
         "Donceel",
         "Limont",
@@ -458,8 +458,8 @@
       "nom": "Engis",
       "arrondissement": "Huy",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 31,
+      "tempsTrajetEstimeMin": 28,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -472,7 +472,7 @@
         "4130"
       ],
       "distanceDepotKm": 38,
-      "tempsTrajetEstimeMin": 34,
+      "tempsTrajetEstimeMin": 36,
       "villages": [
         "Tilff"
       ],
@@ -491,8 +491,8 @@
       "nom": "Eupen",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 33,
+      "tempsTrajetEstimeMin": 34,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -504,8 +504,8 @@
       "codesPostaux": [
         "4317"
       ],
-      "distanceDepotKm": 32,
-      "tempsTrajetEstimeMin": 27,
+      "distanceDepotKm": 33,
+      "tempsTrajetEstimeMin": 28,
       "villages": [
         "Celles",
         "Borlez",
@@ -529,8 +529,8 @@
       "nom": "Ferrières",
       "arrondissement": "Huy",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 64,
+      "tempsTrajetEstimeMin": 46,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -543,7 +543,7 @@
         "4347"
       ],
       "distanceDepotKm": 23,
-      "tempsTrajetEstimeMin": 19,
+      "tempsTrajetEstimeMin": 20,
       "villages": [
         "Fexhe-le-Haut-Clocher",
         "Voroux-Goreux",
@@ -558,7 +558,7 @@
         "awans",
         "grace-hollogne"
       ],
-      "introductionLocale": "Fexhe-le-Haut-Clocher réunit cinq villages sous le code postal 4347 : Fexhe, Voroux-Goreux, Roloux, Noville et Freloux. L'entité touche Awans et Grâce-Hollogne, à moins de vingt-cinq kilomètres de notre dépôt.",
+      "introductionLocale": "Fexhe-le-Haut-Clocher réunit cinq villages sous le code postal 4347 : Fexhe, Voroux-Goreux, Roloux, Noville et Freloux. L'entité touche Awans et Grâce-Hollogne, deux communes de l'arrondissement de Liège que nous desservons déjà.",
       "dateVerification": "2026-07-31",
       "statut": "published"
     },
@@ -569,8 +569,8 @@
       "codesPostaux": [
         "4400"
       ],
-      "distanceDepotKm": 26,
-      "tempsTrajetEstimeMin": 22,
+      "distanceDepotKm": 27,
+      "tempsTrajetEstimeMin": 24,
       "villages": [
         "Awirs",
         "Chokier",
@@ -601,8 +601,8 @@
         "4623",
         "4624"
       ],
-      "distanceDepotKm": 14,
-      "tempsTrajetEstimeMin": 20,
+      "distanceDepotKm": 15,
+      "tempsTrajetEstimeMin": 24,
       "villages": [
         "Retinne",
         "Magnée",
@@ -629,7 +629,7 @@
         "4254"
       ],
       "distanceDepotKm": 39,
-      "tempsTrajetEstimeMin": 27,
+      "tempsTrajetEstimeMin": 28,
       "villages": [
         "Geer",
         "Boëlhe",
@@ -658,7 +658,7 @@
         "4460"
       ],
       "distanceDepotKm": 18,
-      "tempsTrajetEstimeMin": 16,
+      "tempsTrajetEstimeMin": 18,
       "villages": [
         "Grâce-Berleur",
         "Hollogne-aux-Pierres",
@@ -681,8 +681,8 @@
       "nom": "Hamoir",
       "arrondissement": "Huy",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 60,
+      "tempsTrajetEstimeMin": 53,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -694,8 +694,8 @@
       "codesPostaux": [
         "4280"
       ],
-      "distanceDepotKm": 47,
-      "tempsTrajetEstimeMin": 34,
+      "distanceDepotKm": 48,
+      "tempsTrajetEstimeMin": 35,
       "villages": [
         "Hannut",
         "Avernas-le-Bauduin",
@@ -732,8 +732,8 @@
       "nom": "Héron",
       "arrondissement": "Huy",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 48,
+      "tempsTrajetEstimeMin": 34,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -747,8 +747,8 @@
         "4041",
         "4042"
       ],
-      "distanceDepotKm": 0,
-      "tempsTrajetEstimeMin": 0,
+      "distanceDepotKm": 4,
+      "tempsTrajetEstimeMin": 10,
       "villages": [
         "Vottem",
         "Liers",
@@ -768,8 +768,8 @@
       "nom": "Herve",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 15,
+      "tempsTrajetEstimeMin": 19,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -781,8 +781,8 @@
       "codesPostaux": [
         "4500"
       ],
-      "distanceDepotKm": 35,
-      "tempsTrajetEstimeMin": 35,
+      "distanceDepotKm": 46,
+      "tempsTrajetEstimeMin": 37,
       "villages": [
         "Ben-Ahin",
         "Tihange"
@@ -807,8 +807,8 @@
       "nom": "Jalhay",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 34,
+      "tempsTrajetEstimeMin": 39,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -824,8 +824,8 @@
         "4453",
         "4458"
       ],
-      "distanceDepotKm": 14,
-      "tempsTrajetEstimeMin": 15,
+      "distanceDepotKm": 15,
+      "tempsTrajetEstimeMin": 18,
       "villages": [
         "Slins",
         "Fexhe-Slins",
@@ -850,8 +850,8 @@
       "nom": "La Calamine (Kelmis)",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 35,
+      "tempsTrajetEstimeMin": 35,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -867,8 +867,8 @@
         "4031",
         "4032"
       ],
-      "distanceDepotKm": 11,
-      "tempsTrajetEstimeMin": 18,
+      "distanceDepotKm": 12,
+      "tempsTrajetEstimeMin": 21,
       "villages": [
         "Wandre",
         "Jupille-sur-Meuse",
@@ -895,8 +895,8 @@
       "nom": "Lierneux",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 75,
+      "tempsTrajetEstimeMin": 56,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -906,8 +906,8 @@
       "nom": "Limbourg",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 27,
+      "tempsTrajetEstimeMin": 29,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -919,8 +919,8 @@
       "codesPostaux": [
         "4287"
       ],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 47,
+      "tempsTrajetEstimeMin": 31,
       "villages": [
         "Lincent",
         "Pellaines",
@@ -937,8 +937,8 @@
       "nom": "Lontzen",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 34,
+      "tempsTrajetEstimeMin": 30,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -948,8 +948,8 @@
       "nom": "Malmedy",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 52,
+      "tempsTrajetEstimeMin": 45,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -959,8 +959,8 @@
       "nom": "Marchin",
       "arrondissement": "Huy",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 58,
+      "tempsTrajetEstimeMin": 46,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -970,8 +970,8 @@
       "nom": "Modave",
       "arrondissement": "Huy",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 48,
+      "tempsTrajetEstimeMin": 48,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -981,8 +981,8 @@
       "nom": "Nandrin",
       "arrondissement": "Huy",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 37,
+      "tempsTrajetEstimeMin": 38,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -997,7 +997,7 @@
         "4122"
       ],
       "distanceDepotKm": 31,
-      "tempsTrajetEstimeMin": 29,
+      "tempsTrajetEstimeMin": 31,
       "villages": [
         "Neuville-en-Condroz",
         "Plainevaux",
@@ -1019,8 +1019,8 @@
       "nom": "Olne",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 17,
+      "tempsTrajetEstimeMin": 24,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -1032,8 +1032,8 @@
       "codesPostaux": [
         "4360"
       ],
-      "distanceDepotKm": 26,
-      "tempsTrajetEstimeMin": 22,
+      "distanceDepotKm": 32,
+      "tempsTrajetEstimeMin": 24,
       "villages": [
         "Oreye",
         "Otrange",
@@ -1046,7 +1046,7 @@
         "crisnee",
         "remicourt"
       ],
-      "introductionLocale": "Oreye regroupe cinq villages sous le code postal 4360 : Oreye, Otrange, Lens-sur-Geer, Grandville et Bergilers. L'entité se trouve entre Waremme et Crisnée, à un peu plus de vingt-cinq kilomètres de notre dépôt de Herstal.",
+      "introductionLocale": "Oreye regroupe cinq villages sous le code postal 4360 : Oreye, Otrange, Lens-sur-Geer, Grandville et Bergilers. L'entité se situe entre Waremme et Crisnée, deux communes où nous intervenons déjà.",
       "dateVerification": "2026-07-31",
       "statut": "published"
     },
@@ -1055,8 +1055,8 @@
       "nom": "Ouffet",
       "arrondissement": "Huy",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 50,
+      "tempsTrajetEstimeMin": 47,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -1096,8 +1096,8 @@
       "nom": "Pepinster",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 28,
+      "tempsTrajetEstimeMin": 31,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -1107,8 +1107,8 @@
       "nom": "Plombières",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 36,
+      "tempsTrajetEstimeMin": 35,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -1118,8 +1118,8 @@
       "nom": "Raeren",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 42,
+      "tempsTrajetEstimeMin": 34,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -1133,7 +1133,7 @@
         "4351"
       ],
       "distanceDepotKm": 27,
-      "tempsTrajetEstimeMin": 23,
+      "tempsTrajetEstimeMin": 24,
       "villages": [
         "Remicourt",
         "Lamine",
@@ -1148,7 +1148,7 @@
         "donceel",
         "fexhe-le-haut-clocher"
       ],
-      "introductionLocale": "Remicourt réunit cinq villages — Remicourt, Lamine, Pousset, Hodeige et Momalle — répartis sur deux codes postaux, 4350 et 4351. Nous y intervenons depuis Herstal en une vingtaine de minutes.",
+      "introductionLocale": "Remicourt réunit cinq villages — Remicourt, Lamine, Pousset, Hodeige et Momalle — répartis sur deux codes postaux, 4350 et 4351. Nous desservons l'entité entière, de Momalle à Hodeige.",
       "dateVerification": "2026-07-31",
       "statut": "published"
     },
@@ -1160,7 +1160,7 @@
         "4470"
       ],
       "distanceDepotKm": 27,
-      "tempsTrajetEstimeMin": 21,
+      "tempsTrajetEstimeMin": 22,
       "villages": [],
       "communesVoisines": [
         "donceel",
@@ -1180,8 +1180,8 @@
       "codesPostaux": [
         "4420"
       ],
-      "distanceDepotKm": 17,
-      "tempsTrajetEstimeMin": 16,
+      "distanceDepotKm": 18,
+      "tempsTrajetEstimeMin": 18,
       "villages": [
         "Tilleur",
         "Montegnée"
@@ -1200,8 +1200,8 @@
       "nom": "Saint-Vith (Sankt Vith)",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 71,
+      "tempsTrajetEstimeMin": 54,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -1215,8 +1215,8 @@
         "4101",
         "4102"
       ],
-      "distanceDepotKm": 22,
-      "tempsTrajetEstimeMin": 20,
+      "distanceDepotKm": 23,
+      "tempsTrajetEstimeMin": 22,
       "villages": [
         "Jemeppe-sur-Meuse",
         "Ougrée",
@@ -1248,8 +1248,8 @@
         "4632",
         "4633"
       ],
-      "distanceDepotKm": 12,
-      "tempsTrajetEstimeMin": 14,
+      "distanceDepotKm": 13,
+      "tempsTrajetEstimeMin": 17,
       "villages": [
         "Ayeneux",
         "Micheroux",
@@ -1272,8 +1272,8 @@
       "nom": "Spa",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 41,
+      "tempsTrajetEstimeMin": 38,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -1286,8 +1286,8 @@
         "4140",
         "4141"
       ],
-      "distanceDepotKm": 42,
-      "tempsTrajetEstimeMin": 32,
+      "distanceDepotKm": 43,
+      "tempsTrajetEstimeMin": 33,
       "villages": [
         "Louveigné",
         "Rouvreux",
@@ -1309,8 +1309,8 @@
       "nom": "Stavelot",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 51,
+      "tempsTrajetEstimeMin": 46,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -1320,8 +1320,8 @@
       "nom": "Stoumont",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 62,
+      "tempsTrajetEstimeMin": 51,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -1331,8 +1331,8 @@
       "nom": "Theux",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 33,
+      "tempsTrajetEstimeMin": 35,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -1342,8 +1342,8 @@
       "nom": "Thimister-Clermont",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 22,
+      "tempsTrajetEstimeMin": 23,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -1353,8 +1353,8 @@
       "nom": "Tinlot",
       "arrondissement": "Huy",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 41,
+      "tempsTrajetEstimeMin": 42,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -1364,8 +1364,8 @@
       "nom": "Trois-Ponts",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 57,
+      "tempsTrajetEstimeMin": 52,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -1378,7 +1378,7 @@
         "4870"
       ],
       "distanceDepotKm": 20,
-      "tempsTrajetEstimeMin": 26,
+      "tempsTrajetEstimeMin": 29,
       "villages": [
         "Forêt",
         "Fraipont",
@@ -1399,8 +1399,8 @@
       "nom": "Verlaine",
       "arrondissement": "Huy",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 29,
+      "tempsTrajetEstimeMin": 25,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -1410,8 +1410,8 @@
       "nom": "Verviers",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 26,
+      "tempsTrajetEstimeMin": 30,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -1421,8 +1421,8 @@
       "nom": "Villers-le-Bouillet",
       "arrondissement": "Huy",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 35,
+      "tempsTrajetEstimeMin": 25,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -1436,8 +1436,8 @@
         "4601",
         "4602"
       ],
-      "distanceDepotKm": 10,
-      "tempsTrajetEstimeMin": 12,
+      "distanceDepotKm": 7,
+      "tempsTrajetEstimeMin": 14,
       "villages": [
         "Richelle",
         "Argenteau",
@@ -1460,8 +1460,8 @@
       "nom": "Waimes",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 60,
+      "tempsTrajetEstimeMin": 56,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -1471,8 +1471,8 @@
       "nom": "Wanze",
       "arrondissement": "Huy",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 41,
+      "tempsTrajetEstimeMin": 29,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"
@@ -1484,8 +1484,8 @@
       "codesPostaux": [
         "4300"
       ],
-      "distanceDepotKm": 32,
-      "tempsTrajetEstimeMin": 25,
+      "distanceDepotKm": 30,
+      "tempsTrajetEstimeMin": 24,
       "villages": [
         "Bettincourt",
         "Bleret",
@@ -1516,8 +1516,8 @@
       "codesPostaux": [
         "4219"
       ],
-      "distanceDepotKm": 55,
-      "tempsTrajetEstimeMin": 43,
+      "distanceDepotKm": 56,
+      "tempsTrajetEstimeMin": 45,
       "villages": [
         "Wasseiges",
         "Meeffe",
@@ -1536,8 +1536,8 @@
       "nom": "Welkenraedt",
       "arrondissement": "Verviers",
       "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 31,
+      "tempsTrajetEstimeMin": 28,
       "villages": [],
       "communesVoisines": [],
       "statut": "draft"

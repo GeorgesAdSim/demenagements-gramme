@@ -46,7 +46,10 @@ function construireFaq(c: CommuneSEO): Array<{ q: string; a: string }> {
   if (c.distanceDepotKm !== null && c.tempsTrajetEstimeMin !== null) {
     faq.push({
       q: `À quelle distance ${deCommune(c.nom)} se trouve votre dépôt ?`,
-      a: `Notre dépôt est situé rue des Naiveux 64 à Herstal, à environ ${c.distanceDepotKm} km ${deCommune(c.nom)}, soit à peu près ${c.tempsTrajetEstimeMin} minutes de route. Cette proximité limite les frais d'approche facturés sur le devis.`,
+      // Le dépôt n'est volontairement pas localisé : les camions partent d'un
+      // site distinct du siège social, et nommer une commune ici a déjà induit
+      // en erreur — les distances avaient été mesurées depuis le siège.
+      a: `Notre dépôt se trouve à environ ${c.distanceDepotKm} km ${deCommune(c.nom)}, soit à peu près ${c.tempsTrajetEstimeMin} minutes de route. Cette proximité limite les frais d'approche facturés sur le devis.`,
     });
   }
 
@@ -204,7 +207,7 @@ export default function CommuneLandingPage() {
                   <div className="bg-offwhite rounded-2xl p-6 border border-gray-100">
                     <RouteIcon className="w-5 h-5 text-navy mb-3" />
                     <p className="text-navy font-black text-2xl">{commune.distanceDepotKm} km</p>
-                    <p className="text-muted text-sm">depuis notre dépôt de Herstal</p>
+                    <p className="text-muted text-sm">depuis notre dépôt</p>
                   </div>
                 )}
                 {commune.tempsTrajetEstimeMin !== null && (

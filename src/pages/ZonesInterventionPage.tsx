@@ -56,7 +56,7 @@ export default function ZonesInterventionPage() {
     <div className="font-sans">
       <SeoHead
         title="Zones d'intervention en province de Liège | Gramme"
-        description={`Déménagements Gramme intervient dans les ${COMMUNES.length} communes de la province de Liège depuis son dépôt de Herstal. Devis gratuit sous 24h.`}
+        description={`Déménagements Gramme intervient dans les ${COMMUNES.length} communes de la province de Liège depuis son dépôt. Devis gratuit sous 24h.`}
         canonical={RACINE_ZONES}
       />
       <SchemaOrg
@@ -81,7 +81,7 @@ export default function ZonesInterventionPage() {
               Nos zones d'intervention
             </h1>
             <p className="text-white/85 text-lg md:text-xl leading-relaxed max-w-3xl">
-              Depuis notre dépôt de Herstal, nous déménageons particuliers et
+              Depuis notre dépôt, nous déménageons particuliers et
               entreprises dans les {COMMUNES.length} communes de la province de
               Liège, et partout en Belgique. {ans} ans de terrain, trois
               générations, un devis gratuit sous 24 heures ouvrables.

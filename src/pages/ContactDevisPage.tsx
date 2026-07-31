@@ -425,7 +425,7 @@ export default function ContactDevisPage() {
                 Rendez-nous visite
               </h2>
               <p className="text-muted mt-3 max-w-xl mx-auto">
-                Notre dépôt se situe à Herstal, aux portes de Liège. N'hésitez pas à venir nous rencontrer.
+                Nos bureaux se situent à Herstal, aux portes de Liège. N'hésitez pas à venir nous rencontrer.
               </p>
             </motion.div>
 

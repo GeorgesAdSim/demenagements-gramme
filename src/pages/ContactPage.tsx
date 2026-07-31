@@ -96,7 +96,7 @@ const defaultContent: ContactPageContent = {
   },
   visit: {
     title: 'Rendez-nous visite',
-    subtitle: "Notre dépôt se situe à Herstal, aux portes de Liège. N'hésitez pas à venir nous rencontrer.",
+    subtitle: "Nos bureaux se situent à Herstal, aux portes de Liège. N'hésitez pas à venir nous rencontrer.",
   },
 };
 
