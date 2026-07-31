@@ -5,15 +5,13 @@
 // contraintes CHECK de la table. Ne jamais écrire `statut` ici.
 //
 // Sources, et rien d'autre :
-//   · distances  — Google Maps, itinéraire en voiture depuis le dépôt d'où
-//     partent les camions : Rue de la Digue, 4683 Oupeye. Destination
-//     « <Commune>, province de Liège, Belgique » — le suffixe de province n'est
-//     pas décoratif : Geer, Braives et Lincent ont des homonymes ailleurs.
+//   · distances  — PAS ici. Elles vivent dans scripts/distances.mjs, source
+//     unique pour les 84 communes : elles dépendent de l'adresse du dépôt, pas
+//     du lot, et se refont toutes ensemble quand cette adresse change.
 //
-//     ⚠️ Le premier relevé était parti de Rue des Naiveux 64 à Herstal, qui est
-//     le SIÈGE SOCIAL et non le dépôt. Les 37 valeurs qui en venaient ont été
-//     refaites. Aucune introduction ne doit plus énoncer une distance ou une
-//     durée : elles redeviendraient fausses au prochain déménagement du dépôt.
+//     ⚠️ Aucune introduction ne doit énoncer une distance ni une durée. Quatre
+//     le faisaient et sont devenues fausses le jour où l'origine du relevé a
+//     été corrigée.
 //   · limitrophes, codes postaux, sections — articles Wikipédia en français.
 //
 // Les limitrophes sont filtrées à la province de Liège : une commune du
@@ -26,31 +24,6 @@
 // que le lot ne commence.
 
 export const DATE_VERIFICATION = '2026-07-31';
-
-// [km, min] ou [km, min, 'raison de retenir une valeur hors plage'].
-//
-// Le générateur refuse une ligne dont la vitesse implicite sort de 35-79 km/h
-// tant qu'elle ne porte pas de troisième valeur. Trois lignes en portent une :
-// leur second relevé a rendu les mêmes chiffres et nommé un itinéraire
-// autoroutier. L'E40 traverse la Hesbaye en ligne droite depuis l'échangeur de
-// Herstal, là où les valeurs hautes de l'échantillon initial — sprimont,
-// aywaille — montaient vers l'Ardenne par l'E25.
-//
-// berloz et lincent n'ont pas de relevé : bloquées par ailleurs, leur distance
-// ne retient rien.
-export const DISTANCES = {
-  braives:                   [44, 32, 'second relevé identique, via E40'],
-  crisnee:                   [21, 16],
-  donceel:                   [28, 23],
-  faimes:                    [32, 27],
-  'fexhe-le-haut-clocher':   [23, 19],
-  geer:                      [39, 27, 'second relevé identique (38,7 km), via E40/E42 puis E40'],
-  hannut:                    [47, 34, 'second relevé identique (46,8 km), via E40'],
-  oreye:                     [26, 22],
-  remicourt:                 [27, 23],
-  'saint-georges-sur-meuse': [27, 21],
-  wasseiges:                 [55, 43],
-};
 
 // `infos` — les particularités de terrain — reste absent partout : bâti, accès,
 // stationnement et dénivelé ne se déduisent d'aucune source publique. Ils sont

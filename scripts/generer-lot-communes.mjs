@@ -27,27 +27,14 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { DISTANCES, ORIGINE, controlerVitesse, CONTROLE_VITESSE } from './distances.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
-// Plage de vitesse moyenne implicite (km ÷ h) des relevés Google Maps.
-//
-// Elle vient des 26 premiers relevés, qui tenaient tous entre 34,7 et 78,8
-// km/h. Son rôle est de détecter une LIGNE MAL LUE, pas de définir ce qui est
-// vrai : c'est ce contrôle qui a confirmé l'erreur des 8 km de Seraing, dont la
-// mesure réelle est 22.
-//
-// Une valeur hors plage n'est donc pas fausse par nature. L'arrondissement de
-// Waremme l'a montré : braives, geer et hannut sortent à 82-87 km/h parce que
-// l'E40 traverse la Hesbaye en ligne droite depuis l'échangeur de Herstal, là
-// où les valeurs hautes de l'échantillon initial montaient vers l'Ardenne par
-// l'E25. Un second relevé identique les a confirmées.
-//
-// D'où la règle appliquée ici : hors plage, le script ÉCHOUE, à moins que la
-// ligne ne porte une troisième valeur expliquant la confirmation. On ne peut
-// pas retenir une valeur aberrante par distraction, seulement par décision
-// écrite et relisible.
-const CONTROLE_VITESSE = { min: 35, max: 79 };
+// Les distances et leur contrôle de cohérence vivent dans scripts/distances.mjs.
+// Hors plage, le script ÉCHOUE, à moins que la ligne du relevé ne porte une
+// justification écrite : une valeur aberrante ne doit jamais être retenue par
+// distraction, seulement par décision relisible.
 
 /** Ordre des clés imposé par scripts/sync-communes.mjs — un écart produirait un diff à chaque build. */
 const ORDRE = ['id', 'nom', 'arrondissement', 'codesPostaux', 'distanceDepotKm',
@@ -79,20 +66,6 @@ function raisonsDeNePasPublier(c) {
   return r;
 }
 
-function controlerVitesse(id, entree) {
-  const [km, min, confirmation] = entree;
-  const v = km / (min / 60);
-  const horsPlage = v < CONTROLE_VITESSE.min || v > CONTROLE_VITESSE.max;
-  if (horsPlage && !confirmation) {
-    erreurs.push(
-      `${id} : ${km} km en ${min} min, soit ${v.toFixed(1)} km/h — hors de la plage ` +
-      `${CONTROLE_VITESSE.min}-${CONTROLE_VITESSE.max} km/h. Refais le relevé. S'il rend les mêmes ` +
-      `valeurs, ajoute une troisième valeur à la ligne expliquant pourquoi elle est retenue.`
-    );
-  }
-  return { km, min, v, confirmation };
-}
-
 const q = (s) => `'${String(s).replace(/'/g, "''")}'`;
 const tableau = (a) => (a.length ? `array[${a.map(q).join(', ')}]::text[]` : `'{}'`);
 const nombre = (n) => (n === null ? 'null' : String(n));
@@ -112,7 +85,9 @@ async function main() {
     console.error(`lot « ${nomLot} » introuvable ou illisible : ${e.message}`);
     process.exit(1);
   }
-  const { DATE_VERIFICATION, DISTANCES, DONNEES } = lot;
+  // Les distances ne viennent PAS du lot : elles ont une source unique, parce
+  // qu'elles dépendent d'une seule adresse et se refont toutes ensemble.
+  const { DATE_VERIFICATION, DONNEES } = lot;
 
   const cheminJson = path.join(root, 'src/data/communes.json');
   const base = JSON.parse(await readFile(cheminJson, 'utf-8'));
@@ -124,7 +99,7 @@ async function main() {
     const c = parId.get(id);
     if (!c) { erreurs.push(`${id} : absente de la table des 84 communes`); continue; }
 
-    const mesure = DISTANCES[id] ? controlerVitesse(id, DISTANCES[id]) : null;
+    const mesure = DISTANCES[id] ? controlerVitesse(id, DISTANCES[id], erreurs) : null;
 
     if (d.voisines.includes(id)) erreurs.push(`${id} : se cite elle-même comme limitrophe`);
 
@@ -216,6 +191,8 @@ async function main() {
 --
 -- ⚠️ FICHIER GÉNÉRÉ par scripts/generer-lot-communes.mjs — ne pas modifier à la
 -- main. Corrige scripts/lots/${nomLot}.mjs et relance le script.
+--
+-- Distances relevées depuis ${ORIGINE}.
 --
 -- Généré en même temps que src/data/communes.json, depuis la même source. Les
 -- deux doivent rester identiques : au prochain build, sync-communes.mjs doit

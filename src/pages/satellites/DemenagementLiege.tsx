@@ -38,10 +38,10 @@ const MOYENS = [
   { icon: Truck, chiffre: '6', libelle: 'camions', detail: "de 4 à 100 m³, équipés d'élévateurs" },
   { icon: Users, chiffre: '20', libelle: 'personnes', detail: 'déménageurs, chauffeurs et magasiniers' },
   { icon: Award, chiffre: 'ISO 9001', libelle: '', detail: 'système qualité certifié' },
-  // ⚠️ Ce chiffre est écrit en dur ici ET stocké pour la commune `liege`. Il a
-  // été mesuré depuis le siège social, pas depuis le dépôt : à corriger avec le
-  // relevé refait depuis la rue de la Digue.
-  { icon: RouteIcon, chiffre: '11 km', libelle: 'du centre', detail: 'depuis notre dépôt' },
+  // ⚠️ Ce chiffre est écrit en dur ici ET stocké pour la commune `liege` dans
+  // communes.json. Les deux doivent rester d'accord : au prochain relevé,
+  // pense à celui-ci — rien ne le vérifie automatiquement.
+  { icon: RouteIcon, chiffre: '12 km', libelle: 'du centre', detail: 'depuis notre dépôt' },
 ];
 
 const CONTRAINTES = [
@@ -109,7 +109,7 @@ const FAQ = [
   },
   {
     q: 'À quelle distance de Liège se trouve votre dépôt ?',
-    a: "Notre dépôt se trouve à environ 11 km du centre de Liège, soit une vingtaine de minutes de route. Cette proximité limite les frais d'approche facturés sur le devis et nous permet d'intervenir vite, y compris pour un complément de matériel en cours de chantier.",
+    a: "Notre dépôt se trouve à environ 12 km du centre de Liège, soit une vingtaine de minutes de route. Cette proximité limite les frais d'approche facturés sur le devis et nous permet d'intervenir vite, y compris pour un complément de matériel en cours de chantier.",
   },
 ];
 
@@ -182,8 +182,8 @@ export default function DemenagementLiege() {
                 adresse, date de fondation, moyens chiffrés, certification. */}
             <p className="text-white text-lg md:text-xl leading-relaxed border-l-4 border-yellow pl-5 max-w-3xl font-medium">
               Déménagements Gramme organise votre déménagement à Liège depuis
-              1948. Entreprise familiale établie rue des Naiveux 64 à Herstal, à
-              11 km du centre, certifiée ISO 9001&nbsp;: 6 camions de 4 à 100 m³,
+              1948. Entreprise familiale établie rue des Naiveux 64 à Herstal,
+              aux portes de Liège, certifiée ISO 9001&nbsp;: 6 camions de 4 à 100 m³,
               20 personnes, assurance transport et casse incluse. Devis gratuit
               sous 24 heures ouvrables.
             </p>
