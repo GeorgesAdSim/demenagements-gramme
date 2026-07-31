@@ -54,8 +54,17 @@ const erreurs = [];
  * pouvoir tourner sans accès réseau à la base, et la duplication est ici le
  * moindre mal. `scripts/verify-build.mjs` contrôle l'accord des deux au build.
  */
-function raisonsDeNePasPublier(c) {
+function raisonsDeNePasPublier(c, enAttente) {
   const r = [];
+
+  // Mise en attente décidée, et non manque de donnée. La distinction compte :
+  // berloz reste en brouillon parce qu'aucun relevé ne lui trouvera une
+  // troisième limitrophe liégeoise, tandis que les communes germanophones ont
+  // des données complètes et n'attendent qu'un arbitrage. Sans ce champ, elles
+  // se publieraient toutes seules à la première génération — le statut étant
+  // déduit des données, une donnée complète vaut publication.
+  if (enAttente) r.push(`en attente — ${enAttente}`);
+
   const n = c.communesVoisines.length;
   if (n < 3 || n > 5) r.push(`${n} limitrophe(s) en province de Liège — il en faut 3 à 5`);
   if (c.distanceDepotKm === null) r.push('distance depuis le dépôt non relevée');
@@ -111,7 +120,7 @@ async function main() {
     if (d.intro) c.introductionLocale = d.intro;
     if (d.infos?.length) c.informationsLocales = d.infos;
 
-    const raisons = raisonsDeNePasPublier(c);
+    const raisons = raisonsDeNePasPublier(c, d.enAttente);
     c.statut = raisons.length ? 'draft' : 'published';
     if (raisons.length) delete c.dateVerification;
     else c.dateVerification = DATE_VERIFICATION;

@@ -31,11 +31,24 @@
       "id": "ambleve",
       "nom": "Amblève (Amel)",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4770",
+        "4771"
+      ],
       "distanceDepotKm": 70,
       "tempsTrajetEstimeMin": 55,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Amblève",
+        "Heppenbach",
+        "Meyerode"
+      ],
+      "communesVoisines": [
+        "malmedy",
+        "waimes",
+        "butgenbach",
+        "bullange",
+        "saint-vith"
+      ],
       "statut": "draft"
     },
     {
@@ -97,12 +110,22 @@
       "id": "aubel",
       "nom": "Aubel",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4880"
+      ],
       "distanceDepotKm": 27,
       "tempsTrajetEstimeMin": 27,
       "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "communesVoisines": [
+        "dalhem",
+        "plombieres",
+        "herve",
+        "thimister-clermont",
+        "welkenraedt"
+      ],
+      "introductionLocale": "Aubel porte le code postal 4880 et borde Dalhem, où nous intervenons déjà. L'entité se situe au cœur du pays de Herve, entre Plombières et Thimister-Clermont.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "awans",
@@ -158,12 +181,25 @@
       "id": "baelen",
       "nom": "Baelen",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4837"
+      ],
       "distanceDepotKm": 33,
       "tempsTrajetEstimeMin": 29,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Baelen",
+        "Membach"
+      ],
+      "communesVoisines": [
+        "limbourg",
+        "welkenraedt",
+        "lontzen",
+        "jalhay",
+        "waimes"
+      ],
+      "introductionLocale": "Baelen ne compte que deux villages, Baelen et Membach, sous le code postal 4837. L'entité borde Limbourg et Welkenraedt, et touche la Communauté germanophone par Lontzen.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "bassenge",
@@ -296,11 +332,22 @@
       "id": "bullange",
       "nom": "Bullange (Büllingen)",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4760",
+        "4761"
+      ],
       "distanceDepotKm": 79,
       "tempsTrajetEstimeMin": 65,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Bullange",
+        "Rocherath",
+        "Manderfeld"
+      ],
+      "communesVoisines": [
+        "butgenbach",
+        "ambleve",
+        "saint-vith"
+      ],
       "statut": "draft"
     },
     {
@@ -334,22 +381,39 @@
       "id": "burg-reuland",
       "nom": "Burg-Reuland",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4790",
+        "4791"
+      ],
       "distanceDepotKm": 83,
       "tempsTrajetEstimeMin": 63,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Thommen",
+        "Reuland"
+      ],
+      "communesVoisines": [
+        "saint-vith"
+      ],
       "statut": "draft"
     },
     {
       "id": "butgenbach",
       "nom": "Butgenbach (Bütgenbach)",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4750"
+      ],
       "distanceDepotKm": 68,
       "tempsTrajetEstimeMin": 63,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Bütgenbach",
+        "Elsenborn"
+      ],
+      "communesVoisines": [
+        "waimes",
+        "bullange",
+        "ambleve"
+      ],
       "statut": "draft"
     },
     {
@@ -486,12 +550,26 @@
       "id": "dison",
       "nom": "Dison",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4820",
+        "4821"
+      ],
       "distanceDepotKm": 21,
       "tempsTrajetEstimeMin": 20,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Dison",
+        "Andrimont"
+      ],
+      "communesVoisines": [
+        "herve",
+        "thimister-clermont",
+        "welkenraedt",
+        "verviers",
+        "limbourg"
+      ],
+      "introductionLocale": "Dison réunit deux villages, Dison et Andrimont, sur deux codes postaux, 4820 et 4821. L'entité jouxte Verviers et Herve, deux communes que nous desservons.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "donceel",
@@ -571,11 +649,22 @@
       "id": "eupen",
       "nom": "Eupen",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4700",
+        "4701"
+      ],
       "distanceDepotKm": 33,
       "tempsTrajetEstimeMin": 34,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Eupen",
+        "Kettenis"
+      ],
+      "communesVoisines": [
+        "lontzen",
+        "raeren",
+        "baelen",
+        "waimes"
+      ],
       "statut": "draft"
     },
     {
@@ -891,12 +980,35 @@
       "id": "herve",
       "nom": "Herve",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4650",
+        "4651",
+        "4652",
+        "4653",
+        "4654"
+      ],
       "distanceDepotKm": 15,
       "tempsTrajetEstimeMin": 19,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Herve",
+        "Charneux",
+        "Battice",
+        "Chaineux",
+        "Grand-Rechain",
+        "Xhendelesse",
+        "Bolland",
+        "Julémont"
+      ],
+      "communesVoisines": [
+        "dalhem",
+        "aubel",
+        "blegny",
+        "soumagne",
+        "thimister-clermont"
+      ],
+      "introductionLocale": "Herve réunit huit villages sur cinq codes postaux, de 4650 à 4654 : Herve, Charneux, Battice, Chaineux, Grand-Rechain, Xhendelesse, Bolland et Julémont. Avec neuf communes limitrophes en province de Liège, c'est l'entité la plus entourée de l'arrondissement.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "huy",
@@ -930,12 +1042,25 @@
       "id": "jalhay",
       "nom": "Jalhay",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4845"
+      ],
       "distanceDepotKm": 34,
       "tempsTrajetEstimeMin": 39,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Jalhay",
+        "Sart-lez-Spa"
+      ],
+      "communesVoisines": [
+        "verviers",
+        "limbourg",
+        "baelen",
+        "theux",
+        "spa"
+      ],
+      "introductionLocale": "Jalhay ne compte que deux villages, Jalhay et Sart-lez-Spa, sous le code postal 4845. Avec sept limitrophes liégeoises, l'entité touche aussi bien l'agglomération verviétoise que Malmedy et Stavelot.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "juprelle",
@@ -973,11 +1098,23 @@
       "id": "la-calamine",
       "nom": "La Calamine (Kelmis)",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4720",
+        "4721",
+        "4728"
+      ],
       "distanceDepotKm": 35,
       "tempsTrajetEstimeMin": 35,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "La Calamine",
+        "Neu-Moresnet",
+        "Hergenrath"
+      ],
+      "communesVoisines": [
+        "plombieres",
+        "raeren",
+        "lontzen"
+      ],
       "statut": "draft"
     },
     {
@@ -1018,23 +1155,49 @@
       "id": "lierneux",
       "nom": "Lierneux",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4990"
+      ],
       "distanceDepotKm": 75,
       "tempsTrajetEstimeMin": 56,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Lierneux",
+        "Bra",
+        "Arbrefontaine"
+      ],
+      "communesVoisines": [
+        "stoumont",
+        "trois-ponts"
+      ],
+      "introductionLocale": "Lierneux réunit trois villages sous le code postal 4990 : Lierneux, Bra et Arbrefontaine. L'entité est au contact de la province de Luxembourg — Stoumont et Trois-Ponts sont ses seules limitrophes liégeoises.",
       "statut": "draft"
     },
     {
       "id": "limbourg",
       "nom": "Limbourg",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4830",
+        "4831",
+        "4834"
+      ],
       "distanceDepotKm": 27,
       "tempsTrajetEstimeMin": 29,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Limbourg",
+        "Bilstain",
+        "Goé"
+      ],
+      "communesVoisines": [
+        "welkenraedt",
+        "dison",
+        "verviers",
+        "baelen",
+        "jalhay"
+      ],
+      "introductionLocale": "Limbourg réunit trois villages — Limbourg, Bilstain et Goé — répartis sur trois codes postaux, 4830, 4831 et 4834. L'entité ne doit pas être confondue avec la province du même nom, qui est flamande et située plus au nord.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "lincent",
@@ -1060,23 +1223,50 @@
       "id": "lontzen",
       "nom": "Lontzen",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4710",
+        "4711"
+      ],
       "distanceDepotKm": 34,
       "tempsTrajetEstimeMin": 30,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Lontzen",
+        "Herbesthal",
+        "Walhorn"
+      ],
+      "communesVoisines": [
+        "baelen",
+        "plombieres",
+        "welkenraedt",
+        "eupen",
+        "la-calamine"
+      ],
       "statut": "draft"
     },
     {
       "id": "malmedy",
       "nom": "Malmedy",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4960"
+      ],
       "distanceDepotKm": 52,
       "tempsTrajetEstimeMin": 45,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Malmedy",
+        "Bellevaux-Ligneuville",
+        "Bévercé"
+      ],
+      "communesVoisines": [
+        "jalhay",
+        "stavelot",
+        "waimes",
+        "saint-vith",
+        "ambleve"
+      ],
+      "introductionLocale": "Malmedy réunit trois villages sous le code postal 4960 : Malmedy, Bellevaux-Ligneuville et Bévercé. L'entité borde la Communauté germanophone par Amblève et Saint-Vith.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "marchin",
@@ -1183,12 +1373,22 @@
       "id": "olne",
       "nom": "Olne",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4877"
+      ],
       "distanceDepotKm": 17,
       "tempsTrajetEstimeMin": 24,
       "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "communesVoisines": [
+        "soumagne",
+        "fleron",
+        "trooz",
+        "herve",
+        "pepinster"
+      ],
+      "introductionLocale": "Olne porte le code postal 4877 et borde trois communes de l'arrondissement de Liège — Soumagne, Fléron et Trooz — que nous desservons déjà, ainsi que Herve et Pepinster.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "oreye",
@@ -1273,33 +1473,77 @@
       "id": "pepinster",
       "nom": "Pepinster",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4860",
+        "4861"
+      ],
       "distanceDepotKm": 28,
       "tempsTrajetEstimeMin": 31,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Pepinster",
+        "Cornesse",
+        "Soiron",
+        "Wegnez"
+      ],
+      "communesVoisines": [
+        "herve",
+        "olne",
+        "trooz",
+        "sprimont",
+        "verviers"
+      ],
+      "introductionLocale": "Pepinster réunit quatre villages — Pepinster, Cornesse, Soiron et Wegnez — sur deux codes postaux, 4860 et 4861. L'entité borde Verviers et Theux, et touche l'arrondissement de Liège par Trooz et Sprimont.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "plombieres",
       "nom": "Plombières",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4850",
+        "4851",
+        "4852"
+      ],
       "distanceDepotKm": 36,
       "tempsTrajetEstimeMin": 35,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Gemmenich",
+        "Hombourg",
+        "Montzen",
+        "Moresnet",
+        "Sippenaeken"
+      ],
+      "communesVoisines": [
+        "la-calamine",
+        "aubel",
+        "welkenraedt",
+        "lontzen"
+      ],
+      "introductionLocale": "Plombières est une entité sans village homonyme : son nom désigne le regroupement de Gemmenich, Hombourg, Montzen, Moresnet et Sippenaeken, répartis sur les codes postaux 4850, 4851 et 4852. Elle borde la Communauté germanophone par La Calamine et Lontzen.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "raeren",
       "nom": "Raeren",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4730",
+        "4731"
+      ],
       "distanceDepotKm": 42,
       "tempsTrajetEstimeMin": 34,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Raeren",
+        "Hauset",
+        "Eynatten"
+      ],
+      "communesVoisines": [
+        "la-calamine",
+        "lontzen",
+        "eupen"
+      ],
       "statut": "draft"
     },
     {
@@ -1377,11 +1621,28 @@
       "id": "saint-vith",
       "nom": "Saint-Vith (Sankt Vith)",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4780",
+        "4782",
+        "4783",
+        "4784"
+      ],
       "distanceDepotKm": 71,
       "tempsTrajetEstimeMin": 54,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Saint-Vith",
+        "Recht",
+        "Schoenberg",
+        "Lommersweiler",
+        "Crombach"
+      ],
+      "communesVoisines": [
+        "trois-ponts",
+        "stavelot",
+        "malmedy",
+        "ambleve",
+        "bullange"
+      ],
       "statut": "draft"
     },
     {
@@ -1449,12 +1710,21 @@
       "id": "spa",
       "nom": "Spa",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4900"
+      ],
       "distanceDepotKm": 41,
       "tempsTrajetEstimeMin": 38,
       "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "communesVoisines": [
+        "theux",
+        "jalhay",
+        "stoumont",
+        "stavelot"
+      ],
+      "introductionLocale": "Spa porte le code postal 4900 et borde Theux, Jalhay, Stoumont et Stavelot. Nous y intervenons comme dans les quatre communes qui l'entourent.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "sprimont",
@@ -1486,45 +1756,100 @@
       "id": "stavelot",
       "nom": "Stavelot",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4970"
+      ],
       "distanceDepotKm": 51,
       "tempsTrajetEstimeMin": 46,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Stavelot",
+        "Francorchamps"
+      ],
+      "communesVoisines": [
+        "spa",
+        "jalhay",
+        "stoumont",
+        "malmedy",
+        "trois-ponts"
+      ],
+      "introductionLocale": "Stavelot ne compte que deux villages, Stavelot et Francorchamps, sous le code postal 4970. L'entité borde Spa et Malmedy, et touche la Communauté germanophone par Saint-Vith.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "stoumont",
       "nom": "Stoumont",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4987"
+      ],
       "distanceDepotKm": 62,
       "tempsTrajetEstimeMin": 51,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Stoumont",
+        "Chevron",
+        "La Gleize",
+        "Lorcé",
+        "Rahier"
+      ],
+      "communesVoisines": [
+        "aywaille",
+        "theux",
+        "spa",
+        "ferrieres",
+        "stavelot"
+      ],
+      "introductionLocale": "Stoumont réunit cinq villages sous le code postal 4987 : Stoumont, Chevron, La Gleize, Lorcé et Rahier. C'est la seule commune de l'arrondissement de Verviers à toucher celui de Huy, par Ferrières.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "theux",
       "nom": "Theux",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4910"
+      ],
       "distanceDepotKm": 33,
       "tempsTrajetEstimeMin": 35,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Theux",
+        "Polleur",
+        "La Reid"
+      ],
+      "communesVoisines": [
+        "jalhay",
+        "pepinster",
+        "spa",
+        "aywaille",
+        "sprimont"
+      ],
+      "introductionLocale": "Theux réunit trois villages sous le code postal 4910 : Theux, Polleur et La Reid. L'entité se situe entre Verviers et Spa, et touche l'arrondissement de Liège par Aywaille et Sprimont.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "thimister-clermont",
       "nom": "Thimister-Clermont",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4890"
+      ],
       "distanceDepotKm": 22,
       "tempsTrajetEstimeMin": 23,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Clermont",
+        "Thimister"
+      ],
+      "communesVoisines": [
+        "aubel",
+        "dison",
+        "herve",
+        "welkenraedt"
+      ],
+      "introductionLocale": "Thimister-Clermont tient son nom de ses deux villages, Thimister et Clermont, réunis sous le code postal 4890. Elle borde Herve, Aubel, Dison et Welkenraedt, où nous intervenons également.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "tinlot",
@@ -1558,12 +1883,26 @@
       "id": "trois-ponts",
       "nom": "Trois-Ponts",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4980",
+        "4983"
+      ],
       "distanceDepotKm": 57,
       "tempsTrajetEstimeMin": 52,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Basse-Bodeux",
+        "Fosse",
+        "Wanne"
+      ],
+      "communesVoisines": [
+        "stoumont",
+        "stavelot",
+        "saint-vith",
+        "lierneux"
+      ],
+      "introductionLocale": "Trois-Ponts réunit Basse-Bodeux, Fosse et Wanne sous les codes postaux 4980 et 4983 — aucune de ses trois anciennes communes ne porte le nom de l'entité. Elle borde Stoumont et Stavelot, que nous desservons déjà.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "trooz",
@@ -1619,12 +1958,31 @@
       "id": "verviers",
       "nom": "Verviers",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4800",
+        "4801",
+        "4802"
+      ],
       "distanceDepotKm": 26,
       "tempsTrajetEstimeMin": 30,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Verviers",
+        "Ensival",
+        "Heusy",
+        "Lambermont",
+        "Petit-Rechain",
+        "Stembert"
+      ],
+      "communesVoisines": [
+        "herve",
+        "dison",
+        "pepinster",
+        "limbourg",
+        "theux"
+      ],
+      "introductionLocale": "Verviers réunit six villages sur trois codes postaux, de 4800 à 4802 : Verviers, Ensival, Heusy, Lambermont, Petit-Rechain et Stembert. C'est le chef-lieu de l'arrondissement, et six communes le bordent en province de Liège.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "villers-le-bouillet",
@@ -1685,12 +2043,26 @@
       "id": "waimes",
       "nom": "Waimes",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4950"
+      ],
       "distanceDepotKm": 60,
       "tempsTrajetEstimeMin": 56,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Waimes",
+        "Faymonville",
+        "Robertville"
+      ],
+      "communesVoisines": [
+        "jalhay",
+        "baelen",
+        "eupen",
+        "malmedy",
+        "butgenbach"
+      ],
+      "introductionLocale": "Waimes réunit trois villages sous le code postal 4950 : Waimes, Faymonville et Robertville. L'entité est entourée de communes germanophones — Eupen, Butgenbach et Amblève — et borde Malmedy et Jalhay.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "wanze",
@@ -1778,12 +2150,26 @@
       "id": "welkenraedt",
       "nom": "Welkenraedt",
       "arrondissement": "Verviers",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4840",
+        "4841"
+      ],
       "distanceDepotKm": 31,
       "tempsTrajetEstimeMin": 28,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Welkenraedt",
+        "Henri-Chapelle"
+      ],
+      "communesVoisines": [
+        "thimister-clermont",
+        "aubel",
+        "plombieres",
+        "dison",
+        "limbourg"
+      ],
+      "introductionLocale": "Welkenraedt ne compte que deux villages, Welkenraedt et Henri-Chapelle, sur deux codes postaux, 4840 et 4841. Avec sept limitrophes liégeoises, l'entité fait la jonction entre le pays de Herve et la Communauté germanophone.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     }
   ]
 }
