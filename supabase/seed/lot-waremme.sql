@@ -1,5 +1,5 @@
 -- ============================================================================
--- Lot « arrondissement de Waremme » — 8 commune(s) publiée(s), 5 maintenue(s) en brouillon
+-- Lot « arrondissement de Waremme » — 10 commune(s) publiée(s), 3 maintenue(s) en brouillon
 --
 -- Généré depuis un jeu de données unique, qui a produit en même temps
 -- src/data/communes.json. Le JSON et cette table doivent rester identiques :
@@ -17,8 +17,6 @@
 --
 -- Maintenues en brouillon, volontairement :
 --   · berloz — 2 limitrophe(s) — il en faut 3 à 5 ; distance non relevée ; temps de trajet non relevé
---   · geer — distance non relevée ; temps de trajet non relevé
---   · hannut — distance non relevée ; temps de trajet non relevé
 --   · lincent — 1 limitrophe(s) — il en faut 3 à 5 ; distance non relevée ; temps de trajet non relevé
 --   · wasseiges — 2 limitrophe(s) — il en faut 3 à 5
 -- ============================================================================
@@ -96,10 +94,10 @@ update public.communes set
   villages                = array['Geer', 'Boëlhe', 'Hollogne-sur-Geer', 'Darion', 'Omal', 'Ligney', 'Lens-Saint-Servais']::text[],
   communes_voisines       = array['berloz', 'hannut', 'waremme', 'braives', 'faimes']::text[],
   introduction_locale     = 'Geer porte quatre codes postaux — 4250, 4252, 4253 et 4254 — pour sept villages, dont Hollogne-sur-Geer, Omal et Lens-Saint-Servais. C''est l''entité la plus fragmentée de l''arrondissement sur le plan postal, et nous couvrons chacun de ses villages.',
-  distance_depot_km       = null,
-  temps_trajet_estime_min = null,
-  date_verification       = null,
-  statut                  = 'draft'
+  distance_depot_km       = 39,
+  temps_trajet_estime_min = 27,
+  date_verification       = '2026-07-31',
+  statut                  = 'published'
 where id = 'geer';
 
 update public.communes set
@@ -107,10 +105,10 @@ update public.communes set
   villages                = array['Hannut', 'Avernas-le-Bauduin', 'Bertrée', 'Cras-Avernas', 'Poucet', 'Abolens', 'Blehen', 'Lens-Saint-Remy', 'Villers-le-Peuplier', 'Crehen', 'Trognée', 'Avin', 'Moxhe', 'Thisnes', 'Merdorp', 'Grand-Hallet', 'Petit-Hallet', 'Wansin']::text[],
   communes_voisines       = array['lincent', 'geer', 'wasseiges', 'burdinne', 'braives']::text[],
   introduction_locale     = 'Hannut réunit dix-huit villages sous un unique code postal, le 4280 : Avin, Thisnes, Crehen, Merdorp, Wansin ou encore Grand-Hallet. Deux adresses « à Hannut » peuvent donc se trouver à plusieurs kilomètres l''une de l''autre.',
-  distance_depot_km       = null,
-  temps_trajet_estime_min = null,
-  date_verification       = null,
-  statut                  = 'draft'
+  distance_depot_km       = 47,
+  temps_trajet_estime_min = 34,
+  date_verification       = '2026-07-31',
+  statut                  = 'published'
 where id = 'hannut';
 
 update public.communes set
@@ -170,6 +168,6 @@ where id = 'wasseiges';
 
 commit;
 
--- Contrôle : attendu 34 publiée(s) sur 84.
+-- Contrôle : attendu 36 publiée(s) sur 84.
 select count(*) as total, count(*) filter (where statut = 'published') as publiees
 from public.communes;

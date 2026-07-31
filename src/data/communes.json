@@ -628,8 +628,8 @@
         "4253",
         "4254"
       ],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 39,
+      "tempsTrajetEstimeMin": 27,
       "villages": [
         "Geer",
         "Boëlhe",
@@ -647,7 +647,8 @@
         "faimes"
       ],
       "introductionLocale": "Geer porte quatre codes postaux — 4250, 4252, 4253 et 4254 — pour sept villages, dont Hollogne-sur-Geer, Omal et Lens-Saint-Servais. C'est l'entité la plus fragmentée de l'arrondissement sur le plan postal, et nous couvrons chacun de ses villages.",
-      "statut": "draft"
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "grace-hollogne",
@@ -693,8 +694,8 @@
       "codesPostaux": [
         "4280"
       ],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 47,
+      "tempsTrajetEstimeMin": 34,
       "villages": [
         "Hannut",
         "Avernas-le-Bauduin",
@@ -723,7 +724,8 @@
         "braives"
       ],
       "introductionLocale": "Hannut réunit dix-huit villages sous un unique code postal, le 4280 : Avin, Thisnes, Crehen, Merdorp, Wansin ou encore Grand-Hallet. Deux adresses « à Hannut » peuvent donc se trouver à plusieurs kilomètres l'une de l'autre.",
-      "statut": "draft"
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "heron",
