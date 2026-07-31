@@ -1,5 +1,5 @@
 -- ============================================================================
--- Lot « arrondissement de Waremme » — 7 commune(s) publiée(s), 6 maintenue(s) en brouillon
+-- Lot « arrondissement de Waremme » — 8 commune(s) publiée(s), 5 maintenue(s) en brouillon
 --
 -- Généré depuis un jeu de données unique, qui a produit en même temps
 -- src/data/communes.json. Le JSON et cette table doivent rester identiques :
@@ -17,7 +17,6 @@
 --
 -- Maintenues en brouillon, volontairement :
 --   · berloz — 2 limitrophe(s) — il en faut 3 à 5 ; distance non relevée ; temps de trajet non relevé
---   · braives — distance non relevée ; temps de trajet non relevé
 --   · geer — distance non relevée ; temps de trajet non relevé
 --   · hannut — distance non relevée ; temps de trajet non relevé
 --   · lincent — 1 limitrophe(s) — il en faut 3 à 5 ; distance non relevée ; temps de trajet non relevé
@@ -42,10 +41,10 @@ update public.communes set
   villages                = array['Braives', 'Tourinne', 'Latinne', 'Fallais', 'Fumal', 'Ville-en-Hesbaye', 'Ciplet', 'Avennes']::text[],
   communes_voisines       = array['hannut', 'geer', 'faimes', 'villers-le-bouillet', 'burdinne']::text[],
   introduction_locale     = 'Braives rassemble huit villages, de Fallais à Avennes en passant par Latinne et Ville-en-Hesbaye, répartis sur trois codes postaux : 4260, 4261 et 4263. Nous traitons l''entité comme un seul territoire, d''un village à l''autre.',
-  distance_depot_km       = null,
-  temps_trajet_estime_min = null,
-  date_verification       = null,
-  statut                  = 'draft'
+  distance_depot_km       = 44,
+  temps_trajet_estime_min = 32,
+  date_verification       = '2026-07-31',
+  statut                  = 'published'
 where id = 'braives';
 
 update public.communes set
@@ -171,6 +170,6 @@ where id = 'wasseiges';
 
 commit;
 
--- Contrôle : attendu 33 publiée(s) sur 84.
+-- Contrôle : attendu 34 publiée(s) sur 84.
 select count(*) as total, count(*) filter (where statut = 'published') as publiees
 from public.communes;

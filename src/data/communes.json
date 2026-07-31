@@ -235,8 +235,8 @@
         "4261",
         "4263"
       ],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "distanceDepotKm": 44,
+      "tempsTrajetEstimeMin": 32,
       "villages": [
         "Braives",
         "Tourinne",
@@ -255,7 +255,8 @@
         "burdinne"
       ],
       "introductionLocale": "Braives rassemble huit villages, de Fallais à Avennes en passant par Latinne et Ville-en-Hesbaye, répartis sur trois codes postaux : 4260, 4261 et 4263. Nous traitons l'entité comme un seul territoire, d'un village à l'autre.",
-      "statut": "draft"
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "bullange",
