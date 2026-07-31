@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Menu, X, ChevronDown } from 'lucide-react';
+import { RACINE_ZONES } from '../data/communes';
 
 interface DropdownItem {
   label: string;
@@ -28,8 +29,12 @@ const NAV_ITEMS: NavItem[] = [
     ],
   },
   {
+    // Menait à l'ancre #zones, une section de l'accueil. Pointe désormais vers
+    // la page des zones d'intervention, qui liste les 84 communes et distribue
+    // le maillage vers les 71 pages locales. Une ancre ne transmet aucun
+    // signal : elle ne mène qu'à un endroit de la page où l'on est déjà.
     label: 'Zones',
-    href: '#zones',
+    to: RACINE_ZONES,
     children: [
       { label: 'Liège', to: '/demenagement/demenagement-liege' },
       { label: 'Seraing', to: '/demenagement/demenagement-seraing' },
@@ -135,6 +140,9 @@ export default function Navbar() {
                   }`}
                 >
                   {item.label}
+                  {/* Le chevron signale le sous-menu. Sans lui, un item qui
+                      navigue ET déroule paraît n'être qu'un lien simple. */}
+                  {item.children && <ChevronDown className="w-3.5 h-3.5" />}
                 </Link>
               ) : (
                 <button
@@ -182,7 +190,29 @@ export default function Navbar() {
         >
           {NAV_ITEMS.map((item) => (
             <div key={item.label}>
-              {item.to ? (
+              {item.to && item.children ? (
+                /* Item qui navigue ET déroule. Sur mobile il n'y a pas de
+                   survol : sans ce chevron séparé, ouvrir le sous-menu serait
+                   impossible et ses liens deviendraient inatteignables. Le
+                   libellé navigue, le chevron déroule. */
+                <div className="flex items-center">
+                  <Link
+                    to={item.to}
+                    onClick={() => setMobileOpen(false)}
+                    className="flex-1 text-yellow text-lg font-bold uppercase text-left px-4 py-2 rounded transition-colors duration-200 hover:bg-[#F0B800] hover:text-[#0D1020]"
+                  >
+                    {item.label}
+                  </Link>
+                  <button
+                    onClick={() => toggleMobileDropdown(item.label)}
+                    aria-label={`Afficher les pages de la section ${item.label}`}
+                    aria-expanded={openMobileDropdown === item.label}
+                    className="text-yellow px-4 py-2 rounded transition-colors duration-200 hover:bg-[#F0B800] hover:text-[#0D1020]"
+                  >
+                    <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${openMobileDropdown === item.label ? 'rotate-180' : ''}`} />
+                  </button>
+                </div>
+              ) : item.to ? (
                 <Link
                   to={item.to}
                   onClick={() => setMobileOpen(false)}
