@@ -55,7 +55,7 @@ update public.communes set
   temps_trajet_estime_min = 16,
   date_verification       = '2026-07-31',
   statut                  = 'published',
-  introduction_locale     = 'Crisnée est, de tout l''arrondissement de Waremme, l''entité la plus proche de notre dépôt de Herstal. Elle réunit cinq villages — Crisnée, Odeur, Kemexhe, Fize-le-Marsal et Thys — sous le code postal 4367.'
+  introduction_locale     = 'Crisnée réunit cinq villages sous le code postal 4367 : Crisnée, Odeur, Kemexhe, Fize-le-Marsal et Thys. L''entité borde Awans, dans l''arrondissement de Liège, et nous desservons les cinq villages au même titre que le centre.'
 where id = 'crisnee';
 
 update public.communes set
@@ -88,7 +88,7 @@ update public.communes set
   temps_trajet_estime_min = 19,
   date_verification       = '2026-07-31',
   statut                  = 'published',
-  introduction_locale     = 'Fexhe-le-Haut-Clocher réunit cinq villages sous le code postal 4347 : Fexhe, Voroux-Goreux, Roloux, Noville et Freloux. L''entité touche Awans et Grâce-Hollogne, à moins de vingt-cinq kilomètres de notre dépôt.'
+  introduction_locale     = 'Fexhe-le-Haut-Clocher réunit cinq villages sous le code postal 4347 : Fexhe, Voroux-Goreux, Roloux, Noville et Freloux. L''entité touche Awans et Grâce-Hollogne, deux communes de l''arrondissement de Liège que nous desservons déjà.'
 where id = 'fexhe-le-haut-clocher';
 
 update public.communes set
@@ -132,7 +132,7 @@ update public.communes set
   temps_trajet_estime_min = 22,
   date_verification       = '2026-07-31',
   statut                  = 'published',
-  introduction_locale     = 'Oreye regroupe cinq villages sous le code postal 4360 : Oreye, Otrange, Lens-sur-Geer, Grandville et Bergilers. L''entité se trouve entre Waremme et Crisnée, à un peu plus de vingt-cinq kilomètres de notre dépôt de Herstal.'
+  introduction_locale     = 'Oreye regroupe cinq villages sous le code postal 4360 : Oreye, Otrange, Lens-sur-Geer, Grandville et Bergilers. L''entité se situe entre Waremme et Crisnée, deux communes où nous intervenons déjà.'
 where id = 'oreye';
 
 update public.communes set
@@ -143,7 +143,7 @@ update public.communes set
   temps_trajet_estime_min = 23,
   date_verification       = '2026-07-31',
   statut                  = 'published',
-  introduction_locale     = 'Remicourt réunit cinq villages — Remicourt, Lamine, Pousset, Hodeige et Momalle — répartis sur deux codes postaux, 4350 et 4351. Nous y intervenons depuis Herstal en une vingtaine de minutes.'
+  introduction_locale     = 'Remicourt réunit cinq villages — Remicourt, Lamine, Pousset, Hodeige et Momalle — répartis sur deux codes postaux, 4350 et 4351. Nous desservons l''entité entière, de Momalle à Hodeige.'
 where id = 'remicourt';
 
 update public.communes set

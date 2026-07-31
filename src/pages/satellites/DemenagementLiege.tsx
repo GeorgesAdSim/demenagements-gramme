@@ -38,7 +38,10 @@ const MOYENS = [
   { icon: Truck, chiffre: '6', libelle: 'camions', detail: "de 4 à 100 m³, équipés d'élévateurs" },
   { icon: Users, chiffre: '20', libelle: 'personnes', detail: 'déménageurs, chauffeurs et magasiniers' },
   { icon: Award, chiffre: 'ISO 9001', libelle: '', detail: 'système qualité certifié' },
-  { icon: RouteIcon, chiffre: '11 km', libelle: 'du centre', detail: 'depuis notre dépôt de Herstal' },
+  // ⚠️ Ce chiffre est écrit en dur ici ET stocké pour la commune `liege`. Il a
+  // été mesuré depuis le siège social, pas depuis le dépôt : à corriger avec le
+  // relevé refait depuis la rue de la Digue.
+  { icon: RouteIcon, chiffre: '11 km', libelle: 'du centre', detail: 'depuis notre dépôt' },
 ];
 
 const CONTRAINTES = [
@@ -106,7 +109,7 @@ const FAQ = [
   },
   {
     q: 'À quelle distance de Liège se trouve votre dépôt ?',
-    a: "Notre dépôt est situé rue des Naiveux 64 à Herstal, à environ 11 km du centre de Liège, soit une vingtaine de minutes de route. Cette proximité limite les frais d'approche facturés sur le devis et nous permet d'intervenir vite, y compris pour un complément de matériel en cours de chantier.",
+    a: "Notre dépôt se trouve à environ 11 km du centre de Liège, soit une vingtaine de minutes de route. Cette proximité limite les frais d'approche facturés sur le devis et nous permet d'intervenir vite, y compris pour un complément de matériel en cours de chantier.",
   },
 ];
 

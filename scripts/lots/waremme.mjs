@@ -5,10 +5,15 @@
 // contraintes CHECK de la table. Ne jamais écrire `statut` ici.
 //
 // Sources, et rien d'autre :
-//   · distances  — Google Maps, itinéraire en voiture depuis Rue des Naiveux 64,
-//     4040 Herstal, destination « <Commune>, province de Liège, Belgique ».
-//     Le suffixe de province n'est pas décoratif : Geer, Braives et Lincent ont
-//     des homonymes ailleurs en Belgique et en France.
+//   · distances  — Google Maps, itinéraire en voiture depuis le dépôt d'où
+//     partent les camions : Rue de la Digue, 4683 Oupeye. Destination
+//     « <Commune>, province de Liège, Belgique » — le suffixe de province n'est
+//     pas décoratif : Geer, Braives et Lincent ont des homonymes ailleurs.
+//
+//     ⚠️ Le premier relevé était parti de Rue des Naiveux 64 à Herstal, qui est
+//     le SIÈGE SOCIAL et non le dépôt. Les 37 valeurs qui en venaient ont été
+//     refaites. Aucune introduction ne doit plus énoncer une distance ou une
+//     durée : elles redeviendraient fausses au prochain déménagement du dépôt.
 //   · limitrophes, codes postaux, sections — articles Wikipédia en français.
 //
 // Les limitrophes sont filtrées à la province de Liège : une commune du
@@ -70,7 +75,7 @@ export const DONNEES = {
     cp: ['4367'],
     villages: ['Crisnée', 'Odeur', 'Kemexhe', 'Fize-le-Marsal', 'Thys'],
     voisines: ['oreye', 'awans', 'remicourt'],
-    intro: "Crisnée est, de tout l'arrondissement de Waremme, l'entité la plus proche de notre dépôt de Herstal. Elle réunit cinq villages — Crisnée, Odeur, Kemexhe, Fize-le-Marsal et Thys — sous le code postal 4367.",
+    intro: "Crisnée réunit cinq villages sous le code postal 4367 : Crisnée, Odeur, Kemexhe, Fize-le-Marsal et Thys. L'entité borde Awans, dans l'arrondissement de Liège, et nous desservons les cinq villages au même titre que le centre.",
   },
   donceel: {
     cp: ['4357'],
@@ -89,7 +94,7 @@ export const DONNEES = {
     cp: ['4347'],
     villages: ['Fexhe-le-Haut-Clocher', 'Voroux-Goreux', 'Roloux', 'Noville', 'Freloux'],
     voisines: ['remicourt', 'crisnee', 'donceel', 'awans', 'grace-hollogne'],
-    intro: "Fexhe-le-Haut-Clocher réunit cinq villages sous le code postal 4347 : Fexhe, Voroux-Goreux, Roloux, Noville et Freloux. L'entité touche Awans et Grâce-Hollogne, à moins de vingt-cinq kilomètres de notre dépôt.",
+    intro: "Fexhe-le-Haut-Clocher réunit cinq villages sous le code postal 4347 : Fexhe, Voroux-Goreux, Roloux, Noville et Freloux. L'entité touche Awans et Grâce-Hollogne, deux communes de l'arrondissement de Liège que nous desservons déjà.",
   },
   geer: {
     cp: ['4250', '4252', '4253', '4254'],
@@ -115,13 +120,13 @@ export const DONNEES = {
     cp: ['4360'],
     villages: ['Oreye', 'Otrange', 'Lens-sur-Geer', 'Grandville', 'Bergilers'],
     voisines: ['waremme', 'crisnee', 'remicourt'],
-    intro: "Oreye regroupe cinq villages sous le code postal 4360 : Oreye, Otrange, Lens-sur-Geer, Grandville et Bergilers. L'entité se trouve entre Waremme et Crisnée, à un peu plus de vingt-cinq kilomètres de notre dépôt de Herstal.",
+    intro: "Oreye regroupe cinq villages sous le code postal 4360 : Oreye, Otrange, Lens-sur-Geer, Grandville et Bergilers. L'entité se situe entre Waremme et Crisnée, deux communes où nous intervenons déjà.",
   },
   remicourt: {
     cp: ['4350', '4351'],
     villages: ['Remicourt', 'Lamine', 'Pousset', 'Hodeige', 'Momalle'],
     voisines: ['oreye', 'crisnee', 'waremme', 'donceel', 'fexhe-le-haut-clocher'],
-    intro: "Remicourt réunit cinq villages — Remicourt, Lamine, Pousset, Hodeige et Momalle — répartis sur deux codes postaux, 4350 et 4351. Nous y intervenons depuis Herstal en une vingtaine de minutes.",
+    intro: "Remicourt réunit cinq villages — Remicourt, Lamine, Pousset, Hodeige et Momalle — répartis sur deux codes postaux, 4350 et 4351. Nous desservons l'entité entière, de Momalle à Hodeige.",
   },
   'saint-georges-sur-meuse': {
     cp: ['4470'],

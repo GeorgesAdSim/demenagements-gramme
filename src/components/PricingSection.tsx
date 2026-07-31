@@ -112,7 +112,7 @@ export default function PricingSection() {
             </h3>
             <p className="text-muted text-[15px] leading-relaxed">
               Pour le stockage, en revanche, les prix sont fixes et publics. Box
-              individuels fermés dans notre dépôt de Herstal, à partir d'un mois
+              individuels fermés dans notre garde-meubles de Herstal, à partir d'un mois
               de location.
             </p>
           </div>
