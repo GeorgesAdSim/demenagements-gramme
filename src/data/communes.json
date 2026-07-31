@@ -159,11 +159,21 @@
       "id": "berloz",
       "nom": "Berloz",
       "arrondissement": "Waremme",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4257"
+      ],
       "distanceDepotKm": null,
       "tempsTrajetEstimeMin": null,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Berloz",
+        "Rosoux-Crenwick",
+        "Corswarem"
+      ],
+      "communesVoisines": [
+        "waremme",
+        "geer"
+      ],
+      "introductionLocale": "Berloz ne compte que trois villages — Berloz, Rosoux-Crenwick et Corswarem — réunis sous le seul code postal 4257. Nous y déménageons particuliers et entreprises, dans les trois villages comme au centre de l'entité.",
       "statut": "draft"
     },
     {
@@ -220,12 +230,33 @@
       "id": "braives",
       "nom": "Braives",
       "arrondissement": "Waremme",
-      "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "codesPostaux": [
+        "4260",
+        "4261",
+        "4263"
+      ],
+      "distanceDepotKm": 44,
+      "tempsTrajetEstimeMin": 32,
+      "villages": [
+        "Braives",
+        "Tourinne",
+        "Latinne",
+        "Fallais",
+        "Fumal",
+        "Ville-en-Hesbaye",
+        "Ciplet",
+        "Avennes"
+      ],
+      "communesVoisines": [
+        "hannut",
+        "geer",
+        "faimes",
+        "villers-le-bouillet",
+        "burdinne"
+      ],
+      "introductionLocale": "Braives rassemble huit villages, de Fallais à Avennes en passant par Latinne et Ville-en-Hesbaye, répartis sur trois codes postaux : 4260, 4261 et 4263. Nous traitons l'entité comme un seul territoire, d'un village à l'autre.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "bullange",
@@ -335,12 +366,26 @@
       "id": "crisnee",
       "nom": "Crisnée",
       "arrondissement": "Waremme",
-      "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "codesPostaux": [
+        "4367"
+      ],
+      "distanceDepotKm": 21,
+      "tempsTrajetEstimeMin": 16,
+      "villages": [
+        "Crisnée",
+        "Odeur",
+        "Kemexhe",
+        "Fize-le-Marsal",
+        "Thys"
+      ],
+      "communesVoisines": [
+        "oreye",
+        "awans",
+        "remicourt"
+      ],
+      "introductionLocale": "Crisnée est, de tout l'arrondissement de Waremme, l'entité la plus proche de notre dépôt de Herstal. Elle réunit cinq villages — Crisnée, Odeur, Kemexhe, Fize-le-Marsal et Thys — sous le code postal 4367.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "dalhem",
@@ -386,12 +431,27 @@
       "id": "donceel",
       "nom": "Donceel",
       "arrondissement": "Waremme",
-      "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "codesPostaux": [
+        "4357"
+      ],
+      "distanceDepotKm": 28,
+      "tempsTrajetEstimeMin": 23,
+      "villages": [
+        "Donceel",
+        "Limont",
+        "Jeneffe",
+        "Haneffe"
+      ],
+      "communesVoisines": [
+        "waremme",
+        "remicourt",
+        "faimes",
+        "fexhe-le-haut-clocher",
+        "saint-georges-sur-meuse"
+      ],
+      "introductionLocale": "Donceel regroupe quatre villages : Donceel, Limont, Jeneffe et Haneffe, tous sous le code postal 4357. L'entité borde Waremme et Remicourt, deux communes où nous intervenons déjà.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "engis",
@@ -441,12 +501,28 @@
       "id": "faimes",
       "nom": "Faimes",
       "arrondissement": "Waremme",
-      "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "codesPostaux": [
+        "4317"
+      ],
+      "distanceDepotKm": 32,
+      "tempsTrajetEstimeMin": 27,
+      "villages": [
+        "Celles",
+        "Borlez",
+        "Les Waleffes",
+        "Viemme",
+        "Aineffe"
+      ],
+      "communesVoisines": [
+        "geer",
+        "waremme",
+        "braives",
+        "donceel",
+        "villers-le-bouillet"
+      ],
+      "introductionLocale": "Faimes est une entité sans village homonyme : son nom désigne le regroupement de Celles, Borlez, Les Waleffes, Viemme et Aineffe, sous le code postal 4317. Nous intervenons dans les cinq villages, quelle que soit l'adresse indiquée sur le devis.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "ferrieres",
@@ -463,12 +539,28 @@
       "id": "fexhe-le-haut-clocher",
       "nom": "Fexhe-le-Haut-Clocher",
       "arrondissement": "Waremme",
-      "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "codesPostaux": [
+        "4347"
+      ],
+      "distanceDepotKm": 23,
+      "tempsTrajetEstimeMin": 19,
+      "villages": [
+        "Fexhe-le-Haut-Clocher",
+        "Voroux-Goreux",
+        "Roloux",
+        "Noville",
+        "Freloux"
+      ],
+      "communesVoisines": [
+        "remicourt",
+        "crisnee",
+        "donceel",
+        "awans",
+        "grace-hollogne"
+      ],
+      "introductionLocale": "Fexhe-le-Haut-Clocher réunit cinq villages sous le code postal 4347 : Fexhe, Voroux-Goreux, Roloux, Noville et Freloux. L'entité touche Awans et Grâce-Hollogne, à moins de vingt-cinq kilomètres de notre dépôt.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "flemalle",
@@ -530,12 +622,33 @@
       "id": "geer",
       "nom": "Geer",
       "arrondissement": "Waremme",
-      "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "codesPostaux": [
+        "4250",
+        "4252",
+        "4253",
+        "4254"
+      ],
+      "distanceDepotKm": 39,
+      "tempsTrajetEstimeMin": 27,
+      "villages": [
+        "Geer",
+        "Boëlhe",
+        "Hollogne-sur-Geer",
+        "Darion",
+        "Omal",
+        "Ligney",
+        "Lens-Saint-Servais"
+      ],
+      "communesVoisines": [
+        "berloz",
+        "hannut",
+        "waremme",
+        "braives",
+        "faimes"
+      ],
+      "introductionLocale": "Geer porte quatre codes postaux — 4250, 4252, 4253 et 4254 — pour sept villages, dont Hollogne-sur-Geer, Omal et Lens-Saint-Servais. C'est l'entité la plus fragmentée de l'arrondissement sur le plan postal, et nous couvrons chacun de ses villages.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "grace-hollogne",
@@ -578,12 +691,41 @@
       "id": "hannut",
       "nom": "Hannut",
       "arrondissement": "Waremme",
-      "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "codesPostaux": [
+        "4280"
+      ],
+      "distanceDepotKm": 47,
+      "tempsTrajetEstimeMin": 34,
+      "villages": [
+        "Hannut",
+        "Avernas-le-Bauduin",
+        "Bertrée",
+        "Cras-Avernas",
+        "Poucet",
+        "Abolens",
+        "Blehen",
+        "Lens-Saint-Remy",
+        "Villers-le-Peuplier",
+        "Crehen",
+        "Trognée",
+        "Avin",
+        "Moxhe",
+        "Thisnes",
+        "Merdorp",
+        "Grand-Hallet",
+        "Petit-Hallet",
+        "Wansin"
+      ],
+      "communesVoisines": [
+        "lincent",
+        "geer",
+        "wasseiges",
+        "burdinne",
+        "braives"
+      ],
+      "introductionLocale": "Hannut réunit dix-huit villages sous un unique code postal, le 4280 : Avin, Thisnes, Crehen, Merdorp, Wansin ou encore Grand-Hallet. Deux adresses « à Hannut » peuvent donc se trouver à plusieurs kilomètres l'une de l'autre.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "heron",
@@ -774,11 +916,20 @@
       "id": "lincent",
       "nom": "Lincent",
       "arrondissement": "Waremme",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4287"
+      ],
       "distanceDepotKm": null,
       "tempsTrajetEstimeMin": null,
-      "villages": [],
-      "communesVoisines": [],
+      "villages": [
+        "Lincent",
+        "Pellaines",
+        "Racour"
+      ],
+      "communesVoisines": [
+        "hannut"
+      ],
+      "introductionLocale": "Lincent réunit trois villages — Lincent, Pellaines et Racour — sous le code postal 4287. L'entité se situe à la limite occidentale de la province de Liège : Hannut est sa seule commune limitrophe liégeoise.",
       "statut": "draft"
     },
     {
@@ -878,12 +1029,26 @@
       "id": "oreye",
       "nom": "Oreye",
       "arrondissement": "Waremme",
-      "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "codesPostaux": [
+        "4360"
+      ],
+      "distanceDepotKm": 26,
+      "tempsTrajetEstimeMin": 22,
+      "villages": [
+        "Oreye",
+        "Otrange",
+        "Lens-sur-Geer",
+        "Grandville",
+        "Bergilers"
+      ],
+      "communesVoisines": [
+        "waremme",
+        "crisnee",
+        "remicourt"
+      ],
+      "introductionLocale": "Oreye regroupe cinq villages sous le code postal 4360 : Oreye, Otrange, Lens-sur-Geer, Grandville et Bergilers. L'entité se trouve entre Waremme et Crisnée, à un peu plus de vingt-cinq kilomètres de notre dépôt de Herstal.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "ouffet",
@@ -963,23 +1128,50 @@
       "id": "remicourt",
       "nom": "Remicourt",
       "arrondissement": "Waremme",
-      "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "codesPostaux": [
+        "4350",
+        "4351"
+      ],
+      "distanceDepotKm": 27,
+      "tempsTrajetEstimeMin": 23,
+      "villages": [
+        "Remicourt",
+        "Lamine",
+        "Pousset",
+        "Hodeige",
+        "Momalle"
+      ],
+      "communesVoisines": [
+        "oreye",
+        "crisnee",
+        "waremme",
+        "donceel",
+        "fexhe-le-haut-clocher"
+      ],
+      "introductionLocale": "Remicourt réunit cinq villages — Remicourt, Lamine, Pousset, Hodeige et Momalle — répartis sur deux codes postaux, 4350 et 4351. Nous y intervenons depuis Herstal en une vingtaine de minutes.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "saint-georges-sur-meuse",
       "nom": "Saint-Georges-sur-Meuse",
       "arrondissement": "Waremme",
-      "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
+      "codesPostaux": [
+        "4470"
+      ],
+      "distanceDepotKm": 27,
+      "tempsTrajetEstimeMin": 21,
       "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "communesVoisines": [
+        "donceel",
+        "grace-hollogne",
+        "verlaine",
+        "flemalle",
+        "amay"
+      ],
+      "introductionLocale": "Saint-Georges-sur-Meuse porte le code postal 4470 et fait le lien entre le plateau de Hesbaye et la vallée de la Meuse. Nous y intervenons dans le prolongement de Flémalle, que nous desservons déjà.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "saint-nicolas",
@@ -1321,11 +1513,22 @@
       "id": "wasseiges",
       "nom": "Wasseiges",
       "arrondissement": "Waremme",
-      "codesPostaux": [],
-      "distanceDepotKm": null,
-      "tempsTrajetEstimeMin": null,
-      "villages": [],
-      "communesVoisines": [],
+      "codesPostaux": [
+        "4219"
+      ],
+      "distanceDepotKm": 55,
+      "tempsTrajetEstimeMin": 43,
+      "villages": [
+        "Wasseiges",
+        "Meeffe",
+        "Ambresin",
+        "Acosse"
+      ],
+      "communesVoisines": [
+        "hannut",
+        "burdinne"
+      ],
+      "introductionLocale": "Wasseiges réunit quatre villages sous le code postal 4219 : Wasseiges, Meeffe, Ambresin et Acosse. L'entité borde la province de Namur, et seules Hannut et Burdinne la relient au reste de la province de Liège.",
       "statut": "draft"
     },
     {
