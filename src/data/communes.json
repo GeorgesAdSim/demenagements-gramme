@@ -4,12 +4,28 @@
       "id": "amay",
       "nom": "Amay",
       "arrondissement": "Huy",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4540"
+      ],
       "distanceDepotKm": 35,
       "tempsTrajetEstimeMin": 31,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Amay",
+        "Ampsin",
+        "Flône",
+        "Jehay",
+        "Ombret-Rawsa"
+      ],
+      "communesVoisines": [
+        "verlaine",
+        "saint-georges-sur-meuse",
+        "wanze",
+        "villers-le-bouillet",
+        "huy"
+      ],
+      "introductionLocale": "Amay réunit cinq villages sous le code postal 4540 : Amay, Ampsin, Flône, Jehay et Ombret-Rawsa. L'entité s'étire entre Engis et Huy, deux communes que nous desservons déjà.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "ambleve",
@@ -52,12 +68,30 @@
       "id": "anthisnes",
       "nom": "Anthisnes",
       "arrondissement": "Huy",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4160",
+        "4161",
+        "4162",
+        "4163"
+      ],
       "distanceDepotKm": 46,
       "tempsTrajetEstimeMin": 44,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Anthisnes",
+        "Hody",
+        "Tavier",
+        "Villers-aux-Tours"
+      ],
+      "communesVoisines": [
+        "nandrin",
+        "neupre",
+        "esneux",
+        "tinlot",
+        "comblain-au-pont"
+      ],
+      "introductionLocale": "Anthisnes porte quatre codes postaux pour quatre villages — Anthisnes, Hody, Tavier et Villers-aux-Tours — soit un par ancienne commune. Nous intervenons dans les quatre.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "aubel",
@@ -273,12 +307,28 @@
       "id": "burdinne",
       "nom": "Burdinne",
       "arrondissement": "Huy",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4210"
+      ],
       "distanceDepotKm": 51,
       "tempsTrajetEstimeMin": 38,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Burdinne",
+        "Hannêche",
+        "Lamontzée",
+        "Marneffe",
+        "Oteppe"
+      ],
+      "communesVoisines": [
+        "wasseiges",
+        "hannut",
+        "braives",
+        "heron",
+        "wanze"
+      ],
+      "introductionLocale": "Burdinne regroupe cinq villages sous le code postal 4210 : Burdinne, Hannêche, Lamontzée, Marneffe et Oteppe. L'entité borde Hannut et Wanze, et nous desservons l'ensemble de ses villages.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "burg-reuland",
@@ -332,12 +382,28 @@
       "id": "clavier",
       "nom": "Clavier",
       "arrondissement": "Huy",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4560"
+      ],
       "distanceDepotKm": 52,
       "tempsTrajetEstimeMin": 49,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Clavier",
+        "Bois-et-Borsu",
+        "Les Avins",
+        "Ocquier",
+        "Pailhe",
+        "Terwagne"
+      ],
+      "communesVoisines": [
+        "marchin",
+        "modave",
+        "tinlot",
+        "ouffet"
+      ],
+      "introductionLocale": "Clavier réunit six villages sous le code postal 4560 : Clavier, Bois-et-Borsu, Les Avins, Ocquier, Pailhe et Terwagne. Ses quatre limitrophes liégeoises — Marchin, Modave, Tinlot et Ouffet — sont toutes des communes du Condroz, comme elle.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "comblain-au-pont",
@@ -457,12 +523,27 @@
       "id": "engis",
       "nom": "Engis",
       "arrondissement": "Huy",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4480"
+      ],
       "distanceDepotKm": 31,
       "tempsTrajetEstimeMin": 28,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Engis",
+        "Éhein-Bas",
+        "Clermont-sous-Huy",
+        "Hermalle-sous-Huy"
+      ],
+      "communesVoisines": [
+        "saint-georges-sur-meuse",
+        "flemalle",
+        "amay",
+        "neupre",
+        "nandrin"
+      ],
+      "introductionLocale": "Engis réunit quatre villages sous le code postal 4480 : Engis, Éhein-Bas, Clermont-sous-Huy et Hermalle-sous-Huy. L'entité borde Flémalle et Saint-Georges-sur-Meuse, où nous intervenons déjà.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "esneux",
@@ -528,12 +609,27 @@
       "id": "ferrieres",
       "nom": "Ferrières",
       "arrondissement": "Huy",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4190"
+      ],
       "distanceDepotKm": 64,
       "tempsTrajetEstimeMin": 46,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Ferrières",
+        "My",
+        "Vieuxville",
+        "Werbomont",
+        "Xhoris"
+      ],
+      "communesVoisines": [
+        "comblain-au-pont",
+        "aywaille",
+        "hamoir",
+        "stoumont"
+      ],
+      "introductionLocale": "Ferrières réunit cinq villages sous le code postal 4190 : Ferrières, My, Vieuxville, Werbomont et Xhoris. C'est la seule commune de l'arrondissement de Huy à toucher celui de Verviers, par Stoumont.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "fexhe-le-haut-clocher",
@@ -680,12 +776,26 @@
       "id": "hamoir",
       "nom": "Hamoir",
       "arrondissement": "Huy",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4180",
+        "4181"
+      ],
       "distanceDepotKm": 60,
       "tempsTrajetEstimeMin": 53,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Hamoir",
+        "Comblain-Fairon",
+        "Filot"
+      ],
+      "communesVoisines": [
+        "anthisnes",
+        "comblain-au-pont",
+        "ouffet",
+        "ferrieres"
+      ],
+      "introductionLocale": "Hamoir réunit trois villages — Hamoir, Comblain-Fairon et Filot — répartis sur deux codes postaux, 4180 et 4181. L'entité borde Comblain-au-Pont, où nous intervenons déjà.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "hannut",
@@ -731,12 +841,26 @@
       "id": "heron",
       "nom": "Héron",
       "arrondissement": "Huy",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4217",
+        "4218"
+      ],
       "distanceDepotKm": 48,
       "tempsTrajetEstimeMin": 34,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Héron",
+        "Lavoir",
+        "Couthuin",
+        "Waret-l'Évêque"
+      ],
+      "communesVoisines": [
+        "burdinne",
+        "wanze",
+        "huy"
+      ],
+      "introductionLocale": "Héron réunit quatre villages — Héron, Lavoir, Couthuin et Waret-l'Évêque — sur deux codes postaux, 4217 et 4218. L'entité borde la province de Namur : Burdinne, Wanze et Huy sont ses seules limitrophes liégeoises.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "herstal",
@@ -958,34 +1082,75 @@
       "id": "marchin",
       "nom": "Marchin",
       "arrondissement": "Huy",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4570"
+      ],
       "distanceDepotKm": 58,
       "tempsTrajetEstimeMin": 46,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Marchin",
+        "Vyle-et-Tharoul"
+      ],
+      "communesVoisines": [
+        "huy",
+        "modave",
+        "clavier"
+      ],
+      "introductionLocale": "Marchin ne compte que deux villages, Marchin et Vyle-et-Tharoul, sous le code postal 4570. L'entité jouxte Huy, où nous intervenons déjà.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "modave",
       "nom": "Modave",
       "arrondissement": "Huy",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4577"
+      ],
       "distanceDepotKm": 48,
       "tempsTrajetEstimeMin": 48,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Modave",
+        "Outrelouxhe",
+        "Strée",
+        "Vierset-Barse"
+      ],
+      "communesVoisines": [
+        "huy",
+        "nandrin",
+        "marchin",
+        "tinlot",
+        "clavier"
+      ],
+      "introductionLocale": "Modave réunit quatre villages sous le code postal 4577 : Modave, Outrelouxhe, Strée et Vierset-Barse. Ses cinq limitrophes appartiennent toutes à l'arrondissement de Huy.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "nandrin",
       "nom": "Nandrin",
       "arrondissement": "Huy",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4550"
+      ],
       "distanceDepotKm": 37,
       "tempsTrajetEstimeMin": 38,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Nandrin",
+        "Saint-Séverin-en-Condroz",
+        "Villers-le-Temple",
+        "Yernée-Fraineux"
+      ],
+      "communesVoisines": [
+        "amay",
+        "engis",
+        "neupre",
+        "modave",
+        "tinlot"
+      ],
+      "introductionLocale": "Nandrin réunit quatre villages sous le code postal 4550 : Nandrin, Saint-Séverin-en-Condroz, Villers-le-Temple et Yernée-Fraineux. L'entité touche Neupré et Esneux, à la limite de l'arrondissement de Liège.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "neupre",
@@ -1054,12 +1219,25 @@
       "id": "ouffet",
       "nom": "Ouffet",
       "arrondissement": "Huy",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4590"
+      ],
       "distanceDepotKm": 50,
       "tempsTrajetEstimeMin": 47,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Ouffet",
+        "Warzée",
+        "Ellemelle"
+      ],
+      "communesVoisines": [
+        "tinlot",
+        "anthisnes",
+        "hamoir",
+        "clavier"
+      ],
+      "introductionLocale": "Ouffet ne compte que trois villages — Ouffet, Warzée et Ellemelle — sous le code postal 4590. Nous les desservons tous les trois, au même titre que Tinlot et Clavier.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "oupeye",
@@ -1352,12 +1530,29 @@
       "id": "tinlot",
       "nom": "Tinlot",
       "arrondissement": "Huy",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4557"
+      ],
       "distanceDepotKm": 41,
       "tempsTrajetEstimeMin": 42,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Abée",
+        "Fraiture",
+        "Ramelot",
+        "Seny",
+        "Scry",
+        "Soheit-Tinlot"
+      ],
+      "communesVoisines": [
+        "nandrin",
+        "anthisnes",
+        "modave",
+        "clavier",
+        "ouffet"
+      ],
+      "introductionLocale": "Tinlot regroupe six villages sous le code postal 4557 : Abée, Fraiture, Ramelot, Seny, Scry et Soheit-Tinlot. Aucun ne s'appelle simplement Tinlot — le nom de l'entité vient de Soheit-Tinlot.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "trois-ponts",
@@ -1398,12 +1593,27 @@
       "id": "verlaine",
       "nom": "Verlaine",
       "arrondissement": "Huy",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4537"
+      ],
       "distanceDepotKm": 29,
       "tempsTrajetEstimeMin": 25,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Verlaine",
+        "Bodegnée",
+        "Chapon-Seraing",
+        "Seraing-le-Château"
+      ],
+      "communesVoisines": [
+        "faimes",
+        "donceel",
+        "villers-le-bouillet",
+        "saint-georges-sur-meuse",
+        "amay"
+      ],
+      "introductionLocale": "Verlaine réunit quatre villages sous le code postal 4537 : Verlaine, Bodegnée, Chapon-Seraing et Seraing-le-Château. Ces deux derniers n'ont rien à voir avec la ville de Seraing, à laquelle nous consacrons une page distincte.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "verviers",
@@ -1420,12 +1630,28 @@
       "id": "villers-le-bouillet",
       "nom": "Villers-le-Bouillet",
       "arrondissement": "Huy",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4530"
+      ],
       "distanceDepotKm": 35,
       "tempsTrajetEstimeMin": 25,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Villers-le-Bouillet",
+        "Fize-Fontaine",
+        "Vaux-et-Borset",
+        "Vieux-Waleffe",
+        "Warnant-Dreye"
+      ],
+      "communesVoisines": [
+        "faimes",
+        "braives",
+        "verlaine",
+        "wanze",
+        "amay"
+      ],
+      "introductionLocale": "Villers-le-Bouillet réunit cinq villages sous le code postal 4530 : Villers-le-Bouillet, Fize-Fontaine, Vaux-et-Borset, Vieux-Waleffe et Warnant-Dreye. L'entité fait le lien entre les arrondissements de Huy et de Waremme, où nous desservons déjà Faimes et Braives.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "vise",
@@ -1470,12 +1696,29 @@
       "id": "wanze",
       "nom": "Wanze",
       "arrondissement": "Huy",
-      "codesPostaux": [],
+      "codesPostaux": [
+        "4520"
+      ],
       "distanceDepotKm": 41,
       "tempsTrajetEstimeMin": 29,
-      "villages": [],
-      "communesVoisines": [],
-      "statut": "draft"
+      "villages": [
+        "Wanze",
+        "Bas-Oha",
+        "Moha",
+        "Huccorgne",
+        "Vinalmont",
+        "Antheit"
+      ],
+      "communesVoisines": [
+        "amay",
+        "burdinne",
+        "heron",
+        "villers-le-bouillet",
+        "huy"
+      ],
+      "introductionLocale": "Wanze réunit six villages sous le code postal 4520 : Wanze, Bas-Oha, Moha, Huccorgne, Vinalmont et Antheit. L'entité jouxte Huy et Villers-le-Bouillet, et nous desservons chacun de ses villages.",
+      "dateVerification": "2026-07-31",
+      "statut": "published"
     },
     {
       "id": "waremme",
