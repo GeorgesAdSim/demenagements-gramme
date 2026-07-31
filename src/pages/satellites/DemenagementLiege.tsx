@@ -371,8 +371,8 @@ export default function DemenagementLiege() {
                 ))}
               </div>
               <p className="text-muted text-[16px] leading-relaxed mt-6">
-                Besoin de stocker entre deux dates&nbsp;? Nos box fermés du dépôt de
-                Herstal démarrent à 30 € par mois pour 1 m³ — voir le{' '}
+                Besoin de stocker entre deux dates&nbsp;? Nos box fermés du
+                garde-meubles de Herstal démarrent à 30 € par mois pour 1 m³ — voir le{' '}
                 <Link to="/garde-meubles/prix-garde-meubles-liege" className="text-navy font-bold underline hover:text-navy/70">
                   détail des prix du garde-meubles à Liège
                 </Link>. Pour les étages élevés, notre{' '}
