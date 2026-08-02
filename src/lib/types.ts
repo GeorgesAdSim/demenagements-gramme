@@ -35,6 +35,28 @@ export interface ServicePageContent {
       items: string[];
     };
   };
+  /**
+   * Questions fréquentes de la page. Rendues en accordéon et reprises telles
+   * quelles dans le balisage FAQPage : les deux lisent la même liste, elles ne
+   * peuvent donc pas diverger.
+   *
+   * Optionnel : seule la page pilière /demenagement en porte une aujourd'hui.
+   */
+  faq?: {
+    sectionTitle: string;
+    items: Array<{ q: string; a: string }>;
+  };
+  /**
+   * Renvois vers les pages communes. Réservé aux pages piliers dont les pages
+   * locales dépendent : c'est le lien descendant du silo, l'ascendant existant
+   * déjà par le fil d'Ariane de chaque commune.
+   */
+  communes?: {
+    sectionTitle: string;
+    intro: string;
+    /** Slugs, résolus contre la liste des communes publiées au rendu. */
+    slugs: string[];
+  };
 }
 
 export interface HomepageContent {

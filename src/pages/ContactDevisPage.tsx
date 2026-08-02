@@ -20,6 +20,60 @@ import ServiceNavbar from '../components/ServiceNavbar';
 import Footer from '../components/Footer';
 import SeoHead from '../components/SeoHead';
 import SchemaOrg from '../components/SchemaOrg';
+
+/**
+ * Ce que le visiteur veut savoir avant d'envoyer le formulaire.
+ *
+ * Page de conversion : elle ne doit pas être noyée sous du texte. Ces quatre
+ * étapes tiennent en une bande au-dessus du formulaire, sans le déplacer ni le
+ * modifier.
+ */
+const APRES_ENVOI = [
+  {
+    titre: 'Nous vous rappelons',
+    texte:
+      "Un responsable vous recontacte sous 24 heures ouvrables pour préciser votre projet et convenir d'un rendez-vous. Aucun devis n'est établi par téléphone : nous préférons voir.",
+  },
+  {
+    titre: 'Visite technique gratuite',
+    texte:
+      "Elle dure trente à quarante-cinq minutes. Nous mesurons le volume pièce par pièce, relevons l'étage, la cage d'escalier, l'ascenseur et le stationnement, aux deux adresses quand c'est possible.",
+  },
+  {
+    titre: 'Devis détaillé',
+    texte:
+      "Vous le recevez sous 24 heures ouvrables après la visite. Il détaille le volume retenu, les prestations, le matériel et le prix. Rien ne s'ajoute le jour J s'il n'y figure pas.",
+  },
+  {
+    titre: 'Vous décidez',
+    texte:
+      "La visite et le devis sont gratuits et sans engagement. Tant que vous n'avez pas confirmé, aucune date n'est bloquée et rien ne vous est facturé.",
+  },
+];
+
+/** FAQ affichée et balisée : les deux lisent cette même liste. */
+const FAQ_DEVIS = [
+  {
+    q: 'Le devis est-il vraiment gratuit et sans engagement ?',
+    a: "Oui. La visite technique et le devis sont gratuits et ne vous engagent à rien. Vous pouvez les demander pour comparer, même si votre décision n'est pas prise. Rien ne vous est facturé tant que vous n'avez pas confirmé la date.",
+  },
+  {
+    q: 'Sous quel délai obtiendrai-je une réponse ?',
+    a: "Nous recontactons chaque demande sous 24 heures ouvrables. Le devis lui-même arrive sous 24 heures ouvrables après la visite technique. Une demande déposée un vendredi soir reçoit donc sa réponse en début de semaine suivante.",
+  },
+  {
+    q: "Que demandez-vous lors de la visite technique ?",
+    a: "Rien de particulier à préparer. Nous parcourons les pièces pour mesurer le volume réel, et nous relevons ce qui conditionne l'intervention : étage, largeur de la cage d'escalier, présence d'un ascenseur, possibilités de stationnement. Signalez-nous simplement les objets lourds ou fragiles — piano, coffre-fort, œuvres — et les meubles que vous ne souhaitez pas emporter.",
+  },
+  {
+    q: 'Qu\'est-ce qui fait varier le prix ?',
+    a: "Quatre facteurs : le volume, la distance entre les deux adresses, l'accessibilité de chacune et les prestations choisies. L'accessibilité pèse autant que le volume — un troisième étage sans ascenseur ne coûte pas comme un rez-de-chaussée avec parking, à volume identique. La saison joue aussi : mai à septembre est la période la plus demandée.",
+  },
+  {
+    q: 'Puis-je annuler ou déplacer la date après avoir signé ?',
+    a: "Contactez-nous dès que vous le savez. Plus le préavis est long, plus le report est simple à organiser, surtout en pleine saison. Les conditions applicables figurent sur le devis que vous avez reçu : nous n'appliquons rien qui n'y soit écrit.",
+  },
+];
 import { supabase } from '../lib/supabase';
 import { anneesExperience } from '../lib/anciennete';
 
@@ -141,7 +195,7 @@ export default function ContactDevisPage() {
       />
       {/* Page de conversion sur laquelle le visiteur cherche à nous joindre :
           adresse, horaires et téléphone y sont déclarés au complet. */}
-      <SchemaOrg organization="full" />
+      <SchemaOrg organization="full" customFaq={FAQ_DEVIS} />
       <TopBar />
       <ServiceNavbar />
 
@@ -171,6 +225,38 @@ export default function ContactDevisPage() {
                 Remplissez le formulaire ci-dessous ou contactez-nous directement. Réponse garantie sous 24h ouvrables, gratuit et sans engagement.
               </motion.p>
             </motion.div>
+          </div>
+        </section>
+
+        {/* Rassurance, juste sous le hero : ce qui se passe après l'envoi.
+            Bande compacte, pour ne pas repousser le formulaire. */}
+        <section className="bg-white py-12 md:py-14">
+          <div className="max-w-7xl mx-auto px-4 md:px-8">
+            <h2 className="text-2xl md:text-[2rem] font-black uppercase text-navy mb-3">
+              Ce qui se passe après votre demande
+            </h2>
+            <p className="text-muted text-[17px] leading-relaxed mb-8 max-w-3xl">
+              Quatre étapes, sans engagement à aucune d'elles. Vous ne signez rien
+              avant d'avoir reçu un prix détaillé par écrit.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {APRES_ENVOI.map((etape, i) => (
+                <motion.div
+                  key={etape.titre}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  transition={{ delay: i * 0.06, duration: 0.4 }}
+                  className="bg-offwhite rounded-2xl p-5 border border-gray-100"
+                >
+                  <span className="inline-flex w-7 h-7 rounded-full bg-navy text-yellow font-black text-sm items-center justify-center mb-3">
+                    {i + 1}
+                  </span>
+                  <h3 className="text-navy font-bold text-[17px] mb-2">{etape.titre}</h3>
+                  <p className="text-muted text-[15px] leading-relaxed">{etape.texte}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -411,7 +497,25 @@ export default function ContactDevisPage() {
           </div>
         </section>
 
+        {/* Questions posées avant l'envoi du formulaire, pas après. Réponses
+            présentes dans le HTML, comme partout ailleurs sur le site. */}
         <section className="bg-white py-16 md:py-20">
+          <div className="max-w-3xl mx-auto px-4 md:px-8">
+            <h2 className="text-2xl md:text-[2rem] font-black uppercase text-navy mb-8">
+              Questions fréquentes sur le devis
+            </h2>
+            <div className="space-y-6">
+              {FAQ_DEVIS.map((item) => (
+                <div key={item.q}>
+                  <h3 className="text-navy font-bold text-lg mb-2">{item.q}</h3>
+                  <p className="text-muted text-[16px] leading-relaxed">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-offwhite py-16 md:py-20">
           <div className="max-w-7xl mx-auto px-4 md:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
