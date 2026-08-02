@@ -31,6 +31,16 @@ export default function PreparerEnfantsDemenagement() {
           heading: "Soyez patient et à l'écoute",
           content: "L'adaptation peut prendre du temps. Certains enfants s'adaptent en quelques jours, d'autres en quelques mois. Soyez à l'écoute de leurs émotions sans les minimiser. Des réactions comme des troubles du sommeil, une baisse des résultats scolaires ou un repli sur soi sont normales et généralement temporaires.\n\nSi les difficultés persistent au-delà de quelques semaines, n'hésitez pas à en parler avec votre médecin de famille ou le psychologue de l'école.",
         },
+        {
+          heading: "L'école : la démarche à ne pas laisser au dernier moment",
+          content:
+            "Le changement d'école est souvent ce qui pèse le plus pour un enfant, et c'est aussi la démarche la plus contrainte par le calendrier. En Belgique, l'inscription dans un nouvel établissement se prépare bien avant le déménagement lui-même.\n\nPrenez contact avec la nouvelle école dès que votre date est arrêtée, même si l'année scolaire est entamée. Demandez à visiter les lieux avec votre enfant : voir la cour, la classe et le chemin depuis le futur logement rend le changement beaucoup moins abstrait.\n\nPrévoyez aussi la déclaration de changement d'adresse à l'administration communale, à faire dans les huit jours suivant l'emménagement. C'est elle qui conditionne plusieurs démarches ultérieures, dont certaines aides scolaires.",
+        },
+        {
+          heading: 'Le jour du déménagement, avec des enfants',
+          content:
+            "Un logement en cours de chargement n'est pas un endroit sûr pour un jeune enfant. Cartons empilés, meubles en mouvement, portes ouvertes en permanence : les allers-retours de l'équipe créent un risque réel.\n\nLa solution la plus simple reste de confier les plus jeunes à un proche pour la journée, quitte à les faire venir en fin d'après-midi pour découvrir leur nouvelle chambre une fois le gros du travail terminé.\n\nPour les plus grands qui souhaitent rester, donnez-leur un rôle défini et sans danger : garder leur carton personnel, décider de l'emplacement de leur lit, accueillir l'équipe avec des boissons. Participer les rassure bien plus que d'être tenus à l'écart.",
+        },
       ]}
       relatedArticles={[
         { title: '6 conseils pour réussir son déménagement', to: '/blog/6-conseils-reussir-demenagement-liege' },
