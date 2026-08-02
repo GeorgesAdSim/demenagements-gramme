@@ -70,7 +70,7 @@ const CONTRAINTES = [
 const ETAPES = [
   {
     titre: 'Visite technique gratuite',
-    texte: "Un responsable se déplace chez vous, à Liège, pour mesurer le volume réel, repérer les accès et vérifier la faisabilité — largeur de la rue, étage, présence d'un ascenseur, possibilité de poser un monte-meubles. C'est cette visite qui évite les mauvaises surprises le jour du chargement.",
+    texte: "Un responsable se déplace chez vous, à Liège. Il mesure le volume réel et repère les accès : largeur de la rue, étage, présence d'un ascenseur, possibilité de poser un monte-meubles. C'est cette visite qui évite les mauvaises surprises le jour du chargement.",
   },
   {
     titre: 'Devis détaillé sous 24 heures ouvrables',
@@ -78,11 +78,11 @@ const ETAPES = [
   },
   {
     titre: "Demande d'autorisation de voirie",
-    texte: "Nous introduisons la demande d'occupation de la voirie auprès de la Ville de Liège et posons les panneaux quelques jours avant. Sans emplacement réservé, un camion se gare parfois à cinquante mètres de la porte, et le portage allonge le chantier.",
+    texte: "Nous introduisons la demande d'occupation de la voirie auprès de la Ville de Liège. Les panneaux sont posés quelques jours avant. Sans emplacement réservé, un camion se gare parfois à cinquante mètres de la porte, et le portage allonge le chantier.",
   },
   {
     titre: 'Le jour du déménagement',
-    texte: "L'équipe protège les sols et les cages d'escalier, emballe ce qui doit l'être, démonte les meubles volumineux, charge, transporte et remonte à l'arrivée. Un chef d'équipe reste votre interlocuteur unique du début à la fin.",
+    texte: "L'équipe protège les sols et les cages d'escalier, puis emballe ce qui doit l'être. Elle démonte les meubles volumineux, charge, transporte et remonte à l'arrivée. Un chef d'équipe reste votre interlocuteur unique du début à la fin.",
   },
 ];
 
@@ -105,7 +105,7 @@ const FAQ = [
   },
   {
     q: 'Intervenez-vous aussi pour les entreprises et les bureaux à Liège ?',
-    a: "Oui. Le déménagement d'entreprise se prépare différemment : inventaire du mobilier et du matériel informatique, étiquetage par poste de travail, intervention en soirée ou le week-end pour ne pas interrompre l'activité. Nos six camions permettent de traiter un plateau de bureaux en une seule rotation.",
+    a: "Oui. Le déménagement d'entreprise se prépare différemment. Inventaire du mobilier et du matériel informatique, étiquetage par poste de travail. L'intervention se fait en soirée ou le week-end, pour ne pas interrompre l'activité. Nos six camions permettent de traiter un plateau de bureaux en une seule rotation.",
   },
   {
     q: 'Faut-il une autorisation pour stationner le camion à Liège ?',
@@ -113,7 +113,7 @@ const FAQ = [
   },
   {
     q: 'À quelle distance de Liège se trouve votre dépôt ?',
-    a: "Notre dépôt se trouve à environ 12 km du centre de Liège, soit une vingtaine de minutes de route. Cette proximité limite les frais d'approche facturés sur le devis et nous permet d'intervenir vite, y compris pour un complément de matériel en cours de chantier.",
+    a: "Notre dépôt se trouve à environ 12 km du centre de Liège, soit une vingtaine de minutes de route. Cette proximité limite les frais d'approche facturés sur le devis. Elle nous permet aussi d'intervenir vite, y compris pour un complément de matériel en cours de chantier.",
   },
 ];
 
@@ -186,10 +186,10 @@ export default function DemenagementLiege() {
                 adresse, date de fondation, moyens chiffrés, certification. */}
             <p className="text-white text-lg md:text-xl leading-relaxed border-l-4 border-yellow pl-5 max-w-3xl font-medium">
               Déménagements Gramme organise votre déménagement à Liège depuis
-              1948. Entreprise familiale établie rue des Naiveux 64 à Herstal,
-              aux portes de Liège, certifiée ISO 9001&nbsp;: 6 camions de 4 à 100 m³,
-              20 personnes, assurance transport et casse incluse. Devis gratuit
-              sous 24 heures ouvrables.
+              1948. C'est une entreprise familiale établie rue des Naiveux 64 à
+              Herstal, aux portes de Liège, et certifiée ISO 9001. Six camions de
+              4 à 100 m³, vingt personnes, assurance transport et casse incluse.
+              Devis gratuit sous 24 heures ouvrables.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
@@ -268,10 +268,10 @@ export default function DemenagementLiege() {
               </h2>
               <p className="text-muted text-[17px] leading-relaxed mb-4">
                 Liège n'est pas une ville de plaine au bâti récent. Elle cumule
-                trois contraintes qui, prises ensemble, se rencontrent rarement
-                ailleurs en Wallonie&nbsp;: une topographie de vallée avec des rues
-                en forte pente, un bâti ancien souvent dépourvu d'ascenseur, et un
-                hypercentre où le stationnement se réserve à l'avance.
+                trois contraintes que l'on rencontre rarement ensemble en
+                Wallonie. Une topographie de vallée, avec des rues en forte pente.
+                Un bâti ancien souvent dépourvu d'ascenseur. Et un hypercentre où
+                le stationnement se réserve à l'avance.
               </p>
               <p className="text-muted text-[17px] leading-relaxed">
                 Un déménageur qui découvre ces contraintes le matin du chargement
@@ -346,9 +346,9 @@ export default function DemenagementLiege() {
                   non plus par un formulaire papier.
                 </p>
                 <p>
-                  La police ne publie plus de délai fixe : elle indique que le temps
-                  de traitement dépend de l'importance du chantier et des avis
-                  extérieurs à solliciter. Nous introduisons donc la demande dès que
+                  La police ne publie plus de délai fixe. Le temps de traitement dépend
+                  de l'importance du chantier et des avis extérieurs à
+                  solliciter. Nous introduisons donc la demande dès que
                   votre date est arrêtée, sans attendre.
                 </p>
                 <p>

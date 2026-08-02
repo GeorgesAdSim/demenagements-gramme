@@ -9,15 +9,15 @@ export default function PrixGardeMeublesLiege() {
       sections={[
         {
           title: 'Tarifs garde-meubles à Liège',
-          content: "Nos tarifs de garde-meubles commencent à 30 euros par mois pour un box de 1 m³. Le prix varie en fonction du volume de stockage dont vous avez besoin. Voici notre grille indicative : 1 m³ à 30 €, 2 m³ à 40 €, 8 m³ à 76 €, 12 m³ à 95 €, 15 m³ à 105 €, 20 m³ à 130 €, 24 m³ à 150 €. Au-delà de 30 m³, le tarif est de 6 euros par m³ et par mois.\n\nCes tarifs incluent la présence d'un manutentionnaire pour les entrées et sorties de vos biens, du lundi au vendredi. L'assurance (vol, incendie, dégradation) est également comprise dans un forfait obligatoire par m³.",
+          content: "Nos tarifs de garde-meubles commencent à 30 euros par mois pour un box de 1 m³. Le prix varie en fonction du volume de stockage dont vous avez besoin. Voici notre grille indicative, par mois. 1 m³ à 30 €, 2 m³ à 40 €, 8 m³ à 76 €. 12 m³ à 95 €, 15 m³ à 105 €, 20 m³ à 130 €, 24 m³ à 150 €. Au-delà de 30 m³, le tarif est de 6 euros par m³ et par mois.\n\nCes tarifs incluent la présence d'un manutentionnaire pour les entrées et sorties de vos biens, du lundi au vendredi. L'assurance (vol, incendie, dégradation) est également comprise dans un forfait obligatoire par m³.",
         },
         {
           title: 'Ce qui est inclus dans le prix',
-          content: "Nos tarifs de garde-meubles sont tout compris : stockage sécurisé dans des boxes individuels fermés à clé, surveillance 24/7, assurance de base (vol, incendie, dégradation), et assistance d'un manutentionnaire pour les entrées et sorties.\n\nIl n'y a pas de frais cachés. L'estimation du volume est vérifiée lors de la mise en garde-meubles et la facturation est basée sur le volume réel constaté. Vous êtes libre d'assister à la mise en garde-meubles de vos biens pour une transparence totale.",
+          content: "Nos tarifs de garde-meubles sont tout compris. Stockage sécurisé dans des boxes individuels fermés à clé, surveillance 24/7. Assurance de base contre le vol, l'incendie et la dégradation. Et l'assistance d'un manutentionnaire pour les entrées et sorties.\n\nIl n'y a pas de frais cachés. L'estimation du volume est vérifiée lors de la mise en garde-meubles et la facturation est basée sur le volume réel constaté. Vous êtes libre d'assister à la mise en garde-meubles de vos biens pour une transparence totale.",
         },
         {
           title: 'Comment réduire le coût de votre garde-meubles',
-          content: "Quelques conseils pour optimiser le coût de votre garde-meubles : triez vos affaires avant le stockage pour ne garder que l'essentiel, démontez les meubles volumineux pour gagner de la place, et empilez les cartons de manière méthodique.\n\nSi vous avez besoin de transporter vos biens jusqu'à notre entrepôt, nous proposons un service de transport à tarif préférentiel combiné avec le garde-meubles. Vous pouvez aussi amener vos meubles par vos propres moyens pour économiser sur le transport.",
+          content: "Trois conseils pour optimiser le coût de votre garde-meubles. Triez vos affaires avant le stockage pour ne garder que l'essentiel. Démontez les meubles volumineux pour gagner de la place. Et empilez les cartons de manière méthodique.\n\nSi vous avez besoin de transporter vos biens jusqu'à notre entrepôt, nous proposons un service de transport à tarif préférentiel combiné avec le garde-meubles. Vous pouvez aussi amener vos meubles par vos propres moyens pour économiser sur le transport.",
         },
       ]}
       faq={[

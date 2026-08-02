@@ -9,7 +9,7 @@ export default function ErreursEviterDemenagement() {
       sections={[
         {
           heading: '1. Sous-estimer le volume à déménager',
-          content: "C'est l'erreur la plus fréquente. On pense avoir « peu de choses » et on se retrouve avec un camion trop petit ou des allers-retours imprévus qui font exploser le budget et la durée du déménagement.\n\nNotre conseil : faites une visite technique avec un professionnel. Chez Déménagements Gramme, cette visite est gratuite et sans engagement. Notre expert évaluera précisément le volume et vous proposera le véhicule adapté.",
+          content: "C'est l'erreur la plus fréquente. On pense avoir « peu de choses ». On se retrouve avec un camion trop petit, ou des allers-retours imprévus qui font exploser le budget et la durée.\n\nNotre conseil : faites une visite technique avec un professionnel. Chez Déménagements Gramme, cette visite est gratuite et sans engagement. Notre expert évaluera précisément le volume et vous proposera le véhicule adapté.",
         },
         {
           heading: "2. S'y prendre trop tard",
@@ -25,7 +25,7 @@ export default function ErreursEviterDemenagement() {
         },
         {
           heading: '5. Oublier les démarches administratives',
-          content: "Un déménagement implique de nombreuses formalités : changement d'adresse à la commune, transfert du courrier, mise à jour des abonnements (énergie, internet, assurances), notification à l'employeur, transfert du dossier médical.\n\nÀ Liège, vous disposez de 8 jours ouvrables après votre emménagement pour vous inscrire à votre nouvelle commune. Pensez aussi à relever les index des compteurs d'eau, de gaz et d'électricité dans l'ancien et le nouveau logement.",
+          content: "Un déménagement implique de nombreuses formalités. Changement d'adresse à la commune, transfert du courrier, mise à jour des abonnements d'énergie, d'internet et d'assurance. Sans oublier l'employeur et le dossier médical.\n\nÀ Liège, vous disposez de 8 jours ouvrables après votre emménagement pour vous inscrire à votre nouvelle commune. Pensez aussi à relever les index des compteurs d'eau, de gaz et d'électricité dans l'ancien et le nouveau logement.",
         },
         {
           heading: "6. Ne pas préparer l'accès au nouveau logement",
@@ -39,7 +39,7 @@ export default function ErreursEviterDemenagement() {
         {
           heading: 'Confondre volume estimé et volume réel',
           content:
-            "L'erreur porte rarement sur le mobilier visible. Elle porte sur la cave, le grenier, le garage, l'abri de jardin et le contenu des armoires — c'est-à-dire sur tout ce qu'on ne compte pas en faisant le tour du salon.\n\nUn écart de dix mètres cubes change le camion, l'équipe et la durée. Découvert le matin du déménagement, il oblige à improviser une seconde rotation ou à laisser des affaires sur place.\n\nC'est précisément ce que la visite technique évite. Elle est gratuite, elle dure moins d'une heure, et elle transforme une estimation en chiffre. Un devis établi par téléphone, sans visite, repose sur votre estimation — pas sur la nôtre.",
+            "L'erreur porte rarement sur le mobilier visible. Elle porte sur la cave, le grenier, le garage, l'abri de jardin et le contenu des armoires. C'est-à-dire sur tout ce qu'on ne compte pas en faisant le tour du salon.\n\nUn écart de dix mètres cubes change le camion, l'équipe et la durée. Découvert le matin du déménagement, il oblige à improviser une seconde rotation ou à laisser des affaires sur place.\n\nC'est précisément ce que la visite technique évite. Elle est gratuite, elle dure moins d'une heure, et elle transforme une estimation en chiffre. Un devis établi par téléphone, sans visite, repose sur votre estimation — pas sur la nôtre.",
         },
       ]}
       relatedArticles={[

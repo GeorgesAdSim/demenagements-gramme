@@ -69,28 +69,28 @@ export default function LiegeSection() {
               Contient les entités nommées : entreprise, ville, adresse, date de
               fondation, capacités, périmètre. */}
           <p className="text-navy text-lg md:text-xl leading-relaxed border-l-4 border-yellow pl-5 mb-8 font-medium">
-            Déménagements Gramme est une entreprise familiale de déménagement
-            établie rue des Naiveux 64 à Herstal, en périphérie de Liège, et
-            active depuis 1948 — soit {ans} ans et trois générations. Nous
-            déménageons particuliers et entreprises dans tous les quartiers
-            liégeois, avec des véhicules de 4 à 100 m³ équipés d'élévateurs, et
-            nous remettons un devis gratuit sous 24 heures ouvrables.
+            Déménagements Gramme est une entreprise familiale établie rue des
+            Naiveux 64 à Herstal, en périphérie de Liège. Elle est active depuis
+            1948, soit {ans} ans et trois générations. Nous déménageons
+            particuliers et entreprises dans tous les quartiers liégeois. Nos
+            véhicules vont de 4 à 100 m³ et sont équipés d'élévateurs. Le devis
+            est gratuit et remis sous 24 heures ouvrables.
           </p>
 
           <p className="text-muted text-[17px] leading-relaxed mb-4">
             Déménager à Liège ne ressemble pas à déménager ailleurs. La ville
-            cumule un bâti ancien souvent dépourvu d'ascenseur, des rues en pente
-            héritées de sa topographie de vallée, et des règles de stationnement
-            strictes en hypercentre. Un déménageur qui ne connaît pas ces
-            contraintes découvre le problème le matin du chargement — au moment
-            où il coûte le plus cher.
+            cumule trois contraintes. Son bâti ancien est souvent dépourvu
+            d'ascenseur. Ses rues montent, héritage d'une topographie de vallée.
+            Et son hypercentre applique des règles de stationnement strictes. Un
+            déménageur qui les ignore découvre le problème le matin du
+            chargement, au moment où il coûte le plus cher.
           </p>
           <p className="text-muted text-[17px] leading-relaxed">
-            C'est la différence que fait l'expérience locale accumulée depuis
-            1948 : nous savons quel gabarit de camion passe rue Hors-Château,
-            combien de temps prend un troisième étage sans ascenseur au Longdoz,
-            et quand déposer une demande d'autorisation de voirie auprès de la
-            Ville pour qu'elle soit accordée à temps.
+            C'est là que joue l'expérience locale accumulée depuis 1948. Nous
+            savons quel gabarit de camion passe rue Hors-Château. Nous savons
+            combien de temps prend un troisième étage sans ascenseur au Longdoz.
+            Et nous savons quand déposer une demande d'autorisation de voirie
+            auprès de la Ville pour qu'elle soit accordée à temps.
           </p>
         </motion.div>
 
@@ -131,9 +131,9 @@ export default function LiegeSection() {
           </p>
           <p className="text-muted text-[16px] leading-relaxed mb-6">
             Comptez une demi-journée à une journée pour un appartement de deux à
-            trois pièces, et une journée complète pour une maison familiale. Un
-            étage élevé sans ascenseur, une rue en pente ou un accès en zone
-            piétonne allongent la durée : ces trois facteurs pèsent souvent plus
+            trois pièces, et une journée complète pour une maison familiale.
+            Trois éléments allongent cette durée : un étage élevé sans ascenseur,
+            une rue en pente, un accès en zone piétonne. Ils pèsent souvent plus
             que le volume lui-même.
           </p>
 
@@ -197,8 +197,8 @@ export default function LiegeSection() {
           </div>
           <p className="text-muted text-[15px] leading-relaxed mt-5">
             Votre commune n'apparaît pas dans cette liste&nbsp;? Nous couvrons
-            l'ensemble de la province de Liège et de la Belgique, ainsi que la
-            France, la Suisse, l'Espagne et l'Italie pour les{' '}
+            l'ensemble de la province de Liège et de la Belgique. La France, la
+            Suisse, l'Espagne et l'Italie relèvent de nos{' '}
             <Link to="/demenagement/demenagement-international" className="text-navy font-bold underline hover:text-navy/70 transition-colors">
               déménagements internationaux depuis Liège
             </Link>

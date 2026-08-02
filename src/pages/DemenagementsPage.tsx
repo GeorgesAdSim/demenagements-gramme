@@ -31,15 +31,15 @@ const defaults: ServicePageContent = {
       },
       {
         title: 'Monte-meubles et service lift',
-        desc: "Le monte-meubles hisse le mobilier par la façade, jusqu'à la fenêtre ou au balcon. Il devient nécessaire dès qu'un meuble ne passe pas dans l'escalier : troisième étage sans ascenseur, cage en colimaçon, palier trop court pour faire tourner un canapé. C'est aussi la solution sur les accès en terrasse, fréquents sur les coteaux liégeois. Concrètement, il faut un emplacement dégagé au pied de la façade — d'où la réservation de stationnement, dont nous nous chargeons. Vous n'avez rien à préparer de plus qu'un déménagement ordinaire : c'est notre opérateur qui manœuvre.",
+        desc: "Le monte-meubles hisse le mobilier par la façade, jusqu'à la fenêtre ou au balcon. Il devient nécessaire dès qu'un meuble ne passe pas dans l'escalier. Troisième étage sans ascenseur, cage en colimaçon, palier trop court pour faire tourner un canapé. C'est aussi la solution sur les accès en terrasse, fréquents sur les coteaux liégeois. Concrètement, il faut un emplacement dégagé au pied de la façade — d'où la réservation de stationnement, dont nous nous chargeons. Vous n'avez rien à préparer de plus qu'un déménagement ordinaire : c'est notre opérateur qui manœuvre.",
       },
       {
         title: 'Déménagement de pianos',
-        desc: "Un piano droit pèse entre 200 et 300 kg, un quart-de-queue davantage. Ce n'est pas le poids qui pose problème, c'est la répartition : l'instrument est fragile là où on le saisit. Nous utilisons un chariot à sangles, des protections rigides sur les angles et, pour un queue, le démontage des pieds et de la lyre avant emballage. De votre côté, il n'y a rien à démonter : signalez-nous simplement le modèle et l'étage à la visite technique. Prévoyez en revanche un accordage après l'installation, quelques semaines plus tard, le temps que l'instrument se stabilise.",
+        desc: "Un piano droit pèse entre 200 et 300 kg, un quart-de-queue davantage. Ce n'est pas le poids qui pose problème, c'est la répartition : l'instrument est fragile là où on le saisit. Nous utilisons un chariot à sangles et des protections rigides sur les angles. Pour un quart-de-queue, les pieds et la lyre se démontent avant emballage. De votre côté, il n'y a rien à démonter : signalez-nous simplement le modèle et l'étage à la visite technique. Prévoyez en revanche un accordage après l'installation, quelques semaines plus tard, le temps que l'instrument se stabilise.",
       },
       {
         title: 'Coffres-forts et charges lourdes',
-        desc: "Un coffre-fort, une machine d'atelier ou un meuble de métier relèvent de la manutention lourde. La question n'est jamais le transport mais le franchissement : un seuil, une marche, un ascenseur dont la charge utile est dépassée. Nous relevons le poids, les dimensions et le parcours exact avant de venir, puis nous engageons le matériel adapté — chariots à forte charge, plaques de répartition, parfois monte-meubles. Il faut nous communiquer le poids réel du coffre, indiqué par le fabricant. C'est la seule information que nous ne pouvons pas estimer nous-mêmes de façon fiable.",
+        desc: "Un coffre-fort, une machine d'atelier ou un meuble de métier relèvent de la manutention lourde. La question n'est jamais le transport mais le franchissement : un seuil, une marche, un ascenseur dont la charge utile est dépassée. Nous relevons le poids, les dimensions et le parcours exact avant de venir. Nous engageons ensuite le matériel adapté : chariots à forte charge, plaques de répartition, parfois monte-meubles. Il faut nous communiquer le poids réel du coffre, indiqué par le fabricant. C'est la seule information que nous ne pouvons pas estimer nous-mêmes de façon fiable.",
       },
       {
         title: 'Démontage et remontage',
@@ -47,7 +47,7 @@ const defaults: ServicePageContent = {
       },
       {
         title: 'Emballage professionnel',
-        desc: "L'emballage est le poste que les particuliers sous-estiment le plus. Nous fournissons cartons, papier bulle et couvertures de protection, et nous pouvons prendre en charge l'emballage complet du logement, vaisselle et objets fragiles compris. Si vous emballez vous-même, trois règles suffisent : les objets lourds en dessous, vingt kilos maximum par carton, et le nom de la pièce de destination inscrit sur chaque carton. Commencez deux à trois semaines avant, par les pièces les moins utilisées. Un carton mal fermé ou non identifié coûte du temps le jour J, et c'est le jour où le temps se paie.",
+        desc: "L'emballage est le poste que les particuliers sous-estiment le plus. Nous fournissons cartons, papier bulle et couvertures de protection, et nous pouvons prendre en charge l'emballage complet du logement, vaisselle et objets fragiles compris. Si vous emballez vous-même, trois règles suffisent. Les objets lourds en dessous. Vingt kilos maximum par carton. Et le nom de la pièce de destination inscrit sur chaque carton. Commencez deux à trois semaines avant, par les pièces les moins utilisées. Un carton mal fermé ou non identifié coûte du temps le jour J, et c'est le jour où le temps se paie.",
       },
       {
         title: 'Rues piétonnes et accès difficiles',
@@ -81,7 +81,7 @@ const defaults: ServicePageContent = {
     items: [
       {
         title: 'Ce qui fait varier un devis',
-        desc: "Le volume d'abord, mais l'accessibilité pèse tout autant. Un troisième étage sans ascenseur ne coûte pas comme un rez-de-chaussée avec parking, à volume identique. La distance et la date jouent également : mai à septembre est la période la plus demandée, les lundis et mardis sont moins sollicités que les vendredis et samedis.",
+        desc: "Le volume d'abord, mais l'accessibilité pèse tout autant. Un troisième étage sans ascenseur ne coûte pas comme un rez-de-chaussée avec parking, à volume identique. La distance et la date jouent également. Mai à septembre est la période la plus demandée. En semaine, les lundis et mardis sont moins sollicités que les vendredis et samedis.",
       },
       {
         title: 'Quand réserver',
@@ -129,7 +129,7 @@ const defaults: ServicePageContent = {
   communes: {
     sectionTitle: 'Nos pages par commune',
     intro:
-      "Chaque commune a ses contraintes : un bâti, un relief, des règles de stationnement qui lui sont propres. Nous avons donc une page par commune desservie, avec la distance depuis notre dépôt, les sections de l'entité et la procédure d'autorisation de stationnement applicable, relevée sur la source officielle. Voici les principales.",
+      "Chaque commune a ses contraintes : un bâti, un relief, des règles de stationnement qui lui sont propres. Nous avons donc une page par commune desservie. Chacune donne la distance depuis notre dépôt, les sections de l'entité et la procédure d'autorisation de stationnement applicable, relevée sur la source officielle. Voici les principales.",
     slugs: [
       'liege', 'herstal', 'seraing', 'ans', 'verviers', 'huy', 'waremme', 'vise',
       'oupeye', 'herve', 'flemalle', 'chaudfontaine', 'fleron', 'spa', 'soumagne',

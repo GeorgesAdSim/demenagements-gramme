@@ -21,11 +21,11 @@ export default function ConseilsDemenagementLiege() {
         },
         {
           heading: '4. Emballez méthodiquement vos cartons',
-          content: "L'emballage est une étape cruciale. Commencez 2 à 3 semaines avant le jour J par les pièces les moins utilisées (grenier, cave, chambre d'amis). Gardez les objets du quotidien pour la fin.\n\nRègles d'or pour un emballage réussi : ne dépassez pas 20 kg par carton, placez les objets lourds en bas et les légers au-dessus, protégez la vaisselle avec du papier journal ou du papier bulle, et inscrivez clairement la pièce de destination sur chaque carton.",
+          content: "L'emballage est une étape cruciale. Commencez 2 à 3 semaines avant le jour J par les pièces les moins utilisées (grenier, cave, chambre d'amis). Gardez les objets du quotidien pour la fin.\n\nQuatre règles d'or pour un emballage réussi. Ne dépassez pas 20 kg par carton. Placez les objets lourds en bas et les légers au-dessus. Protégez la vaisselle avec du papier journal ou du papier bulle. Et inscrivez clairement la pièce de destination sur chaque carton.",
         },
         {
           heading: '5. Préparez un carton « premier jour »',
-          content: "Prévoyez un carton spécial contenant tout ce dont vous aurez besoin dès la première nuit dans votre nouveau logement : draps, serviettes, articles de toilette, médicaments, chargeurs de téléphone, quelques ustensiles de cuisine et de quoi manger.\n\nMarquez clairement ce carton et gardez-le à portée de main. Il vous évitera de devoir fouiller dans des dizaines de cartons après une longue journée de déménagement.",
+          content: "Prévoyez un carton spécial pour la première nuit dans votre nouveau logement. Draps, serviettes, articles de toilette, médicaments, chargeurs de téléphone, quelques ustensiles de cuisine et de quoi manger.\n\nMarquez clairement ce carton et gardez-le à portée de main. Il vous évitera de devoir fouiller dans des dizaines de cartons après une longue journée de déménagement.",
         },
         {
           heading: '6. Faites appel à des professionnels',
