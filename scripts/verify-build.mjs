@@ -97,6 +97,25 @@ function resolve(url, rules, files) {
 
 // ---------------------------------------------------------------- contrôles
 
+/**
+ * Sous-classes de LocalBusiness employées par le site. Google impose `name` et
+ * `address` sur chacune : voir le contrôle dans la boucle des pages.
+ */
+const TYPES_LOCAL_BUSINESS = new Set([
+  'LocalBusiness', 'MovingCompany', 'Store', 'ProfessionalService',
+]);
+
+/** Aplatit un document JSON-LD en la liste de ses nœuds typés. */
+function* noeudsDe(valeur) {
+  if (Array.isArray(valeur)) {
+    for (const v of valeur) yield* noeudsDe(v);
+    return;
+  }
+  if (!valeur || typeof valeur !== 'object') return;
+  if (typeof valeur['@type'] === 'string') yield valeur;
+  for (const v of Object.values(valeur)) yield* noeudsDe(v);
+}
+
 async function main() {
   if (!existsSync(distDir)) {
     console.error('dist/ introuvable — lance le build avant la vérification.');
@@ -132,6 +151,35 @@ async function main() {
     if (!desc) err(`${label} : meta description absente.`);
     if (!canonical) err(`${label} : canonical absent.`);
     if (!html.includes('application/ld+json')) err(`${label} : aucun bloc JSON-LD.`);
+
+    // Chaque bloc JSON-LD doit être du JSON valide, et tout nœud typé comme une
+    // sous-classe de LocalBusiness doit porter `name` ET `address`.
+    //
+    // Google exige les deux sur ce type, et les valideurs lisent le TYPE, pas
+    // l'intention. Une référence compacte à l'entreprise — @id, name, url — a
+    // été servie sur 89 pages en se croyant un simple renvoi : les validateurs y
+    // ont lu 89 déclarations LocalBusiness incomplètes. Le build ne disait rien ;
+    // c'est un audit externe qui l'a signalé, trois semaines plus tard.
+    for (const bloc of html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) {
+      let donnees;
+      try {
+        donnees = JSON.parse(bloc[1]);
+      } catch (e) {
+        err(`${label} : bloc JSON-LD illisible (${e.message}).`);
+        continue;
+      }
+      for (const noeud of noeudsDe(donnees)) {
+        if (!TYPES_LOCAL_BUSINESS.has(noeud['@type'])) continue;
+        for (const requis of ['name', 'address']) {
+          if (!noeud[requis]) {
+            err(
+              `${label} : nœud ${noeud['@type']} sans "${requis}" — Google l'exige sur toute sous-classe ` +
+              `de LocalBusiness, et le valideur lit le type, pas l'intention.`
+            );
+          }
+        }
+      }
+    }
     if (h1Count === 0) err(`${label} : aucun <h1> — page vide au pré-rendu ?`);
     if (h1Count > 1) warn(`${label} : ${h1Count} <h1> (un seul attendu).`);
 
