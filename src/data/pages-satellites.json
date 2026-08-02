@@ -1,0 +1,30 @@
+{
+  "_commentaire": [
+    "Pages satellites réellement déclarées dans le routeur (src/App.tsx et",
+    "src/entry-server.tsx) et pré-rendues par scripts/prerender.mjs.",
+    "",
+    "Pourquoi cette liste existe : `pageExistante` vient de Supabase et déclare",
+    "qu'une commune est déjà servie par une page satellite. Quand la satellite",
+    "est supprimée du code, la valeur reste en base et devient fausse — le",
+    "pré-rendu saute alors une commune dont plus rien ne sert l'URL.",
+    "",
+    "Le fait « cette page existe » appartient au dépôt, pas à la base. Cette",
+    "liste le dit, et `pageSatellite()` ne retient une valeur de `pageExistante`",
+    "que si elle y figure. La base peut donc être en avance ou en retard sans",
+    "rien casser.",
+    "",
+    "En ajoutant ou en supprimant une page satellite, mettre à jour cette liste",
+    "en même temps que la route. scripts/verify-build.mjs échoue si une entrée",
+    "ne correspond à aucune page construite."
+  ],
+  "pages": [
+    "/demenagement/demenageur-liege",
+    "/demenagement/demenagement-liege",
+    "/demenagement/demenagement-entreprise",
+    "/demenagement/demenagement-piano",
+    "/demenagement/demenagement-international",
+    "/demenagement/demontage-remontage-meubles",
+    "/garde-meubles/garde-meubles-liege",
+    "/garde-meubles/prix-garde-meubles-liege"
+  ]
+}

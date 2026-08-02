@@ -10,7 +10,7 @@ import Footer from '../components/Footer';
 import SeoHead from '../components/SeoHead';
 import SchemaOrg from '../components/SchemaOrg';
 import { anneesExperience } from '../lib/anciennete';
-import { COMMUNES, communeUrl, RACINE_ZONES } from '../data/communes';
+import { COMMUNES, communeUrl, pageSatellite, RACINE_ZONES } from '../data/communes';
 
 const BASE_URL = 'https://www.demenagements-gramme.be';
 
@@ -46,7 +46,7 @@ export default function ZonesInterventionPage() {
 
   // Une commune est liable dès qu'une page existe pour elle : soit sa page
   // locale publiée, soit une page satellite antérieure.
-  const avecPage = COMMUNES.filter((c) => c.statut === 'published' || c.pageExistante)
+  const avecPage = COMMUNES.filter((c) => c.statut === 'published' || pageSatellite(c))
     .slice()
     .sort((a, b) => a.nom.localeCompare(b.nom, 'fr'));
 

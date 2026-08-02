@@ -31,6 +31,13 @@ const { communes } = JSON.parse(
   await readFile(path.join(root, 'src/data/communes.json'), 'utf-8')
 );
 
+// Pages satellites réellement déclarées par le dépôt. Même liste que celle
+// consommée par src/data/communes.ts : le fait « cette page existe » appartient
+// au code, pas à la base.
+const SATELLITES = new Set(
+  JSON.parse(await readFile(path.join(root, 'src/data/pages-satellites.json'), 'utf-8')).pages
+);
+
 // Seules les communes publiées ET sans page satellite antérieure reçoivent une
 // page pré-rendue.
 //
@@ -41,7 +48,11 @@ const { communes } = JSON.parse(
 // `npm run dev` pour relecture ; elle n'existe en production qu'une fois ses
 // données locales vérifiées.
 const COMMUNES_PUBLIEES = communes
-  .filter((c) => c.statut === 'published' && !c.pageExistante)
+  // `pageExistante` n'est retenue que si la page satellite existe réellement
+  // dans cette version du code. La valeur vient de Supabase et survit à la
+  // suppression d'une satellite : s'y fier aveuglément faisait sauter le
+  // pré-rendu de communes dont plus rien ne servait l'URL.
+  .filter((c) => c.statut === 'published' && !(c.pageExistante && SATELLITES.has(c.pageExistante)))
   .sort((a, b) => a.nom.localeCompare(b.nom, 'fr'));
 
 // Les pages communes vivent sous /demenagement/demenagement-<slug>, même

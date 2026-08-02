@@ -300,7 +300,8 @@ async function main() {
   // Le validateur n'est pas réimplémenté ici : il est importé du bundle SSR
   // déjà compilé, seule implémentation des règles (voir src/entry-server.tsx).
   try {
-    const { validerCommunes, getCommunesAGenerer, COMMUNES, PREFIXE_COMMUNE, cheminCommune } =
+    const { validerCommunes, getCommunesAGenerer, COMMUNES, PREFIXE_COMMUNE, cheminCommune,
+            pageSatellite, PAGES_SATELLITES_DECLAREES } =
       await import(new URL(`file://${path.join(root, 'dist-server/entry-server.js')}`).href);
 
     // Le préfixe d'URL est écrit à deux endroits : ici via le bundle, et en dur
@@ -348,17 +349,33 @@ async function main() {
     // un doublon mais la même URL, et c'est précisément l'intérêt d'avoir
     // unifié la convention.
     const cheminsSatellites = new Set(
-      COMMUNES.filter((x) => x.pageExistante).map((x) => x.pageExistante)
+      COMMUNES.filter((x) => pageSatellite(x)).map((x) => pageSatellite(x))
     );
+
+    // 12a-bis. La liste des pages satellites déclarées par le dépôt doit
+    // correspondre à ce qui est réellement construit.
+    //
+    // C'est elle qui autorise `pageExistante` à écarter une commune du
+    // pré-rendu. Une entrée périmée y ferait donc sauter silencieusement une
+    // page — exactement ce que cette liste a été créée pour empêcher.
+    for (const chemin of PAGES_SATELLITES_DECLAREES) {
+      if (resolve(chemin, rules, files).status !== 200) {
+        err(
+          `src/data/pages-satellites.json déclare ${chemin}, qui n'est servie par aucun fichier ni aucune règle. ` +
+          `Retire l'entrée si la page a été supprimée, ou ajoute sa route.`
+        );
+      }
+    }
 
     // 12b. Aucune SECONDE URL ne doit être livrée pour une commune qui possède
     // déjà une page satellite : ce serait la cannibalisation que toute
     // l'architecture cherche à éviter.
-    for (const c of COMMUNES.filter((x) => x.pageExistante)) {
+    for (const c of COMMUNES.filter((x) => pageSatellite(x))) {
+      const satellite = pageSatellite(c);
       const url = cheminCommune(c.id);
-      if (url === c.pageExistante) continue; // même URL, rien à signaler
+      if (url === satellite) continue; // même URL, rien à signaler
       if (resolve(url, rules, files).status === 200) {
-        err(`${url} est servie alors que ${c.nom} a déjà ${c.pageExistante} — deux URL sur la même requête.`);
+        err(`${url} est servie alors que ${c.nom} a déjà ${satellite} — deux URL sur la même requête.`);
       }
     }
 

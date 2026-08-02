@@ -20,6 +20,7 @@ import {
   communeUrl,
   cheminCommune,
   slugDepuisSegment,
+  pageSatellite,
   deCommune,
   RACINE_ZONES,
   RACINE_COMMUNES,
@@ -173,13 +174,16 @@ export default function CommuneLandingPage() {
   // Une commune qui dispose déjà d'une page satellite publiée n'a pas de page
   // ici : c'est la satellite qui porte la requête. On y renvoie plutôt que de
   // servir deux URL concurrentes.
-  if (commune.pageExistante) {
+  // `pageSatellite` et non `pageExistante` : la base peut encore déclarer une
+  // satellite supprimée du dépôt, auquel cas c'est cette page qui doit servir.
+  const satellite = pageSatellite(commune);
+  if (satellite) {
     return (
       <div className="font-sans">
         <SeoHead
           title={`Déménagement à ${commune.nom} | Déménagements Gramme`}
           description={`Déménagement à ${commune.nom} par Déménagements Gramme.`}
-          canonical={commune.pageExistante}
+          canonical={satellite}
           noindex
         />
         <TopBar />
@@ -192,7 +196,7 @@ export default function CommuneLandingPage() {
             Cette commune dispose de sa propre page détaillée.
           </p>
           <Link
-            to={commune.pageExistante}
+            to={satellite}
             className="inline-flex items-center gap-2 bg-navy text-yellow font-bold uppercase rounded-lg py-4 px-8"
           >
             Voir la page déménagement à {commune.nom}
