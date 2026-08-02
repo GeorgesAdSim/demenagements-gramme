@@ -75,7 +75,16 @@
         "liege"
       ],
       "dateVerification": "2026-07-30",
-      "statut": "published"
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Zone de Police Ans / Saint-Nicolas",
+        "procedure": "Plateforme en ligne de la Ville d'Ans ; formulaire papier à l'accueil communal pour qui n'a pas de connexion",
+        "delai": "15 jours minimum ; 20 jours en cas d'empiètement sur un axe de mobilité principal ; 25 jours si une fermeture de voirie ou une déviation importante est nécessaire",
+        "cout": "Les panneaux ne sont pas fournis par l'administration : ils restent à charge et aux frais du demandeur",
+        "signalisation": "À placer 48 heures avant le début du déménagement",
+        "sourceUrl": "https://www.police.be/5284/actualites/reservation-demplacement-et-occupation-temporaire-de-la-voie-publique-en-quelques-clics",
+        "dateVerification": "2026-08-02"
+      }
     },
     {
       "id": "anthisnes",
@@ -989,7 +998,16 @@
         "Commune du siège social : visite technique organisable à très court délai.",
         "Habitat mêlant maisons mitoyennes du centre et quartiers résidentiels à Vottem, Liers et Milmort.",
         "Trajet d'approche parmi les plus courts de notre zone, à quatre kilomètres du dépôt."
-      ]
+      ],
+      "autorisationStationnement": {
+        "autorite": "Police de Herstal, service Mobilité",
+        "procedure": "Formulaire de demande d'occupation de la voie publique, à adresser au service Mobilité",
+        "delai": null,
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.herstal.be/vivre-a-herstal/securite/occupation-de-voirie",
+        "dateVerification": "2026-08-02"
+      }
     },
     {
       "id": "herve",
@@ -1023,7 +1041,8 @@
       ],
       "introductionLocale": "Herve réunit huit villages sur cinq codes postaux, de 4650 à 4654 : Herve, Charneux, Battice, Chaineux, Grand-Rechain, Xhendelesse, Bolland et Julémont. Avec neuf communes limitrophes en province de Liège, c'est l'entité la plus entourée de l'arrondissement.",
       "dateVerification": "2026-07-31",
-      "statut": "published"
+      "statut": "published",
+      "todoDonneesLocales": "Autorisation de stationnement : aucune procédure publiée sur herve.be au 2026-08-02. À vérifier par téléphone auprès de l'administration communale."
     },
     {
       "id": "huy",
@@ -1051,7 +1070,16 @@
         "Service d'emballage professionnel pour protéger vos biens lors des transports sinueux."
       ],
       "dateVerification": "2026-07-30",
-      "statut": "published"
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Zone de Police de Huy, service Circulation",
+        "procedure": "Réservation d'emplacement auprès du service de Police ; l'occupation du domaine public elle-même se demande par écrit au Collège communal",
+        "delai": null,
+        "cout": "62 € de frais de placement si la signalisation est posée par le Service Signalisation de la Ville ; en cas de pose par vos soins sans matériel, caution de 25 € par panneau",
+        "signalisation": "Si vous la posez vous-même, au plus tard vers 16 h le jour précédant la réservation",
+        "sourceUrl": "https://www.huy.be/ma-commune/securite-secours/police/chantiers-travaux",
+        "dateVerification": "2026-08-02"
+      }
     },
     {
       "id": "jalhay",
@@ -1164,7 +1192,16 @@
       ],
       "dateVerification": "2026-07-30",
       "pageExistante": "/demenagement/demenagement-liege",
-      "statut": "published"
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Zone de Police de Liège, service Occupation de la voie publique (traitement par secteur)",
+        "procedure": "Demande exclusivement numérique, via l'application « occuper la voie publique » de la Zone de Police",
+        "delai": null,
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.policeliege.be/page/occuper-la-voie-publique",
+        "dateVerification": "2026-08-02"
+      }
     },
     {
       "id": "lierneux",
@@ -1482,7 +1519,16 @@
         "herstal"
       ],
       "dateVerification": "2026-07-30",
-      "statut": "published"
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Commune d'Oupeye, service de Police administrative, de Mobilité et de Planification d'urgence",
+        "procedure": "Formulaire à renvoyer par e-mail au service de Police administrative",
+        "delai": "10 jours ouvrables avant le début de l'occupation, sous peine d'irrecevabilité",
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.oupeye.be/ma-commune/services-communaux/service-de-police-administrative-de-mobilite-et-de-planification-durgence-1/service-de-police-administrative-de-mobilite-et-de-planification-durgence",
+        "dateVerification": "2026-08-02"
+      }
     },
     {
       "id": "pepinster",
@@ -1630,7 +1676,16 @@
         "seraing"
       ],
       "dateVerification": "2026-07-30",
-      "statut": "published"
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Zone de Police Ans / Saint-Nicolas",
+        "procedure": "Plateforme en ligne de la commune de Saint-Nicolas ; formulaire papier à l'accueil communal pour qui n'a pas de connexion",
+        "delai": "15 jours minimum ; 20 jours en cas d'empiètement sur un axe de mobilité principal ; 25 jours si une fermeture de voirie ou une déviation importante est nécessaire",
+        "cout": "Les panneaux ne sont pas fournis par l'administration : ils restent à charge et aux frais du demandeur",
+        "signalisation": "À placer 48 heures avant le début du déménagement",
+        "sourceUrl": "https://www.police.be/5284/actualites/reservation-demplacement-et-occupation-temporaire-de-la-voie-publique-en-quelques-clics",
+        "dateVerification": "2026-08-02"
+      }
     },
     {
       "id": "saint-vith",
@@ -1699,7 +1754,16 @@
           "titre": "Nos moyens sur l'entité sérésienne",
           "contenu": "Studios, appartements familiaux, locaux professionnels : nos véhicules couvrent des volumes de 4 à 100 m³, et plusieurs équipes peuvent intervenir le même jour sur un gros chantier.\n\nLe monte-meubles est fréquemment mobilisé sur la commune, en particulier pour les appartements en étage du centre-ville et de Jemeppe. Il évite le portage en cage d'escalier, réduit le risque de dégâts et raccourcit l'intervention."
         }
-      ]
+      ],
+      "autorisationStationnement": {
+        "autorite": "Ville de Seraing",
+        "procedure": "Formulaire de demande d'occupation privative du domaine public, par courrier place Communale 8 ou par e-mail au secrétariat communal",
+        "delai": "15 jours minimum avant le début de l'occupation",
+        "cout": "1 € par mètre carré et par jour",
+        "signalisation": "À installer 48 heures avant le début de l'occupation, en préservant un passage de 1,50 m pour les piétons",
+        "sourceUrl": "https://www.seraing.be/wp-content/uploads/2026/01/Formulaire-autorisation-odp.pdf",
+        "dateVerification": "2026-08-02"
+      }
     },
     {
       "id": "soumagne",
@@ -2006,7 +2070,16 @@
       ],
       "introductionLocale": "Verviers réunit six villages sur trois codes postaux, de 4800 à 4802 : Verviers, Ensival, Heusy, Lambermont, Petit-Rechain et Stembert. C'est le chef-lieu de l'arrondissement, et six communes le bordent en province de Liège.",
       "dateVerification": "2026-07-31",
-      "statut": "published"
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Ville de Verviers, service de Police administrative",
+        "procedure": "E-guichet verviers-formulaires.guichet-citoyen.be, ou par e-mail au service",
+        "delai": "Au minimum une semaine avant la date",
+        "cout": null,
+        "signalisation": "À charge du demandeur ou du responsable du déménagement ; elle peut être louée auprès d'une société de signalisation routière",
+        "sourceUrl": "https://www.verviers.be/ma-commune/administration/services-communaux/police-administrative/demarches/occupation-de-voirie-pour-demenagement",
+        "dateVerification": "2026-08-02"
+      }
     },
     {
       "id": "villers-le-bouillet",
@@ -2061,7 +2134,16 @@
         "liege"
       ],
       "dateVerification": "2026-07-30",
-      "statut": "published"
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Ville de Visé",
+        "procedure": "Plateforme Eaglebe, accessible en ligne 24 h/24 depuis le 15 février 2025 ; suivi du dossier et réception de l'autorisation par le même canal",
+        "delai": null,
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.vise.be/vivre-a-vise/environnement/eaglebe/occupation-du-domaine-public-plateforme",
+        "dateVerification": "2026-08-02"
+      }
     },
     {
       "id": "waimes",
@@ -2146,7 +2228,16 @@
         "Autorisation de stationnement à demander au préalable auprès de la zone de police de Hesbaye pour le centre-ville."
       ],
       "dateVerification": "2026-07-30",
-      "statut": "published"
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Ville de Waremme, service de la Police administrative",
+        "procedure": "Demande d'autorisation d'occupation de la voirie auprès du service de Police administrative",
+        "delai": null,
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.waremme.be/ma-ville/services-communaux/police-administrative/police-administrative",
+        "dateVerification": "2026-08-02"
+      }
     },
     {
       "id": "wasseiges",
