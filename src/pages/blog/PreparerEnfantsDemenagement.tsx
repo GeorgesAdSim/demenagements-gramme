@@ -13,7 +13,7 @@ export default function PreparerEnfantsDemenagement() {
         },
         {
           heading: 'Annoncez le déménagement le plus tôt possible',
-          content: "N'attendez pas la dernière minute pour annoncer le déménagement à vos enfants. Plus ils ont de temps pour se préparer mentalement, mieux c'est. Adaptez votre discours à l'âge de l'enfant.\n\nPour les plus petits (3-5 ans), utilisez des termes simples et positifs. Pour les plus grands, expliquez les raisons du déménagement et invitez-les à participer aux décisions quand c'est possible (choix de la couleur de leur chambre, disposition des meubles, etc.).",
+          content: "N'attendez pas la dernière minute pour annoncer le déménagement à vos enfants. Plus ils ont de temps pour se préparer mentalement, mieux c'est. Adaptez votre discours à l'âge de l'enfant.\n\nPour les plus petits (3-5 ans), utilisez des termes simples et positifs. Pour les plus grands, expliquez les raisons du déménagement. Invitez-les à participer aux décisions quand c'est possible : couleur de leur chambre, disposition des meubles.",
         },
         {
           heading: 'Impliquez-les dans le processus',
@@ -21,7 +21,7 @@ export default function PreparerEnfantsDemenagement() {
         },
         {
           heading: 'Maintenez les routines le jour du déménagement',
-          content: "Le jour J, essayez de maintenir autant que possible les habitudes de vos enfants : repas aux heures habituelles, doudou et objets de réconfort accessibles, heure de coucher respectée.\n\nSi possible, confiez les plus jeunes enfants à un proche pendant le déménagement proprement dit. L'agitation, le bruit et le va-et-vient des déménageurs peuvent être perturbants. Notre équipe chez Déménagements Gramme est habituée à travailler en présence d'enfants et fait preuve de discrétion et de professionnalisme.",
+          content: "Le jour J, maintenez autant que possible les habitudes de vos enfants. Repas aux heures habituelles, doudou et objets de réconfort accessibles, heure de coucher respectée.\n\nSi possible, confiez les plus jeunes enfants à un proche pendant le déménagement proprement dit. L'agitation, le bruit et le va-et-vient des déménageurs peuvent être perturbants. Notre équipe chez Déménagements Gramme est habituée à travailler en présence d'enfants et fait preuve de discrétion et de professionnalisme.",
         },
         {
           heading: "Aidez-les à s'intégrer dans leur nouvel environnement",
@@ -30,6 +30,16 @@ export default function PreparerEnfantsDemenagement() {
         {
           heading: "Soyez patient et à l'écoute",
           content: "L'adaptation peut prendre du temps. Certains enfants s'adaptent en quelques jours, d'autres en quelques mois. Soyez à l'écoute de leurs émotions sans les minimiser. Des réactions comme des troubles du sommeil, une baisse des résultats scolaires ou un repli sur soi sont normales et généralement temporaires.\n\nSi les difficultés persistent au-delà de quelques semaines, n'hésitez pas à en parler avec votre médecin de famille ou le psychologue de l'école.",
+        },
+        {
+          heading: "L'école : la démarche à ne pas laisser au dernier moment",
+          content:
+            "Le changement d'école est souvent ce qui pèse le plus pour un enfant, et c'est aussi la démarche la plus contrainte par le calendrier. En Belgique, l'inscription dans un nouvel établissement se prépare bien avant le déménagement lui-même.\n\nPrenez contact avec la nouvelle école dès que votre date est arrêtée, même si l'année scolaire est entamée. Demandez à visiter les lieux avec votre enfant. Voir la cour, la classe et le chemin depuis le futur logement rend le changement beaucoup moins abstrait.\n\nPrévoyez aussi la déclaration de changement d'adresse à l'administration communale, à faire dans les huit jours suivant l'emménagement. C'est elle qui conditionne plusieurs démarches ultérieures, dont certaines aides scolaires.",
+        },
+        {
+          heading: 'Le jour du déménagement, avec des enfants',
+          content:
+            "Un logement en cours de chargement n'est pas un endroit sûr pour un jeune enfant. Cartons empilés, meubles en mouvement, portes ouvertes en permanence : les allers-retours de l'équipe créent un risque réel.\n\nLa solution la plus simple reste de confier les plus jeunes à un proche pour la journée. Faites-les venir en fin d'après-midi, une fois le gros du travail terminé, pour découvrir leur nouvelle chambre.\n\nPour les plus grands qui souhaitent rester, donnez un rôle défini et sans danger. Garder leur carton personnel, décider de l'emplacement de leur lit, accueillir l'équipe avec des boissons. Participer les rassure bien plus que d'être tenus à l'écart.",
         },
       ]}
       relatedArticles={[

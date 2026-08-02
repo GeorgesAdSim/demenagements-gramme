@@ -102,6 +102,61 @@ export default function ActualitesPage() {
           </div>
         </section>
 
+        {/* Introduction de l'index. La page n'était qu'une grille de trois
+            cartes : rien n'y disait à qui elle s'adresse ni ce qu'on y trouve. */}
+        <section className="bg-white py-14 md:py-16">
+          <div className="max-w-3xl mx-auto px-4 md:px-8">
+            <nav aria-label="Fil d'Ariane" className="text-sm text-muted mb-8">
+              <Link to="/" className="hover:text-navy underline">Accueil</Link>
+              <span className="mx-2">/</span>
+              <span className="text-navy font-medium">Blog</span>
+            </nav>
+            <h2 className="text-2xl md:text-3xl font-black uppercase text-navy mb-5">
+              Ce que vous trouverez ici
+            </h2>
+            <div className="space-y-4 text-muted text-[17px] leading-relaxed">
+              <p>
+                Nous déménageons en province de Liège depuis 1948. Ces articles
+                rassemblent ce que trois générations de déménageurs ont vu revenir
+                le plus souvent : les mêmes questions, les mêmes oublis, les mêmes
+                mauvaises surprises.
+              </p>
+              <p>
+                Le fil conducteur est pratique. Combien de temps prévoir, dans quel
+                ordre emballer, ce qui fait vraiment varier un devis, comment
+                accompagner des enfants dans un changement de logement. Rien qui
+                ressemble à un argumentaire commercial : ce sont des conseils que
+                nous donnons de vive voix pendant les visites techniques.
+              </p>
+              <p>
+                Les contraintes propres à chaque commune — stationnement, accès,
+                relief, monte-meubles — ne sont pas traitées ici mais sur{' '}
+                <Link to="/zones-intervention" className="text-navy font-bold underline hover:text-navy/70">
+                  les pages de nos zones d'intervention
+                </Link>
+                , où chacune a sa fiche. Pour le déroulement d'une prestation, de la
+                visite technique au remontage, voyez plutôt{' '}
+                <Link to="/demenagement" className="text-navy font-bold underline hover:text-navy/70">
+                  la page déménagement
+                </Link>
+                .
+              </p>
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-2">
+              {[...new Set(ARTICLES.map((a) => a.category))].map((cat) => (
+                <span
+                  key={cat}
+                  className="bg-offwhite border border-gray-200 text-navy text-sm rounded-full px-3.5 py-1.5"
+                >
+                  {cat} · {ARTICLES.filter((a) => a.category === cat).length} article
+                  {ARTICLES.filter((a) => a.category === cat).length > 1 ? 's' : ''}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="bg-offwhite py-16 md:py-20">
           <div className="max-w-7xl mx-auto px-4 md:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

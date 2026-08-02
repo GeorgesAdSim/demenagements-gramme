@@ -23,7 +23,7 @@ export default function DemenagementInternationalSatellite() {
         {
           title: 'Nos destinations européennes',
           content:
-            "Nous réalisons régulièrement des déménagements vers toutes les grandes villes européennes : Paris, Lyon, Marseille, Amsterdam, Rotterdam, Cologne, Berlin, Munich, Genève, Zurich, Madrid, Barcelone, Rome, Milan, Lisbonne.\n\nPour les pays limitrophes — France, Pays-Bas, Allemagne, Luxembourg — les délais sont de 1 à 5 jours ouvrables. Pour le sud de l'Europe — Espagne, Italie, Portugal — comptez 5 à 10 jours. Un planning détaillé accompagne votre devis.\n\nCes délais courent à partir du chargement, pas de la signature. La date de chargement, elle, se réserve d'autant plus tôt que la destination est lointaine.",
+            "Nous réalisons régulièrement des déménagements vers les grandes villes européennes. Paris, Lyon, Marseille, Amsterdam, Rotterdam, Cologne, Berlin, Munich. Genève, Zurich, Madrid, Barcelone, Rome, Milan, Lisbonne.\n\nPour les pays limitrophes — France, Pays-Bas, Allemagne, Luxembourg — les délais sont de 1 à 5 jours ouvrables. Pour le sud de l'Europe — Espagne, Italie, Portugal — comptez 5 à 10 jours. Un planning détaillé accompagne votre devis.\n\nCes délais courent à partir du chargement, pas de la signature. La date de chargement, elle, se réserve d'autant plus tôt que la destination est lointaine.",
         },
         {
           title: 'Camion dédié ou groupage : ce qui change pour vous',
@@ -33,17 +33,17 @@ export default function DemenagementInternationalSatellite() {
         {
           title: 'Emballage aux normes du transport longue distance',
           content:
-            "Un trajet international n'a rien d'un déménagement de quartier. Le mobilier subit des vibrations pendant des heures, change plusieurs fois de température et voyage parfois avec d'autres chargements.\n\nL'emballage est donc renforcé : caisses en bois pour les objets fragiles et les œuvres, housses spéciales pour les matelas et les canapés, protection anti-choc aux angles, calage systématique des vides dans le camion. Notre équipe est formée à ces techniques.\n\nLe démontage du mobilier volumineux fait partie de la prestation, tout comme le remontage à l'arrivée. Une armoire démontée occupe trois fois moins de place et voyage bien mieux qu'une armoire sanglée debout.",
+            "Un trajet international n'a rien d'un déménagement de quartier. Le mobilier subit des vibrations pendant des heures, change plusieurs fois de température et voyage parfois avec d'autres chargements.\n\nL'emballage est donc renforcé. Caisses en bois pour les objets fragiles et les œuvres, housses spéciales pour les matelas et les canapés. Protection anti-choc aux angles, et calage systématique des vides dans le camion. Notre équipe est formée à ces techniques.\n\nLe démontage du mobilier volumineux fait partie de la prestation, tout comme le remontage à l'arrivée. Une armoire démontée occupe trois fois moins de place et voyage bien mieux qu'une armoire sanglée debout.",
         },
         {
           title: 'Inventaire, douane et documents',
           content:
-            "Tout déménagement international commence par un inventaire détaillé. Il sert de base au devis, à l'assurance et, le cas échéant, aux formalités douanières. C'est le document le plus important du dossier.\n\nÀ l'intérieur de l'Union européenne, la libre circulation des biens dispense de dédouanement : un déménagement vers la France, l'Allemagne ou l'Espagne n'appelle aucune déclaration en douane. L'inventaire et les certificats d'assurance suffisent.\n\nVers la Suisse et le Royaume-Uni, en revanche, un dédouanement est bien nécessaire. Nous prenons en charge les documents correspondants et le régime d'exonération applicable aux biens personnels en cas de transfert de résidence.",
+            "Tout déménagement international commence par un inventaire détaillé. Il sert de base au devis, à l'assurance et, le cas échéant, aux formalités douanières. C'est le document le plus important du dossier.\n\nÀ l'intérieur de l'Union européenne, la libre circulation des biens dispense de dédouanement. Un déménagement vers la France, l'Allemagne ou l'Espagne n'appelle aucune déclaration en douane. L'inventaire et les certificats d'assurance suffisent.\n\nVers la Suisse et le Royaume-Uni, en revanche, un dédouanement est nécessaire. Nous prenons en charge les documents correspondants. Le régime d'exonération applicable aux biens personnels, en cas de transfert de résidence, en fait partie.",
         },
         {
           title: "Ce qui se passe à l'arrivée",
           content:
-            "La livraison ne s'arrête pas au trottoir. L'équipe monte le mobilier, le remonte et le place dans les pièces que vous désignez, exactement comme sur un déménagement local.\n\nLes contraintes d'accès du logement d'arrivée se relèvent avant le départ, pendant la visite technique. Une rue piétonne à Barcelone, un cinquième sans ascenseur à Paris, une autorisation de stationnement à obtenir auprès de la commune : mieux vaut le savoir depuis Liège que le découvrir sur place.\n\nSi votre nouveau logement n'est pas disponible à la date de sortie, le mobilier peut patienter dans nos box de garde-meubles à Herstal avant de repartir.",
+            "La livraison ne s'arrête pas au trottoir. L'équipe monte le mobilier, le remonte et le place dans les pièces que vous désignez, exactement comme sur un déménagement local.\n\nLes contraintes d'accès du logement d'arrivée se relèvent avant le départ, pendant la visite technique. Une rue piétonne à Barcelone, un cinquième sans ascenseur à Paris, une autorisation à obtenir auprès de la commune. Mieux vaut le savoir depuis Liège que le découvrir sur place.\n\nVotre nouveau logement n'est pas disponible à la date de sortie ? Le mobilier peut patienter dans nos box de garde-meubles à Herstal avant de repartir.",
         },
       ]}
       faq={[
@@ -55,7 +55,7 @@ export default function DemenagementInternationalSatellite() {
         {
           question: 'Gérez-vous les formalités douanières ?',
           answer:
-            "Oui, quand elles s'appliquent. À l'intérieur de l'Union européenne, la libre circulation des biens rend le dédouanement inutile. Vers la Suisse ou le Royaume-Uni, nous prenons en charge les documents douaniers et le régime d'exonération prévu pour les biens personnels lors d'un transfert de résidence.",
+            "Oui, quand elles s'appliquent. À l'intérieur de l'Union européenne, la libre circulation des biens rend le dédouanement inutile. Vers la Suisse ou le Royaume-Uni, un dédouanement est nécessaire. Nous prenons en charge les documents douaniers, ainsi que le régime d'exonération prévu pour les biens personnels.",
         },
         {
           question: 'Proposez-vous le groupage pour les petits volumes ?',

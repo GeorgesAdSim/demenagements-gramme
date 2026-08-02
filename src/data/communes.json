@@ -28,7 +28,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Zone de police Meuse-Hesbaye, pour les six communes de la zone",
-        "procedure": "Demande introduite en ligne sur la plateforme Eaglebe, commune aux six communes de la zone depuis le 1er juillet 2025 ; la réservation de stationnement en fait partie, avec suivi du dossier et réception de l’autorisation par le même canal",
+        "procedure": "La demande s'introduit en ligne, sur la plateforme Eaglebe. Les six communes de la zone la partagent depuis le 1er juillet 2025. La réservation de stationnement en fait partie, et l'autorisation arrive par le même canal",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -156,7 +156,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Administration communale d'Anthisnes",
-        "procedure": "Le règlement général de la zone de police du Condroz — Anthisnes, Clavier, Comblain-au-Pont, Ferrières, Hamoir, Marchin, Modave, Nandrin, Ouffet et Tinlot — soumet à autorisation de l'autorité communale toute occupation de la voirie excédant le droit d'usage qui appartient à tous ; l'occuper sans cette autorisation est passible d'une amende administrative de 50 à 10 000 euros",
+        "procedure": "Toute occupation de la voirie qui excède l'usage commun est soumise à autorisation de l'autorité communale. La règle est commune aux dix communes de la zone de police du Condroz : Anthisnes, Clavier, Comblain-au-Pont, Ferrières, Hamoir, Marchin, Modave, Nandrin, Ouffet et Tinlot. Occuper la voirie sans cette autorisation expose à une amende administrative de 50 à 10 000 euros",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -202,7 +202,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Administration communale d'Aubel",
-        "procedure": "La zone de police Pays de Herve — Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt — renvoie explicitement la demande d'occupation de la voie publique vers l'administration communale concernée, et ne la traite pas elle-même",
+        "procedure": "La zone de police Pays de Herve renvoie la demande vers l'administration communale, et ne la traite pas elle-même. Elle regroupe huit communes : Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -335,7 +335,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Administration communale de Baelen",
-        "procedure": "La zone de police Pays de Herve — Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt — renvoie explicitement la demande d'occupation de la voie publique vers l'administration communale concernée, et ne la traite pas elle-même",
+        "procedure": "La zone de police Pays de Herve renvoie la demande vers l'administration communale, et ne la traite pas elle-même. Elle regroupe huit communes : Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -451,7 +451,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Zone de Police Beyne-Fléron-Soumagne",
-        "procedure": "Formulaire commun aux trois communes, portant une case « déménagement », à renvoyer par e-mail ; les panneaux d'interdiction de stationner se demandent au service Travaux",
+        "procedure": "Un formulaire commun aux trois communes, portant une case « déménagement », se renvoie par e-mail. Les panneaux d'interdiction de stationner se demandent au service Travaux",
         "delai": "3 semaines avant l'occupation de la voirie",
         "cout": "75 € par intervention pour la location et la livraison du matériel de signalisation, à payer au plus tard deux jours ouvrés avant l'occupation",
         "signalisation": null,
@@ -554,7 +554,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Zone de police Hesbaye-Ouest, conjointement avec l’administration communale",
-        "procedure": "Le formulaire propre à la commune se transmet à la fois à la zone de police et à l'administration communale, qui délivre alors un arrêté de police couvrant la durée de l'occupation ; le déménagement y est explicitement visé",
+        "procedure": "Le formulaire propre à la commune se transmet à la fois à la zone de police et à l'administration communale. C'est cette dernière qui délivre l'arrêté de police, pour toute la durée de l'occupation. Le déménagement y est explicitement visé",
         "delai": "10 jours ouvrables avant le début de l’occupation",
         "cout": null,
         "signalisation": null,
@@ -573,7 +573,7 @@
         },
         {
           "titre": "Nos interventions à Braives",
-          "contenu": "Quarante-cinq kilomètres et trente-quatre minutes depuis notre dépôt, essentiellement par l'autoroute. Le trajet d'approche figure sur le devis.\n\nLa demande d'autorisation suit ici une règle précise : le formulaire se transmet à la fois à la zone de police et à l'administration communale, dix jours ouvrables à l'avance, et c'est la commune qui délivre l'arrêté. Envoyer à un seul des deux destinataires fait perdre le délai.\n\nLes fermes rénovées et les maisons de village forment l'essentiel des dossiers. Nous groupons avec Burdinne, Héron et Hannut, toutes limitrophes ou proches."
+          "contenu": "Quarante-cinq kilomètres et trente-quatre minutes depuis notre dépôt, essentiellement par l'autoroute. Le trajet d'approche figure sur le devis.\n\nLa demande d'autorisation suit ici une règle précise. Le formulaire se transmet à la fois à la zone de police et à l'administration communale, dix jours ouvrables à l'avance. C'est la commune qui délivre l'arrêté. Envoyer à un seul des deux destinataires fait perdre le délai.\n\nLes fermes rénovées et les maisons de village forment l'essentiel des dossiers. Nous groupons avec Burdinne, Héron et Hannut, toutes limitrophes ou proches."
         }
       ]
     },
@@ -627,7 +627,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Zone de police Hesbaye-Ouest, conjointement avec l’administration communale",
-        "procedure": "Le formulaire propre à la commune se transmet à la fois à la zone de police et à l'administration communale, qui délivre alors un arrêté de police couvrant la durée de l'occupation ; le déménagement y est explicitement visé",
+        "procedure": "Le formulaire propre à la commune se transmet à la fois à la zone de police et à l'administration communale. C'est cette dernière qui délivre l'arrêté de police, pour toute la durée de l'occupation. Le déménagement y est explicitement visé",
         "delai": "10 jours ouvrables avant le début de l’occupation",
         "cout": null,
         "signalisation": null,
@@ -646,7 +646,7 @@
         },
         {
           "titre": "Nos interventions à Burdinne",
-          "contenu": "Cinquante et un kilomètres et trente-huit minutes depuis notre dépôt. Burdinne fait partie des points les plus éloignés de notre zone, à sa limite sud-ouest.\n\nLa demande d'autorisation obéit à la règle de la zone Hesbaye-Ouest : formulaire transmis à la fois à la police et à la commune, dix jours ouvrables à l'avance, arrêté délivré par l'administration communale.\n\nNous groupons les interventions avec Braives, Héron et Hannut, toutes proches. Sur ce secteur, c'est le regroupement qui garde les frais d'approche raisonnables."
+          "contenu": "Cinquante et un kilomètres et trente-huit minutes depuis notre dépôt. Burdinne fait partie des points les plus éloignés de notre zone, à sa limite sud-ouest.\n\nLa demande d'autorisation obéit à la règle de la zone Hesbaye-Ouest. Le formulaire part à la fois à la police et à la commune, dix jours ouvrables à l'avance. L'arrêté est délivré par l'administration communale.\n\nNous groupons les interventions avec Braives, Héron et Hannut, toutes proches. Sur ce secteur, c'est le regroupement qui garde les frais d'approche raisonnables."
         }
       ]
     },
@@ -716,7 +716,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Zone de Police de Chaudfontaine, postes de Beaufays et de Vaux-sous-Chèvremont",
-        "procedure": "Pour placer un camion de déménagement devant l'habitation, l'autorisation se demande aux services de Police ; la demande d'occupation de la voirie elle-même s'adresse au service Travaux",
+        "procedure": "Pour placer un camion de déménagement devant l'habitation, l'autorisation se demande aux services de Police. La demande d'occupation de la voirie elle-même s'adresse au service Travaux",
         "delai": null,
         "cout": null,
         "signalisation": "La location de signalisation est possible auprès du service Travaux",
@@ -736,7 +736,7 @@
         },
         {
           "titre": "Nos interventions à Chaudfontaine",
-          "contenu": "Vingt-huit kilomètres et vingt-six minutes séparent Chaudfontaine de notre dépôt. Le trajet est direct, mais les derniers kilomètres dans la commune prennent souvent autant de temps que l'autoroute.\n\nLe monte-meubles est fréquemment mobilisé sur le territoire, moins pour les étages que pour les dénivelés. Hisser du mobilier depuis la rue jusqu'à une terrasse surélevée évite un portage épuisant dans un escalier extérieur.\n\nParticularité administrative : à Chaudfontaine, l'autorisation de placer le camion devant l'habitation se demande directement aux services de Police, tandis que l'occupation de voirie relève du service Travaux. Nous connaissons ce partage et l'anticipons."
+          "contenu": "Vingt-huit kilomètres et vingt-six minutes séparent Chaudfontaine de notre dépôt. Le trajet est direct, mais les derniers kilomètres dans la commune prennent souvent autant de temps que l'autoroute.\n\nLe monte-meubles est fréquemment mobilisé sur le territoire, moins pour les étages que pour les dénivelés. Hisser du mobilier depuis la rue jusqu'à une terrasse surélevée évite un portage épuisant dans un escalier extérieur.\n\nUne particularité administrative mérite d'être connue. À Chaudfontaine, l'autorisation de placer le camion devant l'habitation se demande aux services de Police. L'occupation de voirie, elle, relève du service Travaux. Nous connaissons ce partage et l'anticipons."
         }
       ]
     },
@@ -768,7 +768,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Administration communale de Clavier",
-        "procedure": "Le règlement général de la zone de police du Condroz — Anthisnes, Clavier, Comblain-au-Pont, Ferrières, Hamoir, Marchin, Modave, Nandrin, Ouffet et Tinlot — soumet à autorisation de l'autorité communale toute occupation de la voirie excédant le droit d'usage qui appartient à tous ; l'occuper sans cette autorisation est passible d'une amende administrative de 50 à 10 000 euros",
+        "procedure": "Toute occupation de la voirie qui excède l'usage commun est soumise à autorisation de l'autorité communale. La règle est commune aux dix communes de la zone de police du Condroz : Anthisnes, Clavier, Comblain-au-Pont, Ferrières, Hamoir, Marchin, Modave, Nandrin, Ouffet et Tinlot. Occuper la voirie sans cette autorisation expose à une amende administrative de 50 à 10 000 euros",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -816,7 +816,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Administration communale de Comblain-au-Pont",
-        "procedure": "Le règlement général de la zone de police du Condroz — Anthisnes, Clavier, Comblain-au-Pont, Ferrières, Hamoir, Marchin, Modave, Nandrin, Ouffet et Tinlot — soumet à autorisation de l'autorité communale toute occupation de la voirie excédant le droit d'usage qui appartient à tous ; l'occuper sans cette autorisation est passible d'une amende administrative de 50 à 10 000 euros",
+        "procedure": "Toute occupation de la voirie qui excède l'usage commun est soumise à autorisation de l'autorité communale. La règle est commune aux dix communes de la zone de police du Condroz : Anthisnes, Clavier, Comblain-au-Pont, Ferrières, Hamoir, Marchin, Modave, Nandrin, Ouffet et Tinlot. Occuper la voirie sans cette autorisation expose à une amende administrative de 50 à 10 000 euros",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -874,7 +874,7 @@
       "sectionsLocales": [
         {
           "titre": "Déménager à Crisnée : ce qu'il faut anticiper",
-          "contenu": "Crisnée est une commune de plaine, au cœur de la Hesbaye agricole. Cinq villages la composent : Crisnée, Odeur, Kemexhe, Fize-le-Marsal et Thys.\n\nLe relief n'y pose aucune difficulté et le stationnement est disponible dans la plupart des rues. C'est l'une des communes les plus simples d'accès de notre zone.\n\nLa contrainte est celle du bâti agricole. Les fermes en carré et les anciens corps de logis ont des cours fermées par un porche, dont la largeur et la hauteur ne conviennent pas à tous les gabarits. Nous relevons ces dimensions pendant la visite technique.\n\nLes routes entre villages sont étroites et sans accotement. Le repérage du point de retournement fait partie de la préparation d'un grand porteur, même en terrain plat."
+          "contenu": "Crisnée est une commune de plaine, au cœur de la Hesbaye agricole. Cinq villages la composent : Crisnée, Odeur, Kemexhe, Fize-le-Marsal et Thys.\n\nLe relief n'y pose aucune difficulté et le stationnement est disponible dans la plupart des rues. C'est l'une des communes les plus simples d'accès de notre zone.\n\nLa contrainte est celle du bâti agricole. Les fermes en carré et les anciens corps de logis ont des cours fermées par un porche. Sa largeur et sa hauteur ne conviennent pas à tous les gabarits. Nous relevons ces dimensions pendant la visite technique.\n\nLes routes entre villages sont étroites et sans accotement. Le repérage du point de retournement fait partie de la préparation d'un grand porteur, même en terrain plat."
         },
         {
           "titre": "Nos interventions à Crisnée",
@@ -924,7 +924,7 @@
         },
         {
           "titre": "Nos interventions à Dalhem",
-          "contenu": "Onze kilomètres et dix-sept minutes : Dalhem est l'une des communes rurales les plus proches de notre base, ce qui se lit directement sur les frais d'approche du devis.\n\nLes maisons de village et les fermes rénovées forment l'essentiel des dossiers. Le volume y est souvent important, avec dépendances, greniers et matériel d'extérieur à transporter.\n\nCette proximité rend aussi les combinaisons avec le garde-meubles simples à organiser. Un mobilier qui doit patienter entre deux dates ne fait qu'un court trajet jusqu'à nos box. Nous groupons volontiers avec Visé, Blegny et Bassenge, toutes limitrophes."
+          "contenu": "Onze kilomètres et dix-sept minutes. Dalhem est l'une des communes rurales les plus proches de notre base, et cela se lit directement sur les frais d'approche du devis.\n\nLes maisons de village et les fermes rénovées forment l'essentiel des dossiers. Le volume y est souvent important, avec dépendances, greniers et matériel d'extérieur à transporter.\n\nCette proximité rend aussi les combinaisons avec le garde-meubles simples à organiser. Un mobilier qui doit patienter entre deux dates ne fait qu'un court trajet jusqu'à nos box. Nous groupons volontiers avec Visé, Blegny et Bassenge, toutes limitrophes."
         }
       ]
     },
@@ -1038,7 +1038,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Zone de police Meuse-Hesbaye, pour les six communes de la zone",
-        "procedure": "Demande introduite en ligne sur la plateforme Eaglebe, commune aux six communes de la zone depuis le 1er juillet 2025 ; la réservation de stationnement en fait partie, avec suivi du dossier et réception de l’autorisation par le même canal",
+        "procedure": "La demande s'introduit en ligne, sur la plateforme Eaglebe. Les six communes de la zone la partagent depuis le 1er juillet 2025. La réservation de stationnement en fait partie, et l'autorisation arrive par le même canal",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -1084,7 +1084,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Commune d'Esneux, service de Police administrative",
-        "procedure": "Formulaire unique à renvoyer complété par e-mail au service de Police administrative, en précisant s'il s'agit d'un déménagement avec ou sans élévateur",
+        "procedure": "Un formulaire unique se renvoie complété par e-mail au service de Police administrative. Précisez s'il s'agit d'un déménagement avec ou sans élévateur",
         "delai": "8 jours ouvrables minimum avant le début de l'occupation de la voie publique",
         "cout": null,
         "signalisation": null,
@@ -1200,7 +1200,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Administration communale de Ferrières",
-        "procedure": "Le règlement général de la zone de police du Condroz — Anthisnes, Clavier, Comblain-au-Pont, Ferrières, Hamoir, Marchin, Modave, Nandrin, Ouffet et Tinlot — soumet à autorisation de l'autorité communale toute occupation de la voirie excédant le droit d'usage qui appartient à tous ; l'occuper sans cette autorisation est passible d'une amende administrative de 50 à 10 000 euros",
+        "procedure": "Toute occupation de la voirie qui excède l'usage commun est soumise à autorisation de l'autorité communale. La règle est commune aux dix communes de la zone de police du Condroz : Anthisnes, Clavier, Comblain-au-Pont, Ferrières, Hamoir, Marchin, Modave, Nandrin, Ouffet et Tinlot. Occuper la voirie sans cette autorisation expose à une amende administrative de 50 à 10 000 euros",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -1216,7 +1216,7 @@
       "sectionsLocales": [
         {
           "titre": "Déménager à Ferrières : ce qu'il faut anticiper",
-          "contenu": "Ferrières couvre un vaste territoire à la charnière du Condroz et de l'Ardenne. Cinq villages y sont dispersés — Ferrières, My, Vieuxville, Werbomont et Xhoris — séparés par des kilomètres de bois et de prairies.\n\nEntre Werbomont, sur les hauteurs, et Vieuxville, dans la vallée de la Lembrée, il n'y a rien de commun. Le trajet interne à l'entité peut dépasser un quart d'heure, et les conditions d'accès changent du tout au tout.\n\nL'habitat est très majoritairement rural et souvent isolé. Fermes en pierre, corps de logis anciens, accès par une cour ou un chemin privé : ces configurations demandent un repérage avant l'intervention, pas une découverte le matin même.\n\nLe relief et la forêt ajoutent leur contrainte. Les routes sont étroites, sinueuses, bordées de talus, avec peu d'endroits où un grand camion peut faire demi-tour."
+          "contenu": "Ferrières couvre un vaste territoire à la charnière du Condroz et de l'Ardenne. Cinq villages y sont dispersés — Ferrières, My, Vieuxville, Werbomont et Xhoris — séparés par des kilomètres de bois et de prairies.\n\nEntre Werbomont, sur les hauteurs, et Vieuxville, dans la vallée de la Lembrée, il n'y a rien de commun. Le trajet interne à l'entité peut dépasser un quart d'heure, et les conditions d'accès changent du tout au tout.\n\nL'habitat est très majoritairement rural et souvent isolé. Fermes en pierre, corps de logis anciens, accès par une cour ou un chemin privé. Ces configurations demandent un repérage avant l'intervention, pas une découverte le matin même.\n\nLe relief et la forêt ajoutent leur contrainte. Les routes sont étroites, sinueuses, bordées de talus, avec peu d'endroits où un grand camion peut faire demi-tour."
         },
         {
           "titre": "Nos interventions à Ferrières",
@@ -1349,7 +1349,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Zone de Police Beyne-Fléron-Soumagne",
-        "procedure": "Formulaire commun aux trois communes, portant une case « déménagement », à renvoyer par e-mail au service des autorisations",
+        "procedure": "Un formulaire commun aux trois communes se renvoie par e-mail au service des autorisations. Il porte une case « déménagement »",
         "delai": "3 semaines avant l'occupation de la voirie",
         "cout": null,
         "signalisation": null,
@@ -1498,7 +1498,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Administration communale d'Hamoir",
-        "procedure": "Le règlement général de la zone de police du Condroz — Anthisnes, Clavier, Comblain-au-Pont, Ferrières, Hamoir, Marchin, Modave, Nandrin, Ouffet et Tinlot — soumet à autorisation de l'autorité communale toute occupation de la voirie excédant le droit d'usage qui appartient à tous ; l'occuper sans cette autorisation est passible d'une amende administrative de 50 à 10 000 euros",
+        "procedure": "Toute occupation de la voirie qui excède l'usage commun est soumise à autorisation de l'autorité communale. La règle est commune aux dix communes de la zone de police du Condroz : Anthisnes, Clavier, Comblain-au-Pont, Ferrières, Hamoir, Marchin, Modave, Nandrin, Ouffet et Tinlot. Occuper la voirie sans cette autorisation expose à une amende administrative de 50 à 10 000 euros",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -1563,7 +1563,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Zone de police Hesbaye-Ouest, conjointement avec l’administration communale",
-        "procedure": "Le formulaire propre à la commune se transmet à la fois à la zone de police et à l'administration communale, qui délivre alors un arrêté de police couvrant la durée de l'occupation ; le déménagement y est explicitement visé",
+        "procedure": "Le formulaire propre à la commune se transmet à la fois à la zone de police et à l'administration communale. C'est cette dernière qui délivre l'arrêté de police, pour toute la durée de l'occupation. Le déménagement y est explicitement visé",
         "delai": "10 jours ouvrables avant le début de l’occupation",
         "cout": null,
         "signalisation": null,
@@ -1612,7 +1612,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Zone de police Hesbaye-Ouest, conjointement avec l’administration communale",
-        "procedure": "Le formulaire propre à la commune se transmet à la fois à la zone de police et à l'administration communale, qui délivre alors un arrêté de police couvrant la durée de l'occupation ; le déménagement y est explicitement visé",
+        "procedure": "Le formulaire propre à la commune se transmet à la fois à la zone de police et à l'administration communale. C'est cette dernière qui délivre l'arrêté de police, pour toute la durée de l'occupation. Le déménagement y est explicitement visé",
         "delai": "10 jours ouvrables avant le début de l’occupation",
         "cout": null,
         "signalisation": null,
@@ -1631,7 +1631,7 @@
         },
         {
           "titre": "Nos interventions à Héron",
-          "contenu": "Quarante-huit kilomètres et trente-quatre minutes depuis notre dépôt, principalement par l'autoroute.\n\nLa demande d'autorisation suit la règle de la zone Hesbaye-Ouest : formulaire transmis à la fois à la police et à l'administration communale, dix jours ouvrables à l'avance. C'est la commune qui délivre l'arrêté de police.\n\nLes fermes rénovées et les maisons de village demandent du volume et du démontage. Nous groupons les interventions avec Wanze, Huy, Burdinne et Braives, toutes proches."
+          "contenu": "Quarante-huit kilomètres et trente-quatre minutes depuis notre dépôt, principalement par l'autoroute.\n\nLa demande d'autorisation suit la règle de la zone Hesbaye-Ouest. Le formulaire part à la fois à la police et à l'administration communale, dix jours ouvrables à l'avance. C'est la commune qui délivre l'arrêté de police.\n\nLes fermes rénovées et les maisons de village demandent du volume et du démontage. Nous groupons les interventions avec Wanze, Huy, Burdinne et Braives, toutes proches."
         }
       ]
     },
@@ -1662,7 +1662,7 @@
       "sectionsLocales": [
         {
           "titre": "Votre déménageur installé à Herstal",
-          "contenu": "Notre siège social se trouve rue des Naiveux 64, à Herstal. Pour la plupart de nos clients herstaliens, nous sommes littéralement des voisins. Cette proximité raccourcit les délais et simplifie l'organisation d'une visite technique.\n\nNous connaissons les rues de la commune, ses quartiers et leurs contraintes d'accès. Cela se voit sur la planification : une rue étroite, un sens unique ou une place de stationnement difficile sont anticipés avant le jour du déménagement, pas découverts sur place."
+          "contenu": "Notre siège social se trouve rue des Naiveux 64, à Herstal. Pour la plupart de nos clients herstaliens, nous sommes littéralement des voisins. Cette proximité raccourcit les délais et simplifie l'organisation d'une visite technique.\n\nNous connaissons les rues de la commune, ses quartiers et leurs contraintes d'accès. Cela se voit sur la planification. Une rue étroite, un sens unique ou une place de stationnement difficile s'anticipent avant le jour du déménagement, au lieu de se découvrir sur place."
         },
         {
           "titre": "Tous les quartiers de Herstal desservis",
@@ -1740,7 +1740,7 @@
       ],
       "autorisationStationnement": {
         "autorite": "Administration communale de Herve",
-        "procedure": "La zone de police Pays de Herve — Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt — renvoie explicitement la demande d'occupation de la voie publique vers l'administration communale concernée, et ne la traite pas elle-même",
+        "procedure": "La zone de police Pays de Herve renvoie la demande vers l'administration communale, et ne la traite pas elle-même. Elle regroupe huit communes : Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -1787,7 +1787,7 @@
       "sectionsLocales": [
         {
           "titre": "Déménager à Huy : ce qu'il faut anticiper",
-          "contenu": "Huy tient dans un couloir. La Meuse d'un côté, le coteau du Fort de l'autre, et entre les deux un centre historique dont les rues n'ont pas été dessinées pour un semi-remorque.\n\nDans ce périmètre, la réservation d'emplacement n'est pas une commodité mais une nécessité. Certaines ruelles n'admettent qu'un véhicule de gabarit réduit. Nous adaptons alors la taille du camion, quitte à faire deux rotations plutôt qu'une.\n\nHuy se distingue aussi par la transparence de son tarif. La Ville facture 62 euros la pose de la signalisation par son propre service. Si vous préférez la poser vous-même sans disposer de panneaux, une caution de 25 euros par panneau est demandée. Peu de communes publient ces montants.\n\nBen-Ahin et Tihange, enfin, s'étirent sur les hauteurs. On y trouve des maisons avec jardin en terrasse et des accès en pente, où le camion se gare rarement au niveau de l'entrée."
+          "contenu": "Huy tient dans un couloir. La Meuse d'un côté, le coteau du Fort de l'autre. Entre les deux, un centre historique dont les rues n'ont pas été dessinées pour un semi-remorque.\n\nDans ce périmètre, la réservation d'emplacement n'est pas une commodité mais une nécessité. Certaines ruelles n'admettent qu'un véhicule de gabarit réduit. Nous adaptons alors la taille du camion, quitte à faire deux rotations plutôt qu'une.\n\nHuy se distingue aussi par la transparence de son tarif. La Ville facture 62 euros la pose de la signalisation par son propre service. Si vous préférez la poser vous-même sans disposer de panneaux, une caution de 25 euros par panneau est demandée. Peu de communes publient ces montants.\n\nBen-Ahin et Tihange, enfin, s'étirent sur les hauteurs. On y trouve des maisons avec jardin en terrasse et des accès en pente, où le camion se gare rarement au niveau de l'entrée."
         },
         {
           "titre": "Nos interventions à Huy",
@@ -1880,7 +1880,7 @@
         },
         {
           "titre": "Nos interventions à Juprelle",
-          "contenu": "Quinze kilomètres et moins de vingt minutes séparent Juprelle de notre dépôt. La commune est limitrophe de Herstal et d'Oupeye, où nous intervenons quotidiennement.\n\nLes maisons unifamiliales et les fermes rénovées constituent l'essentiel des dossiers. Les volumes sont élevés, et le démontage-remontage du mobilier volumineux presque systématique.\n\nCette proximité avec notre base permet des visites techniques à court délai et des frais d'approche contenus, ce qui n'est pas courant pour une commune aussi étendue."
+          "contenu": "Quinze kilomètres et moins de vingt minutes séparent Juprelle de notre dépôt. La commune est limitrophe de Herstal et d'Oupeye, où nous intervenons quotidiennement.\n\nLes maisons unifamiliales et les fermes rénovées constituent l'essentiel des dossiers. Les volumes sont élevés, et le démontage-remontage du mobilier volumineux presque systématique.\n\nCette proximité avec notre base permet des visites techniques à court délai et des frais d'approche contenus. C'est rare pour une commune aussi étendue."
         }
       ]
     },
@@ -1942,7 +1942,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Zone de Police de Liège, service Occupation de la voie publique (traitement par secteur)",
-        "procedure": "Demande exclusivement numérique, via l'application « occuper la voie publique » de la Zone de Police",
+        "procedure": "La demande est exclusivement numérique. Elle passe par l'application « occuper la voie publique » de la Zone de Police",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -1999,7 +1999,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Administration communale de Limbourg",
-        "procedure": "La zone de police Pays de Herve — Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt — renvoie explicitement la demande d'occupation de la voie publique vers l'administration communale concernée, et ne la traite pas elle-même",
+        "procedure": "La zone de police Pays de Herve renvoie la demande vers l'administration communale, et ne la traite pas elle-même. Elle regroupe huit communes : Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -2015,7 +2015,7 @@
       "sectionsLocales": [
         {
           "titre": "Déménager à Limbourg : ce qu'il faut anticiper",
-          "contenu": "Limbourg pose une difficulté que peu de communes de notre zone connaissent. Sa vieille ville est perchée sur un éperon rocheux, et l'on y accède par une route en forte pente qui débouche sur des rues pavées et étroites.\n\nDans ce périmètre, un grand porteur n'a pas sa place. Nous engageons un véhicule court, et nous prévoyons plusieurs rotations plutôt qu'un chargement unique. C'est plus long, mais c'est la seule façon d'y travailler correctement.\n\nLe pavé ajoute sa contrainte. Il rend le roulage des diables et des chariots plus difficile, et il impose de protéger davantage le mobilier pendant le portage.\n\nGoé et Bilstain, en contrebas dans la vallée de la Vesdre, retrouvent une configuration ordinaire. Les accès y sont plus simples et le stationnement plus disponible, mais la route entre le bas et le haut reste raide."
+          "contenu": "Limbourg pose une difficulté que peu de communes de notre zone connaissent. Sa vieille ville est perchée sur un éperon rocheux. On y accède par une route en forte pente, qui débouche sur des rues pavées et étroites.\n\nDans ce périmètre, un grand porteur n'a pas sa place. Nous engageons un véhicule court, et nous prévoyons plusieurs rotations plutôt qu'un chargement unique. C'est plus long, mais c'est la seule façon d'y travailler correctement.\n\nLe pavé ajoute sa contrainte. Il rend le roulage des diables et des chariots plus difficile, et il impose de protéger davantage le mobilier pendant le portage.\n\nGoé et Bilstain, en contrebas dans la vallée de la Vesdre, retrouvent une configuration ordinaire. Les accès y sont plus simples et le stationnement plus disponible, mais la route entre le bas et le haut reste raide."
         },
         {
           "titre": "Nos interventions à Limbourg",
@@ -2093,7 +2093,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Ville de Malmedy, service Mobilité",
-        "procedure": "Le service traite les mesures de circulation en cas de déménagement, dont les interdictions de stationner ; la demande lui est adressée directement",
+        "procedure": "Le service traite les mesures de circulation liées aux déménagements, dont les interdictions de stationner. La demande lui est adressée directement",
         "delai": "15 jours au moins avant la date de début des mesures",
         "cout": null,
         "signalisation": null,
@@ -2108,7 +2108,7 @@
       "sectionsLocales": [
         {
           "titre": "Déménager à Malmedy : ce qu'il faut anticiper",
-          "contenu": "Malmedy occupe un fond de vallée ardennais, cerné de versants boisés. La ville est compacte, et son centre historique a gardé des rues étroites qui n'admettent pas tous les gabarits.\n\nLa réservation d'emplacement y est indispensable, et la commune l'encadre précisément : toute demande de mesure d'interdiction de stationner doit lui parvenir au moins quinze jours avant la date. Le déménagement est explicitement visé par cette procédure.\n\nBellevaux-Ligneuville et Bévercé s'étendent sur les hauteurs, avec un habitat dispersé et des accès en pente. Les chemins y sont étroits, et le point de retournement d'un grand porteur se repère à l'avance.\n\nL'hiver ardennais mérite enfin d'être pris au sérieux. Sur les hauteurs, la neige tient plus longtemps qu'en vallée mosane. Une date de janvier ou février se prévoit avec une marge de sécurité."
+          "contenu": "Malmedy occupe un fond de vallée ardennais, cerné de versants boisés. La ville est compacte, et son centre historique a gardé des rues étroites qui n'admettent pas tous les gabarits.\n\nLa réservation d'emplacement y est indispensable, et la commune l'encadre précisément. Toute demande d'interdiction de stationner doit lui parvenir au moins quinze jours avant la date. Le déménagement est explicitement visé par cette procédure.\n\nBellevaux-Ligneuville et Bévercé s'étendent sur les hauteurs, avec un habitat dispersé et des accès en pente. Les chemins y sont étroits, et le point de retournement d'un grand porteur se repère à l'avance.\n\nL'hiver ardennais mérite enfin d'être pris au sérieux. Sur les hauteurs, la neige tient plus longtemps qu'en vallée mosane. Une date de janvier ou février se prévoit avec une marge de sécurité."
         },
         {
           "titre": "Nos interventions à Malmedy",
@@ -2139,7 +2139,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Administration communale de Marchin",
-        "procedure": "Le règlement général de la zone de police du Condroz — Anthisnes, Clavier, Comblain-au-Pont, Ferrières, Hamoir, Marchin, Modave, Nandrin, Ouffet et Tinlot — soumet à autorisation de l'autorité communale toute occupation de la voirie excédant le droit d'usage qui appartient à tous ; l'occuper sans cette autorisation est passible d'une amende administrative de 50 à 10 000 euros",
+        "procedure": "Toute occupation de la voirie qui excède l'usage commun est soumise à autorisation de l'autorité communale. La règle est commune aux dix communes de la zone de police du Condroz : Anthisnes, Clavier, Comblain-au-Pont, Ferrières, Hamoir, Marchin, Modave, Nandrin, Ouffet et Tinlot. Occuper la voirie sans cette autorisation expose à une amende administrative de 50 à 10 000 euros",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -2190,7 +2190,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Administration communale de Modave",
-        "procedure": "Le règlement général de la zone de police du Condroz — Anthisnes, Clavier, Comblain-au-Pont, Ferrières, Hamoir, Marchin, Modave, Nandrin, Ouffet et Tinlot — soumet à autorisation de l'autorité communale toute occupation de la voirie excédant le droit d'usage qui appartient à tous ; l'occuper sans cette autorisation est passible d'une amende administrative de 50 à 10 000 euros",
+        "procedure": "Toute occupation de la voirie qui excède l'usage commun est soumise à autorisation de l'autorité communale. La règle est commune aux dix communes de la zone de police du Condroz : Anthisnes, Clavier, Comblain-au-Pont, Ferrières, Hamoir, Marchin, Modave, Nandrin, Ouffet et Tinlot. Occuper la voirie sans cette autorisation expose à une amende administrative de 50 à 10 000 euros",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -2241,7 +2241,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Administration communale de Nandrin",
-        "procedure": "Le règlement général de la zone de police du Condroz — Anthisnes, Clavier, Comblain-au-Pont, Ferrières, Hamoir, Marchin, Modave, Nandrin, Ouffet et Tinlot — soumet à autorisation de l'autorité communale toute occupation de la voirie excédant le droit d'usage qui appartient à tous ; l'occuper sans cette autorisation est passible d'une amende administrative de 50 à 10 000 euros",
+        "procedure": "Toute occupation de la voirie qui excède l'usage commun est soumise à autorisation de l'autorité communale. La règle est commune aux dix communes de la zone de police du Condroz : Anthisnes, Clavier, Comblain-au-Pont, Ferrières, Hamoir, Marchin, Modave, Nandrin, Ouffet et Tinlot. Occuper la voirie sans cette autorisation expose à une amende administrative de 50 à 10 000 euros",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -2326,12 +2326,12 @@
         "herve",
         "pepinster"
       ],
-      "introductionLocale": "Olne porte le code postal 4877 et borde trois communes de l'arrondissement de Liège — Soumagne, Fléron et Trooz — que nous desservons déjà, ainsi que Herve et Pepinster.",
+      "introductionLocale": "Olne porte le code postal 4877. La commune borde Soumagne, Fléron et Trooz, dans l'arrondissement de Liège, ainsi que Herve et Pepinster. Nous desservons déjà les cinq.",
       "dateVerification": "2026-08-02",
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Administration communale d'Olne",
-        "procedure": "La zone de police Pays de Herve — Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt — renvoie explicitement la demande d'occupation de la voie publique vers l'administration communale concernée, et ne la traite pas elle-même",
+        "procedure": "La zone de police Pays de Herve renvoie la demande vers l'administration communale, et ne la traite pas elle-même. Elle regroupe huit communes : Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -2388,7 +2388,7 @@
       "sectionsLocales": [
         {
           "titre": "Déménager à Oreye : ce qu'il faut anticiper",
-          "contenu": "Oreye occupe la vallée du Geer, à la frontière du Limbourg. Cinq villages composent l'entité : Oreye, Otrange, Lens-sur-Geer, Grandville et Bergilers.\n\nLe bourg d'Oreye est plus dense que la moyenne hesbignonne. Le bâti y est groupé, les rues plus étroites, et le stationnement disputé aux abords des commerces. La réservation d'emplacement y prend son sens malgré le caractère rural de la commune.\n\nOtrange se trouve à la limite linguistique. Certaines adresses de ce secteur sont plus rapidement atteintes en passant par le Limbourg que par la province de Liège, ce qui compte pour le temps de trajet.\n\nDans les autres villages, on retrouve la Hesbaye agricole : fermes en carré, cours fermées par un porche, accès dégagés mais dimensions à vérifier."
+          "contenu": "Oreye occupe la vallée du Geer, à la frontière du Limbourg. Cinq villages composent l'entité : Oreye, Otrange, Lens-sur-Geer, Grandville et Bergilers.\n\nLe bourg d'Oreye est plus dense que la moyenne hesbignonne. Le bâti y est groupé, les rues plus étroites, et le stationnement disputé aux abords des commerces. La réservation d'emplacement y prend son sens malgré le caractère rural de la commune.\n\nOtrange se trouve à la limite linguistique. Certaines adresses de ce secteur s'atteignent plus vite par le Limbourg que par la province de Liège. Cela compte pour le temps de trajet.\n\nDans les autres villages, on retrouve la Hesbaye agricole : fermes en carré, cours fermées par un porche, accès dégagés mais dimensions à vérifier."
         },
         {
           "titre": "Nos interventions à Oreye",
@@ -2421,7 +2421,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Administration communale d'Ouffet",
-        "procedure": "Le règlement général de la zone de police du Condroz — Anthisnes, Clavier, Comblain-au-Pont, Ferrières, Hamoir, Marchin, Modave, Nandrin, Ouffet et Tinlot — soumet à autorisation de l'autorité communale toute occupation de la voirie excédant le droit d'usage qui appartient à tous ; l'occuper sans cette autorisation est passible d'une amende administrative de 50 à 10 000 euros",
+        "procedure": "Toute occupation de la voirie qui excède l'usage commun est soumise à autorisation de l'autorité communale. La règle est commune aux dix communes de la zone de police du Condroz : Anthisnes, Clavier, Comblain-au-Pont, Ferrières, Hamoir, Marchin, Modave, Nandrin, Ouffet et Tinlot. Occuper la voirie sans cette autorisation expose à une amende administrative de 50 à 10 000 euros",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -2437,7 +2437,7 @@
       "sectionsLocales": [
         {
           "titre": "Déménager à Ouffet : ce qu'il faut anticiper",
-          "contenu": "Ouffet est une petite entité de plateau condrusien, composée de trois villages : Ouffet, Warzée et Ellemelle. Le territoire est agricole, ouvert, et le relief modéré.\n\nLe village d'Ouffet a gardé un noyau ancien groupé autour de son église, avec des rues étroites et des murs de pierre plantés en limite de voirie. C'est là que la réservation d'emplacement prend son sens, malgré le caractère rural de la commune.\n\nEn dehors des noyaux, l'habitat se disperse en fermes et en maisons isolées. Le bâti est condrusien : moellons de calcaire, cours fermées par un porche, seuils surélevés. La hauteur sous linteau décide souvent du camion.\n\nLes routes entre villages sont étroites et bordées de champs, sans accotement. Le point de retournement d'un grand porteur se repère avant l'intervention."
+          "contenu": "Ouffet est une petite entité de plateau condrusien, composée de trois villages : Ouffet, Warzée et Ellemelle. Le territoire est agricole, ouvert, et le relief modéré.\n\nLe village d'Ouffet a gardé un noyau ancien groupé autour de son église. Les rues y sont étroites, et des murs de pierre sont plantés en limite de voirie. C'est là que la réservation d'emplacement prend son sens, malgré le caractère rural de la commune.\n\nEn dehors des noyaux, l'habitat se disperse en fermes et en maisons isolées. Le bâti est condrusien : moellons de calcaire, cours fermées par un porche, seuils surélevés. La hauteur sous linteau décide souvent du camion.\n\nLes routes entre villages sont étroites et bordées de champs, sans accotement. Le point de retournement d'un grand porteur se repère avant l'intervention."
         },
         {
           "titre": "Nos interventions à Ouffet",
@@ -2496,7 +2496,7 @@
         },
         {
           "titre": "Nos interventions à Oupeye",
-          "contenu": "Trois kilomètres, cinq minutes. C'est la distance la plus courte de toute notre zone d'intervention, et cela se lit directement sur le devis : les frais d'approche y sont réduits au minimum.\n\nCette proximité change aussi la souplesse d'organisation. Un oubli, une caisse supplémentaire, un aller-retour imprévu : rien de tout cela ne compromet la journée quand le dépôt est à cinq minutes.\n\nNous intervenons dans les sept villages de l'entité, du bord de Meuse aux hauteurs hesbignonnes. Les déménagements combinés avec un passage en garde-meubles sont particulièrement simples à organiser depuis Oupeye."
+          "contenu": "Trois kilomètres, cinq minutes. C'est la distance la plus courte de toute notre zone d'intervention. Cela se lit directement sur le devis : les frais d'approche y sont réduits au minimum.\n\nCette proximité change aussi la souplesse d'organisation. Un oubli, une caisse supplémentaire, un aller-retour imprévu : rien de tout cela ne compromet la journée quand le dépôt est à cinq minutes.\n\nNous intervenons dans les sept villages de l'entité, du bord de Meuse aux hauteurs hesbignonnes. Les déménagements combinés avec un passage en garde-meubles sont particulièrement simples à organiser depuis Oupeye."
         }
       ]
     },
@@ -2528,7 +2528,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Commune de Pepinster, service Travaux et Développement",
-        "procedure": "Demande d'arrêté de police auprès du service Travaux et Développement ; la signalisation incombe à celui qui exécute les travaux, en application de l'article 78 du Code de la route",
+        "procedure": "La demande d'arrêté de police s'adresse au service Travaux et Développement. La signalisation incombe à celui qui exécute les travaux, en application de l'article 78 du Code de la route",
         "delai": null,
         "cout": null,
         "signalisation": "Le service Travaux et Développement met des panneaux E1/E3 à disposition contre paiement, si l’entrepreneur ne fournit pas la signalisation",
@@ -2543,11 +2543,11 @@
       "sectionsLocales": [
         {
           "titre": "Déménager à Pepinster : ce qu'il faut anticiper",
-          "contenu": "Pepinster s'est installée au confluent de la Vesdre et de la Hoëgne. Le centre occupe donc un fond de vallée étroit, où la place manque entre la rivière, la voirie et le bâti.\n\nDans ce périmètre, un grand porteur circule difficilement. Nous adaptons régulièrement le gabarit du véhicule et prévoyons plusieurs rotations plutôt qu'un seul chargement.\n\nSoiron relève d'un tout autre registre. Classé parmi les plus beaux villages de Wallonie, il a conservé ses rues anciennes, ses murs de moellons et ses passages étroits. Un camion y entre, mais l'itinéraire se repère avant le jour de l'intervention.\n\nCornesse et Wegnez, sur les versants, ajoutent la pente. Les accès y sont plus dégagés qu'au centre, mais le point de stationnement se choisit en fonction du dénivelé autant que de la distance à la porte."
+          "contenu": "Pepinster s'est installée au confluent de la Vesdre et de la Hoëgne. Le centre occupe donc un fond de vallée étroit, où la place manque entre la rivière, la voirie et le bâti.\n\nDans ce périmètre, un grand porteur circule difficilement. Nous adaptons régulièrement le gabarit du véhicule et prévoyons plusieurs rotations plutôt qu'un seul chargement.\n\nSoiron relève d'un tout autre registre. Classé parmi les plus beaux villages de Wallonie, il a conservé ses rues anciennes, ses murs de moellons et ses passages étroits. Un camion y entre, mais l'itinéraire se repère avant le jour de l'intervention.\n\nCornesse et Wegnez, sur les versants, ajoutent la pente. Les accès y sont plus dégagés qu'au centre. Mais le point de stationnement se choisit en fonction du dénivelé autant que de la distance à la porte."
         },
         {
           "titre": "Nos interventions à Pepinster",
-          "contenu": "Vingt-huit kilomètres et une demi-heure depuis notre dépôt. Nous desservons Pepinster dans le même mouvement que Verviers et Theux, toutes proches.\n\nUn point pratique distingue la commune : le service Travaux met lui-même des panneaux d'interdiction de stationner à disposition, contre paiement, quand l'entreprise n'apporte pas sa propre signalisation. Nous disposons de la nôtre, mais la solution existe.\n\nLes maisons de fond de vallée demandent surtout du démontage et une bonne gestion du stationnement. Sur les hauteurs, ce sont les volumes et les dépendances qui commandent l'organisation."
+          "contenu": "Vingt-huit kilomètres et une demi-heure depuis notre dépôt. Nous desservons Pepinster dans le même mouvement que Verviers et Theux, toutes proches.\n\nUn point pratique distingue la commune. Le service Travaux met lui-même des panneaux d'interdiction de stationner à disposition, contre paiement, quand l'entreprise n'apporte pas la sienne. Nous disposons de la nôtre, mais la solution existe.\n\nLes maisons de fond de vallée demandent surtout du démontage et une bonne gestion du stationnement. Sur les hauteurs, ce sont les volumes et les dépendances qui commandent l'organisation."
         }
       ]
     },
@@ -2575,12 +2575,12 @@
         "welkenraedt",
         "lontzen"
       ],
-      "introductionLocale": "Plombières est une entité sans village homonyme : son nom désigne le regroupement de Gemmenich, Hombourg, Montzen, Moresnet et Sippenaeken, répartis sur les codes postaux 4850, 4851 et 4852. Elle borde la Communauté germanophone par La Calamine et Lontzen.",
+      "introductionLocale": "Plombières est une entité sans village homonyme. Son nom désigne le regroupement de Gemmenich, Hombourg, Montzen, Moresnet et Sippenaeken, sur les codes postaux 4850, 4851 et 4852. Elle borde la Communauté germanophone par La Calamine et Lontzen.",
       "dateVerification": "2026-08-02",
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Administration communale de Plombières",
-        "procedure": "La zone de police Pays de Herve — Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt — renvoie explicitement la demande d'occupation de la voie publique vers l'administration communale concernée, et ne la traite pas elle-même",
+        "procedure": "La zone de police Pays de Herve renvoie la demande vers l'administration communale, et ne la traite pas elle-même. Elle regroupe huit communes : Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -2692,7 +2692,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Zone de police Meuse-Hesbaye, pour les six communes de la zone",
-        "procedure": "Demande introduite en ligne sur la plateforme Eaglebe, commune aux six communes de la zone depuis le 1er juillet 2025 ; la réservation de stationnement en fait partie, avec suivi du dossier et réception de l’autorisation par le même canal",
+        "procedure": "La demande s'introduit en ligne, sur la plateforme Eaglebe. Les six communes de la zone la partagent depuis le 1er juillet 2025. La réservation de stationnement en fait partie, et l'autorisation arrive par le même canal",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -2711,7 +2711,7 @@
         },
         {
           "titre": "Nos interventions à Saint-Georges-sur-Meuse",
-          "contenu": "Vingt-sept kilomètres et vingt-deux minutes depuis notre dépôt. La commune fait partie des plus accessibles de ce secteur mosan.\n\nElle relève de la zone de police Meuse-Hesbaye, dont les six communes ont regroupé leurs demandes d'occupation du domaine public sur une plateforme en ligne unique depuis juillet 2025. La réservation d'emplacement s'y introduit directement.\n\nNous groupons les interventions avec Engis, Flémalle, Verlaine et Amay, toutes limitrophes ou proches. C'est ce qui garde le trajet d'approche raisonnable sur ce secteur."
+          "contenu": "Vingt-sept kilomètres et vingt-deux minutes depuis notre dépôt. La commune fait partie des plus accessibles de ce secteur mosan.\n\nElle relève de la zone de police Meuse-Hesbaye. Ses six communes ont regroupé leurs demandes d'occupation du domaine public sur une plateforme en ligne unique, depuis juillet 2025. La réservation d'emplacement s'y introduit directement.\n\nNous groupons les interventions avec Engis, Flémalle, Verlaine et Amay, toutes limitrophes ou proches. C'est ce qui garde le trajet d'approche raisonnable sur ce secteur."
         }
       ]
     },
@@ -2827,12 +2827,12 @@
         },
         {
           "titre": "Nos moyens sur l'entité sérésienne",
-          "contenu": "Studios, appartements familiaux, locaux professionnels : nos véhicules couvrent des volumes de 4 à 100 m³, et plusieurs équipes peuvent intervenir le même jour sur un gros chantier.\n\nLe monte-meubles est fréquemment mobilisé sur la commune, en particulier pour les appartements en étage du centre-ville et de Jemeppe. Il évite le portage en cage d'escalier, réduit le risque de dégâts et raccourcit l'intervention."
+          "contenu": "Studios, appartements familiaux, locaux professionnels : nos véhicules couvrent des volumes de 4 à 100 m³. Sur un gros chantier, plusieurs équipes interviennent le même jour.\n\nLe monte-meubles est fréquemment mobilisé sur la commune, en particulier pour les appartements en étage du centre-ville et de Jemeppe. Il évite le portage en cage d'escalier, réduit le risque de dégâts et raccourcit l'intervention."
         }
       ],
       "autorisationStationnement": {
         "autorite": "Ville de Seraing",
-        "procedure": "Formulaire de demande d'occupation privative du domaine public, par courrier place Communale 8 ou par e-mail au secrétariat communal",
+        "procedure": "Un formulaire de demande d'occupation privative du domaine public est à compléter. Il se dépose par courrier, place Communale 8, ou par e-mail au secrétariat communal",
         "delai": "15 jours minimum avant le début de l'occupation",
         "cout": "1 € par mètre carré et par jour",
         "signalisation": "À installer 48 heures avant le début de l'occupation, en préservant un passage de 1,50 m pour les piétons",
@@ -2870,7 +2870,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Zone de Police Beyne-Fléron-Soumagne",
-        "procedure": "Formulaire commun aux trois communes, portant une case « déménagement », à renvoyer par e-mail au service des autorisations",
+        "procedure": "Un formulaire commun aux trois communes se renvoie par e-mail au service des autorisations. Il porte une case « déménagement »",
         "delai": "3 semaines avant l'occupation de la voirie",
         "cout": null,
         "signalisation": null,
@@ -3014,7 +3014,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Ville de Stavelot",
-        "procedure": "Demande d'autorisation d'occupation du domaine public introduite sur la plateforme Eaglebe ; le déménagement y est explicitement visé, au même titre que les travaux et la pose d'un conteneur",
+        "procedure": "La demande d'occupation du domaine public s'introduit sur la plateforme Eaglebe. Le déménagement y est explicitement visé, au même titre que les travaux et la pose d'un conteneur",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -3117,7 +3117,7 @@
         },
         {
           "titre": "Nos interventions à Theux",
-          "contenu": "Trente-trois kilomètres et trente-cinq minutes depuis notre dépôt. Nous desservons Theux dans le même déplacement que Spa, Jalhay, Pepinster et Verviers, toutes proches.\n\nLes maisons de village et les propriétés de plateau forment le gros des dossiers. Les volumes y sont élevés, avec des dépendances, des greniers et du matériel de jardin à transporter.\n\nDans le centre historique, l'organisation est différente : gabarit réduit, réservation d'emplacement, et parfois portage sur quelques dizaines de mètres quand la rue n'admet pas le camion devant la porte."
+          "contenu": "Trente-trois kilomètres et trente-cinq minutes depuis notre dépôt. Nous desservons Theux dans le même déplacement que Spa, Jalhay, Pepinster et Verviers, toutes proches.\n\nLes maisons de village et les propriétés de plateau forment le gros des dossiers. Les volumes y sont élevés, avec des dépendances, des greniers et du matériel de jardin à transporter.\n\nDans le centre historique, l'organisation est différente. Gabarit réduit, réservation d'emplacement, et parfois portage sur quelques dizaines de mètres, quand la rue n'admet pas le camion devant la porte."
         }
       ]
     },
@@ -3145,7 +3145,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Administration communale de Thimister-Clermont",
-        "procedure": "La zone de police Pays de Herve — Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt — renvoie explicitement la demande d'occupation de la voie publique vers l'administration communale concernée, et ne la traite pas elle-même",
+        "procedure": "La zone de police Pays de Herve renvoie la demande vers l'administration communale, et ne la traite pas elle-même. Elle regroupe huit communes : Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -3198,7 +3198,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Administration communale de Tinlot",
-        "procedure": "Le règlement général de la zone de police du Condroz — Anthisnes, Clavier, Comblain-au-Pont, Ferrières, Hamoir, Marchin, Modave, Nandrin, Ouffet et Tinlot — soumet à autorisation de l'autorité communale toute occupation de la voirie excédant le droit d'usage qui appartient à tous ; l'occuper sans cette autorisation est passible d'une amende administrative de 50 à 10 000 euros",
+        "procedure": "Toute occupation de la voirie qui excède l'usage commun est soumise à autorisation de l'autorité communale. La règle est commune aux dix communes de la zone de police du Condroz : Anthisnes, Clavier, Comblain-au-Pont, Ferrières, Hamoir, Marchin, Modave, Nandrin, Ouffet et Tinlot. Occuper la voirie sans cette autorisation expose à une amende administrative de 50 à 10 000 euros",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -3331,7 +3331,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Zone de police Meuse-Hesbaye, pour les six communes de la zone",
-        "procedure": "Demande introduite en ligne sur la plateforme Eaglebe, commune aux six communes de la zone depuis le 1er juillet 2025 ; la réservation de stationnement en fait partie, avec suivi du dossier et réception de l’autorisation par le même canal",
+        "procedure": "La demande s'introduit en ligne, sur la plateforme Eaglebe. Les six communes de la zone la partagent depuis le 1er juillet 2025. La réservation de stationnement en fait partie, et l'autorisation arrive par le même canal",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -3350,7 +3350,7 @@
         },
         {
           "titre": "Nos interventions à Verlaine",
-          "contenu": "Vingt-neuf kilomètres et vingt-cinq minutes depuis notre dépôt, principalement par l'autoroute.\n\nVerlaine relève de la zone de police Meuse-Hesbaye, dont les six communes ont regroupé leurs demandes d'occupation du domaine public sur une plateforme en ligne unique depuis juillet 2025.\n\nLes maisons unifamiliales et les fermes rénovées forment l'essentiel des dossiers. Les volumes y sont élevés, avec granges et dépendances qui allongent l'inventaire. Nous groupons avec Villers-le-Bouillet, Saint-Georges-sur-Meuse et Donceel, toutes limitrophes."
+          "contenu": "Vingt-neuf kilomètres et vingt-cinq minutes depuis notre dépôt, principalement par l'autoroute.\n\nVerlaine relève de la zone de police Meuse-Hesbaye. Ses six communes ont regroupé leurs demandes d'occupation du domaine public sur une plateforme en ligne unique, depuis juillet 2025.\n\nLes maisons unifamiliales et les fermes rénovées forment l'essentiel des dossiers. Les volumes y sont élevés, avec granges et dépendances qui allongent l'inventaire. Nous groupons avec Villers-le-Bouillet, Saint-Georges-sur-Meuse et Donceel, toutes limitrophes."
         }
       ]
     },
@@ -3436,7 +3436,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Zone de police Meuse-Hesbaye, pour les six communes de la zone",
-        "procedure": "Demande introduite en ligne sur la plateforme Eaglebe, commune aux six communes de la zone depuis le 1er juillet 2025 ; la réservation de stationnement en fait partie, avec suivi du dossier et réception de l’autorisation par le même canal",
+        "procedure": "La demande s'introduit en ligne, sur la plateforme Eaglebe. Les six communes de la zone la partagent depuis le 1er juillet 2025. La réservation de stationnement en fait partie, et l'autorisation arrive par le même canal",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -3451,11 +3451,11 @@
       "sectionsLocales": [
         {
           "titre": "Déménager à Villers-le-Bouillet : ce qu'il faut anticiper",
-          "contenu": "Villers-le-Bouillet occupe une position charnière, entre le plateau hesbignon et la vallée de la Meuse. Sa proximité avec les échangeurs autoroutiers en fait l'une des communes les plus rapidement accessibles de ce secteur.\n\nLe centre est un noyau de village de taille moyenne, avec un stationnement généralement disponible et des accès simples. Les difficultés se concentrent ailleurs.\n\nVaux-et-Borset, Vieux-Waleffe et Warnant-Dreye ont conservé un bâti agricole ancien. Fermes en carré, cours fermées par un porche, seuils surélevés : ces dimensions se relèvent pendant la visite technique, car elles déterminent le camion que nous pouvons engager.\n\nLes routes de campagne qui relient ces villages sont étroites et sans accotement. Nous repérons le point de retournement avant d'engager un grand porteur."
+          "contenu": "Villers-le-Bouillet occupe une position charnière, entre le plateau hesbignon et la vallée de la Meuse. Sa proximité avec les échangeurs autoroutiers en fait l'une des communes les plus rapidement accessibles de ce secteur.\n\nLe centre est un noyau de village de taille moyenne, avec un stationnement généralement disponible et des accès simples. Les difficultés se concentrent ailleurs.\n\nVaux-et-Borset, Vieux-Waleffe et Warnant-Dreye ont conservé un bâti agricole ancien. Fermes en carré, cours fermées par un porche, seuils surélevés. Ces dimensions se relèvent pendant la visite technique : elles déterminent le camion que nous pouvons engager.\n\nLes routes de campagne qui relient ces villages sont étroites et sans accotement. Nous repérons le point de retournement avant d'engager un grand porteur."
         },
         {
           "titre": "Nos interventions à Villers-le-Bouillet",
-          "contenu": "Trente-cinq kilomètres, mais seulement vingt-cinq minutes : l'autoroute compense la distance, et la commune est plus rapide à atteindre que d'autres pourtant plus proches à vol d'oiseau.\n\nVillers-le-Bouillet fait partie des six communes de la zone Meuse-Hesbaye passées à une plateforme en ligne unique en juillet 2025 pour leurs demandes d'occupation du domaine public.\n\nLes maisons unifamiliales et les fermes rénovées constituent l'essentiel des dossiers, avec des volumes importants. Nous groupons avec Huy, Wanze, Amay et Verlaine, toutes proches."
+          "contenu": "Trente-cinq kilomètres, mais seulement vingt-cinq minutes : l'autoroute compense la distance, et la commune est plus rapide à atteindre que d'autres pourtant plus proches à vol d'oiseau.\n\nVillers-le-Bouillet appartient à la zone de police Meuse-Hesbaye. Ses six communes sont passées à une plateforme en ligne unique en juillet 2025, pour leurs demandes d'occupation du domaine public.\n\nLes maisons unifamiliales et les fermes rénovées constituent l'essentiel des dossiers, avec des volumes importants. Nous groupons avec Huy, Wanze, Amay et Verlaine, toutes proches."
         }
       ]
     },
@@ -3488,7 +3488,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Ville de Visé",
-        "procedure": "Plateforme Eaglebe, accessible en ligne 24 h/24 depuis le 15 février 2025 ; suivi du dossier et réception de l'autorisation par le même canal",
+        "procedure": "La plateforme Eaglebe est accessible en ligne 24 h sur 24 depuis le 15 février 2025. Le suivi du dossier et la réception de l'autorisation passent par le même canal",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -3582,7 +3582,7 @@
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Zone de police Meuse-Hesbaye, pour les six communes de la zone",
-        "procedure": "Demande introduite en ligne sur la plateforme Eaglebe, commune aux six communes de la zone depuis le 1er juillet 2025 ; la réservation de stationnement en fait partie, avec suivi du dossier et réception de l’autorisation par le même canal",
+        "procedure": "La demande s'introduit en ligne, sur la plateforme Eaglebe. Les six communes de la zone la partagent depuis le 1er juillet 2025. La réservation de stationnement en fait partie, et l'autorisation arrive par le même canal",
         "delai": null,
         "cout": null,
         "signalisation": null,
@@ -3601,7 +3601,7 @@
         },
         {
           "titre": "Nos interventions à Wanze",
-          "contenu": "Quarante et un kilomètres et vingt-neuf minutes depuis notre dépôt, essentiellement par l'autoroute. Le trajet est direct, mais la desserte interne de l'entité prend du temps.\n\nWanze fait partie des six communes de la zone Meuse-Hesbaye qui ont regroupé leurs demandes d'occupation du domaine public sur une plateforme en ligne unique depuis juillet 2025. La réservation d'emplacement s'y introduit directement.\n\nLes maisons unifamiliales et les fermes rénovées forment l'essentiel des dossiers, avec des volumes élevés et beaucoup de démontage. Nous groupons avec Huy, Amay et Villers-le-Bouillet, toutes limitrophes."
+          "contenu": "Quarante et un kilomètres et vingt-neuf minutes depuis notre dépôt, essentiellement par l'autoroute. Le trajet est direct, mais la desserte interne de l'entité prend du temps.\n\nWanze appartient à la zone de police Meuse-Hesbaye. Ses six communes ont regroupé leurs demandes d'occupation du domaine public sur une plateforme en ligne unique, depuis juillet 2025. La réservation d'emplacement s'y introduit directement.\n\nLes maisons unifamiliales et les fermes rénovées forment l'essentiel des dossiers, avec des volumes élevés et beaucoup de démontage. Nous groupons avec Huy, Amay et Villers-le-Bouillet, toutes limitrophes."
         }
       ]
     },
@@ -3628,7 +3628,7 @@
         "berloz",
         "remicourt"
       ],
-      "introductionLocale": "Notre équipe se déplace rapidement en Hesbaye et prend en charge votre déménagement à Waremme, que vous quittiez un appartement au centre ou une maison dans les villages environnants.",
+      "introductionLocale": "Notre équipe se déplace rapidement en Hesbaye. Elle prend en charge votre déménagement à Waremme, que vous quittiez un appartement du centre ou une maison des villages environnants.",
       "informationsLocales": [
         "Hesbaye agricole : accès dégagés, mais les villages sont dispersés autour du centre.",
         "Fermes en carré et corps de logis anciens, avec cours intérieures et porches parfois étroits.",
@@ -3720,7 +3720,7 @@
       ],
       "autorisationStationnement": {
         "autorite": "Administration communale de Welkenraedt",
-        "procedure": "La zone de police Pays de Herve — Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt — renvoie explicitement la demande d'occupation de la voie publique vers l'administration communale concernée, et ne la traite pas elle-même",
+        "procedure": "La zone de police Pays de Herve renvoie la demande vers l'administration communale, et ne la traite pas elle-même. Elle regroupe huit communes : Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt",
         "delai": null,
         "cout": null,
         "signalisation": null,

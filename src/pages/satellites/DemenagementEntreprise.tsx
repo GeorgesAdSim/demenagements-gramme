@@ -35,7 +35,7 @@ export default function DemenagementEntreprise() {
         {
           title: 'Postes informatiques, serveurs et téléphonie',
           content:
-            "Le matériel informatique voyage dans des emballages dédiés : mousses de protection, caisses anti-choc, housses antistatiques. Chaque poste est débranché, câbles repérés, emballé, puis rebranché à l'identique dans les nouveaux locaux.\n\nL'étiquetage est ce qui fait la différence à la réinstallation. Un écran sans son unité centrale, un dock sans son câble d'alimentation : ce sont ces détails qui transforment une reprise d'activité en demi-journée perdue.\n\nNous travaillons volontiers en coordination avec votre prestataire informatique. Le débranchement et le rebranchement des serveurs et des baies de brassage relèvent de sa compétence, pas de la nôtre — nous nous calons sur son planning.",
+            "Le matériel informatique voyage dans des emballages dédiés : mousses de protection, caisses anti-choc, housses antistatiques. Chaque poste est débranché, câbles repérés, emballé, puis rebranché à l'identique dans les nouveaux locaux.\n\nL'étiquetage est ce qui fait la différence à la réinstallation. Un écran sans son unité centrale, un dock sans son câble d'alimentation : ce sont ces détails qui transforment une reprise d'activité en demi-journée perdue.\n\nNous travaillons volontiers en coordination avec votre prestataire informatique. Le débranchement et le rebranchement des serveurs et des baies de brassage relèvent de sa compétence, pas de la nôtre. Nous nous calons sur son planning.",
         },
         {
           title: 'Archives, dossiers et mobilier lourd',
@@ -45,7 +45,7 @@ export default function DemenagementEntreprise() {
         {
           title: "Coordination avec le syndic et l'accès à l'immeuble",
           content:
-            "Un transfert de bureaux met en jeu au moins deux immeubles, et donc au moins deux gestionnaires. Réservation du monte-charge, protection des parties communes, créneaux autorisés, accès au quai de livraison : ces points se règlent en amont, pas le matin même.\n\nNous prenons contact avec les syndics et les gestionnaires des deux sites, et nous nous chargeons de la demande d'autorisation de stationnement auprès de l'administration communale, panneaux de signalisation compris. Elle doit être introduite plusieurs jours ouvrables à l'avance.\n\nSi vos deux baux ne se recouvrent pas, le mobilier peut attendre dans nos box de garde-meubles à Herstal, surveillés en permanence et couverts contre le vol, l'incendie et la dégradation.",
+            "Un transfert de bureaux met en jeu au moins deux immeubles, et donc au moins deux gestionnaires. Réservation du monte-charge, protection des parties communes, créneaux autorisés, accès au quai de livraison : ces points se règlent en amont, pas le matin même.\n\nNous prenons contact avec les syndics et les gestionnaires des deux sites. Nous nous chargeons aussi de la demande d'autorisation de stationnement auprès de l'administration communale, panneaux compris. Elle doit être introduite plusieurs jours ouvrables à l'avance.\n\nVos deux baux ne se recouvrent pas ? Le mobilier peut attendre dans nos box de garde-meubles à Herstal. Ils sont surveillés en permanence et couverts contre le vol, l'incendie et la dégradation.",
         },
       ]}
       faq={[

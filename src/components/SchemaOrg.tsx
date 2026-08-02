@@ -140,6 +140,16 @@ interface SchemaOrgProps {
   articleData?: ArticleData;
   breadcrumbs?: BreadcrumbItem[];
   localService?: LocalServiceData;
+  /**
+   * Liste ordonnée d'éléments réellement affichés sur la page — les communes
+   * desservies, sur la page des zones d'intervention. Un `url` n'est fourni
+   * que pour les entrées qui pointent vers une page existante : référencer une
+   * URL absente reviendrait à décrire une page qui n'existe pas.
+   */
+  itemList?: {
+    name: string;
+    items: Array<{ name: string; url?: string }>;
+  };
 }
 
 export default function SchemaOrg({
@@ -149,6 +159,7 @@ export default function SchemaOrg({
   articleData,
   breadcrumbs,
   localService,
+  itemList,
 }: SchemaOrgProps) {
   const scripts: Array<{ type: string; innerHTML: string }> = [
     {
@@ -234,6 +245,24 @@ export default function SchemaOrg({
         dateModified: articleData.publishDate,
         url: articleData.url,
         mainEntityOfPage: { '@type': 'WebPage', '@id': articleData.url },
+      }),
+    });
+  }
+
+  if (itemList && itemList.items.length > 0) {
+    scripts.push({
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: itemList.name,
+        numberOfItems: itemList.items.length,
+        itemListElement: itemList.items.map((item, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          name: item.name,
+          ...(item.url && { url: item.url }),
+        })),
       }),
     });
   }

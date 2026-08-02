@@ -65,9 +65,24 @@ function phrasesStationnement(c: CommuneSEO): string[] {
     `L'autorisation est délivrée par ${a.autorite}. ${a.procedure}.`,
   ];
 
-  if (a.delai) p.push(`Délai à respecter : ${a.delai.toLowerCase()}.`);
-  if (a.cout) p.push(`Coût annoncé par la commune : ${a.cout.toLowerCase()}.`);
-  if (a.signalisation) p.push(`Signalisation : ${a.signalisation.toLowerCase()}.`);
+  // Plusieurs communes publient un délai ou un tarif à variantes. Rendues
+  // d'un bloc, ces variantes produisaient des phrases de trente à quarante
+  // mots ; séparées par leur point-virgule, chacune devient lisible seule.
+  const enPhrases = (valeur: string) =>
+    valeur
+      .split(' ; ')
+      .map((v) => v.trim())
+      .filter(Boolean);
+
+  if (a.delai) {
+    const [premier, ...variantes] = enPhrases(a.delai);
+    p.push(
+      `Délai à respecter : ${premier.toLowerCase()}.` +
+        (variantes.length ? ` Comptez ${variantes.map((v) => v.toLowerCase()).join(', et ')}.` : '')
+    );
+  }
+  if (a.cout) p.push(enPhrases(a.cout).map((v, i) => (i === 0 ? `Coût annoncé par la commune : ${v.toLowerCase()}.` : `${v[0].toUpperCase()}${v.slice(1)}.`)).join(' '));
+  if (a.signalisation) p.push(enPhrases(a.signalisation).map((v, i) => (i === 0 ? `Signalisation : ${v.toLowerCase()}.` : `${v[0].toUpperCase()}${v.slice(1)}.`)).join(' '));
 
   p.push(
     `Nous prenons cette démarche en charge dans le cadre de votre déménagement. ${
@@ -120,9 +135,13 @@ function construireFaq(c: CommuneSEO): Array<{ q: string; a: string }> {
   faq.push({
     q: `Faut-il une autorisation pour stationner le camion à ${c.nom} ?`,
     a: a
+      // La réponse ouvre par « Oui », avant toute explication : c'est ce qui
+      // la rend extractible en snippet et par les moteurs conversationnels.
+      // Délai et coût ne reprennent que leur première variante — le détail
+      // complet est juste au-dessus, dans le bloc dédié.
       ? `Oui. Elle est délivrée par ${a.autorite}. ${a.procedure}.` +
-        (a.delai ? ` La demande doit être introduite ${a.delai.toLowerCase()}.` : '') +
-        (a.cout ? ` Coût annoncé par la commune : ${a.cout.toLowerCase()}.` : '') +
+        (a.delai ? ` La demande doit être introduite ${a.delai.split(' ; ')[0].toLowerCase()}.` : '') +
+        (a.cout ? ` Coût annoncé par la commune : ${a.cout.split(' ; ')[0].toLowerCase()}.` : '') +
         ` Nous nous chargeons de la démarche pour vous.`
       : `Oui, dès qu'il s'agit d'occuper la voirie. L'autorisation est délivrée par l'administration communale ${deCommune(c.nom)}, et la demande doit être introduite plusieurs jours ouvrables à l'avance. Nous nous en chargeons pour vous, pose de la signalisation comprise.`,
   });
@@ -202,7 +221,14 @@ export default function CommuneLandingPage() {
   return (
     <div className="font-sans">
       <SeoHead
-        title={`Déménagement à ${commune.nom} : devis gratuit 24h | Gramme`}
+        // Gabarit court de repli : sur les noms longs — Saint-Georges-sur-Meuse,
+        // Fexhe-le-Haut-Clocher — le title complet dépasse 60 caractères et se
+        // fait tronquer par Google, ce qui coupe la mention de la marque.
+        title={
+          `Déménagement à ${commune.nom} : devis gratuit 24h | Gramme`.length <= 60
+            ? `Déménagement à ${commune.nom} : devis gratuit 24h | Gramme`
+            : `Déménagement à ${commune.nom} | Gramme`
+        }
         description={
           `Déménagement à ${commune.nom} par une entreprise familiale liégeoise active depuis 1948. ` +
           `Dépôt à ${commune.distanceDepotKm ?? '—'} km. Devis gratuit sous 24h, sans engagement.`
@@ -260,11 +286,11 @@ export default function CommuneLandingPage() {
 
               <p className="text-muted text-[17px] leading-relaxed">
                 Déménagements Gramme est une entreprise familiale établie rue des
-                Naiveux 64 à Herstal, active depuis 1948 — soit {ans} ans et trois
-                générations. Nous déménageons particuliers et entreprises à{' '}
-                {commune.nom} avec des véhicules de 4 à 100 m³ équipés
-                d'élévateurs, et nous remettons un devis gratuit sous 24 heures
-                ouvrables.
+                Naiveux 64 à Herstal. Elle est active depuis 1948, soit {ans} ans
+                et trois générations. Nous déménageons particuliers et
+                entreprises à {commune.nom}. Nos véhicules vont de 4 à 100 m³ et
+                sont équipés d'élévateurs. Le devis est gratuit et remis sous
+                24 heures ouvrables.
               </p>
             </motion.div>
 

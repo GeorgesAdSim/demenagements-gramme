@@ -13,7 +13,7 @@ export default function DemenageurLiege() {
         },
         {
           title: 'Un service complet pour votre déménagement',
-          content: "Nous proposons une gamme complète de services pour faciliter votre déménagement : emballage professionnel, démontage et remontage de meubles, transport sécurisé, monte-meubles pour les étages élevés, et même un service de garde-meubles si nécessaire.\n\nChaque déménagement est unique, c'est pourquoi nous établissons un devis personnalisé après une visite technique gratuite. Pas de mauvaise surprise : le prix annoncé est le prix final.",
+          content: "Nous proposons une gamme complète de services. Emballage professionnel, démontage et remontage de meubles, transport sécurisé. Monte-meubles pour les étages élevés, et garde-meubles si nécessaire.\n\nChaque déménagement est unique, c'est pourquoi nous établissons un devis personnalisé après une visite technique gratuite. Pas de mauvaise surprise : le prix annoncé est le prix final.",
         },
         {
           title: 'Pourquoi choisir Gramme à Liège',

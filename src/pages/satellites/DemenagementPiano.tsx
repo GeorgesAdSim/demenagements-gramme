@@ -23,7 +23,7 @@ export default function DemenagementPiano() {
         },
         {
           question: 'Faut-il accorder le piano après un déménagement ?',
-          answer: "Oui, il est recommandé de faire accorder votre piano environ 2 semaines après le déménagement, le temps que l'instrument s'acclimate à son nouvel environnement (température, hygrométrie).",
+          answer: "Oui. Faites accorder votre piano environ 2 semaines après le déménagement. L'instrument a besoin de ce délai pour s'acclimater à la température et à l'hygrométrie du nouveau logement.",
         },
         {
           question: 'Pouvez-vous monter un piano dans les étages ?',

@@ -13,7 +13,7 @@ export default function GardeMeublesLiege() {
         },
         {
           title: 'Solutions de stockage adaptées',
-          content: "Nous proposons plusieurs formats de stockage pour répondre à chaque besoin : loges individuelles de 1 à 30 m³, containers sécurisés et racks palette pour les professionnels.\n\nQue ce soit entre deux logements, pendant des travaux, pour désencombrer votre intérieur ou pour stocker du matériel professionnel, nous avons la solution adaptée. La durée est flexible : de quelques semaines à plusieurs années, sans engagement.",
+          content: "Nous proposons plusieurs formats de stockage. Loges individuelles de 1 à 30 m³, containers sécurisés, et racks palette pour les professionnels.\n\nQue ce soit entre deux logements, pendant des travaux, pour désencombrer votre intérieur ou pour stocker du matériel professionnel, nous avons la solution adaptée. La durée est flexible : de quelques semaines à plusieurs années, sans engagement.",
         },
         {
           title: 'Services complémentaires',

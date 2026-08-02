@@ -9,7 +9,7 @@ export default function ErreursEviterDemenagement() {
       sections={[
         {
           heading: '1. Sous-estimer le volume à déménager',
-          content: "C'est l'erreur la plus fréquente. On pense avoir « peu de choses » et on se retrouve avec un camion trop petit ou des allers-retours imprévus qui font exploser le budget et la durée du déménagement.\n\nNotre conseil : faites une visite technique avec un professionnel. Chez Déménagements Gramme, cette visite est gratuite et sans engagement. Notre expert évaluera précisément le volume et vous proposera le véhicule adapté.",
+          content: "C'est l'erreur la plus fréquente. On pense avoir « peu de choses ». On se retrouve avec un camion trop petit, ou des allers-retours imprévus qui font exploser le budget et la durée.\n\nNotre conseil : faites une visite technique avec un professionnel. Chez Déménagements Gramme, cette visite est gratuite et sans engagement. Notre expert évaluera précisément le volume et vous proposera le véhicule adapté.",
         },
         {
           heading: "2. S'y prendre trop tard",
@@ -25,11 +25,21 @@ export default function ErreursEviterDemenagement() {
         },
         {
           heading: '5. Oublier les démarches administratives',
-          content: "Un déménagement implique de nombreuses formalités : changement d'adresse à la commune, transfert du courrier, mise à jour des abonnements (énergie, internet, assurances), notification à l'employeur, transfert du dossier médical.\n\nÀ Liège, vous disposez de 8 jours ouvrables après votre emménagement pour vous inscrire à votre nouvelle commune. Pensez aussi à relever les index des compteurs d'eau, de gaz et d'électricité dans l'ancien et le nouveau logement.",
+          content: "Un déménagement implique de nombreuses formalités. Changement d'adresse à la commune, transfert du courrier, mise à jour des abonnements d'énergie, d'internet et d'assurance. Sans oublier l'employeur et le dossier médical.\n\nÀ Liège, vous disposez de 8 jours ouvrables après votre emménagement pour vous inscrire à votre nouvelle commune. Pensez aussi à relever les index des compteurs d'eau, de gaz et d'électricité dans l'ancien et le nouveau logement.",
         },
         {
           heading: "6. Ne pas préparer l'accès au nouveau logement",
           content: "Vérifiez à l'avance les conditions d'accès à votre nouveau logement : possibilité de stationner le camion, disponibilité de l'ascenseur, largeur des portes et couloirs, étage.\n\nÀ Liège, certaines rues étroites du centre-ville ou des quartiers historiques nécessitent des autorisations de stationnement spéciales. Nous nous en occupons pour vous, mais prévoyez-le suffisamment à l'avance. Si un monte-meubles est nécessaire, nous le saurons dès la visite technique.",
+        },
+        {
+          heading: "Le piège du stationnement non réservé",
+          content:
+            "Beaucoup de déménagements se compliquent pour une raison banale : le camion ne peut pas se garer devant la porte. Une voiture ventouse, une rue étroite, une place occupée le matin même, et le portage se fait sur cinquante mètres — parfois toute la journée.\n\nRéserver un emplacement demande une autorisation communale, et les règles varient fortement d'une commune à l'autre de la province de Liège. Certaines demandent dix jours ouvrables, d'autres trois semaines. Quelques-unes facturent la pose de la signalisation ou la location des panneaux.\n\nCette démarche fait normalement partie de la prestation d'un déménageur professionnel. Encore faut-il lui donner la date assez tôt : aucun prestataire ne peut raccourcir un délai fixé par l'administration.",
+        },
+        {
+          heading: 'Confondre volume estimé et volume réel',
+          content:
+            "L'erreur porte rarement sur le mobilier visible. Elle porte sur la cave, le grenier, le garage, l'abri de jardin et le contenu des armoires. C'est-à-dire sur tout ce qu'on ne compte pas en faisant le tour du salon.\n\nUn écart de dix mètres cubes change le camion, l'équipe et la durée. Découvert le matin du déménagement, il oblige à improviser une seconde rotation ou à laisser des affaires sur place.\n\nC'est précisément ce que la visite technique évite. Elle est gratuite, elle dure moins d'une heure, et elle transforme une estimation en chiffre. Un devis établi par téléphone, sans visite, repose sur votre estimation — pas sur la nôtre.",
         },
       ]}
       relatedArticles={[
@@ -37,7 +47,7 @@ export default function ErreursEviterDemenagement() {
         { title: 'Préparer les enfants au déménagement', to: '/blog/preparer-enfants-demenagement-liege' },
       ]}
       meta={{
-        title: "6 Erreurs à Éviter lors d'un Déménagement | Déménagements Gramme Liège",
+        title: "6 erreurs à éviter lors d'un déménagement | Gramme",
         description: "Découvrez les 6 erreurs les plus courantes lors d'un déménagement à Liège et nos conseils de professionnels pour les éviter. Guide pratique.",
         canonical: '/blog/6-erreurs-eviter-demenagement-liege',
       }}

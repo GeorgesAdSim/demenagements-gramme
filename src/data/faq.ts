@@ -12,7 +12,7 @@ export interface FaqItem {
 export const FAQ_ACCUEIL: FaqItem[] = [
   {
     q: 'Comment choisir un bon déménageur à Liège ?',
-    a: "Travailler avec une société spécialisée fait toute la différence. Vérifiez que l'entreprise dispose d'une assurance responsabilité civile professionnelle et d'un numéro d'entreprise valide. Chez Gramme, nous sommes actifs depuis 1948, assurés tous risques, et nous fournissons un devis gratuit sous 24h.",
+    a: "Vérifiez deux choses avant tout : l'assurance responsabilité civile professionnelle et le numéro d'entreprise. L'une couvre vos biens, l'autre atteste que la société est en règle. Demandez ensuite une visite technique sur place. Un déménageur qui chiffre par téléphone, sans voir les lieux, prend votre estimation pour la sienne. Gramme est actif depuis 1948, assuré, et remet un devis gratuit sous 24 heures ouvrables.",
   },
   {
     q: 'Comment faire ses cartons de déménagement ?',
@@ -32,14 +32,14 @@ export const FAQ_ACCUEIL: FaqItem[] = [
   },
   {
     q: 'Intervenez-vous en dehors de Liège ?',
-    a: "Absolument ! Bien que notre siège soit à Liège, nous couvrons l'ensemble de la Belgique ainsi que toute l'Europe.",
+    a: "Oui. Notre siège est à Herstal, aux portes de Liège, mais notre zone va bien au-delà. Nous couvrons l'ensemble de la Belgique, ainsi que la France, les Pays-Bas, l'Allemagne, le Luxembourg, la Suisse, l'Espagne, l'Italie et le Portugal.",
   },
   // Questions ajoutées à partir des intentions de recherche que les trois
   // premiers concurrents ne traitent pas : autorisation de stationnement,
   // délai de réservation, étage sans ascenseur, gratuité du devis, prix.
   {
     q: 'Faut-il une autorisation pour stationner un camion de déménagement à Liège ?',
-    a: "Oui. La Ville de Liège délivre une autorisation d'occupation de la voirie qui permet de réserver un emplacement devant votre adresse, indispensable en hypercentre et dans les rues étroites. La demande doit être introduite plusieurs jours ouvrables à l'avance. Nous nous en chargeons pour vous, pose des panneaux de signalisation comprise.",
+    a: "Oui. Elle permet de réserver un emplacement devant votre adresse. C'est indispensable en hypercentre et dans les rues étroites. À Liège, la demande passe par l'application en ligne de la Zone de Police. Elle doit être introduite plusieurs jours ouvrables à l'avance. Nous nous en chargeons pour vous, pose des panneaux comprise.",
   },
   {
     q: "Combien de temps à l'avance faut-il réserver son déménagement ?",
@@ -47,7 +47,7 @@ export const FAQ_ACCUEIL: FaqItem[] = [
   },
   {
     q: 'Comment déménagez-vous un appartement à un étage élevé sans ascenseur ?',
-    a: "Une bonne partie du bâti liégeois, notamment en Outremeuse et au Longdoz, compte trois à quatre étages sans ascenseur. Nous utilisons un monte-meubles qui hisse le mobilier par la façade : cela évite le portage dans les cages d'escalier, réduit nettement le risque de dégâts et raccourcit l'intervention.",
+    a: "Avec un monte-meubles. Une bonne partie du bâti liégeois compte trois à quatre étages sans ascenseur, notamment en Outremeuse et au Longdoz. L'appareil hisse le mobilier par la façade. Cela évite le portage dans les cages d'escalier, réduit nettement le risque de dégâts et raccourcit l'intervention.",
   },
   {
     q: 'Le devis est-il vraiment gratuit et sans engagement ?',
@@ -55,6 +55,6 @@ export const FAQ_ACCUEIL: FaqItem[] = [
   },
   {
     q: 'Combien coûte un garde-meubles à Liège ?',
-    a: "Nos box individuels sécurisés à Herstal vont de 30 € par mois pour 1 m³ à 150 € par mois pour 24 m³, avec un tarif de 6 € par m³ au-delà de 30 m³. La durée minimum est d'un mois et l'assurance vol, incendie et dégradation est incluse dans le tarif.",
+    a: "Comptez 30 € par mois pour un box de 1 m³. Un box de 24 m³ revient à 150 € par mois. Au-delà de 30 m³, le tarif est de 6 € par m³. Nos box sont individuels et sécurisés, à Herstal. La durée minimum est d'un mois. L'assurance vol, incendie et dégradation est comprise dans le tarif.",
   },
 ];

@@ -9,7 +9,7 @@ export default function DemontageRemontageMeubles() {
       sections={[
         {
           title: 'Un service indispensable pour votre déménagement',
-          content: "De nombreux meubles ne passent pas par les portes ou les escaliers sans être démontés au préalable. Armoires, lits, étagères murales, cuisines équipées : notre équipe se charge du démontage dans votre ancien logement et du remontage complet dans le nouveau.\n\nNos déménageurs sont équipés de tout l'outillage nécessaire et ont l'habitude de manipuler tous types de meubles, y compris les meubles en kit (IKEA, etc.) qui nécessitent un soin particulier lors du démontage.",
+          content: "De nombreux meubles ne passent pas par les portes ou les escaliers sans être démontés au préalable. Armoires, lits, étagères murales, cuisines équipées : notre équipe se charge du démontage dans votre ancien logement et du remontage complet dans le nouveau.\n\nNos déménageurs disposent de tout l'outillage nécessaire et manipulent tous types de meubles. Les meubles en kit demandent un soin particulier au démontage : nous les traitons en conséquence.",
         },
         {
           title: 'Notre méthode de travail',

@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, ArrowLeft, CircleCheck as CheckCircle2, Phone, ShieldCheck, Info } from 'lucide-react';
+import { ArrowRight, ArrowLeft, CircleCheck as CheckCircle2, Phone, ShieldCheck, Info, ChevronDown } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import TopBar from './TopBar';
 import ServiceNavbar from './ServiceNavbar';
@@ -9,6 +9,7 @@ import Footer from './Footer';
 import SeoHead from './SeoHead';
 import SchemaOrg from './SchemaOrg';
 import { useSitePageContent } from '../lib/useSitePageContent';
+import { getCommuneBySlug, communeUrl, RACINE_ZONES } from '../data/communes';
 import type { ServicePageContent } from '../lib/types';
 
 const fadeUp = {
@@ -44,6 +45,7 @@ export default function ServicePageLayout({
   //    de scripts/prerender.mjs, sans H1 ni meta.
   // 2. Confort utilisateur : plus de spinner plein écran à chaque visite.
   const { content, meta } = useSitePageContent<ServicePageContent>(slug);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -56,6 +58,13 @@ export default function ServicePageLayout({
   // qu'il porte, les valeurs par défaut comblent le reste.
   const c = { ...defaults, ...(content ?? {}) };
 
+  // Communes réellement publiées : le maillage se construit sur des pages qui
+  // existent, jamais sur une liste de slugs écrite à la main qui se périmerait
+  // au premier changement de statut.
+  const communes = (c.communes?.slugs ?? [])
+    .map((s) => getCommuneBySlug(s))
+    .filter((x): x is NonNullable<typeof x> => x !== undefined && x.statut === 'published');
+
   return (
     <div className="font-sans">
       <SeoHead
@@ -63,7 +72,7 @@ export default function ServicePageLayout({
         description={meta?.metaDescription || defaultMeta.description}
         canonical={meta?.canonicalUrl || defaultMeta.canonical}
       />
-      <SchemaOrg />
+      <SchemaOrg customFaq={c.faq?.items} />
       <TopBar />
       <ServiceNavbar />
 
@@ -340,6 +349,106 @@ export default function ServicePageLayout({
                   </div>
                 </motion.div>
               )}
+            </div>
+          </section>
+        )}
+
+        {c.faq && c.faq.items.length > 0 && (
+          <section className="bg-offwhite py-16 md:py-20">
+            <div className="max-w-3xl mx-auto px-4 md:px-8">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.6 }}
+                className="text-center mb-10"
+              >
+                <span className="inline-block bg-navy text-yellow text-[11px] uppercase tracking-[0.2em] font-bold rounded-full px-4 py-1.5 mb-4">
+                  FAQ
+                </span>
+                <h2 className="text-2xl md:text-[2rem] font-black uppercase text-navy">
+                  {c.faq.sectionTitle}
+                </h2>
+              </motion.div>
+
+              <div className="space-y-4">
+                {c.faq.items.map((item, i) => {
+                  const isOpen = openFaq === i;
+                  const answerId = `faq-answer-${i}`;
+                  return (
+                    <div
+                      key={item.q}
+                      className={`bg-white rounded-xl border transition-all duration-200 ${isOpen ? 'border-l-4 border-l-navy border-gray-200' : 'border-gray-200'}`}
+                    >
+                      <button
+                        onClick={() => setOpenFaq(isOpen ? null : i)}
+                        aria-expanded={isOpen}
+                        aria-controls={answerId}
+                        className={`w-full flex items-center justify-between p-5 text-left transition-colors ${isOpen ? 'bg-yellow/15' : ''}`}
+                      >
+                        <span className="text-navy font-bold text-base pr-4">{item.q}</span>
+                        <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
+                          <ChevronDown className="w-5 h-5 text-navy flex-shrink-0" />
+                        </motion.div>
+                      </button>
+                      {/* Réponse toujours montée, repliée par sa hauteur : elle
+                          reste dans le HTML pré-rendu, condition pour que le
+                          balisage FAQPage décrive un contenu réellement présent. */}
+                      <motion.div
+                        id={answerId}
+                        role="region"
+                        aria-hidden={!isOpen}
+                        initial={false}
+                        animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-5 pb-5 text-muted leading-relaxed">
+                          <p>{item.a}</p>
+                        </div>
+                      </motion.div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {c.communes && communes.length > 0 && (
+          <section className="bg-white py-16 md:py-20">
+            <div className="max-w-5xl mx-auto px-4 md:px-8">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="text-2xl md:text-[2rem] font-black uppercase text-navy mb-4">
+                  {c.communes.sectionTitle}
+                </h2>
+                <p className="text-muted text-[17px] leading-relaxed mb-6 max-w-3xl">
+                  {c.communes.intro}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {communes.map((commune) => (
+                    <Link
+                      key={commune.id}
+                      to={communeUrl(commune)}
+                      className="bg-navy text-white text-sm rounded-full px-3.5 py-1.5 hover:bg-navy/80 transition-colors"
+                    >
+                      Déménagement à {commune.nom}
+                    </Link>
+                  ))}
+                </div>
+                <p className="text-muted text-[15px] leading-relaxed mt-5">
+                  Votre commune n'est pas dans cette liste ?{' '}
+                  <Link to={RACINE_ZONES} className="text-navy font-bold underline hover:text-navy/70">
+                    Consultez la liste complète des zones d'intervention
+                  </Link>
+                  , avec la distance et le temps de trajet depuis notre dépôt pour chacune.
+                </p>
+              </motion.div>
             </div>
           </section>
         )}

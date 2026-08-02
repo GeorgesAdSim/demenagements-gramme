@@ -48,9 +48,9 @@ export default function PricingSection() {
           {/* Passage extractible — répond à « combien ça coûte », l'une des trois
               questions que les moteurs de réponse citent le plus volontiers. */}
           <p className="text-muted text-[17px] leading-relaxed mb-4">
-            Le prix d'un déménagement dépend de quatre facteurs&nbsp;: le volume à
+            Le prix d'un déménagement dépend de quatre facteurs. Le volume à
             transporter, la distance, l'accessibilité des deux adresses, et les
-            prestations choisies comme l'emballage ou le démontage des meubles. Un
+            prestations choisies comme l'emballage ou le démontage. Un
             troisième étage sans ascenseur en Outremeuse ne coûte pas le même prix
             qu'un rez-de-chaussée avec parking à Rocourt, à volume identique.
           </p>
