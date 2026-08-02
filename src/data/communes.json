@@ -972,9 +972,24 @@
         "juprelle",
         "oupeye"
       ],
-      "dateVerification": "2026-07-30",
-      "pageExistante": "/demenagement/demenagement-herstal",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "introductionLocale": "Herstal réunit le centre, Vottem, Liers et Milmort sous trois codes postaux : 4040, 4041 et 4042. C'est la commune de notre siège social, rue des Naiveux 64, où l'entreprise est installée depuis des décennies.",
+      "sectionsLocales": [
+        {
+          "titre": "Votre déménageur installé à Herstal",
+          "contenu": "Notre siège social se trouve rue des Naiveux 64, à Herstal. Pour la plupart de nos clients herstaliens, nous sommes littéralement des voisins. Cette proximité raccourcit les délais et simplifie l'organisation d'une visite technique.\n\nNous connaissons les rues de la commune, ses quartiers et leurs contraintes d'accès. Cela se voit sur la planification : une rue étroite, un sens unique ou une place de stationnement difficile sont anticipés avant le jour du déménagement, pas découverts sur place."
+        },
+        {
+          "titre": "Tous les quartiers de Herstal desservis",
+          "contenu": "Nous intervenons dans l'ensemble de l'entité : le centre, Vottem, Liers, Milmort, Pontisse et les autres quartiers. Que vous restiez dans la commune ou que vous la quittiez, nous prenons le déménagement en charge de bout en bout.\n\nNos camions partent de notre dépôt d'Oupeye, à quatre kilomètres de Herstal. Le trajet d'approche est donc l'un des plus courts de toute notre zone, ce qui allège d'autant la ligne correspondante du devis."
+        }
+      ],
+      "informationsLocales": [
+        "Commune du siège social : visite technique organisable à très court délai.",
+        "Habitat mêlant maisons mitoyennes du centre et quartiers résidentiels à Vottem, Liers et Milmort.",
+        "Trajet d'approche parmi les plus courts de notre zone, à quatre kilomètres du dépôt."
+      ]
     },
     {
       "id": "herve",
@@ -1667,15 +1682,24 @@
         "neupre",
         "esneux"
       ],
-      "introductionLocale": "Situés à quelques minutes seulement de Seraing, nos déménageurs interviennent quotidiennement dans toute l'entité sérésienne pour les particuliers et les entreprises.",
+      "introductionLocale": "Seraing est la deuxième ville de la province de Liège. L'entité regroupe Jemeppe-sur-Meuse, Ougrée et Boncelles, sous les codes postaux 4100, 4101 et 4102.",
       "informationsLocales": [
-        "Forte densité urbaine nécessitant souvent la réservation d'un emplacement de stationnement.",
-        "Interventions fréquentes avec lift (monte-meubles) pour les appartements en centre-ville et à Jemeppe.",
-        "Accès rapide depuis notre dépôt, réduisant les frais de déplacement."
+        "Forte densité urbaine : la réservation d'un emplacement de stationnement est souvent nécessaire.",
+        "Recours fréquent au monte-meubles pour les appartements du centre-ville et de Jemeppe.",
+        "Entité contrastée, du bâti ouvrier ancien aux lotissements récents de Boncelles."
       ],
-      "dateVerification": "2026-07-30",
-      "pageExistante": "/demenagement/demenagement-seraing",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Seraing : ce que le terrain impose",
+          "contenu": "Seraing juxtapose des tissus urbains très différents. Les anciennes cités ouvrières et les rues denses du centre n'ont rien des lotissements récents de Boncelles. La contrainte d'accès n'y est donc jamais la même.\n\nDans le centre et à Jemeppe, la réservation d'un emplacement de stationnement est presque toujours nécessaire. Nous nous chargeons de la demande auprès de l'administration communale et de la pose des panneaux de signalisation."
+        },
+        {
+          "titre": "Nos moyens sur l'entité sérésienne",
+          "contenu": "Studios, appartements familiaux, locaux professionnels : nos véhicules couvrent des volumes de 4 à 100 m³, et plusieurs équipes peuvent intervenir le même jour sur un gros chantier.\n\nLe monte-meubles est fréquemment mobilisé sur la commune, en particulier pour les appartements en étage du centre-ville et de Jemeppe. Il évite le portage en cage d'escalier, réduit le risque de dégâts et raccourcit l'intervention."
+        }
+      ]
     },
     {
       "id": "soumagne",

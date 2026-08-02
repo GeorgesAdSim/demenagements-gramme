@@ -27,8 +27,6 @@ import NotFoundPage from './pages/NotFoundPage';
 
 import DemenageurLiege from './pages/satellites/DemenageurLiege';
 import DemenagementLiege from './pages/satellites/DemenagementLiege';
-import DemenagementSeraing from './pages/satellites/DemenagementSeraing';
-import DemenagementHerstal from './pages/satellites/DemenagementHerstal';
 import DemenagementEntreprise from './pages/satellites/DemenagementEntreprise';
 import DemenagementPiano from './pages/satellites/DemenagementPiano';
 import DemenagementInternationalSatellite from './pages/satellites/DemenagementInternationalSatellite';
@@ -55,8 +53,6 @@ function ServerRoutes() {
 
       <Route path="/demenagement/demenageur-liege" element={<DemenageurLiege />} />
       <Route path="/demenagement/demenagement-liege" element={<DemenagementLiege />} />
-      <Route path="/demenagement/demenagement-seraing" element={<DemenagementSeraing />} />
-      <Route path="/demenagement/demenagement-herstal" element={<DemenagementHerstal />} />
       <Route path="/demenagement/demenagement-entreprise" element={<DemenagementEntreprise />} />
       <Route path="/demenagement/demenagement-piano" element={<DemenagementPiano />} />
       <Route path="/demenagement/demenagement-international" element={<DemenagementInternationalSatellite />} />
