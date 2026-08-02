@@ -45,8 +45,23 @@ const cle = process.env.VITE_SUPABASE_ANON_KEY;
 // dessous de ce seuil, exprimé en proportion de ce que contient déjà le dépôt.
 const SEUIL_PERTE = 0.8;
 
-/** Colonnes SQL en snake_case → champs de l'interface CommuneSEO. */
-function versCommuneSEO(r) {
+/**
+ * Colonnes SQL en snake_case → champs de l'interface CommuneSEO.
+ *
+ * `depot` est la ligne correspondante déjà présente dans le JSON du dépôt. Elle
+ * sert de repli pour les champs dont la table n'a PAS encore la colonne.
+ *
+ * Sans ce repli, une table en retard sur le schéma efface silencieusement du
+ * contenu à chaque déploiement : c'est exactement ce qui est arrivé à
+ * `sectionsLocales`, `autorisationStationnement` et `todoDonneesLocales`, que
+ * ce mappeur ne connaissait pas. Le build passait, et 70 communes perdaient
+ * leur rédaction sans qu'aucune alerte ne se déclenche.
+ *
+ * La distinction est entre « la colonne existe et vaut NULL » — la base a
+ * autorité, on efface — et « la colonne n'existe pas » — la base n'a rien à
+ * dire, on garde le dépôt.
+ */
+function versCommuneSEO(r, depot = {}) {
   const c = {
     id: r.id,
     nom: r.nom,
@@ -64,14 +79,31 @@ function versCommuneSEO(r) {
   if (r.informations_locales?.length) c.informationsLocales = r.informations_locales;
   if (r.date_verification) c.dateVerification = r.date_verification;
   if (r.page_existante) c.pageExistante = r.page_existante;
+
+  // Champs éditoriaux ajoutés après la création de la table. Repli sur le dépôt
+  // tant que la migration correspondante n'est pas appliquée.
+  reprendre(c, 'sectionsLocales', r, 'sections_locales', depot, (v) => v.length > 0);
+  reprendre(c, 'autorisationStationnement', r, 'autorisation_stationnement', depot);
+  reprendre(c, 'todoDonneesLocales', r, 'todo_donnees_locales', depot);
+
   return c;
+}
+
+/**
+ * Écrit `champ` depuis la colonne si elle existe dans la réponse, sinon depuis
+ * le dépôt. `garder` filtre les valeurs vides pour ne pas polluer le JSON.
+ */
+function reprendre(cible, champ, ligne, colonne, depot, garder = Boolean) {
+  const valeur = colonne in ligne ? ligne[colonne] : depot[champ];
+  if (valeur != null && garder(valeur)) cible[champ] = valeur;
 }
 
 /** Ordre des clés figé, pour que deux synchronisations identiques donnent un diff vide. */
 const ORDRE = [
   'id', 'nom', 'arrondissement', 'codesPostaux', 'distanceDepotKm',
   'tempsTrajetEstimeMin', 'villages', 'communesVoisines', 'introductionLocale',
-  'informationsLocales', 'dateVerification', 'pageExistante', 'statut',
+  'informationsLocales', 'sectionsLocales', 'autorisationStationnement',
+  'todoDonneesLocales', 'dateVerification', 'pageExistante', 'statut',
 ];
 
 function ordonner(c) {
@@ -111,10 +143,25 @@ async function main() {
     return;
   }
 
+  // Index du dépôt, pour que chaque ligne retrouve son repli.
+  const parId = new Map(actuel.communes.map((c) => [c.id, c]));
+
   const communes = lignes
-    .map(versCommuneSEO)
+    .map((r) => versCommuneSEO(r, parId.get(r.id) ?? {}))
     .sort((a, b) => a.nom.localeCompare(b.nom, 'fr'))
     .map(ordonner);
+
+  // Garde-fou explicite : si la table n'a pas encore les colonnes éditoriales,
+  // le repli a joué et il faut que ça se voie dans le log de build.
+  const manquantes = ['sections_locales', 'autorisation_stationnement', 'todo_donnees_locales']
+    .filter((col) => !(col in (lignes[0] ?? {})));
+  if (manquantes.length > 0) {
+    console.warn(
+      `  ⚠ sync communes : colonne(s) absente(s) de la table — ${manquantes.join(', ')}. ` +
+      `Les valeurs du dépôt sont conservées pour ces champs. ` +
+      `Applique supabase/migrations/20260802120000_communes_champs_editoriaux.sql pour aligner la base.`
+    );
+  }
 
   const avant = JSON.stringify(actuel.communes);
   const apres = JSON.stringify(communes);

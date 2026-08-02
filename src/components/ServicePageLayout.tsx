@@ -49,7 +49,12 @@ export default function ServicePageLayout({
     window.scrollTo(0, 0);
   }, []);
 
-  const c = content || defaults;
+  // Fusion, et non substitution. Le CMS ne connaît que les sections existant
+  // au moment où sa ligne a été enregistrée : `content || defaults` faisait
+  // disparaître après hydratation toute section ajoutée depuis — la FAQ et les
+  // renvois par commune de /demenagement, par exemple. Le CMS remplace ce
+  // qu'il porte, les valeurs par défaut comblent le reste.
+  const c = { ...defaults, ...(content ?? {}) };
 
   return (
     <div className="font-sans">
