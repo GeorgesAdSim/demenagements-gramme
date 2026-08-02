@@ -24,8 +24,32 @@
         "huy"
       ],
       "introductionLocale": "Amay réunit cinq villages sous le code postal 4540 : Amay, Ampsin, Flône, Jehay et Ombret-Rawsa. L'entité s'étire entre Engis et Huy, deux communes que nous desservons déjà.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Zone de police Meuse-Hesbaye, pour les six communes de la zone",
+        "procedure": "Demande introduite en ligne sur la plateforme Eaglebe, commune aux six communes de la zone depuis le 1er juillet 2025 ; la réservation de stationnement en fait partie, avec suivi du dossier et réception de l’autorisation par le même canal",
+        "delai": null,
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.amay.be/vivre-a-amay/mobilite/plateforme-eaglebe-demandes-doccupation-du-domaine-public",
+        "dateVerification": "2026-08-02"
+      },
+      "informationsLocales": [
+        "Commune de bord de Meuse, entre Engis et Huy, avec un noyau ancien resserré.",
+        "Jehay et son château donnent à la commune un caractère résidentiel sur les hauteurs.",
+        "Demandes centralisées sur la plateforme Eaglebe de la zone Meuse-Hesbaye."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Amay : ce qu'il faut anticiper",
+          "contenu": "Amay s'étire le long de la Meuse, entre Engis et Huy. Le noyau ancien, autour de la collégiale, est resserré : rues étroites, bâti mitoyen, stationnement disputé.\n\nDans ce périmètre, la réservation d'emplacement est nécessaire et le gabarit du véhicule se choisit avec attention. Nous prévoyons parfois un camion plus court, quitte à faire deux rotations.\n\nAmpsin et Ombret-Rawsa, en bord de Meuse, gardent la trace de l'activité industrielle de la vallée. Le bâti y est ouvrier, aligné le long de la voirie, avec des intérieurs étroits qui imposent le démontage.\n\nJehay et Flône relèvent d'un autre registre, plus résidentiel et plus dégagé, sur les hauteurs. Les accès y sont simples et les volumes souvent plus importants."
+        },
+        {
+          "titre": "Nos interventions à Amay",
+          "contenu": "Trente-cinq kilomètres et trente et une minutes séparent Amay de notre dépôt, par l'autoroute qui longe la Meuse.\n\nDepuis juillet 2025, les six communes de la zone de police Meuse-Hesbaye ont regroupé leurs demandes d'occupation du domaine public sur une plateforme unique. Une réservation d'emplacement s'y introduit en ligne, avec suivi du dossier. C'est plus rapide qu'un formulaire papier.\n\nNous groupons les interventions amaytoises avec Wanze, Huy, Engis et Villers-le-Bouillet, toutes proches. Sur ce secteur mosan, le regroupement est ce qui contient les frais d'approche."
+        }
+      ]
     },
     {
       "id": "ambleve",
@@ -216,8 +240,25 @@
         "theux",
         "stoumont"
       ],
-      "dateVerification": "2026-07-30",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "todoDonneesLocales": "Autorisation de stationnement : les ordonnances de police relatives aux déménagements sont publiées au cas par cas, sans procédure générale accessible. À vérifier auprès de l'administration communale.",
+      "introductionLocale": "Aywaille réunit Aywaille, Sougné-Remouchamps, Harzé et Ernonheid sous le code postal 4920. La commune occupe le confluent de l'Amblève et de la Lienne, aux portes de l'Ardenne.",
+      "informationsLocales": [
+        "Confluent de l'Amblève : centre en fond de vallée, versants boisés et abrupts.",
+        "Habitat touristique dispersé sur les hauteurs, avec accès privés parfois longs.",
+        "Commune la plus éloignée de notre dépôt : le regroupement d'interventions y est la règle."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Aywaille : ce qu'il faut anticiper",
+          "contenu": "Aywaille s'est construite au confluent de l'Amblève et de la Lienne, dans une vallée encaissée aux versants boisés. Le centre occupe le fond, le reste de l'entité grimpe.\n\nEn fond de vallée, les rues sont étroites et le stationnement rare, en particulier en saison touristique. La réservation d'emplacement y est nécessaire, et le gabarit du véhicule se choisit rue par rue.\n\nSur les hauteurs, à Harzé et Ernonheid, l'habitat est dispersé et souvent en retrait de la voirie. Les accès privés peuvent être longs, étroits et en pente. Le camion s'arrête parfois loin de la porte, ce qui change le temps de chargement.\n\nSougné-Remouchamps ajoute la contrainte touristique. Les abords des grottes et le centre du village connaissent une fréquentation forte en saison, qui pèse sur les possibilités de stationnement."
+        },
+        {
+          "titre": "Nos interventions à Aywaille",
+          "contenu": "Quarante-sept kilomètres et près de quarante minutes : Aywaille est la commune la plus éloignée de notre dépôt. Le trajet d'approche apparaît clairement sur le devis.\n\nC'est pourquoi nous groupons systématiquement les interventions de ce secteur avec Sprimont, Comblain-au-Pont, Ferrières et Stoumont. Sur un déplacement aussi long, mutualiser le trajet est ce qui garde le devis raisonnable.\n\nLe monte-meubles est fréquemment mobilisé, moins pour les étages que pour les dénivelés. Hisser du mobilier depuis la voirie jusqu'à une maison en surplomb évite un portage long et risqué."
+        }
+      ]
     },
     {
       "id": "baelen",
@@ -677,8 +718,24 @@
         "limbourg"
       ],
       "introductionLocale": "Dison réunit deux villages, Dison et Andrimont, sur deux codes postaux, 4820 et 4821. L'entité jouxte Verviers et Herve, deux communes que nous desservons.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "todoDonneesLocales": "Autorisation de stationnement : seul le règlement coordonné de la zone de police Vesdre est publié, sans procédure de demande accessible. À vérifier auprès du service des Travaux.",
+      "informationsLocales": [
+        "Commune très compacte, accolée à Verviers : le tissu bâti passe de l'une à l'autre sans rupture.",
+        "Bâti ouvrier dense hérité de la draperie, avec des rues étroites et un stationnement disputé.",
+        "Andrimont, sur la hauteur, offre des accès plus dégagés que le centre de Dison."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Dison : ce qu'il faut anticiper",
+          "contenu": "Dison est l'une des plus petites communes de notre zone en superficie, et l'une des plus densément bâties. Elle se prolonge dans Verviers sans rupture visible : d'une rue à l'autre, on change de commune sans s'en apercevoir.\n\nCe tissu serré vient de l'industrie drapière. Les rues sont étroites, les maisons mitoyennes et alignées, les façades donnent sur le trottoir. Le camion se gare sur la voirie, et la réservation d'emplacement est presque toujours nécessaire.\n\nLes intérieurs suivent la même logique. Couloirs étroits, escaliers en quart tournant, portes de faible largeur. Le démontage du mobilier volumineux n'y est pas un confort : c'est souvent la seule façon de sortir une armoire ou un canapé d'angle.\n\nAndrimont, sur la hauteur, change le tableau. L'habitat y est plus récent et plus espacé, avec des accès nettement plus simples et du stationnement disponible."
+        },
+        {
+          "titre": "Nos interventions à Dison",
+          "contenu": "Vingt et un kilomètres et vingt minutes séparent Dison de notre dépôt. Nous groupons presque systématiquement les interventions disonaises avec celles de Verviers, immédiatement voisine.\n\nLes appartements et les maisons de rangée du centre représentent l'essentiel des dossiers. Ils demandent peu de monte-meubles mais beaucoup de démontage, et une préparation soignée du stationnement.\n\nAttention à un point : la limite communale avec Verviers passe au milieu du tissu urbain. Une rue disonaise peut être en zone à trafic limité verviétoise à quelques dizaines de mètres. Nous vérifions systématiquement de quelle administration relève l'adresse exacte."
+        }
+      ]
     },
     {
       "id": "donceel",
@@ -730,7 +787,16 @@
       ],
       "introductionLocale": "Engis réunit quatre villages sous le code postal 4480 : Engis, Éhein-Bas, Clermont-sous-Huy et Hermalle-sous-Huy. L'entité borde Flémalle et Saint-Georges-sur-Meuse, où nous intervenons déjà.",
       "dateVerification": "2026-07-31",
-      "statut": "published"
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Zone de police Meuse-Hesbaye, pour les six communes de la zone",
+        "procedure": "Demande introduite en ligne sur la plateforme Eaglebe, commune aux six communes de la zone depuis le 1er juillet 2025 ; la réservation de stationnement en fait partie, avec suivi du dossier et réception de l’autorisation par le même canal",
+        "delai": null,
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.amay.be/vivre-a-amay/mobilite/plateforme-eaglebe-demandes-doccupation-du-domaine-public",
+        "dateVerification": "2026-08-02"
+      }
     },
     {
       "id": "esneux",
@@ -1332,8 +1398,24 @@
         "spa"
       ],
       "introductionLocale": "Jalhay ne compte que deux villages, Jalhay et Sart-lez-Spa, sous le code postal 4845. Avec sept limitrophes liégeoises, l'entité touche aussi bien l'agglomération verviétoise que Malmedy et Stavelot.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "todoDonneesLocales": "Autorisation de stationnement : seule l'ordonnance de police administrative générale est publiée, sans procédure de demande. À vérifier auprès de l'administration communale.",
+      "informationsLocales": [
+        "Commune la plus étendue de la vallée de la Vesdre, avec seulement deux villages.",
+        "Habitat très dispersé entre bois et Fagnes : les distances internes sont importantes.",
+        "Fermes ardennaises aux accès en cour, sur des chemins parfois non revêtus."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Jalhay : ce qu'il faut anticiper",
+          "contenu": "Jalhay ne compte que deux villages, Jalhay et Sart-lez-Spa, mais couvre un territoire très étendu entre bois, barrage de la Gileppe et Hautes Fagnes.\n\nCette dispersion est la contrainte principale. Beaucoup d'habitations sont isolées, desservies par des chemins étroits, parfois non revêtus et bordés de talus. Un grand porteur y accède, mais le demi-tour ne se fait pas n'importe où : nous repérons le point de manœuvre à l'avance.\n\nLe bâti est celui de l'Ardenne : fermes en pierre, corps de logis anciens, accès par une cour. La largeur du passage et la hauteur sous linteau se relèvent avant de choisir le véhicule.\n\nLa météo compte ici plus qu'ailleurs dans notre zone. Sur les hauteurs des Fagnes, la neige et le verglas restent bien après avoir disparu de la vallée. Une date d'hiver se prévoit avec une marge."
+        },
+        {
+          "titre": "Nos interventions à Jalhay",
+          "contenu": "Trente-quatre kilomètres et près de quarante minutes depuis notre dépôt. C'est l'un des trajets les plus longs de notre zone, et le temps de route dépend autant des derniers kilomètres que de l'autoroute.\n\nLes propriétés isolées et les fermes rénovées constituent l'essentiel des dossiers. Le volume y est souvent important, avec granges, dépendances et matériel d'extérieur.\n\nNous groupons les interventions jalhaytoises avec Spa, Theux et Waimes, toutes limitrophes. Sur ce secteur, c'est le regroupement qui rend le déplacement économiquement raisonnable."
+        }
+      ]
     },
     {
       "id": "juprelle",
@@ -1564,8 +1646,32 @@
         "ambleve"
       ],
       "introductionLocale": "Malmedy réunit trois villages sous le code postal 4960 : Malmedy, Bellevaux-Ligneuville et Bévercé. L'entité borde la Communauté germanophone par Amblève et Saint-Vith.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Ville de Malmedy, service Mobilité",
+        "procedure": "Le service traite les mesures de circulation en cas de déménagement, dont les interdictions de stationner ; la demande lui est adressée directement",
+        "delai": "15 jours au moins avant la date de début des mesures",
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.malmedy.be/ma-commune/services-communaux/tous-les-services/mobilite",
+        "dateVerification": "2026-08-02"
+      },
+      "informationsLocales": [
+        "Ville ardennaise en fond de vallée, entourée de versants boisés et abrupts.",
+        "Centre historique aux rues étroites, très fréquenté en période de carnaval et en saison.",
+        "Délai communal de 15 jours pour toute mesure d'interdiction de stationner."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Malmedy : ce qu'il faut anticiper",
+          "contenu": "Malmedy occupe un fond de vallée ardennais, cerné de versants boisés. La ville est compacte, et son centre historique a gardé des rues étroites qui n'admettent pas tous les gabarits.\n\nLa réservation d'emplacement y est indispensable, et la commune l'encadre précisément : toute demande de mesure d'interdiction de stationner doit lui parvenir au moins quinze jours avant la date. Le déménagement est explicitement visé par cette procédure.\n\nBellevaux-Ligneuville et Bévercé s'étendent sur les hauteurs, avec un habitat dispersé et des accès en pente. Les chemins y sont étroits, et le point de retournement d'un grand porteur se repère à l'avance.\n\nL'hiver ardennais mérite enfin d'être pris au sérieux. Sur les hauteurs, la neige tient plus longtemps qu'en vallée mosane. Une date de janvier ou février se prévoit avec une marge de sécurité."
+        },
+        {
+          "titre": "Nos interventions à Malmedy",
+          "contenu": "Cinquante-deux kilomètres et quarante-cinq minutes : Malmedy est le point le plus éloigné de notre zone d'intervention. Le trajet d'approche apparaît clairement sur le devis.\n\nNous groupons donc systématiquement les interventions malmédiennes avec Stavelot, Waimes, Trois-Ponts et Stoumont. Sur ce secteur ardennais, mutualiser le déplacement est la seule façon de garder un devis raisonnable.\n\nLes maisons de ville du centre demandent gabarit réduit et autorisation. Sur les hauteurs, ce sont les volumes, les dépendances et les accès en pente qui commandent l'organisation."
+        }
+      ]
     },
     {
       "id": "marchin",
@@ -1817,8 +1923,32 @@
         "verviers"
       ],
       "introductionLocale": "Pepinster réunit quatre villages — Pepinster, Cornesse, Soiron et Wegnez — sur deux codes postaux, 4860 et 4861. L'entité borde Verviers et Theux, et touche l'arrondissement de Liège par Trooz et Sprimont.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Commune de Pepinster, service Travaux et Développement",
+        "procedure": "Demande d'arrêté de police auprès du service Travaux et Développement ; la signalisation incombe à celui qui exécute les travaux, en application de l'article 78 du Code de la route",
+        "delai": null,
+        "cout": null,
+        "signalisation": "Le service Travaux et Développement met des panneaux E1/E3 à disposition contre paiement, si l’entrepreneur ne fournit pas la signalisation",
+        "sourceUrl": "https://www.pepinster.be/ma-commune/services/t-d/voiries/location-de-signalisation",
+        "dateVerification": "2026-08-02"
+      },
+      "informationsLocales": [
+        "Confluent de la Vesdre et de la Hoëgne : le centre est en fond de vallée, resserré.",
+        "Soiron est classé parmi les plus beaux villages de Wallonie, avec des rues anciennes étroites.",
+        "Le service Travaux met des panneaux E1/E3 à disposition contre paiement."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Pepinster : ce qu'il faut anticiper",
+          "contenu": "Pepinster s'est installée au confluent de la Vesdre et de la Hoëgne. Le centre occupe donc un fond de vallée étroit, où la place manque entre la rivière, la voirie et le bâti.\n\nDans ce périmètre, un grand porteur circule difficilement. Nous adaptons régulièrement le gabarit du véhicule et prévoyons plusieurs rotations plutôt qu'un seul chargement.\n\nSoiron relève d'un tout autre registre. Classé parmi les plus beaux villages de Wallonie, il a conservé ses rues anciennes, ses murs de moellons et ses passages étroits. Un camion y entre, mais l'itinéraire se repère avant le jour de l'intervention.\n\nCornesse et Wegnez, sur les versants, ajoutent la pente. Les accès y sont plus dégagés qu'au centre, mais le point de stationnement se choisit en fonction du dénivelé autant que de la distance à la porte."
+        },
+        {
+          "titre": "Nos interventions à Pepinster",
+          "contenu": "Vingt-huit kilomètres et une demi-heure depuis notre dépôt. Nous desservons Pepinster dans le même mouvement que Verviers et Theux, toutes proches.\n\nUn point pratique distingue la commune : le service Travaux met lui-même des panneaux d'interdiction de stationner à disposition, contre paiement, quand l'entreprise n'apporte pas sa propre signalisation. Nous disposons de la nôtre, mais la solution existe.\n\nLes maisons de fond de vallée demandent surtout du démontage et une bonne gestion du stationnement. Sur les hauteurs, ce sont les volumes et les dépendances qui commandent l'organisation."
+        }
+      ]
     },
     {
       "id": "plombieres",
@@ -1917,7 +2047,16 @@
       ],
       "introductionLocale": "Saint-Georges-sur-Meuse porte le code postal 4470 et fait le lien entre le plateau de Hesbaye et la vallée de la Meuse. Nous y intervenons dans le prolongement de Flémalle, que nous desservons déjà.",
       "dateVerification": "2026-07-31",
-      "statut": "published"
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Zone de police Meuse-Hesbaye, pour les six communes de la zone",
+        "procedure": "Demande introduite en ligne sur la plateforme Eaglebe, commune aux six communes de la zone depuis le 1er juillet 2025 ; la réservation de stationnement en fait partie, avec suivi du dossier et réception de l’autorisation par le même canal",
+        "delai": null,
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.amay.be/vivre-a-amay/mobilite/plateforme-eaglebe-demandes-doccupation-du-domaine-public",
+        "dateVerification": "2026-08-02"
+      }
     },
     {
       "id": "saint-nicolas",
@@ -2115,8 +2254,32 @@
         "stavelot"
       ],
       "introductionLocale": "Spa porte le code postal 4900 et borde Theux, Jalhay, Stoumont et Stavelot. Nous y intervenons comme dans les quatre communes qui l'entourent.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Ville de Spa",
+        "procedure": "Demande introduite en ligne sur la plateforme Eaglebe",
+        "delai": "15 jours ouvrables à l'avance",
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.villedespa.be/ma-ville/services-communaux/travaux-energie/mobilite/demande-doccupation-de-la-voirie",
+        "dateVerification": "2026-08-02"
+      },
+      "informationsLocales": [
+        "Ville thermale en cuvette, entourée de bois : les accès se font par des routes en pente.",
+        "Centre touristique dense, avec zones piétonnes et stationnement fortement réglementé.",
+        "Demandes centralisées en ligne, avec un délai de 15 jours ouvrables."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Spa : ce qu'il faut anticiper",
+          "contenu": "Spa occupe une cuvette entourée de bois. Toutes les routes qui y mènent descendent, et toutes celles qui en partent montent. C'est la première donnée d'un déménagement spadois, surtout en hiver.\n\nLe centre est celui d'une ville thermale et touristique. Zones piétonnes, stationnement réglementé, rues commerçantes fréquentées : y placer un camion demande une autorisation, et cette autorisation demande du temps.\n\nSpa impose en effet quinze jours ouvrables, soit trois semaines calendrier. C'est l'un des délais les plus longs de notre zone, et il ne souffre pas l'improvisation. Nous introduisons la demande dès que la date est arrêtée.\n\nAutour du centre, l'habitat devient résidentiel et boisé, avec des propriétés en retrait de la voirie et des allées privées parfois longues et étroites. Le portage y remplace souvent le stationnement au pied de la porte."
+        },
+        {
+          "titre": "Nos interventions à Spa",
+          "contenu": "Quarante et un kilomètres et trente-huit minutes séparent Spa de notre dépôt. Le trajet d'approche figure sur le devis, et nous le réduisons en groupant nos interventions du secteur sur une même journée.\n\nTheux, Jalhay, Stavelot et Stoumont sont limitrophes. Sur ce coin de l'Ardenne liégeoise, c'est le regroupement qui garde les frais d'approche raisonnables.\n\nNous y traitons aussi bien des résidences principales que des secondes résidences, plus nombreuses ici qu'ailleurs dans notre zone. Ces dossiers combinent souvent transport et passage en garde-meubles."
+        }
+      ]
     },
     {
       "id": "sprimont",
@@ -2141,8 +2304,33 @@
         "pepinster",
         "theux"
       ],
-      "dateVerification": "2026-07-30",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Commune de Sprimont, service Travaux",
+        "procedure": "Demande d'arrêté de police introduite par e-mail auprès du service Travaux ; le déménagement et les livraisons y sont explicitement visés",
+        "delai": null,
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.sprimont.be/ma-commune/services-communaux/mobilite/arrete-de-police",
+        "dateVerification": "2026-08-02"
+      },
+      "introductionLocale": "Sprimont réunit Sprimont, Louveigné, Rouvreux, Dolembreux et Gomzé-Andoumont sous deux codes postaux, 4140 et 4141. La commune occupe le plateau entre Ourthe et Amblève.",
+      "informationsLocales": [
+        "Plateau entre Ourthe et Amblève : villages dispersés reliés par des routes de campagne.",
+        "Pays de la pierre bleue : bâti ancien massif, avec seuils et encadrements en petit granit.",
+        "Le service Travaux vise explicitement le déménagement dans ses arrêtés de police."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Sprimont : ce qu'il faut anticiper",
+          "contenu": "Sprimont s'étend sur le plateau qui sépare l'Ourthe de l'Amblève. Cinq villages y sont dispersés, reliés par des routes de campagne, sans centre urbain dominant.\n\nL'adresse exacte détermine donc tout. Entre Gomzé-Andoumont, au nord, et Rouvreux, vers l'Amblève, il y a une différence de trajet réelle et deux contextes d'accès distincts.\n\nSprimont est le pays de la pierre bleue, et son bâti s'en ressent. Les maisons anciennes ont des seuils surélevés en petit granit, des encadrements massifs et des ouvertures étroites. Ces dimensions se relèvent pendant la visite technique : elles décident du démontage nécessaire.\n\nLes bords de plateau, enfin, tombent vers les deux vallées. Les routes qui y descendent sont étroites et sinueuses, avec peu de possibilités de retournement pour un grand porteur."
+        },
+        {
+          "titre": "Nos interventions à Sprimont",
+          "contenu": "Quarante-trois kilomètres et trente-trois minutes séparent Sprimont de notre dépôt. Le trajet d'approche figure sur le devis, et nous le réduisons en groupant les interventions du secteur.\n\nLes maisons de village et les propriétés de plateau demandent surtout du volume et du démontage. Granges, ateliers et abris de jardin allongent régulièrement l'inventaire.\n\nLa commune vise explicitement le déménagement dans sa procédure d'arrêté de police, ce qui simplifie la demande : il n'y a pas d'ambiguïté sur le motif. Nous groupons volontiers avec Aywaille, Comblain-au-Pont, Esneux et Chaudfontaine, qui partagent la même géographie de vallées."
+        }
+      ]
     },
     {
       "id": "stavelot",
@@ -2217,8 +2405,24 @@
         "sprimont"
       ],
       "introductionLocale": "Theux réunit trois villages sous le code postal 4910 : Theux, Polleur et La Reid. L'entité se situe entre Verviers et Spa, et touche l'arrondissement de Liège par Aywaille et Sprimont.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "todoDonneesLocales": "Autorisation de stationnement : aucune procédure publiée sur theux.be au 2026-08-02. À vérifier auprès de l'administration communale.",
+      "informationsLocales": [
+        "Vallée de la Hoëgne : le centre est resserré autour de son église fortifiée.",
+        "La Reid et Polleur sont des villages de plateau, aux accès plus dégagés.",
+        "Commune de transition entre la vallée verviétoise et les Fagnes."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Theux : ce qu'il faut anticiper",
+          "contenu": "Theux occupe la vallée de la Hoëgne, entre Verviers et les Fagnes. Le centre s'est développé autour de son église fortifiée, dans un tissu ancien et resserré.\n\nLes rues du noyau historique sont étroites et parfois en sens unique. Elles n'ont pas été dessinées pour un semi-remorque, et le gabarit du véhicule s'y choisit rue par rue. Nous repérons l'accès avant de fixer le camion.\n\nPolleur et La Reid changent complètement de contexte. Ce sont des villages de plateau, avec un habitat plus espacé, des cours de ferme et des accès nettement plus dégagés. Le stationnement n'y pose généralement pas de difficulté.\n\nLe relief entre les deux reste marqué. Les routes qui montent du fond de vallée vers La Reid sont sinueuses, et le point de retournement d'un grand porteur ne se trouve pas partout."
+        },
+        {
+          "titre": "Nos interventions à Theux",
+          "contenu": "Trente-trois kilomètres et trente-cinq minutes depuis notre dépôt. Nous desservons Theux dans le même déplacement que Spa, Jalhay, Pepinster et Verviers, toutes proches.\n\nLes maisons de village et les propriétés de plateau forment le gros des dossiers. Les volumes y sont élevés, avec des dépendances, des greniers et du matériel de jardin à transporter.\n\nDans le centre historique, l'organisation est différente : gabarit réduit, réservation d'emplacement, et parfois portage sur quelques dizaines de mètres quand la rue n'admet pas le camion devant la porte."
+        }
+      ]
     },
     {
       "id": "thimister-clermont",
@@ -2344,7 +2548,16 @@
       ],
       "introductionLocale": "Verlaine réunit quatre villages sous le code postal 4537 : Verlaine, Bodegnée, Chapon-Seraing et Seraing-le-Château. Ces deux derniers n'ont rien à voir avec la ville de Seraing, à laquelle nous consacrons une page distincte.",
       "dateVerification": "2026-07-31",
-      "statut": "published"
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Zone de police Meuse-Hesbaye, pour les six communes de la zone",
+        "procedure": "Demande introduite en ligne sur la plateforme Eaglebe, commune aux six communes de la zone depuis le 1er juillet 2025 ; la réservation de stationnement en fait partie, avec suivi du dossier et réception de l’autorisation par le même canal",
+        "delai": null,
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.amay.be/vivre-a-amay/mobilite/plateforme-eaglebe-demandes-doccupation-du-domaine-public",
+        "dateVerification": "2026-08-02"
+      }
     },
     {
       "id": "verviers",
@@ -2425,7 +2638,16 @@
       ],
       "introductionLocale": "Villers-le-Bouillet réunit cinq villages sous le code postal 4530 : Villers-le-Bouillet, Fize-Fontaine, Vaux-et-Borset, Vieux-Waleffe et Warnant-Dreye. L'entité fait le lien entre les arrondissements de Huy et de Waremme, où nous desservons déjà Faimes et Braives.",
       "dateVerification": "2026-07-31",
-      "statut": "published"
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Zone de police Meuse-Hesbaye, pour les six communes de la zone",
+        "procedure": "Demande introduite en ligne sur la plateforme Eaglebe, commune aux six communes de la zone depuis le 1er juillet 2025 ; la réservation de stationnement en fait partie, avec suivi du dossier et réception de l’autorisation par le même canal",
+        "delai": null,
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.amay.be/vivre-a-amay/mobilite/plateforme-eaglebe-demandes-doccupation-du-domaine-public",
+        "dateVerification": "2026-08-02"
+      }
     },
     {
       "id": "vise",
@@ -2530,8 +2752,32 @@
         "huy"
       ],
       "introductionLocale": "Wanze réunit six villages sous le code postal 4520 : Wanze, Bas-Oha, Moha, Huccorgne, Vinalmont et Antheit. L'entité jouxte Huy et Villers-le-Bouillet, et nous desservons chacun de ses villages.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Zone de police Meuse-Hesbaye, pour les six communes de la zone",
+        "procedure": "Demande introduite en ligne sur la plateforme Eaglebe, commune aux six communes de la zone depuis le 1er juillet 2025 ; la réservation de stationnement en fait partie, avec suivi du dossier et réception de l’autorisation par le même canal",
+        "delai": null,
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.amay.be/vivre-a-amay/mobilite/plateforme-eaglebe-demandes-doccupation-du-domaine-public",
+        "dateVerification": "2026-08-02"
+      },
+      "informationsLocales": [
+        "Entité étendue entre la Meuse et le plateau hesbignon, avec six villages.",
+        "Moha et Huccorgne sont des villages de vallée encaissée, aux rues étroites.",
+        "Demandes centralisées sur la plateforme Eaglebe de la zone Meuse-Hesbaye."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Wanze : ce qu'il faut anticiper",
+          "contenu": "Wanze fait le lien entre la Meuse et le plateau hesbignon. Six villages composent l'entité, et le paysage change franchement de l'un à l'autre.\n\nBas-Oha et Antheit, proches du fleuve, ont un bâti groupé et un caractère plus urbain. Le stationnement y est disputé et la réservation d'emplacement souvent nécessaire.\n\nMoha et Huccorgne, dans la vallée de la Mehaigne, sont plus encaissés. Les rues y sont étroites, bordées de murs anciens, et le passage d'un grand porteur demande du repérage. Nous adaptons le gabarit du véhicule quand c'est nécessaire.\n\nVinalmont et le plateau relèvent de la Hesbaye agricole : fermes en carré, cours fermées par un porche, accès généralement dégagés mais dimensions à vérifier."
+        },
+        {
+          "titre": "Nos interventions à Wanze",
+          "contenu": "Quarante et un kilomètres et vingt-neuf minutes depuis notre dépôt, essentiellement par l'autoroute. Le trajet est direct, mais la desserte interne de l'entité prend du temps.\n\nWanze fait partie des six communes de la zone Meuse-Hesbaye qui ont regroupé leurs demandes d'occupation du domaine public sur une plateforme en ligne unique depuis juillet 2025. La réservation d'emplacement s'y introduit directement.\n\nLes maisons unifamiliales et les fermes rénovées forment l'essentiel des dossiers, avec des volumes élevés et beaucoup de démontage. Nous groupons avec Huy, Amay et Villers-le-Bouillet, toutes limitrophes."
+        }
+      ]
     },
     {
       "id": "waremme",
