@@ -28,6 +28,13 @@ import {
 
 const BASE_URL = 'https://www.demenagements-gramme.be';
 
+/**
+ * Commune du siège social. Sa page décrit un établissement réel : elle porte
+ * donc la déclaration complète, là où les autres se contentent d'une référence
+ * à l'entité par son @id.
+ */
+const COMMUNE_SIEGE = 'herstal';
+
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -144,6 +151,7 @@ export default function CommuneLandingPage() {
         noindex={brouillon}
       />
       <SchemaOrg
+        organization={commune.id === COMMUNE_SIEGE ? 'full' : 'reference'}
         customFaq={brouillon ? undefined : faq}
         localService={
           brouillon
@@ -228,6 +236,30 @@ export default function CommuneLandingPage() {
                 )}
               </div>
             )}
+
+            {/* Sections rédigées propres à la commune. Vide sur la plupart des
+                pages : seules celles qui ont une histoire à raconter en ont. */}
+            {commune.sectionsLocales?.map((section) => (
+              <motion.div
+                key={section.titre}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-60px' }}
+                variants={fadeUp}
+                className="mt-12"
+              >
+                <h2 className="text-2xl md:text-3xl font-black uppercase text-navy mb-5">
+                  {section.titre}
+                </h2>
+                <div className="space-y-4">
+                  {section.contenu.split('\n\n').map((paragraphe) => (
+                    <p key={paragraphe.slice(0, 40)} className="text-muted text-[17px] leading-relaxed">
+                      {paragraphe}
+                    </p>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
 
             {/* Spécificités locales validées par Gramme */}
             {commune.informationsLocales && commune.informationsLocales.length > 0 && (

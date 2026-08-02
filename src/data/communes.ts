@@ -34,6 +34,17 @@ export interface CommuneSEO {
   communesVoisines: string[];
   introductionLocale?: string;
   informationsLocales?: string[];
+  /**
+   * Sections rédigées propres à la commune, rendues en H2 suivi de paragraphes.
+   *
+   * `informationsLocales` ne prend que des puces courtes : une commune sur
+   * laquelle il y a réellement quelque chose à raconter — le siège social à
+   * Herstal, la densité urbaine à Seraing — n'y tenait pas. C'est ce qui a
+   * permis de migrer les pages satellites sans perdre leur prose.
+   *
+   * `contenu` accepte plusieurs paragraphes, séparés par une ligne vide.
+   */
+  sectionsLocales?: Array<{ titre: string; contenu: string }>;
   /** Date à laquelle Gramme a validé les données locales. */
   dateVerification?: string;
   /**

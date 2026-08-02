@@ -32,8 +32,6 @@ const CommuneEditorPage = lazy(() => import('./admin/pages/CommuneEditorPage'));
 
 const DemenageurLiege = lazy(() => import('./pages/satellites/DemenageurLiege'));
 const DemenagementLiege = lazy(() => import('./pages/satellites/DemenagementLiege'));
-const DemenagementSeraing = lazy(() => import('./pages/satellites/DemenagementSeraing'));
-const DemenagementHerstal = lazy(() => import('./pages/satellites/DemenagementHerstal'));
 const DemenagementEntreprise = lazy(() => import('./pages/satellites/DemenagementEntreprise'));
 const DemenagementPiano = lazy(() => import('./pages/satellites/DemenagementPiano'));
 const DemenagementInternationalSatellite = lazy(() => import('./pages/satellites/DemenagementInternationalSatellite'));
@@ -96,8 +94,6 @@ export default function App() {
             {/* Demenagement satellite pages */}
             <Route path="/demenagement/demenageur-liege" element={<DemenageurLiege />} />
             <Route path="/demenagement/demenagement-liege" element={<DemenagementLiege />} />
-            <Route path="/demenagement/demenagement-seraing" element={<DemenagementSeraing />} />
-            <Route path="/demenagement/demenagement-herstal" element={<DemenagementHerstal />} />
             <Route path="/demenagement/demenagement-entreprise" element={<DemenagementEntreprise />} />
             <Route path="/demenagement/demenagement-piano" element={<DemenagementPiano />} />
             <Route path="/demenagement/demenagement-international" element={<DemenagementInternationalSatellite />} />
