@@ -550,8 +550,32 @@
         "burdinne"
       ],
       "introductionLocale": "Braives rassemble huit villages, de Fallais à Avennes en passant par Latinne et Ville-en-Hesbaye, répartis sur trois codes postaux : 4260, 4261 et 4263. Nous traitons l'entité comme un seul territoire, d'un village à l'autre.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Zone de police Hesbaye-Ouest, conjointement avec l’administration communale",
+        "procedure": "Le formulaire propre à la commune se transmet à la fois à la zone de police et à l'administration communale, qui délivre alors un arrêté de police couvrant la durée de l'occupation ; le déménagement y est explicitement visé",
+        "delai": "10 jours ouvrables avant le début de l’occupation",
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.police.be/5293/questions/autorisation/comment-demander-une-autorisation-pour-loccupation-de-la-voirie",
+        "dateVerification": "2026-08-02"
+      },
+      "informationsLocales": [
+        "Huit villages le long de la Mehaigne : la commune la plus fragmentée de Hesbaye après Hannut.",
+        "Fallais et Fumal ont conservé un bâti ancien groupé, aux rues étroites.",
+        "Formulaire à transmettre à la fois à la zone de police et à la commune, 10 jours ouvrables à l’avance."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Braives : ce qu'il faut anticiper",
+          "contenu": "Braives s'égrène le long de la Mehaigne, sur huit villages : Braives, Tourinne, Latinne, Fallais, Fumal, Ville-en-Hesbaye, Ciplet et Avennes. Aucun ne domine les autres.\n\nCette dispersion est la première donnée. Entre Avennes et Fallais, le trajet interne à l'entité n'a rien d'anecdotique, et les conditions d'accès changent d'un village à l'autre. L'adresse exacte prime sur le nom de la commune.\n\nLa vallée de la Mehaigne resserre certains noyaux. Fallais et Fumal ont gardé un bâti ancien groupé, avec des rues étroites et des murs de pierre en bordure de voirie. Un grand porteur y circule mal.\n\nAilleurs, c'est la Hesbaye agricole : fermes en carré, cours fermées par un porche, corps de logis massifs. La hauteur sous linteau décide du véhicule plus souvent que le volume à transporter."
+        },
+        {
+          "titre": "Nos interventions à Braives",
+          "contenu": "Quarante-cinq kilomètres et trente-quatre minutes depuis notre dépôt, essentiellement par l'autoroute. Le trajet d'approche figure sur le devis.\n\nLa demande d'autorisation suit ici une règle précise : le formulaire se transmet à la fois à la zone de police et à l'administration communale, dix jours ouvrables à l'avance, et c'est la commune qui délivre l'arrêté. Envoyer à un seul des deux destinataires fait perdre le délai.\n\nLes fermes rénovées et les maisons de village forment l'essentiel des dossiers. Nous groupons avec Burdinne, Héron et Hannut, toutes limitrophes ou proches."
+        }
+      ]
     },
     {
       "id": "bullange",
@@ -599,8 +623,32 @@
         "wanze"
       ],
       "introductionLocale": "Burdinne regroupe cinq villages sous le code postal 4210 : Burdinne, Hannêche, Lamontzée, Marneffe et Oteppe. L'entité borde Hannut et Wanze, et nous desservons l'ensemble de ses villages.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Zone de police Hesbaye-Ouest, conjointement avec l’administration communale",
+        "procedure": "Le formulaire propre à la commune se transmet à la fois à la zone de police et à l'administration communale, qui délivre alors un arrêté de police couvrant la durée de l'occupation ; le déménagement y est explicitement visé",
+        "delai": "10 jours ouvrables avant le début de l’occupation",
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.police.be/5293/questions/autorisation/comment-demander-une-autorisation-pour-loccupation-de-la-voirie",
+        "dateVerification": "2026-08-02"
+      },
+      "informationsLocales": [
+        "Petite entité rurale à la limite de la province de Namur, avec cinq villages.",
+        "Marneffe et Oteppe ont conservé châteaux et fermes anciennes aux cours fermées.",
+        "Formulaire à transmettre à la fois à la zone de police et à la commune, 10 jours ouvrables à l’avance."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Burdinne : ce qu'il faut anticiper",
+          "contenu": "Burdinne est une petite entité rurale posée à la limite de la province de Namur. Cinq villages la composent : Burdinne, Hannêche, Lamontzée, Marneffe et Oteppe.\n\nLe territoire est agricole et ouvert, sans relief marqué. Le stationnement n'y pose généralement pas de difficulté, et les accès sont dégagés dans la plupart des rues.\n\nLa contrainte vient du bâti. Marneffe et Oteppe ont conservé châteaux et grandes fermes hesbignonnes, avec des cours fermées par un porche et des corps de logis massifs. Ces passages ont des hauteurs variables, et c'est souvent le linteau qui décide du camion.\n\nLes routes entre villages sont étroites et sans accotement, bordées de champs. Le demi-tour d'un grand porteur se repère avant l'intervention plutôt que sur place."
+        },
+        {
+          "titre": "Nos interventions à Burdinne",
+          "contenu": "Cinquante et un kilomètres et trente-huit minutes depuis notre dépôt. Burdinne fait partie des points les plus éloignés de notre zone, à sa limite sud-ouest.\n\nLa demande d'autorisation obéit à la règle de la zone Hesbaye-Ouest : formulaire transmis à la fois à la police et à la commune, dix jours ouvrables à l'avance, arrêté délivré par l'administration communale.\n\nNous groupons les interventions avec Braives, Héron et Hannut, toutes proches. Sur ce secteur, c'est le regroupement qui garde les frais d'approche raisonnables."
+        }
+      ]
     },
     {
       "id": "burg-reuland",
@@ -815,8 +863,24 @@
         "remicourt"
       ],
       "introductionLocale": "Crisnée réunit cinq villages sous le code postal 4367 : Crisnée, Odeur, Kemexhe, Fize-le-Marsal et Thys. L'entité borde Awans, dans l'arrondissement de Liège, et nous desservons les cinq villages au même titre que le centre.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "todoDonneesLocales": "Autorisation de stationnement : la zone de police Hesbaye — Berloz, Crisnée, Donceel, Faimes, Fexhe-le-Haut-Clocher, Geer, Oreye, Remicourt et Waremme — ne publie aucune procédure d'occupation de la voirie au 2026-08-02, et la commune non plus. Autorité, délai et tarif à vérifier auprès de l'administration communale.",
+      "informationsLocales": [
+        "Vingt-deux kilomètres du dépôt : la commune hesbignonne la plus proche de notre base.",
+        "Plaine agricole ouverte, avec cinq villages aux accès dégagés.",
+        "Fermes en carré et corps de logis anciens, aux porches de dimensions variables."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Crisnée : ce qu'il faut anticiper",
+          "contenu": "Crisnée est une commune de plaine, au cœur de la Hesbaye agricole. Cinq villages la composent : Crisnée, Odeur, Kemexhe, Fize-le-Marsal et Thys.\n\nLe relief n'y pose aucune difficulté et le stationnement est disponible dans la plupart des rues. C'est l'une des communes les plus simples d'accès de notre zone.\n\nLa contrainte est celle du bâti agricole. Les fermes en carré et les anciens corps de logis ont des cours fermées par un porche, dont la largeur et la hauteur ne conviennent pas à tous les gabarits. Nous relevons ces dimensions pendant la visite technique.\n\nLes routes entre villages sont étroites et sans accotement. Le repérage du point de retournement fait partie de la préparation d'un grand porteur, même en terrain plat."
+        },
+        {
+          "titre": "Nos interventions à Crisnée",
+          "contenu": "Vingt-deux kilomètres et dix-huit minutes : Crisnée est la commune hesbignonne la plus proche de notre dépôt. Les frais d'approche y sont parmi les plus bas du secteur.\n\nCette proximité permet d'organiser une visite technique à court délai, et de traiter un déménagement complet dans la journée même sur des volumes importants.\n\nLes maisons unifamiliales et les fermes rénovées se partagent les dossiers. Nous groupons volontiers avec Fexhe-le-Haut-Clocher, Remicourt et Oreye, toutes proches."
+        }
+      ]
     },
     {
       "id": "dalhem",
@@ -928,8 +992,24 @@
         "saint-georges-sur-meuse"
       ],
       "introductionLocale": "Donceel regroupe quatre villages : Donceel, Limont, Jeneffe et Haneffe, tous sous le code postal 4357. L'entité borde Waremme et Remicourt, deux communes où nous intervenons déjà.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "todoDonneesLocales": "Autorisation de stationnement : la zone de police Hesbaye — Berloz, Crisnée, Donceel, Faimes, Fexhe-le-Haut-Clocher, Geer, Oreye, Remicourt et Waremme — ne publie aucune procédure d'occupation de la voirie au 2026-08-02, et la commune non plus. Autorité, délai et tarif à vérifier auprès de l'administration communale.",
+      "informationsLocales": [
+        "Quatre villages en plaine hesbignonne, avec un habitat groupé autour des noyaux anciens.",
+        "Haneffe et Jeneffe ont conservé châteaux et fermes seigneuriales.",
+        "Accès dégagés, mais routes de campagne étroites entre les villages."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Donceel : ce qu'il faut anticiper",
+          "contenu": "Donceel regroupe quatre villages de plaine hesbignonne : Donceel, Limont, Jeneffe et Haneffe. Le territoire est agricole, ouvert, et le relief négligeable.\n\nPour un déménagement, cela retire d'emblée les difficultés de pente et de stationnement contraint. Les accès sont dégagés dans la plupart des rues.\n\nHaneffe et Jeneffe méritent une attention particulière. Ces villages ont conservé châteaux et fermes seigneuriales, avec des cours intérieures et des porches anciens dont les dimensions n'acceptent pas tous les camions. Nous les relevons avant l'intervention.\n\nLes routes qui relient les quatre villages sont étroites et bordées de champs. Elles se croisent mal à deux véhicules larges, et le demi-tour d'un grand porteur demande un repérage."
+        },
+        {
+          "titre": "Nos interventions à Donceel",
+          "contenu": "Vingt-neuf kilomètres et vingt-quatre minutes depuis notre dépôt, essentiellement par l'autoroute. L'accès est direct.\n\nLes maisons unifamiliales et les fermes rénovées forment l'essentiel des dossiers. Le volume y est souvent élevé, avec des dépendances et des granges qui allongent l'inventaire.\n\nNous groupons les interventions avec Remicourt, Verlaine, Faimes et Villers-le-Bouillet, toutes limitrophes ou proches, ce qui permet de proposer des créneaux plus larges."
+        }
+      ]
     },
     {
       "id": "engis",
@@ -1074,8 +1154,24 @@
         "villers-le-bouillet"
       ],
       "introductionLocale": "Faimes est une entité sans village homonyme : son nom désigne le regroupement de Celles, Borlez, Les Waleffes, Viemme et Aineffe, sous le code postal 4317. Nous intervenons dans les cinq villages, quelle que soit l'adresse indiquée sur le devis.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "todoDonneesLocales": "Autorisation de stationnement : la zone de police Hesbaye — Berloz, Crisnée, Donceel, Faimes, Fexhe-le-Haut-Clocher, Geer, Oreye, Remicourt et Waremme — ne publie aucune procédure d'occupation de la voirie au 2026-08-02, et la commune non plus. Autorité, délai et tarif à vérifier auprès de l'administration communale.",
+      "informationsLocales": [
+        "Entité sans village homonyme : cinq villages se partagent le territoire.",
+        "Les Waleffes a conservé son château et un noyau ancien aux rues étroites.",
+        "Plaine agricole hesbignonne, aux accès généralement dégagés."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Faimes : ce qu'il faut anticiper",
+          "contenu": "Faimes est une entité sans village homonyme. Son nom désigne le regroupement de Celles, Borlez, Les Waleffes, Viemme et Aineffe, en pleine Hesbaye agricole.\n\nCette particularité a une conséquence immédiate : le nom de la commune ne situe rien. C'est le village, puis l'adresse, qui déterminent le trajet et les conditions d'accès.\n\nLes Waleffes se distingue par son château et son noyau ancien, aux rues étroites bordées de murs de pierre. Un camion y circule, mais l'itinéraire se prépare avant le jour de l'intervention.\n\nAilleurs, c'est la plaine hesbignonne classique : accès dégagés, stationnement disponible, et des fermes en carré dont les porches conditionnent le choix du véhicule."
+        },
+        {
+          "titre": "Nos interventions à Faimes",
+          "contenu": "Trente-trois kilomètres et vingt-huit minutes depuis notre dépôt. La commune est limitrophe de Waremme, où nous intervenons régulièrement.\n\nLes fermes rénovées et les maisons de village demandent surtout du volume et du démontage. Granges, dépendances et matériel agricole allongent souvent l'inventaire par rapport à une première estimation.\n\nNous groupons les interventions avec Waremme, Donceel, Geer et Remicourt, ce qui contient les frais d'approche sur ce secteur étendu."
+        }
+      ]
     },
     {
       "id": "ferrieres",
@@ -1152,8 +1248,24 @@
         "grace-hollogne"
       ],
       "introductionLocale": "Fexhe-le-Haut-Clocher réunit cinq villages sous le code postal 4347 : Fexhe, Voroux-Goreux, Roloux, Noville et Freloux. L'entité touche Awans et Grâce-Hollogne, deux communes de l'arrondissement de Liège que nous desservons déjà.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "todoDonneesLocales": "Autorisation de stationnement : la zone de police Hesbaye — Berloz, Crisnée, Donceel, Faimes, Fexhe-le-Haut-Clocher, Geer, Oreye, Remicourt et Waremme — ne publie aucune procédure d'occupation de la voirie au 2026-08-02, et la commune non plus. Autorité, délai et tarif à vérifier auprès de l'administration communale.",
+      "informationsLocales": [
+        "Vingt-trois kilomètres du dépôt : accès rapide par l’autoroute.",
+        "Cinq villages de plaine, dont Voroux-Goreux à proximité de l’aéroport de Liège.",
+        "Habitat mixte : noyaux agricoles anciens et lotissements plus récents."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Fexhe-le-Haut-Clocher : ce qu'il faut anticiper",
+          "contenu": "Fexhe-le-Haut-Clocher réunit cinq villages de plaine hesbignonne : Fexhe, Voroux-Goreux, Roloux, Noville et Freloux. Le relief est nul et les accès généralement simples.\n\nVoroux-Goreux se trouve à proximité de l'aéroport de Liège et de ses axes de desserte. Le trafic y est plus dense qu'ailleurs dans la commune, ce qui pèse sur le choix de l'heure de démarrage.\n\nL'habitat est mixte. Les noyaux anciens conservent leurs fermes en carré et leurs cours fermées, dont les porches ne conviennent pas à tous les gabarits. Les lotissements plus récents offrent des accès simples, mais parfois sans possibilité de retournement en fond d'impasse.\n\nLes routes entre villages sont étroites, sans accotement, bordées de cultures. Le point de manœuvre d'un grand camion se repère à l'avance."
+        },
+        {
+          "titre": "Nos interventions à Fexhe-le-Haut-Clocher",
+          "contenu": "Vingt-trois kilomètres et vingt minutes : la commune fait partie des plus rapidement accessibles de Hesbaye depuis notre dépôt, grâce à l'autoroute.\n\nCette proximité permet des visites techniques à court délai et des frais d'approche contenus, ce qui n'est pas courant sur un territoire aussi étendu.\n\nLes maisons unifamiliales et les fermes rénovées se partagent les dossiers. Nous groupons volontiers avec Crisnée, Awans, Remicourt et Grâce-Hollogne, toutes proches."
+        }
+      ]
     },
     {
       "id": "flemalle",
@@ -1290,8 +1402,24 @@
         "faimes"
       ],
       "introductionLocale": "Geer porte quatre codes postaux — 4250, 4252, 4253 et 4254 — pour sept villages, dont Hollogne-sur-Geer, Omal et Lens-Saint-Servais. C'est l'entité la plus fragmentée de l'arrondissement sur le plan postal, et nous couvrons chacun de ses villages.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "todoDonneesLocales": "Autorisation de stationnement : la zone de police Hesbaye — Berloz, Crisnée, Donceel, Faimes, Fexhe-le-Haut-Clocher, Geer, Oreye, Remicourt et Waremme — ne publie aucune procédure d'occupation de la voirie au 2026-08-02, et la commune non plus. Autorité, délai et tarif à vérifier auprès de l'administration communale.",
+      "informationsLocales": [
+        "Sept villages pour quatre codes postaux : le code seul ne suffit pas à situer l’adresse.",
+        "Vallée du Geer et grande culture hesbignonne, avec un passé sucrier à Hollogne-sur-Geer.",
+        "Fermes industrielles et corps de logis anciens, aux cours de grandes dimensions."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Geer : ce qu'il faut anticiper",
+          "contenu": "Geer réunit sept villages sur quatre codes postaux différents. Boëlhe, Hollogne-sur-Geer, Darion, Omal, Ligney et Lens-Saint-Servais s'ajoutent au chef-lieu, dispersés dans la plaine hesbignonne.\n\nCette fragmentation change la préparation. Le code postal ne suffit pas à situer l'adresse, et le trajet interne à l'entité peut prendre un quart d'heure. C'est le village exact que nous demandons en premier.\n\nHollogne-sur-Geer garde la trace de son passé sucrier, avec un bâti industriel et des rues plus larges. Les autres villages relèvent de la grande culture, avec des fermes aux cours vastes et aux porches monumentaux.\n\nCes dimensions sont paradoxalement un atout : quand la cour est accessible, le camion se gare au plus près et le portage se réduit à quelques mètres. Encore faut-il vérifier la hauteur sous linteau avant de venir."
+        },
+        {
+          "titre": "Nos interventions à Geer",
+          "contenu": "Trente-neuf kilomètres et vingt-huit minutes depuis notre dépôt, essentiellement par l'autoroute.\n\nLes fermes rénovées et les maisons de village forment l'essentiel des dossiers. Le volume y est souvent important, avec des dépendances, des granges et du matériel agricole à transporter.\n\nNous groupons les interventions avec Waremme, Oreye, Faimes et Hannut, toutes proches. Sur cette Hesbaye occidentale, le regroupement est ce qui garde le devis raisonnable."
+        }
+      ]
     },
     {
       "id": "grace-hollogne",
@@ -1434,12 +1562,12 @@
       "dateVerification": "2026-08-02",
       "statut": "published",
       "autorisationStationnement": {
-        "autorite": "Zone de police de Hannut",
-        "procedure": "Toute demande d'arrêté de police dans le cadre d'un déménagement s'adresse directement aux services de police, rue Joseph Wauters 68 à Hannut, et non au service communal des infrastructures",
-        "delai": null,
+        "autorite": "Zone de police Hesbaye-Ouest, conjointement avec l’administration communale",
+        "procedure": "Le formulaire propre à la commune se transmet à la fois à la zone de police et à l'administration communale, qui délivre alors un arrêté de police couvrant la durée de l'occupation ; le déménagement y est explicitement visé",
+        "delai": "10 jours ouvrables avant le début de l’occupation",
         "cout": null,
         "signalisation": null,
-        "sourceUrl": "https://www.hannut.be/services-aux-citoyens/services-administratifs/infrastructures-communales/",
+        "sourceUrl": "https://www.police.be/5293/questions/autorisation/comment-demander-une-autorisation-pour-loccupation-de-la-voirie",
         "dateVerification": "2026-08-02"
       },
       "informationsLocales": [
@@ -1480,8 +1608,32 @@
         "huy"
       ],
       "introductionLocale": "Héron réunit quatre villages — Héron, Lavoir, Couthuin et Waret-l'Évêque — sur deux codes postaux, 4217 et 4218. L'entité borde la province de Namur : Burdinne, Wanze et Huy sont ses seules limitrophes liégeoises.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Zone de police Hesbaye-Ouest, conjointement avec l’administration communale",
+        "procedure": "Le formulaire propre à la commune se transmet à la fois à la zone de police et à l'administration communale, qui délivre alors un arrêté de police couvrant la durée de l'occupation ; le déménagement y est explicitement visé",
+        "delai": "10 jours ouvrables avant le début de l’occupation",
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.police.be/5293/questions/autorisation/comment-demander-une-autorisation-pour-loccupation-de-la-voirie",
+        "dateVerification": "2026-08-02"
+      },
+      "informationsLocales": [
+        "Commune de plateau bordant la province de Namur, avec quatre villages.",
+        "Couthuin descend vers la vallée mosane : les accès y sont en pente.",
+        "Formulaire à transmettre à la fois à la zone de police et à la commune, 10 jours ouvrables à l’avance."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Héron : ce qu'il faut anticiper",
+          "contenu": "Héron occupe le plateau hesbignon à la limite de la province de Namur. Quatre villages composent l'entité — Héron, Lavoir, Couthuin et Waret-l'Évêque — sur deux codes postaux.\n\nCouthuin se distingue nettement des autres. Le village descend vers la vallée mosane, et les routes qui y mènent sont en pente et sinueuses. Le point de stationnement du camion s'y choisit en fonction du dénivelé autant que de la distance à la porte.\n\nSur le plateau, le paysage est celui de la grande culture hesbignonne. Fermes en carré, cours fermées par un porche, granges attenantes : ces dimensions se relèvent pendant la visite technique.\n\nLa commune n'a que trois limitrophes liégeoises — Burdinne, Wanze et Huy — le reste bordant la province de Namur. Cela explique la longueur du trajet depuis notre dépôt."
+        },
+        {
+          "titre": "Nos interventions à Héron",
+          "contenu": "Quarante-huit kilomètres et trente-quatre minutes depuis notre dépôt, principalement par l'autoroute.\n\nLa demande d'autorisation suit la règle de la zone Hesbaye-Ouest : formulaire transmis à la fois à la police et à l'administration communale, dix jours ouvrables à l'avance. C'est la commune qui délivre l'arrêté de police.\n\nLes fermes rénovées et les maisons de village demandent du volume et du démontage. Nous groupons les interventions avec Wanze, Huy, Burdinne et Braives, toutes proches."
+        }
+      ]
     },
     {
       "id": "herstal",
@@ -2225,8 +2377,24 @@
         "remicourt"
       ],
       "introductionLocale": "Oreye regroupe cinq villages sous le code postal 4360 : Oreye, Otrange, Lens-sur-Geer, Grandville et Bergilers. L'entité se situe entre Waremme et Crisnée, deux communes où nous intervenons déjà.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "todoDonneesLocales": "Autorisation de stationnement : la zone de police Hesbaye — Berloz, Crisnée, Donceel, Faimes, Fexhe-le-Haut-Clocher, Geer, Oreye, Remicourt et Waremme — ne publie aucune procédure d'occupation de la voirie au 2026-08-02, et la commune non plus. Autorité, délai et tarif à vérifier auprès de l'administration communale.",
+      "informationsLocales": [
+        "Commune frontalière du Limbourg, sur la vallée du Geer.",
+        "Cinq villages, dont Otrange à la limite linguistique.",
+        "Bourg d'Oreye au bâti groupé, avec un stationnement plus contraint qu'ailleurs en Hesbaye."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Oreye : ce qu'il faut anticiper",
+          "contenu": "Oreye occupe la vallée du Geer, à la frontière du Limbourg. Cinq villages composent l'entité : Oreye, Otrange, Lens-sur-Geer, Grandville et Bergilers.\n\nLe bourg d'Oreye est plus dense que la moyenne hesbignonne. Le bâti y est groupé, les rues plus étroites, et le stationnement disputé aux abords des commerces. La réservation d'emplacement y prend son sens malgré le caractère rural de la commune.\n\nOtrange se trouve à la limite linguistique. Certaines adresses de ce secteur sont plus rapidement atteintes en passant par le Limbourg que par la province de Liège, ce qui compte pour le temps de trajet.\n\nDans les autres villages, on retrouve la Hesbaye agricole : fermes en carré, cours fermées par un porche, accès dégagés mais dimensions à vérifier."
+        },
+        {
+          "titre": "Nos interventions à Oreye",
+          "contenu": "Trente-deux kilomètres et vingt-quatre minutes depuis notre dépôt. L'accès est direct par l'autoroute.\n\nLa proximité de la frontière linguistique et néerlandaise a une conséquence pratique : une part des déménagements de ce secteur part vers le Limbourg ou les Pays-Bas. Nous les prenons en charge de bout en bout.\n\nLes maisons de village et les fermes rénovées forment l'essentiel des dossiers locaux. Nous groupons avec Crisnée, Geer, Remicourt et Bassenge, toutes proches."
+        }
+      ]
     },
     {
       "id": "ouffet",
@@ -2483,8 +2651,24 @@
         "fexhe-le-haut-clocher"
       ],
       "introductionLocale": "Remicourt réunit cinq villages — Remicourt, Lamine, Pousset, Hodeige et Momalle — répartis sur deux codes postaux, 4350 et 4351. Nous desservons l'entité entière, de Momalle à Hodeige.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "todoDonneesLocales": "Autorisation de stationnement : la zone de police Hesbaye — Berloz, Crisnée, Donceel, Faimes, Fexhe-le-Haut-Clocher, Geer, Oreye, Remicourt et Waremme — ne publie aucune procédure d'occupation de la voirie au 2026-08-02, et la commune non plus. Autorité, délai et tarif à vérifier auprès de l'administration communale.",
+      "informationsLocales": [
+        "Cinq villages en plaine, traversés par la ligne ferroviaire Liège-Bruxelles.",
+        "Momalle et Pousset ont conservé des fermes anciennes aux cours fermées.",
+        "Vingt-sept kilomètres du dépôt : accès direct par l’autoroute."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Remicourt : ce qu'il faut anticiper",
+          "contenu": "Remicourt réunit cinq villages de plaine hesbignonne : Remicourt, Lamine, Pousset, Hodeige et Momalle. Le territoire est agricole et le relief négligeable.\n\nLa ligne ferroviaire Liège-Bruxelles traverse la commune. Les passages à niveau et les ouvrages d'art qui la franchissent imposent parfois des gabarits limités en hauteur. C'est un point que nous vérifions sur l'itinéraire avant d'engager un grand porteur.\n\nMomalle et Pousset ont conservé des fermes anciennes avec cours fermées et porches de pierre. Ces dimensions décident du véhicule, et se relèvent pendant la visite technique.\n\nAilleurs, les accès sont dégagés et le stationnement disponible. Les routes entre villages restent étroites et sans accotement, ce qui demande un repérage du point de retournement."
+        },
+        {
+          "titre": "Nos interventions à Remicourt",
+          "contenu": "Vingt-sept kilomètres et vingt-quatre minutes depuis notre dépôt, par l'autoroute. Remicourt fait partie des communes hesbignonnes les plus accessibles.\n\nLes maisons unifamiliales et les fermes rénovées se partagent les dossiers. Le démontage et le remontage du mobilier volumineux y sont fréquents, les corps de logis anciens ayant des ouvertures étroites.\n\nNous groupons les interventions avec Crisnée, Donceel, Fexhe-le-Haut-Clocher et Waremme, toutes limitrophes ou proches."
+        }
+      ]
     },
     {
       "id": "saint-georges-sur-meuse",
