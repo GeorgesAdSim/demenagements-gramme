@@ -6,6 +6,19 @@
 // intermédiaire ET évite surtout de maintenir deux listes de communes — le
 // piège que la spécification demandait explicitement d'éviter.
 import donnees from './communes.json';
+// Même raison pour les pages satellites : une liste JSON, lue à l'identique par
+// le client Vite et par les scripts Node du build.
+import satellites from './pages-satellites.json';
+
+/** Pages satellites déclarées par le dépôt. Voir `pageSatellite()`. */
+const PAGES_SATELLITES = new Set<string>(satellites.pages);
+
+/**
+ * Même liste, exportée pour le contrôle de build : il vérifie que chacune de
+ * ces pages est réellement servie, sans quoi une entrée périmée ferait sauter
+ * une commune du pré-rendu.
+ */
+export const PAGES_SATELLITES_DECLAREES: readonly string[] = satellites.pages;
 
 /**
  * Règles d'autorisation de stationnement, relevées sur la source officielle de
@@ -157,16 +170,40 @@ export function getPublishedCommunes(): CommuneSEO[] {
 }
 
 /**
+ * Page satellite de la commune, si elle existe RÉELLEMENT dans cette version
+ * du code.
+ *
+ * `pageExistante` vient de Supabase. Quand une page satellite est supprimée du
+ * dépôt, la valeur reste en base et devient fausse : le pré-rendu saute alors
+ * une commune dont plus rien ne sert l'URL, et le déploiement s'interrompt sur
+ * deux 404. Le cas s'est produit sur Herstal et Seraing.
+ *
+ * Le symétrique est tout aussi cassant. Retirer la valeur en base avant que le
+ * code correspondant soit en ligne fait servir la satellite là où le contrôle
+ * de build attend une page commune. Les deux échecs ont été observés à un jour
+ * d'intervalle.
+ *
+ * La cause commune : le fait « cette page existe » était lu dans la base alors
+ * qu'il appartient au dépôt. Il y est désormais, et la base peut être en avance
+ * ou en retard sans rien casser.
+ */
+export function pageSatellite(commune: CommuneSEO): string | undefined {
+  return commune.pageExistante && PAGES_SATELLITES.has(commune.pageExistante)
+    ? commune.pageExistante
+    : undefined;
+}
+
+/**
  * Communes pour lesquelles une page locale doit réellement être générée :
  * publiées et sans page satellite antérieure.
  */
 export function getCommunesAGenerer(): CommuneSEO[] {
-  return getPublishedCommunes().filter((c) => !c.pageExistante);
+  return getPublishedCommunes().filter((c) => !pageSatellite(c));
 }
 
 /** URL canonique de la commune : sa page satellite si elle existe, sinon la page générée. */
 export function communeUrl(commune: CommuneSEO): string {
-  return commune.pageExistante ?? cheminCommune(commune.id);
+  return pageSatellite(commune) ?? cheminCommune(commune.id);
 }
 
 /**

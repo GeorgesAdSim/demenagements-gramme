@@ -97,6 +97,8 @@ export {
   COMMUNES,
   PREFIXE_COMMUNE,
   cheminCommune,
+  pageSatellite,
+  PAGES_SATELLITES_DECLAREES,
 } from './data/communes';
 
 export function render(url: string): { html: string; helmet: HelmetServerState } {
