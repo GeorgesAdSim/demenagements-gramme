@@ -202,7 +202,14 @@ export default function CommuneLandingPage() {
   return (
     <div className="font-sans">
       <SeoHead
-        title={`Déménagement à ${commune.nom} : devis gratuit 24h | Gramme`}
+        // Gabarit court de repli : sur les noms longs — Saint-Georges-sur-Meuse,
+        // Fexhe-le-Haut-Clocher — le title complet dépasse 60 caractères et se
+        // fait tronquer par Google, ce qui coupe la mention de la marque.
+        title={
+          `Déménagement à ${commune.nom} : devis gratuit 24h | Gramme`.length <= 60
+            ? `Déménagement à ${commune.nom} : devis gratuit 24h | Gramme`
+            : `Déménagement à ${commune.nom} | Gramme`
+        }
         description={
           `Déménagement à ${commune.nom} par une entreprise familiale liégeoise active depuis 1948. ` +
           `Dépôt à ${commune.distanceDepotKm ?? '—'} km. Devis gratuit sous 24h, sans engagement.`
