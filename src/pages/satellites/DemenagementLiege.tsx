@@ -108,6 +108,10 @@ const FAQ = [
     a: "Oui. Le déménagement d'entreprise se prépare différemment : inventaire du mobilier et du matériel informatique, étiquetage par poste de travail, intervention en soirée ou le week-end pour ne pas interrompre l'activité. Nos six camions permettent de traiter un plateau de bureaux en une seule rotation.",
   },
   {
+    q: 'Faut-il une autorisation pour stationner le camion à Liège ?',
+    a: "Oui. Elle est délivrée par la Zone de Police de Liège, dont le service Occupation de la voie publique traite les demandes par secteur. La démarche est exclusivement numérique depuis l'application « occuper la voie publique ». La police ne publie plus de délai fixe : le temps de traitement dépend de l'ampleur du chantier. Nous introduisons la demande dès que votre date est arrêtée, et nous posons la signalisation.",
+  },
+  {
     q: 'À quelle distance de Liège se trouve votre dépôt ?',
     a: "Notre dépôt se trouve à environ 12 km du centre de Liège, soit une vingtaine de minutes de route. Cette proximité limite les frais d'approche facturés sur le devis et nous permet d'intervenir vite, y compris pour un complément de matériel en cours de chantier.",
   },
@@ -315,6 +319,57 @@ export default function DemenagementLiege() {
                   </li>
                 ))}
               </ol>
+            </motion.div>
+
+            {/* — AUTORISATION DE STATIONNEMENT —
+                Les 70 pages communes portent ce bloc depuis les données
+                relevées en source officielle. Liège a son propre gabarit et
+                y échappait, alors que c'est la commune où la question se pose
+                le plus souvent. */}
+            <motion.div
+              initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }} variants={fadeUp}
+              className="mt-14"
+            >
+              <h2 className="text-2xl md:text-3xl font-black uppercase text-navy mb-5">
+                Autorisation de stationnement à Liège
+              </h2>
+              <div className="space-y-4 text-muted text-[17px] leading-relaxed">
+                <p>
+                  L'autorisation est délivrée par la Zone de Police de Liège, dont
+                  le service Occupation de la voie publique traite les demandes par
+                  secteur. La ville en compte cinq, du Centre et d'Outremeuse à
+                  Sainte-Walburge et Rocourt.
+                </p>
+                <p>
+                  La demande est aujourd'hui exclusivement numérique. Elle passe par
+                  l'application « occuper la voie publique » de la zone de police, et
+                  non plus par un formulaire papier.
+                </p>
+                <p>
+                  La police ne publie plus de délai fixe : elle indique que le temps
+                  de traitement dépend de l'importance du chantier et des avis
+                  extérieurs à solliciter. Nous introduisons donc la demande dès que
+                  votre date est arrêtée, sans attendre.
+                </p>
+                <p>
+                  Nous prenons cette démarche en charge, pose de la signalisation
+                  comprise. En hypercentre et dans les rues étroites du Carré, du
+                  Laveu ou d'Outremeuse, c'est elle qui rend le déménagement possible.
+                </p>
+              </div>
+              <p className="text-muted text-[14px] leading-relaxed mt-4 italic">
+                Source :{' '}
+                <a
+                  href="https://www.policeliege.be/page/occuper-la-voie-publique"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-navy underline hover:text-navy/70"
+                >
+                  information officielle publiée par la Zone de Police de Liège
+                </a>
+                , relevée le 2 août 2026. Les règles communales évoluent&nbsp;: nous
+                les revérifions à chaque dossier.
+              </p>
             </motion.div>
 
             {/* — GARANTIES — */}
