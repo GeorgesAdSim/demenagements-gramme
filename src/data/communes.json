@@ -173,8 +173,33 @@
         "welkenraedt"
       ],
       "introductionLocale": "Aubel porte le code postal 4880 et borde Dalhem, où nous intervenons déjà. L'entité se situe au cœur du pays de Herve, entre Plombières et Thimister-Clermont.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Administration communale d'Aubel",
+        "procedure": "La zone de police Pays de Herve — Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt — renvoie explicitement la demande d'occupation de la voie publique vers l'administration communale concernée, et ne la traite pas elle-même",
+        "delai": null,
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.police.be/5288/questions/autorisation/vous-souhaitez-occuper-une-partie-de-la-voie-publique",
+        "dateVerification": "2026-08-02"
+      },
+      "todoDonneesLocales": "Autorisation de stationnement : la zone de police Pays de Herve renvoie vers la commune, mais aucun délai ni tarif n'est publié en ligne au 2026-08-02. À vérifier auprès de l'administration communale.",
+      "informationsLocales": [
+        "Bocage du Pays de Herve : prairies, haies vives et fermes isolées entre les noyaux bâtis.",
+        "Commune frontalière, à quelques kilomètres des Pays-Bas et de la région germanophone.",
+        "Routes de campagne étroites, bordées de talus, avec peu de points de retournement."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Aubel : ce qu'il faut anticiper",
+          "contenu": "Aubel est au cœur du bocage hervien. Le paysage y est fait de prairies, de haies vives et de fermes isolées, séparées par des routes de campagne étroites.\n\nC'est cette dispersion qui commande l'organisation. Beaucoup d'habitations sont éloignées du centre, desservies par des chemins bordés de talus où le croisement de deux véhicules larges demande de l'attention. Nous repérons le point de retournement avant d'engager un grand porteur.\n\nLe bâti est celui des fermes du plateau : corps de logis en moellons, cours fermées par un porche, granges attenantes. La hauteur sous linteau décide souvent du camion, plus que le volume à transporter.\n\nLe centre d'Aubel, lui, fonctionne comme un bourg. Le marché et les commerces animent la place, et le stationnement y est disputé certains jours. La réservation d'emplacement redevient alors utile."
+        },
+        {
+          "titre": "Nos interventions à Aubel",
+          "contenu": "Vingt-sept kilomètres et vingt-sept minutes depuis notre dépôt. Aubel est limitrophe de Dalhem, où nous intervenons régulièrement.\n\nLes fermes rénovées et les maisons de village forment l'essentiel des dossiers. Le volume y est souvent élevé : dépendances, granges, matériel d'extérieur et outillage allongent l'inventaire par rapport à une première estimation.\n\nLa proximité de la frontière compte aussi. Une part des déménagements que nous réalisons dans ce secteur part vers les Pays-Bas ou l'Allemagne, ce qui change la préparation dès le départ."
+        }
+      ]
     },
     {
       "id": "awans",
@@ -281,8 +306,33 @@
         "waimes"
       ],
       "introductionLocale": "Baelen ne compte que deux villages, Baelen et Membach, sous le code postal 4837. L'entité borde Limbourg et Welkenraedt, et touche la Communauté germanophone par Lontzen.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Administration communale de Baelen",
+        "procedure": "La zone de police Pays de Herve — Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt — renvoie explicitement la demande d'occupation de la voie publique vers l'administration communale concernée, et ne la traite pas elle-même",
+        "delai": null,
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.police.be/5288/questions/autorisation/vous-souhaitez-occuper-une-partie-de-la-voie-publique",
+        "dateVerification": "2026-08-02"
+      },
+      "todoDonneesLocales": "Autorisation de stationnement : la zone de police Pays de Herve renvoie vers la commune, mais aucun délai ni tarif n'est publié en ligne au 2026-08-02. À vérifier auprès de l'administration communale.",
+      "informationsLocales": [
+        "Commune de transition entre le Pays de Herve et les Hautes Fagnes.",
+        "Membach est proche du barrage de la Gileppe, dans un environnement forestier.",
+        "Habitat rural dispersé, avec des accès en cour et des chemins parfois non revêtus."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Baelen : ce qu'il faut anticiper",
+          "contenu": "Baelen fait la transition entre le bocage hervien et les Hautes Fagnes. Deux villages seulement composent l'entité, Baelen et Membach, mais le territoire est étendu et largement boisé.\n\nMembach se trouve à proximité du barrage de la Gileppe, dans un environnement forestier. Les habitations y sont dispersées, souvent desservies par des chemins étroits et parfois non revêtus. Un grand porteur y accède, mais le demi-tour ne se fait pas partout.\n\nLe bâti est rural : fermes en pierre, corps de logis anciens, accès par une cour. La largeur du passage et la hauteur sous linteau se relèvent avant de choisir le véhicule.\n\nL'altitude a enfin son mot à dire. Sur les hauteurs, la neige et le verglas persistent plus longtemps qu'en vallée. Une date d'hiver se prévoit avec une marge de sécurité."
+        },
+        {
+          "titre": "Nos interventions à Baelen",
+          "contenu": "Trente-trois kilomètres et vingt-neuf minutes depuis notre dépôt. Le trajet d'approche figure sur le devis, et nous le réduisons en groupant les interventions du secteur.\n\nWelkenraedt, Limbourg, Jalhay et Eupen bordent la commune. Sur ce coin du plateau, mutualiser le déplacement est ce qui garde le devis raisonnable.\n\nLes maisons de village et les propriétés isolées demandent surtout du volume et du démontage. Granges et dépendances allongent régulièrement l'inventaire."
+        }
+      ]
     },
     {
       "id": "bassenge",
@@ -1394,7 +1444,7 @@
       "introductionLocale": "Herve réunit huit villages sur cinq codes postaux, de 4650 à 4654 : Herve, Charneux, Battice, Chaineux, Grand-Rechain, Xhendelesse, Bolland et Julémont. Avec neuf communes limitrophes en province de Liège, c'est l'entité la plus entourée de l'arrondissement.",
       "dateVerification": "2026-08-02",
       "statut": "published",
-      "todoDonneesLocales": "Autorisation de stationnement : aucune procédure publiée sur herve.be au 2026-08-02. À vérifier par téléphone auprès de l'administration communale.",
+      "todoDonneesLocales": "Autorisation de stationnement : la zone de police Pays de Herve renvoie vers la commune, mais aucun délai ni tarif n'est publié en ligne au 2026-08-02. À vérifier auprès de l'administration communale.",
       "informationsLocales": [
         "Plateau bocager : villages dispersés, fermes en carré et chemins de campagne étroits.",
         "Battice est à l'échangeur E40 / E42, ce qui rend l'accès à l'entité rapide depuis le dépôt.",
@@ -1409,7 +1459,16 @@
           "titre": "Nos interventions à Herve",
           "contenu": "Herve est à quinze kilomètres du dépôt, une vingtaine de minutes. L'échangeur de Battice rend l'entité facile à atteindre malgré son caractère rural.\n\nLes maisons unifamiliales et les fermes rénovées constituent l'essentiel de nos interventions. Le volume y est souvent élevé, avec des dépendances, des greniers et du mobilier lourd à démonter.\n\nNous desservons dans le même mouvement Dalhem, Aubel, Blegny, Soumagne et Thimister-Clermont, toutes limitrophes. Sur un plateau où les villages sont éloignés les uns des autres, cette contiguïté est ce qui rend les trajets raisonnables."
         }
-      ]
+      ],
+      "autorisationStationnement": {
+        "autorite": "Administration communale de Herve",
+        "procedure": "La zone de police Pays de Herve — Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt — renvoie explicitement la demande d'occupation de la voie publique vers l'administration communale concernée, et ne la traite pas elle-même",
+        "delai": null,
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.police.be/5288/questions/autorisation/vous-souhaitez-occuper-une-partie-de-la-voie-publique",
+        "dateVerification": "2026-08-02"
+      }
     },
     {
       "id": "huy",
@@ -1658,8 +1717,33 @@
         "jalhay"
       ],
       "introductionLocale": "Limbourg réunit trois villages — Limbourg, Bilstain et Goé — répartis sur trois codes postaux, 4830, 4831 et 4834. L'entité ne doit pas être confondue avec la province du même nom, qui est flamande et située plus au nord.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Administration communale de Limbourg",
+        "procedure": "La zone de police Pays de Herve — Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt — renvoie explicitement la demande d'occupation de la voie publique vers l'administration communale concernée, et ne la traite pas elle-même",
+        "delai": null,
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.police.be/5288/questions/autorisation/vous-souhaitez-occuper-une-partie-de-la-voie-publique",
+        "dateVerification": "2026-08-02"
+      },
+      "todoDonneesLocales": "Autorisation de stationnement : la zone de police Pays de Herve renvoie vers la commune, mais aucun délai ni tarif n'est publié en ligne au 2026-08-02. À vérifier auprès de l'administration communale.",
+      "informationsLocales": [
+        "Vieille ville perchée sur un éperon rocheux, aux rues pavées et étroites.",
+        "Goé et Bilstain occupent la vallée de la Vesdre, en contrebas.",
+        "Dénivelé important entre la ville haute et les villages de vallée."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Limbourg : ce qu'il faut anticiper",
+          "contenu": "Limbourg pose une difficulté que peu de communes de notre zone connaissent. Sa vieille ville est perchée sur un éperon rocheux, et l'on y accède par une route en forte pente qui débouche sur des rues pavées et étroites.\n\nDans ce périmètre, un grand porteur n'a pas sa place. Nous engageons un véhicule court, et nous prévoyons plusieurs rotations plutôt qu'un chargement unique. C'est plus long, mais c'est la seule façon d'y travailler correctement.\n\nLe pavé ajoute sa contrainte. Il rend le roulage des diables et des chariots plus difficile, et il impose de protéger davantage le mobilier pendant le portage.\n\nGoé et Bilstain, en contrebas dans la vallée de la Vesdre, retrouvent une configuration ordinaire. Les accès y sont plus simples et le stationnement plus disponible, mais la route entre le bas et le haut reste raide."
+        },
+        {
+          "titre": "Nos interventions à Limbourg",
+          "contenu": "Vingt-sept kilomètres et vingt-neuf minutes depuis notre dépôt. La visite technique est ici plus déterminante qu'ailleurs : c'est elle qui décide du gabarit et du nombre de rotations.\n\nDans la ville haute, nous prévoyons systématiquement une équipe renforcée. La distance entre le point de stationnement et la porte y est souvent longue, et le portage sur pavé prend plus de temps qu'un portage ordinaire.\n\nNous groupons les interventions avec Welkenraedt, Baelen, Dison et Verviers, toutes proches, ce qui contient les frais d'approche sur ce secteur."
+        }
+      ]
     },
     {
       "id": "lincent",
@@ -1890,8 +1974,33 @@
         "pepinster"
       ],
       "introductionLocale": "Olne porte le code postal 4877 et borde trois communes de l'arrondissement de Liège — Soumagne, Fléron et Trooz — que nous desservons déjà, ainsi que Herve et Pepinster.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Administration communale d'Olne",
+        "procedure": "La zone de police Pays de Herve — Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt — renvoie explicitement la demande d'occupation de la voie publique vers l'administration communale concernée, et ne la traite pas elle-même",
+        "delai": null,
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.police.be/5288/questions/autorisation/vous-souhaitez-occuper-une-partie-de-la-voie-publique",
+        "dateVerification": "2026-08-02"
+      },
+      "todoDonneesLocales": "Autorisation de stationnement : la zone de police Pays de Herve renvoie vers la commune, mais aucun délai ni tarif n'est publié en ligne au 2026-08-02. À vérifier auprès de l'administration communale.",
+      "informationsLocales": [
+        "L'une des plus petites communes de la province, sans village secondaire.",
+        "Village classé au bâti ancien : rues étroites, murs de moellons en bordure de voirie.",
+        "Position charnière entre la vallée de la Vesdre et le plateau hervien."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Olne : ce qu'il faut anticiper",
+          "contenu": "Olne est l'une des plus petites communes de la province de Liège, et l'une des mieux conservées. Son noyau ancien a gardé ses rues étroites et ses murs de moellons plantés en bordure de voirie.\n\nCette conservation a un prix logistique. Les passages sont resserrés, les virages courts, et un semi-remorque n'y entre pas. Nous adaptons le gabarit du véhicule et repérons l'itinéraire avant le jour de l'intervention.\n\nLa commune occupe une position charnière, entre la vallée de la Vesdre et le plateau du Pays de Herve. Le relief y est donc marqué : les routes montent ou descendent, rarement autre chose.\n\nAutour du village, l'habitat se disperse en fermes et en maisons isolées, avec des accès en cour dont les dimensions se relèvent pendant la visite technique."
+        },
+        {
+          "titre": "Nos interventions à Olne",
+          "contenu": "Dix-sept kilomètres et vingt-quatre minutes : Olne est l'une des communes du Pays de Herve les plus proches de notre dépôt.\n\nLa commune est limitrophe de Soumagne, Fléron et Trooz, où nous intervenons régulièrement. Nous groupons volontiers les déplacements sur ce secteur.\n\nLes maisons anciennes du village demandent surtout du démontage et un véhicule adapté. En périphérie, ce sont les volumes et les dépendances qui commandent l'organisation."
+        }
+      ]
     },
     {
       "id": "oreye",
@@ -2073,8 +2182,33 @@
         "lontzen"
       ],
       "introductionLocale": "Plombières est une entité sans village homonyme : son nom désigne le regroupement de Gemmenich, Hombourg, Montzen, Moresnet et Sippenaeken, répartis sur les codes postaux 4850, 4851 et 4852. Elle borde la Communauté germanophone par La Calamine et Lontzen.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Administration communale de Plombières",
+        "procedure": "La zone de police Pays de Herve — Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt — renvoie explicitement la demande d'occupation de la voie publique vers l'administration communale concernée, et ne la traite pas elle-même",
+        "delai": null,
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.police.be/5288/questions/autorisation/vous-souhaitez-occuper-une-partie-de-la-voie-publique",
+        "dateVerification": "2026-08-02"
+      },
+      "todoDonneesLocales": "Autorisation de stationnement : la zone de police Pays de Herve renvoie vers la commune, mais aucun délai ni tarif n'est publié en ligne au 2026-08-02. À vérifier auprès de l'administration communale.",
+      "informationsLocales": [
+        "Entité sans village homonyme : cinq villages se partagent le territoire, sur trois codes postaux.",
+        "Commune des trois frontières, à la jonction des Pays-Bas et de la région germanophone.",
+        "Gemmenich et Sippenaeken sont vallonnés et boisés, avec des accès en pente."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Plombières : ce qu'il faut anticiper",
+          "contenu": "Plombières est une entité sans village homonyme. Son nom désigne le regroupement de Gemmenich, Hombourg, Montzen, Moresnet et Sippenaeken, répartis sur trois codes postaux.\n\nCette particularité a une conséquence pratique immédiate : le nom de la commune ne dit rien de l'endroit. L'adresse exacte, avec son code postal, est la première information que nous demandons.\n\nLe relief varie fortement d'un village à l'autre. Gemmenich et Sippenaeken, vers les trois frontières, sont vallonnés et boisés, avec des accès en pente et des chemins étroits. Montzen et Hombourg relèvent davantage du plateau bocager, aux accès plus dégagés.\n\nLe bâti rural est celui du Pays de Herve : fermes en carré, cours fermées par un porche, corps de logis anciens. Les dimensions de ces passages se relèvent avant de choisir le camion."
+        },
+        {
+          "titre": "Nos interventions à Plombières",
+          "contenu": "Trente-six kilomètres et trente-cinq minutes depuis notre dépôt. Le trajet d'approche apparaît sur le devis, et nous le réduisons en groupant les interventions du secteur frontalier.\n\nLa position de la commune, au contact des Pays-Bas et de la région germanophone, rend les déménagements transfrontaliers fréquents. Notre activité de déménagement international les prend en charge de bout en bout, inventaire et emballage renforcé compris.\n\nLes fermes et les maisons de village forment l'essentiel des dossiers locaux, avec des volumes élevés et des dépendances à vider."
+        }
+      ]
     },
     {
       "id": "raeren",
@@ -2466,8 +2600,32 @@
         "trois-ponts"
       ],
       "introductionLocale": "Stavelot ne compte que deux villages, Stavelot et Francorchamps, sous le code postal 4970. L'entité borde Spa et Malmedy, et touche la Communauté germanophone par Saint-Vith.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Ville de Stavelot",
+        "procedure": "Demande d'autorisation d'occupation du domaine public introduite sur la plateforme Eaglebe ; le déménagement y est explicitement visé, au même titre que les travaux et la pose d'un conteneur",
+        "delai": null,
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.stavelot.be/ma-commune/demande-evenement-occupation-domaine-public",
+        "dateVerification": "2026-08-02"
+      },
+      "informationsLocales": [
+        "Centre historique aux rues étroites, autour de l'abbaye et de la place Saint-Remacle.",
+        "Francorchamps accueille le circuit : certaines dates sont pratiquement inaccessibles.",
+        "Demandes centralisées en ligne, avec le déménagement explicitement visé."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Stavelot : ce qu'il faut anticiper",
+          "contenu": "Stavelot a gardé un centre historique dense, organisé autour de son abbaye et de la place Saint-Remacle. Les rues y sont étroites, pavées par endroits, et le stationnement rare.\n\nDans ce périmètre, la réservation d'emplacement est indispensable et le gabarit du véhicule se choisit rue par rue. Nous prévoyons régulièrement un camion court et plusieurs rotations.\n\nFrancorchamps impose une contrainte que l'on ne rencontre nulle part ailleurs dans notre zone. Les week-ends de grande épreuve sur le circuit, la circulation et le stationnement sont bouleversés sur un large périmètre. Une date de déménagement qui tombe sur l'un de ces week-ends se déplace, tout simplement.\n\nAutour des deux noyaux, l'habitat ardennais se disperse. Maisons en pierre, accès en pente, chemins étroits : le point de retournement d'un grand porteur se repère à l'avance."
+        },
+        {
+          "titre": "Nos interventions à Stavelot",
+          "contenu": "Cinquante et un kilomètres et quarante-six minutes : Stavelot est l'un des points les plus éloignés de notre zone. Le trajet d'approche figure clairement sur le devis.\n\nNous groupons donc systématiquement les interventions stavelotaines avec Malmedy, Trois-Ponts, Stoumont et Waimes. Sur ce secteur ardennais, mutualiser le déplacement est la seule façon de garder un devis raisonnable.\n\nLa commune a centralisé ses demandes d'occupation du domaine public sur une plateforme en ligne, où le déménagement figure explicitement parmi les motifs. C'est plus rapide qu'un formulaire papier, et le suivi du dossier se fait par le même canal."
+        }
+      ]
     },
     {
       "id": "stoumont",
@@ -2493,8 +2651,24 @@
         "stavelot"
       ],
       "introductionLocale": "Stoumont réunit cinq villages sous le code postal 4987 : Stoumont, Chevron, La Gleize, Lorcé et Rahier. C'est la seule commune de l'arrondissement de Verviers à toucher celui de Huy, par Ferrières.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "todoDonneesLocales": "Autorisation de stationnement : aucune procédure publiée sur stoumont.be au 2026-08-02. À vérifier auprès de l'administration communale.",
+      "informationsLocales": [
+        "Commune la plus éloignée de notre zone : soixante-deux kilomètres depuis le dépôt.",
+        "Vallée de l'Amblève encaissée, versants boisés et villages perchés.",
+        "Habitat très dispersé : cinq villages et de nombreux hameaux isolés."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Stoumont : ce qu'il faut anticiper",
+          "contenu": "Stoumont est la commune la plus éloignée de notre zone d'intervention, et l'une des plus difficiles d'accès. La vallée de l'Amblève y est encaissée, les versants sont boisés et les villages perchés.\n\nLe territoire est vaste et l'habitat très dispersé. Cinq villages — Stoumont, Chevron, La Gleize, Lorcé, Rahier — s'y ajoutent à de nombreux hameaux isolés. Les routes qui les relient sont étroites, sinueuses et souvent en forte pente.\n\nPour un grand porteur, cela change tout. Le point de retournement se repère à l'avance, et certaines adresses n'acceptent qu'un véhicule court. Nous adaptons le gabarit dès la visite technique.\n\nL'hiver ardennais mérite d'être pris au sérieux ici plus qu'ailleurs. Sur ces routes de versant, la neige et le verglas rendent l'accès délicat pendant des jours. Une date de janvier ou février se prévoit avec une marge réelle."
+        },
+        {
+          "titre": "Nos interventions à Stoumont",
+          "contenu": "Soixante-deux kilomètres et cinquante et une minutes : c'est le trajet le plus long de toute notre zone. Il apparaît clairement sur le devis, et nous ne le cachons pas.\n\nEn contrepartie, nous groupons systématiquement les interventions de ce secteur avec Trois-Ponts, Stavelot, Malmedy et Aywaille. Sur un déplacement de cette ampleur, mutualiser le trajet est ce qui rend le devis acceptable.\n\nLes maisons de village et les propriétés isolées demandent du volume, de la main-d'œuvre et un véhicule adapté. Les dépendances et le matériel d'extérieur allongent régulièrement l'inventaire."
+        }
+      ]
     },
     {
       "id": "theux",
@@ -2557,8 +2731,33 @@
         "welkenraedt"
       ],
       "introductionLocale": "Thimister-Clermont tient son nom de ses deux villages, Thimister et Clermont, réunis sous le code postal 4890. Elle borde Herve, Aubel, Dison et Welkenraedt, où nous intervenons également.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Administration communale de Thimister-Clermont",
+        "procedure": "La zone de police Pays de Herve — Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt — renvoie explicitement la demande d'occupation de la voie publique vers l'administration communale concernée, et ne la traite pas elle-même",
+        "delai": null,
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.police.be/5288/questions/autorisation/vous-souhaitez-occuper-une-partie-de-la-voie-publique",
+        "dateVerification": "2026-08-02"
+      },
+      "todoDonneesLocales": "Autorisation de stationnement : la zone de police Pays de Herve renvoie vers la commune, mais aucun délai ni tarif n'est publié en ligne au 2026-08-02. À vérifier auprès de l'administration communale.",
+      "informationsLocales": [
+        "Deux villages seulement, sur le plateau bocager, à vingt-deux kilomètres du dépôt.",
+        "Clermont est classé parmi les plus beaux villages de Wallonie : rues anciennes et étroites.",
+        "Habitat agricole dispersé entre les deux noyaux, avec cours de ferme et porches anciens."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Thimister-Clermont : ce qu'il faut anticiper",
+          "contenu": "Thimister-Clermont tient son nom de ses deux villages, réunis en une seule entité sur le plateau bocager du Pays de Herve.\n\nClermont mérite une attention particulière. Classé parmi les plus beaux villages de Wallonie, il a conservé sa place, ses maisons anciennes et ses rues étroites. Un camion y circule, mais l'itinéraire et le point de stationnement se repèrent avant l'intervention plutôt que le matin même.\n\nThimister est plus étalé et plus récent, avec des accès nettement plus simples et du stationnement disponible.\n\nEntre les deux, l'habitat se disperse en fermes et en maisons isolées. Cours fermées par un porche, seuils surélevés, granges attenantes : ces dimensions décident du véhicule que nous engageons, et elles se relèvent pendant la visite technique."
+        },
+        {
+          "titre": "Nos interventions à Thimister-Clermont",
+          "contenu": "Vingt-deux kilomètres et vingt-trois minutes depuis notre dépôt. C'est l'une des communes du Pays de Herve les plus rapidement accessibles.\n\nLes fermes rénovées et les maisons de village constituent l'essentiel des dossiers. Le volume y est souvent important, avec dépendances, greniers et matériel d'extérieur.\n\nNous groupons les interventions avec Herve, Aubel, Welkenraedt et Dison, toutes proches. Sur un plateau où les villages sont éloignés les uns des autres, cette contiguïté est ce qui rend les trajets raisonnables."
+        }
+      ]
     },
     {
       "id": "tinlot",
@@ -2610,8 +2809,24 @@
         "lierneux"
       ],
       "introductionLocale": "Trois-Ponts réunit Basse-Bodeux, Fosse et Wanne sous les codes postaux 4980 et 4983 — aucune de ses trois anciennes communes ne porte le nom de l'entité. Elle borde Stoumont et Stavelot, que nous desservons déjà.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "todoDonneesLocales": "Autorisation de stationnement : seule l'ordonnance de police administrative générale est publiée, sans procédure de demande. À vérifier auprès de l'administration communale.",
+      "informationsLocales": [
+        "Confluent de l'Amblève et de la Salm : trois vallées se rejoignent dans la commune.",
+        "Aucune commune limitrophe liégeoise : l'entité borde le Luxembourg belge.",
+        "Villages de versant aux accès en pente, reliés par des routes sinueuses."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Trois-Ponts : ce qu'il faut anticiper",
+          "contenu": "Trois-Ponts doit son nom au confluent de l'Amblève et de la Salm. Trois vallées s'y rejoignent, et le relief y est partout : il n'existe pratiquement pas de terrain plat dans la commune.\n\nLes villages de Basse-Bodeux, Fosse et Wanne s'accrochent aux versants. Les routes qui y montent sont étroites, sinueuses et bordées de talus, avec peu de points de croisement pour deux véhicules larges.\n\nDans ce contexte, le gabarit du camion est la première décision. Nous engageons régulièrement un véhicule court, quitte à prévoir plusieurs rotations depuis un point de regroupement en fond de vallée.\n\nLa commune est enfin la seule de notre zone à n'avoir aucune limitrophe liégeoise : elle borde le Luxembourg belge. Cela ne change rien à la prestation, mais cela explique la longueur du trajet."
+        },
+        {
+          "titre": "Nos interventions à Trois-Ponts",
+          "contenu": "Cinquante-sept kilomètres et cinquante-deux minutes depuis notre dépôt. Le trajet d'approche figure sur le devis, sans détour.\n\nNous groupons systématiquement les interventions avec Stavelot, Stoumont et Malmedy, les seules communes de notre zone à proximité. C'est ce qui rend le déplacement économiquement tenable.\n\nLes maisons de village et les propriétés de versant demandent surtout un véhicule adapté et une équipe suffisante. Le portage y est souvent plus long qu'ailleurs, faute de pouvoir stationner au pied de la porte."
+        }
+      ]
     },
     {
       "id": "trooz",
@@ -2884,8 +3099,24 @@
         "butgenbach"
       ],
       "introductionLocale": "Waimes réunit trois villages sous le code postal 4950 : Waimes, Faymonville et Robertville. L'entité est entourée de communes germanophones — Eupen, Butgenbach et Amblève — et borde Malmedy et Jalhay.",
-      "dateVerification": "2026-07-31",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "todoDonneesLocales": "Autorisation de stationnement : aucune procédure publiée sur waimes.be au 2026-08-02. À vérifier auprès de l'administration communale.",
+      "informationsLocales": [
+        "Commune française à facilités germanophones, à la lisière des Hautes Fagnes.",
+        "Robertville et son lac : habitat touristique dispersé, avec accès privés parfois longs.",
+        "Altitude élevée : la neige tient bien plus longtemps que dans la vallée mosane."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Waimes : ce qu'il faut anticiper",
+          "contenu": "Waimes se situe à la lisière des Hautes Fagnes, à une altitude nettement supérieure au reste de notre zone. C'est la première donnée d'un déménagement waimerais.\n\nL'hiver y est plus long et plus rude. La neige et le verglas tiennent sur les routes de plateau bien après avoir disparu de la vallée mosane. Une date de décembre à mars se prévoit avec une marge, et nous surveillons les conditions les jours précédents.\n\nRobertville et son lac ont attiré un habitat touristique dispersé. Beaucoup de propriétés sont en retrait de la voirie, desservies par des accès privés parfois longs et étroits. Le camion s'arrête loin de la porte, ce qui change le temps de chargement.\n\nFaymonville et le centre de Waimes gardent un caractère de village ardennais, avec des maisons en pierre, des cours et des accès à relever avant l'intervention."
+        },
+        {
+          "titre": "Nos interventions à Waimes",
+          "contenu": "Soixante kilomètres et cinquante-six minutes : Waimes fait partie des trois points les plus éloignés de notre zone d'intervention, avec Stoumont et Trois-Ponts.\n\nNous groupons donc systématiquement les interventions avec Malmedy, Stavelot et Jalhay. Sur ce secteur des Fagnes, mutualiser le déplacement est indispensable pour garder un devis raisonnable.\n\nLes résidences secondaires y sont plus nombreuses qu'ailleurs dans notre zone. Ces dossiers combinent souvent transport et passage en garde-meubles, ce que nous organisons de bout en bout."
+        }
+      ]
     },
     {
       "id": "wanze",
@@ -3036,7 +3267,7 @@
       "introductionLocale": "Welkenraedt ne compte que deux villages, Welkenraedt et Henri-Chapelle, sur deux codes postaux, 4840 et 4841. Avec sept limitrophes liégeoises, l'entité fait la jonction entre le pays de Herve et la Communauté germanophone.",
       "dateVerification": "2026-08-02",
       "statut": "published",
-      "todoDonneesLocales": "Autorisation de stationnement : la commune prête des panneaux d'interdiction de stationner, mais la page qui en détaillait les modalités renvoie une erreur 404 au 2026-08-02 et la page du service Travaux ne les reprend pas. Gratuité, délai de réservation et caution à reconfirmer auprès de l'administration.",
+      "todoDonneesLocales": "Autorisation de stationnement : la commune prête des panneaux d'interdiction de stationner, mais la page qui en détaillait les modalités renvoie une 404 au 2026-08-02. Gratuité, délai de réservation et caution à reconfirmer auprès de l'administration.",
       "informationsLocales": [
         "Commune frontalière : à quelques kilomètres de la région germanophone et des Pays-Bas.",
         "Henri-Chapelle s'étend sur le plateau, avec un habitat agricole dispersé.",
@@ -3051,7 +3282,16 @@
           "titre": "Nos interventions à Welkenraedt",
           "contenu": "Trente et un kilomètres et vingt-huit minutes depuis notre dépôt, essentiellement par l'autoroute qui traverse la commune.\n\nLes maisons du centre demandent surtout une bonne gestion du stationnement et du démontage. Sur le plateau d'Henri-Chapelle, ce sont les volumes et les dépendances qui commandent l'organisation.\n\nNous groupons les interventions avec Baelen, Limbourg, Plombières et Thimister-Clermont, toutes proches. Les départs vers l'étranger depuis ce secteur frontalier sont fréquents, et notre activité de déménagement international les prend en charge de bout en bout."
         }
-      ]
+      ],
+      "autorisationStationnement": {
+        "autorite": "Administration communale de Welkenraedt",
+        "procedure": "La zone de police Pays de Herve — Aubel, Baelen, Herve, Limbourg, Olne, Plombières, Thimister-Clermont et Welkenraedt — renvoie explicitement la demande d'occupation de la voie publique vers l'administration communale concernée, et ne la traite pas elle-même",
+        "delai": null,
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.police.be/5288/questions/autorisation/vous-souhaitez-occuper-une-partie-de-la-voie-publique",
+        "dateVerification": "2026-08-02"
+      }
     }
   ]
 }
