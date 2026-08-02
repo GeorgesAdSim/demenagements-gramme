@@ -63,12 +63,22 @@ const LOCAL_BUSINESS = {
  * Référence compacte à l'entreprise, servie sur toutes les pages sauf celles
  * qui décrivent réellement l'établissement.
  *
- * Elle porte le même `@id` que la déclaration complète : les moteurs
- * rattachent donc la page à l'entité déjà connue, sans qu'une soixantaine de
- * pages répètent mot pour mot la même adresse, les mêmes horaires et la même
- * liste de pays. Un `@id` seul suffirait techniquement, mais il resterait
- * pendant tant que le crawler n'a pas lu la page qui définit l'entité : les
- * deux propriétés d'identification permettent de la reconnaître isolément.
+ * Elle porte le même `@id` que la déclaration complète : les moteurs rattachent
+ * donc la page à l'entité déjà connue, sans qu'une soixantaine de pages répètent
+ * la géolocalisation, les horaires, la liste de pays desservis et le numéro de
+ * TVA. C'est cette répétition-là qui faisait ressembler chaque page commune à
+ * une déclaration d'établissement distincte.
+ *
+ * ⚠️ `name` et `address` ne sont PAS optionnels ici, malgré le mot « référence ».
+ *
+ * MovingCompany est une sous-classe de LocalBusiness, et Google exige les deux
+ * champs sur tout nœud de ce type. Une première version omettait l'adresse — le
+ * nœud se voulait un simple renvoi par `@id` — et les validateurs ont lu une
+ * déclaration LocalBusiness incomplète sur 89 pages. Le type détermine ce qui
+ * est exigé, pas l'intention.
+ *
+ * Retirer l'adresse d'ici casse donc à nouveau la validation. Pour alléger le
+ * nœud, retirer d'autres propriétés, jamais celles-là.
  */
 const ORG_REFERENCE = {
   '@context': 'https://schema.org',
@@ -76,6 +86,8 @@ const ORG_REFERENCE = {
   '@id': ORG_ID,
   name: 'Déménagements Gramme',
   url: BASE_URL,
+  telephone: '+3242645016',
+  address: LOCAL_BUSINESS.address,
 };
 
 // Généré depuis la source partagée des questions, et non écrit en dur : Google
