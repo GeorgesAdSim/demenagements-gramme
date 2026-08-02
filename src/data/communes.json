@@ -175,8 +175,25 @@
         "fexhe-le-haut-clocher",
         "grace-hollogne"
       ],
-      "dateVerification": "2026-07-30",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "todoDonneesLocales": "Autorisation de stationnement : le formulaire d'occupation du domaine public publié sur awans.be est un PDF scanné, illisible automatiquement. Délai et redevance à vérifier auprès du secrétariat du Bourgmestre.",
+      "introductionLocale": "Awans réunit Awans, Fooz, Hognoul, Villers-l'Évêque et Othée sous deux codes postaux, 4340 et 4342. La commune borde l'aéroport de Liège, en Hesbaye.",
+      "informationsLocales": [
+        "Plaine hesbignonne : accès dégagés et stationnement rarement contraint.",
+        "Proximité de l'échangeur de Loncin et de l'aéroport : axes rapides, trafic dense aux pointes.",
+        "Villages agricoles avec fermes en carré, cours intérieures et porches anciens."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Awans : ce qu'il faut anticiper",
+          "contenu": "Awans est une commune de plaine, posée sur le plateau hesbignon à l'ouest de Liège. Le relief n'y pose aucun problème et le stationnement est disponible dans la plupart des rues.\n\nSa position est en revanche particulière. La commune est encadrée par l'échangeur de Loncin et l'aéroport de Liège. Les axes sont rapides et bien dimensionnés, mais leur trafic est soutenu aux heures de pointe, ce qui décide de l'heure à laquelle nous commençons.\n\nFooz, Hognoul, Villers-l'Évêque et Othée gardent un caractère agricole marqué. On y trouve des fermes en carré et des corps de logis anciens, avec des cours fermées par un porche. La hauteur et la largeur de ces passages se relèvent avant de choisir le véhicule.\n\nDans le centre d'Awans, l'habitat est plus groupé et plus récent, avec des lotissements aux accès simples mais parfois sans possibilité de retournement."
+        },
+        {
+          "titre": "Nos interventions à Awans",
+          "contenu": "Seize kilomètres et quatorze minutes : Awans est l'une des communes les plus rapidement accessibles depuis notre dépôt, grâce à l'autoroute.\n\nNous y traitons surtout des maisons unifamiliales et des fermes rénovées, avec des volumes importants et beaucoup de mobilier à démonter. Les dépendances et les granges rallongent souvent l'inventaire.\n\nLa commune est limitrophe d'Ans et de Grâce-Hollogne, où nous intervenons régulièrement. Grouper les déplacements sur ce secteur ouest permet de proposer des créneaux plus larges."
+        }
+      ]
     },
     {
       "id": "aywaille",
@@ -289,8 +306,33 @@
         "fleron",
         "soumagne"
       ],
-      "dateVerification": "2026-07-30",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Zone de Police Beyne-Fléron-Soumagne",
+        "procedure": "Formulaire commun aux trois communes, portant une case « déménagement », à renvoyer par e-mail ; les panneaux d'interdiction de stationner se demandent au service Travaux",
+        "delai": "3 semaines avant l'occupation de la voirie",
+        "cout": "75 € par intervention pour la location et la livraison du matériel de signalisation, à payer au plus tard deux jours ouvrés avant l'occupation",
+        "signalisation": null,
+        "sourceUrl": "https://www.beyne-heusay.be/mobilite",
+        "dateVerification": "2026-08-02"
+      },
+      "introductionLocale": "Beyne-Heusay réunit Beyne-Heusay, Queue-du-Bois et Bellaire sous le code postal 4610. La commune occupe le coteau qui monte de Liège vers le plateau de Herve.",
+      "informationsLocales": [
+        "Commune dense et de petite taille, accolée à Liège : bâti mitoyen quasi continu.",
+        "Coteau marqué : les rues montent franchement depuis la vallée de la Vesdre.",
+        "La commune loue les panneaux d'interdiction de stationner pour 75 € par intervention."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Beyne-Heusay : ce qu'il faut anticiper",
+          "contenu": "Beyne-Heusay est une commune compacte et densément bâtie, directement accolée à Liège. Le tissu urbain y est presque continu, fait de maisons mitoyennes alignées le long des rues.\n\nCe type d'habitat ne laisse aucune marge. Pas d'allée, pas de recul, une porte qui donne sur le trottoir. Le camion se gare sur la voirie, et la réservation d'emplacement est la règle plutôt que l'exception.\n\nLe relief ajoute sa difficulté. La commune grimpe le coteau depuis la vallée, et certaines rues sont franchement pentues. Sur un déménagement d'hiver, la pente décide de l'endroit où le camion peut se poster en sécurité.\n\nBeyne-Heusay se distingue enfin par un service concret : la commune loue elle-même les panneaux d'interdiction de stationner, livraison comprise, pour 75 euros par intervention. Peu de communes proposent cette solution clé en main."
+        },
+        {
+          "titre": "Nos interventions à Beyne-Heusay",
+          "contenu": "Onze kilomètres depuis notre dépôt, une vingtaine de minutes. C'est court, et cela permet des interventions en plusieurs rotations quand la rue n'accepte qu'un véhicule de gabarit réduit.\n\nLes maisons mitoyennes du centre demandent surtout du démontage. Couloirs étroits, escaliers en quart tournant, portes de faible largeur : le mobilier volumineux ne sort pas monté.\n\nQueue-du-Bois et Bellaire, un peu plus haut, offrent des accès légèrement plus dégagés. Nous groupons régulièrement les interventions avec Fléron et Soumagne, qui partagent la même zone de police et le même formulaire."
+        }
+      ]
     },
     {
       "id": "blegny",
@@ -318,8 +360,25 @@
         "herve",
         "beyne-heusay"
       ],
-      "dateVerification": "2026-07-30",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "todoDonneesLocales": "Autorisation de stationnement : la page « Autorisation d'occuper une partie du domaine public » de blegny.be renvoie une erreur 404 au 2026-08-02. À vérifier auprès de l'administration communale.",
+      "introductionLocale": "Blegny réunit Blegny, Trembleur, Mortier, Barchon, Saive, Housse et Saint-Remy sous trois codes postaux, de 4670 à 4672. La commune ouvre sur le Pays de Herve.",
+      "informationsLocales": [
+        "Dix kilomètres du dépôt seulement, malgré son caractère rural.",
+        "Villages dispersés sur un plateau agricole, reliés par des routes de campagne.",
+        "Fermes et corps de logis anciens, avec cours et porches aux gabarits variables."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Blegny : ce qu'il faut anticiper",
+          "contenu": "Blegny combine deux caractéristiques rarement réunies : une commune franchement rurale, et une proximité immédiate avec notre dépôt. Dix kilomètres seulement séparent les deux.\n\nLe territoire est un plateau agricole parsemé de villages. Blegny, Barchon, Saive, Housse, Mortier, Trembleur et Saint-Remy sont reliés par des routes de campagne étroites, où le croisement de deux véhicules larges demande de l'attention.\n\nLe bâti est celui du Pays de Herve : fermes en carré, corps de logis anciens, cours fermées par un porche. Ces accès n'acceptent pas tous les gabarits, et la hauteur sous porche se relève avant de choisir le camion.\n\nBarchon fait exception. Sa proximité avec l'échangeur autoroutier lui a valu un développement plus résidentiel, avec des lotissements aux accès nettement plus simples."
+        },
+        {
+          "titre": "Nos interventions à Blegny",
+          "contenu": "Dix kilomètres, un quart d'heure. Blegny est l'une des communes rurales les plus proches de notre base, ce qui se lit directement sur les frais d'approche du devis.\n\nLes déménagements de maisons de village et de fermes rénovées forment l'essentiel du travail. Le volume y est souvent important, avec des dépendances, des greniers et du matériel de jardin à transporter.\n\nCette proximité rend aussi les combinaisons avec le garde-meubles simples à organiser. Un mobilier qui doit patienter entre deux dates ne fait qu'un court trajet jusqu'à nos box."
+        }
+      ]
     },
     {
       "id": "braives",
@@ -464,8 +523,33 @@
         "sprimont",
         "trooz"
       ],
-      "dateVerification": "2026-07-30",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Zone de Police de Chaudfontaine, postes de Beaufays et de Vaux-sous-Chèvremont",
+        "procedure": "Pour placer un camion de déménagement devant l'habitation, l'autorisation se demande aux services de Police ; la demande d'occupation de la voirie elle-même s'adresse au service Travaux",
+        "delai": null,
+        "cout": null,
+        "signalisation": "La location de signalisation est possible auprès du service Travaux",
+        "sourceUrl": "https://www.chaudfontaine.be/ma-commune/administration/services-communaux/voirie-proprete-plantations/foire-aux-questions-travaux/",
+        "dateVerification": "2026-08-02"
+      },
+      "introductionLocale": "Chaudfontaine réunit Chaudfontaine, Beaufays, Embourg et Vaux-sous-Chèvremont sous quatre codes postaux, de 4050 à 4053. La commune occupe les coteaux de la Vesdre et de l'Ourthe.",
+      "informationsLocales": [
+        "Relief prononcé : Embourg et Beaufays sur le plateau, Chaudfontaine et Vaux au fond des vallées.",
+        "Voiries étroites et sinueuses sur les versants, avec peu de possibilités de retournement.",
+        "Habitat résidentiel avec jardins en terrasse : le portage depuis la rue est souvent long."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Chaudfontaine : ce qu'il faut anticiper",
+          "contenu": "Chaudfontaine est une commune de versants. Embourg et Beaufays occupent le plateau, tandis que Chaudfontaine et Vaux-sous-Chèvremont s'installent au fond des vallées de la Vesdre et de l'Ourthe. Le dénivelé entre les deux est considérable.\n\nLes routes qui relient le haut et le bas sont étroites, sinueuses et souvent bordées de talus. Un grand porteur y passe, mais ne s'y retourne pas n'importe où. Nous repérons le point de manœuvre avant l'intervention.\n\nL'habitat résidentiel du plateau pose une autre difficulté, moins visible. Les maisons ont des jardins en terrasse et des accès en escalier depuis la rue. La distance entre le camion et la porte s'y compte parfois en dizaines de mètres, ce qui change le temps de chargement.\n\nEn fond de vallée, le bâti est plus ancien et plus resserré. La réservation d'emplacement y devient nécessaire, et le gabarit du véhicule se choisit rue par rue."
+        },
+        {
+          "titre": "Nos interventions à Chaudfontaine",
+          "contenu": "Vingt-huit kilomètres et vingt-six minutes séparent Chaudfontaine de notre dépôt. Le trajet est direct, mais les derniers kilomètres dans la commune prennent souvent autant de temps que l'autoroute.\n\nLe monte-meubles est fréquemment mobilisé sur le territoire, moins pour les étages que pour les dénivelés. Hisser du mobilier depuis la rue jusqu'à une terrasse surélevée évite un portage épuisant dans un escalier extérieur.\n\nParticularité administrative : à Chaudfontaine, l'autorisation de placer le camion devant l'habitation se demande directement aux services de Police, tandis que l'occupation de voirie relève du service Travaux. Nous connaissons ce partage et l'anticipons."
+        }
+      ]
     },
     {
       "id": "clavier",
@@ -667,8 +751,33 @@
         "chaudfontaine",
         "sprimont"
       ],
-      "dateVerification": "2026-07-30",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Commune d'Esneux, service de Police administrative",
+        "procedure": "Formulaire unique à renvoyer complété par e-mail au service de Police administrative, en précisant s'il s'agit d'un déménagement avec ou sans élévateur",
+        "delai": "8 jours ouvrables minimum avant le début de l'occupation de la voie publique",
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.esneux.be/uploads/Police_administrative_Formulaire_unique.pdf",
+        "dateVerification": "2026-08-02"
+      },
+      "introductionLocale": "Esneux et Tilff se répartissent sous le code postal 4130, de part et d'autre de l'Ourthe. La commune occupe les boucles de la rivière, au sud de Liège.",
+      "informationsLocales": [
+        "Vallée encaissée de l'Ourthe : rues étroites en fond de vallée, versants abrupts.",
+        "Habitat en terrasse sur les coteaux, avec accès en escalier depuis la voirie.",
+        "Délai communal de 8 jours ouvrables, à préciser avec ou sans élévateur."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Esneux : ce qu'il faut anticiper",
+          "contenu": "Esneux est bâtie dans les boucles de l'Ourthe. La vallée y est encaissée, et les versants montent vite de part et d'autre de la rivière. C'est ce qui fait le charme de la commune, et sa difficulté logistique.\n\nEn fond de vallée, à Esneux comme à Tilff, les rues sont étroites et le stationnement rare. Un grand porteur y circule mal. Nous adaptons régulièrement le gabarit du véhicule, quitte à prévoir plusieurs rotations.\n\nSur les versants, l'habitat est en terrasse. Beaucoup de maisons ne sont accessibles que par un escalier depuis la voirie, parfois long. Le monte-meubles n'y sert pas à atteindre un étage mais à franchir un dénivelé, et il change complètement le temps d'intervention.\n\nLa commune demande par ailleurs de préciser, dans la demande d'occupation, s'il s'agit d'un déménagement avec ou sans élévateur. Cette distinction conditionne l'emprise réservée sur la voirie."
+        },
+        {
+          "titre": "Nos interventions à Esneux",
+          "contenu": "Trente-huit kilomètres et trente-six minutes séparent Esneux de notre dépôt. C'est l'un des points les plus éloignés de notre zone, et le trajet d'approche apparaît sur le devis.\n\nLe monte-meubles est mobilisé plus souvent ici que presque partout ailleurs. Les accès en escalier et les jardins en terrasse le rendent moins coûteux qu'un portage manuel, en temps comme en risque.\n\nNous groupons volontiers les interventions esneutoises avec Comblain-au-Pont, Sprimont et Chaudfontaine, qui partagent la même vallée et les mêmes contraintes d'accès."
+        }
+      ]
     },
     {
       "id": "eupen",
@@ -798,8 +907,33 @@
         "engis",
         "neupre"
       ],
-      "dateVerification": "2026-07-30",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Commune de Flémalle, service de Police administrative",
+        "procedure": "Demande introduite exclusivement en ligne, via la plateforme Eaglebe Flémalle",
+        "delai": "Au minimum 7 jours ouvrables avant le début de l'occupation, et 15 jours ouvrables en cas de fermeture complète de la voirie",
+        "cout": "10 € de traitement administratif, plus 1 € par m² et par jour d'occupation à partir du 1er juin 2026",
+        "signalisation": "La commune ne fournit pas les panneaux, qui se louent auprès de sociétés spécialisées ; ils doivent être placés 24 heures avant le début de l'occupation",
+        "sourceUrl": "https://www.flemalle.be/ma-commune/services-communaux/police-administrative/demande-d-occupation-du-domaine-public/demande-dautorisation",
+        "dateVerification": "2026-08-02"
+      },
+      "introductionLocale": "Flémalle s'étire sur la rive gauche de la Meuse, sur près de dix kilomètres. L'entité réunit huit villages sous le seul code postal 4400, d'Ivoz-Ramet à Mons-lez-Liège.",
+      "informationsLocales": [
+        "Entité très allongée : d'Awirs à Mons-lez-Liège, l'adresse exacte change tout au trajet.",
+        "Bâti industriel ancien en bord de Meuse, habitat résidentiel sur les hauteurs de Flémalle-Haute.",
+        "Demandes d'occupation centralisées en ligne sur la plateforme Eaglebe, avec redevance à la surface."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Flémalle : ce qu'il faut anticiper",
+          "contenu": "Flémalle ne ressemble à aucune autre commune de notre zone par sa forme. L'entité s'allonge sur une dizaine de kilomètres le long de la Meuse, sans centre unique. Huit villages y coexistent sous un seul code postal.\n\nCette géographie a une conséquence directe : le nom de la commune ne suffit pas à préparer une intervention. Entre Awirs, à l'extrémité ouest, et Mons-lez-Liège, il y a une différence de trajet réelle, et deux profils d'habitat distincts.\n\nLe bas de la commune porte l'héritage industriel de la vallée. Rues resserrées, maisons ouvrières mitoyennes, façades donnant sur la voirie. Le camion s'y gare sur la rue, ce qui rend la réservation d'emplacement quasi systématique.\n\nFlémalle-Haute et les hauteurs relèvent d'une logique résidentielle, avec des accès plus dégagés mais des rues en pente vers la vallée. Le point de stationnement s'y choisit en fonction du dénivelé."
+        },
+        {
+          "titre": "Nos interventions à Flémalle",
+          "contenu": "Vingt-sept kilomètres et vingt-quatre minutes séparent Flémalle de notre dépôt, en passant par l'autoroute qui longe la Meuse.\n\nFlémalle est l'une des rares communes à faire payer l'occupation du domaine public à la surface et à la journée, en plus d'un forfait administratif. Nous intégrons ce montant au devis plutôt que de le laisser apparaître après coup.\n\nLes maisons mitoyennes du bas de la commune demandent surtout du démontage et une préparation soignée du stationnement. Sur les hauteurs, ce sont les volumes et les dépendances qui commandent l'organisation."
+        }
+      ]
     },
     {
       "id": "fleron",
@@ -825,8 +959,33 @@
         "trooz",
         "olne"
       ],
-      "dateVerification": "2026-07-30",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Zone de Police Beyne-Fléron-Soumagne",
+        "procedure": "Formulaire commun aux trois communes, portant une case « déménagement », à renvoyer par e-mail au service des autorisations",
+        "delai": "3 semaines avant l'occupation de la voirie",
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.fleron.be/ma-commune/services-communaux/mobilite/demande-doccupation-de-la-voie-publique.pdf",
+        "dateVerification": "2026-08-02"
+      },
+      "introductionLocale": "Fléron réunit Fléron, Retinne, Magnée et Romsée sous quatre codes postaux, de 4620 à 4624. La commune occupe le plateau à l'est de Liège.",
+      "informationsLocales": [
+        "Plateau à l'est de Liège : accès dégagés, mais un axe central très fréquenté.",
+        "Lotissements pavillonnaires majoritaires, avec allées privées parfois courtes.",
+        "Délai de trois semaines imposé par la zone de police Beyne-Fléron-Soumagne."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Fléron : ce qu'il faut anticiper",
+          "contenu": "Fléron s'est développée sur un plateau, ce qui la distingue nettement de ses voisines de fond de vallée. Le relief y est doux et les accès généralement dégagés. Pour un déménagement, c'est une bonne nouvelle.\n\nLa contrainte principale est le trafic. L'axe qui traverse la commune concentre l'essentiel des déplacements entre Liège et le plateau de Herve. S'y arrêter aux heures de pointe complique tout, ce qui décide de l'heure de démarrage.\n\nL'habitat est majoritairement pavillonnaire, avec des allées privées. Elles sont commodes mais souvent courtes : un porteur de grande longueur reste alors sur la voirie, et la réservation d'emplacement redevient utile.\n\nRetinne, Magnée et Romsée conservent un caractère plus villageois, avec des rues plus étroites et un bâti ancien par endroits."
+        },
+        {
+          "titre": "Nos interventions à Fléron",
+          "contenu": "Quinze kilomètres depuis notre dépôt, une vingtaine de minutes. Fléron fait partie des communes que nous desservons le plus régulièrement, souvent en même temps que Beyne-Heusay et Soumagne.\n\nCes trois communes partagent leur zone de police et leur formulaire d'autorisation, avec une case dédiée au déménagement. Le délai est le même partout : trois semaines. C'est l'un des plus longs de notre zone, et il conditionne la date à laquelle nous devons connaître la vôtre.\n\nLes maisons pavillonnaires forment le gros de nos interventions fléronnaises. Les volumes y sont importants, avec garages, caves et abris de jardin à vider."
+        }
+      ]
     },
     {
       "id": "geer",
@@ -883,8 +1042,33 @@
         "ans",
         "saint-nicolas"
       ],
-      "dateVerification": "2026-07-30",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Commune de Grâce-Hollogne, service technique communal",
+        "procedure": "Formulaire à compléter et à adresser au service technique, par courrier ou par e-mail",
+        "delai": "Au minimum 15 jours ouvrables avant la date prévue d'occupation",
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.grace-hollogne.be/ma-commune/service-communaux/environnement/demarches/demande-doccupation-du-domaine-public-1",
+        "dateVerification": "2026-08-02"
+      },
+      "introductionLocale": "Grâce-Hollogne réunit Grâce-Berleur, Hollogne-aux-Pierres, Horion-Hozémont, Velroux et Bierset sous le code postal 4460. C'est la commune de l'aéroport de Liège.",
+      "informationsLocales": [
+        "Commune de l'aéroport de Liège : Bierset et Velroux vivent au rythme des zones d'activité.",
+        "Contraste marqué entre Grâce-Berleur, dense et urbaine, et les villages agricoles du sud.",
+        "Délai communal de 15 jours ouvrables, l'un des plus longs de notre zone."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Grâce-Hollogne : ce qu'il faut anticiper",
+          "contenu": "Grâce-Hollogne est coupée en deux par sa géographie économique. Au nord, Grâce-Berleur prolonge l'agglomération liégeoise, avec son bâti dense et ses rangées de maisons mitoyennes. Au sud, Velroux et Horion-Hozémont restent des villages hesbignons.\n\nEntre les deux s'étend l'aéroport et ses zones d'activité. Les axes qui les desservent sont larges et bien dimensionnés, mais leur trafic est soutenu et les horaires de pointe marqués. Nous en tenons compte pour fixer l'heure de démarrage.\n\nDans le nord de la commune, l'habitat ouvrier pose les questions habituelles : pas d'allée, façade sur voirie, couloirs étroits. Le démontage du mobilier volumineux y est souvent la seule façon de sortir les meubles.\n\nLe délai administratif mérite enfin d'être noté. Grâce-Hollogne demande quinze jours ouvrables, soit près de trois semaines calendrier. C'est l'un des délais les plus longs de notre zone d'intervention."
+        },
+        {
+          "titre": "Nos interventions à Grâce-Hollogne",
+          "contenu": "Dix-huit kilomètres, moins de vingt minutes : Grâce-Hollogne fait partie des communes que nous atteignons rapidement depuis le dépôt.\n\nNous y traitons deux types de dossiers assez différents. Les maisons de Grâce-Berleur et Hollogne-aux-Pierres, qui relèvent du déménagement urbain classique. Et les transferts d'entreprises des zones d'activité de Bierset, où les contraintes portent sur les horaires et la continuité de service.\n\nLa proximité de l'aéroport joue aussi pour les départs à l'étranger. Une expatriation qui combine fret aérien et transport de mobilier s'organise plus simplement depuis ce secteur."
+        }
+      ]
     },
     {
       "id": "hamoir",
@@ -1180,8 +1364,25 @@
         "oupeye",
         "liege"
       ],
-      "dateVerification": "2026-07-30",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "todoDonneesLocales": "Autorisation de stationnement : aucune procédure publiée sur juprelle.be au 2026-08-02. À vérifier par téléphone auprès de l'administration communale.",
+      "introductionLocale": "Juprelle réunit Juprelle, Slins, Fexhe-Slins, Villers-Saint-Siméon, Voroux-lez-Liers, Lantin, Wihogne et Paifve sous cinq codes postaux, de 4450 à 4458.",
+      "informationsLocales": [
+        "Commune hesbignonne de plaine : peu de relief, accès généralement dégagés.",
+        "Sept villages dispersés : l'adresse exacte détermine le trajet plus que le nom de la commune.",
+        "Fermes en carré et corps de logis anciens, avec cours intérieures."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Juprelle : ce qu'il faut anticiper",
+          "contenu": "Juprelle est une commune de plaine hesbignonne, sans relief marqué. Pour un déménagement, cela retire d'emblée une contrainte : pas de pente, pas de rue impraticable, et du stationnement disponible dans la plupart des villages.\n\nLa difficulté est ailleurs. Sept villages composent l'entité, répartis sur un territoire agricole étendu. Entre Paifve, au nord, et Voroux-lez-Liers, au sud, les kilomètres s'additionnent. Le nom de la commune ne suffit pas à préparer l'intervention.\n\nLe bâti rural pose sa propre question. Fermes en carré, corps de logis anciens, cours fermées : la largeur du porche et la hauteur sous linteau conditionnent le choix du véhicule.\n\nLes routes entre villages sont étroites et souvent sans accotement. Le repérage du point de retournement fait partie de la préparation."
+        },
+        {
+          "titre": "Nos interventions à Juprelle",
+          "contenu": "Quinze kilomètres et moins de vingt minutes séparent Juprelle de notre dépôt. La commune est limitrophe de Herstal et d'Oupeye, où nous intervenons quotidiennement.\n\nLes maisons unifamiliales et les fermes rénovées constituent l'essentiel des dossiers. Les volumes sont élevés, et le démontage-remontage du mobilier volumineux presque systématique.\n\nCette proximité avec notre base permet des visites techniques à court délai et des frais d'approche contenus, ce qui n'est pas courant pour une commune aussi étendue."
+        }
+      ]
     },
     {
       "id": "la-calamine",
@@ -1869,8 +2070,33 @@
         "fleron",
         "olne"
       ],
-      "dateVerification": "2026-07-30",
-      "statut": "published"
+      "dateVerification": "2026-08-02",
+      "statut": "published",
+      "autorisationStationnement": {
+        "autorite": "Zone de Police Beyne-Fléron-Soumagne",
+        "procedure": "Formulaire commun aux trois communes, portant une case « déménagement », à renvoyer par e-mail au service des autorisations",
+        "delai": "3 semaines avant l'occupation de la voirie",
+        "cout": null,
+        "signalisation": null,
+        "sourceUrl": "https://www.fleron.be/ma-commune/services-communaux/mobilite/demande-doccupation-de-la-voie-publique.pdf",
+        "dateVerification": "2026-08-02"
+      },
+      "introductionLocale": "Soumagne réunit Ayeneux, Micheroux, Melen, Cerexhe-Heuseux et Évegnée-Tignée sous quatre codes postaux, de 4630 à 4633. La commune fait la transition entre l'agglomération et le Pays de Herve.",
+      "informationsLocales": [
+        "Commune de transition : bâti groupé à l'ouest, campagne bocagère vers Melen et Évegnée.",
+        "Villages dispersés : les distances internes à l'entité sont réelles.",
+        "Délai de trois semaines imposé par la zone de police Beyne-Fléron-Soumagne."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Soumagne : ce qu'il faut anticiper",
+          "contenu": "Soumagne est une commune charnière. Son flanc ouest prolonge l'agglomération liégeoise, avec un bâti groupé et des rues de village denses. Son flanc est bascule déjà dans le paysage bocager du Pays de Herve.\n\nCette double nature se traduit sur le terrain. À Micheroux et dans le centre, les contraintes sont urbaines : stationnement disputé, rues étroites, réservation d'emplacement nécessaire. À Melen, Évegnée-Tignée et Cerexhe-Heuseux, ce sont l'habitat dispersé et les chemins de campagne qui commandent.\n\nLes distances internes ne sont pas négligeables. D'un bout à l'autre de l'entité, on change de paysage et de conditions d'accès. L'adresse exacte est donc la première information que nous demandons.\n\nLe bâti ancien du plateau réserve enfin ses classiques : cours fermées par un porche, seuils surélevés, escaliers étroits. Ces dimensions se relèvent pendant la visite technique."
+        },
+        {
+          "titre": "Nos interventions à Soumagne",
+          "contenu": "Treize kilomètres et un quart d'heure : Soumagne est l'une des communes les plus proches de notre dépôt à l'est de Liège.\n\nLa commune partage sa zone de police avec Beyne-Heusay et Fléron, ainsi qu'un formulaire d'autorisation commun où le déménagement figure explicitement. Le délai de trois semaines s'applique partout de la même façon.\n\nNous intervenons aussi bien sur des maisons de village que sur des propriétés plus isolées, où le volume est souvent élevé. Grouper les interventions avec Fléron et Beyne-Heusay, toutes limitrophes, permet de contenir les frais d'approche."
+        }
+      ]
     },
     {
       "id": "spa",
