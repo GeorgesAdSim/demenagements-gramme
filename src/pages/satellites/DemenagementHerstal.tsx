@@ -3,6 +3,9 @@ import ServiceSatellitePage from '../../components/ServiceSatellitePage';
 export default function DemenagementHerstal() {
   return (
     <ServiceSatellitePage
+      // Seule page locale qui décrit le siège social réel : c'est donc ici, et
+      // sur l'accueil, que l'établissement est déclaré au complet.
+      fullOrganization
       title="Déménagement à Herstal"
       subtitle="Déménageurs installés à Herstal, nous sommes vos voisins. Un service de proximité, rapide et professionnel pour votre déménagement."
       heroImage="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=1920"

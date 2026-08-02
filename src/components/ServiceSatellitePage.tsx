@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowRight, ArrowLeft, Phone, ChevronDown, Shield, Clock, Star, Users } from 'lucide-react';
 import TopBar from './TopBar';
 import ServiceNavbar from './ServiceNavbar';
@@ -36,6 +36,11 @@ export interface SatellitePageProps {
     description: string;
     canonical: string;
   };
+  /**
+   * Page décrivant réellement le siège social : elle porte alors la
+   * déclaration complète de l'établissement. Seule la page Herstal l'active.
+   */
+  fullOrganization?: boolean;
 }
 
 const fadeUp = {
@@ -58,6 +63,7 @@ export default function ServiceSatellitePage({
   faq,
   relatedPages,
   meta,
+  fullOrganization = false,
 }: SatellitePageProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -86,7 +92,14 @@ export default function ServiceSatellitePage({
         description={meta.description}
         canonical={meta.canonical}
       />
-      <SchemaOrg breadcrumbs={breadcrumbs} />
+      <SchemaOrg
+        organization={fullOrganization ? 'full' : 'reference'}
+        breadcrumbs={breadcrumbs}
+        // Balisage construit depuis la même liste que la FAQ affichée : les
+        // deux ne peuvent pas diverger, condition posée par Google pour
+        // accepter un FAQPage.
+        customFaq={faq.map((item) => ({ q: item.question, a: item.answer }))}
+      />
       <TopBar />
       <ServiceNavbar />
 
@@ -204,6 +217,7 @@ export default function ServiceSatellitePage({
             <div className="space-y-4">
               {faq.map((item, i) => {
                 const isOpen = openFaq === i;
+                const answerId = `faq-answer-${i}`;
                 return (
                   <motion.div
                     key={i}
@@ -215,6 +229,8 @@ export default function ServiceSatellitePage({
                   >
                     <button
                       onClick={() => setOpenFaq(isOpen ? null : i)}
+                      aria-expanded={isOpen}
+                      aria-controls={answerId}
                       className={`w-full flex items-center justify-between p-5 text-left transition-colors ${isOpen ? 'bg-yellow/15' : ''}`}
                     >
                       <span className="text-navy font-bold text-base pr-4">{item.question}</span>
@@ -222,21 +238,25 @@ export default function ServiceSatellitePage({
                         <ChevronDown className="w-5 h-5 text-navy flex-shrink-0" />
                       </motion.div>
                     </button>
-                    <AnimatePresence>
-                      {isOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="overflow-hidden"
-                        >
-                          <div className="px-5 pb-5 text-muted leading-relaxed">
-                            <p>{item.answer}</p>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                    {/* La réponse reste montée, repliée par sa hauteur.
+                        Auparavant elle était montée au clic : le HTML servi ne
+                        contenait donc que les questions, et le balisage
+                        FAQPage n'aurait décrit qu'un contenu absent de la
+                        page. `aria-hidden` évite en contrepartie qu'un lecteur
+                        d'écran annonce une réponse repliée. */}
+                    <motion.div
+                      id={answerId}
+                      role="region"
+                      aria-hidden={!isOpen}
+                      initial={false}
+                      animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-5 pb-5 text-muted leading-relaxed">
+                        <p>{item.answer}</p>
+                      </div>
+                    </motion.div>
                   </motion.div>
                 );
               })}

@@ -8,6 +8,12 @@ Zones desservies : toute la Belgique, ainsi que la France, la Suisse, l'Espagne,
 
 Prestations spécialisées : déménagement de particuliers et d'entreprises, garde-meubles en box sécurisés, monte-meubles pour étages élevés et accès difficiles, déménagement international, transport de pianos et de coffres-forts, démontage et remontage de meubles, emballage professionnel.
 
+## Pages principales
+
+- [Accueil](https://www.demenagements-gramme.be/) : présentation de l'entreprise, prestations, tarifs indicatifs et questions fréquentes.
+- [Zones d'intervention](https://www.demenagements-gramme.be/zones-intervention) : liste complète des communes desservies en province de Liège, avec la distance et le temps de trajet depuis notre dépôt pour chacune.
+- [Contact et devis gratuit](https://www.demenagements-gramme.be/contact-devis) : formulaire de demande de devis, réponse sous 24 heures ouvrables, sans engagement.
+
 ## Services
 
 - [Déménagement](https://www.demenagements-gramme.be/demenagement) : prestation complète pour particuliers et entreprises — visite technique, emballage, transport, remontage. Assurance de base incluse.
@@ -15,12 +21,26 @@ Prestations spécialisées : déménagement de particuliers et d'entreprises, ga
 - [Monte-meubles](https://www.demenagements-gramme.be/monte-meubles) : location avec opérateur pour les étages élevés et les rues étroites.
 - [Déménagement international](https://www.demenagements-gramme.be/demenagement/demenagement-international) : Europe entière, formalités douanières prises en charge, emballage aux normes export, groupage possible pour les petits volumes.
 
-## Zones d'intervention
+## Principales communes desservies
+
+Chaque commune de la province de Liège dispose de sa page. Les principales sont
+listées ici ; la liste exhaustive figure sur la page des zones d'intervention.
 
 - [Déménagement à Liège](https://www.demenagements-gramme.be/demenagement/demenagement-liege) : tous les quartiers liégeois, gestion des autorisations de stationnement auprès de la Ville.
 - [Déménageur à Liège](https://www.demenagements-gramme.be/demenagement/demenageur-liege)
+- [Déménagement à Herstal](https://www.demenagements-gramme.be/demenagement/demenagement-herstal) : commune du siège social.
 - [Déménagement à Seraing](https://www.demenagements-gramme.be/demenagement/demenagement-seraing)
-- [Déménagement à Herstal](https://www.demenagements-gramme.be/demenagement/demenagement-herstal)
+- [Déménagement à Ans](https://www.demenagements-gramme.be/demenagement/demenagement-ans)
+- [Déménagement à Verviers](https://www.demenagements-gramme.be/demenagement/demenagement-verviers)
+- [Déménagement à Huy](https://www.demenagements-gramme.be/demenagement/demenagement-huy)
+- [Déménagement à Waremme](https://www.demenagements-gramme.be/demenagement/demenagement-waremme)
+- [Déménagement à Visé](https://www.demenagements-gramme.be/demenagement/demenagement-vise)
+- [Déménagement à Oupeye](https://www.demenagements-gramme.be/demenagement/demenagement-oupeye)
+- [Déménagement à Herve](https://www.demenagements-gramme.be/demenagement/demenagement-herve)
+- [Déménagement à Flémalle](https://www.demenagements-gramme.be/demenagement/demenagement-flemalle)
+- [Déménagement à Chaudfontaine](https://www.demenagements-gramme.be/demenagement/demenagement-chaudfontaine)
+- [Déménagement à Fléron](https://www.demenagements-gramme.be/demenagement/demenagement-fleron)
+- [Déménagement à Spa](https://www.demenagements-gramme.be/demenagement/demenagement-spa)
 - [Garde-meubles à Liège](https://www.demenagements-gramme.be/garde-meubles/garde-meubles-liege)
 
 ## Prestations spécialisées
@@ -32,7 +52,6 @@ Prestations spécialisées : déménagement de particuliers et d'entreprises, ga
 
 ## Contact
 
-- [Contact et devis gratuit](https://www.demenagements-gramme.be/contact-devis) : formulaire de demande de devis, réponse sous 24 heures ouvrables, sans engagement.
 - [Page contact](https://www.demenagements-gramme.be/contact) : coordonnées, horaires et adresse.
 
 ## Conseils et informations

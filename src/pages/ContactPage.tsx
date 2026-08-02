@@ -174,7 +174,10 @@ export default function ContactPage() {
         }
         canonical={meta?.canonicalUrl || '/contact'}
       />
-      <SchemaOrg />
+      {/* Page dont les coordonnées sont le sujet même : la déclaration
+          complète de l'établissement y est à sa place, contrairement aux
+          pages communes où elle n'était que de la répétition. */}
+      <SchemaOrg organization="full" />
       <TopBar />
       <ServiceNavbar />
 
