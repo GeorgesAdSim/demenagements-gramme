@@ -61,8 +61,6 @@ const ROUTES = [
   '/monte-meubles',
   '/demenagement/demenageur-liege',
   '/demenagement/demenagement-liege',
-  '/demenagement/demenagement-seraing',
-  '/demenagement/demenagement-herstal',
   '/demenagement/demenagement-entreprise',
   '/demenagement/demenagement-piano',
   '/demenagement/demenagement-international',

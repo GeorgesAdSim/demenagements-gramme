@@ -7,6 +7,33 @@
 // piège que la spécification demandait explicitement d'éviter.
 import donnees from './communes.json';
 
+/**
+ * Règles d'autorisation de stationnement, relevées sur la source officielle de
+ * la commune ou de sa zone de police.
+ *
+ * Chaque champ facultatif vaut `null` quand la commune ne publie pas
+ * l'information — jamais une valeur plausible. Un délai ou un tarif inventé se
+ * retrouverait sur une page que des clients lisent avant d'organiser leur
+ * déménagement : le coût d'une erreur y est sans commune mesure avec celui
+ * d'une case vide. En l'absence de donnée, la page retombe sur une formulation
+ * générique mais vraie.
+ */
+export interface AutorisationStationnement {
+  /** Autorité compétente, telle qu'elle se nomme sur la source. */
+  autorite: string;
+  /** Canal d'introduction : plateforme, e-mail, formulaire papier… */
+  procedure: string;
+  /** Délai minimum publié, en toutes lettres. */
+  delai: string | null;
+  /** Montant publié, repris tel quel, unité comprise. */
+  cout: string | null;
+  /** Règle de pose de la signalisation, si la commune en publie une. */
+  signalisation: string | null;
+  /** Page officielle d'où proviennent les champs ci-dessus. */
+  sourceUrl: string;
+  dateVerification: string;
+}
+
 export interface CommuneSEO {
   /** Slug unique, stable, sans accent. Sert de segment d'URL. */
   id: string;
@@ -34,6 +61,25 @@ export interface CommuneSEO {
   communesVoisines: string[];
   introductionLocale?: string;
   informationsLocales?: string[];
+  /**
+   * Sections rédigées propres à la commune, rendues en H2 suivi de paragraphes.
+   *
+   * `informationsLocales` ne prend que des puces courtes : une commune sur
+   * laquelle il y a réellement quelque chose à raconter — le siège social à
+   * Herstal, la densité urbaine à Seraing — n'y tenait pas. C'est ce qui a
+   * permis de migrer les pages satellites sans perdre leur prose.
+   *
+   * `contenu` accepte plusieurs paragraphes, séparés par une ligne vide.
+   */
+  sectionsLocales?: Array<{ titre: string; contenu: string }>;
+  /**
+   * Règles d'autorisation de stationnement de la commune. Absent tant que la
+   * source officielle n'a pas été relevée ; `todoDonneesLocales` dit alors ce
+   * qui reste à vérifier.
+   */
+  autorisationStationnement?: AutorisationStationnement;
+  /** Ce qu'il reste à vérifier auprès de la commune, en clair. */
+  todoDonneesLocales?: string;
   /** Date à laquelle Gramme a validé les données locales. */
   dateVerification?: string;
   /**
