@@ -74,7 +74,7 @@
         "saint-nicolas",
         "liege"
       ],
-      "dateVerification": "2026-07-30",
+      "dateVerification": "2026-08-02",
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Zone de Police Ans / Saint-Nicolas",
@@ -84,7 +84,23 @@
         "signalisation": "À placer 48 heures avant le début du déménagement",
         "sourceUrl": "https://www.police.be/5284/actualites/reservation-demplacement-et-occupation-temporaire-de-la-voie-publique-en-quelques-clics",
         "dateVerification": "2026-08-02"
-      }
+      },
+      "introductionLocale": "Ans occupe le rebord du plateau hesbignon, juste au-dessus de Liège. L'entité réunit Ans, Loncin, Alleur et Xhendremael sous trois codes postaux, de 4430 à 4432.",
+      "informationsLocales": [
+        "Bâti en ruban le long des chaussées : la façade donne souvent directement sur une voirie passante.",
+        "Immeubles à appartements nombreux autour d'Ans-centre et de Loncin, où le monte-meubles est fréquent.",
+        "Échangeur de Loncin à proximité immédiate : accès rapide, mais trafic dense aux heures de pointe."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Ans : ce qu'il faut anticiper",
+          "contenu": "Ans s'est construite le long de ses chaussées. Beaucoup de maisons ouvrent directement sur une voirie passante, sans recul ni allée. Garer un camion de 60 m³ devant la porte y demande une réservation d'emplacement, pas un coup de chance.\n\nLe centre d'Ans et Loncin comptent de nombreux immeubles à appartements. Trois ou quatre étages, une cage d'escalier étroite, parfois pas d'ascenseur : c'est le profil qui appelle le monte-meubles. Nous le prévoyons dès la visite technique plutôt que de le découvrir le matin même.\n\nAlleur et Xhendremael changent complètement de registre. On y trouve du pavillonnaire récent et de l'habitat rural, avec des accès plus dégagés mais des rues parfois sans trottoir. Le stationnement y pose rarement problème.\n\nDernier point, le relief. Ans domine la vallée : les rues qui descendent vers Liège sont franchement pentues. Sur un déménagement d'hiver, cela conditionne l'endroit où le camion peut se poster en sécurité."
+        },
+        {
+          "titre": "Nos interventions à Ans",
+          "contenu": "Douze kilomètres et un quart d'heure séparent Ans de notre dépôt. C'est assez court pour qu'un aller-retour dans la journée reste possible sur les gros volumes.\n\nDeux types de chantiers reviennent le plus souvent. Les appartements du centre, où le monte-meubles et la réservation d'emplacement font l'essentiel du travail de préparation. Et les maisons d'Alleur et Xhendremael, où c'est le volume qui commande, avec démontage et remontage du mobilier.\n\nL'échangeur de Loncin est à la fois un atout et une contrainte. Il met l'autoroute à deux minutes, ce qui compte pour un déménagement vers l'étranger. Il sature aux heures de pointe, ce qui décide de l'heure à laquelle nous commençons."
+        }
+      ]
     },
     {
       "id": "anthisnes",
@@ -992,12 +1008,17 @@
         {
           "titre": "Tous les quartiers de Herstal desservis",
           "contenu": "Nous intervenons dans l'ensemble de l'entité : le centre, Vottem, Liers, Milmort, Pontisse et les autres quartiers. Que vous restiez dans la commune ou que vous la quittiez, nous prenons le déménagement en charge de bout en bout.\n\nNos camions partent de notre dépôt d'Oupeye, à quatre kilomètres de Herstal. Le trajet d'approche est donc l'un des plus courts de toute notre zone, ce qui allège d'autant la ligne correspondante du devis."
+        },
+        {
+          "titre": "Nos interventions à Herstal",
+          "contenu": "Herstal est la commune que nous connaissons le mieux, et pour cause : c'est celle de notre siège. Nos interventions y couvrent l'ensemble des profils, du studio du centre à la maison familiale de Liers.\n\nLe bâti du centre est fait de maisons mitoyennes ouvrant sur la voirie, sans allée ni recul. La réservation d'emplacement y est presque toujours nécessaire, et le démontage du mobilier volumineux souvent indispensable pour passer les couloirs.\n\nVottem, Liers et Milmort relèvent d'une logique plus résidentielle. Les accès y sont plus dégagés, les volumes plus importants, et les dépendances à vider plus fréquentes.\n\nÀ quatre kilomètres du dépôt, un aller-retour supplémentaire ne compromet jamais la journée. C'est la souplesse d'organisation que seules les communes les plus proches permettent."
         }
       ],
       "informationsLocales": [
         "Commune du siège social : visite technique organisable à très court délai.",
         "Habitat mêlant maisons mitoyennes du centre et quartiers résidentiels à Vottem, Liers et Milmort.",
-        "Trajet d'approche parmi les plus courts de notre zone, à quatre kilomètres du dépôt."
+        "Trajet d'approche parmi les plus courts de notre zone, à quatre kilomètres du dépôt.",
+        "Maisons mitoyennes du centre ouvrant directement sur la voirie : réservation d'emplacement quasi systématique."
       ],
       "autorisationStationnement": {
         "autorite": "Police de Herstal, service Mobilité",
@@ -1040,9 +1061,24 @@
         "thimister-clermont"
       ],
       "introductionLocale": "Herve réunit huit villages sur cinq codes postaux, de 4650 à 4654 : Herve, Charneux, Battice, Chaineux, Grand-Rechain, Xhendelesse, Bolland et Julémont. Avec neuf communes limitrophes en province de Liège, c'est l'entité la plus entourée de l'arrondissement.",
-      "dateVerification": "2026-07-31",
+      "dateVerification": "2026-08-02",
       "statut": "published",
-      "todoDonneesLocales": "Autorisation de stationnement : aucune procédure publiée sur herve.be au 2026-08-02. À vérifier par téléphone auprès de l'administration communale."
+      "todoDonneesLocales": "Autorisation de stationnement : aucune procédure publiée sur herve.be au 2026-08-02. À vérifier par téléphone auprès de l'administration communale.",
+      "informationsLocales": [
+        "Plateau bocager : villages dispersés, fermes en carré et chemins de campagne étroits.",
+        "Battice est à l'échangeur E40 / E42, ce qui rend l'accès à l'entité rapide depuis le dépôt.",
+        "Cours de ferme et porches anciens : le gabarit du camion se relève avant l'intervention."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Herve : ce qu'il faut anticiper",
+          "contenu": "Le Pays de Herve n'a ni centre unique ni rue commerçante dominante. L'entité rassemble huit villages dispersés sur un plateau bocager, de Charneux à Julémont en passant par Bolland et Xhendelesse.\n\nCette dispersion est la première contrainte. L'adresse précise détermine tout : le temps de trajet interne, l'accès, parfois même le gabarit du véhicule. Deux déménagements dans la même commune peuvent demander deux organisations différentes.\n\nLe bâti rural est la seconde. Fermes en carré, corps de logis anciens, cours fermées par un porche : ces accès n'acceptent pas tous les camions. Nous relevons les hauteurs et les largeurs pendant la visite technique, avant de choisir le véhicule.\n\nLes chemins de campagne, enfin, sont étroits et parfois bordés de talus. Le croisement y est difficile et le demi-tour d'un grand porteur souvent impossible. Nous repérons le point de retournement à l'avance."
+        },
+        {
+          "titre": "Nos interventions à Herve",
+          "contenu": "Herve est à quinze kilomètres du dépôt, une vingtaine de minutes. L'échangeur de Battice rend l'entité facile à atteindre malgré son caractère rural.\n\nLes maisons unifamiliales et les fermes rénovées constituent l'essentiel de nos interventions. Le volume y est souvent élevé, avec des dépendances, des greniers et du mobilier lourd à démonter.\n\nNous desservons dans le même mouvement Dalhem, Aubel, Blegny, Soumagne et Thimister-Clermont, toutes limitrophes. Sur un plateau où les villages sont éloignés les uns des autres, cette contiguïté est ce qui rend les trajets raisonnables."
+        }
+      ]
     },
     {
       "id": "huy",
@@ -1065,11 +1101,11 @@
       ],
       "introductionLocale": "Spécialistes du déménagement en région hutoise, nous maîtrisons les spécificités de la vallée de la Meuse pour vous garantir un emménagement sans stress.",
       "informationsLocales": [
-        "Mise à disposition de lifts extérieurs, indispensables pour les maisons de maître et les ruelles étroites du centre historique.",
-        "Équipements adaptés pour les déménagements sur les rives de la Meuse et les zones en dénivelé.",
-        "Service d'emballage professionnel pour protéger vos biens lors des transports sinueux."
+        "Centre historique aux rues étroites, coincé entre la Meuse et le coteau du Fort.",
+        "La Ville facture 62 € la pose de la signalisation, ou demande une caution de 25 € par panneau.",
+        "Ben-Ahin et Tihange s'étirent sur les coteaux : accès en pente et rues sinueuses."
       ],
-      "dateVerification": "2026-07-30",
+      "dateVerification": "2026-08-02",
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Zone de Police de Huy, service Circulation",
@@ -1079,7 +1115,17 @@
         "signalisation": "Si vous la posez vous-même, au plus tard vers 16 h le jour précédant la réservation",
         "sourceUrl": "https://www.huy.be/ma-commune/securite-secours/police/chantiers-travaux",
         "dateVerification": "2026-08-02"
-      }
+      },
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Huy : ce qu'il faut anticiper",
+          "contenu": "Huy tient dans un couloir. La Meuse d'un côté, le coteau du Fort de l'autre, et entre les deux un centre historique dont les rues n'ont pas été dessinées pour un semi-remorque.\n\nDans ce périmètre, la réservation d'emplacement n'est pas une commodité mais une nécessité. Certaines ruelles n'admettent qu'un véhicule de gabarit réduit. Nous adaptons alors la taille du camion, quitte à faire deux rotations plutôt qu'une.\n\nHuy se distingue aussi par la transparence de son tarif. La Ville facture 62 euros la pose de la signalisation par son propre service. Si vous préférez la poser vous-même sans disposer de panneaux, une caution de 25 euros par panneau est demandée. Peu de communes publient ces montants.\n\nBen-Ahin et Tihange, enfin, s'étirent sur les hauteurs. On y trouve des maisons avec jardin en terrasse et des accès en pente, où le camion se gare rarement au niveau de l'entrée."
+        },
+        {
+          "titre": "Nos interventions à Huy",
+          "contenu": "Huy est à quarante-six kilomètres du dépôt, environ trente-sept minutes par l'autoroute. C'est l'un des points les plus éloignés de notre zone, ce qui se reflète sur la ligne des frais d'approche du devis.\n\nEn contrepartie, nous groupons volontiers les interventions hutoises avec celles d'Amay, Wanze et Villers-le-Bouillet, toutes voisines. Cela permet d'optimiser les trajets et de proposer des créneaux plus larges.\n\nLes déménagements du centre demandent la préparation la plus poussée : gabarit du véhicule, autorisation, parfois monte-meubles. Sur les coteaux, c'est le portage et l'accès qui dictent l'organisation."
+        }
+      ]
     },
     {
       "id": "jalhay",
@@ -1518,7 +1564,7 @@
         "juprelle",
         "herstal"
       ],
-      "dateVerification": "2026-07-30",
+      "dateVerification": "2026-08-02",
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Commune d'Oupeye, service de Police administrative, de Mobilité et de Planification d'urgence",
@@ -1528,7 +1574,23 @@
         "signalisation": null,
         "sourceUrl": "https://www.oupeye.be/ma-commune/services-communaux/service-de-police-administrative-de-mobilite-et-de-planification-durgence-1/service-de-police-administrative-de-mobilite-et-de-planification-durgence",
         "dateVerification": "2026-08-02"
-      }
+      },
+      "introductionLocale": "Oupeye réunit sept villages sur cinq codes postaux, de 4680 à 4684. C'est la commune où se trouve notre dépôt : les camions en partent chaque matin.",
+      "informationsLocales": [
+        "Commune du dépôt : nos véhicules sont sur place, à trois kilomètres du centre.",
+        "Entité très étendue, de Vivegnis au sud à Heure-le-Romain au nord.",
+        "Habitat mixte : noyaux villageois anciens, lotissements récents et bord de Meuse industriel."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Oupeye : ce qu'il faut anticiper",
+          "contenu": "Oupeye est la commune de notre dépôt. Nos camions y stationnent, rue de la Digue, et en partent chaque matin. Aucune autre commune de notre zone n'est aussi proche.\n\nL'entité est vaste et hétérogène. Sept villages, cinq codes postaux, et des profils d'habitat qui n'ont rien en commun. Hermalle-sous-Argenteau et Vivegnis descendent vers la Meuse, avec un passé industriel et des rues resserrées. Heure-le-Romain et Houtain-Saint-Siméon relèvent du village hesbignon, avec ses fermes et ses cours.\n\nEntre les deux, Haccourt et Oupeye même mêlent noyaux anciens et lotissements récents. Dans les rues de lotissement, l'accès est facile mais le retournement d'un grand porteur ne l'est pas toujours.\n\nLa commune impose un délai ferme pour l'occupation du domaine public : dix jours ouvrables, sous peine d'irrecevabilité. C'est l'une des rares à formuler la règle aussi nettement, et elle mérite d'être prise au sérieux."
+        },
+        {
+          "titre": "Nos interventions à Oupeye",
+          "contenu": "Trois kilomètres, cinq minutes. C'est la distance la plus courte de toute notre zone d'intervention, et cela se lit directement sur le devis : les frais d'approche y sont réduits au minimum.\n\nCette proximité change aussi la souplesse d'organisation. Un oubli, une caisse supplémentaire, un aller-retour imprévu : rien de tout cela ne compromet la journée quand le dépôt est à cinq minutes.\n\nNous intervenons dans les sept villages de l'entité, du bord de Meuse aux hauteurs hesbignonnes. Les déménagements combinés avec un passage en garde-meubles sont particulièrement simples à organiser depuis Oupeye."
+        }
+      ]
     },
     {
       "id": "pepinster",
@@ -1675,7 +1737,7 @@
         "liege",
         "seraing"
       ],
-      "dateVerification": "2026-07-30",
+      "dateVerification": "2026-08-02",
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Zone de Police Ans / Saint-Nicolas",
@@ -1685,7 +1747,23 @@
         "signalisation": "À placer 48 heures avant le début du déménagement",
         "sourceUrl": "https://www.police.be/5284/actualites/reservation-demplacement-et-occupation-temporaire-de-la-voie-publique-en-quelques-clics",
         "dateVerification": "2026-08-02"
-      }
+      },
+      "introductionLocale": "Saint-Nicolas réunit Saint-Nicolas, Tilleur et Montegnée sous le code postal 4420. La commune occupe le coteau qui descend de Liège vers la Meuse.",
+      "informationsLocales": [
+        "Densité élevée : maisons ouvrières mitoyennes, sans allée ni recul sur la voirie.",
+        "Coteau marqué entre Montegnée, en hauteur, et Tilleur, en bord de Meuse.",
+        "Demandes d'occupation de la voirie centralisées sur la plateforme commune avec Ans."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Saint-Nicolas : ce qu'il faut anticiper",
+          "contenu": "Saint-Nicolas est l'une des communes les plus denses de l'agglomération liégeoise. Le bâti y est fait de longues rangées de maisons ouvrières mitoyennes, héritées du bassin industriel.\n\nCe type d'habitat pose toujours les mêmes questions. Pas d'allée, pas de recul, une façade qui donne directement sur le trottoir. Le camion se gare sur la voirie ou nulle part, ce qui rend la réservation d'emplacement quasi systématique.\n\nLe relief ajoute sa contrainte. Montegnée est sur le haut du coteau, Tilleur en bas, au bord de la Meuse. Entre les deux, les rues descendent franchement. Sur un déménagement d'hiver, cela conditionne le point de stationnement autant que la distance à la porte.\n\nLes couloirs et les escaliers de ces maisons sont par ailleurs étroits. Le démontage du mobilier volumineux n'y est pas une option de confort mais une condition pour sortir les meubles."
+        },
+        {
+          "titre": "Nos interventions à Saint-Nicolas",
+          "contenu": "Dix-huit kilomètres et une vingtaine de minutes séparent Saint-Nicolas de notre dépôt. Nous y intervenons régulièrement, souvent en même temps qu'à Ans, avec qui la commune partage sa plateforme de demandes d'occupation de la voirie.\n\nLes déménagements de maisons mitoyennes forment l'essentiel du travail. Ils demandent peu de monte-meubles mais beaucoup de démontage, et une préparation soignée du stationnement.\n\nNous traitons aussi des transferts vers les communes voisines — Ans, Grâce-Hollogne, Liège, Seraing — pour lesquels la proximité permet souvent de tout faire dans la journée."
+        }
+      ]
     },
     {
       "id": "saint-vith",
@@ -2069,7 +2147,7 @@
         "theux"
       ],
       "introductionLocale": "Verviers réunit six villages sur trois codes postaux, de 4800 à 4802 : Verviers, Ensival, Heusy, Lambermont, Petit-Rechain et Stembert. C'est le chef-lieu de l'arrondissement, et six communes le bordent en province de Liège.",
-      "dateVerification": "2026-07-31",
+      "dateVerification": "2026-08-02",
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Ville de Verviers, service de Police administrative",
@@ -2079,7 +2157,22 @@
         "signalisation": "À charge du demandeur ou du responsable du déménagement ; elle peut être louée auprès d'une société de signalisation routière",
         "sourceUrl": "https://www.verviers.be/ma-commune/administration/services-communaux/police-administrative/demarches/occupation-de-voirie-pour-demenagement",
         "dateVerification": "2026-08-02"
-      }
+      },
+      "informationsLocales": [
+        "Vallée de la Vesdre : le centre est en fond de vallée, Heusy et Stembert sur les hauteurs.",
+        "Zone à trafic limité contrôlée par caméras ANPR : l'accès temporaire se demande à l'avance.",
+        "Bâti ancien à étages dans le centre, souvent sans ascenseur."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Verviers : ce qu'il faut anticiper",
+          "contenu": "Verviers est une ville en pente. Le centre s'étale au fond de la vallée de la Vesdre, tandis que Heusy et Stembert grimpent sur les versants. D'un quartier à l'autre, les contraintes n'ont rien à voir.\n\nLe centre concentre du bâti ancien, haut et étroit. Trois à quatre niveaux, des escaliers en colimaçon, rarement un ascenseur. Le monte-meubles y est la règle plutôt que l'exception : il hisse le mobilier par la façade et évite de le faire tourner dans une cage d'escalier.\n\nVerviers a par ailleurs installé des caméras à reconnaissance de plaques pour contrôler l'accès à ses zones à trafic limité. Un utilitaire ne s'y engage pas sans autorisation. La demande d'accès temporaire s'introduit en ligne, en même temps que la réservation d'emplacement.\n\nSur les hauteurs, à Heusy notamment, le problème change : l'habitat est plus résidentiel et plus dégagé, mais les rues montent sec. Le point de stationnement du camion se choisit alors en fonction de la pente autant que de la distance à la porte."
+        },
+        {
+          "titre": "Nos interventions à Verviers",
+          "contenu": "Verviers est à vingt-six kilomètres de notre dépôt, soit une demi-heure de route par l'autoroute. C'est la ville la plus importante de l'est de notre zone.\n\nLes appartements du centre représentent la majorité de nos interventions verviétoises. Elles combinent presque toujours les trois mêmes éléments : réservation d'emplacement, autorisation d'accès si la rue est en zone limitée, et monte-meubles.\n\nEnsival, Lambermont et Petit-Rechain relèvent d'une logique plus classique de maisons unifamiliales. Nous y intervenons aussi pour des transferts de bureaux, Verviers concentrant une part de l'activité tertiaire de l'arrondissement."
+        }
+      ]
     },
     {
       "id": "villers-le-bouillet",
@@ -2133,7 +2226,7 @@
         "herstal",
         "liege"
       ],
-      "dateVerification": "2026-07-30",
+      "dateVerification": "2026-08-02",
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Ville de Visé",
@@ -2143,7 +2236,23 @@
         "signalisation": null,
         "sourceUrl": "https://www.vise.be/vivre-a-vise/environnement/eaglebe/occupation-du-domaine-public-plateforme",
         "dateVerification": "2026-08-02"
-      }
+      },
+      "introductionLocale": "Visé s'étire le long de la Meuse, en Basse-Meuse. L'entité réunit Visé, Richelle, Argenteau, Cheratte, Lixhe et Lanaye sous trois codes postaux, de 4600 à 4602.",
+      "informationsLocales": [
+        "Sept kilomètres seulement depuis notre dépôt : l'une des communes les plus proches de notre zone.",
+        "Centre compact aux rues étroites, où la réservation d'emplacement est vivement conseillée.",
+        "Demandes d'occupation du domaine public centralisées sur la plateforme Eaglebe depuis février 2025."
+      ],
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Visé : ce qu'il faut anticiper",
+          "contenu": "Visé sépare nettement son centre de ses villages. Le noyau urbain, autour de la collégiale, est compact et ancien. Les rues y sont étroites et le stationnement disputé, en particulier les jours de marché.\n\nCheratte change tout. L'ancien charbonnage a laissé un habitat accroché au coteau, avec des rues en pente et des accès parfois difficiles pour un grand gabarit. Nous y prévoyons régulièrement un véhicule plus court.\n\nLixhe et Lanaye, à l'inverse, bordent la Meuse et le canal Albert. L'habitat y est plus dispersé et les accès plus dégagés, mais les distances internes à l'entité s'allongent.\n\nVisé a par ailleurs centralisé toutes ses demandes d'occupation de la voirie sur une plateforme en ligne, accessible en permanence. C'est nettement plus rapide qu'un formulaire papier, et cela permet de suivre l'avancement du dossier."
+        },
+        {
+          "titre": "Nos interventions à Visé",
+          "contenu": "Visé est à sept kilomètres du dépôt, un quart d'heure de route. C'est l'une des communes les plus proches de notre base, et l'une de celles où nous intervenons le plus souvent.\n\nCette proximité a deux effets concrets. Les frais d'approche sont parmi les plus bas de notre grille. Et une visite technique peut s'organiser à très court délai, parfois dans la semaine.\n\nNous y traitons aussi bien des appartements du centre que des maisons de Richelle et d'Argenteau. Les déménagements vers les Pays-Bas ou l'Allemagne partent souvent de ce secteur, frontalier par nature."
+        }
+      ]
     },
     {
       "id": "waimes",
@@ -2223,11 +2332,11 @@
       ],
       "introductionLocale": "Notre équipe se déplace rapidement en Hesbaye et prend en charge votre déménagement à Waremme, que vous quittiez un appartement au centre ou une maison dans les villages environnants.",
       "informationsLocales": [
-        "Accès aisé et rapide pour nos camions via l'autoroute E40.",
-        "Prise en charge complète pour les maisons unifamiliales et les nouveaux lotissements de la région.",
-        "Autorisation de stationnement à demander au préalable auprès de la zone de police de Hesbaye pour le centre-ville."
+        "Hesbaye agricole : accès dégagés, mais les villages sont dispersés autour du centre.",
+        "Fermes en carré et corps de logis anciens, avec cours intérieures et porches parfois étroits.",
+        "Peu de relief : le stationnement est rarement contraint hors du centre-ville."
       ],
-      "dateVerification": "2026-07-30",
+      "dateVerification": "2026-08-02",
       "statut": "published",
       "autorisationStationnement": {
         "autorite": "Ville de Waremme, service de la Police administrative",
@@ -2237,7 +2346,17 @@
         "signalisation": null,
         "sourceUrl": "https://www.waremme.be/ma-ville/services-communaux/police-administrative/police-administrative",
         "dateVerification": "2026-08-02"
-      }
+      },
+      "sectionsLocales": [
+        {
+          "titre": "Déménager à Waremme : ce qu'il faut anticiper",
+          "contenu": "Waremme est une commune de plaine, au cœur de la Hesbaye agricole. C'est une bonne nouvelle pour un déménagement : pas de pente, peu de rues impraticables, et du stationnement disponible dans la plupart des quartiers.\n\nLa contrainte est ailleurs. L'entité s'étend sur six villages — Bettincourt, Bleret, Bovenistier, Grand-Axhe, Lantremange et Oleye — répartis autour du centre. Les distances internes ne sont pas négligeables, et l'adresse exacte compte autant que le nom de la commune.\n\nLe bâti rural pose sa propre question. Les fermes en carré et les anciens corps de logis ont des cours intérieures, des porches et des seuils qui n'acceptent pas tous les gabarits. Nous relevons ces dimensions pendant la visite technique.\n\nDans le centre de Waremme, en revanche, on retrouve les contraintes d'une petite ville : rues commerçantes, stationnement réglementé, et réservation d'emplacement conseillée."
+        },
+        {
+          "titre": "Nos interventions à Waremme",
+          "contenu": "Trente kilomètres et vingt-quatre minutes séparent Waremme de notre dépôt, essentiellement par l'autoroute. L'accès est direct.\n\nLes maisons unifamiliales et les fermes rénovées forment le gros de nos interventions hesbignonnes. Le volume y est souvent important, avec beaucoup de mobilier à démonter et à remonter, et parfois des dépendances à vider.\n\nNous desservons dans la foulée Faimes, Geer, Berloz et Remicourt, toutes limitrophes. Sur un secteur aussi étendu, grouper les interventions est ce qui garde les frais d'approche raisonnables."
+        }
+      ]
     },
     {
       "id": "wasseiges",

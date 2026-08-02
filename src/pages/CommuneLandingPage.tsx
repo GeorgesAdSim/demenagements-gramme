@@ -41,6 +41,46 @@ const fadeUp = {
 };
 
 /**
+ * Phrases du bloc « autorisation de stationnement ».
+ *
+ * Composées à partir des seuls champs relevés sur la source officielle : une
+ * commune qui ne publie ni délai ni tarif n'en verra apparaître aucun. Le
+ * paragraphe est donc plus court sur ces communes-là, et c'est voulu — un
+ * délai plausible inventé pour homogénéiser la mise en page se retrouverait
+ * dans l'organisation réelle d'un client.
+ */
+function phrasesStationnement(c: CommuneSEO): string[] {
+  const a = c.autorisationStationnement;
+
+  // Repli générique. Vrai partout, et vérifiable : c'est la prestation que
+  // Gramme assure réellement, sans rien affirmer sur la procédure locale.
+  if (!a) {
+    return [
+      `Réserver un emplacement devant la porte évite le portage sur cinquante mètres, et parfois le blocage d'une rue entière. C'est l'administration communale ${deCommune(c.nom)} qui délivre l'autorisation.`,
+      `Nous nous chargeons de la démarche pour vous. Elle doit être introduite plusieurs jours ouvrables à l'avance, et la signalisation est posée avant le jour du déménagement.`,
+    ];
+  }
+
+  const p: string[] = [
+    `L'autorisation est délivrée par ${a.autorite}. ${a.procedure}.`,
+  ];
+
+  if (a.delai) p.push(`Délai à respecter : ${a.delai.toLowerCase()}.`);
+  if (a.cout) p.push(`Coût annoncé par la commune : ${a.cout.toLowerCase()}.`);
+  if (a.signalisation) p.push(`Signalisation : ${a.signalisation.toLowerCase()}.`);
+
+  p.push(
+    `Nous prenons cette démarche en charge dans le cadre de votre déménagement. ${
+      a.delai
+        ? 'Le délai ci-dessus est celui de la commune : plus tôt nous connaissons votre date, plus la réservation est sûre.'
+        : "La commune ne publie pas de délai fixe : nous introduisons la demande dès que votre date est arrêtée."
+    }`
+  );
+
+  return p;
+}
+
+/**
  * FAQ construite à partir des seules données vérifiées de la commune.
  *
  * Aucune question n'est générée si l'information correspondante manque : une
@@ -56,7 +96,13 @@ function construireFaq(c: CommuneSEO): Array<{ q: string; a: string }> {
       // Le dépôt n'est volontairement pas localisé : les camions partent d'un
       // site distinct du siège social, et nommer une commune ici a déjà induit
       // en erreur — les distances avaient été mesurées depuis le siège.
-      a: `Notre dépôt se trouve à environ ${c.distanceDepotKm} km ${deCommune(c.nom)}, soit à peu près ${c.tempsTrajetEstimeMin} minutes de route. Cette proximité limite les frais d'approche facturés sur le devis.`,
+      // La phrase de conclusion dépend de la distance réelle : parler de
+      // « proximité » à quarante-sept kilomètres décrédibilise la page entière.
+      a:
+        `Notre dépôt se trouve à environ ${c.distanceDepotKm} km ${deCommune(c.nom)}, soit à peu près ${c.tempsTrajetEstimeMin} minutes de route. ` +
+        (c.distanceDepotKm <= 20
+          ? `Cette proximité limite les frais d'approche facturés sur le devis.`
+          : `Le trajet d'approche figure sur le devis, et nous le réduisons en groupant nos interventions du secteur sur une même journée.`),
     });
   }
 
@@ -66,6 +112,20 @@ function construireFaq(c: CommuneSEO): Array<{ q: string; a: string }> {
       a: `Oui. Nous desservons l'ensemble de l'entité, ${c.villages.join(', ')} compris, au même titre que le centre ${deCommune(c.nom)}.`,
     });
   }
+
+  // Question stationnement. Quand la donnée existe, la réponse change
+  // réellement d'une commune à l'autre — autorité, délai, tarif. Sinon elle
+  // reste vraie sans rien affirmer de local.
+  const a = c.autorisationStationnement;
+  faq.push({
+    q: `Faut-il une autorisation pour stationner le camion à ${c.nom} ?`,
+    a: a
+      ? `Oui. Elle est délivrée par ${a.autorite}. ${a.procedure}.` +
+        (a.delai ? ` La demande doit être introduite ${a.delai.toLowerCase()}.` : '') +
+        (a.cout ? ` Coût annoncé par la commune : ${a.cout.toLowerCase()}.` : '') +
+        ` Nous nous chargeons de la démarche pour vous.`
+      : `Oui, dès qu'il s'agit d'occuper la voirie. L'autorisation est délivrée par l'administration communale ${deCommune(c.nom)}, et la demande doit être introduite plusieurs jours ouvrables à l'avance. Nous nous en chargeons pour vous, pose de la signalisation comprise.`,
+  });
 
   faq.push({
     q: `Comment obtenir un devis pour un déménagement à ${c.nom} ?`,
@@ -260,6 +320,48 @@ export default function CommuneLandingPage() {
                 </div>
               </motion.div>
             ))}
+
+            {/* Autorisation de stationnement — le seul bloc de la page qui
+                renvoie vers une source officielle. Voir phrasesStationnement :
+                rien n'y est affirmé que la commune ne publie. */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-60px' }}
+              variants={fadeUp}
+              className="mt-12"
+            >
+              <h2 className="text-2xl md:text-3xl font-black uppercase text-navy mb-5">
+                Autorisation de stationnement à {commune.nom}
+              </h2>
+              <div className="space-y-4">
+                {phrasesStationnement(commune).map((phrase) => (
+                  <p key={phrase.slice(0, 40)} className="text-muted text-[17px] leading-relaxed">
+                    {phrase}
+                  </p>
+                ))}
+              </div>
+              {commune.autorisationStationnement && (
+                <p className="text-muted text-[14px] leading-relaxed mt-4 italic">
+                  Source :{' '}
+                  <a
+                    href={commune.autorisationStationnement.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-navy underline hover:text-navy/70"
+                  >
+                    information officielle publiée par {commune.autorisationStationnement.autorite}
+                  </a>
+                  , relevée le{' '}
+                  {new Date(commune.autorisationStationnement.dateVerification).toLocaleDateString('fr-BE', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                  })}
+                  . Les règles communales évoluent : nous les revérifions à chaque dossier.
+                </p>
+              )}
+            </motion.div>
 
             {/* Spécificités locales validées par Gramme */}
             {commune.informationsLocales && commune.informationsLocales.length > 0 && (
