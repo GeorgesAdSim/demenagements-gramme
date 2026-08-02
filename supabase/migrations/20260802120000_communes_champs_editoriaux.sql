@@ -14,14 +14,17 @@
 -- le dépôt tant que les colonnes n'existent pas ; cette migration les crée pour
 -- que la base redevienne la source unique.
 --
--- CE QUE LA MIGRATION CORRIGE AUSSI
+-- CE QUE CETTE MIGRATION NE FAIT PAS
 --
--- `page_existante` vaut encore une URL de page satellite pour Herstal et
--- Seraing. Ces deux satellites ont été supprimées : leurs communes sont
--- désormais servies par le template commune, à la même URL. Tant que la colonne
--- porte l'ancienne valeur, le pré-rendu saute ces deux pages et le contrôle de
--- build interrompt le déploiement — 404 sur deux URL présentes au sitemap.
--- C'est précisément ce qu'il doit faire : la donnée est fausse, pas le contrôle.
+-- Elle ne touche pas à `page_existante`. Le retrait de cette valeur pour
+-- Herstal et Seraing est solidaire du code qui supprime leurs pages satellites,
+-- et vit donc dans une migration séparée, à exécuter au moment de déployer ce
+-- code — voir 20260802130000_communes_page_existante_herstal_seraing.sql.
+--
+-- L'ordre compte dans les deux sens. Retirer la valeur trop tôt fait servir la
+-- page satellite là où le contrôle de build attend une page commune, et le
+-- déploiement s'interrompt. La retirer trop tard fait sauter le pré-rendu de
+-- deux URL présentes au sitemap.
 -- ============================================================================
 
 -- ── 1. Colonnes éditoriales ────────────────────────────────────────────────
@@ -58,13 +61,3 @@ alter table public.communes
 alter table public.communes
   add constraint communes_sections_locales_tableau
   check (jsonb_typeof(sections_locales) = 'array');
-
--- ── 2. Correction de page_existante ────────────────────────────────────────
-
--- Herstal et Seraing ont rejoint le template commune ; leurs pages satellites
--- n'existent plus. Laisser l'ancienne URL ici fait sauter leur pré-rendu.
-update public.communes
-   set page_existante = null,
-       updated_at     = now()
- where id in ('herstal', 'seraing')
-   and page_existante is not null;
