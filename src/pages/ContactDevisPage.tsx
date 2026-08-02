@@ -139,7 +139,9 @@ export default function ContactDevisPage() {
         description="Contactez Déménagements Gramme pour un devis gratuit et sans engagement. Formulaire en ligne, téléphone et adresse à Herstal (Liège)."
         canonical="/contact-devis"
       />
-      <SchemaOrg />
+      {/* Page de conversion sur laquelle le visiteur cherche à nous joindre :
+          adresse, horaires et téléphone y sont déclarés au complet. */}
+      <SchemaOrg organization="full" />
       <TopBar />
       <ServiceNavbar />
 
