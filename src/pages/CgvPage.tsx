@@ -82,7 +82,7 @@ const DEFAULT_HTML = `<h1>Conditions Générales de Vente et de Service</h1>
 <h2>10. Droit applicable et litiges</h2>
 <p>Les présentes conditions générales sont soumises au droit belge. En cas de litige relatif à leur interprétation ou exécution, les parties s'engagent à rechercher une solution amiable.</p>
 <p>À défaut d'accord amiable dans un délai de 30 jours, les <strong>tribunaux de l'arrondissement judiciaire de Liège</strong> seront seuls compétents.</p>
-<p>Le client consommateur peut également recourir à la plateforme européenne de résolution des litiges en ligne : <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr</a>.</p>
+<p>Le client consommateur peut également recourir à la <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">plateforme européenne de règlement en ligne des litiges</a>, mise à disposition par la Commission européenne.</p>
 
 <h2>11. Dispositions finales</h2>
 <p>Si une clause des présentes conditions générales est déclarée nulle ou inapplicable, les autres clauses restent pleinement en vigueur. La clause nulle sera remplacée par une disposition valide se rapprochant le plus possible de l'intention initiale.</p>

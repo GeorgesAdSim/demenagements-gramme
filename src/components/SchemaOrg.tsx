@@ -3,9 +3,19 @@ import { FAQ_ACCUEIL } from '../data/faq';
 
 const BASE_URL = 'https://www.demenagements-gramme.be';
 
+/**
+ * Identifiant stable de l'entreprise, partagé par toutes les pages.
+ *
+ * C'est lui qui permet de ne décrire l'établissement qu'une fois et de s'y
+ * référer ailleurs, au lieu de redéclarer la même adresse, les mêmes horaires
+ * et la même géolocalisation sur chaque page.
+ */
+export const ORG_ID = `${BASE_URL}/#organization`;
+
 const LOCAL_BUSINESS = {
   '@context': 'https://schema.org',
   '@type': 'MovingCompany',
+  '@id': ORG_ID,
   name: 'Déménagements Gramme',
   image: `${BASE_URL}/og-image.jpg`,
   url: BASE_URL,
@@ -47,6 +57,25 @@ const LOCAL_BUSINESS = {
     { '@type': 'Country', name: 'Italy' },
   ],
   priceRange: 'Sur devis',
+};
+
+/**
+ * Référence compacte à l'entreprise, servie sur toutes les pages sauf celles
+ * qui décrivent réellement l'établissement.
+ *
+ * Elle porte le même `@id` que la déclaration complète : les moteurs
+ * rattachent donc la page à l'entité déjà connue, sans qu'une soixantaine de
+ * pages répètent mot pour mot la même adresse, les mêmes horaires et la même
+ * liste de pays. Un `@id` seul suffirait techniquement, mais il resterait
+ * pendant tant que le crawler n'a pas lu la page qui définit l'entité : les
+ * deux propriétés d'identification permettent de la reconnaître isolément.
+ */
+const ORG_REFERENCE = {
+  '@context': 'https://schema.org',
+  '@type': 'MovingCompany',
+  '@id': ORG_ID,
+  name: 'Déménagements Gramme',
+  url: BASE_URL,
 };
 
 // Généré depuis la source partagée des questions, et non écrit en dur : Google
@@ -92,6 +121,13 @@ export interface LocalServiceData {
 }
 
 interface SchemaOrgProps {
+  /**
+   * `'full'` déclare l'établissement (adresse, horaires, géolocalisation) :
+   * réservé aux pages qui parlent réellement du siège, c'est-à-dire l'accueil
+   * et la page Herstal. Partout ailleurs, la valeur par défaut `'reference'`
+   * se contente de rattacher la page à l'entité par son `@id`.
+   */
+  organization?: 'full' | 'reference';
   includeFaq?: boolean;
   /**
    * FAQ propre à la page, quand ce ne sont pas les questions de l'accueil.
@@ -107,6 +143,7 @@ interface SchemaOrgProps {
 }
 
 export default function SchemaOrg({
+  organization = 'reference',
   includeFaq = false,
   customFaq,
   articleData,
@@ -114,7 +151,10 @@ export default function SchemaOrg({
   localService,
 }: SchemaOrgProps) {
   const scripts: Array<{ type: string; innerHTML: string }> = [
-    { type: 'application/ld+json', innerHTML: JSON.stringify(LOCAL_BUSINESS) },
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(organization === 'full' ? LOCAL_BUSINESS : ORG_REFERENCE),
+    },
   ];
 
   if (includeFaq) {
@@ -148,20 +188,22 @@ export default function SchemaOrg({
         serviceType: 'Déménagement',
         name: `Déménagement à ${localService.ville}`,
         url: localService.url,
-        provider: {
-          '@type': 'MovingCompany',
-          name: 'Déménagements Gramme',
-          url: BASE_URL,
-          telephone: '+3242645016',
-          address: LOCAL_BUSINESS.address,
-        },
+        // Renvoi par `@id` : le prestataire est l'entité unique du site. La
+        // version précédente recopiait ici l'adresse de Herstal, ce qui
+        // revenait à répéter le même bloc d'établissement sur chaque commune.
+        provider: { '@id': ORG_ID },
         areaServed: {
           '@type': 'City',
           name: localService.ville,
-          ...(localService.codesPostaux.length > 0 && { postalCode: localService.codesPostaux }),
+          // `postalCode` appartient à PostalAddress, pas à Place : posé
+          // directement sur la City, il était rejeté à la validation. Il
+          // rejoint donc l'adresse, qui est le bon porteur.
           address: {
             '@type': 'PostalAddress',
             addressLocality: localService.ville,
+            ...(localService.codesPostaux.length > 0 && {
+              postalCode: localService.codesPostaux.join(', '),
+            }),
             addressRegion: 'Province de Liège',
             addressCountry: 'BE',
           },

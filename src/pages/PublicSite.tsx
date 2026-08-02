@@ -30,7 +30,7 @@ export default function PublicSite() {
         }
         canonical={meta?.canonicalUrl || '/'}
       />
-      <SchemaOrg includeFaq />
+      <SchemaOrg organization="full" includeFaq />
       <TopBar />
       <Navbar />
       <main id="main-content" className="pb-[60px] md:pb-0">
