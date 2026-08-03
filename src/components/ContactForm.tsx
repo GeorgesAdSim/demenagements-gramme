@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, ArrowRight, Loader as Loader2, CircleCheck, Shield } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, ArrowRight, Loader as Loader2, CircleCheck, Shield, Camera } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { SITE_IMAGES } from '../data/images';
@@ -53,6 +53,26 @@ interface Props {
 
 export default function ContactForm({ data }: Props) {
   const [form, setForm] = useState<FormData>(initialForm);
+  const [estimationId, setEstimationId] = useState<string | null>(null);
+
+  // Retour depuis l'estimateur de volume : pré-remplit le volume et rattache
+  // l'estimation au devis via son id (champ caché ajouté au message).
+  useEffect(() => {
+    try {
+      const raw = sessionStorage.getItem('gramme_devis_draft');
+      if (!raw) return;
+      const draft = JSON.parse(raw);
+      if (draft.estimation_id) setEstimationId(draft.estimation_id);
+      if (typeof draft.volume_m3 === 'number') {
+        const bucket = draft.volume_m3 < 20 ? '< 20m³' : draft.volume_m3 <= 50 ? '20–50m³' : '50–100m³';
+        setForm((prev) => ({
+          ...prev,
+          volume: bucket,
+          message: prev.message || `Volume estimé via l'outil photos : ${draft.volume_m3} m³.`,
+        }));
+      }
+    } catch { /* draft corrompu — ignoré */ }
+  }, []);
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -100,7 +120,7 @@ export default function ContactForm({ data }: Props) {
       arrival_city: form.cityTo,
       move_date: form.date || null,
       volume: VOLUME_DB_MAP[form.volume] || 'unknown',
-      message: form.message,
+      message: estimationId ? `${form.message}\n[estimation_id: ${estimationId}]` : form.message,
     });
 
     setLoading(false);
@@ -123,7 +143,7 @@ export default function ContactForm({ data }: Props) {
         cityTo: form.cityTo,
         date: form.date,
         volume: form.volume,
-        message: form.message,
+        message: estimationId ? `${form.message}\n[estimation_id: ${estimationId}]` : form.message,
       }),
     }).catch(() => { /* silencieux — le lead est déjà en base */ });
     setSuccess(true);
@@ -387,6 +407,14 @@ export default function ContactForm({ data }: Props) {
                     </select>
                   </div>
                 </div>
+
+                <Link
+                  to="/estimation-volume"
+                  className="inline-flex items-center gap-2 border-2 border-navy text-navy font-bold text-sm uppercase rounded-lg px-5 py-2.5 hover:bg-navy hover:text-yellow transition-colors"
+                >
+                  <Camera className="w-4 h-4" />
+                  Estimer mon volume en photos →
+                </Link>
 
                 <div>
                   <label htmlFor="cf-message" className="sr-only">Message</label>

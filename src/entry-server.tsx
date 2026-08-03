@@ -16,6 +16,7 @@ import PublicSite from './pages/PublicSite';
 import DemenagementsPage from './pages/DemenagementsPage';
 import GardeMeublesPage from './pages/GardeMeublesPage';
 import MonteMeublesPage from './pages/MonteMeublesPage';
+import EstimationVolumePage from './pages/EstimationVolumePage';
 import ActualitesPage from './pages/ActualitesPage';
 import ContactPage from './pages/ContactPage';
 import ContactDevisPage from './pages/ContactDevisPage';
@@ -50,6 +51,7 @@ function ServerRoutes() {
       <Route path="/garde-meubles" element={<GardeMeublesPage />} />
       <Route path="/blog" element={<ActualitesPage />} />
       <Route path="/monte-meubles" element={<MonteMeublesPage />} />
+      <Route path="/estimation-volume" element={<EstimationVolumePage />} />
 
       <Route path="/demenagement/demenageur-liege" element={<DemenageurLiege />} />
       <Route path="/demenagement/demenagement-liege" element={<DemenagementLiege />} />

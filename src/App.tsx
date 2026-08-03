@@ -10,6 +10,7 @@ import WebMcpTools from './components/WebMcpTools';
 const DemenagementsPage = lazy(() => import('./pages/DemenagementsPage'));
 const GardeMeublesPage = lazy(() => import('./pages/GardeMeublesPage'));
 const MonteMeublesPage = lazy(() => import('./pages/MonteMeublesPage'));
+const EstimationVolumePage = lazy(() => import('./pages/EstimationVolumePage'));
 const ActualitesPage = lazy(() => import('./pages/ActualitesPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const ContactDevisPage = lazy(() => import('./pages/ContactDevisPage'));
@@ -90,6 +91,7 @@ export default function App() {
             <Route path="/actualites" element={<Navigate to="/blog" replace />} />
             <Route path="/demenagement-international" element={<Navigate to="/demenagement/demenagement-international" replace />} />
             <Route path="/monte-meubles" element={<MonteMeublesPage />} />
+            <Route path="/estimation-volume" element={<EstimationVolumePage />} />
 
             {/* Demenagement satellite pages */}
             <Route path="/demenagement/demenageur-liege" element={<DemenageurLiege />} />

@@ -7,6 +7,7 @@ import { RACINE_ZONES } from '../data/communes';
 interface DropdownItem {
   label: string;
   to: string;
+  badge?: string;
 }
 
 interface NavItem {
@@ -25,6 +26,7 @@ const NAV_ITEMS: NavItem[] = [
       { label: 'Déménagement', to: '/demenagement' },
       { label: 'Garde-Meubles', to: '/garde-meubles' },
       { label: 'Monte-Meubles', to: '/monte-meubles' },
+      { label: 'Estimateur de volume', to: '/estimation-volume', badge: 'NOUVEAU' },
       { label: 'Déménagement international', to: '/demenagement/demenagement-international' },
     ],
   },
@@ -61,6 +63,9 @@ function DesktopDropdown({
           className={`block px-4 py-2.5 text-sm font-medium transition-colors ${scrolled ? 'text-white/70 hover:text-yellow hover:bg-white/5' : 'text-navy/70 hover:text-navy hover:bg-offwhite'}`}
         >
           {item.label}
+          {item.badge && (
+            <span className="ml-2 bg-[#F0B800] text-[#132073] text-[10px] font-bold rounded-full px-2 py-0.5 align-middle">{item.badge}</span>
+          )}
         </Link>
       ))}
     </div>
