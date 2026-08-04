@@ -474,7 +474,7 @@ export default function EstimationVolumePage() {
                     )}
                     <input
                       ref={(el) => { fileInputs.current[room.id] = el; }}
-                      type="file" accept="image/*" capture="environment" multiple className="hidden"
+                      type="file" accept="image/*" multiple className="hidden"
                       aria-label={`Photos de ${room.label}`}
                       onChange={(e) => { handleFiles(room.id, e.target.files); e.target.value = ''; }}
                     />
