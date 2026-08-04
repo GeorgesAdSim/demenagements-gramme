@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Phone, CircleCheck } from 'lucide-react';
+import { ArrowRight, Phone, CircleCheck, Camera } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import type { HomepageContent } from '../lib/types';
 import { SITE_IMAGES } from '../data/images';
@@ -186,6 +186,13 @@ export default function HeroSection({ data, cityName }: Props) {
                   <option value="">Sélectionnez un volume…</option>
                   {VOLUMES.map((v) => <option key={v} value={v}>{v}</option>)}
                 </select>
+                <Link
+                  to="/estimation-volume"
+                  className="mt-2 w-full border-2 border-navy text-navy font-bold text-[13px] uppercase rounded-lg py-2.5 px-4 flex items-center justify-center gap-2 hover:bg-navy hover:text-yellow transition-colors"
+                >
+                  <Camera className="w-4 h-4" />
+                  Je ne sais pas — estimer en photos
+                </Link>
               </div>
 
               <div>

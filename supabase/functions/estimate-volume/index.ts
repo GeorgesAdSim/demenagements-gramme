@@ -169,12 +169,44 @@ function stripDataUrl(image: string): string {
   return image.startsWith("data:") && comma !== -1 ? image.slice(comma + 1) : image;
 }
 
+// ── Appel vision Gemini (une pièce) ─────────────────────────────────────────
+async function analyzeRoomGemini(
+  apiKey: string,
+  room: RoomInput,
+// deno-lint-ignore no-explicit-any
+): Promise<any> {
+  const parts = [
+    ...room.images.map((img) => ({
+      inline_data: { mime_type: "image/jpeg", data: stripDataUrl(img) },
+    })),
+    { text: `Pièce : ${room.label} (type : ${room.type}). Analyse ces ${room.images.length} photo(s) de cette même pièce. Réponds UNIQUEMENT avec un objet JSON valide de la forme : {"room_readable": bool, "items": [{"id": str, "qty": int, "fill": "vide"|"partiel"|"plein"|"inconnu"|null, "note": str|null}], "built_in": [str], "special_handling": [str], "confidence": "high"|"medium"|"low", "warnings": [str]}` },
+  ];
+  const res = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
+        contents: [{ role: "user", parts }],
+        generationConfig: { responseMimeType: "application/json", temperature: 0 },
+      }),
+    },
+  );
+  if (!res.ok) throw new Error(`gemini_${res.status}: ${(await res.text()).slice(0, 300)}`);
+  const data = await res.json();
+  const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+  if (!text) throw new Error("gemini_empty_response");
+  return JSON.parse(text);
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: CORS });
   if (req.method !== "POST") return json({ error: "Method not allowed" }, 405);
 
+  const geminiKey = Deno.env.get("GEMINI_API_KEY");
   const anthropicKey = Deno.env.get("ANTHROPIC_API_KEY");
-  if (!anthropicKey) return json({ error: "Service non configuré" }, 500);
+  if (!geminiKey && !anthropicKey) return json({ error: "Service non configuré" }, 500);
 
   const supabase = createClient(
     Deno.env.get("SUPABASE_URL")!,
@@ -244,12 +276,17 @@ Deno.serve(async (req) => {
     return json({ error: "too_many_photos" }, 400);
   }
 
-  const anthropic = new Anthropic({ apiKey: anthropicKey });
   const estimationId = crypto.randomUUID();
 
   // ── Analyse : un appel modèle PAR PIÈCE, en parallèle ─────────────────────
+  // Gemini en priorité (clé gratuite AI Studio), Anthropic sinon.
+  const anthropic = anthropicKey ? new Anthropic({ apiKey: anthropicKey }) : null;
   const results = await Promise.allSettled(
     rooms.map(async (room) => {
+      if (geminiKey) {
+        return { room, analysis: await analyzeRoomGemini(geminiKey, room) };
+      }
+
       const imageBlocks = room.images.map((img) => ({
         type: "image" as const,
         source: {
@@ -259,7 +296,7 @@ Deno.serve(async (req) => {
         },
       }));
 
-      const response = await anthropic.messages.create({
+      const response = await anthropic!.messages.create({
         model: "claude-sonnet-5",
         max_tokens: 4096,
         system: SYSTEM_PROMPT,
