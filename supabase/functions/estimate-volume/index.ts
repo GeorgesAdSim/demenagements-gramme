@@ -181,19 +181,30 @@ async function analyzeRoomGemini(
     })),
     { text: `Pièce : ${room.label} (type : ${room.type}). Analyse ces ${room.images.length} photo(s) de cette même pièce. Réponds UNIQUEMENT avec un objet JSON valide de la forme : {"room_readable": bool, "items": [{"id": str, "qty": int, "fill": "vide"|"partiel"|"plein"|"inconnu"|null, "note": str|null}], "built_in": [str], "special_handling": [str], "confidence": "high"|"medium"|"low", "warnings": [str]}` },
   ];
-  const res = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
-        contents: [{ role: "user", parts }],
-        generationConfig: { responseMimeType: "application/json", temperature: 0 },
-      }),
-    },
-  );
-  if (!res.ok) throw new Error(`gemini_${res.status}: ${(await res.text()).slice(0, 300)}`);
+  const body = JSON.stringify({
+    systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
+    contents: [{ role: "user", parts }],
+    generationConfig: { responseMimeType: "application/json", temperature: 0 },
+  });
+  // flash-latest d'abord ; en cas de surcharge/indisponibilité, repli sur
+  // 2.0-flash (stable), avec une nouvelle tentative après une courte pause.
+  const models = ["gemini-flash-latest", "gemini-2.0-flash", "gemini-flash-lite-latest"];
+  let res: Response | null = null;
+  let lastErr = "";
+  for (const model of models) {
+    for (let attempt = 0; attempt < 2; attempt++) {
+      res = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+        { method: "POST", headers: { "Content-Type": "application/json" }, body },
+      );
+      if (res.ok) break;
+      lastErr = `gemini_${res.status}(${model}): ${(await res.text()).slice(0, 200)}`;
+      if (res.status !== 503 && res.status !== 429) break; // erreur non transitoire → modèle suivant
+      await new Promise((r) => setTimeout(r, 1500));
+    }
+    if (res?.ok) break;
+  }
+  if (!res?.ok) throw new Error(lastErr || "gemini_unreachable");
   const data = await res.json();
   const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
   if (!text) throw new Error("gemini_empty_response");
