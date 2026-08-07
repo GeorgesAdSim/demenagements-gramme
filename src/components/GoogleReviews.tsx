@@ -183,8 +183,8 @@ export default function GoogleReviews() {
                 />
               ))}
             </div>
-            <span className="text-navy font-black text-lg">3,9</span>
-            <span className="text-muted text-sm">/5 sur Google (21 avis)</span>
+            <span className="text-navy font-black text-lg">4,0</span>
+            <span className="text-muted text-sm">/5 sur Google (24 avis)</span>
           </div>
         </motion.div>
 
