@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ADRESSE_COURTE } from '../data/entreprise';
+import { GererCookies } from './CookieConsent';
 
 const FACEBOOK_URL = 'https://www.facebook.com/GrammeDemenagements';
 
@@ -150,6 +151,9 @@ export default function Footer() {
           <Link to="/mentions-legales" className="hover:text-white transition-colors">Mentions Légales</Link>
           <span>|</span>
           <Link to="/politique-confidentialite" className="hover:text-white transition-colors">Confidentialité</Link>
+          <span aria-hidden="true">·</span>
+          {/* Retirer son consentement doit être aussi simple que le donner. */}
+          <GererCookies className="hover:text-white transition-colors underline-offset-2 hover:underline" />
           <span>|</span>
           <Link to="/conditions-generales" className="hover:text-white transition-colors">CGV</Link>
           <span>|</span>
