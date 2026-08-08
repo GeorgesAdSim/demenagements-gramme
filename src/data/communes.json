@@ -2256,7 +2256,7 @@
         "juprelle",
         "oupeye"
       ],
-      "introductionLocale": "Herstal réunit le centre, Vottem, Liers et Milmort sous trois codes postaux : 4040, 4041 et 4042. C'est la commune de notre siège social, rue des Naiveux 64, où l'entreprise est installée depuis des décennies.",
+      "introductionLocale": "Herstal réunit le centre, Vottem, Liers et Milmort sous trois codes postaux : 4040, 4041 et 4042. Nous y intervenons régulièrement, à quatre kilomètres de notre dépôt d'Oupeye.",
       "informationsLocales": [
         "Commune du siège social : visite technique organisable à très court délai.",
         "Habitat mêlant maisons mitoyennes du centre et quartiers résidentiels à Vottem, Liers et Milmort.",
@@ -2265,8 +2265,8 @@
       ],
       "sectionsLocales": [
         {
-          "titre": "Votre déménageur installé à Herstal",
-          "contenu": "Notre siège social se trouve rue des Naiveux 64, à Herstal. Pour la plupart de nos clients herstaliens, nous sommes littéralement des voisins. Cette proximité raccourcit les délais et simplifie l'organisation d'une visite technique.\n\nNous connaissons les rues de la commune, ses quartiers et leurs contraintes d'accès. Cela se voit sur la planification. Une rue étroite, un sens unique ou une place de stationnement difficile s'anticipent avant le jour du déménagement, au lieu de se découvrir sur place."
+          "titre": "Votre déménageur à Herstal",
+          "contenu": "Nous connaissons les rues de la commune, ses quartiers et leurs contraintes d'accès. Cela se voit sur la planification. Une rue étroite, un sens unique ou une place de stationnement difficile s'anticipent avant le jour du déménagement, au lieu de se découvrir sur place."
         },
         {
           "titre": "Tous les quartiers de Herstal desservis",
@@ -2274,7 +2274,7 @@
         },
         {
           "titre": "Nos interventions à Herstal",
-          "contenu": "Herstal est la commune que nous connaissons le mieux, et pour cause : c'est celle de notre siège. Nos interventions y couvrent l'ensemble des profils, du studio du centre à la maison familiale de Liers.\n\nLe bâti du centre est fait de maisons mitoyennes ouvrant sur la voirie, sans allée ni recul. La réservation d'emplacement y est presque toujours nécessaire, et le démontage du mobilier volumineux souvent indispensable pour passer les couloirs.\n\nVottem, Liers et Milmort relèvent d'une logique plus résidentielle. Les accès y sont plus dégagés, les volumes plus importants, et les dépendances à vider plus fréquentes.\n\nÀ quatre kilomètres du dépôt, un aller-retour supplémentaire ne compromet jamais la journée. C'est la souplesse d'organisation que seules les communes les plus proches permettent."
+          "contenu": "Herstal fait partie des communes que nous connaissons le mieux. Nos interventions y couvrent l'ensemble des profils, du studio du centre à la maison familiale de Liers.\n\nLe bâti du centre est fait de maisons mitoyennes ouvrant sur la voirie, sans allée ni recul. La réservation d'emplacement y est presque toujours nécessaire, et le démontage du mobilier volumineux souvent indispensable pour passer les couloirs.\n\nVottem, Liers et Milmort relèvent d'une logique plus résidentielle. Les accès y sont plus dégagés, les volumes plus importants, et les dépendances à vider plus fréquentes.\n\nÀ quatre kilomètres du dépôt, un aller-retour supplémentaire ne compromet jamais la journée. C'est la souplesse d'organisation que seules les communes les plus proches permettent."
         }
       ],
       "autorisationStationnement": {
@@ -2290,8 +2290,8 @@
       },
       "faqLocale": [
         {
-          "question": "Votre siège est à Herstal : qu'est-ce que cela change concrètement ?",
-          "reponse": "Nous sommes vos voisins. Le siège se trouve rue des Naiveux 64 et les camions partent d'Oupeye, à quatre kilomètres. Une visite technique s'organise donc à très court délai, et un aller-retour imprévu le jour J ne compromet jamais la journée. C'est aussi la commune dont nous connaissons le mieux les rues, les sens uniques et les points de stationnement."
+          "question": "Quatre kilomètres du dépôt : qu'est-ce que cela change concrètement ?",
+          "reponse": "Nous sommes vos voisins. Nos camions partent d'Oupeye, à quatre kilomètres de Herstal : c'est l'un des trajets d'approche les plus courts de toute notre zone. Une visite technique s'organise donc à très court délai, et un aller-retour imprévu le jour J ne compromet jamais la journée. C'est aussi l'une des communes dont nous connaissons le mieux les rues, les sens uniques et les points de stationnement."
         },
         {
           "question": "Faut-il réserver un emplacement dans le centre de Herstal ?",
@@ -2307,6 +2307,7 @@
         }
       ],
       "dateVerification": "2026-08-02",
+      "pageExistante": "/demenagement/demenagement-herstal",
       "statut": "published"
     },
     {
@@ -3368,7 +3369,7 @@
         "delai": "10 jours ouvrables avant le début de l'occupation, sous peine d'irrecevabilité",
         "cout": null,
         "signalisation": null,
-        "sourceUrl": "https://www.oupeye.be/ma-commune/services-communaux/service-de-police-administrative-de-mobilite-et-de-planification-durgence/service-de-police-administrative-de-mobilite-et-de-planification-durgence",
+        "sourceUrl": "https://www.oupeye.be/ma-commune/services-communaux/service-de-police-administrative-de-mobilite-et-de-planification-durgence-1/service-de-police-administrative-de-mobilite-et-de-planification-durgence",
         "libelleSource": "la page du service de Police administrative, de Mobilité et de Planification d'urgence d'Oupeye",
         "dateVerification": "2026-08-02",
         "verifiePar": "human"
@@ -3804,13 +3805,17 @@
         "neupre",
         "esneux"
       ],
-      "introductionLocale": "Seraing est la deuxième ville de la province de Liège. L'entité regroupe Jemeppe-sur-Meuse, Ougrée et Boncelles, sous les codes postaux 4100, 4101 et 4102.",
+      "introductionLocale": "Seraing est la deuxième ville de la province de Liège. L'entité regroupe Jemeppe-sur-Meuse, Ougrée et Boncelles, sous les codes postaux 4100, 4101 et 4102. C'est la commune de notre siège social, voie du Belvédère 1, où l'entreprise est installée.",
       "informationsLocales": [
         "Forte densité urbaine : la réservation d'un emplacement de stationnement est souvent nécessaire.",
         "Recours fréquent au monte-meubles pour les appartements du centre-ville et de Jemeppe.",
         "Entité contrastée, du bâti ouvrier ancien aux lotissements récents de Boncelles."
       ],
       "sectionsLocales": [
+        {
+          "titre": "Votre déménageur installé à Seraing",
+          "contenu": "Notre siège social se trouve voie du Belvédère 1, à Seraing. Pour la plupart de nos clients sérésiens, nous sommes littéralement des voisins. Cette proximité raccourcit les délais et simplifie l'organisation d'une visite technique.\n\nNous connaissons les rues de la commune, ses quartiers et leurs contraintes d'accès. Cela se voit sur la planification. Une rue étroite, un sens unique ou une place de stationnement difficile s'anticipent avant le jour du déménagement, au lieu de se découvrir sur place."
+        },
         {
           "titre": "Déménager à Seraing : ce que le terrain impose",
           "contenu": "Seraing juxtapose des tissus urbains très différents. Les anciennes cités ouvrières et les rues denses du centre n'ont rien des lotissements récents de Boncelles. La contrainte d'accès n'y est donc jamais la même.\n\nDans le centre et à Jemeppe, la réservation d'un emplacement de stationnement est presque toujours nécessaire. Nous nous chargeons de la demande auprès de l'administration communale et de la pose des panneaux de signalisation."
@@ -3850,6 +3855,7 @@
         }
       ],
       "dateVerification": "2026-08-02",
+      "pageExistante": "/demenagement/demenagement-seraing",
       "statut": "published"
     },
     {
