@@ -94,12 +94,12 @@ export default function HeroSection({ data, cityName, codesPostaux, accroche }: 
         />
       ) : (
         <picture>
-          <source type="image/avif" srcSet={SITE_IMAGES.hero.srcSetAvif} sizes="(max-width: 767px) 70vw, 100vw" />
-          <source type="image/webp" srcSet={SITE_IMAGES.hero.srcSetWebp} sizes="(max-width: 767px) 70vw, 100vw" />
+          <source type="image/avif" srcSet={SITE_IMAGES.hero.srcSetAvif} sizes="100vw" />
+          <source type="image/webp" srcSet={SITE_IMAGES.hero.srcSetWebp} sizes="100vw" />
           <img
             src={SITE_IMAGES.hero.src}
             srcSet={SITE_IMAGES.hero.srcSetJpeg}
-            sizes="(max-width: 767px) 70vw, 100vw"
+            sizes="100vw"
             alt=""
             aria-hidden="true"
             fetchPriority="high"
@@ -129,7 +129,7 @@ export default function HeroSection({ data, cityName, codesPostaux, accroche }: 
             variants={fadeUp}
             className="text-[2.2rem] sm:text-5xl md:text-6xl leading-[1.08] font-black uppercase text-white"
           >
-            Votre déménagement<br />
+            Votre déménagement <br />
             {/* Un seul enfant texte (gabarit littéral) et non `à {ville}` :
                 deux enfants adjacents feraient insérer à React un séparateur
                 <!-- --> dans le HTML pré-rendu, modifiant l'accueil sans
@@ -137,7 +137,7 @@ export default function HeroSection({ data, cityName, codesPostaux, accroche }: 
                 est celui déjà en place, plutôt qu'un second style jaune sur
                 bleu qui n'existe nulle part ailleurs sur le site. */}
             <span className="bg-yellow text-navy px-2 py-0.5 inline-block mt-1">{`à ${ville}${codes}`}</span>{' '}
-            <span className="text-white">&amp; partout</span><br />
+            <span className="text-white">&amp; partout</span> <br />
             <span className="text-white/90">en Belgique</span>
           </motion.h1>
 

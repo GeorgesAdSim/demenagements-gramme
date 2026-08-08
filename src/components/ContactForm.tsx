@@ -188,7 +188,7 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
     }`;
 
   return (
-    <section id="contact" className="bg-offwhite py-16 md:py-24">
+    <section id="contact" className="bg-offwhite py-16 md:py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
 
         {/* Variante locale : un titre, une ligne, le formulaire. Tout le reste

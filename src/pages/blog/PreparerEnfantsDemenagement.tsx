@@ -47,7 +47,7 @@ export default function PreparerEnfantsDemenagement() {
         { title: "6 erreurs à éviter lors d'un déménagement", to: '/blog/6-erreurs-eviter-demenagement-liege' },
       ]}
       meta={{
-        title: 'Préparer les Enfants au Déménagement | Déménagements Gramme Liège',
+        title: 'Préparer les enfants au déménagement | Gramme Liège',
         description: "Conseils pour accompagner vos enfants lors d'un déménagement à Liège : comment leur annoncer, les impliquer et les aider à s'adapter sereinement.",
         canonical: '/blog/preparer-enfants-demenagement-liege',
       }}

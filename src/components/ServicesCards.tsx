@@ -94,12 +94,12 @@ export default function ServicesCards({ data }: Props) {
               donc le navigateur retient la même URL et la sert depuis le
               cache au lieu de la retélécharger. */}
           <picture>
-            <source type="image/avif" srcSet={HERO_CARD.srcSetAvif} sizes="(max-width: 767px) 70vw, 100vw" />
-            <source type="image/webp" srcSet={HERO_CARD.srcSetWebp} sizes="(max-width: 767px) 70vw, 100vw" />
+            <source type="image/avif" srcSet={HERO_CARD.srcSetAvif} sizes="100vw" />
+            <source type="image/webp" srcSet={HERO_CARD.srcSetWebp} sizes="100vw" />
             <img
               src={HERO_CARD.image}
               srcSet={HERO_CARD.srcSetJpeg}
-              sizes="(max-width: 767px) 70vw, 100vw"
+              sizes="100vw"
               alt=""
               aria-hidden="true"
               loading="lazy"

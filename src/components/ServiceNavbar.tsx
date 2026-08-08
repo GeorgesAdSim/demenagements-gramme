@@ -68,7 +68,7 @@ export default function ServiceNavbar() {
 
         <div className="flex items-center gap-4">
           <Link
-            to="/contact"
+            to="/contact-devis"
             className="hidden md:flex items-center gap-1.5 px-4 py-2 rounded font-bold text-sm uppercase tracking-wide transition-all duration-200 bg-[#F0B800] text-[#0D1020] border border-[#C89A00] hover:bg-[#EAB000]"
           >
             Devis Gratuit
@@ -103,7 +103,7 @@ export default function ServiceNavbar() {
             </Link>
           ))}
           <Link
-            to="/contact"
+            to="/contact-devis"
             onClick={() => setMobileOpen(false)}
             className="mt-2 bg-[#F0B800] text-[#0D1020] font-bold uppercase py-3 px-6 rounded flex items-center gap-2 justify-center border border-[#C89A00]"
           >
