@@ -2,11 +2,27 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Menu, X } from 'lucide-react';
+import { pagesServicePubliees } from '../data/pages-service';
+
+/**
+ * Libellés courts des pages de service rédigées. Elles n'entrent dans la
+ * navigation qu'une fois leur verrou de relecture levé : un lien d'en-tête vers
+ * une page non pré-rendue serait un 404 sur seize pages, et le contrôle de
+ * build le refuse.
+ *
+ * L'en-tête, et non un hub : c'est la profondeur 1 depuis chaque page qui a
+ * manqué aux pages communes.
+ */
+const LIBELLES_SERVICE: Record<string, string> = {
+  '/vide-maison': 'Vide-maison',
+  '/prix-demenagement': 'Prix',
+};
 
 const NAV_LINKS = [
   { label: 'Accueil', to: '/' },
   { label: 'Déménagement', to: '/demenagement' },
   { label: 'Garde-Meubles', to: '/garde-meubles' },
+  ...pagesServicePubliees().map((p) => ({ label: LIBELLES_SERVICE[p.slug] ?? p.nomService, to: p.slug })),
   { label: 'Blog', to: '/blog' },
   { label: 'Contact', to: '/contact' },
 ];

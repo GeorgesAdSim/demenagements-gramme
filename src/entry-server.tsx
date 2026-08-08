@@ -17,6 +17,7 @@ import DemenagementsPage from './pages/DemenagementsPage';
 import GardeMeublesPage from './pages/GardeMeublesPage';
 import MonteMeublesPage from './pages/MonteMeublesPage';
 import EstimationVolumePage from './pages/EstimationVolumePage';
+import ServiceContentPage from './pages/ServiceContentPage';
 import ActualitesPage from './pages/ActualitesPage';
 import ContactPage from './pages/ContactPage';
 import ContactDevisPage from './pages/ContactDevisPage';
@@ -52,6 +53,8 @@ function ServerRoutes() {
       <Route path="/blog" element={<ActualitesPage />} />
       <Route path="/monte-meubles" element={<MonteMeublesPage />} />
       <Route path="/estimation-volume" element={<EstimationVolumePage />} />
+      <Route path="/vide-maison" element={<ServiceContentPage />} />
+      <Route path="/prix-demenagement" element={<ServiceContentPage />} />
 
       <Route path="/demenagement/demenageur-liege" element={<DemenageurLiege />} />
       <Route path="/demenagement/demenagement-liege" element={<DemenagementLiege />} />
@@ -102,6 +105,14 @@ export {
   pageSatellite,
   PAGES_SATELLITES_DECLAREES,
 } from './data/communes';
+
+// Même raison : le pré-rendu et le contrôle de build ont besoin de savoir
+// quelles pages de service sont publiables, et le verrou vit dans le TypeScript.
+export {
+  PAGES_SERVICE,
+  pagesServicePubliees,
+  validerPagesService,
+} from './data/pages-service';
 
 export function render(url: string): { html: string; helmet: HelmetServerState } {
   const helmetContext: { helmet?: HelmetServerState } = {};

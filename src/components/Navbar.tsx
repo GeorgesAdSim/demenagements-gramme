@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Menu, X, ChevronDown } from 'lucide-react';
 import { RACINE_ZONES } from '../data/communes';
+import { pagesServicePubliees } from '../data/pages-service';
+
+/** Libellés courts dans le menu. Voir ServiceNavbar pour la même table. */
+const LIBELLES_SERVICE: Record<string, string> = {
+  '/vide-maison': 'Vide-maison',
+  '/prix-demenagement': 'Prix d\'un déménagement',
+};
 
 interface DropdownItem {
   label: string;
@@ -28,6 +35,7 @@ const NAV_ITEMS: NavItem[] = [
       { label: 'Monte-Meubles', to: '/monte-meubles' },
       { label: 'Estimateur de volume', to: '/estimation-volume', badge: 'NOUVEAU' },
       { label: 'Déménagement international', to: '/demenagement/demenagement-international' },
+      ...pagesServicePubliees().map((p) => ({ label: LIBELLES_SERVICE[p.slug] ?? p.nomService, to: p.slug })),
     ],
   },
   {

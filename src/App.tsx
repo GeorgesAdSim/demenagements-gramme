@@ -11,6 +11,7 @@ const DemenagementsPage = lazy(() => import('./pages/DemenagementsPage'));
 const GardeMeublesPage = lazy(() => import('./pages/GardeMeublesPage'));
 const MonteMeublesPage = lazy(() => import('./pages/MonteMeublesPage'));
 const EstimationVolumePage = lazy(() => import('./pages/EstimationVolumePage'));
+const ServiceContentPage = lazy(() => import('./pages/ServiceContentPage'));
 const ActualitesPage = lazy(() => import('./pages/ActualitesPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const ContactDevisPage = lazy(() => import('./pages/ContactDevisPage'));
@@ -92,6 +93,8 @@ export default function App() {
             <Route path="/demenagement-international" element={<Navigate to="/demenagement/demenagement-international" replace />} />
             <Route path="/monte-meubles" element={<MonteMeublesPage />} />
             <Route path="/estimation-volume" element={<EstimationVolumePage />} />
+            <Route path="/vide-maison" element={<ServiceContentPage />} />
+            <Route path="/prix-demenagement" element={<ServiceContentPage />} />
 
             {/* Demenagement satellite pages */}
             <Route path="/demenagement/demenageur-liege" element={<DemenageurLiege />} />

@@ -124,7 +124,14 @@ async function main() {
   await writeFile(path.join(distDir, 'app.html'), template, 'utf-8');
 
   const ssrEntryPath = path.join(distServerDir, 'entry-server.js');
-  const { render } = await import(pathToFileUrl(ssrEntryPath));
+  const { render, pagesServicePubliees } = await import(pathToFileUrl(ssrEntryPath));
+
+  // Pages de service rédigées, et seulement celles qui ont passé le verrou de
+  // relecture. Une page en brouillon n'est pas écrite : son URL tombe donc en
+  // 404 en production, ce qui est le comportement voulu — mieux vaut une page
+  // absente qu'une page de tarifs sans tarifs.
+  const ROUTES_SERVICE = pagesServicePubliees().map((p) => p.slug);
+  const TOUTES_ROUTES = [...ROUTES, ...ROUTES_SERVICE];
 
   let ok = 0;
   const failures = [];
@@ -132,7 +139,7 @@ async function main() {
   // '/404' n'est pas une route de l'application : le catch-all de
   // entry-server.tsx renvoie NotFoundPage, que Netlify sert automatiquement
   // avec un vrai statut HTTP 404 pour toute URL inconnue.
-  for (const route of [...ROUTES, '/404']) {
+  for (const route of [...TOUTES_ROUTES, '/404']) {
     try {
       const { html, helmet } = render(route);
 
@@ -174,8 +181,8 @@ async function main() {
     }
   }
 
-  console.log(`Pré-rendu terminé : ${ok}/${ROUTES.length + 1} pages (${ROUTES.length} routes + 404).`);
-  console.log(`  dont ${ROUTES_COMMUNES.length} page(s) de zones.`);
+  console.log(`Pré-rendu terminé : ${ok}/${TOUTES_ROUTES.length + 1} pages (${TOUTES_ROUTES.length} routes + 404).`);
+  console.log(`  dont ${ROUTES_COMMUNES.length} page(s) de zones et ${ROUTES_SERVICE.length} page(s) de service rédigée(s).`);
   if (failures.length > 0) {
     console.error('Échecs :');
     for (const f of failures) console.error(`  - ${f.route}: ${f.error}`);
@@ -190,6 +197,9 @@ async function main() {
     distDir,
     cheminCommune: (slug) => `/demenagement/demenagement-${slug}`,
     communesGenerees: new Set(COMMUNES_PUBLIEES.map((c) => c.id)),
+    // Les pages de service publiées entrent au sitemap sans condition de vague :
+    // les vagues ne concernent que les pages communes.
+    pagesSupplementaires: ROUTES_SERVICE.map((url) => ({ url, changefreq: 'monthly', priority: '0.8' })),
     aujourdhui: new Date().toISOString().slice(0, 10),
   });
 

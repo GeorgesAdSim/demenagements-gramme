@@ -349,7 +349,8 @@ async function main() {
   // déjà compilé, seule implémentation des règles (voir src/entry-server.tsx).
   try {
     const { validerCommunes, getCommunesAGenerer, COMMUNES, PREFIXE_COMMUNE, cheminCommune,
-            pageSatellite, PAGES_SATELLITES_DECLAREES } =
+            pageSatellite, PAGES_SATELLITES_DECLAREES,
+            PAGES_SERVICE, pagesServicePubliees, validerPagesService } =
       await import(new URL(`file://${path.join(root, 'dist-server/entry-server.js')}`).href);
 
     // Le préfixe d'URL est écrit à deux endroits : ici via le bundle, et en dur
@@ -364,6 +365,35 @@ async function main() {
       const msg = `commune « ${p.commune} » : ${p.message}`;
       if (p.gravite === 'erreur') err(msg);
       else warn(msg);
+    }
+
+    // --- Pages de service rédigées et leur verrou de relecture
+    //
+    // Le cas à empêcher : une page marquée relue alors qu'il lui manque encore
+    // des données métier, ou dont une section est vide. Ce serait une page
+    // mince publiée, exactement le motif que le chantier des communes a servi
+    // à corriger.
+    for (const p of validerPagesService()) {
+      const msg = `page de service ${p.slug} : ${p.message}`;
+      if (p.gravite === 'erreur') err(msg);
+      else warn(msg);
+    }
+
+    const servicesPublies = new Set(pagesServicePubliees().map((p) => p.slug));
+    for (const p of PAGES_SERVICE) {
+      const servie = resolve(p.slug, rules, files).status === 200;
+      if (servicesPublies.has(p.slug) && !servie) {
+        err(`page de service ${p.slug} : relue mais non servie — le pré-rendu l'a sautée.`);
+      }
+      if (!servicesPublies.has(p.slug) && servie) {
+        err(`page de service ${p.slug} : servie alors qu'elle est en brouillon — le verrou de relecture a été contourné.`);
+      }
+      if (servicesPublies.has(p.slug)) {
+        if (!sitemapUrls.includes(`${BASE}${p.slug}`)) err(`page de service ${p.slug} : absente du sitemap.`);
+        const html = await readFile(path.join(distDir, `${p.slug.slice(1)}.html`), 'utf-8');
+        if (!html.includes('"@type":"Service"')) err(`${p.slug} : balisage Service absent.`);
+        if (!html.includes('"@type":"BreadcrumbList"')) err(`${p.slug} : balisage BreadcrumbList absent.`);
+      }
     }
 
     const aGenerer = getCommunesAGenerer();

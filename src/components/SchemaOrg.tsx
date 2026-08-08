@@ -123,6 +123,35 @@ export interface LocalServiceData {
   url: string;
 }
 
+/**
+ * Service décrit par une page de service — vide-maison, monte-meubles, prix.
+ *
+ * Distinct de `LocalServiceData`, qui décrit « le déménagement À telle
+ * commune » et pose un `areaServed: City`. Ici le service est le sujet de la
+ * page, et sa zone est la province, pas une ville : réutiliser `localService`
+ * en lui passant « Liège » déclarerait une implantation urbaine là où il n'y a
+ * qu'une prestation régionale.
+ *
+ * `provider` renvoie à l'entité par son `@id`, comme partout ailleurs : une
+ * page de service ne redéclare pas l'établissement.
+ */
+export interface ServicePageData {
+  /** Valeur de `serviceType`. Le terme métier, pas le titre de la page. */
+  serviceType: string;
+  /** Nom du service tel qu'il est proposé. */
+  name: string;
+  /** URL absolue de la page. */
+  url: string;
+  /** Une phrase, reprise du contenu visible. */
+  description?: string;
+  /**
+   * Fourchette de prix, au format schema.org (« 300-1200 » en EUR).
+   * Absente tant qu'aucun chiffre n'est validé : une fourchette inventée dans
+   * un balisage est reprise telle quelle dans les résultats enrichis.
+   */
+  offre?: { prixMin: number; prixMax: number; unite?: string };
+}
+
 interface SchemaOrgProps {
   /**
    * `'full'` déclare l'établissement (adresse, horaires, géolocalisation) :
@@ -143,6 +172,7 @@ interface SchemaOrgProps {
   articleData?: ArticleData;
   breadcrumbs?: BreadcrumbItem[];
   localService?: LocalServiceData;
+  servicePage?: ServicePageData;
   /**
    * Liste ordonnée d'éléments réellement affichés sur la page — les communes
    * desservies, sur la page des zones d'intervention. Un `url` n'est fourni
@@ -162,6 +192,7 @@ export default function SchemaOrg({
   articleData,
   breadcrumbs,
   localService,
+  servicePage,
   itemList,
 }: SchemaOrgProps) {
   const scripts: Array<{ type: string; innerHTML: string }> = [
@@ -186,6 +217,45 @@ export default function SchemaOrg({
           name: f.q,
           acceptedAnswer: { '@type': 'Answer', text: f.a },
         })),
+      }),
+    });
+  }
+
+  if (servicePage) {
+    scripts.push({
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        serviceType: servicePage.serviceType,
+        name: servicePage.name,
+        url: servicePage.url,
+        ...(servicePage.description && { description: servicePage.description }),
+        provider: { '@id': ORG_ID },
+        // La zone est la province, pas une ville : une page de service décrit
+        // une prestation régionale, et déclarer une City y serait une fausse
+        // implantation locale.
+        areaServed: {
+          '@type': 'AdministrativeArea',
+          name: 'Province de Liège',
+          address: {
+            '@type': 'PostalAddress',
+            addressRegion: 'Province de Liège',
+            addressCountry: 'BE',
+          },
+        },
+        // `offers` n'apparaît que si une fourchette a été validée. Un prix
+        // inventé dans un balisage remonte tel quel dans les résultats
+        // enrichis, où il devient une promesse commerciale.
+        ...(servicePage.offre && {
+          offers: {
+            '@type': 'AggregateOffer',
+            priceCurrency: 'EUR',
+            lowPrice: servicePage.offre.prixMin,
+            highPrice: servicePage.offre.prixMax,
+            ...(servicePage.offre.unite && { unitText: servicePage.offre.unite }),
+          },
+        }),
       }),
     });
   }

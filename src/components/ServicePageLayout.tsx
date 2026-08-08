@@ -8,6 +8,7 @@ import ServiceNavbar from './ServiceNavbar';
 import Footer from './Footer';
 import SeoHead from './SeoHead';
 import SchemaOrg from './SchemaOrg';
+import type { ServicePageData } from './SchemaOrg';
 import { useSitePageContent } from '../lib/useSitePageContent';
 import { getCommuneBySlug, communeUrl, RACINE_ZONES } from '../data/communes';
 import type { ServicePageContent } from '../lib/types';
@@ -25,6 +26,17 @@ interface ServicePageLayoutProps {
   heroStats?: boolean;
   defaults: ServicePageContent;
   defaultMeta: { title: string; description: string; canonical: string };
+  /**
+   * Service décrit par la page, pour le balisage `Service`.
+   *
+   * Les pages de service n'émettaient jusqu'ici qu'une référence à
+   * l'entreprise : ni `Service`, ni `BreadcrumbList`. Un moteur ne pouvait donc
+   * pas savoir de quelle prestation la page parle, ce qui est précisément ce
+   * qu'une page de service a à dire.
+   */
+  servicePage?: ServicePageData;
+  /** Fil d'Ariane, sous la forme attendue par SchemaOrg. */
+  breadcrumbs?: Array<{ name: string; url: string }>;
 }
 
 export default function ServicePageLayout({
@@ -35,6 +47,8 @@ export default function ServicePageLayout({
   heroStats,
   defaults,
   defaultMeta,
+  servicePage,
+  breadcrumbs,
 }: ServicePageLayoutProps) {
   // On ne bloque plus le rendu sur `loading` : la page s'affiche immédiatement
   // avec le contenu par défaut (`defaults`), puis se met à jour sans à-coup si
@@ -72,7 +86,7 @@ export default function ServicePageLayout({
         description={meta?.metaDescription || defaultMeta.description}
         canonical={meta?.canonicalUrl || defaultMeta.canonical}
       />
-      <SchemaOrg customFaq={c.faq?.items} />
+      <SchemaOrg customFaq={c.faq?.items} servicePage={servicePage} breadcrumbs={breadcrumbs} />
       <TopBar />
       <ServiceNavbar />
 

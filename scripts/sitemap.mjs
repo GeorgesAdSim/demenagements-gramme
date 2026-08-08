@@ -116,10 +116,13 @@ function entree({ url, lastmod, changefreq, priority }) {
  * @param {string} options.distDir            dossier des pages pré-rendues
  * @param {(slug:string)=>string} options.cheminCommune  URL d'une commune
  * @param {Set<string>} options.communesGenerees  slugs réellement pré-rendus
+ * @param {Array<{url:string,changefreq:string,priority:string}>} [options.pagesSupplementaires]
+ *        pages de service ayant passé leur verrou de relecture — hors vagues,
+ *        qui ne concernent que les communes
  * @param {string} options.aujourdhui         date du jour, ISO court
  * @returns {Promise<{erreurs:string[], urls:string[], modifiees:string[]}>}
  */
-export async function genererSitemap({ distDir, cheminCommune, communesGenerees, aujourdhui }) {
+export async function genererSitemap({ distDir, cheminCommune, communesGenerees, pagesSupplementaires = [], aujourdhui }) {
   const erreurs = [];
   const [config, vagues, magasin] = await Promise.all([
     lireJson(CHEMIN_PAGES),
@@ -143,6 +146,7 @@ export async function genererSitemap({ distDir, cheminCommune, communesGenerees,
 
   const candidats = [
     ...config.pages.map((p) => ({ ...p })),
+    ...pagesSupplementaires,
     ...actifs
       .filter(({ slug }) => communesGenerees.has(slug))
       .map(({ slug }) => ({ url: cheminCommune(slug), changefreq: 'monthly', priority: '0.7' })),
