@@ -5,8 +5,6 @@ import { ArrowRight, MapPin, Clock, Route as RouteIcon, Phone } from 'lucide-rea
 import TopBar from '../components/TopBar';
 import ServiceNavbar from '../components/ServiceNavbar';
 import HeroSection from '../components/HeroSection';
-import ServicesCards from '../components/ServicesCards';
-import WhyUs from '../components/WhyUs';
 import ContactForm from '../components/ContactForm';
 import MobileCTA from '../components/MobileCTA';
 import Footer from '../components/Footer';
@@ -40,6 +38,68 @@ const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
+
+/** Énumération française : « a, b et c ». */
+function enumerer(elements: string[]): string {
+  if (elements.length <= 1) return elements[0] ?? '';
+  return `${elements.slice(0, -1).join(', ')} et ${elements[elements.length - 1]}`;
+}
+
+/**
+ * Ligne d'accroche du hero, composée à partir des mesures de la commune.
+ *
+ * La forme de la phrase dépend de la distance réelle, pas d'un tirage : sous
+ * quinze kilomètres l'argument est la réactivité, au-delà de trente-cinq c'est
+ * le groupage qui tient le prix. Servir « cette proximité limite les frais
+ * d'approche » à soixante kilomètres décrédibilise la page entière — c'est
+ * exactement ce que les gabarits à variables finissent par produire.
+ */
+function accrocheHero(c: CommuneSEO): string | undefined {
+  const bouts: string[] = [];
+
+  if (c.distanceDepotKm !== null && c.tempsTrajetEstimeMin !== null) {
+    if (c.distanceDepotKm <= 15) {
+      bouts.push(`${c.distanceDepotKm} km de notre dépôt, ${c.tempsTrajetEstimeMin} minutes de route : nous intervenons à ${c.nom} au plus court.`);
+    } else if (c.distanceDepotKm <= 35) {
+      bouts.push(`${c.distanceDepotKm} km et ${c.tempsTrajetEstimeMin} minutes depuis notre dépôt.`);
+    } else {
+      bouts.push(`${c.distanceDepotKm} km depuis notre dépôt : nous groupons les interventions du secteur pour contenir les frais d'approche.`);
+    }
+  }
+
+  if (c.villages.length > 1) {
+    bouts.push(`${enumerer(c.villages.slice(0, 3))} compris.`);
+  } else if (c.codesPostaux.length > 0) {
+    bouts.push(`Toute l'entité, ${c.codesPostaux.join(' et ')}.`);
+  }
+
+  bouts.push('Devis gratuit sous 24 heures ouvrables.');
+  return bouts.join(' ');
+}
+
+/**
+ * La phrase qui remplace, sur les pages communes, le bloc « 78 ans de
+ * savoir-faire familial liégeois » et le paragraphe de présentation générique.
+ *
+ * Les deux totalisaient environ cent cinquante mots strictement identiques
+ * d'une commune à l'autre. Le même argument d'ancienneté tient en une phrase,
+ * dès lors qu'elle est accrochée à une donnée de la commune. Le bloc complet
+ * reste servi tel quel sur l'accueil, où il est à sa place.
+ *
+ * Le dépôt n'est pas localisé, volontairement : les camions partent d'un site
+ * distinct du siège social, et le nommer a déjà induit en erreur — les
+ * trente-sept premières distances avaient été mesurées depuis le siège.
+ */
+function phraseAnciennete(c: CommuneSEO, ans: number): string {
+  const trajet =
+    c.distanceDepotKm !== null
+      ? `à ${c.distanceDepotKm} km de notre dépôt`
+      : 'dans toute la province de Liège';
+  return (
+    `Entreprise familiale liégeoise fondée en 1948, trois générations et ${ans} ans de métier : ` +
+    `nous déménageons particuliers et entreprises à ${c.nom}, ${trajet}, avec des véhicules de 4 à 100 m³ équipés d'élévateurs.`
+  );
+}
 
 /**
  * Phrases du bloc « autorisation de stationnement ».
@@ -262,8 +322,13 @@ export default function CommuneLandingPage() {
       <ServiceNavbar />
 
       <main id="main-content" className="pb-[60px] md:pb-0">
-        {/* Hero mutualisé avec l'accueil, paramétré par cityName. Un seul H1. */}
-        <HeroSection cityName={commune.nom} />
+        {/* Hero mutualisé avec l'accueil, paramétré par les données de la
+            commune. Un seul H1, qui porte toujours le nom de la commune. */}
+        <HeroSection
+          cityName={commune.nom}
+          codesPostaux={commune.codesPostaux}
+          accroche={accrocheHero(commune)}
+        />
 
         <section className="bg-white py-16 md:py-24">
           <div className="max-w-5xl mx-auto px-4 md:px-8">
@@ -289,12 +354,7 @@ export default function CommuneLandingPage() {
               )}
 
               <p className="text-muted text-[17px] leading-relaxed">
-                Déménagements Gramme est une entreprise familiale établie rue des
-                Naiveux 64 à Herstal. Elle est active depuis 1948, soit {ans} ans
-                et trois générations. Nous déménageons particuliers et
-                entreprises à {commune.nom}. Nos véhicules vont de 4 à 100 m³ et
-                sont équipés d'élévateurs. Le devis est gratuit et remis sous
-                24 heures ouvrables.
+                {phraseAnciennete(commune, ans)}
               </p>
             </motion.div>
 
@@ -463,6 +523,22 @@ export default function CommuneLandingPage() {
               </motion.div>
             )}
 
+            {/* Autres prestations — une ligne de liens, à la place des quatre
+                cartes services (ServicesCards). Ces cartes pesaient une
+                centaine de mots identiques sur soixante-dix pages pour ne
+                transmettre que quatre liens ; le composant reste inchangé sur
+                l'accueil et les pages de service, où il a un rôle de vitrine. */}
+            <p className="mt-10 text-muted text-[15px] leading-relaxed">
+              Nos autres prestations :{' '}
+              <Link to="/garde-meubles" className="text-navy font-bold underline hover:text-navy/70">Garde-meubles</Link>
+              {' · '}
+              <Link to="/demenagement/demenagement-international" className="text-navy font-bold underline hover:text-navy/70">Déménagement international</Link>
+              {' · '}
+              <Link to="/demenagement/demenagement-entreprise" className="text-navy font-bold underline hover:text-navy/70">Déménagement d'entreprise</Link>
+              {' · '}
+              <Link to="/monte-meubles" className="text-navy font-bold underline hover:text-navy/70">Monte-meubles</Link>
+            </p>
+
             {/* Maillage local */}
             {(voisinesLiables.length > 0 || voisinesTexte.length > 0) && (
               <motion.div
@@ -541,9 +617,11 @@ export default function CommuneLandingPage() {
           </div>
         </section>
 
-        <ServicesCards />
-        <WhyUs />
-        <ContactForm />
+        {/* ServicesCards et WhyUs ne sont plus rendus ici : voir la ligne
+            « Nos autres prestations » ci-dessus et `phraseAnciennete`. Les deux
+            composants restent en place, inchangés, pour l'accueil et les pages
+            de service. */}
+        <ContactForm variant="locale" villeParDefaut={commune.nom} />
       </main>
 
       <MobileCTA />

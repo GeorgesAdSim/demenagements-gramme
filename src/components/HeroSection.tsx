@@ -43,15 +43,31 @@ interface Props {
    * retouche graphique.
    */
   cityName?: string;
+  /**
+   * Codes postaux de la commune, accolés au nom dans le H1.
+   *
+   * C'est la seule donnée réellement discriminante qu'on puisse loger dans un
+   * titre sans le rallonger : « déménagement 4950 » est une requête réelle, et
+   * le code postal distingue soixante-dix H1 que « Votre déménagement à X »
+   * laissait identiques à un mot près.
+   */
+  codesPostaux?: string[];
+  /**
+   * Ligne d'accroche. Absente, le hero garde la phrase de l'accueil. Les pages
+   * communes en passent une composée à partir de leurs propres mesures —
+   * distance, durée, sections — voir `accrocheHero` dans CommuneLandingPage.
+   */
+  accroche?: string;
 }
 
-export default function HeroSection({ data, cityName }: Props) {
+export default function HeroSection({ data, cityName, codesPostaux, accroche }: Props) {
   // Surcharge éventuelle depuis le CMS : une URL unique, donc sans srcset.
   const override = data?.background_image;
 
   // Liège reste la valeur par défaut : l'accueil ne passe pas de prop et son
   // rendu doit rester au caractère près celui d'aujourd'hui.
   const ville = cityName?.trim() || 'Liège';
+  const codes = codesPostaux?.length ? ` (${codesPostaux.join(' · ')})` : '';
 
   const [quickForm, setQuickForm] = useState({ volume: '', date: '', email: '' });
 
@@ -120,14 +136,18 @@ export default function HeroSection({ data, cityName }: Props) {
                 raison. Le traitement visuel — pastille jaune sur fond navy —
                 est celui déjà en place, plutôt qu'un second style jaune sur
                 bleu qui n'existe nulle part ailleurs sur le site. */}
-            <span className="bg-yellow text-navy px-2 py-0.5 inline-block mt-1">{`à ${ville}`}</span>{' '}
+            <span className="bg-yellow text-navy px-2 py-0.5 inline-block mt-1">{`à ${ville}${codes}`}</span>{' '}
             <span className="text-white">&amp; partout</span><br />
             <span className="text-white/90">en Belgique</span>
           </motion.h1>
 
           <motion.p variants={fadeUp} className="text-white/85 text-lg md:text-xl max-w-[520px] leading-relaxed">
-            Devis gratuit en 24h. Assurance incluse.<br className="hidden sm:block" />
-            Sans engagement. Depuis 1948.
+            {accroche ?? (
+              <>
+                Devis gratuit en 24h. Assurance incluse.<br className="hidden sm:block" />
+                Sans engagement. Depuis 1948.
+              </>
+            )}
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
@@ -168,7 +188,7 @@ export default function HeroSection({ data, cityName }: Props) {
             <div className="mb-6">
               <p className="text-yellow text-[11px] font-bold uppercase tracking-[0.2em] mb-1">Estimation rapide</p>
               <h2 className="text-navy font-black text-xl uppercase">
-                Combien coûte votre déménagement ?
+                {cityName ? `Combien coûte votre déménagement à ${ville} ?` : 'Combien coûte votre déménagement ?'}
               </h2>
             </div>
 
