@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import SeoHead from '../components/SeoHead';
 import SchemaOrg from '../components/SchemaOrg';
 import { useSitePageContent } from '../lib/useSitePageContent';
+import { ADRESSE_COURTE } from '../data/entreprise';
 
 interface LegalContent {
   html: string;
@@ -14,7 +15,7 @@ interface LegalContent {
 
 const DEFAULT_HTML = `<h1>Conditions Générales de Vente et de Service</h1>
 
-<p>Les présentes conditions générales régissent les relations entre <strong>Déménagements Gramme SRL</strong> (Rue des Naiveux 64, 4040 Herstal, TVA BE 0775.264.382) et ses clients pour toute prestation de déménagement, transport, garde-meubles et services connexes.</p>
+<p>Les présentes conditions générales régissent les relations entre <strong>Déménagements Gramme SRL</strong> (${ADRESSE_COURTE}, TVA BE 0775.264.382) et ses clients pour toute prestation de déménagement, transport, garde-meubles et services connexes.</p>
 
 <h2>1. Devis et commande</h2>
 <p>Toute prestation fait l'objet d'un devis écrit préalable, gratuit et sans engagement. Le devis est établi sur base des informations communiquées par le client (volume, adresses, étages, accès, date, objets spéciaux). Le devis est valable 30 jours à compter de sa date d'émission.</p>

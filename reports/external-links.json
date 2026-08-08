@@ -2,7 +2,7 @@
   "genereLe": "2026-08-08",
   "liens": 29,
   "enErreur": 0,
-  "avertissements": 3,
+  "avertissements": 4,
   "detail": [
     {
       "url": "https://anthisnes.be/wp-content/uploads/2024/01/Reglement-general-de-police-decembre-2023.pdf",
@@ -184,8 +184,9 @@
       ]
     },
     {
-      "url": "https://www.oupeye.be/ma-commune/services-communaux/service-de-police-administrative-de-mobilite-et-de-planification-durgence/service-de-police-administrative-de-mobilite-et-de-planification-durgence",
+      "url": "https://www.oupeye.be/ma-commune/services-communaux/service-de-police-administrative-de-mobilite-et-de-planification-durgence-1/service-de-police-administrative-de-mobilite-et-de-planification-durgence",
       "statut": 200,
+      "urlFinale": "https://www.oupeye.be/ma-commune/services-communaux/service-de-police-administrative-de-mobilite-et-de-planification-durgence/service-de-police-administrative-de-mobilite-et-de-planification-durgence",
       "pages": [
         "/demenagement/demenagement-oupeye"
       ],

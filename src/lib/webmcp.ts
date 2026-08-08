@@ -33,6 +33,8 @@ interface ModelContext {
 }
 
 /** Réponse au format attendu par WebMCP. */
+import { ADRESSE_POSTALE } from '../data/entreprise';
+
 const text = (value: unknown) => ({
   content: [{ type: 'text', text: typeof value === 'string' ? value : JSON.stringify(value, null, 2) }],
 });
@@ -56,13 +58,13 @@ const TOOLS: McpTool[] = [
   {
     name: 'get_company_info',
     description:
-      "Coordonnées, horaires et informations générales de Déménagements Gramme, entreprise de déménagement et garde-meubles à Herstal, près de Liège en Belgique.",
+      "Coordonnées, horaires et informations générales de Déménagements Gramme, entreprise de déménagement et garde-meubles à Seraing, près de Liège en Belgique.",
     inputSchema: NO_PARAMS,
     execute: async () =>
       text({
         raisonSociale: 'Déménagements Gramme SCRL',
         fondeeEn: 1948,
-        adresse: 'Rue des Naiveux 64, 4040 Herstal, Belgique',
+        adresse: ADRESSE_POSTALE,
         telephone: '+32 4 264 50 16',
         email: 'contact@demenagements-gramme.be',
         tva: 'BE 0775.264.382',
@@ -121,7 +123,7 @@ const TOOLS: McpTool[] = [
     inputSchema: NO_PARAMS,
     execute: async () =>
       text({
-        national: 'Toute la Belgique, avec une implantation à Herstal en périphérie de Liège.',
+        national: 'Toute la Belgique, avec une implantation à Seraing en périphérie de Liège.',
         villesLiegeoises:
           'Tous les quartiers de Liège, ainsi que Seraing, Herstal et les communes environnantes. Les autorisations de stationnement auprès de la commune sont prises en charge.',
         international: ['France', 'Suisse', 'Espagne', 'Italie', 'reste de l\'Europe'],

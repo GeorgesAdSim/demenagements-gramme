@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import SeoHead from '../components/SeoHead';
 import SchemaOrg from '../components/SchemaOrg';
 import { useSitePageContent } from '../lib/useSitePageContent';
+import { ADRESSE_LEGALE, ADRESSE_POSTALE } from '../data/entreprise';
 
 interface LegalContent {
   html: string;
@@ -16,7 +17,7 @@ const DEFAULT_HTML = `<h1>Mentions Légales</h1>
 <h2>1. Éditeur du site</h2>
 <p><strong>Raison sociale :</strong> Déménagements Gramme</p>
 <p><strong>Forme juridique :</strong> Société à responsabilité limitée (SRL)</p>
-<p><strong>Siège social :</strong> Rue des Naiveux 64, 4040 Herstal (Liège), Belgique</p>
+<p><strong>Siège social :</strong> ${ADRESSE_LEGALE}</p>
 <p><strong>Numéro de TVA :</strong> BE 0775.264.382</p>
 <p><strong>Téléphone :</strong> <a href="tel:+3242645016">+32(0)4 264 50 16</a></p>
 <p><strong>Fax :</strong> +32(0)4 264 37 73</p>
@@ -46,7 +47,7 @@ const DEFAULT_HTML = `<h1>Mentions Légales</h1>
 <h2>10. Contact</h2>
 <p>Pour toute question relative aux présentes mentions légales, vous pouvez nous contacter :</p>
 <ul>
-<li>Par courrier : Déménagements Gramme, Rue des Naiveux 64, 4040 Herstal, Belgique</li>
+<li>Par courrier : Déménagements Gramme, ${ADRESSE_POSTALE}</li>
 <li>Par téléphone : <a href="tel:+3242645016">+32(0)4 264 50 16</a></li>
 <li>Par email : <a href="mailto:contact@demenagements-gramme.be">contact@demenagements-gramme.be</a></li>
 </ul>

@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { FAQ_ACCUEIL } from '../data/faq';
+import { ENTREPRISE, POSTAL_ADDRESS, GEO_COORDINATES } from '../data/entreprise';
 
 const BASE_URL = 'https://www.demenagements-gramme.be';
 
@@ -19,20 +20,10 @@ const LOCAL_BUSINESS = {
   name: 'Déménagements Gramme',
   image: `${BASE_URL}/og-image.jpg`,
   url: BASE_URL,
-  telephone: '+3242645016',
-  email: 'contact@demenagements-gramme.be',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Rue des Naiveux 64',
-    addressLocality: 'Herstal',
-    postalCode: '4040',
-    addressCountry: 'BE',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 50.6594,
-    longitude: 5.6339,
-  },
+  telephone: `+${ENTREPRISE.telephone.lien.replace('+', '')}`,
+  email: ENTREPRISE.email,
+  address: POSTAL_ADDRESS,
+  geo: GEO_COORDINATES,
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',

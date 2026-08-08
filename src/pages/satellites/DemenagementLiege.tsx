@@ -186,8 +186,8 @@ export default function DemenagementLiege() {
                 adresse, date de fondation, moyens chiffrés, certification. */}
             <p className="text-white text-lg md:text-xl leading-relaxed border-l-4 border-yellow pl-5 max-w-3xl font-medium">
               Déménagements Gramme organise votre déménagement à Liège depuis
-              1948. C'est une entreprise familiale établie rue des Naiveux 64 à
-              Herstal, aux portes de Liège, et certifiée ISO 9001. Six camions de
+              1948. C'est une entreprise familiale établie voie du Belvédère 1 à
+              Seraing, aux portes de Liège, et certifiée ISO 9001. Six camions de
               4 à 100 m³, vingt personnes, assurance transport et casse incluse.
               Devis gratuit sous 24 heures ouvrables.
             </p>

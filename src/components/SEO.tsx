@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { POSTAL_ADDRESS, GEO_COORDINATES } from '../data/entreprise';
 
 interface FAQItem {
   question: string;
@@ -116,18 +117,8 @@ export function SEO({
         'url': SITE_URL,
         'telephone': '+3242645016',
         'priceRange': '€€',
-        'address': {
-          '@type': 'PostalAddress',
-          'streetAddress': 'Rue des Naiveux 64',
-          'addressLocality': 'Herstal',
-          'postalCode': '4040',
-          'addressCountry': 'BE'
-        },
-        'geo': {
-          '@type': 'GeoCoordinates',
-          'latitude': '50.6879',
-          'longitude': '5.6286'
-        },
+        'address': POSTAL_ADDRESS,
+        'geo': GEO_COORDINATES,
         'openingHoursSpecification': [
           {
             '@type': 'OpeningHoursSpecification',

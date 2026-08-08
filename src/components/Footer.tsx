@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { ADRESSE_COURTE } from '../data/entreprise';
 
 const FACEBOOK_URL = 'https://www.facebook.com/GrammeDemenagements';
 
@@ -119,7 +120,7 @@ export default function Footer() {
             CONTACT
           </h3>
           <ul className="space-y-2 text-white/60 text-sm">
-            <li>Rue des Naiveux 64, 4040 Herstal</li>
+            <li>{ADRESSE_COURTE}</li>
             <li>
               Tél : <a href="tel:+3242645016" className="hover:text-white transition-colors">04 264 50 16</a>
             </li>

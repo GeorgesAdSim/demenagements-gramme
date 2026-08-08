@@ -6,6 +6,7 @@ import ServiceNavbar from '../components/ServiceNavbar';
 import Footer from '../components/Footer';
 import SeoHead from '../components/SeoHead';
 import SchemaOrg from '../components/SchemaOrg';
+import { ADRESSE_POSTALE } from '../data/entreprise';
 
 const HTML_CONTENT = `<h1>Protection des Données Personnelles</h1>
 
@@ -60,7 +61,7 @@ const HTML_CONTENT = `<h1>Protection des Données Personnelles</h1>
 <p>Pour toute question ou demande relative à vos données personnelles :</p>
 <ul>
 <li><strong>Email :</strong> <a href="mailto:contact@demenagements-gramme.be">contact@demenagements-gramme.be</a></li>
-<li><strong>Courrier :</strong> Déménagements Gramme - Protection des données, Rue des Naiveux 64, 4040 Herstal, Belgique</li>
+<li><strong>Courrier :</strong> Déménagements Gramme - Protection des données, ${ADRESSE_POSTALE}</li>
 <li><strong>Téléphone :</strong> <a href="tel:+3242645016">+32(0)4 264 50 16</a></li>
 </ul>
 <p>Nous nous engageons à répondre à toute demande dans un délai maximum de 30 jours.</p>

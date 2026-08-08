@@ -32,8 +32,11 @@ const BASE_URL = 'https://www.demenagements-gramme.be';
  * Commune du siège social. Sa page décrit un établissement réel : elle porte
  * donc la déclaration complète, là où les autres se contentent d'une référence
  * à l'entité par son @id.
+ *
+ * Seraing depuis le déménagement du siège d'août 2026. Le dépôt, lui, n'a pas
+ * bougé : il reste à Oupeye, et c'est de lui que sont mesurées les distances.
  */
-const COMMUNE_SIEGE = 'herstal';
+const COMMUNE_SIEGE = 'seraing';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },

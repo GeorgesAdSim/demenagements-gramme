@@ -90,7 +90,7 @@ export interface CommuneSEO {
   codesPostaux: string[];
   /**
    * Distance routière depuis le dépôt d'où partent les camions — rue de la
-   * Digue à Oupeye, et NON le siège social rue des Naiveux à Herstal. La
+   * Digue à Oupeye, et NON le siège social voie du Belvédère à Seraing. La
    * confusion entre les deux avait faussé les 37 premiers relevés.
    * `null` si non mesurée.
    */
@@ -107,7 +107,7 @@ export interface CommuneSEO {
    *
    * `informationsLocales` ne prend que des puces courtes : une commune sur
    * laquelle il y a réellement quelque chose à raconter — le siège social à
-   * Herstal, la densité urbaine à Seraing — n'y tenait pas. C'est ce qui a
+   * Seraing, le relief de Chaudfontaine — n'y tenait pas. C'est ce qui a
    * permis de migrer les pages satellites sans perdre leur prose.
    *
    * `contenu` accepte plusieurs paragraphes, séparés par une ligne vide.

@@ -76,6 +76,7 @@ const FAQ_DEVIS = [
 ];
 import { supabase } from '../lib/supabase';
 import { anneesExperience } from '../lib/anciennete';
+import { ENTREPRISE, CARTE_EMBED_URL } from '../data/entreprise';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -279,7 +280,7 @@ export default function ContactDevisPage() {
                       </div>
                       <div>
                         <p className="text-white/50 text-xs uppercase tracking-wider mb-1">Adresse</p>
-                        <p className="text-white/90">Rue des Naiveux 64<br />4040 Herstal (Liège)</p>
+                        <p className="text-white/90">{ENTREPRISE.adresse.rue}<br />{ENTREPRISE.adresse.codePostal} {ENTREPRISE.adresse.localite} ({ENTREPRISE.adresse.province})</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
@@ -544,7 +545,7 @@ export default function ContactDevisPage() {
             >
               <iframe
                 title="Déménagements Gramme - Localisation"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.8!2d5.6338!3d50.6668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0f5e2c5b5b5b5%3A0x0!2sRue+des+Naiveux+64%2C+4040+Herstal!5e0!3m2!1sfr!2sbe!4v1710000000000!5m2!1sfr!2sbe"
+                src={CARTE_EMBED_URL}
                 width="100%"
                 height="450"
                 style={{ border: 0 }}

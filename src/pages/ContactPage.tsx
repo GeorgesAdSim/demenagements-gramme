@@ -22,6 +22,7 @@ import { supabase } from '../lib/supabase';
 import { useSitePageContent } from '../lib/useSitePageContent';
 import type { ContactPageContent } from '../lib/types';
 import { anneesExperience } from '../lib/anciennete';
+import { ENTREPRISE } from '../data/entreprise';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -229,7 +230,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-white/50 text-xs uppercase tracking-wider mb-1">Adresse</p>
-                      <p className="text-white/90">Rue des Naiveux 64<br />4040 Herstal</p>
+                      <p className="text-white/90">{ENTREPRISE.adresse.rue}<br />{ENTREPRISE.adresse.codePostal} {ENTREPRISE.adresse.localite}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -510,8 +511,8 @@ export default function ContactPage() {
             </p>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 max-w-lg mx-auto">
               <p className="text-white font-bold text-lg">Déménagements Gramme</p>
-              <p className="text-white/70 mt-1">Rue des Naiveux 64</p>
-              <p className="text-white/70">4040 Herstal, Belgique</p>
+              <p className="text-white/70 mt-1">{ENTREPRISE.adresse.rue}</p>
+              <p className="text-white/70">{ENTREPRISE.adresse.codePostal} {ENTREPRISE.adresse.localite}, {ENTREPRISE.adresse.pays}</p>
               <div className="mt-4 pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <a href="tel:+3242645016" className="flex items-center gap-2 text-yellow hover:text-white transition-colors text-sm font-bold">
                   <Phone className="w-4 h-4" />

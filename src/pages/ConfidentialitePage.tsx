@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import SeoHead from '../components/SeoHead';
 import SchemaOrg from '../components/SchemaOrg';
 import { useSitePageContent } from '../lib/useSitePageContent';
+import { ADRESSE_LEGALE } from '../data/entreprise';
 
 interface LegalContent {
   html: string;
@@ -18,7 +19,7 @@ const DEFAULT_HTML = `<h1>Politique de Confidentialité</h1>
 
 <h2>1. Responsable du traitement</h2>
 <p><strong>Déménagements Gramme SRL</strong></p>
-<p>Rue des Naiveux 64, 4040 Herstal (Liège), Belgique</p>
+<p>${ADRESSE_LEGALE}</p>
 <p>TVA : BE 0775.264.382</p>
 <p>Email : <a href="mailto:contact@demenagements-gramme.be">contact@demenagements-gramme.be</a></p>
 <p>Téléphone : <a href="tel:+3242645016">+32(0)4 264 50 16</a></p>

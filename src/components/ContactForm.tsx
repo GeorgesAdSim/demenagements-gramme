@@ -6,6 +6,7 @@ import { supabase } from '../lib/supabase';
 import { SITE_IMAGES } from '../data/images';
 import type { HomepageContent } from '../lib/types';
 import { anneesExperience } from '../lib/anciennete';
+import { ADRESSE_COURTE } from '../data/entreprise';
 
 const FACEBOOK_URL = 'https://www.facebook.com/GrammeDemenagements';
 
@@ -226,7 +227,7 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
 
             <div className="space-y-3">
               {[
-                { icon: MapPin, text: 'Rue des Naiveux 64, 4040 Herstal' },
+                { icon: MapPin, text: ADRESSE_COURTE },
                 { icon: Phone, text: '04 264 50 16', href: 'tel:+3242645016' },
                 { icon: Mail, text: 'contact@demenagements-gramme.be', href: 'mailto:contact@demenagements-gramme.be' },
                 { icon: Clock, text: 'Lun : 8h–18h | Mar–Ven : 8h–17h' },
