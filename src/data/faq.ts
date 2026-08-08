@@ -32,7 +32,7 @@ export const FAQ_ACCUEIL: FaqItem[] = [
   },
   {
     q: 'Intervenez-vous en dehors de Liège ?',
-    a: "Oui. Notre siège est à Herstal, aux portes de Liège, mais notre zone va bien au-delà. Nous couvrons l'ensemble de la Belgique, ainsi que la France, les Pays-Bas, l'Allemagne, le Luxembourg, la Suisse, l'Espagne, l'Italie et le Portugal.",
+    a: "Oui. Notre siège est à Seraing, aux portes de Liège, mais notre zone va bien au-delà. Nous couvrons l'ensemble de la Belgique, ainsi que la France, les Pays-Bas, l'Allemagne, le Luxembourg, la Suisse, l'Espagne, l'Italie et le Portugal.",
   },
   // Questions ajoutées à partir des intentions de recherche que les trois
   // premiers concurrents ne traitent pas : autorisation de stationnement,
