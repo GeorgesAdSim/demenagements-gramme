@@ -6,34 +6,34 @@
     "pagesCommunes": 70
   },
   "motsParPage": {
-    "median": 1099,
-    "min": 1003,
-    "max": 1280,
-    "moyenne": 1110.2
+    "median": 1111,
+    "min": 1015,
+    "max": 1292,
+    "moyenne": 1122.2
   },
   "parPaire": {
     "paires": 190,
-    "partPartageeMediane": 36.5,
-    "partUniqueMediane": 63.5
+    "partPartageeMediane": 37.2,
+    "partUniqueMediane": 62.8
   },
   "contreUnion": {
-    "partPartageeMediane": 45.6,
-    "partUniqueMediane": 54.4,
+    "partPartageeMediane": 46.2,
+    "partUniqueMediane": 53.8,
     "motsUniquesMedians": 598
   },
   "plusLongBlocCommun": {
-    "mots": 145,
+    "mots": 150,
     "pages": [
       "demenagement-amay",
       "demenagement-aubel"
     ],
-    "texte": "reponse sous 24 heures ouvrables sans engagement demenagement garde meubles prenom nom email telephone adresse de depart adresse d arrivee date souhaitee volume estime volume estime 20m 20 50m 50 100m je ne sais pas message j accepte la politique de confidentialite envoyer ma demande de devis vos donnees sont securisees et ne seront jamais partagees besoin d un devis detaille utilisez le formulaire complet appeler devis gratuit votre demenageur de confiance a liege depuis 1948 nos services demenagement transport garde meubles demenagement international demenagement entreprise informations blog contact devis demenagement a liege zones d intervention demenagement seraing demenagement herstal contact voie du belvedere 1 4100 seraing tel 04 264 50 16 contact demenagements gramme be lun 8h 18h mar ven 8h 17h dim ferme tva be 0775 264 382 devis gratuit 2026 demenagements gramme tous droits reserves mentions legales confidentialite cgv protection des donnees"
+    "texte": "reponse sous 24 heures ouvrables sans engagement demenagement garde meubles prenom nom email telephone adresse de depart adresse d arrivee date souhaitee volume estime volume estime 20m 20 50m 50 100m je ne sais pas estimer mon volume en photos message j accepte la politique de confidentialite envoyer ma demande de devis vos donnees sont securisees et ne seront jamais partagees besoin d un devis detaille utilisez le formulaire complet appeler devis gratuit votre demenageur de confiance a liege depuis 1948 nos services demenagement transport garde meubles demenagement international demenagement entreprise informations blog contact devis demenagement a liege zones d intervention demenagement seraing demenagement herstal contact voie du belvedere 1 4100 seraing tel 04 264 50 16 contact demenagements gramme be lun 8h 18h mar ven 8h 17h dim ferme tva be 0775 264 382 devis gratuit 2026 demenagements gramme tous droits reserves mentions legales confidentialite cgv protection des donnees"
   },
   "blocsCommunsLesPlusLongs": [
     {
-      "mots": 145,
+      "mots": 150,
       "paires": 190,
-      "texte": "reponse sous 24 heures ouvrables sans engagement demenagement garde meubles prenom nom email telephone adresse de depart adresse d arrivee date souhaitee volume estime volume estime 20m 20 50m 50 100m je ne sais pas message j accepte la politique de confidentialite envoyer ma demande de devis vos donnees sont securisees et ne seront jamais partagees besoin d un devis detaille utilisez le formulaire complet appeler devis gratuit votre demenageur de confiance a liege depuis 1948 nos services demenagement transport garde meubles demenagement international demenagement entreprise informations blog contact devis demenagement a liege zones d intervention demenagement seraing demenagement herstal contact voie du belvedere 1 4100 seraing tel 04 264 50 16 contact demenagements gramme be lun 8h 18h mar ven 8h 17h dim ferme tva be 0775 264 382 devis gratuit 2026 demenagements gramme tous droits reserves mentions legales confidentialite cgv protection des donnees"
+      "texte": "reponse sous 24 heures ouvrables sans engagement demenagement garde meubles prenom nom email telephone adresse de depart adresse d arrivee date souhaitee volume estime volume estime 20m 20 50m 50 100m je ne sais pas estimer mon volume en photos message j accepte la politique de confidentialite envoyer ma demande de devis vos donnees sont securisees et ne seront jamais partagees besoin d un devis detaille utilisez le formulaire complet appeler devis gratuit votre demenageur de confiance a liege depuis 1948 nos services demenagement transport garde meubles demenagement international demenagement entreprise informations blog contact devis demenagement a liege zones d intervention demenagement seraing demenagement herstal contact voie du belvedere 1 4100 seraing tel 04 264 50 16 contact demenagements gramme be lun 8h 18h mar ven 8h 17h dim ferme tva be 0775 264 382 devis gratuit 2026 demenagements gramme tous droits reserves mentions legales confidentialite cgv protection des donnees"
     },
     {
       "mots": 102,
@@ -51,14 +51,14 @@
       "texte": "toute occupation de la voirie qui excede l usage commun est soumise a autorisation de l autorite communale la regle est commune aux dix communes de la zone de police du condroz anthisnes clavier comblain au pont ferrieres hamoir marchin modave nandrin ouffet et tinlot occuper la voirie sans cette autorisation expose a une amende administrative de 50 a 10 000 euros nous introduisons la demande pour vous information verifiee en aout 2026 aupres de l administration communale"
     },
     {
+      "mots": 56,
+      "paires": 190,
+      "texte": "volume estime selectionnez un volume studio 1 piece 10 20 m 2 pieces 20 35 m 3 pieces 35 55 m 4 pieces 55 75 m grande maison 75 100 m volume sur mesure je ne sais pas estimer en photos date souhaitee votre email obtenir mon estimation gratuit sans engagement reponse sous 24h accueil demenagement"
+    },
+    {
       "mots": 52,
       "paires": 1,
       "texte": "la zone de police pays de herve renvoie la demande vers l administration communale et ne la traite pas elle meme elle regroupe huit communes aubel baelen herve limbourg olne plombieres thimister clermont et welkenraedt nous introduisons la demande pour vous information verifiee en aout 2026 aupres de l administration communale d"
-    },
-    {
-      "mots": 49,
-      "paires": 190,
-      "texte": "volume estime selectionnez un volume studio 1 piece 10 20 m 2 pieces 20 35 m 3 pieces 35 55 m 4 pieces 55 75 m grande maison 75 100 m volume sur mesure date souhaitee votre email obtenir mon estimation gratuit sans engagement reponse sous 24h accueil demenagement"
     },
     {
       "mots": 36,
@@ -159,283 +159,283 @@
   "detailParPage": [
     {
       "url": "/demenagement/demenagement-amay",
-      "mots": 1109
+      "mots": 1121
     },
     {
       "url": "/demenagement/demenagement-ans",
-      "mots": 1280
+      "mots": 1292
     },
     {
       "url": "/demenagement/demenagement-anthisnes",
-      "mots": 1152
+      "mots": 1164
     },
     {
       "url": "/demenagement/demenagement-aubel",
-      "mots": 1064
-    },
-    {
-      "url": "/demenagement/demenagement-awans",
-      "mots": 1081
-    },
-    {
-      "url": "/demenagement/demenagement-aywaille",
-      "mots": 1101
-    },
-    {
-      "url": "/demenagement/demenagement-baelen",
-      "mots": 1063
-    },
-    {
-      "url": "/demenagement/demenagement-bassenge",
-      "mots": 1124
-    },
-    {
-      "url": "/demenagement/demenagement-beyne-heusay",
-      "mots": 1168
-    },
-    {
-      "url": "/demenagement/demenagement-blegny",
-      "mots": 1084
-    },
-    {
-      "url": "/demenagement/demenagement-braives",
-      "mots": 1198
-    },
-    {
-      "url": "/demenagement/demenagement-burdinne",
-      "mots": 1141
-    },
-    {
-      "url": "/demenagement/demenagement-chaudfontaine",
-      "mots": 1175
-    },
-    {
-      "url": "/demenagement/demenagement-clavier",
-      "mots": 1147
-    },
-    {
-      "url": "/demenagement/demenagement-comblain-au-pont",
-      "mots": 1175
-    },
-    {
-      "url": "/demenagement/demenagement-crisnee",
-      "mots": 1066
-    },
-    {
-      "url": "/demenagement/demenagement-dalhem",
-      "mots": 1097
-    },
-    {
-      "url": "/demenagement/demenagement-dison",
-      "mots": 1107
-    },
-    {
-      "url": "/demenagement/demenagement-donceel",
-      "mots": 1017
-    },
-    {
-      "url": "/demenagement/demenagement-engis",
-      "mots": 1127
-    },
-    {
-      "url": "/demenagement/demenagement-esneux",
-      "mots": 1123
-    },
-    {
-      "url": "/demenagement/demenagement-faimes",
-      "mots": 1019
-    },
-    {
-      "url": "/demenagement/demenagement-ferrieres",
-      "mots": 1126
-    },
-    {
-      "url": "/demenagement/demenagement-fexhe-le-haut-clocher",
-      "mots": 1088
-    },
-    {
-      "url": "/demenagement/demenagement-flemalle",
-      "mots": 1248
-    },
-    {
-      "url": "/demenagement/demenagement-fleron",
-      "mots": 1124
-    },
-    {
-      "url": "/demenagement/demenagement-geer",
-      "mots": 1101
-    },
-    {
-      "url": "/demenagement/demenagement-grace-hollogne",
-      "mots": 1165
-    },
-    {
-      "url": "/demenagement/demenagement-hamoir",
-      "mots": 1117
-    },
-    {
-      "url": "/demenagement/demenagement-hannut",
-      "mots": 1202
-    },
-    {
-      "url": "/demenagement/demenagement-heron",
-      "mots": 1131
-    },
-    {
-      "url": "/demenagement/demenagement-herstal",
-      "mots": 1146
-    },
-    {
-      "url": "/demenagement/demenagement-herve",
-      "mots": 1161
-    },
-    {
-      "url": "/demenagement/demenagement-huy",
-      "mots": 1194
-    },
-    {
-      "url": "/demenagement/demenagement-jalhay",
-      "mots": 1083
-    },
-    {
-      "url": "/demenagement/demenagement-juprelle",
-      "mots": 1040
-    },
-    {
-      "url": "/demenagement/demenagement-limbourg",
-      "mots": 1097
-    },
-    {
-      "url": "/demenagement/demenagement-malmedy",
-      "mots": 1075
-    },
-    {
-      "url": "/demenagement/demenagement-marchin",
       "mots": 1076
     },
     {
-      "url": "/demenagement/demenagement-modave",
-      "mots": 1110
+      "url": "/demenagement/demenagement-awans",
+      "mots": 1093
     },
     {
-      "url": "/demenagement/demenagement-nandrin",
-      "mots": 1122
+      "url": "/demenagement/demenagement-aywaille",
+      "mots": 1113
     },
     {
-      "url": "/demenagement/demenagement-neupre",
-      "mots": 1051
-    },
-    {
-      "url": "/demenagement/demenagement-olne",
-      "mots": 1040
-    },
-    {
-      "url": "/demenagement/demenagement-oreye",
-      "mots": 1021
-    },
-    {
-      "url": "/demenagement/demenagement-ouffet",
-      "mots": 1080
-    },
-    {
-      "url": "/demenagement/demenagement-oupeye",
-      "mots": 1186
-    },
-    {
-      "url": "/demenagement/demenagement-pepinster",
-      "mots": 1130
-    },
-    {
-      "url": "/demenagement/demenagement-plombieres",
-      "mots": 1094
-    },
-    {
-      "url": "/demenagement/demenagement-remicourt",
-      "mots": 1003
-    },
-    {
-      "url": "/demenagement/demenagement-saint-georges-sur-meuse",
-      "mots": 1096
-    },
-    {
-      "url": "/demenagement/demenagement-saint-nicolas",
-      "mots": 1202
-    },
-    {
-      "url": "/demenagement/demenagement-seraing",
-      "mots": 1206
-    },
-    {
-      "url": "/demenagement/demenagement-soumagne",
-      "mots": 1141
-    },
-    {
-      "url": "/demenagement/demenagement-spa",
-      "mots": 1023
-    },
-    {
-      "url": "/demenagement/demenagement-sprimont",
-      "mots": 1064
-    },
-    {
-      "url": "/demenagement/demenagement-stavelot",
-      "mots": 1084
-    },
-    {
-      "url": "/demenagement/demenagement-stoumont",
-      "mots": 1086
-    },
-    {
-      "url": "/demenagement/demenagement-theux",
-      "mots": 1054
-    },
-    {
-      "url": "/demenagement/demenagement-thimister-clermont",
-      "mots": 1054
-    },
-    {
-      "url": "/demenagement/demenagement-tinlot",
-      "mots": 1088
-    },
-    {
-      "url": "/demenagement/demenagement-trois-ponts",
-      "mots": 1072
-    },
-    {
-      "url": "/demenagement/demenagement-trooz",
-      "mots": 1060
-    },
-    {
-      "url": "/demenagement/demenagement-verlaine",
+      "url": "/demenagement/demenagement-baelen",
       "mots": 1075
     },
     {
-      "url": "/demenagement/demenagement-verviers",
-      "mots": 1215
+      "url": "/demenagement/demenagement-bassenge",
+      "mots": 1136
     },
     {
-      "url": "/demenagement/demenagement-villers-le-bouillet",
-      "mots": 1116
+      "url": "/demenagement/demenagement-beyne-heusay",
+      "mots": 1180
     },
     {
-      "url": "/demenagement/demenagement-vise",
+      "url": "/demenagement/demenagement-blegny",
+      "mots": 1096
+    },
+    {
+      "url": "/demenagement/demenagement-braives",
+      "mots": 1210
+    },
+    {
+      "url": "/demenagement/demenagement-burdinne",
+      "mots": 1153
+    },
+    {
+      "url": "/demenagement/demenagement-chaudfontaine",
+      "mots": 1187
+    },
+    {
+      "url": "/demenagement/demenagement-clavier",
+      "mots": 1159
+    },
+    {
+      "url": "/demenagement/demenagement-comblain-au-pont",
+      "mots": 1187
+    },
+    {
+      "url": "/demenagement/demenagement-crisnee",
+      "mots": 1078
+    },
+    {
+      "url": "/demenagement/demenagement-dalhem",
+      "mots": 1109
+    },
+    {
+      "url": "/demenagement/demenagement-dison",
+      "mots": 1119
+    },
+    {
+      "url": "/demenagement/demenagement-donceel",
+      "mots": 1029
+    },
+    {
+      "url": "/demenagement/demenagement-engis",
+      "mots": 1139
+    },
+    {
+      "url": "/demenagement/demenagement-esneux",
+      "mots": 1135
+    },
+    {
+      "url": "/demenagement/demenagement-faimes",
+      "mots": 1031
+    },
+    {
+      "url": "/demenagement/demenagement-ferrieres",
+      "mots": 1138
+    },
+    {
+      "url": "/demenagement/demenagement-fexhe-le-haut-clocher",
+      "mots": 1100
+    },
+    {
+      "url": "/demenagement/demenagement-flemalle",
+      "mots": 1260
+    },
+    {
+      "url": "/demenagement/demenagement-fleron",
+      "mots": 1136
+    },
+    {
+      "url": "/demenagement/demenagement-geer",
+      "mots": 1113
+    },
+    {
+      "url": "/demenagement/demenagement-grace-hollogne",
+      "mots": 1177
+    },
+    {
+      "url": "/demenagement/demenagement-hamoir",
+      "mots": 1129
+    },
+    {
+      "url": "/demenagement/demenagement-hannut",
+      "mots": 1214
+    },
+    {
+      "url": "/demenagement/demenagement-heron",
       "mots": 1143
     },
     {
-      "url": "/demenagement/demenagement-waimes",
-      "mots": 1061
+      "url": "/demenagement/demenagement-herstal",
+      "mots": 1158
     },
     {
-      "url": "/demenagement/demenagement-wanze",
+      "url": "/demenagement/demenagement-herve",
+      "mots": 1173
+    },
+    {
+      "url": "/demenagement/demenagement-huy",
+      "mots": 1206
+    },
+    {
+      "url": "/demenagement/demenagement-jalhay",
+      "mots": 1095
+    },
+    {
+      "url": "/demenagement/demenagement-juprelle",
+      "mots": 1052
+    },
+    {
+      "url": "/demenagement/demenagement-limbourg",
+      "mots": 1109
+    },
+    {
+      "url": "/demenagement/demenagement-malmedy",
+      "mots": 1087
+    },
+    {
+      "url": "/demenagement/demenagement-marchin",
       "mots": 1088
     },
     {
-      "url": "/demenagement/demenagement-waremme",
+      "url": "/demenagement/demenagement-modave",
+      "mots": 1122
+    },
+    {
+      "url": "/demenagement/demenagement-nandrin",
+      "mots": 1134
+    },
+    {
+      "url": "/demenagement/demenagement-neupre",
       "mots": 1063
     },
     {
+      "url": "/demenagement/demenagement-olne",
+      "mots": 1052
+    },
+    {
+      "url": "/demenagement/demenagement-oreye",
+      "mots": 1033
+    },
+    {
+      "url": "/demenagement/demenagement-ouffet",
+      "mots": 1092
+    },
+    {
+      "url": "/demenagement/demenagement-oupeye",
+      "mots": 1198
+    },
+    {
+      "url": "/demenagement/demenagement-pepinster",
+      "mots": 1142
+    },
+    {
+      "url": "/demenagement/demenagement-plombieres",
+      "mots": 1106
+    },
+    {
+      "url": "/demenagement/demenagement-remicourt",
+      "mots": 1015
+    },
+    {
+      "url": "/demenagement/demenagement-saint-georges-sur-meuse",
+      "mots": 1108
+    },
+    {
+      "url": "/demenagement/demenagement-saint-nicolas",
+      "mots": 1214
+    },
+    {
+      "url": "/demenagement/demenagement-seraing",
+      "mots": 1218
+    },
+    {
+      "url": "/demenagement/demenagement-soumagne",
+      "mots": 1153
+    },
+    {
+      "url": "/demenagement/demenagement-spa",
+      "mots": 1035
+    },
+    {
+      "url": "/demenagement/demenagement-sprimont",
+      "mots": 1076
+    },
+    {
+      "url": "/demenagement/demenagement-stavelot",
+      "mots": 1096
+    },
+    {
+      "url": "/demenagement/demenagement-stoumont",
+      "mots": 1098
+    },
+    {
+      "url": "/demenagement/demenagement-theux",
+      "mots": 1066
+    },
+    {
+      "url": "/demenagement/demenagement-thimister-clermont",
+      "mots": 1066
+    },
+    {
+      "url": "/demenagement/demenagement-tinlot",
+      "mots": 1100
+    },
+    {
+      "url": "/demenagement/demenagement-trois-ponts",
+      "mots": 1084
+    },
+    {
+      "url": "/demenagement/demenagement-trooz",
+      "mots": 1072
+    },
+    {
+      "url": "/demenagement/demenagement-verlaine",
+      "mots": 1087
+    },
+    {
+      "url": "/demenagement/demenagement-verviers",
+      "mots": 1227
+    },
+    {
+      "url": "/demenagement/demenagement-villers-le-bouillet",
+      "mots": 1128
+    },
+    {
+      "url": "/demenagement/demenagement-vise",
+      "mots": 1155
+    },
+    {
+      "url": "/demenagement/demenagement-waimes",
+      "mots": 1073
+    },
+    {
+      "url": "/demenagement/demenagement-wanze",
+      "mots": 1100
+    },
+    {
+      "url": "/demenagement/demenagement-waremme",
+      "mots": 1075
+    },
+    {
       "url": "/demenagement/demenagement-welkenraedt",
-      "mots": 1094
+      "mots": 1106
     }
   ]
 }
