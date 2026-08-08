@@ -453,6 +453,38 @@ export default function ServicePageLayout({
           </section>
         )}
 
+        {c.liensAssocies && c.liensAssocies.items.length > 0 && (
+          <section className="bg-offwhite py-16 md:py-20">
+            <div className="max-w-5xl mx-auto px-4 md:px-8">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="text-2xl md:text-[2rem] font-black uppercase text-navy mb-4">
+                  {c.liensAssocies.sectionTitle}
+                </h2>
+                {c.liensAssocies.intro && (
+                  <p className="text-muted text-[17px] leading-relaxed mb-6 max-w-3xl">
+                    {c.liensAssocies.intro}
+                  </p>
+                )}
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {c.liensAssocies.items.map((l) => (
+                    <li key={l.to} className="bg-white rounded-2xl border border-gray-100 p-5">
+                      <Link to={l.to} className="text-navy font-bold underline hover:text-navy/70">
+                        {l.label}
+                      </Link>
+                      <p className="text-muted text-[15px] leading-relaxed mt-1">{l.desc}</p>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
+          </section>
+        )}
+
         <section className="bg-navy py-16 md:py-20">
           <div className="max-w-3xl mx-auto px-4 md:px-8 text-center">
             <motion.div

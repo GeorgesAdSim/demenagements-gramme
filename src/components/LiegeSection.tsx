@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MapPin, Building2, TriangleAlert, Truck } from 'lucide-react';
 import { anneesExperience } from '../lib/anciennete';
+import { getCommuneBySlug, communeUrl, RACINE_ZONES, type CommuneSEO } from '../data/communes';
 
 // Quartiers de Liège où l'entreprise intervient. Aucun concurrent de la première
 // page ne descend à ce niveau de granularité : le premier cite des communes de
@@ -13,12 +14,59 @@ const QUARTIERS = [
 ];
 
 // Communes de l'arrondissement de Liège et des environs immédiats.
-const COMMUNES = [
-  'Herstal', 'Seraing', 'Ans', 'Saint-Nicolas', 'Grâce-Hollogne', 'Flémalle',
-  'Beyne-Heusay', 'Fléron', 'Chaudfontaine', 'Esneux', 'Oupeye', 'Visé',
-  'Blegny', 'Soumagne', 'Awans', 'Juprelle', 'Bassenge', 'Trooz',
-  'Sprimont', 'Neupré', 'Comblain-au-Pont', 'Aywaille',
+//
+// Des SLUGS, et non des noms : les noms étaient écrits en dur ici alors qu'ils
+// vivent déjà dans src/data/communes.json, synchronisé depuis le CMS. Deux
+// listes pour la même chose finissent toujours par diverger — il a suffi
+// qu'une commune soit renommée en back-office. Les slugs sont résolus au rendu
+// contre la donnée réelle, et une commune dépubliée disparaît d'elle-même.
+const SLUGS_COMMUNES = [
+  'herstal', 'seraing', 'ans', 'saint-nicolas', 'grace-hollogne', 'flemalle',
+  'beyne-heusay', 'fleron', 'chaudfontaine', 'esneux', 'oupeye', 'vise',
+  'blegny', 'soumagne', 'awans', 'juprelle', 'bassenge', 'trooz',
+  'sprimont', 'neupre', 'comblain-au-pont', 'aywaille',
 ];
+
+/**
+ * Pages spécialisées vers lesquelles l'accueil renvoie.
+ *
+ * Quatre d'entre elles ne recevaient qu'un à trois liens entrants, tous depuis
+ * des pages elles-mêmes faibles. L'accueil est la seule page réellement forte
+ * du site : c'est de là que le lien vaut quelque chose.
+ */
+const LIENS_APPROFONDIS = [
+  {
+    to: '/demenagement/demenageur-liege',
+    label: 'Déménageur à Liège',
+    desc: 'nos effectifs, notre flotte et l\'organisation d\'un chantier en ville.',
+  },
+  {
+    to: '/demenagement/demenagement-piano',
+    label: 'Déménagement de piano',
+    desc: 'un instrument ne se transporte pas comme un meuble.',
+  },
+  {
+    to: '/demenagement/demontage-remontage-meubles',
+    label: 'Démontage et remontage de meubles',
+    desc: 'ce qui ne passe pas la porte monté, et ce qu\'on remonte à l\'arrivée.',
+  },
+  {
+    to: '/garde-meubles/garde-meubles-liege',
+    label: 'Garde-meubles à Liège',
+    desc: 'nos box, leurs accès et leurs conditions.',
+  },
+  {
+    to: '/blog/6-conseils-reussir-demenagement-liege',
+    label: '6 conseils pour réussir son déménagement',
+    desc: 'ce qui se prépare des semaines à l\'avance.',
+  },
+  {
+    to: '/blog/6-erreurs-eviter-demenagement-liege',
+    label: '6 erreurs à éviter',
+    desc: 'les oublis qui coûtent le plus cher le jour J.',
+  },
+];
+
 
 const CONTRAINTES = [
   {
@@ -44,6 +92,12 @@ const CONTRAINTES = [
 ];
 
 export default function LiegeSection() {
+  // Une commune passée en brouillon est servie en noindex : lui envoyer un lien
+  // depuis la page la plus forte du site dépenserait du maillage pour rien.
+  const communes = SLUGS_COMMUNES
+    .map((slug) => getCommuneBySlug(slug))
+    .filter((c): c is CommuneSEO => c !== undefined && c.statut === 'published');
+
   const ans = anneesExperience();
 
   return (
@@ -185,19 +239,28 @@ export default function LiegeSection() {
             Les communes de la province que nous desservons
           </h3>
           <p className="text-muted text-[16px] leading-relaxed mb-5">
-            Notre dépôt nous place à quelques minutes de la plupart
-            des communes de l'arrondissement. Nous intervenons régulièrement à :
+            Notre dépôt nous place à quelques minutes de la plupart des communes
+            de l'arrondissement. Chacune a sa page, avec la distance depuis le
+            dépôt et les règles de stationnement qui lui sont propres :
           </p>
           <div className="flex flex-wrap gap-2">
-            {COMMUNES.map((c) => (
-              <span key={c} className="bg-offwhite border border-gray-200 text-navy text-sm rounded-full px-3.5 py-1.5">
-                {c}
-              </span>
+            {communes.map((c) => (
+              <Link
+                key={c.id}
+                to={communeUrl(c)}
+                className="bg-navy text-white text-sm rounded-full px-3.5 py-1.5 hover:bg-navy/80 transition-colors"
+              >
+                Déménagement à {c.nom}
+              </Link>
             ))}
           </div>
           <p className="text-muted text-[15px] leading-relaxed mt-5">
             Votre commune n'apparaît pas dans cette liste&nbsp;? Nous couvrons
-            l'ensemble de la province de Liège et de la Belgique. La France, la
+            l'ensemble de la province de Liège, commune par commune, sur notre{' '}
+            <Link to={RACINE_ZONES} className="text-navy font-bold underline hover:text-navy/70 transition-colors">
+              page des zones d'intervention
+            </Link>
+            , et toute la Belgique. La France, la
             Suisse, l'Espagne et l'Italie relèvent de nos{' '}
             <Link to="/demenagement/demenagement-international" className="text-navy font-bold underline hover:text-navy/70 transition-colors">
               déménagements internationaux depuis Liège
@@ -205,6 +268,29 @@ export default function LiegeSection() {
             . Appelez-nous, nous vous dirons en deux minutes si nous pouvons
             intervenir.
           </p>
+
+          {/* Renvois vers les pages spécialisées.
+              L'accueil est la page la plus forte du site, et elle ne renvoyait
+              vers aucune d'elles : /demenagement/demenageur-liege ne recevait
+              qu'un seul lien entrant, depuis une page qui en a deux.
+              Placé en fin de section « territoire » plutôt qu'en pied de page :
+              un lecteur arrivé jusqu'ici cherche du détail, et l'ancre porte le
+              sujet de la page visée. */}
+          <div className="mt-10 pt-8 border-t border-gray-200">
+            <h3 className="text-lg font-black uppercase text-navy mb-4">
+              Pour aller plus loin
+            </h3>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
+              {LIENS_APPROFONDIS.map((l) => (
+                <li key={l.to} className="text-muted text-[15px] leading-relaxed">
+                  <Link to={l.to} className="text-navy font-bold underline hover:text-navy/70 transition-colors">
+                    {l.label}
+                  </Link>
+                  {' — '}{l.desc}
+                </li>
+              ))}
+            </ul>
+          </div>
         </motion.div>
 
       </div>

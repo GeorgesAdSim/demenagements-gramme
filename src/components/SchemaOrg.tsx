@@ -22,6 +22,10 @@ const LOCAL_BUSINESS = {
   url: BASE_URL,
   telephone: `+${ENTREPRISE.telephone.lien.replace('+', '')}`,
   email: ENTREPRISE.email,
+  // Profil officiel de l'entreprise. `sameAs` rattache l'entité du site au
+  // profil social, ce qui aide Google à ne pas la confondre avec une homonyme.
+  sameAs: ['https://www.facebook.com/GrammeDemenagements'],
+  logo: `${BASE_URL}/logo-gramme-300.png`,
   address: POSTAL_ADDRESS,
   geo: GEO_COORDINATES,
   openingHoursSpecification: [
@@ -36,6 +40,15 @@ const LOCAL_BUSINESS = {
       dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday'],
       opens: '08:00',
       closes: '17:00',
+    },
+    // Fermeture déclarée explicitement : les deux sources du site s'accordent
+    // dessus, et une fermeture non déclarée laisse Google supposer une
+    // ouverture. Le samedi, lui, reste absent — voir le commentaire ci-dessus.
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Sunday',
+      opens: '00:00',
+      closes: '00:00',
     },
   ],
   foundingDate: '1948',

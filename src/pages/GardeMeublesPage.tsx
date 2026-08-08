@@ -67,6 +67,21 @@ const defaults: ServicePageContent = {
       ],
     },
   },
+  liensAssocies: {
+    sectionTitle: 'Le garde-meubles en détail',
+    items: [
+      {
+        to: '/garde-meubles/garde-meubles-liege',
+        label: 'Garde-meubles à Liège : nos box et leurs accès',
+        desc: 'Où se trouvent les box, comment y accéder et dans quelles conditions.',
+      },
+      {
+        to: '/garde-meubles/prix-garde-meubles-liege',
+        label: 'Prix d\'un garde-meubles à Liège',
+        desc: 'Le tarif au mètre cube, la durée minimale et ce que couvre l\'assurance.',
+      },
+    ],
+  },
   cta: {
     title: "Besoin d'un espace de stockage ?",
     subtitle: 'Demandez votre devis gratuit et sans engagement. Reponse garantie sous 24h.',

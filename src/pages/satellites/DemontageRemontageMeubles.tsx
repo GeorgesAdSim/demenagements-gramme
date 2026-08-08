@@ -37,7 +37,7 @@ export default function DemontageRemontageMeubles() {
         { label: 'Déménagement de piano', to: '/demenagement/demenagement-piano' },
       ]}
       meta={{
-        title: 'Démontage et Remontage de Meubles | Déménagements Gramme Liège',
+        title: 'Démontage et remontage de meubles à Liège | Gramme',
         description: 'Service de démontage et remontage de meubles à Liège. Armoires, lits, cuisines. Équipe qualifiée, devis gratuit. Gramme depuis 1948.',
         canonical: '/demenagement/demontage-remontage-meubles',
       }}

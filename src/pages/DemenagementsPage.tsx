@@ -135,6 +135,38 @@ const defaults: ServicePageContent = {
       'oupeye', 'herve', 'flemalle', 'chaudfontaine', 'fleron', 'spa', 'soumagne',
     ],
   },
+  liensAssocies: {
+    sectionTitle: 'Pour aller plus loin',
+    intro:
+      "Ces pages détaillent un aspect précis du déménagement, là où celle-ci en donne la vue d'ensemble.",
+    items: [
+      {
+        to: '/demenagement/demenageur-liege',
+        label: 'Déménageur à Liège : nos équipes et nos moyens',
+        desc: 'Effectifs, flotte et organisation d\'un chantier dans l\'agglomération liégeoise.',
+      },
+      {
+        to: '/demenagement/demenagement-piano',
+        label: 'Déménagement de piano',
+        desc: 'Le transport d\'un piano ne relève pas du déménagement ordinaire : matériel et précautions dédiés.',
+      },
+      {
+        to: '/blog/6-conseils-reussir-demenagement-liege',
+        label: '6 conseils pour réussir son déménagement à Liège',
+        desc: 'Ce qui se prépare des semaines à l\'avance, et ce qui peut attendre.',
+      },
+      {
+        to: '/blog/6-erreurs-eviter-demenagement-liege',
+        label: '6 erreurs à éviter lors d\'un déménagement',
+        desc: 'Les oublis qui coûtent le plus cher le jour J.',
+      },
+      {
+        to: '/blog/preparer-enfants-demenagement-liege',
+        label: 'Préparer les enfants au déménagement',
+        desc: 'Changer de maison et d\'école : ce qui aide à passer le cap.',
+      },
+    ],
+  },
   cta: {
     title: 'Prêt à déménager ?',
     subtitle: 'Demandez votre devis gratuit et sans engagement. Réponse garantie sous 24h.',

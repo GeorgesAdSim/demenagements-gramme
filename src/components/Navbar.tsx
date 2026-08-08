@@ -177,7 +177,10 @@ export default function Navbar() {
           </Link>
 
           <button
-            className={`lg:hidden transition-colors ${scrolled ? 'text-white' : 'text-navy'}`}
+            // p-3 porte la zone de touche de 24 à 48 px, le minimum recommandé
+            // pour une cible tactile ; -mr-3 compense le padding pour que
+            // l'icône reste au même endroit à l'écran.
+            className={`lg:hidden p-3 -mr-3 transition-colors ${scrolled ? 'text-white' : 'text-navy'}`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Menu"
           >

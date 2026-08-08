@@ -68,7 +68,7 @@ export default function ServiceNavbar() {
 
         <div className="flex items-center gap-4">
           <Link
-            to="/contact"
+            to="/contact-devis"
             className="hidden md:flex items-center gap-1.5 px-4 py-2 rounded font-bold text-sm uppercase tracking-wide transition-all duration-200 bg-[#F0B800] text-[#0D1020] border border-[#C89A00] hover:bg-[#EAB000]"
           >
             Devis Gratuit
@@ -76,7 +76,10 @@ export default function ServiceNavbar() {
           </Link>
 
           <button
-            className={`lg:hidden transition-colors ${scrolled ? 'text-white' : 'text-navy'}`}
+            // p-3 porte la zone de touche de 24 à 48 px, le minimum recommandé
+            // pour une cible tactile ; -mr-3 compense le padding pour que
+            // l'icône reste au même endroit à l'écran.
+            className={`lg:hidden p-3 -mr-3 transition-colors ${scrolled ? 'text-white' : 'text-navy'}`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Menu"
           >
@@ -103,7 +106,7 @@ export default function ServiceNavbar() {
             </Link>
           ))}
           <Link
-            to="/contact"
+            to="/contact-devis"
             onClick={() => setMobileOpen(false)}
             className="mt-2 bg-[#F0B800] text-[#0D1020] font-bold uppercase py-3 px-6 rounded flex items-center gap-2 justify-center border border-[#C89A00]"
           >
