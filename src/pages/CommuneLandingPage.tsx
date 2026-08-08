@@ -157,13 +157,33 @@ function phrasesStationnement(c: CommuneSEO): string[] {
 }
 
 /**
- * FAQ construite à partir des seules données vérifiées de la commune.
+ * FAQ de la page.
+ *
+ * Priorité à `faqLocale`, rédigée commune par commune : c'est la seule forme
+ * qui produise des questions réellement différentes, parce que la question
+ * pertinente n'est pas la même à Seraing et à Waimes. Voir le champ dans
+ * src/data/communes.ts.
+ *
+ * À défaut, on retombe sur les questions génériques ci-dessous. Elles sont
+ * vraies partout, mais quatre-vingt-seize de leurs mots sont identiques d'une
+ * commune à l'autre : c'est un repli, pas une cible. Les communes concernées
+ * sont listées dans reports/faq-a-completer.md.
+ */
+function construireFaq(c: CommuneSEO): Array<{ q: string; a: string }> {
+  if (c.faqLocale?.length) {
+    return c.faqLocale.map((qr) => ({ q: qr.question, a: qr.reponse }));
+  }
+  return faqGenerique(c);
+}
+
+/**
+ * Repli générique, construit à partir des seules données vérifiées.
  *
  * Aucune question n'est générée si l'information correspondante manque : une
  * réponse inventée sur une distance ou un village serait un mensonge servi au
  * visiteur autant qu'au moteur, et le balisage FAQPage l'amplifierait.
  */
-function construireFaq(c: CommuneSEO): Array<{ q: string; a: string }> {
+function faqGenerique(c: CommuneSEO): Array<{ q: string; a: string }> {
   const faq: Array<{ q: string; a: string }> = [];
 
   if (c.distanceDepotKm !== null && c.tempsTrajetEstimeMin !== null) {

@@ -85,6 +85,7 @@ function versCommuneSEO(r, depot = {}) {
   reprendre(c, 'sectionsLocales', r, 'sections_locales', depot, (v) => v.length > 0);
   reprendre(c, 'autorisationStationnement', r, 'autorisation_stationnement', depot);
   reprendre(c, 'todoDonneesLocales', r, 'todo_donnees_locales', depot);
+  reprendre(c, 'faqLocale', r, 'faq_locale', depot, (v) => v.length > 0);
 
   return c;
 }
@@ -103,7 +104,7 @@ const ORDRE = [
   'id', 'nom', 'arrondissement', 'codesPostaux', 'distanceDepotKm',
   'tempsTrajetEstimeMin', 'villages', 'communesVoisines', 'introductionLocale',
   'informationsLocales', 'sectionsLocales', 'autorisationStationnement',
-  'todoDonneesLocales', 'dateVerification', 'pageExistante', 'statut',
+  'faqLocale', 'todoDonneesLocales', 'dateVerification', 'pageExistante', 'statut',
 ];
 
 function ordonner(c) {
