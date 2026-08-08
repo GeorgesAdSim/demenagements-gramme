@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Loader as Loader2 } from 'lucide-react';
 import { AuthProvider } from './lib/AuthContext';
@@ -6,6 +6,7 @@ import PublicSite from './pages/PublicSite';
 import CookieConsent from './components/CookieConsent';
 import { useLocation } from 'react-router-dom';
 import WebMcpTools from './components/WebMcpTools';
+import { installerMesureTelephone } from './lib/mesure';
 
 const DemenagementsPage = lazy(() => import('./pages/DemenagementsPage'));
 const GardeMeublesPage = lazy(() => import('./pages/GardeMeublesPage'));
@@ -72,6 +73,10 @@ function HorsAdmin({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  // Écouteur délégué des liens `tel:`, posé une fois pour tout le site.
+  // `useEffect` ne s'exécute pas au pré-rendu, où `document` n'existe pas.
+  useEffect(installerMesureTelephone, []);
+
   return (
     <AuthProvider>
       <BrowserRouter>

@@ -6,6 +6,7 @@ import { supabase } from '../lib/supabase';
 import { SITE_IMAGES } from '../data/images';
 import type { HomepageContent } from '../lib/types';
 import { anneesExperience } from '../lib/anciennete';
+import { mesurerDevisEnvoye, mesurerEstimationPhotos } from '../lib/mesure';
 import { ADRESSE_COURTE } from '../data/entreprise';
 
 const FACEBOOK_URL = 'https://www.facebook.com/GrammeDemenagements';
@@ -132,8 +133,10 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
     if (!validate()) return;
     setLoading(true);
 
+    const serviceType = SERVICE_DB_MAP[form.service] || 'demenagement';
+
     const { error } = await supabase.from('devis_requests').insert({
-      service_type: SERVICE_DB_MAP[form.service] || 'demenagement',
+      service_type: serviceType,
       firstname: form.firstName,
       lastname: form.lastName,
       email: form.email,
@@ -150,6 +153,10 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
       setErrors({ message: 'Une erreur est survenue. Merci de réessayer ou de nous appeler au 04 264 50 16.' });
       return;
     }
+
+    // La base a accepté la demande : c'est ici, et pas plus haut, que la
+    // conversion existe.
+    mesurerDevisEnvoye('formulaire-contact', serviceType);
 
     // Envoi de la notification email (best-effort — ne bloque pas le succès)
     fetch('/api/send-devis-email', {
@@ -456,6 +463,7 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
 
                 <Link
                   to="/estimation-volume"
+                  onClick={() => mesurerEstimationPhotos('formulaire')}
                   className="inline-flex items-center gap-2 border-2 border-navy text-navy font-bold text-sm uppercase rounded-lg px-5 py-2.5 hover:bg-navy hover:text-yellow transition-colors"
                 >
                   <Camera className="w-4 h-4" />

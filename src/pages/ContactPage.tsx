@@ -22,6 +22,7 @@ import { supabase } from '../lib/supabase';
 import { useSitePageContent } from '../lib/useSitePageContent';
 import type { ContactPageContent } from '../lib/types';
 import { anneesExperience } from '../lib/anciennete';
+import { mesurerDevisEnvoye } from '../lib/mesure';
 import { ENTREPRISE } from '../data/entreprise';
 
 const fadeUp = {
@@ -135,7 +136,7 @@ export default function ContactPage() {
     if (!validate()) return;
     setLoading(true);
 
-    await supabase.from('devis_requests').insert({
+    const { error } = await supabase.from('devis_requests').insert({
       service_type: form.service,
       firstname: form.firstName,
       lastname: form.lastName,
@@ -147,6 +148,10 @@ export default function ContactPage() {
       volume: form.volume || 'unknown',
       message: form.message,
     });
+
+    // Voir ContactDevisPage : le succès affiché ignore `error` de longue date,
+    // la conversion non.
+    if (!error) mesurerDevisEnvoye('contact', form.service);
 
     setLoading(false);
     setSuccess(true);
