@@ -71,6 +71,7 @@ const ROUTES = [
   '/garde-meubles',
   '/blog',
   '/monte-meubles',
+  '/estimation-volume',
   '/demenagement/demenageur-liege',
   '/demenagement/demenagement-liege',
   '/demenagement/demenagement-entreprise',

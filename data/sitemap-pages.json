@@ -23,6 +23,7 @@
     { "url": "/contact-devis", "changefreq": "monthly", "priority": "0.9" },
     { "url": "/contact", "changefreq": "monthly", "priority": "0.8" },
     { "url": "/zones-intervention", "changefreq": "monthly", "priority": "0.8" },
+    { "url": "/estimation-volume", "changefreq": "monthly", "priority": "0.8" },
     { "url": "/monte-meubles", "changefreq": "monthly", "priority": "0.7" },
     { "url": "/blog", "changefreq": "weekly", "priority": "0.7" },
 

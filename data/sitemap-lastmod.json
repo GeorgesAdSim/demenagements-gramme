@@ -1,6 +1,6 @@
 {
   "/": {
-    "contentHash": "284149c1ac2df2c8",
+    "contentHash": "b5f2db17930a4fce",
     "lastmod": "2026-08-08"
   },
   "/blog": {
@@ -36,27 +36,27 @@
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-ans": {
-    "contentHash": "e0c6ba1b5eaa04f8",
+    "contentHash": "4bcc5c5fc7851c1b",
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-bassenge": {
-    "contentHash": "b50d0033a246c72f",
+    "contentHash": "7532799b0500f6ec",
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-beyne-heusay": {
-    "contentHash": "fd49ad017531501f",
+    "contentHash": "ba25eee9cddfeeac",
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-blegny": {
-    "contentHash": "386dcd1a5f671790",
+    "contentHash": "a5fdfd385ddfbe41",
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-chaudfontaine": {
-    "contentHash": "76b861a5a8896772",
+    "contentHash": "cf5022d92e8bf73b",
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-dison": {
-    "contentHash": "c24a5d80fac37265",
+    "contentHash": "d63b7e29ee6af62f",
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-entreprise": {
@@ -64,27 +64,27 @@
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-flemalle": {
-    "contentHash": "f61c637770b38872",
+    "contentHash": "a3af77fb93bef25b",
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-fleron": {
-    "contentHash": "076b7aaf76bea223",
+    "contentHash": "398f8f043b2b0b6e",
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-grace-hollogne": {
-    "contentHash": "c7e4228fad0a289a",
+    "contentHash": "180f022174696983",
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-herstal": {
-    "contentHash": "445d42361af2c072",
+    "contentHash": "edf9e4e3eb01e4d2",
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-herve": {
-    "contentHash": "6e2343773e4a5fee",
+    "contentHash": "652b89a3bfe35840",
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-huy": {
-    "contentHash": "fb97695f04463e8f",
+    "contentHash": "bb610705eb9169b8",
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-international": {
@@ -92,11 +92,11 @@
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-liege": {
-    "contentHash": "d7f6b049db5e57e4",
+    "contentHash": "a7dd0d54290a261f",
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-oupeye": {
-    "contentHash": "ece059f7e4fa2a37",
+    "contentHash": "1354650ac5a76e82",
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-piano": {
@@ -104,27 +104,27 @@
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-saint-nicolas": {
-    "contentHash": "e072b486e081971b",
+    "contentHash": "921cd467f9201148",
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-seraing": {
-    "contentHash": "91a80b3de88a4b0c",
+    "contentHash": "65206674d5cbf379",
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-soumagne": {
-    "contentHash": "95c5788cfbabbd31",
+    "contentHash": "367303cc85008673",
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-verviers": {
-    "contentHash": "17e76e74d6a21aed",
+    "contentHash": "061e10533c583354",
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-vise": {
-    "contentHash": "4e8f3d6eba5b2c1e",
+    "contentHash": "a82b583f1bf9cea2",
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenagement-waremme": {
-    "contentHash": "9d26fa1e25ed1387",
+    "contentHash": "fb26862a092c076b",
     "lastmod": "2026-08-08"
   },
   "/demenagement/demenageur-liege": {
@@ -133,6 +133,10 @@
   },
   "/demenagement/demontage-remontage-meubles": {
     "contentHash": "1c262621116bc1bc",
+    "lastmod": "2026-08-08"
+  },
+  "/estimation-volume": {
+    "contentHash": "7f9fb51ea744f163",
     "lastmod": "2026-08-08"
   },
   "/garde-meubles": {
@@ -164,7 +168,7 @@
     "lastmod": "2026-08-08"
   },
   "/zones-intervention": {
-    "contentHash": "c8c70da927dac83b",
+    "contentHash": "f46faddecf7dd256",
     "lastmod": "2026-08-08"
   }
 }
