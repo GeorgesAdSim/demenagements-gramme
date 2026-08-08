@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Menu, X, ChevronDown } from 'lucide-react';
 import { RACINE_ZONES } from '../data/communes';
+import { mesurerEstimationPhotos } from '../lib/mesure';
 
 interface DropdownItem {
   label: string;
   to: string;
   badge?: string;
+  /** Renseigné sur les entrées dont le clic est une conversion à mesurer. */
+  mesure?: () => void;
 }
 
 interface NavItem {
@@ -26,7 +29,12 @@ const NAV_ITEMS: NavItem[] = [
       { label: 'Déménagement', to: '/demenagement' },
       { label: 'Garde-Meubles', to: '/garde-meubles' },
       { label: 'Monte-Meubles', to: '/monte-meubles' },
-      { label: 'Estimateur de volume', to: '/estimation-volume', badge: 'NOUVEAU' },
+      {
+        label: 'Estimateur de volume',
+        to: '/estimation-volume',
+        badge: 'NOUVEAU',
+        mesure: () => mesurerEstimationPhotos('navigation'),
+      },
       { label: 'Déménagement international', to: '/demenagement/demenagement-international' },
     ],
   },
@@ -60,6 +68,7 @@ function DesktopDropdown({
         <Link
           key={item.to}
           to={item.to}
+          onClick={item.mesure}
           className={`block px-4 py-2.5 text-sm font-medium transition-colors ${scrolled ? 'text-white/70 hover:text-yellow hover:bg-white/5' : 'text-navy/70 hover:text-navy hover:bg-offwhite'}`}
         >
           {item.label}
@@ -245,7 +254,7 @@ export default function Navbar() {
                     <Link
                       key={child.to}
                       to={child.to}
-                      onClick={() => setMobileOpen(false)}
+                      onClick={() => { child.mesure?.(); setMobileOpen(false); }}
                       className="block text-white/70 text-base font-medium px-4 py-2 rounded hover:text-yellow hover:bg-white/5 transition-colors"
                     >
                       {child.label}

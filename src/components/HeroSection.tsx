@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import type { HomepageContent } from '../lib/types';
 import { SITE_IMAGES } from '../data/images';
 import { anneesExperience } from '../lib/anciennete';
+import { mesurerEstimationPhotos } from '../lib/mesure';
 
 const container = {
   hidden: {},
@@ -208,6 +209,7 @@ export default function HeroSection({ data, cityName, codesPostaux, accroche }: 
                 </select>
                 <Link
                   to="/estimation-volume"
+                  onClick={() => mesurerEstimationPhotos('hero')}
                   className="mt-2 w-full border-2 border-navy text-navy font-bold text-[13px] uppercase rounded-lg py-2.5 px-4 flex items-center justify-center gap-2 hover:bg-navy hover:text-yellow transition-colors"
                 >
                   <Camera className="w-4 h-4" />

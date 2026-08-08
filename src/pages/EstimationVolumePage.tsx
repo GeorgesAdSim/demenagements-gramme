@@ -10,6 +10,7 @@ import SeoHead from '../components/SeoHead';
 import SchemaOrg from '../components/SchemaOrg';
 import { supabase } from '../lib/supabase';
 import { compressImage } from '../lib/imageCompression';
+import { mesurerDevisEnvoye } from '../lib/mesure';
 import {
   ITEM_LABELS, VOLUME_TABLE, SPECIAL_ITEMS, computeRoomVolumes, computeTotals,
   type DetectedItem,
@@ -310,7 +311,7 @@ export default function EstimationVolumePage() {
     await supabase.functions.invoke('estimate-volume', {
       body: { action: 'lead', estimation_id: result.estimation_id, lead_phone: callbackForm.phone, lead_email: callbackForm.name },
     }).catch(() => {});
-    await supabase.from('devis_requests').insert({
+    const { error } = await supabase.from('devis_requests').insert({
       service_type: 'demenagement',
       firstname: callbackForm.name || 'Rappel estimation',
       lastname: `(estimation ${result.estimation_id.slice(0, 8)})`,
@@ -319,6 +320,9 @@ export default function EstimationVolumePage() {
       departure_city: '-', arrival_city: '-', volume: 'unknown',
       message: `Demande de rappel — estimateur photos. Volume estimé : ${totals?.volumeFinal.toFixed(0)} m³. ID : ${result.estimation_id}`,
     });
+    // Le rappel demandé depuis l'estimateur arrive dans la même table que les
+    // devis : c'est un lead, et il se compte comme tel.
+    if (!error) mesurerDevisEnvoye('estimation-rappel', 'demenagement');
     setCallbackSent(true);
   };
 

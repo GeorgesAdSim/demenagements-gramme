@@ -76,6 +76,7 @@ const FAQ_DEVIS = [
 ];
 import { supabase } from '../lib/supabase';
 import { anneesExperience } from '../lib/anciennete';
+import { mesurerDevisEnvoye } from '../lib/mesure';
 import { ENTREPRISE, CARTE_EMBED_URL } from '../data/entreprise';
 
 const fadeUp = {
@@ -157,7 +158,7 @@ export default function ContactDevisPage() {
     if (!validate()) return;
     setLoading(true);
 
-    await supabase.from('devis_requests').insert({
+    const { error } = await supabase.from('devis_requests').insert({
       service_type: form.service,
       firstname: form.firstName,
       lastname: form.lastName,
@@ -169,6 +170,11 @@ export default function ContactDevisPage() {
       volume: form.volume || 'unknown',
       message: form.message,
     });
+
+    // L'affichage du succès ne dépend pas de `error` — c'était déjà le cas
+    // avant, et le changer relèverait d'un autre chantier. La conversion, elle,
+    // ne se compte que si la base a bien enregistré la demande.
+    if (!error) mesurerDevisEnvoye('contact-devis', form.service);
 
     setLoading(false);
     setSuccess(true);
