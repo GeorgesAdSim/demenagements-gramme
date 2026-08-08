@@ -97,6 +97,22 @@ La page entre alors automatiquement au pré-rendu, au sitemap et dans
 l'en-tête — sur l'accueil comme sur les 70 pages communes, soit la profondeur 1
 que le plan exige.
 
+## Calendrier : décidé le 2026-08-08
+
+Publication **différée jusqu'à ce que le crawl du déploiement du 8 août
+retombe**, soit vers le 15 août.
+
+Raison : ce déploiement a déplacé le `lastmod` des 43 URL du sitemap — l'adresse
+du siège figure dans chaque pied de page — et retiré 51 communes du sitemap.
+Publier les pages de service avant que Google ait digéré ce changement rendrait
+illisible le test du §7 du plan : si elles sont crawlées, on ne saurait pas si
+c'est parce qu'une page de service a plus de valeur perçue, ou parce que le
+sitemap entier vient de bouger. Or c'est précisément la question que le test
+doit trancher.
+
+Ordre retenu : obtenir les 15 données → rédiger → lever le verrou → publier une
+fois le crawl du 8 août observé.
+
 ## Ce qui reste à faire après la rédaction
 
 - **Liens contextuels** depuis l'accueil, `/demenagement`, `/contact-devis` et
