@@ -20,6 +20,47 @@ const COMMUNES = [
   'Sprimont', 'Neupré', 'Comblain-au-Pont', 'Aywaille',
 ];
 
+/**
+ * Pages spécialisées vers lesquelles l'accueil renvoie.
+ *
+ * Quatre d'entre elles ne recevaient qu'un à trois liens entrants, tous depuis
+ * des pages elles-mêmes faibles. L'accueil est la seule page réellement forte
+ * du site : c'est de là que le lien vaut quelque chose.
+ */
+const LIENS_APPROFONDIS = [
+  {
+    to: '/demenagement/demenageur-liege',
+    label: 'Déménageur à Liège',
+    desc: 'nos effectifs, notre flotte et l\'organisation d\'un chantier en ville.',
+  },
+  {
+    to: '/demenagement/demenagement-piano',
+    label: 'Déménagement de piano',
+    desc: 'un instrument ne se transporte pas comme un meuble.',
+  },
+  {
+    to: '/demenagement/demontage-remontage-meubles',
+    label: 'Démontage et remontage de meubles',
+    desc: 'ce qui ne passe pas la porte monté, et ce qu\'on remonte à l\'arrivée.',
+  },
+  {
+    to: '/garde-meubles/garde-meubles-liege',
+    label: 'Garde-meubles à Liège',
+    desc: 'nos box, leurs accès et leurs conditions.',
+  },
+  {
+    to: '/blog/6-conseils-reussir-demenagement-liege',
+    label: '6 conseils pour réussir son déménagement',
+    desc: 'ce qui se prépare des semaines à l\'avance.',
+  },
+  {
+    to: '/blog/6-erreurs-eviter-demenagement-liege',
+    label: '6 erreurs à éviter',
+    desc: 'les oublis qui coûtent le plus cher le jour J.',
+  },
+];
+
+
 const CONTRAINTES = [
   {
     icon: TriangleAlert,
@@ -205,6 +246,29 @@ export default function LiegeSection() {
             . Appelez-nous, nous vous dirons en deux minutes si nous pouvons
             intervenir.
           </p>
+
+          {/* Renvois vers les pages spécialisées.
+              L'accueil est la page la plus forte du site, et elle ne renvoyait
+              vers aucune d'elles : /demenagement/demenageur-liege ne recevait
+              qu'un seul lien entrant, depuis une page qui en a deux.
+              Placé en fin de section « territoire » plutôt qu'en pied de page :
+              un lecteur arrivé jusqu'ici cherche du détail, et l'ancre porte le
+              sujet de la page visée. */}
+          <div className="mt-10 pt-8 border-t border-gray-200">
+            <h3 className="text-lg font-black uppercase text-navy mb-4">
+              Pour aller plus loin
+            </h3>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
+              {LIENS_APPROFONDIS.map((l) => (
+                <li key={l.to} className="text-muted text-[15px] leading-relaxed">
+                  <Link to={l.to} className="text-navy font-bold underline hover:text-navy/70 transition-colors">
+                    {l.label}
+                  </Link>
+                  {' — '}{l.desc}
+                </li>
+              ))}
+            </ul>
+          </div>
         </motion.div>
 
       </div>
