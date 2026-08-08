@@ -97,7 +97,7 @@ const defaultContent: ContactPageContent = {
   },
   visit: {
     title: 'Rendez-nous visite',
-    subtitle: "Nos bureaux se situent à Herstal, aux portes de Liège. N'hésitez pas à venir nous rencontrer.",
+    subtitle: "Nos bureaux se situent à Seraing, aux portes de Liège. N'hésitez pas à venir nous rencontrer.",
   },
 };
 
@@ -171,7 +171,7 @@ export default function ContactPage() {
         title={meta?.metaTitle || 'Demandez votre devis gratuit | Déménagements Gramme'}
         description={
           meta?.metaDescription ||
-          "Contactez Déménagements Gramme à Herstal (Liège) : devis gratuit et sans engagement, réponse garantie sous 24h. Téléphone, formulaire en ligne et horaires."
+          "Contactez Déménagements Gramme à Seraing (Liège) : devis gratuit et sans engagement, réponse garantie sous 24h. Téléphone, formulaire en ligne et horaires."
         }
         canonical={meta?.canonicalUrl || '/contact'}
       />

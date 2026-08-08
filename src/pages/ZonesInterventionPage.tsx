@@ -166,7 +166,7 @@ export default function ZonesInterventionPage() {
                   Nos camions partent chaque matin de notre dépôt d'Oupeye, en
                   Basse-Meuse. C'est de là que se mesurent toutes les distances
                   affichées sur cette page — et non depuis notre siège social de
-                  Herstal, qui est un lieu administratif et non un point de départ.
+                  Seraing, qui est un lieu administratif et non un point de départ.
                 </p>
                 <p>
                   Le trajet d'approche apparaît sur le devis. Il correspond au temps

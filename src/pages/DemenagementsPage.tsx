@@ -93,7 +93,7 @@ const defaults: ServicePageContent = {
       },
       {
         title: 'Capacité et matériel',
-        desc: "Nos véhicules vont de 4 m³, pour un studio, à 100 m³ pour une maison complète, avec élévateurs intégrés. Sur les gros chantiers, plusieurs camions et plusieurs équipes peuvent intervenir le même jour. Un garde-meubles en box sécurisés à Herstal complète le dispositif quand les dates d'entrée et de sortie ne coïncident pas.",
+        desc: "Nos véhicules vont de 4 m³, pour un studio, à 100 m³ pour une maison complète, avec élévateurs intégrés. Sur les gros chantiers, plusieurs camions et plusieurs équipes peuvent intervenir le même jour. Un garde-meubles en box sécurisés à Seraing complète le dispositif quand les dates d'entrée et de sortie ne coïncident pas.",
       },
     ],
   },

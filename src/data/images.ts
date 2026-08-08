@@ -43,7 +43,7 @@ export const SITE_IMAGES = {
   },
   warehouse: {
     src: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=900&q=75&auto=format&fit=crop',
-    alt: 'Entrepôt garde-meubles sécurisé Déménagements Gramme à Herstal',
+    alt: 'Entrepôt garde-meubles sécurisé Déménagements Gramme à Seraing',
   },
   packing: {
     src: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=75&auto=format&fit=crop',

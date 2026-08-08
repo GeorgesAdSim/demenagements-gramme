@@ -45,7 +45,7 @@ export default function DemenagementEntreprise() {
         {
           title: "Coordination avec le syndic et l'accès à l'immeuble",
           content:
-            "Un transfert de bureaux met en jeu au moins deux immeubles, et donc au moins deux gestionnaires. Réservation du monte-charge, protection des parties communes, créneaux autorisés, accès au quai de livraison : ces points se règlent en amont, pas le matin même.\n\nNous prenons contact avec les syndics et les gestionnaires des deux sites. Nous nous chargeons aussi de la demande d'autorisation de stationnement auprès de l'administration communale, panneaux compris. Elle doit être introduite plusieurs jours ouvrables à l'avance.\n\nVos deux baux ne se recouvrent pas ? Le mobilier peut attendre dans nos box de garde-meubles à Herstal. Ils sont surveillés en permanence et couverts contre le vol, l'incendie et la dégradation.",
+            "Un transfert de bureaux met en jeu au moins deux immeubles, et donc au moins deux gestionnaires. Réservation du monte-charge, protection des parties communes, créneaux autorisés, accès au quai de livraison : ces points se règlent en amont, pas le matin même.\n\nNous prenons contact avec les syndics et les gestionnaires des deux sites. Nous nous chargeons aussi de la demande d'autorisation de stationnement auprès de l'administration communale, panneaux compris. Elle doit être introduite plusieurs jours ouvrables à l'avance.\n\nVos deux baux ne se recouvrent pas ? Le mobilier peut attendre dans nos box de garde-meubles à Seraing. Ils sont surveillés en permanence et couverts contre le vol, l'incendie et la dégradation.",
         },
       ]}
       faq={[
@@ -77,7 +77,7 @@ export default function DemenagementEntreprise() {
         {
           question: 'Pouvez-vous stocker notre mobilier entre deux baux ?',
           answer:
-            "Oui. Nos box de garde-meubles à Herstal sont individuels, surveillés en permanence, et l'assurance vol, incendie et dégradation est comprise dans le tarif. C'est la solution courante quand la date de sortie ne coïncide pas avec celle d'entrée.",
+            "Oui. Nos box de garde-meubles à Seraing sont individuels, surveillés en permanence, et l'assurance vol, incendie et dégradation est comprise dans le tarif. C'est la solution courante quand la date de sortie ne coïncide pas avec celle d'entrée.",
         },
       ]}
       relatedPages={[

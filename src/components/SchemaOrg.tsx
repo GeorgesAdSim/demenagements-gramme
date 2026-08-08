@@ -127,7 +127,7 @@ interface SchemaOrgProps {
   /**
    * `'full'` déclare l'établissement (adresse, horaires, géolocalisation) :
    * réservé aux pages qui parlent réellement du siège, c'est-à-dire l'accueil
-   * et la page Herstal. Partout ailleurs, la valeur par défaut `'reference'`
+   * et la page Seraing. Partout ailleurs, la valeur par défaut `'reference'`
    * se contente de rattacher la page à l'entité par son `@id`.
    */
   organization?: 'full' | 'reference';
@@ -192,7 +192,7 @@ export default function SchemaOrg({
 
   if (localService) {
     // Service plutôt qu'une seconde MovingCompany : l'entreprise est unique et
-    // située à Herstal. Déclarer un établissement par commune serait une
+    // située à Seraing. Déclarer un établissement par commune serait une
     // fausse déclaration d'implantation locale.
     scripts.push({
       type: 'application/ld+json',
@@ -203,7 +203,7 @@ export default function SchemaOrg({
         name: `Déménagement à ${localService.ville}`,
         url: localService.url,
         // Renvoi par `@id` : le prestataire est l'entité unique du site. La
-        // version précédente recopiait ici l'adresse de Herstal, ce qui
+        // version précédente recopiait ici l'adresse du siège, ce qui
         // revenait à répéter le même bloc d'établissement sur chaque commune.
         provider: { '@id': ORG_ID },
         areaServed: {

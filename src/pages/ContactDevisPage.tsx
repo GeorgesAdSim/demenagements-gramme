@@ -191,7 +191,7 @@ export default function ContactDevisPage() {
     <div className="font-sans">
       <SeoHead
         title="Contact & Devis Gratuit — Déménagements Gramme Liège"
-        description="Contactez Déménagements Gramme pour un devis gratuit et sans engagement. Formulaire en ligne, téléphone et adresse à Herstal (Liège)."
+        description="Contactez Déménagements Gramme pour un devis gratuit et sans engagement. Formulaire en ligne, téléphone et adresse à Seraing (Liège)."
         canonical="/contact-devis"
       />
       {/* Page de conversion sur laquelle le visiteur cherche à nous joindre :
@@ -532,7 +532,7 @@ export default function ContactDevisPage() {
                 Rendez-nous visite
               </h2>
               <p className="text-muted mt-3 max-w-xl mx-auto">
-                Nos bureaux se situent à Herstal, aux portes de Liège. N'hésitez pas à venir nous rencontrer.
+                Nos bureaux se situent à Seraing, aux portes de Liège. N'hésitez pas à venir nous rencontrer.
               </p>
             </motion.div>
 

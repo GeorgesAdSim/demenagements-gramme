@@ -29,7 +29,7 @@ const DEFAULT_HTML = `<h1>Mentions Légales</h1>
 <p><strong>Site web :</strong> <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">www.netlify.com</a></p>
 <p>Les données applicatives (formulaires, demandes de devis) sont hébergées via Supabase au sein de l'Union européenne.</p>
 <h2>3. Activité</h2>
-<p>Déménagements Gramme est une entreprise familiale fondée en 1948, spécialisée dans les services de déménagement pour particuliers et entreprises, le transport de marchandises, le garde-meubles et la location de monte-meubles. Nous opérons principalement depuis Herstal (Liège) en Belgique, avec des services couvrant l'ensemble du territoire belge et l'Europe.</p>
+<p>Déménagements Gramme est une entreprise familiale fondée en 1948, spécialisée dans les services de déménagement pour particuliers et entreprises, le transport de marchandises, le garde-meubles et la location de monte-meubles. Nous opérons principalement depuis Seraing (Liège) en Belgique, avec des services couvrant l'ensemble du territoire belge et l'Europe.</p>
 <h2>4. Propriété intellectuelle</h2>
 <p>L'ensemble du contenu de ce site (textes, images, logos, graphismes, maquettes, etc.) est la propriété exclusive de Déménagements Gramme ou de ses partenaires et est protégé par le droit belge et international relatif à la propriété intellectuelle.</p>
 <p>Toute reproduction, représentation, modification, publication, adaptation ou distribution, totale ou partielle, du contenu de ce site, par quelque moyen que ce soit, sans l'autorisation écrite préalable de Déménagements Gramme est strictement interdite et constitue une contrefaçon sanctionnée par le Code de droit économique belge.</p>
