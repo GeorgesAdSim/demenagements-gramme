@@ -44,7 +44,35 @@ export interface AutorisationStationnement {
   signalisation: string | null;
   /** Page officielle d'où proviennent les champs ci-dessus. */
   sourceUrl: string;
+  /**
+   * Formulaire de demande, quand il vit sur une URL distincte de `sourceUrl`.
+   * Absent tant qu'une URL n'a pas été relevée : une URL devinée produit un 404
+   * sortant, ce qui est pire que pas de lien du tout.
+   */
+  urlFormulaire?: string;
+  /**
+   * Texte du lien vers `sourceUrl`, rédigé à la main pour cette commune.
+   *
+   * L'ancre était auparavant composée : « information officielle publiée par
+   * {autorite} », soit le même patron répété sur cinquante et une pages. Une
+   * ancre qui se devine par formule n'apporte aucun signal — elle en retire,
+   * en signalant la génération automatique. Elle reprend donc ici le libellé
+   * réel de la ressource : le nom de la plateforme, du formulaire ou du
+   * règlement tel qu'il se présente sur le site de la commune.
+   */
+  libelleSource: string;
   dateVerification: string;
+  /**
+   * Verrou de publication. `'human'` : un humain a relu la fiche et engage sa
+   * responsabilité dessus. `null` : donnée collectée mais non relue.
+   *
+   * Une fiche non relue n'est PAS rendue : la page retombe sur le texte
+   * générique, sans lien externe. La raison n'est pas éditoriale mais
+   * pratique — un délai ou une redevance erronés font prendre une amende au
+   * client, et c'est un coût sans commune mesure avec celui d'un paragraphe
+   * moins précis. Le passage à `'human'` est un acte manuel.
+   */
+  verifiePar: 'human' | null;
 }
 
 export interface CommuneSEO {
@@ -314,6 +342,32 @@ export function validerCommunes(communes: CommuneSEO[] = COMMUNES): ProblemeComm
       }
       if (!c.dateVerification) {
         problemes.push({ commune: c.id, gravite: 'avertissement', message: 'publiée sans date de vérification des données' });
+      }
+
+      // Fiche stationnement : la donnée qui, si elle est fausse, coûte une
+      // amende au client. Les contrôles portent donc sur ce qui la rend
+      // publiable, pas sur son exhaustivité.
+      const a = c.autorisationStationnement;
+      if (a) {
+        if (!a.sourceUrl?.trim()) {
+          problemes.push({ commune: c.id, gravite: 'erreur', message: 'autorisationStationnement sans sourceUrl' });
+        } else if (!/^https:\/\/[^/]+\.be(\/|$)/.test(a.sourceUrl)) {
+          // Domaines .be officiels uniquement : site communal, zone de police,
+          // portail régional. Ni raccourcisseur, ni URL de recherche.
+          problemes.push({ commune: c.id, gravite: 'erreur', message: `sourceUrl « ${a.sourceUrl} » n'est pas une URL https d'un domaine .be` });
+        }
+        if (!a.libelleSource?.trim()) {
+          problemes.push({ commune: c.id, gravite: 'erreur', message: 'autorisationStationnement sans libelleSource — l\'ancre du lien doit être rédigée, pas composée' });
+        }
+        if (a.verifiePar !== 'human' && a.verifiePar !== null) {
+          problemes.push({ commune: c.id, gravite: 'erreur', message: `verifiePar vaut « ${a.verifiePar} » — attendu "human" ou null` });
+        }
+        if (a.verifiePar === null) {
+          problemes.push({ commune: c.id, gravite: 'avertissement', message: 'fiche stationnement collectée mais non relue (verifiePar: null) — texte générique servi' });
+        }
+        if (a.urlFormulaire && !/^https:\/\/[^/]+\.be(\/|$)/.test(a.urlFormulaire)) {
+          problemes.push({ commune: c.id, gravite: 'erreur', message: `urlFormulaire « ${a.urlFormulaire} » n'est pas une URL https d'un domaine .be` });
+        }
       }
 
       // FAQ locale : entre 3 et 5 questions. Deux, c'est une section qui ne

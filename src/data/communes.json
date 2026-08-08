@@ -46,7 +46,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.amay.be/vivre-a-amay/mobilite/plateforme-eaglebe-demandes-doccupation-du-domaine-public",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la présentation de la plateforme Eaglebe publiée pour la zone de police Meuse-Hesbaye",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -139,7 +141,9 @@
         "cout": "Les panneaux ne sont pas fournis par l'administration : ils restent à charge et aux frais du demandeur",
         "signalisation": "À placer 48 heures avant le début du déménagement",
         "sourceUrl": "https://www.police.be/5284/actualites/reservation-demplacement-et-occupation-temporaire-de-la-voie-publique-en-quelques-clics",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "l'annonce « Réservation d'emplacement et occupation temporaire de la voie publique en quelques clics »",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -210,7 +214,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://anthisnes.be/wp-content/uploads/2024/01/Reglement-general-de-police-decembre-2023.pdf",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "le règlement général de police de décembre 2023, commun aux dix communes de la zone du Condroz",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -274,7 +280,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.police.be/5288/questions/autorisation/vous-souhaitez-occuper-une-partie-de-la-voie-publique",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la fiche « Vous souhaitez occuper une partie de la voie publique » de la zone de police Pays de Herve",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -461,7 +469,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.police.be/5288/questions/autorisation/vous-souhaitez-occuper-une-partie-de-la-voie-publique",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la fiche « Vous souhaitez occuper une partie de la voie publique » de la zone de police Pays de Herve",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -529,7 +539,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.bassenge.be/bassenge/information/simplification-des-demarches-administratives-a-ba",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "l'annonce de simplification des démarches administratives publiée par la commune de Bassenge",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -614,7 +626,9 @@
         "cout": "75 € par intervention pour la location et la livraison du matériel de signalisation, à payer au plus tard deux jours ouvrés avant l'occupation",
         "signalisation": null,
         "sourceUrl": "https://www.beyne-heusay.be/mobilite",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la page Mobilité de la commune de Beyne-Heusay",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -752,7 +766,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.police.be/5293/questions/autorisation/comment-demander-une-autorisation-pour-loccupation-de-la-voirie",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la fiche « Comment demander une autorisation pour l'occupation de la voirie » de la zone Hesbaye-Ouest",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -843,7 +859,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.police.be/5293/questions/autorisation/comment-demander-une-autorisation-pour-loccupation-de-la-voirie",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la fiche « Comment demander une autorisation pour l'occupation de la voirie » de la zone Hesbaye-Ouest",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -951,7 +969,9 @@
         "cout": null,
         "signalisation": "La location de signalisation est possible auprès du service Travaux",
         "sourceUrl": "https://www.chaudfontaine.be/ma-commune/administration/services-communaux/voirie-proprete-plantations/foire-aux-questions-travaux/",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la foire aux questions Travaux du service Voirie, propreté et plantations de Chaudfontaine",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -1020,7 +1040,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://anthisnes.be/wp-content/uploads/2024/01/Reglement-general-de-police-decembre-2023.pdf",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "le règlement général de police de décembre 2023, commun aux dix communes de la zone du Condroz",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -1087,7 +1109,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://anthisnes.be/wp-content/uploads/2024/01/Reglement-general-de-police-decembre-2023.pdf",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "le règlement général de police de décembre 2023, commun aux dix communes de la zone du Condroz",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -1398,7 +1422,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.amay.be/vivre-a-amay/mobilite/plateforme-eaglebe-demandes-doccupation-du-domaine-public",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la présentation de la plateforme Eaglebe publiée pour la zone de police Meuse-Hesbaye",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -1463,7 +1489,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.esneux.be/uploads/Police_administrative_Formulaire_unique.pdf",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "le formulaire unique de police administrative d'Esneux",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -1614,7 +1642,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://anthisnes.be/wp-content/uploads/2024/01/Reglement-general-de-police-decembre-2023.pdf",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "le règlement général de police de décembre 2023, commun aux dix communes de la zone du Condroz",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -1748,7 +1778,9 @@
         "cout": "10 € de traitement administratif, plus 1 € par m² et par jour d'occupation à partir du 1er juin 2026",
         "signalisation": "La commune ne fournit pas les panneaux, qui se louent auprès de sociétés spécialisées ; ils doivent être placés 24 heures avant le début de l'occupation",
         "sourceUrl": "https://www.flemalle.be/ma-commune/services-communaux/police-administrative/demande-d-occupation-du-domaine-public/demande-dautorisation",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la démarche « Demande d'autorisation d'occupation du domaine public » de Flémalle",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -1818,7 +1850,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.fleron.be/ma-commune/services-communaux/mobilite/demande-doccupation-de-la-voie-publique.pdf",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "le formulaire de demande d'occupation de la voie publique de la zone Beyne-Fléron-Soumagne",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -1953,7 +1987,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.grace-hollogne.be/ma-commune/service-communaux/environnement/demarches/demande-doccupation-du-domaine-public-1",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la démarche « Demande d'occupation du domaine public » de Grâce-Hollogne",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -2020,7 +2056,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://anthisnes.be/wp-content/uploads/2024/01/Reglement-general-de-police-decembre-2023.pdf",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "le règlement général de police de décembre 2023, commun aux dix communes de la zone du Condroz",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -2103,7 +2141,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.police.be/5293/questions/autorisation/comment-demander-une-autorisation-pour-loccupation-de-la-voirie",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la fiche « Comment demander une autorisation pour l'occupation de la voirie » de la zone Hesbaye-Ouest",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -2170,7 +2210,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.police.be/5293/questions/autorisation/comment-demander-une-autorisation-pour-loccupation-de-la-voirie",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la fiche « Comment demander une autorisation pour l'occupation de la voirie » de la zone Hesbaye-Ouest",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -2242,7 +2284,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.herstal.be/vivre-a-herstal/securite/occupation-de-voirie",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la page « Occupation de voirie » de la Ville de Herstal",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -2318,7 +2362,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.police.be/5288/questions/autorisation/vous-souhaitez-occuper-une-partie-de-la-voie-publique",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la fiche « Vous souhaitez occuper une partie de la voie publique » de la zone de police Pays de Herve",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -2384,7 +2430,9 @@
         "cout": "62 € de frais de placement si la signalisation est posée par le Service Signalisation de la Ville ; en cas de pose par vos soins sans matériel, caution de 25 € par panneau",
         "signalisation": "Si vous la posez vous-même, au plus tard vers 16 h le jour précédant la réservation",
         "sourceUrl": "https://www.huy.be/ma-commune/securite-secours/police/chantiers-travaux",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la page « Chantiers et travaux » de la Ville de Huy",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -2592,7 +2640,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.policeliege.be/page/occuper-la-voie-publique",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la page « Occuper la voie publique » de la police de Liège",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "dateVerification": "2026-07-30",
       "pageExistante": "/demenagement/demenagement-liege",
@@ -2665,7 +2715,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.police.be/5288/questions/autorisation/vous-souhaitez-occuper-une-partie-de-la-voie-publique",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la fiche « Vous souhaitez occuper une partie de la voie publique » de la zone de police Pays de Herve",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -2777,7 +2829,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.malmedy.be/ma-commune/services-communaux/tous-les-services/mobilite",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la page du service Mobilité de la Ville de Malmedy",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -2841,7 +2895,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://anthisnes.be/wp-content/uploads/2024/01/Reglement-general-de-police-decembre-2023.pdf",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "le règlement général de police de décembre 2023, commun aux dix communes de la zone du Condroz",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -2910,7 +2966,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://anthisnes.be/wp-content/uploads/2024/01/Reglement-general-de-police-decembre-2023.pdf",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "le règlement général de police de décembre 2023, commun aux dix communes de la zone du Condroz",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -2979,7 +3037,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://anthisnes.be/wp-content/uploads/2024/01/Reglement-general-de-police-decembre-2023.pdf",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "le règlement général de police de décembre 2023, commun aux dix communes de la zone du Condroz",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -3105,7 +3165,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.police.be/5288/questions/autorisation/vous-souhaitez-occuper-une-partie-de-la-voie-publique",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la fiche « Vous souhaitez occuper une partie de la voie publique » de la zone de police Pays de Herve",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -3231,7 +3293,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://anthisnes.be/wp-content/uploads/2024/01/Reglement-general-de-police-decembre-2023.pdf",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "le règlement général de police de décembre 2023, commun aux dix communes de la zone du Condroz",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -3304,8 +3368,10 @@
         "delai": "10 jours ouvrables avant le début de l'occupation, sous peine d'irrecevabilité",
         "cout": null,
         "signalisation": null,
-        "sourceUrl": "https://www.oupeye.be/ma-commune/services-communaux/service-de-police-administrative-de-mobilite-et-de-planification-durgence-1/service-de-police-administrative-de-mobilite-et-de-planification-durgence",
-        "dateVerification": "2026-08-02"
+        "sourceUrl": "https://www.oupeye.be/ma-commune/services-communaux/service-de-police-administrative-de-mobilite-et-de-planification-durgence/service-de-police-administrative-de-mobilite-et-de-planification-durgence",
+        "libelleSource": "la page du service de Police administrative, de Mobilité et de Planification d'urgence d'Oupeye",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -3374,7 +3440,9 @@
         "cout": null,
         "signalisation": "Le service Travaux et Développement met des panneaux E1/E3 à disposition contre paiement, si l’entrepreneur ne fournit pas la signalisation",
         "sourceUrl": "https://www.pepinster.be/ma-commune/services/t-d/voiries/location-de-signalisation",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la page « Location de signalisation » du service Travaux et Développement de Pepinster",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -3444,7 +3512,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.police.be/5288/questions/autorisation/vous-souhaitez-occuper-une-partie-de-la-voie-publique",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la fiche « Vous souhaitez occuper une partie de la voie publique » de la zone de police Pays de Herve",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -3592,7 +3662,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.amay.be/vivre-a-amay/mobilite/plateforme-eaglebe-demandes-doccupation-du-domaine-public",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la présentation de la plateforme Eaglebe publiée pour la zone de police Meuse-Hesbaye",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -3657,7 +3729,9 @@
         "cout": "Les panneaux ne sont pas fournis par l'administration : ils restent à charge et aux frais du demandeur",
         "signalisation": "À placer 48 heures avant le début du déménagement",
         "sourceUrl": "https://www.police.be/5284/actualites/reservation-demplacement-et-occupation-temporaire-de-la-voie-publique-en-quelques-clics",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "l'annonce « Réservation d'emplacement et occupation temporaire de la voie publique en quelques clics »",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -3753,7 +3827,9 @@
         "cout": "1 € par mètre carré et par jour",
         "signalisation": "À installer 48 heures avant le début de l'occupation, en préservant un passage de 1,50 m pour les piétons",
         "sourceUrl": "https://www.seraing.be/wp-content/uploads/2026/01/Formulaire-autorisation-odp.pdf",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "le formulaire d'autorisation d'occupation du domaine public de la Ville de Seraing",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -3825,7 +3901,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.fleron.be/ma-commune/services-communaux/mobilite/demande-doccupation-de-la-voie-publique.pdf",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "le formulaire de demande d'occupation de la voie publique de la zone Beyne-Fléron-Soumagne",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -3887,7 +3965,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.villedespa.be/ma-ville/services-communaux/travaux-energie/mobilite/demande-doccupation-de-la-voirie",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la démarche « Demande d'occupation de la voirie » de la Ville de Spa",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -3956,7 +4036,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.sprimont.be/ma-commune/services-communaux/mobilite/arrete-de-police",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la page « Arrêté de police » du service Travaux de Sprimont",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -4022,7 +4104,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.stavelot.be/ma-commune/demande-evenement-occupation-domaine-public",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "le guichet « Demande d'événement ou d'occupation du domaine public » de Stavelot",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -4207,7 +4291,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.police.be/5288/questions/autorisation/vous-souhaitez-occuper-une-partie-de-la-voie-publique",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la fiche « Vous souhaitez occuper une partie de la voie publique » de la zone de police Pays de Herve",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -4278,7 +4364,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://anthisnes.be/wp-content/uploads/2024/01/Reglement-general-de-police-decembre-2023.pdf",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "le règlement général de police de décembre 2023, commun aux dix communes de la zone du Condroz",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -4465,7 +4553,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.amay.be/vivre-a-amay/mobilite/plateforme-eaglebe-demandes-doccupation-du-domaine-public",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la présentation de la plateforme Eaglebe publiée pour la zone de police Meuse-Hesbaye",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -4537,7 +4627,9 @@
         "cout": null,
         "signalisation": "À charge du demandeur ou du responsable du déménagement ; elle peut être louée auprès d'une société de signalisation routière",
         "sourceUrl": "https://www.verviers.be/ma-commune/administration/services-communaux/police-administrative/demarches/occupation-de-voirie-pour-demenagement",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la démarche « Occupation de voirie pour déménagement » de la Ville de Verviers",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -4606,7 +4698,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.amay.be/vivre-a-amay/mobilite/plateforme-eaglebe-demandes-doccupation-du-domaine-public",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la présentation de la plateforme Eaglebe publiée pour la zone de police Meuse-Hesbaye",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -4677,7 +4771,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.vise.be/vivre-a-vise/environnement/eaglebe/occupation-du-domaine-public-plateforme",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la page « Occupation du domaine public — plateforme Eaglebe » de la Ville de Visé",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -4806,7 +4902,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.amay.be/vivre-a-amay/mobilite/plateforme-eaglebe-demandes-doccupation-du-domaine-public",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la présentation de la plateforme Eaglebe publiée pour la zone de police Meuse-Hesbaye",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -4875,7 +4973,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.waremme.be/ma-ville/services-communaux/police-administrative/police-administrative",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la page du service de Police administrative de la Ville de Waremme",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {
@@ -4964,7 +5064,9 @@
         "cout": null,
         "signalisation": null,
         "sourceUrl": "https://www.police.be/5288/questions/autorisation/vous-souhaitez-occuper-une-partie-de-la-voie-publique",
-        "dateVerification": "2026-08-02"
+        "libelleSource": "la fiche « Vous souhaitez occuper une partie de la voie publique » de la zone de police Pays de Herve",
+        "dateVerification": "2026-08-02",
+        "verifiePar": "human"
       },
       "faqLocale": [
         {

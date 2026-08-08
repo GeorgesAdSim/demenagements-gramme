@@ -1,0 +1,330 @@
+{
+  "genereLe": "2026-08-08",
+  "liens": 29,
+  "enErreur": 0,
+  "avertissements": 3,
+  "detail": [
+    {
+      "url": "https://anthisnes.be/wp-content/uploads/2024/01/Reglement-general-de-police-decembre-2023.pdf",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-anthisnes",
+        "/demenagement/demenagement-clavier",
+        "/demenagement/demenagement-comblain-au-pont",
+        "/demenagement/demenagement-ferrieres",
+        "/demenagement/demenagement-hamoir",
+        "/demenagement/demenagement-marchin",
+        "/demenagement/demenagement-modave",
+        "/demenagement/demenagement-nandrin",
+        "/demenagement/demenagement-ouffet",
+        "/demenagement/demenagement-tinlot"
+      ],
+      "ancres": [
+        "le règlement général de police de décembre 2023, commun aux dix communes de la zone du Condroz"
+      ]
+    },
+    {
+      "url": "https://ec.europa.eu/consumers/odr",
+      "statut": 200,
+      "urlFinale": "https://consumer-redress.ec.europa.eu/site-relocation_en",
+      "pages": [
+        "/conditions-generales"
+      ],
+      "ancres": [
+        "plateforme européenne de règlement en ligne des litiges"
+      ]
+    },
+    {
+      "url": "https://www.amay.be/vivre-a-amay/mobilite/plateforme-eaglebe-demandes-doccupation-du-domaine-public",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-amay",
+        "/demenagement/demenagement-engis",
+        "/demenagement/demenagement-saint-georges-sur-meuse",
+        "/demenagement/demenagement-verlaine",
+        "/demenagement/demenagement-villers-le-bouillet",
+        "/demenagement/demenagement-wanze"
+      ],
+      "ancres": [
+        "la présentation de la plateforme Eaglebe publiée pour la zone de police Meuse-Hesbaye"
+      ]
+    },
+    {
+      "url": "https://www.autoriteprotectiondonnees.be",
+      "statut": 200,
+      "urlFinale": "https://www.autoriteprotectiondonnees.be/citoyen",
+      "pages": [
+        "/politique-confidentialite",
+        "/protection-donnees"
+      ],
+      "ancres": [
+        "www.autoriteprotectiondonnees.be"
+      ]
+    },
+    {
+      "url": "https://www.bassenge.be/bassenge/information/simplification-des-demarches-administratives-a-ba",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-bassenge"
+      ],
+      "ancres": [
+        "l&#x27;annonce de simplification des démarches administratives publiée par la commune de Bassenge"
+      ]
+    },
+    {
+      "url": "https://www.beyne-heusay.be/mobilite",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-beyne-heusay"
+      ],
+      "ancres": [
+        "la page Mobilité de la commune de Beyne-Heusay"
+      ]
+    },
+    {
+      "url": "https://www.chaudfontaine.be/ma-commune/administration/services-communaux/voirie-proprete-plantations/foire-aux-questions-travaux/",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-chaudfontaine"
+      ],
+      "ancres": [
+        "la foire aux questions Travaux du service Voirie, propreté et plantations de Chaudfontaine"
+      ]
+    },
+    {
+      "url": "https://www.esneux.be/uploads/Police_administrative_Formulaire_unique.pdf",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-esneux"
+      ],
+      "ancres": [
+        "le formulaire unique de police administrative d&#x27;Esneux"
+      ]
+    },
+    {
+      "url": "https://www.flemalle.be/ma-commune/services-communaux/police-administrative/demande-d-occupation-du-domaine-public/demande-dautorisation",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-flemalle"
+      ],
+      "ancres": [
+        "la démarche « Demande d&#x27;autorisation d&#x27;occupation du domaine public » de Flémalle"
+      ]
+    },
+    {
+      "url": "https://www.fleron.be/ma-commune/services-communaux/mobilite/demande-doccupation-de-la-voie-publique.pdf",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-fleron",
+        "/demenagement/demenagement-soumagne"
+      ],
+      "ancres": [
+        "le formulaire de demande d&#x27;occupation de la voie publique de la zone Beyne-Fléron-Soumagne"
+      ]
+    },
+    {
+      "url": "https://www.google.com/maps/place/D%C3%A9m%C3%A9nagements+Gramme+s.c.r.l./",
+      "statut": 200,
+      "pages": [
+        "/"
+      ],
+      "ancres": [
+        "Voir tous les avis sur Google"
+      ]
+    },
+    {
+      "url": "https://www.grace-hollogne.be/ma-commune/service-communaux/environnement/demarches/demande-doccupation-du-domaine-public-1",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-grace-hollogne"
+      ],
+      "ancres": [
+        "la démarche « Demande d&#x27;occupation du domaine public » de Grâce-Hollogne"
+      ]
+    },
+    {
+      "url": "https://www.herstal.be/vivre-a-herstal/securite/occupation-de-voirie",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-herstal"
+      ],
+      "ancres": [
+        "la page « Occupation de voirie » de la Ville de Herstal"
+      ]
+    },
+    {
+      "url": "https://www.huy.be/ma-commune/securite-secours/police/chantiers-travaux",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-huy"
+      ],
+      "ancres": [
+        "la page « Chantiers et travaux » de la Ville de Huy"
+      ]
+    },
+    {
+      "url": "https://www.malmedy.be/ma-commune/services-communaux/tous-les-services/mobilite",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-malmedy"
+      ],
+      "ancres": [
+        "la page du service Mobilité de la Ville de Malmedy"
+      ]
+    },
+    {
+      "url": "https://www.netlify.com",
+      "statut": 200,
+      "urlFinale": "https://www.netlify.com/",
+      "pages": [
+        "/mentions-legales"
+      ],
+      "ancres": [
+        "www.netlify.com"
+      ]
+    },
+    {
+      "url": "https://www.oupeye.be/ma-commune/services-communaux/service-de-police-administrative-de-mobilite-et-de-planification-durgence/service-de-police-administrative-de-mobilite-et-de-planification-durgence",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-oupeye"
+      ],
+      "ancres": [
+        "la page du service de Police administrative, de Mobilité et de Planification d&#x27;urgence d&#x27;Oupeye"
+      ]
+    },
+    {
+      "url": "https://www.pepinster.be/ma-commune/services/t-d/voiries/location-de-signalisation",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-pepinster"
+      ],
+      "ancres": [
+        "la page « Location de signalisation » du service Travaux et Développement de Pepinster"
+      ]
+    },
+    {
+      "url": "https://www.police.be/5284/actualites/reservation-demplacement-et-occupation-temporaire-de-la-voie-publique-en-quelques-clics",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-ans",
+        "/demenagement/demenagement-saint-nicolas"
+      ],
+      "ancres": [
+        "l&#x27;annonce « Réservation d&#x27;emplacement et occupation temporaire de la voie publique en quelques clics »"
+      ]
+    },
+    {
+      "url": "https://www.police.be/5288/questions/autorisation/vous-souhaitez-occuper-une-partie-de-la-voie-publique",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-aubel",
+        "/demenagement/demenagement-baelen",
+        "/demenagement/demenagement-herve",
+        "/demenagement/demenagement-limbourg",
+        "/demenagement/demenagement-olne",
+        "/demenagement/demenagement-plombieres",
+        "/demenagement/demenagement-thimister-clermont",
+        "/demenagement/demenagement-welkenraedt"
+      ],
+      "ancres": [
+        "la fiche « Vous souhaitez occuper une partie de la voie publique » de la zone de police Pays de Herve"
+      ]
+    },
+    {
+      "url": "https://www.police.be/5293/questions/autorisation/comment-demander-une-autorisation-pour-loccupation-de-la-voirie",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-braives",
+        "/demenagement/demenagement-burdinne",
+        "/demenagement/demenagement-hannut",
+        "/demenagement/demenagement-heron"
+      ],
+      "ancres": [
+        "la fiche « Comment demander une autorisation pour l&#x27;occupation de la voirie » de la zone Hesbaye-Ouest"
+      ]
+    },
+    {
+      "url": "https://www.policeliege.be/page/occuper-la-voie-publique",
+      "statut": null,
+      "erreur": "chaîne TLS incomplète (UNABLE_TO_VERIFY_LEAF_SIGNATURE)",
+      "categorie": "tls",
+      "pages": [
+        "/demenagement/demenagement-liege"
+      ],
+      "ancres": [
+        "information officielle publiée par la Zone de Police de Liège"
+      ]
+    },
+    {
+      "url": "https://www.seraing.be/wp-content/uploads/2026/01/Formulaire-autorisation-odp.pdf",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-seraing"
+      ],
+      "ancres": [
+        "le formulaire d&#x27;autorisation d&#x27;occupation du domaine public de la Ville de Seraing"
+      ]
+    },
+    {
+      "url": "https://www.sprimont.be/ma-commune/services-communaux/mobilite/arrete-de-police",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-sprimont"
+      ],
+      "ancres": [
+        "la page « Arrêté de police » du service Travaux de Sprimont"
+      ]
+    },
+    {
+      "url": "https://www.stavelot.be/ma-commune/demande-evenement-occupation-domaine-public",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-stavelot"
+      ],
+      "ancres": [
+        "le guichet « Demande d&#x27;événement ou d&#x27;occupation du domaine public » de Stavelot"
+      ]
+    },
+    {
+      "url": "https://www.verviers.be/ma-commune/administration/services-communaux/police-administrative/demarches/occupation-de-voirie-pour-demenagement",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-verviers"
+      ],
+      "ancres": [
+        "la démarche « Occupation de voirie pour déménagement » de la Ville de Verviers"
+      ]
+    },
+    {
+      "url": "https://www.villedespa.be/ma-ville/services-communaux/travaux-energie/mobilite/demande-doccupation-de-la-voirie",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-spa"
+      ],
+      "ancres": [
+        "la démarche « Demande d&#x27;occupation de la voirie » de la Ville de Spa"
+      ]
+    },
+    {
+      "url": "https://www.vise.be/vivre-a-vise/environnement/eaglebe/occupation-du-domaine-public-plateforme",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-vise"
+      ],
+      "ancres": [
+        "la page « Occupation du domaine public — plateforme Eaglebe » de la Ville de Visé"
+      ]
+    },
+    {
+      "url": "https://www.waremme.be/ma-ville/services-communaux/police-administrative/police-administrative",
+      "statut": 200,
+      "pages": [
+        "/demenagement/demenagement-waremme"
+      ],
+      "ancres": [
+        "la page du service de Police administrative de la Ville de Waremme"
+      ]
+    }
+  ]
+}

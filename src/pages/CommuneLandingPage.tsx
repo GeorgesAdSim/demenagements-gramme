@@ -23,6 +23,7 @@ import {
   RACINE_ZONES,
   RACINE_COMMUNES,
   type CommuneSEO,
+  type AutorisationStationnement,
 } from '../data/communes';
 
 const BASE_URL = 'https://www.demenagements-gramme.be';
@@ -102,6 +103,47 @@ function phraseAnciennete(c: CommuneSEO, ans: number): string {
 }
 
 /**
+ * Article défini devant le nom d'un service, pour que « auprès de <service> »
+ * se lise en français. Les libellés viennent des sites communaux et commencent
+ * par une poignée de mots seulement : Ville, Commune, Zone de police, Police,
+ * Administration communale, service.
+ *
+ * Purement grammatical : rien n'est ajouté au fond, seulement l'article que la
+ * source omet parce qu'elle se cite elle-même.
+ */
+function avecArticle(service: string): string {
+  const s = service.trim();
+  // « Ville » garde sa majuscule : c'est ainsi que l'institution se désigne, et
+  // « la ville de Seraing » ne dit pas la même chose que « la Ville de Seraing ».
+  if (/^ville\b/i.test(s)) return `la ${s}`;
+  // Les sources écrivent « Zone de Police » avec deux majuscules ; au milieu
+  // d'une phrase, seule la première a un sens.
+  const minuscule = `${s[0].toLowerCase()}${s.slice(1)}`.replace(/^zone de Police\b/, 'zone de police');
+  if (/^(commune|zone de police|police|direction)\b/i.test(s)) return `la ${minuscule}`;
+  if (/^administration\b/i.test(s)) return `l'${minuscule}`;
+  if (/^service\b/i.test(s)) return `le ${minuscule}`;
+  return s;
+}
+
+/**
+ * Nom court du service, pour la mention de fraîcheur.
+ *
+ * `autorite` porte parfois la désignation administrative complète — « Commune
+ * d'Oupeye, service de Police administrative, de Mobilité et de Planification
+ * d'urgence ». Elle a sa place dans la phrase qui dit qui délivre
+ * l'autorisation ; la répéter vingt mots plus loin rend la mention illisible.
+ * On garde ce qui précède la première virgule.
+ */
+function serviceCourt(autorite: string): string {
+  return avecArticle(autorite.split(',')[0]);
+}
+
+/** « 2026-08-02 » → « août 2026 ». */
+function moisAnnee(iso: string): string {
+  return new Date(iso).toLocaleDateString('fr-BE', { month: 'long', year: 'numeric' });
+}
+
+/**
  * Phrases du bloc « autorisation de stationnement ».
  *
  * Composées à partir des seuls champs relevés sur la source officielle : une
@@ -110,8 +152,21 @@ function phraseAnciennete(c: CommuneSEO, ans: number): string {
  * délai plausible inventé pour homogénéiser la mise en page se retrouverait
  * dans l'organisation réelle d'un client.
  */
-function phrasesStationnement(c: CommuneSEO): string[] {
+/**
+ * Fiche stationnement publiable ?
+ *
+ * Deux conditions cumulatives : une source officielle, et une relecture
+ * humaine. Publier un délai ou une redevance erronés fait prendre une amende
+ * au client — la fiche est donc en opt-in, pas en opt-out. Voir `verifiePar`
+ * dans src/data/communes.ts.
+ */
+function ficheStationnementPubliable(c: CommuneSEO): AutorisationStationnement | undefined {
   const a = c.autorisationStationnement;
+  return a && a.verifiePar === 'human' && a.sourceUrl && a.libelleSource ? a : undefined;
+}
+
+function phrasesStationnement(c: CommuneSEO): string[] {
+  const a = ficheStationnementPubliable(c);
 
   // Repli générique. Vrai partout, et vérifiable : c'est la prestation que
   // Gramme assure réellement, sans rien affirmer sur la procédure locale.
@@ -123,7 +178,7 @@ function phrasesStationnement(c: CommuneSEO): string[] {
   }
 
   const p: string[] = [
-    `L'autorisation est délivrée par ${a.autorite}. ${a.procedure}.`,
+    `L'autorisation est délivrée par ${avecArticle(a.autorite)}. ${a.procedure}.`,
   ];
 
   // Plusieurs communes publient un délai ou un tarif à variantes. Rendues
@@ -145,13 +200,13 @@ function phrasesStationnement(c: CommuneSEO): string[] {
   if (a.cout) p.push(enPhrases(a.cout).map((v, i) => (i === 0 ? `Coût annoncé par la commune : ${v.toLowerCase()}.` : `${v[0].toUpperCase()}${v.slice(1)}.`)).join(' '));
   if (a.signalisation) p.push(enPhrases(a.signalisation).map((v, i) => (i === 0 ? `Signalisation : ${v.toLowerCase()}.` : `${v[0].toUpperCase()}${v.slice(1)}.`)).join(' '));
 
-  p.push(
-    `Nous prenons cette démarche en charge dans le cadre de votre déménagement. ${
-      a.delai
-        ? 'Le délai ci-dessus est celui de la commune : plus tôt nous connaissons votre date, plus la réservation est sûre.'
-        : "La commune ne publie pas de délai fixe : nous introduisons la demande dès que votre date est arrêtée."
-    }`
-  );
+  // Volontairement court. La version longue de cette phrase — « Nous prenons
+  // cette démarche en charge dans le cadre de votre déménagement. Le délai
+  // ci-dessus est celui de la commune… » — faisait trente mots strictement
+  // identiques sur cinquante et une pages, et poussait le bloc bien au-delà
+  // des cent vingt mots visés. Six mots passent sous le seuil de détection de
+  // duplication, et disent la même chose.
+  p.push('Nous introduisons la demande pour vous.');
 
   return p;
 }
@@ -291,6 +346,7 @@ export default function CommuneLandingPage() {
   const brouillon = commune.statut === 'draft';
   const url = cheminCommune(commune.id);
   const faq = construireFaq(commune);
+  const ficheStationnement = ficheStationnementPubliable(commune);
   const voisinesLiables = getNeighborCommunes(commune);
   // Voisines encore en brouillon : citées en texte, sans lien. Un lien vers une
   // page noindex dépense du maillage sans rien en retirer ; le nom seul garde
@@ -451,24 +507,40 @@ export default function CommuneLandingPage() {
                   </p>
                 ))}
               </div>
-              {commune.autorisationStationnement && (
+              {/* Mention de fraîcheur, et seul lien externe de la page. Il est
+                  posé dans la phrase plutôt que dans un bloc « liens utiles » :
+                  un bloc de liens redevient un gabarit, et son ancre aussi.
+                  L'ancre est `libelleSource`, rédigée pour cette commune.
+                  Pas de nofollow : c'est une source officielle citée de bonne
+                  foi, et la citer est précisément le signal recherché. */}
+              {ficheStationnement && (
                 <p className="text-muted text-[14px] leading-relaxed mt-4 italic">
-                  Source :{' '}
+                  {/* Chaque fragment est une expression unique : deux nœuds de
+                      texte adjacents feraient insérer une espace parasite
+                      avant la virgule et avant le point final. */}
+                  {`Information vérifiée en ${moisAnnee(ficheStationnement.dateVerification)} auprès de ${serviceCourt(ficheStationnement.autorite)}, sur `}
                   <a
-                    href={commune.autorisationStationnement.sourceUrl}
+                    href={ficheStationnement.sourceUrl}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
                     className="text-navy underline hover:text-navy/70"
                   >
-                    information officielle publiée par {commune.autorisationStationnement.autorite}
+                    {ficheStationnement.libelleSource}
                   </a>
-                  , relevée le{' '}
-                  {new Date(commune.autorisationStationnement.dateVerification).toLocaleDateString('fr-BE', {
-                    day: 'numeric',
-                    month: 'long',
-                    year: 'numeric',
-                  })}
-                  . Les règles communales évoluent : nous les revérifions à chaque dossier.
+                  {ficheStationnement.urlFormulaire && (
+                    <>
+                      {', dont dépend '}
+                      <a
+                        href={ficheStationnement.urlFormulaire}
+                        target="_blank"
+                        rel="noopener"
+                        className="text-navy underline hover:text-navy/70"
+                      >
+                        le formulaire de demande
+                      </a>
+                    </>
+                  )}
+                  {'. Les modalités peuvent évoluer : vérifiez avant votre demande.'}
                 </p>
               )}
             </motion.div>
