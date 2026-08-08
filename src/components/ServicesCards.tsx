@@ -16,6 +16,10 @@ const HERO_CARD = {
   srcSetWebp: SITE_IMAGES.hero.srcSetWebp,
   srcSetJpeg: SITE_IMAGES.hero.srcSetJpeg,
   link: '/demenagement',
+  // L'ancre porte la destination, pas l'action. « En savoir plus » ne dit rien
+  // du contenu de la page visée, ni au lecteur ni au moteur : les quatre cartes
+  // envoyaient la même ancre vers quatre pages différentes.
+  cta: 'Voir nos prestations de déménagement',
   icon: Truck,
 };
 
@@ -33,6 +37,7 @@ const SECONDARY_CARDS = [
     description: 'Stockage sécurisé et flexible à Seraing. Box individuels fermés à clé, surveillance 24/7, assurance incluse.',
     ...card('photo-1586528116311-ad8dd3c8310d'),
     link: '/garde-meubles',
+    cta: 'Découvrir le garde-meubles',
     icon: Warehouse,
   },
   {
@@ -40,6 +45,7 @@ const SECONDARY_CARDS = [
     description: 'France, Suisse, Espagne, Italie et toute l\'Europe. Formalités douanières gérées, assurance voyage incluse.',
     ...card('photo-1436491865332-7a61a109cc05'),
     link: '/demenagement/demenagement-international',
+    cta: 'Déménager à l’étranger',
     icon: Globe,
   },
   {
@@ -47,6 +53,7 @@ const SECONDARY_CARDS = [
     description: 'Service de monte-meubles pour les étages élevés et les accès difficiles. Jusqu\'au 10e étage.',
     ...card('photo-1558618666-fcd25c85cd64'),
     link: '/monte-meubles',
+    cta: 'Louer un monte-meubles',
     icon: ArrowUpFromLine,
   },
 ];
@@ -125,7 +132,7 @@ export default function ServicesCards({ data }: Props) {
               to={HERO_CARD.link}
               className="flex-shrink-0 inline-flex items-center gap-2 bg-yellow text-navy font-bold uppercase py-4 px-8 rounded-xl hover:bg-white transition-colors duration-200 shadow-lg text-sm"
             >
-              En savoir plus
+              {HERO_CARD.cta}
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -174,7 +181,7 @@ export default function ServicesCards({ data }: Props) {
                     to={card.link}
                     className="inline-flex items-center gap-1.5 text-navy font-bold text-sm hover:text-yellow transition-colors group/link"
                   >
-                    En savoir plus
+                    {card.cta}
                     <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
                   </Link>
                 </div>
