@@ -13,7 +13,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.app.json",
-    "sync:communes": "node scripts/sync-communes.mjs"
+    "sync:communes": "node scripts/sync-communes.mjs",
+    "check:links": "node scripts/check-external-links.mjs",
+    "seo:dup": "node scripts/seo-dup-report.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",

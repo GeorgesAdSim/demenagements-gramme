@@ -85,8 +85,53 @@ function versCommuneSEO(r, depot = {}) {
   reprendre(c, 'sectionsLocales', r, 'sections_locales', depot, (v) => v.length > 0);
   reprendre(c, 'autorisationStationnement', r, 'autorisation_stationnement', depot);
   reprendre(c, 'todoDonneesLocales', r, 'todo_donnees_locales', depot);
+  reprendre(c, 'faqLocale', r, 'faq_locale', depot, (v) => v.length > 0);
+
+  // `libelleSource` et `verifiePar` appartiennent au DÉPÔT, pas à la base.
+  //
+  // La colonne `autorisation_stationnement` existe déjà en Supabase et porte la
+  // version de l'objet antérieure à ces deux champs. Reprise telle quelle, elle
+  // les efface : le build s'est arrêté sur cinquante et une communes, ce qui est
+  // le bon comportement mais rendait la branche indéployable.
+  //
+  // Ce n'est pas un accident de migration, c'est une question de propriété.
+  // `verifiePar` dit « un humain a relu cette fiche et engage sa responsabilité
+  // dessus » ; `libelleSource` est un texte rédigé pour le référencement. Ni
+  // l'un ni l'autre ne s'édite depuis le back-office, et les lire dans la base
+  // reviendrait à laisser un enregistrement CMS lever un verrou de publication.
+  //
+  // C'est exactement le raisonnement qui a sorti `pageExistante` de la base
+  // (voir src/data/pages-satellites.json) : le fait appartient au dépôt, donc il
+  // y reste, et la base peut être en avance ou en retard sans rien casser.
+  if (c.autorisationStationnement) {
+    c.autorisationStationnement = fusionnerStationnement(
+      c.autorisationStationnement,
+      depot.autorisationStationnement
+    );
+  }
 
   return c;
+}
+
+/** Ordre des clés de la fiche stationnement, figé pour que le diff reste lisible. */
+const ORDRE_STATIONNEMENT = [
+  'autorite', 'procedure', 'delai', 'cout', 'signalisation',
+  'sourceUrl', 'urlFormulaire', 'libelleSource', 'dateVerification', 'verifiePar',
+];
+
+/** Champs de la fiche que la base ne doit jamais écraser. Voir le commentaire ci-dessus. */
+const STATIONNEMENT_DU_DEPOT = ['libelleSource', 'verifiePar'];
+
+function fusionnerStationnement(base, depot = {}) {
+  const fusion = { ...base };
+  for (const champ of STATIONNEMENT_DU_DEPOT) {
+    if (depot[champ] !== undefined) fusion[champ] = depot[champ];
+  }
+  const out = {};
+  for (const k of ORDRE_STATIONNEMENT) if (k in fusion) out[k] = fusion[k];
+  // Une colonne ajoutée en base et pas encore connue ici ne doit pas disparaître.
+  for (const k of Object.keys(fusion)) if (!(k in out)) out[k] = fusion[k];
+  return out;
 }
 
 /**
@@ -103,7 +148,7 @@ const ORDRE = [
   'id', 'nom', 'arrondissement', 'codesPostaux', 'distanceDepotKm',
   'tempsTrajetEstimeMin', 'villages', 'communesVoisines', 'introductionLocale',
   'informationsLocales', 'sectionsLocales', 'autorisationStationnement',
-  'todoDonneesLocales', 'dateVerification', 'pageExistante', 'statut',
+  'faqLocale', 'todoDonneesLocales', 'dateVerification', 'pageExistante', 'statut',
 ];
 
 function ordonner(c) {

@@ -32,7 +32,7 @@ export const FAQ_ACCUEIL: FaqItem[] = [
   },
   {
     q: 'Intervenez-vous en dehors de Liège ?',
-    a: "Oui. Notre siège est à Herstal, aux portes de Liège, mais notre zone va bien au-delà. Nous couvrons l'ensemble de la Belgique, ainsi que la France, les Pays-Bas, l'Allemagne, le Luxembourg, la Suisse, l'Espagne, l'Italie et le Portugal.",
+    a: "Oui. Notre siège est à Seraing, aux portes de Liège, mais notre zone va bien au-delà. Nous couvrons l'ensemble de la Belgique, ainsi que la France, les Pays-Bas, l'Allemagne, le Luxembourg, la Suisse, l'Espagne, l'Italie et le Portugal.",
   },
   // Questions ajoutées à partir des intentions de recherche que les trois
   // premiers concurrents ne traitent pas : autorisation de stationnement,
@@ -55,6 +55,6 @@ export const FAQ_ACCUEIL: FaqItem[] = [
   },
   {
     q: 'Combien coûte un garde-meubles à Liège ?',
-    a: "Comptez 30 € par mois pour un box de 1 m³. Un box de 24 m³ revient à 150 € par mois. Au-delà de 30 m³, le tarif est de 6 € par m³. Nos box sont individuels et sécurisés, à Herstal. La durée minimum est d'un mois. L'assurance vol, incendie et dégradation est comprise dans le tarif.",
+    a: "Comptez 30 € par mois pour un box de 1 m³. Un box de 24 m³ revient à 150 € par mois. Au-delà de 30 m³, le tarif est de 6 € par m³. Nos box sont individuels et sécurisés, à Seraing. La durée minimum est d'un mois. L'assurance vol, incendie et dégradation est comprise dans le tarif.",
   },
 ];

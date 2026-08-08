@@ -43,7 +43,7 @@ export default function DemenagementInternationalSatellite() {
         {
           title: "Ce qui se passe à l'arrivée",
           content:
-            "La livraison ne s'arrête pas au trottoir. L'équipe monte le mobilier, le remonte et le place dans les pièces que vous désignez, exactement comme sur un déménagement local.\n\nLes contraintes d'accès du logement d'arrivée se relèvent avant le départ, pendant la visite technique. Une rue piétonne à Barcelone, un cinquième sans ascenseur à Paris, une autorisation à obtenir auprès de la commune. Mieux vaut le savoir depuis Liège que le découvrir sur place.\n\nVotre nouveau logement n'est pas disponible à la date de sortie ? Le mobilier peut patienter dans nos box de garde-meubles à Herstal avant de repartir.",
+            "La livraison ne s'arrête pas au trottoir. L'équipe monte le mobilier, le remonte et le place dans les pièces que vous désignez, exactement comme sur un déménagement local.\n\nLes contraintes d'accès du logement d'arrivée se relèvent avant le départ, pendant la visite technique. Une rue piétonne à Barcelone, un cinquième sans ascenseur à Paris, une autorisation à obtenir auprès de la commune. Mieux vaut le savoir depuis Liège que le découvrir sur place.\n\nVotre nouveau logement n'est pas disponible à la date de sortie ? Le mobilier peut patienter dans nos box de garde-meubles à Seraing avant de repartir.",
         },
       ]}
       faq={[
@@ -75,7 +75,7 @@ export default function DemenagementInternationalSatellite() {
         {
           question: 'Que se passe-t-il si mon logement n’est pas disponible à temps ?',
           answer:
-            "Le mobilier peut attendre dans nos box de garde-meubles individuels à Herstal, surveillés en permanence, avec l'assurance vol, incendie et dégradation comprise. Le départ vers l'étranger est ensuite reprogrammé.",
+            "Le mobilier peut attendre dans nos box de garde-meubles individuels à Seraing, surveillés en permanence, avec l'assurance vol, incendie et dégradation comprise. Le départ vers l'étranger est ensuite reprogrammé.",
         },
       ]}
       /* Les anciennes pages par pays (/transport/demenagement-belgique-*) ont

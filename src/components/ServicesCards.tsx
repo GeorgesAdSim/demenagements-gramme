@@ -30,7 +30,7 @@ const card = (id: string) => ({
 const SECONDARY_CARDS = [
   {
     title: 'Garde-Meubles',
-    description: 'Stockage sécurisé et flexible à Herstal. Box individuels fermés à clé, surveillance 24/7, assurance incluse.',
+    description: 'Stockage sécurisé et flexible à Seraing. Box individuels fermés à clé, surveillance 24/7, assurance incluse.',
     ...card('photo-1586528116311-ad8dd3c8310d'),
     link: '/garde-meubles',
     icon: Warehouse,

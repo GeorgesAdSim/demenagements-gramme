@@ -69,8 +69,8 @@ export default function LiegeSection() {
               Contient les entités nommées : entreprise, ville, adresse, date de
               fondation, capacités, périmètre. */}
           <p className="text-navy text-lg md:text-xl leading-relaxed border-l-4 border-yellow pl-5 mb-8 font-medium">
-            Déménagements Gramme est une entreprise familiale établie rue des
-            Naiveux 64 à Herstal, en périphérie de Liège. Elle est active depuis
+            Déménagements Gramme est une entreprise familiale établie voie du
+            Belvédère 1 à Seraing, en périphérie de Liège. Elle est active depuis
             1948, soit {ans} ans et trois générations. Nous déménageons
             particuliers et entreprises dans tous les quartiers liégeois. Nos
             véhicules vont de 4 à 100 m³ et sont équipés d'élévateurs. Le devis

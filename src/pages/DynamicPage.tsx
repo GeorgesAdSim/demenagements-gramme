@@ -5,6 +5,7 @@ import { InternalLinks } from '../components/InternalLinks';
 import { ScrollReveal } from '../components/ScrollReveal';
 import { usePageBySlug } from '../hooks/usePageBySlug';
 import { useFAQ } from '../hooks/useFAQ';
+import { POSTAL_ADDRESS } from '../data/entreprise';
 
 export function DynamicPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -71,13 +72,7 @@ export function DynamicPage() {
               'provider': {
                 '@type': 'LocalBusiness',
                 'name': 'Déménagements Gramme',
-                'address': {
-                  '@type': 'PostalAddress',
-                  'streetAddress': 'Rue des Naiveux 64',
-                  'addressLocality': 'Herstal',
-                  'postalCode': '4040',
-                  'addressCountry': 'BE'
-                },
+                'address': POSTAL_ADDRESS,
                 'telephone': '+3242645016',
                 'url': 'https://www.demenagements-gramme.be'
               },

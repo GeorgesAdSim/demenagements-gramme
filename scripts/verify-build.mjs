@@ -368,6 +368,22 @@ async function main() {
 
     const aGenerer = getCommunesAGenerer();
 
+    // Vagues du sitemap — voir data/sitemap-waves.json et scripts/sitemap.mjs.
+    const vagues = JSON.parse(await readFile(path.join(root, 'data/sitemap-waves.json'), 'utf-8'));
+    const enVague = new Set(
+      ['wave1', 'wave2', 'wave3', 'wave4', 'wave5'].flatMap((v) => vagues[v] ?? [])
+    );
+    const horsVague = [];
+
+    // Une commune hors sitemap n'est atteignable que par le maillage interne.
+    // /zones-intervention est la page qui porte ce maillage : si elle cesse de
+    // lister une commune, la page devient invisible pour Google ET pour le
+    // visiteur, ce qui transformerait le report en dépublication silencieuse.
+    const zonesHtml = existsSync(path.join(distDir, 'zones-intervention.html'))
+      ? await readFile(path.join(distDir, 'zones-intervention.html'), 'utf-8')
+      : '';
+    if (!zonesHtml) err('zones-intervention.html absent — plus rien ne maille les pages communes.');
+
     // 12a. Chaque commune publiée doit avoir une page réellement servie en 200,
     // dont le canonical correspond à l'URL servie.
     for (const c of aGenerer) {
@@ -386,9 +402,39 @@ async function main() {
       if (nbH1 !== 1) err(`${url} : ${nbH1} balise(s) H1 — il en faut exactement une.`);
       if (!html.includes('"@type":"Service"')) err(`${url} : balisage Service absent.`);
       if (!html.includes('"@type":"BreadcrumbList"')) err(`${url} : balisage BreadcrumbList absent.`);
-      if (!sitemapUrls.includes(`${BASE}${url}`)) {
-        err(`${url} : absente du sitemap alors que la commune est publiée.`);
+
+      // Présence au sitemap : plus une erreur, mais un contrôle de cohérence
+      // avec data/sitemap-waves.json.
+      //
+      // Les pages communes sont déclarées par vagues (voir scripts/sitemap.mjs).
+      // Une commune hors vague reste publiée, indexable et liée — elle n'a
+      // simplement pas encore sa place dans le sitemap. Exiger sa présence
+      // rendait la mise en vagues impossible.
+      //
+      // Ce qui reste bloquant, et qui est le vrai risque : une DIVERGENCE entre
+      // la vague déclarée et le sitemap livré. Une commune listée dans une
+      // vague mais absente du sitemap signale un générateur qui a sauté une
+      // page ; l'inverse, un sitemap qui déclare une page que personne n'a
+      // demandée.
+      const auSitemap = sitemapUrls.includes(`${BASE}${url}`);
+      if (enVague.has(c.id) && !auSitemap) {
+        err(`${url} : déclarée dans data/sitemap-waves.json mais absente du sitemap livré.`);
       }
+      if (!enVague.has(c.id) && auSitemap) {
+        err(`${url} : présente au sitemap sans figurer dans aucune vague de data/sitemap-waves.json.`);
+      }
+      if (!auSitemap) horsVague.push(c.nom);
+
+      if (zonesHtml && !zonesHtml.includes(`href="${url}"`)) {
+        err(`${url} : absente de /zones-intervention — seule page qui maille les communes hors sitemap.`);
+      }
+    }
+
+    if (horsVague.length) {
+      console.log(
+        `\n  ${horsVague.length} commune(s) publiée(s) hors sitemap, en attente d'une vague — ` +
+        `indexables et liées depuis /zones-intervention :\n    ${horsVague.join(', ')}`
+      );
     }
 
     // Chemins déjà occupés par une page satellite antérieure. Depuis que les

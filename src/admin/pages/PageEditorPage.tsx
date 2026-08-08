@@ -4,6 +4,7 @@ import { ArrowLeft, ExternalLink, Loader as Loader2 } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 import TipTapEditor from '../components/TipTapEditor';
 import SeoPanel from '../components/SeoPanel';
+import { ENTREPRISE } from '../../data/entreprise';
 
 const COCONES = ['demenagement', 'transport', 'garde-meuble', 'general'];
 const COCON_LABELS: Record<string, string> = {
@@ -28,9 +29,9 @@ const DEFAULT_JSON_LD = JSON.stringify({
   "name": "Demenagements Gramme SCRL",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Rue des Naiveux 64",
-    "addressLocality": "Herstal",
-    "postalCode": "4040",
+    "streetAddress": ENTREPRISE.adresse.rue,
+    "addressLocality": ENTREPRISE.adresse.localite,
+    "postalCode": ENTREPRISE.adresse.codePostal,
     "addressCountry": "BE",
   },
   "telephone": "+3242645016",

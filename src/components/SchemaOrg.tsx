@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { FAQ_ACCUEIL } from '../data/faq';
+import { ENTREPRISE, POSTAL_ADDRESS, GEO_COORDINATES } from '../data/entreprise';
 
 const BASE_URL = 'https://www.demenagements-gramme.be';
 
@@ -19,20 +20,10 @@ const LOCAL_BUSINESS = {
   name: 'Déménagements Gramme',
   image: `${BASE_URL}/og-image.jpg`,
   url: BASE_URL,
-  telephone: '+3242645016',
-  email: 'contact@demenagements-gramme.be',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Rue des Naiveux 64',
-    addressLocality: 'Herstal',
-    postalCode: '4040',
-    addressCountry: 'BE',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 50.6594,
-    longitude: 5.6339,
-  },
+  telephone: `+${ENTREPRISE.telephone.lien.replace('+', '')}`,
+  email: ENTREPRISE.email,
+  address: POSTAL_ADDRESS,
+  geo: GEO_COORDINATES,
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -136,7 +127,7 @@ interface SchemaOrgProps {
   /**
    * `'full'` déclare l'établissement (adresse, horaires, géolocalisation) :
    * réservé aux pages qui parlent réellement du siège, c'est-à-dire l'accueil
-   * et la page Herstal. Partout ailleurs, la valeur par défaut `'reference'`
+   * et la page Seraing. Partout ailleurs, la valeur par défaut `'reference'`
    * se contente de rattacher la page à l'entité par son `@id`.
    */
   organization?: 'full' | 'reference';
@@ -201,7 +192,7 @@ export default function SchemaOrg({
 
   if (localService) {
     // Service plutôt qu'une seconde MovingCompany : l'entreprise est unique et
-    // située à Herstal. Déclarer un établissement par commune serait une
+    // située à Seraing. Déclarer un établissement par commune serait une
     // fausse déclaration d'implantation locale.
     scripts.push({
       type: 'application/ld+json',
@@ -212,7 +203,7 @@ export default function SchemaOrg({
         name: `Déménagement à ${localService.ville}`,
         url: localService.url,
         // Renvoi par `@id` : le prestataire est l'entité unique du site. La
-        // version précédente recopiait ici l'adresse de Herstal, ce qui
+        // version précédente recopiait ici l'adresse du siège, ce qui
         // revenait à répéter le même bloc d'établissement sur chaque commune.
         provider: { '@id': ORG_ID },
         areaServed: {

@@ -1,0 +1,49 @@
+{
+  "_commentaire": [
+    "Pages NON-COMMUNE du sitemap : accueil, pages de service, blog, satellites,",
+    "pages légales et l'index des zones d'intervention. Elles y figurent toutes,",
+    "sans condition — la mise en vagues du lot 1 ne concerne que les pages",
+    "communes générées par le gabarit.",
+    "",
+    "`changefreq` et `priority` sont repris tels quels du sitemap maintenu à la",
+    "main jusqu'ici (public/sitemap.xml, supprimé au profit de ce fichier) :",
+    "c'étaient des valeurs réfléchies, pas des valeurs par défaut.",
+    "",
+    "`lastmod` ne figure PAS ici : il vit dans data/sitemap-lastmod.json et suit",
+    "le contenu réellement rendu. Voir scripts/sitemap.mjs.",
+    "",
+    "/demenagement/demenagement-liege est une page SATELLITE, pas une page",
+    "commune générée : c'est pourquoi elle est listée ici et non dans une vague.",
+    "Elle est déjà indexée et n'a pas à attendre son tour."
+  ],
+  "pages": [
+    { "url": "/", "changefreq": "weekly", "priority": "1.0" },
+    { "url": "/demenagement", "changefreq": "monthly", "priority": "0.9" },
+    { "url": "/garde-meubles", "changefreq": "monthly", "priority": "0.9" },
+    { "url": "/contact-devis", "changefreq": "monthly", "priority": "0.9" },
+    { "url": "/contact", "changefreq": "monthly", "priority": "0.8" },
+    { "url": "/zones-intervention", "changefreq": "monthly", "priority": "0.8" },
+    { "url": "/estimation-volume", "changefreq": "monthly", "priority": "0.8" },
+    { "url": "/monte-meubles", "changefreq": "monthly", "priority": "0.7" },
+    { "url": "/blog", "changefreq": "weekly", "priority": "0.7" },
+
+    { "url": "/demenagement/demenageur-liege", "changefreq": "monthly", "priority": "0.8" },
+    { "url": "/demenagement/demenagement-liege", "changefreq": "monthly", "priority": "0.8" },
+    { "url": "/demenagement/demenagement-international", "changefreq": "monthly", "priority": "0.7" },
+    { "url": "/demenagement/demenagement-entreprise", "changefreq": "monthly", "priority": "0.7" },
+    { "url": "/demenagement/demenagement-piano", "changefreq": "monthly", "priority": "0.6" },
+    { "url": "/demenagement/demontage-remontage-meubles", "changefreq": "monthly", "priority": "0.6" },
+
+    { "url": "/garde-meubles/garde-meubles-liege", "changefreq": "monthly", "priority": "0.7" },
+    { "url": "/garde-meubles/prix-garde-meubles-liege", "changefreq": "monthly", "priority": "0.6" },
+
+    { "url": "/blog/6-conseils-reussir-demenagement-liege", "changefreq": "monthly", "priority": "0.6" },
+    { "url": "/blog/preparer-enfants-demenagement-liege", "changefreq": "monthly", "priority": "0.6" },
+    { "url": "/blog/6-erreurs-eviter-demenagement-liege", "changefreq": "monthly", "priority": "0.6" },
+
+    { "url": "/mentions-legales", "changefreq": "yearly", "priority": "0.3" },
+    { "url": "/politique-confidentialite", "changefreq": "yearly", "priority": "0.3" },
+    { "url": "/conditions-generales", "changefreq": "yearly", "priority": "0.3" },
+    { "url": "/protection-donnees", "changefreq": "yearly", "priority": "0.3" }
+  ]
+}

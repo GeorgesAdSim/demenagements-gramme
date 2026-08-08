@@ -1,4 +1,5 @@
 import { Phone, MapPin } from 'lucide-react';
+import { ADRESSE_COURTE } from '../data/entreprise';
 
 const FACEBOOK_URL = 'https://www.facebook.com/GrammeDemenagements';
 
@@ -12,7 +13,7 @@ export default function TopBar() {
       <div className="flex items-center gap-1">
         <div className="hidden md:flex items-center gap-1">
           <MapPin className="w-3.5 h-3.5" />
-          <span>Rue des Naiveux 64, 4040 Herstal</span>
+          <span>{ADRESSE_COURTE}</span>
           <span className="mx-2">|</span>
         </div>
         <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" aria-label="Facebook">

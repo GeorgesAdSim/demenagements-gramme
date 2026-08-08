@@ -1,0 +1,441 @@
+{
+  "genereLe": "2026-08-08",
+  "parametres": {
+    "seuilMotsBlocCommun": 8,
+    "tailleEchantillon": 20,
+    "pagesCommunes": 70
+  },
+  "motsParPage": {
+    "median": 1105.5,
+    "min": 1003,
+    "max": 1293,
+    "moyenne": 1119.4
+  },
+  "parPaire": {
+    "paires": 190,
+    "partPartageeMediane": 36.9,
+    "partUniqueMediane": 63.1
+  },
+  "contreUnion": {
+    "partPartageeMediane": 45.7,
+    "partUniqueMediane": 54.3,
+    "motsUniquesMedians": 600
+  },
+  "plusLongBlocCommun": {
+    "mots": 145,
+    "pages": [
+      "demenagement-amay",
+      "demenagement-aubel"
+    ],
+    "texte": "reponse sous 24 heures ouvrables sans engagement demenagement garde meubles prenom nom email telephone adresse de depart adresse d arrivee date souhaitee volume estime volume estime 20m 20 50m 50 100m je ne sais pas message j accepte la politique de confidentialite envoyer ma demande de devis vos donnees sont securisees et ne seront jamais partagees besoin d un devis detaille utilisez le formulaire complet appeler devis gratuit votre demenageur de confiance a liege depuis 1948 nos services demenagement transport garde meubles demenagement international demenagement entreprise informations blog contact devis demenagement a liege zones d intervention demenagement seraing demenagement herstal contact rue des naiveux 64 4040 herstal tel 04 264 50 16 contact demenagements gramme be lun 8h 18h mar ven 8h 17h dim ferme tva be 0775 264 382 devis gratuit 2026 demenagements gramme tous droits reserves mentions legales confidentialite cgv protection des donnees"
+  },
+  "blocsCommunsLesPlusLongs": [
+    {
+      "mots": 145,
+      "paires": 190,
+      "texte": "reponse sous 24 heures ouvrables sans engagement demenagement garde meubles prenom nom email telephone adresse de depart adresse d arrivee date souhaitee volume estime volume estime 20m 20 50m 50 100m je ne sais pas message j accepte la politique de confidentialite envoyer ma demande de devis vos donnees sont securisees et ne seront jamais partagees besoin d un devis detaille utilisez le formulaire complet appeler devis gratuit votre demenageur de confiance a liege depuis 1948 nos services demenagement transport garde meubles demenagement international demenagement entreprise informations blog contact devis demenagement a liege zones d intervention demenagement seraing demenagement herstal contact rue des naiveux 64 4040 herstal tel 04 264 50 16 contact demenagements gramme be lun 8h 18h mar ven 8h 17h dim ferme tva be 0775 264 382 devis gratuit 2026 demenagements gramme tous droits reserves mentions legales confidentialite cgv protection des donnees"
+    },
+    {
+      "mots": 121,
+      "paires": 1,
+      "texte": "l autorisation est delivree par zone de police meuse hesbaye pour les six communes de la zone la demande s introduit en ligne sur la plateforme eaglebe les six communes de la zone la partagent depuis le 1er juillet 2025 la reservation de stationnement en fait partie et l autorisation arrive par le meme canal nous prenons cette demarche en charge dans le cadre de votre demenagement la commune ne publie pas de delai fixe nous introduisons la demande des que votre date est arretee source information officielle publiee par zone de police meuse hesbaye pour les six communes de la zone relevee le 2 aout 2026 les regles communales evoluent nous les reverifions a chaque dossier ce qui change a"
+    },
+    {
+      "mots": 100,
+      "paires": 3,
+      "texte": "toute occupation de la voirie qui excede l usage commun est soumise a autorisation de l autorite communale la regle est commune aux dix communes de la zone de police du condroz anthisnes clavier comblain au pont ferrieres hamoir marchin modave nandrin ouffet et tinlot occuper la voirie sans cette autorisation expose a une amende administrative de 50 a 10 000 euros nous prenons cette demarche en charge dans le cadre de votre demenagement la commune ne publie pas de delai fixe nous introduisons la demande des que votre date est arretee source information officielle publiee par administration communale de"
+    },
+    {
+      "mots": 99,
+      "paires": 3,
+      "texte": "toute occupation de la voirie qui excede l usage commun est soumise a autorisation de l autorite communale la regle est commune aux dix communes de la zone de police du condroz anthisnes clavier comblain au pont ferrieres hamoir marchin modave nandrin ouffet et tinlot occuper la voirie sans cette autorisation expose a une amende administrative de 50 a 10 000 euros nous prenons cette demarche en charge dans le cadre de votre demenagement la commune ne publie pas de delai fixe nous introduisons la demande des que votre date est arretee source information officielle publiee par administration communale"
+    },
+    {
+      "mots": 73,
+      "paires": 1,
+      "texte": "la zone de police pays de herve renvoie la demande vers l administration communale et ne la traite pas elle meme elle regroupe huit communes aubel baelen herve limbourg olne plombieres thimister clermont et welkenraedt nous prenons cette demarche en charge dans le cadre de votre demenagement la commune ne publie pas de delai fixe nous introduisons la demande des que votre date est arretee source information officielle publiee par administration communale d"
+    },
+    {
+      "mots": 49,
+      "paires": 190,
+      "texte": "volume estime selectionnez un volume studio 1 piece 10 20 m 2 pieces 20 35 m 3 pieces 35 55 m 4 pieces 55 75 m grande maison 75 100 m volume sur mesure date souhaitee votre email obtenir mon estimation gratuit sans engagement reponse sous 24h accueil demenagement"
+    },
+    {
+      "mots": 49,
+      "paires": 1,
+      "texte": "delai a respecter 10 jours ouvrables avant le debut de l occupation nous prenons cette demarche en charge dans le cadre de votre demenagement le delai ci dessus est celui de la commune plus tot nous connaissons votre date plus la reservation est sure source information officielle publiee par"
+    },
+    {
+      "mots": 47,
+      "paires": 1,
+      "texte": "en cas de fermeture complete de la voirie nous prenons cette demarche en charge dans le cadre de votre demenagement le delai ci dessus est celui de la commune plus tot nous connaissons votre date plus la reservation est sure source information officielle publiee par commune de"
+    },
+    {
+      "mots": 45,
+      "paires": 1,
+      "texte": "jours ouvrables avant le debut de l occupation nous prenons cette demarche en charge dans le cadre de votre demenagement le delai ci dessus est celui de la commune plus tot nous connaissons votre date plus la reservation est sure source information officielle publiee par"
+    },
+    {
+      "mots": 40,
+      "paires": 1,
+      "texte": "de la voirie nous prenons cette demarche en charge dans le cadre de votre demenagement le delai ci dessus est celui de la commune plus tot nous connaissons votre date plus la reservation est sure source information officielle publiee par"
+    },
+    {
+      "mots": 40,
+      "paires": 1,
+      "texte": "nous prenons cette demarche en charge dans le cadre de votre demenagement le delai ci dessus est celui de la commune plus tot nous connaissons votre date plus la reservation est sure source information officielle publiee par zone de police"
+    },
+    {
+      "mots": 38,
+      "paires": 2,
+      "texte": "nous prenons cette demarche en charge dans le cadre de votre demenagement la commune ne publie pas de delai fixe nous introduisons la demande des que votre date est arretee source information officielle publiee par administration communale d"
+    },
+    {
+      "mots": 38,
+      "paires": 2,
+      "texte": "nous prenons cette demarche en charge dans le cadre de votre demenagement le delai ci dessus est celui de la commune plus tot nous connaissons votre date plus la reservation est sure source information officielle publiee par commune"
+    },
+    {
+      "mots": 37,
+      "paires": 8,
+      "texte": "nous prenons cette demarche en charge dans le cadre de votre demenagement le delai ci dessus est celui de la commune plus tot nous connaissons votre date plus la reservation est sure source information officielle publiee par"
+    },
+    {
+      "mots": 37,
+      "paires": 6,
+      "texte": "nous prenons cette demarche en charge dans le cadre de votre demenagement la commune ne publie pas de delai fixe nous introduisons la demande des que votre date est arretee source information officielle publiee par administration communale"
+    },
+    {
+      "mots": 36,
+      "paires": 10,
+      "texte": "qui delivre l autorisation nous nous chargeons de la demarche pour vous elle doit etre introduite plusieurs jours ouvrables a l avance et la signalisation est posee avant le jour du demenagement ce qui change a"
+    },
+    {
+      "mots": 35,
+      "paires": 20,
+      "texte": "nous prenons cette demarche en charge dans le cadre de votre demenagement la commune ne publie pas de delai fixe nous introduisons la demande des que votre date est arretee source information officielle publiee par"
+    },
+    {
+      "mots": 34,
+      "paires": 190,
+      "texte": "aller au contenu principal 04 264 50 16 rue des naiveux 64 4040 herstal accueil demenagement garde meubles blog contact devis gratuit satisfaction client superieure a 95 78 ans d experience votre demenagement a"
+    },
+    {
+      "mots": 34,
+      "paires": 120,
+      "texte": "compris devis gratuit sous 24 heures ouvrables demander un devis gratuit 04 264 50 16 reponse sous 24h devis 100 gratuit assurance incluse 78 ans d experience estimation rapide combien coute votre demenagement a"
+    },
+    {
+      "mots": 33,
+      "paires": 70,
+      "texte": "devis gratuit sous 24 heures ouvrables demander un devis gratuit 04 264 50 16 reponse sous 24h devis 100 gratuit assurance incluse 78 ans d experience estimation rapide combien coute votre demenagement a"
+    },
+    {
+      "mots": 28,
+      "paires": 1,
+      "texte": "demenagement a herve demenagement a thimister clermont demenagement a welkenraedt voir aussi notre liste complete des zones d intervention et notre page demenagement a liege un demenagement a"
+    },
+    {
+      "mots": 26,
+      "paires": 10,
+      "texte": "reserver un emplacement devant la porte evite le portage sur cinquante metres et parfois le blocage d une rue entiere c est l administration communale de"
+    },
+    {
+      "mots": 24,
+      "paires": 1,
+      "texte": "demenagement a juprelle demenagement a oupeye voir aussi notre liste complete des zones d intervention et notre page demenagement a liege un demenagement a"
+    },
+    {
+      "mots": 23,
+      "paires": 190,
+      "texte": "en vue visite technique et devis gratuits reponse sous 24 heures ouvrables demander un devis gratuit 04 264 50 16 votre devis pour"
+    },
+    {
+      "mots": 23,
+      "paires": 1,
+      "texte": "que nous desservons deja entreprise familiale liegeoise fondee en 1948 trois generations et 78 ans de metier nous demenageons particuliers et entreprises a"
+    }
+  ],
+  "detailParPage": [
+    {
+      "url": "/demenagement/demenagement-amay",
+      "mots": 1128
+    },
+    {
+      "url": "/demenagement/demenagement-ans",
+      "mots": 1293
+    },
+    {
+      "url": "/demenagement/demenagement-anthisnes",
+      "mots": 1161
+    },
+    {
+      "url": "/demenagement/demenagement-aubel",
+      "mots": 1071
+    },
+    {
+      "url": "/demenagement/demenagement-awans",
+      "mots": 1081
+    },
+    {
+      "url": "/demenagement/demenagement-aywaille",
+      "mots": 1101
+    },
+    {
+      "url": "/demenagement/demenagement-baelen",
+      "mots": 1070
+    },
+    {
+      "url": "/demenagement/demenagement-bassenge",
+      "mots": 1139
+    },
+    {
+      "url": "/demenagement/demenagement-beyne-heusay",
+      "mots": 1187
+    },
+    {
+      "url": "/demenagement/demenagement-blegny",
+      "mots": 1084
+    },
+    {
+      "url": "/demenagement/demenagement-braives",
+      "mots": 1214
+    },
+    {
+      "url": "/demenagement/demenagement-burdinne",
+      "mots": 1157
+    },
+    {
+      "url": "/demenagement/demenagement-chaudfontaine",
+      "mots": 1196
+    },
+    {
+      "url": "/demenagement/demenagement-clavier",
+      "mots": 1156
+    },
+    {
+      "url": "/demenagement/demenagement-comblain-au-pont",
+      "mots": 1184
+    },
+    {
+      "url": "/demenagement/demenagement-crisnee",
+      "mots": 1066
+    },
+    {
+      "url": "/demenagement/demenagement-dalhem",
+      "mots": 1097
+    },
+    {
+      "url": "/demenagement/demenagement-dison",
+      "mots": 1107
+    },
+    {
+      "url": "/demenagement/demenagement-donceel",
+      "mots": 1017
+    },
+    {
+      "url": "/demenagement/demenagement-engis",
+      "mots": 1146
+    },
+    {
+      "url": "/demenagement/demenagement-esneux",
+      "mots": 1147
+    },
+    {
+      "url": "/demenagement/demenagement-faimes",
+      "mots": 1019
+    },
+    {
+      "url": "/demenagement/demenagement-ferrieres",
+      "mots": 1135
+    },
+    {
+      "url": "/demenagement/demenagement-fexhe-le-haut-clocher",
+      "mots": 1088
+    },
+    {
+      "url": "/demenagement/demenagement-flemalle",
+      "mots": 1268
+    },
+    {
+      "url": "/demenagement/demenagement-fleron",
+      "mots": 1136
+    },
+    {
+      "url": "/demenagement/demenagement-geer",
+      "mots": 1101
+    },
+    {
+      "url": "/demenagement/demenagement-grace-hollogne",
+      "mots": 1185
+    },
+    {
+      "url": "/demenagement/demenagement-hamoir",
+      "mots": 1126
+    },
+    {
+      "url": "/demenagement/demenagement-hannut",
+      "mots": 1218
+    },
+    {
+      "url": "/demenagement/demenagement-heron",
+      "mots": 1147
+    },
+    {
+      "url": "/demenagement/demenagement-herstal",
+      "mots": 1208
+    },
+    {
+      "url": "/demenagement/demenagement-herve",
+      "mots": 1168
+    },
+    {
+      "url": "/demenagement/demenagement-huy",
+      "mots": 1212
+    },
+    {
+      "url": "/demenagement/demenagement-jalhay",
+      "mots": 1083
+    },
+    {
+      "url": "/demenagement/demenagement-juprelle",
+      "mots": 1040
+    },
+    {
+      "url": "/demenagement/demenagement-limbourg",
+      "mots": 1104
+    },
+    {
+      "url": "/demenagement/demenagement-malmedy",
+      "mots": 1095
+    },
+    {
+      "url": "/demenagement/demenagement-marchin",
+      "mots": 1085
+    },
+    {
+      "url": "/demenagement/demenagement-modave",
+      "mots": 1119
+    },
+    {
+      "url": "/demenagement/demenagement-nandrin",
+      "mots": 1131
+    },
+    {
+      "url": "/demenagement/demenagement-neupre",
+      "mots": 1051
+    },
+    {
+      "url": "/demenagement/demenagement-olne",
+      "mots": 1047
+    },
+    {
+      "url": "/demenagement/demenagement-oreye",
+      "mots": 1021
+    },
+    {
+      "url": "/demenagement/demenagement-ouffet",
+      "mots": 1089
+    },
+    {
+      "url": "/demenagement/demenagement-oupeye",
+      "mots": 1209
+    },
+    {
+      "url": "/demenagement/demenagement-pepinster",
+      "mots": 1148
+    },
+    {
+      "url": "/demenagement/demenagement-plombieres",
+      "mots": 1101
+    },
+    {
+      "url": "/demenagement/demenagement-remicourt",
+      "mots": 1003
+    },
+    {
+      "url": "/demenagement/demenagement-saint-georges-sur-meuse",
+      "mots": 1115
+    },
+    {
+      "url": "/demenagement/demenagement-saint-nicolas",
+      "mots": 1215
+    },
+    {
+      "url": "/demenagement/demenagement-seraing",
+      "mots": 1116
+    },
+    {
+      "url": "/demenagement/demenagement-soumagne",
+      "mots": 1153
+    },
+    {
+      "url": "/demenagement/demenagement-spa",
+      "mots": 1038
+    },
+    {
+      "url": "/demenagement/demenagement-sprimont",
+      "mots": 1082
+    },
+    {
+      "url": "/demenagement/demenagement-stavelot",
+      "mots": 1097
+    },
+    {
+      "url": "/demenagement/demenagement-stoumont",
+      "mots": 1086
+    },
+    {
+      "url": "/demenagement/demenagement-theux",
+      "mots": 1054
+    },
+    {
+      "url": "/demenagement/demenagement-thimister-clermont",
+      "mots": 1061
+    },
+    {
+      "url": "/demenagement/demenagement-tinlot",
+      "mots": 1097
+    },
+    {
+      "url": "/demenagement/demenagement-trois-ponts",
+      "mots": 1072
+    },
+    {
+      "url": "/demenagement/demenagement-trooz",
+      "mots": 1060
+    },
+    {
+      "url": "/demenagement/demenagement-verlaine",
+      "mots": 1094
+    },
+    {
+      "url": "/demenagement/demenagement-verviers",
+      "mots": 1235
+    },
+    {
+      "url": "/demenagement/demenagement-villers-le-bouillet",
+      "mots": 1135
+    },
+    {
+      "url": "/demenagement/demenagement-vise",
+      "mots": 1156
+    },
+    {
+      "url": "/demenagement/demenagement-waimes",
+      "mots": 1061
+    },
+    {
+      "url": "/demenagement/demenagement-wanze",
+      "mots": 1107
+    },
+    {
+      "url": "/demenagement/demenagement-waremme",
+      "mots": 1082
+    },
+    {
+      "url": "/demenagement/demenagement-welkenraedt",
+      "mots": 1101
+    }
+  ]
+}

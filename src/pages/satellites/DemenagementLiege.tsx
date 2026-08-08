@@ -186,8 +186,8 @@ export default function DemenagementLiege() {
                 adresse, date de fondation, moyens chiffrés, certification. */}
             <p className="text-white text-lg md:text-xl leading-relaxed border-l-4 border-yellow pl-5 max-w-3xl font-medium">
               Déménagements Gramme organise votre déménagement à Liège depuis
-              1948. C'est une entreprise familiale établie rue des Naiveux 64 à
-              Herstal, aux portes de Liège, et certifiée ISO 9001. Six camions de
+              1948. C'est une entreprise familiale établie voie du Belvédère 1 à
+              Seraing, aux portes de Liège, et certifiée ISO 9001. Six camions de
               4 à 100 m³, vingt personnes, assurance transport et casse incluse.
               Devis gratuit sous 24 heures ouvrables.
             </p>
@@ -253,7 +253,7 @@ export default function DemenagementLiege() {
                 déménageurs se monte sans démonter les autres chantiers du jour.
                 Six camions, cela signifie qu'un imprévu de volume ne repousse pas
                 votre déménagement d'une semaine&nbsp;: un second véhicule part de
-                Herstal, à vingt minutes. C'est la différence concrète entre une
+                notre dépôt, à vingt minutes. C'est la différence concrète entre une
                 structure de {ans} ans et un indépendant avec une camionnette.
               </p>
             </motion.div>
@@ -427,7 +427,7 @@ export default function DemenagementLiege() {
               </div>
               <p className="text-muted text-[16px] leading-relaxed mt-6">
                 Besoin de stocker entre deux dates&nbsp;? Nos box fermés du
-                garde-meubles de Herstal démarrent à 30 € par mois pour 1 m³ — voir le{' '}
+                garde-meubles de Seraing démarrent à 30 € par mois pour 1 m³ — voir le{' '}
                 <Link to="/garde-meubles/prix-garde-meubles-liege" className="text-navy font-bold underline hover:text-navy/70">
                   détail des prix du garde-meubles à Liège
                 </Link>. Pour les étages élevés, notre{' '}

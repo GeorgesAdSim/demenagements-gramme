@@ -11,18 +11,19 @@
 // Prérequis : avoir déjà lancé `vite build` (dist/) et
 // `vite build --ssr src/entry-server.tsx --outDir dist-server` (dist-server/).
 //
-// ⚠️ Garder cette liste de routes synchronisée avec src/entry-server.tsx
-// et public/sitemap.xml.
+// ⚠️ Garder cette liste de routes synchronisée avec src/entry-server.tsx.
+// Le sitemap, lui, n'a plus à être tenu en parallèle : il est généré à partir
+// des pages effectivement écrites ici (voir scripts/sitemap.mjs).
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { genererSitemap } from './sitemap.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const distDir = path.join(root, 'dist');
 const distServerDir = path.join(root, 'dist-server');
-const BASE_URL = 'https://www.demenagements-gramme.be';
 
 // Communes lues depuis la source unique, et non recopiées ici : c'est
 // exactement le doublon que la spécification demandait d'éviter. Le JSON est
@@ -173,63 +174,40 @@ async function main() {
     }
   }
 
-  await completerSitemap(ROUTES_COMMUNES);
-
   console.log(`Pré-rendu terminé : ${ok}/${ROUTES.length + 1} pages (${ROUTES.length} routes + 404).`);
-  console.log(`  dont ${ROUTES_COMMUNES.length} page(s) de zones : ${ROUTES_COMMUNES.join(', ')}`);
+  console.log(`  dont ${ROUTES_COMMUNES.length} page(s) de zones.`);
   if (failures.length > 0) {
     console.error('Échecs :');
     for (const f of failures) console.error(`  - ${f.route}: ${f.error}`);
     process.exitCode = 1;
-  }
-}
-
-/**
- * Ajoute les URL des zones dans dist/sitemap.xml.
- *
- * On complète le sitemap maintenu à la main plutôt que de le régénérer
- * entièrement : les 24 entrées existantes portent des `lastmod` et des
- * `priority` réfléchis qu'une génération automatique écraserait. Seules les
- * URL absentes sont ajoutées, ce qui rend l'opération idempotente.
- */
-async function completerSitemap(routes) {
-  const sitemapPath = path.join(distDir, 'sitemap.xml');
-  if (!existsSync(sitemapPath)) {
-    console.warn('  ⚠ dist/sitemap.xml introuvable — zones non ajoutées au sitemap.');
     return;
   }
 
-  let xml = await readFile(sitemapPath, 'utf-8');
-  // Date de build : le sitemap est régénéré à chaque déploiement, `lastmod`
-  // doit refléter la dernière mise en production du contenu.
-  const aujourdhui = new Date().toISOString().slice(0, 10);
+  // Le sitemap est généré APRÈS le pré-rendu, et à partir de lui : c'est la
+  // seule façon de garantir qu'aucune URL déclarée n'est en 404, et de calculer
+  // le `lastmod` sur le contenu réellement livré.
+  const { erreurs, urls, modifiees } = await genererSitemap({
+    distDir,
+    cheminCommune: (slug) => `/demenagement/demenagement-${slug}`,
+    communesGenerees: new Set(COMMUNES_PUBLIEES.map((c) => c.id)),
+    aujourdhui: new Date().toISOString().slice(0, 10),
+  });
 
-  const entrees = [];
-  for (const route of routes) {
-    const loc = `${BASE_URL}${route}`;
-    if (xml.includes(`<loc>${loc}</loc>`)) continue;
-    const estIndex = route === '/zones-intervention';
-    entrees.push(
-      `  <url>\n` +
-      `    <loc>${loc}</loc>\n` +
-      `    <lastmod>${aujourdhui}</lastmod>\n` +
-      `    <changefreq>monthly</changefreq>\n` +
-      `    <priority>${estIndex ? '0.8' : '0.7'}</priority>\n` +
-      `  </url>`
-    );
-  }
-
-  if (entrees.length === 0) {
-    console.log('  sitemap : aucune URL de zone à ajouter.');
+  if (erreurs.length > 0) {
+    console.error('Sitemap — génération interrompue :');
+    for (const e of erreurs) console.error(`  ✗ ${e}`);
+    process.exitCode = 1;
     return;
   }
 
-  xml = xml.replace(
-    '</urlset>',
-    `  <!-- Zones d'intervention — généré par scripts/prerender.mjs -->\n${entrees.join('\n')}\n\n</urlset>`
+  const communesDeclarees = urls.filter((u) => u.startsWith('/demenagement/demenagement-')).length;
+  console.log(`  sitemap : ${urls.length} URL déclarées, dont ${communesDeclarees} sous /demenagement/.`);
+  console.log(
+    modifiees.length === 0
+      ? '  sitemap : aucun lastmod déplacé — contenu inchangé depuis le dernier build.'
+      : `  sitemap : ${modifiees.length} lastmod mis à jour (contenu modifié) : ${modifiees.slice(0, 5).join(', ')}${modifiees.length > 5 ? '…' : ''}`
   );
-  await writeFile(sitemapPath, xml, 'utf-8');
-  console.log(`  sitemap : ${entrees.length} URL de zone ajoutée(s).`);
+  console.log('  sitemap : pense à committer data/sitemap-lastmod.json si des dates ont bougé.');
 }
 
 function pathToFileUrl(p) {

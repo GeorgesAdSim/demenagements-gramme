@@ -38,7 +38,7 @@ export interface SatellitePageProps {
   };
   /**
    * Page décrivant réellement le siège social : elle porte alors la
-   * déclaration complète de l'établissement. Seule la page Herstal l'active.
+   * déclaration complète de l'établissement. Seule la page Seraing l'active.
    */
   fullOrganization?: boolean;
 }

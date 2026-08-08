@@ -44,7 +44,35 @@ export interface AutorisationStationnement {
   signalisation: string | null;
   /** Page officielle d'où proviennent les champs ci-dessus. */
   sourceUrl: string;
+  /**
+   * Formulaire de demande, quand il vit sur une URL distincte de `sourceUrl`.
+   * Absent tant qu'une URL n'a pas été relevée : une URL devinée produit un 404
+   * sortant, ce qui est pire que pas de lien du tout.
+   */
+  urlFormulaire?: string;
+  /**
+   * Texte du lien vers `sourceUrl`, rédigé à la main pour cette commune.
+   *
+   * L'ancre était auparavant composée : « information officielle publiée par
+   * {autorite} », soit le même patron répété sur cinquante et une pages. Une
+   * ancre qui se devine par formule n'apporte aucun signal — elle en retire,
+   * en signalant la génération automatique. Elle reprend donc ici le libellé
+   * réel de la ressource : le nom de la plateforme, du formulaire ou du
+   * règlement tel qu'il se présente sur le site de la commune.
+   */
+  libelleSource: string;
   dateVerification: string;
+  /**
+   * Verrou de publication. `'human'` : un humain a relu la fiche et engage sa
+   * responsabilité dessus. `null` : donnée collectée mais non relue.
+   *
+   * Une fiche non relue n'est PAS rendue : la page retombe sur le texte
+   * générique, sans lien externe. La raison n'est pas éditoriale mais
+   * pratique — un délai ou une redevance erronés font prendre une amende au
+   * client, et c'est un coût sans commune mesure avec celui d'un paragraphe
+   * moins précis. Le passage à `'human'` est un acte manuel.
+   */
+  verifiePar: 'human' | null;
 }
 
 export interface CommuneSEO {
@@ -62,7 +90,7 @@ export interface CommuneSEO {
   codesPostaux: string[];
   /**
    * Distance routière depuis le dépôt d'où partent les camions — rue de la
-   * Digue à Oupeye, et NON le siège social rue des Naiveux à Herstal. La
+   * Digue à Oupeye, et NON le siège social voie du Belvédère à Seraing. La
    * confusion entre les deux avait faussé les 37 premiers relevés.
    * `null` si non mesurée.
    */
@@ -79,7 +107,7 @@ export interface CommuneSEO {
    *
    * `informationsLocales` ne prend que des puces courtes : une commune sur
    * laquelle il y a réellement quelque chose à raconter — le siège social à
-   * Herstal, la densité urbaine à Seraing — n'y tenait pas. C'est ce qui a
+   * Seraing, le relief de Chaudfontaine — n'y tenait pas. C'est ce qui a
    * permis de migrer les pages satellites sans perdre leur prose.
    *
    * `contenu` accepte plusieurs paragraphes, séparés par une ligne vide.
@@ -91,6 +119,35 @@ export interface CommuneSEO {
    * qui reste à vérifier.
    */
   autorisationStationnement?: AutorisationStationnement;
+  /**
+   * Questions fréquentes RÉDIGÉES pour cette commune, en texte libre.
+   *
+   * Les quatre questions étaient auparavant composées par une fonction unique,
+   * à partir de gabarits à trous. Le procédé produisait, sur soixante-dix
+   * pages, des réponses dont quatre-vingt-seize mots étaient strictement
+   * identiques — « Appelez le 04 264 50 16 ou remplissez le formulaire en
+   * ligne. Nous organisons une visite technique gratuite… ». Un gabarit à
+   * variables reste un gabarit : remplacer la distance et le nom de la commune
+   * ne fait pas une réponse différente, et Google mesure ce qui est écrit, pas
+   * l'intention de personnalisation.
+   *
+   * La question pertinente n'est d'ailleurs pas la même partout : le
+   * stationnement en centre dense à Seraing, l'accès aux fermes isolées en
+   * Hesbaye, la neige de plateau à Waimes, les rues en pente à Liège. Ces
+   * questions ne se dérivent d'aucune formule.
+   *
+   * Règles :
+   *  · 3 à 5 questions, dont au moins deux qui n'auraient pas de sens sur une
+   *    autre commune ;
+   *  · rien qui ne soit déjà vérifié ailleurs dans la fiche — les réponses
+   *    reformulent des faits relevés, elles n'en produisent pas ;
+   *  · le texte affiché et le balisage FAQPage viennent de ce champ, donc sont
+   *    identiques mot pour mot par construction.
+   *
+   * Absent, la page retombe sur les questions génériques d'avant, qui restent
+   * vraies. La commune est alors listée dans reports/faq-a-completer.md.
+   */
+  faqLocale?: Array<{ question: string; reponse: string }>;
   /** Ce qu'il reste à vérifier auprès de la commune, en clair. */
   todoDonneesLocales?: string;
   /** Date à laquelle Gramme a validé les données locales. */
@@ -285,6 +342,55 @@ export function validerCommunes(communes: CommuneSEO[] = COMMUNES): ProblemeComm
       }
       if (!c.dateVerification) {
         problemes.push({ commune: c.id, gravite: 'avertissement', message: 'publiée sans date de vérification des données' });
+      }
+
+      // Fiche stationnement : la donnée qui, si elle est fausse, coûte une
+      // amende au client. Les contrôles portent donc sur ce qui la rend
+      // publiable, pas sur son exhaustivité.
+      const a = c.autorisationStationnement;
+      if (a) {
+        if (!a.sourceUrl?.trim()) {
+          problemes.push({ commune: c.id, gravite: 'erreur', message: 'autorisationStationnement sans sourceUrl' });
+        } else if (!/^https:\/\/[^/]+\.be(\/|$)/.test(a.sourceUrl)) {
+          // Domaines .be officiels uniquement : site communal, zone de police,
+          // portail régional. Ni raccourcisseur, ni URL de recherche.
+          problemes.push({ commune: c.id, gravite: 'erreur', message: `sourceUrl « ${a.sourceUrl} » n'est pas une URL https d'un domaine .be` });
+        }
+        if (!a.libelleSource?.trim()) {
+          problemes.push({ commune: c.id, gravite: 'erreur', message: 'autorisationStationnement sans libelleSource — l\'ancre du lien doit être rédigée, pas composée' });
+        }
+        if (a.verifiePar !== 'human' && a.verifiePar !== null) {
+          problemes.push({ commune: c.id, gravite: 'erreur', message: `verifiePar vaut « ${a.verifiePar} » — attendu "human" ou null` });
+        }
+        if (a.verifiePar === null) {
+          problemes.push({ commune: c.id, gravite: 'avertissement', message: 'fiche stationnement collectée mais non relue (verifiePar: null) — texte générique servi' });
+        }
+        if (a.urlFormulaire && !/^https:\/\/[^/]+\.be(\/|$)/.test(a.urlFormulaire)) {
+          problemes.push({ commune: c.id, gravite: 'erreur', message: `urlFormulaire « ${a.urlFormulaire} » n'est pas une URL https d'un domaine .be` });
+        }
+      }
+
+      // FAQ locale : entre 3 et 5 questions. Deux, c'est une section qui ne
+      // vaut pas son titre ; au-delà de cinq, le balisage FAQPage devient une
+      // liste que Google tronque et que personne ne lit.
+      if (c.faqLocale) {
+        const n = c.faqLocale.length;
+        if (n < 3 || n > 5) {
+          problemes.push({ commune: c.id, gravite: 'erreur', message: `faqLocale : ${n} question(s) — il en faut entre 3 et 5` });
+        }
+        for (const [i, qr] of c.faqLocale.entries()) {
+          if (!qr.question?.trim() || !qr.reponse?.trim()) {
+            problemes.push({ commune: c.id, gravite: 'erreur', message: `faqLocale[${i}] : question ou réponse vide` });
+          }
+        }
+        const questions = c.faqLocale.map((q) => q.question.trim());
+        if (new Set(questions).size !== questions.length) {
+          problemes.push({ commune: c.id, gravite: 'erreur', message: 'faqLocale : deux questions identiques' });
+        }
+      } else if (!pageSatellite(c)) {
+        // Une commune servie par une satellite n'a pas de page générée : sa FAQ
+        // vit dans la satellite, pas ici.
+        problemes.push({ commune: c.id, gravite: 'avertissement', message: 'sans faqLocale — FAQ générique servie, voir reports/faq-a-completer.md' });
       }
 
       // Le maillage n'existe que si au moins une voisine est publiée. Une page

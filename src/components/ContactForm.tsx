@@ -6,6 +6,7 @@ import { supabase } from '../lib/supabase';
 import { SITE_IMAGES } from '../data/images';
 import type { HomepageContent } from '../lib/types';
 import { anneesExperience } from '../lib/anciennete';
+import { ADRESSE_COURTE } from '../data/entreprise';
 
 const FACEBOOK_URL = 'https://www.facebook.com/GrammeDemenagements';
 
@@ -49,10 +50,31 @@ const initialForm: FormData = {
 
 interface Props {
   data?: HomepageContent['contact'] | null;
+  /**
+   * `complet` (défaut) : rendu inchangé — accueil, /contact-devis,
+   * /zones-intervention, satellites. Aucune de ces pages ne passe la prop, et
+   * aucune ne bouge d'un pixel.
+   *
+   * `locale` : variante des pages communes. La colonne de gauche disparaît —
+   * quatre puces de réassurance, coordonnées, horaires, photo d'équipe,
+   * Facebook, numéro de TVA : environ 110 mots strictement identiques sur les
+   * soixante-dix pages communes, et déjà présents dans le pied de page comme
+   * dans le hero. Le formulaire, lui, ne change pas : mêmes champs, même
+   * validation, même insertion.
+   */
+  variant?: 'complet' | 'locale';
+  /**
+   * Commune pré-remplie dans « Adresse de départ », sur les pages locales.
+   * Le champ reste modifiable : c'est une amorce, pas une valeur imposée.
+   */
+  villeParDefaut?: string;
 }
 
-export default function ContactForm({ data }: Props) {
-  const [form, setForm] = useState<FormData>(initialForm);
+export default function ContactForm({ data, variant = 'complet', villeParDefaut }: Props) {
+  const locale = variant === 'locale';
+  const [form, setForm] = useState<FormData>(
+    villeParDefaut ? { ...initialForm, cityFrom: villeParDefaut } : initialForm
+  );
   const [estimationId, setEstimationId] = useState<string | null>(null);
 
   // Retour depuis l'estimateur de volume : pré-remplit le volume et rattache
@@ -149,7 +171,9 @@ export default function ContactForm({ data }: Props) {
     setSuccess(true);
     setSubmitted(false);
     setErrors({});
-    setForm(initialForm);
+    // Même remise à zéro qu'à l'ouverture : sur une page locale, la commune
+    // reste pré-remplie, sinon le second envoi repart d'un champ vide.
+    setForm(villeParDefaut ? { ...initialForm, cityFrom: villeParDefaut } : initialForm);
     setTimeout(() => setSuccess(false), 5000);
   };
 
@@ -167,9 +191,30 @@ export default function ContactForm({ data }: Props) {
     <section id="contact" className="bg-offwhite py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
 
-        <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-10 lg:gap-16 items-start">
+        {/* Variante locale : un titre, une ligne, le formulaire. Tout le reste
+            — argumentaire, coordonnées, photo — est du texte identique d'une
+            commune à l'autre, et déjà servi ailleurs sur la même page. */}
+        {locale && (
+          <div className="max-w-2xl mx-auto text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-black uppercase text-navy leading-tight">
+              {villeParDefaut ? `Votre devis pour ${villeParDefaut}` : 'Votre devis gratuit'}
+            </h2>
+            <p className="text-muted text-lg mt-3">
+              Réponse sous 24 heures ouvrables, sans engagement.
+            </p>
+          </div>
+        )}
+
+        <div
+          className={
+            locale
+              ? 'max-w-2xl mx-auto'
+              : 'grid grid-cols-1 lg:grid-cols-[40%_60%] gap-10 lg:gap-16 items-start'
+          }
+        >
 
           {/* LEFT — Vendre le devis */}
+          {!locale && (
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -202,7 +247,7 @@ export default function ContactForm({ data }: Props) {
 
             <div className="space-y-3">
               {[
-                { icon: MapPin, text: 'Rue des Naiveux 64, 4040 Herstal' },
+                { icon: MapPin, text: ADRESSE_COURTE },
                 { icon: Phone, text: '04 264 50 16', href: 'tel:+3242645016' },
                 { icon: Mail, text: 'contact@demenagements-gramme.be', href: 'mailto:contact@demenagements-gramme.be' },
                 { icon: Clock, text: 'Lun : 8h–18h | Mar–Ven : 8h–17h' },
@@ -247,6 +292,7 @@ export default function ContactForm({ data }: Props) {
               <p className="text-navy/30 text-xs">TVA BE 0775.264.382</p>
             </div>
           </motion.div>
+          )}
 
           {/* RIGHT — Formulaire */}
           <motion.div
@@ -470,6 +516,16 @@ export default function ContactForm({ data }: Props) {
                 </p>
               </form>
             </div>
+
+            {locale && (
+              <p className="text-center text-muted text-sm mt-5">
+                Besoin d'un devis détaillé ?{' '}
+                <Link to="/contact-devis" className="text-navy font-bold underline hover:text-navy/70">
+                  Utilisez le formulaire complet
+                </Link>
+                .
+              </p>
+            )}
           </motion.div>
 
         </div>
