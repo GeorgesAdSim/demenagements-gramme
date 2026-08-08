@@ -475,6 +475,18 @@ export default function DemenagementLiege() {
                     déménagement international depuis Liège
                   </Link>.
                 </p>
+                {/* Cette page reçoit un lien de chacune des 70 pages communes :
+                    c'est la mieux dotée du silo. Elle alimente donc les deux
+                    satellites liégeoises qui n'en recevaient qu'un ou deux. */}
+                <p className="text-muted text-[15px] leading-relaxed mt-3">
+                  Selon votre chantier, voyez aussi{' '}
+                  <Link to="/demenagement/demenageur-liege" className="text-navy font-bold underline hover:text-navy/70">
+                    ce que couvre notre métier de déménageur à Liège
+                  </Link>{' '}ou, pour un instrument,{' '}
+                  <Link to="/demenagement/demenagement-piano" className="text-navy font-bold underline hover:text-navy/70">
+                    le transport d'un piano
+                  </Link>, qui demande un matériel à part.
+                </p>
               </motion.div>
             )}
 

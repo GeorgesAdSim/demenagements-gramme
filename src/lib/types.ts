@@ -57,6 +57,23 @@ export interface ServicePageContent {
     /** Slugs, résolus contre la liste des communes publiées au rendu. */
     slugs: string[];
   };
+  /**
+   * Renvois contextuels vers les pages internes que celle-ci commande.
+   *
+   * Le site n'avait aucun mécanisme de lien interne PRÉ-RENDU entre pages de
+   * service : `InternalLinks` existe mais s'alimente en client depuis Supabase,
+   * donc reste invisible pour un crawler. Résultat, six pages ne recevaient
+   * qu'un à trois liens entrants, tous depuis des pages elles-mêmes faibles —
+   * /demenagement/demenageur-liege n'en avait qu'un seul.
+   *
+   * L'ancre porte le sujet de la page cible, jamais « en savoir plus » : c'est
+   * elle qui transmet le sens, et une ancre générique n'en transmet aucun.
+   */
+  liensAssocies?: {
+    sectionTitle: string;
+    intro?: string;
+    items: Array<{ to: string; label: string; desc: string }>;
+  };
 }
 
 export interface HomepageContent {
