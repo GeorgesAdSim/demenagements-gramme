@@ -247,6 +247,50 @@ traiter.
 
 ---
 
+## 8 bis. Déménagement du siège vers Seraing
+
+Découvert en déployant la preview, hors périmètre initial. Le contenu CMS
+annonçait déjà le siège voie du Belvédère 1 à Seraing, alors que le code
+écrivait « Rue des Naiveux 64, 4040 Herstal » à vingt-deux endroits : la même
+page servait deux adresses.
+
+`src/data/entreprise.ts` devient la source unique — adresse, position,
+téléphone, TVA, nœuds schema.org. Code postal 4100 et coordonnées
+50.6031529 / 5.5273906 confirmés par géocodage indépendant avant écriture.
+`COMMUNE_SIEGE` passe à `seraing` : c'est sa page qui porte désormais la
+déclaration d'établissement complète. La carte de `/contact-devis`, qui
+portait un jeton opaque vers l'ancienne adresse, est reconstruite depuis les
+coordonnées.
+
+Pages légales incluses — mentions légales, CGV, confidentialité, protection
+des données — sur votre confirmation que la Banque-Carrefour est à jour.
+
+Le **dépôt n'a pas bougé** : rue de la Digue à Oupeye, et toutes les distances
+de `communes.json` restent mesurées depuis lui.
+
+### Reste à trancher : le garde-meubles
+
+Quatre phrases situent encore le **stockage** à Herstal, et je ne les ai pas
+touchées — le siège a déménagé, rien ne dit que les box ont suivi, et une
+adresse de dépôt fausse envoie un client avec sa camionnette dans la mauvaise
+commune.
+
+| Fichier | Phrase |
+|---|---|
+| `src/components/ServicesCards.tsx` | « Stockage sécurisé et flexible à Herstal » |
+| `src/components/PricingSection.tsx` | « notre garde-meubles de Herstal » |
+| `src/data/faq.ts` | « Nos box sont individuels et sécurisés, à Herstal » |
+| `src/pages/satellites/DemenagementLiege.tsx` | « garde-meubles de Herstal » |
+
+### Deux corrections à faire en back-office, pas dans le dépôt
+
+- La table `config` de Supabase porte encore l'ancienne adresse.
+- `informationsLocales` de Herstal annonce « Commune du siège social ». Ce
+  champ est synchronisé depuis la base : le corriger dans le dépôt serait
+  écrasé au build suivant.
+- L'URL d'Oupeye dans `autorisationStationnement` contient un `-1` parasite
+  qui provoque une redirection. Même raison : `sourceUrl` appartient au CMS.
+
 ## 9. Hors code — à faire après déploiement
 
 1. Resoumettre le sitemap dans Search Console.
