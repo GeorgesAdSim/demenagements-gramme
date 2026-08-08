@@ -1,106 +1,159 @@
 # État du chantier et priorités
 
-Arrêté le 2026-08-08. Document de reprise : il doit suffire à repartir sans le
-contexte de la conversation qui l'a produit.
+Arrêté le 2026-08-08, révisé le même jour après la mise en production de la
+mesure des conversions. Document de reprise : il doit suffire à repartir sans
+le contexte de la conversation qui l'a produit.
 
 ---
 
-# PRIORITÉ 1 — Événements de conversion GA4
+# PRIORITÉ 1 — Deux contrôles datés
 
-**À faire en premier.** Tout le reste attend, y compris les décisions listées
-plus bas.
+La mesure des conversions est livrée et publiée, section suivante. Ce qui reste
+en tête de liste n'est plus du travail : ce sont deux vérifications qui ne
+peuvent pas être faites plus tôt.
 
-## Pourquoi maintenant
+## Vers le 10 août — `generate_lead` n'est pas compté deux fois
 
-Le consentement et Tag Manager sont en production depuis le 8 août, et la
-balise GA4 fonctionne : un test sur le site en ligne a produit les cookies
-`_ga` et `_ga_2BZCZJ101P` et une requête vers `region1.google-analytics.com`
-avec `tid=G-2BZCZJ101P`. Le site mesure donc déjà les vues de page, **mais
-aucune conversion**. Sans elles, GA4 dit combien de gens sont venus, jamais
-combien ont demandé un devis — et c'est cette seconde donnée qui doit trancher
-l'arbitrage « 3 pages de service contre 68 pages communes ».
+Dans GA4 → Admin → Événements, confirmer que `generate_lead` n'apparaît
+**qu'une seule fois**.
+
+L'événement clé a été déclaré par « Créer un événement → Créer avec du code »,
+faute de pouvoir étoiler un événement absent de la liste des événements
+récents — celle-ci s'appuie sur des données traitées, avec 24 à 48 h de
+latence. C'est le bon chemin, mais c'est le même écran que celui des événements
+dérivés : si la déclaration s'était transformée en règle de création, chaque
+conversion serait comptée deux fois. Comparer le total du rapport avec ce que
+montre DebugView tranche en une minute.
+
+## Vers le 15 août — le J+7 du déploiement du 8
+
+Dans Search Console, sur 5 ou 6 communes de la vague 1 : la **date de dernière
+exploration** dans l'inspection d'URL.
+
+- Renseignée → la mise en vagues fonctionne, ouvrir la vague 2 en déplaçant
+  10 à 15 slugs de `enAttente` vers `wave2` dans `data/sitemap-waves.json`.
+- Toujours vide → le problème est l'autorité du domaine, et ajouter des pages
+  n'y changera rien. Basculer l'effort sur la fiche Google Business Profile et
+  les signaux externes.
+
+---
+
+# Mesure des conversions — livrée le 8 août
+
+Le site mesurait les vues de page et rien d'autre : GA4 disait combien de gens
+venaient, jamais combien demandaient un devis. Il mesure désormais les deux.
+
+C'est cette seconde donnée qui doit trancher l'arbitrage « 3 pages de service
+contre 68 pages communes », et la question du regroupement des petites communes
+par zone. **Rien de tout cela ne se décide avant plusieurs semaines de
+chiffres.**
 
 ## Identifiants
 
 | | |
 |---|---|
-| Conteneur GTM | `GTM-M7C3PW95` |
+| Conteneur GTM | `GTM-M7C3PW95` — version 3, publiée le 8 août |
 | Propriété GA4 | `G-2BZCZJ101P` |
-| Couche de données | `dataLayer`, avec une variable `env` valant `dev`, `preview` ou `production` |
+| Couche de données | `dataLayer`, avec `env` valant `dev`, `preview` ou `production` |
 
-## Trois événements à poser
+## Côté dépôt — PR #37
 
-### 1. `generate_lead` — soumission du formulaire de devis
+`src/lib/mesure.ts` est le **seul** point d'envoi vers la couche de données.
+Deux verrous avant tout push : l'absence de `window`, pour que le pré-rendu des
+95 pages ne tente rien, et un consentement qui vaut `accepted`, lu par
+`lireConsentement()` de `src/lib/consentement.ts`. Le cas « pas encore choisi »
+vaut refus, comme partout ailleurs dans le site. Conséquence assumée : une
+demande envoyée bannière encore ouverte n'est pas comptée.
 
-C'est la conversion principale. Le piège : **le formulaire s'insère depuis
-quatre endroits distincts**, et ils ne partagent aucun code.
+| Événement | Paramètres | D'où il part |
+|---|---|---|
+| `generate_lead` | `source_formulaire`, `service_type`, `page_origine` | les 4 points d'insertion `devis_requests`, **après** retour sans erreur |
+| `clic_telephone` | `numero_appele`, `page_origine` | écouteur délégué monté dans `App.tsx`, couvre les 27 liens `tel:` et tout lien futur |
+| `estimation_photos` | `emplacement` — `hero`, `formulaire` ou `navigation` —, `page_origine` | les 3 liens vers l'estimateur, menu Services compris |
 
-| Fichier | Contexte |
-|---|---|
-| `src/components/ContactForm.tsx` | accueil, pages communes, zones, satellite Liège, pages de service |
-| `src/pages/ContactDevisPage.tsx` | `/contact-devis` |
-| `src/pages/ContactPage.tsx` | `/contact` |
-| `src/pages/EstimationVolumePage.tsx` | `/estimation-volume` |
+Rien de nominatif n'est envoyé : ni e-mail, ni téléphone du visiteur, ni
+adresse.
 
-Tous appellent `supabase.from('devis_requests').insert({...})`.
+Trois des quatre formulaires ignoraient complètement le `error` de Supabase et
+affichaient un succès inconditionnel. **Ce comportement n'a pas été corrigé** —
+c'est un chantier à part — mais `error` est désormais capturé, pour que la
+conversion ne se compte que si la base a bien accepté la demande.
 
-**Ne pas recopier l'appel quatre fois.** Écrire un helper unique — par exemple
-`src/lib/mesure.ts` — et l'appeler depuis chacun, **après** le retour sans
-erreur de l'insertion. Une conversion comptée avant confirmation gonfle le
-chiffre de tous les envois qui échouent.
+## Côté GTM — hors dépôt
 
-Paramètres utiles à pousser : la page d'origine, et le type de service
-(`service_type`, déjà présent dans le payload). Ne rien envoyer qui identifie
-la personne — ni e-mail, ni téléphone, ni adresse : GA4 l'interdit et c'est
-une donnée personnelle.
+6 variables de couche de données (`DL - env`, `DL - source_formulaire`,
+`DL - service_type`, `DL - page_origine`, `DL - emplacement`,
+`DL - numero_appele`), 3 déclencheurs « Événement personnalisé » aux noms
+exacts, 3 balises « Événement GA4 » rattachées à la balise Google existante.
 
-### 2. `clic_telephone`
+Aucun déclencheur « Envoi de formulaire » ni « Liens uniquement » : les
+formulaires sont en React et écrivent en AJAX, l'écouteur natif ne verrait rien
+ou se déclencherait sur des envois qui échouent. Toute la détection est faite
+côté site, GTM ne fait qu'écouter le `dataLayer`.
 
-Le numéro apparaît dans **19 fichiers**. Ne pas les modifier un par un :
-poser **un écouteur délégué** au montage de l'application, qui intercepte les
-clics sur `a[href^="tel:"]`. Un seul point de code, et tout lien ajouté plus
-tard est couvert d'office.
+**Tous les déclencheurs portent la condition `DL - env` = `production`.** La
+balise Google est passée de `Initialization - All Pages` à un déclencheur
+`Initialisation — production` du **même type** : une exception ne bloque une
+balise que si elle est du même type que le déclencheur qui l'allume, et un
+déclencheur d'événement personnalisé n'aurait jamais bloqué une balise
+d'initialisation.
 
-### 3. `estimation_photos`
+Vérifié dans les deux sens. En production, les trois balises se déclenchent et
+les événements arrivent en DebugView avec leurs paramètres. Sur
+`deploy-preview-37--demenagements-gramme.netlify.app`, le `dataLayer` se
+remplit normalement — le site fait son travail — et **aucune requête ne sort**
+vers `google-analytics.com`.
 
-Clic vers `/estimation-volume`, depuis `src/components/HeroSection.tsx` et
-`src/components/ContactForm.tsx`. C'est le différenciateur du site — aucun
-concurrent suivi n'a l'équivalent — donc il mérite sa propre mesure, distincte
-du devis.
+Le filtrage échoue du bon côté : si `env` venait à manquer, plus rien ne serait
+mesuré. On perd de la donnée plutôt que d'en polluer. Si la mesure s'arrête un
+jour sans raison apparente, c'est la première chose à regarder.
 
-## Contrainte de consentement
+Effet de bord à connaître : le mode Aperçu ne montre plus rien depuis
+`localhost` ni depuis une prévisualisation. C'est voulu, mais ça surprend.
 
-Le helper ne doit **rien** envoyer si le consentement est refusé. En pratique
-Consent Mode s'en charge côté Google, mais pousser dans le `dataLayer` reste
-inutile et brouille le débogage. Lire `lireConsentement()` de
-`src/lib/consentement.ts`, qui est la seule source de cette décision.
+## Côté GA4
 
-## Côté GTM, hors dépôt
+`generate_lead` marqué événement clé, **sans valeur monétaire par défaut** —
+GA4 proposait 1 $, ce qui aurait injecté un chiffre d'affaires fictif dans les
+rapports. Les quatre paramètres enregistrés en dimensions personnalisées de
+**portée événement** : sans cet enregistrement ils arrivent bien, mais restent
+invisibles dans les rapports. Conservation des données d'événement portée de 2
+à **14 mois**, ce qu'annonce la politique de confidentialité. Search Console
+associée au flux Web.
 
-1. Un déclencheur par événement personnalisé, une balise GA4 « Événement » pour
-   chacun.
-2. Marquer `generate_lead` comme **conversion** dans GA4.
-3. **Publier** le conteneur.
+Ni les événements clés ni les dimensions ne sont rétroactifs : ils ne valent
+que pour les données collectées à partir du 8 août.
 
-## ⚠️ À faire avant tout le reste, dans GTM
+## Deux réserves connues
 
-**L'exception sur `env` ≠ `production` n'est pas configurée.** Le conteneur se
-charge aussi sur les déploiements de prévisualisation, où la balise GA4 est
-active : à la prochaine pull request, le trafic de test entrera dans
-`G-2BZCZJ101P` et polluera les données que ce chantier sert à produire.
+**`page_title` décalé sur les navigations internes.** Le site est une
+application React, et `react-helmet-async` écrit le titre dans un effet, donc
+après le `pushState` qui déclenche le `page_view`. Le chemin envoyé est
+correct — vérifié, un second `page_view` part bien à chaque changement de
+route —, mais le titre est celui de la page précédente. Contournement
+immédiat : dans « Pages et écrans », remplacer la dimension par défaut « Titre
+de la page et classe d'écran » par « Chemin de la page ». Le corriger vraiment
+supposerait de désactiver la mesure améliorée sur les changements d'historique
+et d'émettre le `page_view` soi-même après Helmet : on échangerait un titre
+décalé contre une mesure de pages vues dont on deviendrait responsable. Laissé
+tel quel.
 
-Déclarer `env` en variable de couche de données, puis l'ajouter en exception du
-déclencheur. La variable est déjà poussée par le site : rien à redéployer.
+**Alerte « taux de consentement de 0 % ».** À ne pas lire comme un refus
+massif : sur la période concernée la propriété affiche 0 session, et les
+signaux sont décrits comme *inactifs*, pas *refusés*. La collecte n'existait
+pas avant le 8 août. À relire quand il y aura du volume ; si elle persiste, la
+piste sera le taux de refus réel du bandeau, pas la configuration.
 
-Deux réglages GA4 au passage : conservation des données à **14 mois** (le défaut
-est de 2, et la politique de confidentialité annonce 14) et **association à
-Search Console**.
+Le site est en opt-in strict et **mondial** : les conversions mesurées ne
+seront jamais qu'une fraction des conversions réelles. À garder en tête au
+moment de comparer les pages entre elles — le rapport entre les deux doit
+rester constant pour que la comparaison tienne.
 
 ---
 
 # Ce qui est livré et en production
 
-Trois fusions le 8 août : PR #33, #34, #35.
+Cinq fusions le 8 août : PR #33, #34, #35, #36 et #37.
 
 ## Pages communes — dé-duplication
 
@@ -156,6 +209,9 @@ Tag Manager derrière Consent Mode v2 en `denied`, bandeau de consentement
 réécrit — le précédent n'était relié à rien —, lien « Gérer mes cookies » et
 section 8 de la politique de confidentialité mise à jour.
 
+Puis les trois événements de conversion et le filtrage `env` : voir la section
+« Mesure des conversions » en tête de document.
+
 ---
 
 # En suspens
@@ -186,17 +242,9 @@ section 8 de la politique de confidentialité mise à jour.
 3. URL d'Oupeye dans `autorisationStationnement` : contient un `-1` parasite qui
    provoque une redirection. `sourceUrl` appartient au CMS, une correction dans
    le dépôt serait écrasée à la synchro suivante.
-
-## À observer vers le 15 août
-
-Le J+7 du déploiement du 8 août. Dans Search Console, sur 5 ou 6 communes de la
-vague 1 : la **date de dernière exploration** dans l'inspection d'URL.
-
-- Renseignée → la mise en vagues fonctionne, ouvrir la vague 2 en déplaçant
-  10 à 15 slugs de `enAttente` vers `wave2` dans `data/sitemap-waves.json`.
-- Toujours vide → le problème est l'autorité du domaine, et ajouter des pages
-  n'y changera rien. Basculer l'effort sur la fiche Google Business Profile et
-  les signaux externes.
+4. Compte Tag Manager : un seul administrateur. Le panneau « Qualité du
+   conteneur » recommande d'en ajouter un second — relève des permissions du
+   compte Google.
 
 ## Points éditoriaux relevés, non tranchés
 
