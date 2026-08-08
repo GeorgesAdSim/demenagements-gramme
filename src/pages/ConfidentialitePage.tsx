@@ -74,12 +74,20 @@ const DEFAULT_HTML = `<h1>Politique de Confidentialité</h1>
 <p>Pour exercer vos droits, contactez-nous par email à <a href="mailto:contact@demenagements-gramme.be">contact@demenagements-gramme.be</a> ou par courrier à l'adresse mentionnée ci-dessus. Nous répondrons dans un délai d'un mois.</p>
 
 <h2>8. Cookies</h2>
-<p>Ce site utilise uniquement des <strong>cookies techniques</strong> nécessaires au bon fonctionnement du site :</p>
+<p><strong>Cookies techniques</strong>, déposés sans consentement car nécessaires au fonctionnement du site :</p>
 <ul>
 <li>Cookie de consentement (mémorisation de votre choix concernant les cookies)</li>
 <li>Cookies de session (fonctionnement du formulaire)</li>
 </ul>
-<p>Aucun cookie publicitaire, analytique ou de pistage n'est utilisé. Aucune donnée n'est transmise à des tiers à des fins de marketing ou de publicité.</p>
+<p><strong>Mesure d'audience</strong>, déposée <em>uniquement après votre accord</em> :</p>
+<ul>
+<li>Google Analytics 4, via Google Tag Manager, opéré par Google Ireland Limited</li>
+<li>Finalité : savoir quelles pages sont consultées et par quel canal, afin de les améliorer</li>
+<li>Aucune mesure n'a lieu tant que vous n'avez pas accepté : le consentement est refusé par défaut</li>
+<li>Durée de conservation des données : 14 mois</li>
+</ul>
+<p>Vous pouvez revenir sur votre choix à tout moment par le lien <strong>« Gérer mes cookies »</strong>, en bas de chaque page. Le retrait interrompt la mesure immédiatement.</p>
+<p>Aucun cookie publicitaire ni de pistage n'est utilisé, et aucune donnée n'est vendue ni transmise à des tiers à des fins de marketing.</p>
 
 <h2>9. Sécurité</h2>
 <p>Nous mettons en oeuvre des mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, perte, altération ou divulgation : chiffrement HTTPS, contrôle d'accès, sauvegardes régulières.</p>

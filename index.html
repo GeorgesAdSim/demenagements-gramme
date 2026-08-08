@@ -47,6 +47,69 @@
          immédiatement. Le preload figé à 1200px faisait télécharger une
          seconde variante sur mobile, où le rendu utilisait 800px. -->
 
+    <!-- ══ Consentement, AVANT tout chargement de Tag Manager ══
+         L'ordre n'est pas cosmétique : Consent Mode doit poser son état par
+         défaut avant que GTM ne puisse déclencher la moindre balise. Inversé,
+         une mesure part pendant la fraction de seconde qui précède.
+
+         Posé ici et non dans un composant React pour deux raisons. D'abord
+         index.html est le gabarit dont part scripts/prerender.mjs : ce qui est
+         écrit ici se retrouve sur les 95 pages, et sur toute page ajoutée plus
+         tard, sans intervention. Ensuite React monte trop tard — le temps que
+         le bundle s'exécute, GTM a déjà eu la main. -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+
+      // Tout est refusé au départ. `wait_for_update` laisse 500 ms au choix
+      // mémorisé ci-dessous, ou à la bannière, avant que GTM ne tranche.
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500,
+      });
+
+      // Choix déjà exprimé lors d'une visite précédente : on le rejoue tout de
+      // suite. Sans ça, un visiteur consentant repart de « refusé » à chaque
+      // page le temps que React monte, et la mesure perd le début de session.
+      try {
+        if (localStorage.getItem('gramme_cookie_consent') === 'accepted') {
+          gtag('consent', 'update', {
+            analytics_storage: 'granted',
+            ad_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted',
+          });
+        }
+      } catch (e) { /* localStorage indisponible (navigation privée stricte) */ }
+
+      // Environnement exposé au conteneur, pour qu'un déclencheur GTM puisse
+      // exclure le trafic qui n'est pas celui de vrais visiteurs — sans qu'il
+      // faille redéployer le site pour changer d'avis.
+      //   dev     : machine de développement
+      //   preview : déploiement de prévisualisation, sur *.netlify.app
+      //   production : le domaine public
+      dataLayer.push({
+        env: (function (h) {
+          if (h === 'localhost' || h === '127.0.0.1' || h.indexOf('.local') !== -1) return 'dev';
+          if (h.indexOf('netlify.app') !== -1) return 'preview';
+          return 'production';
+        })(location.hostname),
+      });
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M7C3PW95');</script>
+    <!-- End Google Tag Manager -->
+
     <!-- Préchargement logo WebP -->
     <link rel="preload" as="image" href="/logo-gramme-300.webp" type="image/webp" />
 
@@ -61,6 +124,10 @@
     </script>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M7C3PW95"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:bg-yellow-500 focus:text-blue-900 focus:p-3 focus:rounded focus:z-[100] focus:font-bold">
       Aller au contenu principal
     </a>
