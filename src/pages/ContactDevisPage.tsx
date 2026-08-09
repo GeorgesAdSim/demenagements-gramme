@@ -75,6 +75,7 @@ const FAQ_DEVIS = [
   },
 ];
 import { supabase } from '../lib/supabase';
+import { notifierDevis } from '../lib/notifierDevis';
 import { anneesExperience } from '../lib/anciennete';
 import { mesurerDevisEnvoye } from '../lib/mesure';
 import { ENTREPRISE, CARTE_EMBED_URL } from '../data/entreprise';
@@ -174,7 +175,21 @@ export default function ContactDevisPage() {
     // L'affichage du succès ne dépend pas de `error` — c'était déjà le cas
     // avant, et le changer relèverait d'un autre chantier. La conversion, elle,
     // ne se compte que si la base a bien enregistré la demande.
-    if (!error) mesurerDevisEnvoye('contact-devis', form.service);
+    if (!error) {
+      mesurerDevisEnvoye('contact-devis', form.service);
+      notifierDevis({
+        service: form.service,
+        firstName: form.firstName,
+        lastName: form.lastName,
+        email: form.email,
+        phone: form.phone,
+        cityFrom: form.cityFrom,
+        cityTo: form.cityTo,
+        date: form.date,
+        volume: form.volume,
+        message: form.message,
+      });
+    }
 
     setLoading(false);
     setSuccess(true);

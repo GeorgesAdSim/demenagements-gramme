@@ -19,6 +19,7 @@ import Footer from '../components/Footer';
 import SeoHead from '../components/SeoHead';
 import SchemaOrg from '../components/SchemaOrg';
 import { supabase } from '../lib/supabase';
+import { notifierDevis } from '../lib/notifierDevis';
 import { useSitePageContent } from '../lib/useSitePageContent';
 import type { ContactPageContent } from '../lib/types';
 import { anneesExperience } from '../lib/anciennete';
@@ -151,7 +152,21 @@ export default function ContactPage() {
 
     // Voir ContactDevisPage : le succès affiché ignore `error` de longue date,
     // la conversion non.
-    if (!error) mesurerDevisEnvoye('contact', form.service);
+    if (!error) {
+      mesurerDevisEnvoye('contact', form.service);
+      notifierDevis({
+        service: form.service,
+        firstName: form.firstName,
+        lastName: form.lastName,
+        email: form.email,
+        phone: form.phone,
+        cityFrom: form.cityFrom,
+        cityTo: form.cityTo,
+        date: form.date,
+        volume: form.volume,
+        message: form.message,
+      });
+    }
 
     setLoading(false);
     setSuccess(true);

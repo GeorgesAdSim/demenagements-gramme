@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock, ArrowRight, Loader as Loader2, CircleCheck, Shield, Camera } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
+import { notifierDevis } from '../lib/notifierDevis';
 import { SITE_IMAGES } from '../data/images';
 import type { HomepageContent } from '../lib/types';
 import { anneesExperience } from '../lib/anciennete';
@@ -158,23 +159,18 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
     // conversion existe.
     mesurerDevisEnvoye('formulaire-contact', serviceType);
 
-    // Envoi de la notification email (best-effort — ne bloque pas le succès)
-    fetch('/api/send-devis-email', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        service: form.service,
-        firstName: form.firstName,
-        lastName: form.lastName,
-        email: form.email,
-        phone: form.phone,
-        cityFrom: form.cityFrom,
-        cityTo: form.cityTo,
-        date: form.date,
-        volume: form.volume,
-        message: estimationId ? `${form.message}\n[estimation_id: ${estimationId}]` : form.message,
-      }),
-    }).catch(() => { /* silencieux — le lead est déjà en base */ });
+    notifierDevis({
+      service: form.service,
+      firstName: form.firstName,
+      lastName: form.lastName,
+      email: form.email,
+      phone: form.phone,
+      cityFrom: form.cityFrom,
+      cityTo: form.cityTo,
+      date: form.date,
+      volume: form.volume,
+      message: estimationId ? `${form.message}\n[estimation_id: ${estimationId}]` : form.message,
+    });
     setSuccess(true);
     setSubmitted(false);
     setErrors({});
