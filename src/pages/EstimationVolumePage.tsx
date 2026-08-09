@@ -9,6 +9,7 @@ import Footer from '../components/Footer';
 import SeoHead from '../components/SeoHead';
 import SchemaOrg from '../components/SchemaOrg';
 import { supabase } from '../lib/supabase';
+import { notifierDevis } from '../lib/notifierDevis';
 import { compressImage } from '../lib/imageCompression';
 import { mesurerDevisEnvoye } from '../lib/mesure';
 import {
@@ -322,7 +323,25 @@ export default function EstimationVolumePage() {
     });
     // Le rappel demandé depuis l'estimateur arrive dans la même table que les
     // devis : c'est un lead, et il se compte comme tel.
-    if (!error) mesurerDevisEnvoye('estimation-rappel', 'demenagement');
+    if (!error) {
+      mesurerDevisEnvoye('estimation-rappel', 'demenagement');
+      notifierDevis({
+        service: 'Rappel — estimateur photos',
+        firstName: callbackForm.name || 'Rappel estimation',
+        lastName: `(estimation ${result.estimation_id.slice(0, 8)})`,
+        // Volontairement vide : ce formulaire ne demande pas d'adresse, et
+        // `rappel@estimation.gramme` — la valeur de remplissage en base — n'est
+        // pas un domaine réel. Envoyée en `reply_to`, elle ferait rejeter tout
+        // le message par Resend.
+        email: '',
+        phone: callbackForm.phone,
+        cityFrom: '-',
+        cityTo: '-',
+        date: '',
+        volume: totals ? `${totals.volumeFinal.toFixed(0)} m³ (estimé)` : '',
+        message: `Demande de rappel depuis l'estimateur photos. Référence d'estimation : ${result.estimation_id}`,
+      });
+    }
     setCallbackSent(true);
   };
 

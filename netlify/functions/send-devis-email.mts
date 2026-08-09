@@ -126,7 +126,12 @@ export default async function handler(req: Request): Promise<Response> {
       },
       body: JSON.stringify({
         ...attempt,
-        reply_to: email,
+        // `reply_to` seulement si l'adresse est exploitable. Toutes les
+        // demandes n'en portent pas : le rappel de l'estimateur de volume ne
+        // collecte qu'un téléphone. Une adresse vide ou fantaisiste envoyée
+        // ici fait rejeter le message ENTIER par Resend — on perdrait la
+        // notification pour un champ facultatif.
+        ...(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email ?? '') ? { reply_to: email } : {}),
         subject: `Nouveau devis — ${service} — ${firstName} ${lastName}`,
         html: htmlBody,
       }),
