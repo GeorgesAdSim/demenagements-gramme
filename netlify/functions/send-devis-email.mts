@@ -88,13 +88,28 @@ export default async function handler(req: Request): Promise<Response> {
     </div>
   `;
 
-  // Tente d'abord le domaine vérifié ; si pas encore vérifié, fallback
-  // sur resend.dev vers l'adresse du compte (seule autorisée avant vérif)
+  // Les deux destinataires reçoivent chaque demande, ensemble et dès le premier
+  // envoi.
+  //
+  // Ce n'était pas le cas : `georgescordewiener@gmail.com` ne figurait que dans
+  // la seconde tentative, celle qui ne part QUE si la première échoue. Tant que
+  // le domaine n'était pas vérifié chez Resend, la première échouait toujours
+  // et l'adresse recevait tout — ce qui masquait le problème. Depuis que
+  // `demenagements-gramme.be` est vérifié (DKIM `resend._domainkey` et SPF sur
+  // `send.`), la première réussit, la seconde ne part plus, et l'adresse ne
+  // reçoit plus rien. Un repli n'est pas un destinataire.
+  const DESTINATAIRES = ['js@groupespiroux.com', 'georgescordewiener@gmail.com'];
+
   const attempts = [
     {
       from: 'Gramme Devis <noreply@demenagements-gramme.be>',
-      to: ['js@groupespiroux.com'],
+      to: DESTINATAIRES,
     },
+    // Dernier recours si le domaine vérifié est refusé — panne Resend, quota,
+    // ou vérification révoquée. `onboarding@resend.dev` est l'expéditeur de
+    // secours de Resend : il ne peut écrire qu'au titulaire du compte, d'où
+    // l'unique destinataire. Mieux vaut une notification incomplète que pas de
+    // notification du tout.
     {
       from: 'Gramme Devis <onboarding@resend.dev>',
       to: ['georgescordewiener@gmail.com'],
