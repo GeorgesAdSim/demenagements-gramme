@@ -83,29 +83,38 @@ controle(compter(pages) > 0 && compter(pages) < 20,
 // Lecture du résultat :
 //   23502  violation de NOT NULL  → le privilège existe, le chemin est ouvert
 //   42501  permission denied      → le chemin est fermé
+// `return=minimal` et non `representation` : se faire renvoyer la ligne insérée
+// exige le privilège SELECT, celui-là même que le modèle refuse à anon sur
+// cette table. Une première version le demandait — pour récupérer l'identifiant
+// en cas de création accidentelle — et rapportait donc un échec alors que le
+// formulaire fonctionnait. La sonde doit emprunter le chemin exact du code
+// qu'elle vérifie : ContactForm appelle `.insert()` sans `.select()`.
 const depot = await fetch(`${API}/devis_requests`, {
-  method: 'POST', headers: { ...H, Prefer: 'return=representation' },
+  method: 'POST', headers: { ...H, Prefer: 'return=minimal' },
   body: JSON.stringify({ service_type: 'demenagement' }),
 });
 const corpsDepot = await depot.json().catch(() => ({}));
 controle(corpsDepot.code === '23502', 'le formulaire de devis peut déposer',
   `code ${corpsDepot.code ?? depot.status}`);
 
-// Filet : si un jour toutes les colonnes devenaient nullables, la sonde
-// créerait une ligne. On ne peut pas la supprimer avec la clé publique — le
-// moins qu'on puisse faire est de dire laquelle.
+// Filet : si toutes les colonnes devenaient nullables un jour, la sonde
+// créerait une ligne. On ne peut ni la lire ni la supprimer avec la clé
+// publique — le moins qu'on puisse faire est de dire où la chercher.
 if (depot.ok) {
-  const id = Array.isArray(corpsDepot) ? corpsDepot[0]?.id : corpsDepot?.id;
-  console.log(`  ⚠ la sonde a créé une ligne dans devis_requests — à supprimer : id ${id}`);
+  console.log('  ⚠ la sonde a créé une demande de devis — la plus récente, à supprimer côté admin');
   echecs++;
 }
 
-const lecture = await fetch(`${API}/devis_requests?select=id&limit=0`, { headers: H });
+// `select=*` et non `select=id` : PostgREST valide les noms de colonnes avant
+// de vérifier les privilèges. Une sonde nommant une colonne absente reçoit un
+// 400 qui ne dit rien de l'accès — c'est ce qui est arrivé sur `admin_users`,
+// dont la clé s'appelle `user_id`. L'étoile ne suppose rien du schéma.
+const lecture = await fetch(`${API}/devis_requests?select=*&limit=0`, { headers: H });
 controle(lecture.status === 401 || lecture.status === 403,
   'les demandes de devis restent illisibles', `HTTP ${lecture.status}`);
 
 for (const t of ['site_settings', 'media', 'gramme_media', 'volume_estimations', 'admin_users']) {
-  const r = await fetch(`${API}/${t}?select=id&limit=0`, { headers: H });
+  const r = await fetch(`${API}/${t}?select=*&limit=0`, { headers: H });
   controle(r.status === 401 || r.status === 403, `${t} inaccessible`, `HTTP ${r.status}`);
 }
 
