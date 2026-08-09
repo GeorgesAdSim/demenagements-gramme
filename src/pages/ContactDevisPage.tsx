@@ -250,38 +250,6 @@ export default function ContactDevisPage() {
           </div>
         </section>
 
-        {/* Rassurance, juste sous le hero : ce qui se passe après l'envoi.
-            Bande compacte, pour ne pas repousser le formulaire. */}
-        <section className="bg-white py-12 md:py-14">
-          <div className="max-w-7xl mx-auto px-4 md:px-8">
-            <h2 className="text-2xl md:text-[2rem] font-black uppercase text-navy mb-3">
-              Ce qui se passe après votre demande
-            </h2>
-            <p className="text-muted text-[17px] leading-relaxed mb-8 max-w-3xl">
-              Quatre étapes, sans engagement à aucune d'elles. Vous ne signez rien
-              avant d'avoir reçu un prix détaillé par écrit.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {APRES_ENVOI.map((etape, i) => (
-                <motion.div
-                  key={etape.titre}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-60px' }}
-                  transition={{ delay: i * 0.06, duration: 0.4 }}
-                  className="bg-offwhite rounded-2xl p-5 border border-gray-100"
-                >
-                  <span className="inline-flex w-7 h-7 rounded-full bg-navy text-yellow font-black text-sm items-center justify-center mb-3">
-                    {i + 1}
-                  </span>
-                  <h3 className="text-navy font-bold text-[17px] mb-2">{etape.titre}</h3>
-                  <p className="text-muted text-[15px] leading-relaxed">{etape.texte}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="bg-offwhite py-16 md:py-20">
           <div className="max-w-7xl mx-auto px-4 md:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-8 lg:gap-12">
@@ -515,6 +483,38 @@ export default function ContactDevisPage() {
                   </div>
                 </form>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Ce qui se passe après l'envoi. Placé APRÈS le formulaire : le
+            visiteur arrive ici pour déposer une demande, pas pour lire une procédure. */}
+        <section className="bg-white py-12 md:py-14">
+          <div className="max-w-7xl mx-auto px-4 md:px-8">
+            <h2 className="text-2xl md:text-[2rem] font-black uppercase text-navy mb-3">
+              Ce qui se passe après votre demande
+            </h2>
+            <p className="text-muted text-[17px] leading-relaxed mb-8 max-w-3xl">
+              Quatre étapes, sans engagement à aucune d'elles. Vous ne signez rien
+              avant d'avoir reçu un prix détaillé par écrit.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {APRES_ENVOI.map((etape, i) => (
+                <motion.div
+                  key={etape.titre}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  transition={{ delay: i * 0.06, duration: 0.4 }}
+                  className="bg-offwhite rounded-2xl p-5 border border-gray-100"
+                >
+                  <span className="inline-flex w-7 h-7 rounded-full bg-navy text-yellow font-black text-sm items-center justify-center mb-3">
+                    {i + 1}
+                  </span>
+                  <h3 className="text-navy font-bold text-[17px] mb-2">{etape.titre}</h3>
+                  <p className="text-muted text-[15px] leading-relaxed">{etape.texte}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>

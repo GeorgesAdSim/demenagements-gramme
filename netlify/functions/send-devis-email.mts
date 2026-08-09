@@ -1,4 +1,10 @@
 import type { Config } from '@netlify/functions';
+// Coordonnées reprises de la source unique du dépôt plutôt que recopiées ici.
+// L'entreprise a déménagé de Herstal vers Seraing en août 2026, et ce fichier
+// annonçait encore l'ancienne adresse — dans un message qui part chez le
+// client. C'est exactement la divergence contre laquelle entreprise.ts met en
+// garde dans son propre commentaire d'entête.
+import { ENTREPRISE, ADRESSE_COURTE } from '../../src/data/entreprise';
 
 const RESEND_API_URL = 'https://api.resend.com/emails';
 
@@ -98,7 +104,7 @@ export default async function handler(req: Request): Promise<Response> {
         </table>
       </div>
       <div style="padding: 16px 32px; background: #132073; text-align: center;">
-        <p style="color: #F0B800; margin: 0; font-size: 12px;">© Déménagements Gramme — contact@demenagements-gramme.be</p>
+        <p style="color: #F0B800; margin: 0; font-size: 12px;">© Déménagements Gramme — ${ech(ENTREPRISE.email)}</p>
       </div>
     </div>
   `;
@@ -200,7 +206,7 @@ export default async function handler(req: Request): Promise<Response> {
           </p>
           <p style="margin: 0 0 24px; font-size: 15px; color: #333; line-height: 1.6;">
             Si votre déménagement est urgent, n'hésitez pas à nous appeler directement
-            au <a href="tel:+3242645016" style="color: #132073; font-weight: bold;">04 264 50 16</a>.
+            au <a href="tel:${ech(ENTREPRISE.telephone.lien)}" style="color: #132073; font-weight: bold;">${ech(ENTREPRISE.telephone.affichage)}</a>.
           </p>
 
           <p style="margin: 0 0 8px; font-size: 13px; color: #666; text-transform: uppercase; letter-spacing: 0.5px;">Récapitulatif de votre demande</p>
@@ -233,8 +239,8 @@ export default async function handler(req: Request): Promise<Response> {
           </p>
         </div>
         <div style="padding: 16px 32px; background: #132073; text-align: center;">
-          <p style="color: #F0B800; margin: 0 0 4px; font-size: 12px;">Déménagements Gramme — Rue des Naiveux 64, 4040 Herstal</p>
-          <p style="color: #ffffff; margin: 0; font-size: 12px;">04 264 50 16 — contact@demenagements-gramme.be</p>
+          <p style="color: #F0B800; margin: 0 0 4px; font-size: 12px;">Déménagements Gramme — ${ech(ADRESSE_COURTE)}</p>
+          <p style="color: #ffffff; margin: 0; font-size: 12px;">${ech(ENTREPRISE.telephone.affichage)} — ${ech(ENTREPRISE.email)}</p>
         </div>
       </div>
     `;
@@ -248,7 +254,7 @@ export default async function handler(req: Request): Promise<Response> {
           to: [email],
           // Une réponse du client doit atterrir dans la boîte de l'entreprise,
           // pas dans un `noreply` que personne ne relève.
-          reply_to: 'contact@demenagements-gramme.be',
+          reply_to: ENTREPRISE.email,
           subject: 'Votre demande de devis — Déménagements Gramme',
           html,
         }),
