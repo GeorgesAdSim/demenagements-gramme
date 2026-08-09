@@ -34,6 +34,21 @@ export default async function handler(req: Request): Promise<Response> {
 
   const { service, firstName, lastName, email, phone, cityFrom, cityTo, date, volume, message } = payload;
 
+  // Les valeurs du formulaire sont écrites telles quelles dans du HTML. Sans
+  // échappement, un `<` ou un `&` saisi par un visiteur casse la mise en page,
+  // et une balise déposée dans le champ message se retrouve interprétée dans la
+  // boîte du destinataire. Rien de spectaculaire dans un mail interne, mais
+  // l'accusé de réception part chez le client : autant ne pas lui envoyer du
+  // balisage qu'il aurait lui-même écrit.
+  const ech = (v: unknown): string =>
+    String(v ?? '')
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+
+  // Une adresse exploitable conditionne deux choses : le `reply_to` du mail
+  // interne, et l'existence même de l'accusé de réception.
+  const emailValide = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email ?? '');
+
   const htmlBody = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
       <div style="background: #132073; padding: 24px 32px;">
@@ -44,40 +59,40 @@ export default async function handler(req: Request): Promise<Response> {
         <table style="width: 100%; border-collapse: collapse;">
           <tr>
             <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5; color: #666; font-size: 13px; width: 40%;">Service</td>
-            <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5; font-weight: bold; color: #132073;">${service}</td>
+            <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5; font-weight: bold; color: #132073;">${ech(service)}</td>
           </tr>
           <tr>
             <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5; color: #666; font-size: 13px;">Nom</td>
-            <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5; font-weight: bold;">${firstName} ${lastName}</td>
+            <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5; font-weight: bold;">${ech(firstName)} ${ech(lastName)}</td>
           </tr>
           <tr>
             <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5; color: #666; font-size: 13px;">Email</td>
-            <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5;"><a href="mailto:${email}" style="color: #132073;">${email}</a></td>
+            <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5;"><a href="mailto:${ech(email)}" style="color: #132073;">${ech(email)}</a></td>
           </tr>
           <tr>
             <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5; color: #666; font-size: 13px;">Téléphone</td>
-            <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5;"><a href="tel:${phone}" style="color: #132073;">${phone}</a></td>
+            <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5;"><a href="tel:${ech(phone)}" style="color: #132073;">${ech(phone)}</a></td>
           </tr>
           <tr>
             <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5; color: #666; font-size: 13px;">Départ</td>
-            <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5;">${cityFrom}</td>
+            <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5;">${ech(cityFrom)}</td>
           </tr>
           <tr>
             <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5; color: #666; font-size: 13px;">Arrivée</td>
-            <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5;">${cityTo}</td>
+            <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5;">${ech(cityTo)}</td>
           </tr>
           <tr>
             <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5; color: #666; font-size: 13px;">Date souhaitée</td>
-            <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5;">${date || 'Non précisée'}</td>
+            <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5;">${ech(date || 'Non précisée')}</td>
           </tr>
           <tr>
             <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5; color: #666; font-size: 13px;">Volume estimé</td>
-            <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5;">${volume || 'Non précisé'}</td>
+            <td style="padding: 10px 0; border-bottom: 1px solid #e5e5e5;">${ech(volume || 'Non précisé')}</td>
           </tr>
           ${message ? `
           <tr>
             <td style="padding: 10px 0; color: #666; font-size: 13px; vertical-align: top;">Message</td>
-            <td style="padding: 10px 0; white-space: pre-wrap;">${message}</td>
+            <td style="padding: 10px 0; white-space: pre-wrap;">${ech(message)}</td>
           </tr>
           ` : ''}
         </table>
@@ -131,7 +146,7 @@ export default async function handler(req: Request): Promise<Response> {
         // collecte qu'un téléphone. Une adresse vide ou fantaisiste envoyée
         // ici fait rejeter le message ENTIER par Resend — on perdrait la
         // notification pour un champ facultatif.
-        ...(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email ?? '') ? { reply_to: email } : {}),
+        ...(emailValide ? { reply_to: email } : {}),
         subject: `Nouveau devis — ${service} — ${firstName} ${lastName}`,
         html: htmlBody,
       }),
@@ -144,10 +159,110 @@ export default async function handler(req: Request): Promise<Response> {
     return new Response('Email send failed', { status: 502 });
   }
 
-  return new Response(JSON.stringify({ ok: true }), {
+  // ---------------------------------------------------------------------------
+  // Accusé de réception au demandeur
+  //
+  // Envoyé APRÈS la notification interne, et seulement si celle-ci est partie :
+  // c'est elle qui déclenche le rappel commercial, elle passe donc d'abord. Si
+  // Resend refuse tout, on ne confirme rien à un client dont la demande n'a
+  // prévenu personne.
+  //
+  // Pas de repli sur `onboarding@resend.dev` ici : cet expéditeur de secours ne
+  // peut écrire qu'au titulaire du compte Resend, jamais à un client. Une seule
+  // tentative, depuis le domaine vérifié.
+  //
+  // Son échec ne change pas la réponse renvoyée au site. La demande est en base
+  // et l'entreprise est prévenue : l'essentiel a eu lieu. Renvoyer une erreur
+  // ferait croire au visiteur que sa demande n'est pas passée.
+  const accuseEnvoye = await envoyerAccuse();
+
+  return new Response(JSON.stringify({ ok: true, accuse: accuseEnvoye }), {
     status: 200,
     headers: { 'Content-Type': 'application/json' },
   });
+
+  async function envoyerAccuse(): Promise<boolean> {
+    // Le rappel demandé depuis l'estimateur de volume ne collecte qu'un
+    // téléphone : il n'y a personne à qui écrire, et ce n'est pas une anomalie.
+    if (!emailValide) return false;
+
+    const html = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <div style="background: #132073; padding: 24px 32px;">
+          <h1 style="color: #F0B800; margin: 0; font-size: 22px;">Nous avons bien reçu votre demande</h1>
+          <p style="color: white; margin: 6px 0 0; font-size: 14px;">Déménagements Gramme — depuis 1948</p>
+        </div>
+        <div style="padding: 32px; background: #f9f9f9; border: 1px solid #e5e5e5;">
+          <p style="margin: 0 0 16px; font-size: 15px; color: #333;">Bonjour ${ech(firstName)},</p>
+          <p style="margin: 0 0 16px; font-size: 15px; color: #333; line-height: 1.6;">
+            Merci pour votre demande de devis. Elle nous est bien parvenue et un membre
+            de notre équipe vous recontacte <strong>sous 24 heures ouvrables</strong>.
+          </p>
+          <p style="margin: 0 0 24px; font-size: 15px; color: #333; line-height: 1.6;">
+            Si votre déménagement est urgent, n'hésitez pas à nous appeler directement
+            au <a href="tel:+3242645016" style="color: #132073; font-weight: bold;">04 264 50 16</a>.
+          </p>
+
+          <p style="margin: 0 0 8px; font-size: 13px; color: #666; text-transform: uppercase; letter-spacing: 0.5px;">Récapitulatif de votre demande</p>
+          <table style="width: 100%; border-collapse: collapse; background: white; border: 1px solid #e5e5e5;">
+            <tr>
+              <td style="padding: 10px 14px; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 13px; width: 42%;">Service</td>
+              <td style="padding: 10px 14px; border-bottom: 1px solid #f0f0f0; font-size: 14px;">${ech(service)}</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 13px;">Départ</td>
+              <td style="padding: 10px 14px; border-bottom: 1px solid #f0f0f0; font-size: 14px;">${ech(cityFrom)}</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 13px;">Arrivée</td>
+              <td style="padding: 10px 14px; border-bottom: 1px solid #f0f0f0; font-size: 14px;">${ech(cityTo)}</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 13px;">Date souhaitée</td>
+              <td style="padding: 10px 14px; border-bottom: 1px solid #f0f0f0; font-size: 14px;">${ech(date || 'Non précisée')}</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; color: #666; font-size: 13px;">Volume estimé</td>
+              <td style="padding: 10px 14px; font-size: 14px;">${ech(volume || 'Non précisé')}</td>
+            </tr>
+          </table>
+
+          <p style="margin: 20px 0 0; font-size: 13px; color: #888; line-height: 1.6;">
+            Une erreur dans ce récapitulatif ? Répondez simplement à ce message,
+            il arrive directement chez nous.
+          </p>
+        </div>
+        <div style="padding: 16px 32px; background: #132073; text-align: center;">
+          <p style="color: #F0B800; margin: 0 0 4px; font-size: 12px;">Déménagements Gramme — Rue des Naiveux 64, 4040 Herstal</p>
+          <p style="color: #ffffff; margin: 0; font-size: 12px;">04 264 50 16 — contact@demenagements-gramme.be</p>
+        </div>
+      </div>
+    `;
+
+    try {
+      const res = await fetch(RESEND_API_URL, {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          from: 'Déménagements Gramme <noreply@demenagements-gramme.be>',
+          to: [email],
+          // Une réponse du client doit atterrir dans la boîte de l'entreprise,
+          // pas dans un `noreply` que personne ne relève.
+          reply_to: 'contact@demenagements-gramme.be',
+          subject: 'Votre demande de devis — Déménagements Gramme',
+          html,
+        }),
+      });
+      if (!res.ok) {
+        console.error('Resend error (accusé de réception):', await res.text());
+        return false;
+      }
+      return true;
+    } catch (e) {
+      console.error('Resend injoignable (accusé de réception):', e);
+      return false;
+    }
+  }
 }
 
 export const config: Config = {
