@@ -96,7 +96,7 @@ const ICONES: Record<string, typeof Truck> = {
 
 export default function ContactDevisPage() {
   const { form, set, errors, submitted, loading, success, erreurEnvoi, envoyer } =
-    useFormulaireDevis({ source: 'contact-devis', dateObligatoire: true });
+    useFormulaireDevis({ source: 'contact-devis' });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -331,8 +331,8 @@ export default function ContactDevisPage() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="cd-date" className="block text-sm font-medium text-navy mb-1.5">Date souhaitée *</label>
-                        <input id="cd-date" type="date" name="date" required value={form.date} onChange={(e) => set('date', e.target.value)} className={inputClass('date')} />
+                        <label htmlFor="cd-date" className="block text-sm font-medium text-navy mb-1.5">Date souhaitée</label>
+                        <input id="cd-date" type="date" name="date" value={form.date} onChange={(e) => set('date', e.target.value)} className={inputClass('date')} />
                         {submitted && errors.date && <p className="text-red-500 text-xs mt-1">{errors.date}</p>}
                       </div>
                       <div>

@@ -114,7 +114,6 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
     if (!form.phone.trim()) e.phone = 'Téléphone requis';
     if (!form.cityFrom.trim()) e.cityFrom = 'Adresse de départ requise';
     if (!form.cityTo.trim()) e.cityTo = "Adresse d'arrivée requise";
-    if (!form.date) e.date = 'Date requise';
     if (!form.privacy) e.privacy = 'Vous devez accepter la politique';
     setErrors(e);
     return Object.keys(e).length === 0;

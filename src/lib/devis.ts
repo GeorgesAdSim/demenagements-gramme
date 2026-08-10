@@ -98,17 +98,18 @@ export type ErreursDevis = Partial<Record<keyof ChampsDevis, string>>;
 /**
  * Validation commune.
  *
- * `date` n'y figure pas : les trois formulaires la rendaient obligatoire, mais
- * /contact l'affichait sans astérisque — l'étiquette annonçait un champ
- * facultatif et le formulaire le refusait. Plutôt que de reconduire l'un des
- * deux comportements en silence, la règle est portée par l'appelant, via
- * `dateObligatoire`.
+ * La date de déménagement n'est pas exigée. Les trois formulaires la
+ * rendaient obligatoire — /contact l'affichait même sans astérisque tout en la
+ * refusant vide, une étiquette qui mentait. Or beaucoup de gens demandent un
+ * devis AVANT d'avoir une date : c'est le champ le plus susceptible de faire
+ * abandonner, et le seul qui n'apporte rien pour rappeler quelqu'un. La colonne
+ * est nullable en base depuis l'origine.
  */
 export function validerDevis(
   form: ChampsDevis,
-  options: { dateObligatoire?: boolean; libelleVilles?: 'ville' | 'adresse' } = {},
+  options: { libelleVilles?: 'ville' | 'adresse' } = {},
 ): ErreursDevis {
-  const { dateObligatoire = false, libelleVilles = 'ville' } = options;
+  const { libelleVilles = 'ville' } = options;
   const depart = libelleVilles === 'adresse' ? 'Adresse de départ requise' : 'Ville de départ requise';
   const arrivee = libelleVilles === 'adresse' ? "Adresse d'arrivée requise" : "Ville d'arrivée requise";
 
@@ -128,7 +129,6 @@ export function validerDevis(
 
   if (!form.cityFrom.trim()) e.cityFrom = depart;
   if (!form.cityTo.trim()) e.cityTo = arrivee;
-  if (dateObligatoire && !form.date) e.date = 'Date requise';
   if (!form.privacy) e.privacy = 'Vous devez accepter la politique';
   return e;
 }
@@ -139,8 +139,6 @@ export function validerDevis(
 export interface OptionsFormulaireDevis {
   /** Origine, pour la mesure de conversion. */
   source: SourceDevis;
-  /** Voir validerDevis : la règle diffère d'une page à l'autre. */
-  dateObligatoire?: boolean;
   libelleVilles?: 'ville' | 'adresse';
   /** Valeurs initiales, pour les pages qui pré-remplissent une commune. */
   valeursInitiales?: Partial<ChampsDevis>;
@@ -150,7 +148,7 @@ export interface OptionsFormulaireDevis {
 
 export function useFormulaireDevis(options: OptionsFormulaireDevis) {
   const {
-    source, dateObligatoire = false, libelleVilles = 'ville',
+    source, libelleVilles = 'ville',
     valeursInitiales, suffixeMessage,
   } = options;
 
@@ -173,7 +171,7 @@ export function useFormulaireDevis(options: OptionsFormulaireDevis) {
     ev.preventDefault();
     setSubmitted(true);
 
-    const e = validerDevis(form, { dateObligatoire, libelleVilles });
+    const e = validerDevis(form, { libelleVilles });
     setErrors(e);
     if (Object.keys(e).length > 0) return;
 

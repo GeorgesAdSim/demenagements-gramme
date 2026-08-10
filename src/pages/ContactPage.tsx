@@ -76,7 +76,7 @@ export default function ContactPage() {
   const c = content || defaultContent;
 
   const { form, set, errors, submitted, loading, success, erreurEnvoi, envoyer } =
-    useFormulaireDevis({ source: 'contact', dateObligatoire: true });
+    useFormulaireDevis({ source: 'contact' });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -319,7 +319,7 @@ export default function ContactPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="cp-date" className="block text-sm font-medium text-navy mb-1.5">Date souhaitée</label>
-                      <input id="cp-date" type="date" name="date" required value={form.date} onChange={(e) => set('date', e.target.value)} className={inputClass('date')} />
+                      <input id="cp-date" type="date" name="date" value={form.date} onChange={(e) => set('date', e.target.value)} className={inputClass('date')} />
                     </div>
                     <div>
                       <label htmlFor="cp-volume" className="block text-sm font-medium text-navy mb-1.5">Volume estimé</label>
