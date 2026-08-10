@@ -38,20 +38,6 @@ const DEFAULT_JSON_LD = JSON.stringify({
   "url": "https://demenagements-gramme.be",
 }, null, 2);
 
-interface PageData {
-  id?: string;
-  title: string;
-  slug: string;
-  content: string;
-  status: 'draft' | 'published';
-  cocon: string;
-  meta_title: string;
-  meta_description: string;
-  og_image: string;
-  canonical_url: string;
-  structured_data: object;
-}
-
 export default function PageEditorPage() {
   const { id } = useParams();
   const navigate = useNavigate();

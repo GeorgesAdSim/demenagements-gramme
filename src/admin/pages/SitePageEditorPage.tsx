@@ -135,7 +135,11 @@ export default function SitePageEditorPage() {
     return typeof obj === 'string' ? obj : '';
   };
 
-  const getArr = <T,>(path: string): T[] => {
+  // Défaut aligné sur ce qu'attend ObjectListField. Sans lui, T valait
+  // `unknown` et les douze appels sans argument de type rendaient `unknown[]`,
+  // refusé à l'affectation. Les appels typés — getArr<string>(…) — sont
+  // inchangés.
+  const getArr = <T = Record<string, unknown>,>(path: string): T[] => {
     const keys = path.split('.');
     let obj: unknown = content;
     for (const k of keys) {
@@ -276,7 +280,7 @@ interface EditorProps {
   content: Record<string, unknown>;
   updateContent: (path: string, value: unknown) => void;
   getStr: (path: string) => string;
-  getArr: <T>(path: string) => T[];
+  getArr: <T = Record<string, unknown>>(path: string) => T[];
 }
 
 function HomepageEditor({ updateContent, getStr, getArr }: EditorProps) {
