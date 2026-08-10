@@ -69,6 +69,7 @@ export default function DevisListPage() {
   const [selected, setSelected] = useState<DevisItem | null>(null);
   const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     fetchDevis();
@@ -76,29 +77,57 @@ export default function DevisListPage() {
 
   async function fetchDevis() {
     setLoading(true);
-    const { data } = await supabase
+    setError(null);
+    const { data, error: fetchError } = await supabase
       .from('devis_requests')
       .select('*')
       .order('created_at', { ascending: false });
-    setDevis((data as DevisItem[]) || []);
+    if (fetchError) {
+      setError(`Impossible de charger les demandes : ${fetchError.message}`);
+      setDevis([]);
+    } else {
+      setDevis((data as DevisItem[]) || []);
+    }
     setLoading(false);
   }
 
   const filtered = filter === 'all' ? devis : devis.filter((d) => d.status === filter);
 
+  // Ces trois écritures mettaient l'état local à jour sans regarder si la base
+  // avait suivi. C'est ce qui a laissé « Archiver » inopérant sans que rien ne
+  // le signale : l'update était rejeté, la ligne s'affichait quand même
+  // archivée, et redevenait elle-même au rechargement.
   const handleStatusChange = async (id: string, status: string) => {
-    await supabase.from('devis_requests').update({ status }).eq('id', id);
+    setError(null);
+    const { error: majError } = await supabase.from('devis_requests').update({ status }).eq('id', id);
+    if (majError) {
+      setError(`Changement de statut refusé : ${majError.message}`);
+      return;
+    }
     setDevis((prev) => prev.map((d) => d.id === id ? { ...d, status } : d));
   };
 
   const handleDelete = async (id: string) => {
     if (!window.confirm('Supprimer cette demande ?')) return;
-    await supabase.from('devis_requests').delete().eq('id', id);
+    setError(null);
+    const { error: supprError } = await supabase.from('devis_requests').delete().eq('id', id);
+    if (supprError) {
+      setError(`Suppression refusée : ${supprError.message}`);
+      return;
+    }
     setDevis((prev) => prev.filter((d) => d.id !== id));
   };
 
   const handleMarkResponded = async (id: string) => {
-    await supabase.from('devis_requests').update({ status: 'replied', response_notes: response }).eq('id', id);
+    setError(null);
+    const { error: majError } = await supabase
+      .from('devis_requests')
+      .update({ status: 'replied', response_notes: response })
+      .eq('id', id);
+    if (majError) {
+      setError(`Enregistrement refusé : ${majError.message}`);
+      return;
+    }
     setDevis((prev) => prev.map((d) => d.id === id ? { ...d, status: 'replied', response_notes: response } : d));
     setSelected(null);
     setResponse('');
@@ -132,6 +161,13 @@ export default function DevisListPage() {
           ))}
         </div>
       </div>
+
+      {error && (
+        <div className="mx-4 lg:mx-8 mt-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3">
+          <p className="text-red-700 text-sm font-bold">Erreur</p>
+          <p className="text-red-600 text-xs mt-1 break-words">{error}</p>
+        </div>
+      )}
 
       {loading ? (
         <div className="flex items-center justify-center py-20">
