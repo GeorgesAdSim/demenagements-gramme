@@ -27,6 +27,7 @@ const PagesListPage = lazy(() => import('./admin/pages/PagesListPage'));
 const PageEditorPage = lazy(() => import('./admin/pages/PageEditorPage'));
 const SitePageEditorPage = lazy(() => import('./admin/pages/SitePageEditorPage'));
 const DevisListPage = lazy(() => import('./admin/pages/DevisListPage'));
+const EstimationsListPage = lazy(() => import('./admin/pages/EstimationsListPage'));
 const MediaPage = lazy(() => import('./admin/pages/MediaPage'));
 const SettingsPage = lazy(() => import('./admin/pages/SettingsPage'));
 const CommunesListPage = lazy(() => import('./admin/pages/CommunesListPage'));
@@ -153,6 +154,7 @@ export default function App() {
               <Route path="communes" element={<CommunesListPage />} />
               <Route path="communes/:id/edit" element={<CommuneEditorPage />} />
               <Route path="devis" element={<DevisListPage />} />
+              <Route path="estimations" element={<EstimationsListPage />} />
               <Route path="media" element={<MediaPage />} />
               <Route path="settings" element={<SettingsPage />} />
             </Route>
