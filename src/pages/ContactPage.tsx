@@ -280,50 +280,50 @@ export default function ContactPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="cp-firstName" className="block text-sm font-medium text-navy mb-1.5">Prénom *</label>
-                      <input id="cp-firstName" type="text" name="firstName" required placeholder="Votre prénom" value={form.firstName} onChange={(e) => set('firstName', e.target.value)} className={inputClass('firstName')} />
-                      {submitted && errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>}
+                      <input id="cp-firstName" autoComplete="given-name" aria-invalid={submitted && !!errors.firstName} aria-describedby={submitted && errors.firstName ? 'cp-firstName-erreur' : undefined} type="text" name="firstName" required placeholder="Votre prénom" value={form.firstName} onChange={(e) => set('firstName', e.target.value)} className={inputClass('firstName')} />
+                      {submitted && errors.firstName && <p id='cp-firstName-erreur' className="text-red-500 text-xs mt-1">{errors.firstName}</p>}
                     </div>
                     <div>
                       <label htmlFor="cp-lastName" className="block text-sm font-medium text-navy mb-1.5">Nom *</label>
-                      <input id="cp-lastName" type="text" name="lastName" required placeholder="Votre nom" value={form.lastName} onChange={(e) => set('lastName', e.target.value)} className={inputClass('lastName')} />
-                      {submitted && errors.lastName && <p className="text-red-500 text-xs mt-1">{errors.lastName}</p>}
+                      <input id="cp-lastName" autoComplete="family-name" aria-invalid={submitted && !!errors.lastName} aria-describedby={submitted && errors.lastName ? 'cp-lastName-erreur' : undefined} type="text" name="lastName" required placeholder="Votre nom" value={form.lastName} onChange={(e) => set('lastName', e.target.value)} className={inputClass('lastName')} />
+                      {submitted && errors.lastName && <p id='cp-lastName-erreur' className="text-red-500 text-xs mt-1">{errors.lastName}</p>}
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="cp-email" className="block text-sm font-medium text-navy mb-1.5">Email *</label>
-                      <input id="cp-email" type="email" name="email" required placeholder="votre@email.com" value={form.email} onChange={(e) => set('email', e.target.value)} className={inputClass('email')} />
-                      {submitted && errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+                      <input id="cp-email" autoComplete="email" aria-invalid={submitted && !!errors.email} aria-describedby={submitted && errors.email ? 'cp-email-erreur' : undefined} type="email" name="email" required placeholder="votre@email.com" value={form.email} onChange={(e) => set('email', e.target.value)} className={inputClass('email')} />
+                      {submitted && errors.email && <p id='cp-email-erreur' className="text-red-500 text-xs mt-1">{errors.email}</p>}
                     </div>
                     <div>
                       <label htmlFor="cp-phone" className="block text-sm font-medium text-navy mb-1.5">Téléphone *</label>
-                      <input id="cp-phone" type="tel" name="phone" required placeholder="+32 4XX XX XX XX" value={form.phone} onChange={(e) => set('phone', e.target.value)} className={inputClass('phone')} />
-                      {submitted && errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
+                      <input id="cp-phone" autoComplete="tel" aria-invalid={submitted && !!errors.phone} aria-describedby={submitted && errors.phone ? 'cp-phone-erreur' : undefined} type="tel" name="phone" required placeholder="+32 4XX XX XX XX" value={form.phone} onChange={(e) => set('phone', e.target.value)} className={inputClass('phone')} />
+                      {submitted && errors.phone && <p id='cp-phone-erreur' className="text-red-500 text-xs mt-1">{errors.phone}</p>}
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="cp-addressFrom" className="block text-sm font-medium text-navy mb-1.5">Ville de départ *</label>
-                      <input id="cp-addressFrom" type="text" name="addressFrom" required placeholder="Ex : Liège" value={form.cityFrom} onChange={(e) => set('cityFrom', e.target.value)} className={inputClass('cityFrom')} />
-                      {submitted && errors.cityFrom && <p className="text-red-500 text-xs mt-1">{errors.cityFrom}</p>}
+                      <input id="cp-addressFrom" autoComplete="address-level2" aria-invalid={submitted && !!errors.cityFrom} aria-describedby={submitted && errors.cityFrom ? 'cp-addressFrom-erreur' : undefined} type="text" name="addressFrom" required placeholder="Ex : Liège" value={form.cityFrom} onChange={(e) => set('cityFrom', e.target.value)} className={inputClass('cityFrom')} />
+                      {submitted && errors.cityFrom && <p id='cp-addressFrom-erreur' className="text-red-500 text-xs mt-1">{errors.cityFrom}</p>}
                     </div>
                     <div>
                       <label htmlFor="cp-addressTo" className="block text-sm font-medium text-navy mb-1.5">Ville d'arrivée *</label>
-                      <input id="cp-addressTo" type="text" name="addressTo" required placeholder="Ex : Bruxelles" value={form.cityTo} onChange={(e) => set('cityTo', e.target.value)} className={inputClass('cityTo')} />
-                      {submitted && errors.cityTo && <p className="text-red-500 text-xs mt-1">{errors.cityTo}</p>}
+                      <input id="cp-addressTo" aria-invalid={submitted && !!errors.cityTo} aria-describedby={submitted && errors.cityTo ? 'cp-addressTo-erreur' : undefined} type="text" name="addressTo" required placeholder="Ex : Bruxelles" value={form.cityTo} onChange={(e) => set('cityTo', e.target.value)} className={inputClass('cityTo')} />
+                      {submitted && errors.cityTo && <p id='cp-addressTo-erreur' className="text-red-500 text-xs mt-1">{errors.cityTo}</p>}
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="cp-date" className="block text-sm font-medium text-navy mb-1.5">Date souhaitée</label>
-                      <input id="cp-date" type="date" name="date" value={form.date} onChange={(e) => set('date', e.target.value)} className={inputClass('date')} />
+                      <input id="cp-date" aria-invalid={submitted && !!errors.date} aria-describedby={submitted && errors.date ? 'cp-date-erreur' : undefined} type="date" name="date" value={form.date} onChange={(e) => set('date', e.target.value)} className={inputClass('date')} />
                     </div>
                     <div>
                       <label htmlFor="cp-volume" className="block text-sm font-medium text-navy mb-1.5">Volume estimé</label>
-                      <select id="cp-volume" name="volume" value={form.volume} onChange={(e) => set('volume', e.target.value)} className={inputClass('volume')}>
+                      <select id="cp-volume" aria-invalid={submitted && !!errors.volume} aria-describedby={submitted && errors.volume ? 'cp-volume-erreur' : undefined} name="volume" value={form.volume} onChange={(e) => set('volume', e.target.value)} className={inputClass('volume')}>
                         <option value="">Sélectionnez un volume</option>
                         {VOLUMES_AFFICHES.map((v) => (
                           <option key={v.valeur} value={v.valeur}>{v.libelle}</option>
@@ -334,12 +334,12 @@ export default function ContactPage() {
 
                   <div>
                     <label htmlFor="cp-message" className="block text-sm font-medium text-navy mb-1.5">Message / Précisions</label>
-                    <textarea id="cp-message" name="message" placeholder="Décrivez votre projet : nombre de pièces, étage, accès difficile, objets spéciaux..." rows={5} value={form.message} onChange={(e) => set('message', e.target.value)} className={inputClass('message')} />
+                    <textarea id="cp-message" aria-invalid={submitted && !!errors.message} aria-describedby={submitted && errors.message ? 'cp-message-erreur' : undefined} name="message" placeholder="Décrivez votre projet : nombre de pièces, étage, accès difficile, objets spéciaux..." rows={5} value={form.message} onChange={(e) => set('message', e.target.value)} className={inputClass('message')} />
                   </div>
 
                   <div>
                     <label className="flex items-start gap-3 cursor-pointer group">
-                      <input type="checkbox" name="consent" checked={form.privacy} onChange={(e) => set('privacy', e.target.checked)} className="mt-1 w-4 h-4 accent-navy rounded" />
+                      <input type="checkbox" name="consent" aria-invalid={submitted && !!errors.privacy} aria-describedby={submitted && errors.privacy ? 'cp-consent-erreur' : undefined} checked={form.privacy} onChange={(e) => set('privacy', e.target.checked)} className="mt-1 w-4 h-4 accent-navy rounded" />
                       <span className="text-sm text-muted group-hover:text-text transition-colors">
                         J'accepte que mes données soient utilisées pour traiter ma demande conformément à la{' '}
                         <Link to="/politique-confidentialite" className="text-navy underline hover:text-navy/70 transition-colors">
@@ -347,7 +347,7 @@ export default function ContactPage() {
                         </Link>. *
                       </span>
                     </label>
-                    {submitted && errors.privacy && <p className="text-red-500 text-xs mt-1 ml-7">{errors.privacy}</p>}
+                    {submitted && errors.privacy && <p id='cp-consent-erreur' className="text-red-500 text-xs mt-1 ml-7">{errors.privacy}</p>}
                   </div>
 
                   {/* Échec de l'enregistrement. `role="alert"` pour que l'assistance vocale

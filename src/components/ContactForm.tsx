@@ -243,7 +243,7 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
                   <div>
                     <label htmlFor="cf-firstName" className="sr-only">Prénom</label>
                     <input
-                      id="cf-firstName" toolparamdescription="Prénom de la personne qui déménage"
+                      id="cf-firstName" autoComplete="given-name" aria-invalid={submitted && !!errors.firstName} aria-describedby={submitted && errors.firstName ? 'cf-firstName-erreur' : undefined} toolparamdescription="Prénom de la personne qui déménage"
                       type="text"
                       name="firstName"
                       required
@@ -252,12 +252,12 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
                       onChange={(e) => set('firstName', e.target.value)}
                       className={inputClass('firstName')}
                     />
-                    {submitted && errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>}
+                    {submitted && errors.firstName && <p id='cf-firstName-erreur' className="text-red-500 text-xs mt-1">{errors.firstName}</p>}
                   </div>
                   <div>
                     <label htmlFor="cf-lastName" className="sr-only">Nom</label>
                     <input
-                      id="cf-lastName" toolparamdescription="Nom de famille"
+                      id="cf-lastName" autoComplete="family-name" aria-invalid={submitted && !!errors.lastName} aria-describedby={submitted && errors.lastName ? 'cf-lastName-erreur' : undefined} toolparamdescription="Nom de famille"
                       type="text"
                       name="lastName"
                       required
@@ -266,7 +266,7 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
                       onChange={(e) => set('lastName', e.target.value)}
                       className={inputClass('lastName')}
                     />
-                    {submitted && errors.lastName && <p className="text-red-500 text-xs mt-1">{errors.lastName}</p>}
+                    {submitted && errors.lastName && <p id='cf-lastName-erreur' className="text-red-500 text-xs mt-1">{errors.lastName}</p>}
                   </div>
                 </div>
 
@@ -274,7 +274,7 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
                   <div>
                     <label htmlFor="cf-email" className="sr-only">Email</label>
                     <input
-                      id="cf-email" toolparamdescription="Adresse email pour recevoir le devis"
+                      id="cf-email" autoComplete="email" aria-invalid={submitted && !!errors.email} aria-describedby={submitted && errors.email ? 'cf-email-erreur' : undefined} toolparamdescription="Adresse email pour recevoir le devis"
                       type="email"
                       name="email"
                       required
@@ -283,12 +283,12 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
                       onChange={(e) => set('email', e.target.value)}
                       className={inputClass('email')}
                     />
-                    {submitted && errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+                    {submitted && errors.email && <p id='cf-email-erreur' className="text-red-500 text-xs mt-1">{errors.email}</p>}
                   </div>
                   <div>
                     <label htmlFor="cf-phone" className="sr-only">Téléphone</label>
                     <input
-                      id="cf-phone" toolparamdescription="Numéro de téléphone"
+                      id="cf-phone" autoComplete="tel" aria-invalid={submitted && !!errors.phone} aria-describedby={submitted && errors.phone ? 'cf-phone-erreur' : undefined} toolparamdescription="Numéro de téléphone"
                       type="tel"
                       name="phone"
                       required
@@ -297,7 +297,7 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
                       onChange={(e) => set('phone', e.target.value)}
                       className={inputClass('phone')}
                     />
-                    {submitted && errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
+                    {submitted && errors.phone && <p id='cf-phone-erreur' className="text-red-500 text-xs mt-1">{errors.phone}</p>}
                   </div>
                 </div>
 
@@ -305,7 +305,7 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
                   <div>
                     <label htmlFor="cf-addressFrom" className="sr-only">Adresse de départ</label>
                     <input
-                      id="cf-addressFrom" toolparamdescription="Adresse complète du logement actuel, point de départ"
+                      id="cf-addressFrom" autoComplete="address-level2" aria-invalid={submitted && !!errors.cityFrom} aria-describedby={submitted && errors.cityFrom ? 'cf-addressFrom-erreur' : undefined} toolparamdescription="Adresse complète du logement actuel, point de départ"
                       type="text"
                       name="addressFrom"
                       required
@@ -314,12 +314,12 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
                       onChange={(e) => set('cityFrom', e.target.value)}
                       className={inputClass('cityFrom')}
                     />
-                    {submitted && errors.cityFrom && <p className="text-red-500 text-xs mt-1">{errors.cityFrom}</p>}
+                    {submitted && errors.cityFrom && <p id='cf-addressFrom-erreur' className="text-red-500 text-xs mt-1">{errors.cityFrom}</p>}
                   </div>
                   <div>
                     <label htmlFor="cf-addressTo" className="sr-only">Adresse d'arrivée</label>
                     <input
-                      id="cf-addressTo" toolparamdescription="Adresse complète du logement d'arrivée"
+                      id="cf-addressTo" aria-invalid={submitted && !!errors.cityTo} aria-describedby={submitted && errors.cityTo ? 'cf-addressTo-erreur' : undefined} toolparamdescription="Adresse complète du logement d'arrivée"
                       type="text"
                       name="addressTo"
                       required
@@ -328,7 +328,7 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
                       onChange={(e) => set('cityTo', e.target.value)}
                       className={inputClass('cityTo')}
                     />
-                    {submitted && errors.cityTo && <p className="text-red-500 text-xs mt-1">{errors.cityTo}</p>}
+                    {submitted && errors.cityTo && <p id='cf-addressTo-erreur' className="text-red-500 text-xs mt-1">{errors.cityTo}</p>}
                   </div>
                 </div>
 
@@ -336,7 +336,7 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
                   <div>
                     <label htmlFor="cf-date" className="sr-only">Date souhaitée</label>
                     <input
-                      id="cf-date" toolparamdescription="Date souhaitée du déménagement, au format AAAA-MM-JJ"
+                      id="cf-date" aria-invalid={submitted && !!errors.date} aria-describedby={submitted && errors.date ? 'cf-date-erreur' : undefined} toolparamdescription="Date souhaitée du déménagement, au format AAAA-MM-JJ"
                       type="date"
                       name="date"
                       required
@@ -344,12 +344,12 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
                       onChange={(e) => set('date', e.target.value)}
                       className={inputClass('date')}
                     />
-                    {submitted && errors.date && <p className="text-red-500 text-xs mt-1">{errors.date}</p>}
+                    {submitted && errors.date && <p id='cf-date-erreur' className="text-red-500 text-xs mt-1">{errors.date}</p>}
                   </div>
                   <div>
                     <label htmlFor="cf-volume" className="sr-only">Volume estimé</label>
                     <select
-                      id="cf-volume" toolparamdescription="Volume estimé à déménager : moins de 20 m³, 20 à 50 m³, 50 à 100 m³, ou inconnu"
+                      id="cf-volume" aria-invalid={submitted && !!errors.volume} aria-describedby={submitted && errors.volume ? 'cf-volume-erreur' : undefined} toolparamdescription="Volume estimé à déménager : moins de 20 m³, 20 à 50 m³, 50 à 100 m³, ou inconnu"
                       name="volume"
                       value={form.volume}
                       onChange={(e) => set('volume', e.target.value)}
@@ -375,7 +375,7 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
                 <div>
                   <label htmlFor="cf-message" className="sr-only">Message</label>
                   <textarea
-                    id="cf-message" toolparamdescription="Précisions libres : étage, ascenseur, objets fragiles, contraintes d'accès"
+                    id="cf-message" aria-invalid={submitted && !!errors.message} aria-describedby={submitted && errors.message ? 'cf-message-erreur' : undefined} toolparamdescription="Précisions libres : étage, ascenseur, objets fragiles, contraintes d'accès"
                     name="message"
                     placeholder="Message / précisions (facultatif)"
                     rows={3}
@@ -390,6 +390,8 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
                     <input
                       type="checkbox"
                       name="consent"
+                      aria-invalid={submitted && !!errors.privacy}
+                      aria-describedby={submitted && errors.privacy ? 'cf-consent-erreur' : undefined}
                       checked={form.privacy}
                       onChange={(e) => set('privacy', e.target.checked)}
                       className="mt-1 w-4 h-4 accent-navy rounded"
@@ -401,7 +403,7 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
                       </Link>
                     </span>
                   </label>
-                  {submitted && errors.privacy && <p className="text-red-500 text-xs mt-1">{errors.privacy}</p>}
+                  {submitted && errors.privacy && <p id='cf-consent-erreur' className="text-red-500 text-xs mt-1">{errors.privacy}</p>}
                 </div>
 
                 {/* Échec de l'enregistrement. `role="alert"` pour que l'assistance vocale
