@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
@@ -18,12 +18,11 @@ import ServiceNavbar from '../components/ServiceNavbar';
 import Footer from '../components/Footer';
 import SeoHead from '../components/SeoHead';
 import SchemaOrg from '../components/SchemaOrg';
-import { supabase } from '../lib/supabase';
-import { notifierDevis } from '../lib/notifierDevis';
+
 import { useSitePageContent } from '../lib/useSitePageContent';
 import type { ContactPageContent } from '../lib/types';
 import { anneesExperience } from '../lib/anciennete';
-import { mesurerDevisEnvoye } from '../lib/mesure';
+import { SERVICES, VOLUMES, useFormulaireDevis, type ChampsDevis } from '../lib/devis';
 import { ENTREPRISE } from '../data/entreprise';
 
 const fadeUp = {
@@ -31,45 +30,14 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } },
 };
 
-const serviceOptions = [
-  { label: 'Déménagement', value: 'demenagement', icon: Truck },
-  { label: 'Garde-Meubles', value: 'garde-meuble', icon: Warehouse },
-];
+// Sous-ensemble affiché sur cette page. Les valeurs viennent du socle : les
+// redéclarer est ce qui avait fait diverger les listes d'un formulaire à
+// l'autre. Que /contact propose deux services quand /contact-devis en propose
+// quatre reste une question de contenu, à trancher séparément.
+const ICONES: Record<string, typeof Truck> = { 'demenagement': Truck, 'garde-meuble': Warehouse };
+const SERVICES_AFFICHES = SERVICES.filter((s) => s.valeur in ICONES);
 
-const volumes = [
-  { label: '< 20m\u00B3', value: '<20' },
-  { label: '20 - 50m\u00B3', value: '20-50' },
-  { label: '50 - 100m\u00B3', value: '50-100' },
-  { label: 'Je ne sais pas', value: 'unknown' },
-];
-
-interface FormData {
-  service: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  cityFrom: string;
-  cityTo: string;
-  date: string;
-  volume: string;
-  message: string;
-  privacy: boolean;
-}
-
-const initialForm: FormData = {
-  service: 'demenagement',
-  firstName: '',
-  lastName: '',
-  email: '',
-  phone: '',
-  cityFrom: '',
-  cityTo: '',
-  date: '',
-  volume: '',
-  message: '',
-  privacy: false,
-};
+const VOLUMES_AFFICHES = VOLUMES.filter((v) => v.valeur !== '>100');
 
 const defaultContent: ContactPageContent = {
   hero: {
@@ -107,95 +75,17 @@ export default function ContactPage() {
   const { content, meta } = useSitePageContent<ContactPageContent>('contact');
   const c = content || defaultContent;
 
-  const [form, setForm] = useState<FormData>(initialForm);
-  const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-  // Message d'échec de l'enregistrement, affiché au-dessus du bouton d'envoi.
-  // Il manquait : la page confirmait quoi qu'il arrive, et le visiteur repartait
-  // convaincu d'avoir déposé une demande qui n'existait nulle part.
-  const [erreurEnvoi, setErreurEnvoi] = useState<string | null>(null);
+  const { form, set, errors, submitted, loading, success, erreurEnvoi, envoyer } =
+    useFormulaireDevis({ source: 'contact' });
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const validate = (): boolean => {
-    const e: typeof errors = {};
-    if (!form.firstName.trim()) e.firstName = 'Prénom requis';
-    if (!form.lastName.trim()) e.lastName = 'Nom requis';
-    if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'Email invalide';
-    if (!form.phone.trim()) e.phone = 'Téléphone requis';
-    if (!form.cityFrom.trim()) e.cityFrom = 'Ville de départ requise';
-    if (!form.cityTo.trim()) e.cityTo = "Ville d'arrivée requise";
-    if (!form.date) e.date = 'Date requise';
-    if (!form.privacy) e.privacy = 'Vous devez accepter la politique';
-    setErrors(e);
-    return Object.keys(e).length === 0;
-  };
-
-  const handleSubmit = async (ev: React.FormEvent) => {
-    ev.preventDefault();
-    setSubmitted(true);
-    if (!validate()) return;
-    setErreurEnvoi(null);
-    setLoading(true);
-
-    const { error } = await supabase.from('devis_requests').insert({
-      service_type: form.service,
-      firstname: form.firstName,
-      lastname: form.lastName,
-      email: form.email,
-      phone: form.phone,
-      departure_city: form.cityFrom,
-      arrival_city: form.cityTo,
-      move_date: form.date || null,
-      volume: form.volume || 'unknown',
-      message: form.message,
-    });
-
-    setLoading(false);
-
-    // La confirmation dépend maintenant du résultat de l'insertion. Elle ne le
-    // faisait pas : la page affichait « merci » que la base ait accepté ou
-    // refusé la demande, et le visiteur repartait sans savoir qu'elle n'existait
-    // nulle part.
-    if (error) {
-      setErreurEnvoi(
-        `Votre demande n'a pas pu être enregistrée. Merci de réessayer, ou de nous appeler au ${ENTREPRISE.telephone.affichage}.`,
-      );
-      return;
-    }
-
-    mesurerDevisEnvoye('contact', form.service);
-    notifierDevis({
-      service: form.service,
-      firstName: form.firstName,
-      lastName: form.lastName,
-      email: form.email,
-      phone: form.phone,
-      cityFrom: form.cityFrom,
-      cityTo: form.cityTo,
-      date: form.date,
-      volume: form.volume,
-      message: form.message,
-    });
-
-    setSuccess(true);
-    setSubmitted(false);
-    setErrors({});
-    setForm(initialForm);
-    setTimeout(() => setSuccess(false), 6000);
-  };
-
-  const set = (key: keyof FormData, value: string | boolean) =>
-    setForm((prev) => ({ ...prev, [key]: value }));
-
   const inputBase =
     'w-full border rounded-xl px-4 py-3.5 text-base outline-none transition-all duration-200 bg-white focus:ring-2 placeholder:text-muted/60';
 
-  const inputClass = (key: keyof FormData) =>
+  const inputClass = (key: keyof ChampsDevis) =>
     `${inputBase} ${errors[key] ? 'border-red-400 focus:ring-red-300' : 'border-gray-200 focus:ring-navy/20 focus:border-navy'}`;
 
   return (
@@ -354,7 +244,7 @@ export default function ContactPage() {
                 </motion.div>
               )}
 
-              <form method="POST" onSubmit={handleSubmit} noValidate
+              <form method="POST" onSubmit={envoyer} noValidate
                 toolname="demander_devis_demenagement"
                 tooldescription="Prépare une demande de devis gratuit pour un déménagement ou un garde-meubles chez Déménagements Gramme. Le formulaire est rempli mais reste soumis par la personne : renseigner les champs ne crée aucune demande."
               >
@@ -365,21 +255,24 @@ export default function ContactPage() {
                     Type de service
                   </p>
                   <div className="grid grid-cols-2 gap-3">
-                    {serviceOptions.map(({ label, value, icon: Icon }) => (
+                    {SERVICES_AFFICHES.map(({ libelle, valeur }) => {
+                      const Icon = ICONES[valeur];
+                      return (
                       <button
-                        key={value}
+                        key={valeur}
                         type="button"
-                        onClick={() => set('service', value)}
+                        onClick={() => set('service', valeur)}
                         className={`flex flex-col items-center gap-2 py-4 px-3 rounded-xl border-2 transition-all duration-200 ${
-                          form.service === value
+                          form.service === valeur
                             ? 'border-navy bg-navy text-yellow'
                             : 'border-gray-200 text-navy hover:border-navy/30 hover:bg-navy/[0.02]'
                         }`}
                       >
                         <Icon className="w-6 h-6" />
-                        <span className="text-xs font-bold uppercase">{label}</span>
+                        <span className="text-xs font-bold uppercase">{libelle}</span>
                       </button>
-                    ))}
+                    );
+                    })}
                   </div>
                 </div>
 
@@ -426,14 +319,14 @@ export default function ContactPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="cp-date" className="block text-sm font-medium text-navy mb-1.5">Date souhaitée</label>
-                      <input id="cp-date" type="date" name="date" required value={form.date} onChange={(e) => set('date', e.target.value)} className={inputClass('date')} />
+                      <input id="cp-date" type="date" name="date" value={form.date} onChange={(e) => set('date', e.target.value)} className={inputClass('date')} />
                     </div>
                     <div>
                       <label htmlFor="cp-volume" className="block text-sm font-medium text-navy mb-1.5">Volume estimé</label>
                       <select id="cp-volume" name="volume" value={form.volume} onChange={(e) => set('volume', e.target.value)} className={inputClass('volume')}>
                         <option value="">Sélectionnez un volume</option>
-                        {volumes.map((v) => (
-                          <option key={v.value} value={v.value}>{v.label}</option>
+                        {VOLUMES_AFFICHES.map((v) => (
+                          <option key={v.valeur} value={v.valeur}>{v.libelle}</option>
                         ))}
                       </select>
                     </div>
