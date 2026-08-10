@@ -112,6 +112,10 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  // Message d'échec de l'enregistrement, affiché au-dessus du bouton d'envoi.
+  // Il manquait : la page confirmait quoi qu'il arrive, et le visiteur repartait
+  // convaincu d'avoir déposé une demande qui n'existait nulle part.
+  const [erreurEnvoi, setErreurEnvoi] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -135,6 +139,7 @@ export default function ContactPage() {
     ev.preventDefault();
     setSubmitted(true);
     if (!validate()) return;
+    setErreurEnvoi(null);
     setLoading(true);
 
     const { error } = await supabase.from('devis_requests').insert({
@@ -150,25 +155,33 @@ export default function ContactPage() {
       message: form.message,
     });
 
-    // Voir ContactDevisPage : le succès affiché ignore `error` de longue date,
-    // la conversion non.
-    if (!error) {
-      mesurerDevisEnvoye('contact', form.service);
-      notifierDevis({
-        service: form.service,
-        firstName: form.firstName,
-        lastName: form.lastName,
-        email: form.email,
-        phone: form.phone,
-        cityFrom: form.cityFrom,
-        cityTo: form.cityTo,
-        date: form.date,
-        volume: form.volume,
-        message: form.message,
-      });
+    setLoading(false);
+
+    // La confirmation dépend maintenant du résultat de l'insertion. Elle ne le
+    // faisait pas : la page affichait « merci » que la base ait accepté ou
+    // refusé la demande, et le visiteur repartait sans savoir qu'elle n'existait
+    // nulle part.
+    if (error) {
+      setErreurEnvoi(
+        `Votre demande n'a pas pu être enregistrée. Merci de réessayer, ou de nous appeler au ${ENTREPRISE.telephone.affichage}.`,
+      );
+      return;
     }
 
-    setLoading(false);
+    mesurerDevisEnvoye('contact', form.service);
+    notifierDevis({
+      service: form.service,
+      firstName: form.firstName,
+      lastName: form.lastName,
+      email: form.email,
+      phone: form.phone,
+      cityFrom: form.cityFrom,
+      cityTo: form.cityTo,
+      date: form.date,
+      volume: form.volume,
+      message: form.message,
+    });
+
     setSuccess(true);
     setSubmitted(false);
     setErrors({});
@@ -443,6 +456,15 @@ export default function ContactPage() {
                     </label>
                     {submitted && errors.privacy && <p className="text-red-500 text-xs mt-1 ml-7">{errors.privacy}</p>}
                   </div>
+
+                  {/* Échec de l'enregistrement. `role="alert"` pour que l'assistance vocale
+                      l'annonce : sans lui, la personne relance le même envoi sans savoir ce
+                      qui a échoué. */}
+                  {erreurEnvoi && (
+                    <div role="alert" className="mb-4 rounded-xl border-2 border-red-300 bg-red-50 px-4 py-3">
+                      <p className="text-red-700 text-sm font-semibold">{erreurEnvoi}</p>
+                    </div>
+                  )}
 
                   <motion.button
                     type="submit"

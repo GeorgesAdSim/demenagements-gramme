@@ -134,6 +134,10 @@ export default function ContactDevisPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  // Message d'échec de l'enregistrement, affiché au-dessus du bouton d'envoi.
+  // Il manquait : la page confirmait quoi qu'il arrive, et le visiteur repartait
+  // convaincu d'avoir déposé une demande qui n'existait nulle part.
+  const [erreurEnvoi, setErreurEnvoi] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -157,6 +161,7 @@ export default function ContactDevisPage() {
     ev.preventDefault();
     setSubmitted(true);
     if (!validate()) return;
+    setErreurEnvoi(null);
     setLoading(true);
 
     const { error } = await supabase.from('devis_requests').insert({
@@ -172,26 +177,36 @@ export default function ContactDevisPage() {
       message: form.message,
     });
 
-    // L'affichage du succès ne dépend pas de `error` — c'était déjà le cas
-    // avant, et le changer relèverait d'un autre chantier. La conversion, elle,
-    // ne se compte que si la base a bien enregistré la demande.
-    if (!error) {
-      mesurerDevisEnvoye('contact-devis', form.service);
-      notifierDevis({
-        service: form.service,
-        firstName: form.firstName,
-        lastName: form.lastName,
-        email: form.email,
-        phone: form.phone,
-        cityFrom: form.cityFrom,
-        cityTo: form.cityTo,
-        date: form.date,
-        volume: form.volume,
-        message: form.message,
-      });
+    setLoading(false);
+
+    // La confirmation dépend maintenant du résultat de l'insertion. Elle ne le
+    // faisait pas : une contrainte violée, une base indisponible ou un réseau
+    // coupé produisaient un « merci » identique à un succès, et la demande
+    // n'existait ni en base ni dans une boîte mail. C'est ce qui a rendu
+    // invisibles, plusieurs heures durant, les demandes portant « International »
+    // ou « Monte-Meubles » — deux valeurs qu'une contrainte trop étroite
+    // refusait.
+    if (error) {
+      setErreurEnvoi(
+        `Votre demande n'a pas pu être enregistrée. Merci de réessayer, ou de nous appeler au ${ENTREPRISE.telephone.affichage}.`,
+      );
+      return;
     }
 
-    setLoading(false);
+    mesurerDevisEnvoye('contact-devis', form.service);
+    notifierDevis({
+      service: form.service,
+      firstName: form.firstName,
+      lastName: form.lastName,
+      email: form.email,
+      phone: form.phone,
+      cityFrom: form.cityFrom,
+      cityTo: form.cityTo,
+      date: form.date,
+      volume: form.volume,
+      message: form.message,
+    });
+
     setSuccess(true);
     setSubmitted(false);
     setErrors({});
@@ -247,38 +262,6 @@ export default function ContactDevisPage() {
                 Remplissez le formulaire ci-dessous ou contactez-nous directement. Réponse garantie sous 24h ouvrables, gratuit et sans engagement.
               </motion.p>
             </motion.div>
-          </div>
-        </section>
-
-        {/* Rassurance, juste sous le hero : ce qui se passe après l'envoi.
-            Bande compacte, pour ne pas repousser le formulaire. */}
-        <section className="bg-white py-12 md:py-14">
-          <div className="max-w-7xl mx-auto px-4 md:px-8">
-            <h2 className="text-2xl md:text-[2rem] font-black uppercase text-navy mb-3">
-              Ce qui se passe après votre demande
-            </h2>
-            <p className="text-muted text-[17px] leading-relaxed mb-8 max-w-3xl">
-              Quatre étapes, sans engagement à aucune d'elles. Vous ne signez rien
-              avant d'avoir reçu un prix détaillé par écrit.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {APRES_ENVOI.map((etape, i) => (
-                <motion.div
-                  key={etape.titre}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-60px' }}
-                  transition={{ delay: i * 0.06, duration: 0.4 }}
-                  className="bg-offwhite rounded-2xl p-5 border border-gray-100"
-                >
-                  <span className="inline-flex w-7 h-7 rounded-full bg-navy text-yellow font-black text-sm items-center justify-center mb-3">
-                    {i + 1}
-                  </span>
-                  <h3 className="text-navy font-bold text-[17px] mb-2">{etape.titre}</h3>
-                  <p className="text-muted text-[15px] leading-relaxed">{etape.texte}</p>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -493,6 +476,15 @@ export default function ContactDevisPage() {
                       {submitted && errors.privacy && <p className="text-red-500 text-xs mt-1 ml-7">{errors.privacy}</p>}
                     </div>
 
+                    {/* Échec de l'enregistrement. `role="alert"` pour que l'assistance vocale
+                        l'annonce : sans lui, la personne relance le même envoi sans savoir ce
+                        qui a échoué. */}
+                    {erreurEnvoi && (
+                      <div role="alert" className="mb-4 rounded-xl border-2 border-red-300 bg-red-50 px-4 py-3">
+                        <p className="text-red-700 text-sm font-semibold">{erreurEnvoi}</p>
+                      </div>
+                    )}
+
                     <motion.button
                       type="submit"
                       disabled={loading}
@@ -515,6 +507,38 @@ export default function ContactDevisPage() {
                   </div>
                 </form>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Ce qui se passe après l'envoi. Placé APRÈS le formulaire : le
+            visiteur arrive ici pour déposer une demande, pas pour lire une procédure. */}
+        <section className="bg-white py-12 md:py-14">
+          <div className="max-w-7xl mx-auto px-4 md:px-8">
+            <h2 className="text-2xl md:text-[2rem] font-black uppercase text-navy mb-3">
+              Ce qui se passe après votre demande
+            </h2>
+            <p className="text-muted text-[17px] leading-relaxed mb-8 max-w-3xl">
+              Quatre étapes, sans engagement à aucune d'elles. Vous ne signez rien
+              avant d'avoir reçu un prix détaillé par écrit.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {APRES_ENVOI.map((etape, i) => (
+                <motion.div
+                  key={etape.titre}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  transition={{ delay: i * 0.06, duration: 0.4 }}
+                  className="bg-offwhite rounded-2xl p-5 border border-gray-100"
+                >
+                  <span className="inline-flex w-7 h-7 rounded-full bg-navy text-yellow font-black text-sm items-center justify-center mb-3">
+                    {i + 1}
+                  </span>
+                  <h3 className="text-navy font-bold text-[17px] mb-2">{etape.titre}</h3>
+                  <p className="text-muted text-[15px] leading-relaxed">{etape.texte}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
