@@ -2,18 +2,34 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock, ArrowRight, Loader as Loader2, CircleCheck, Shield, Camera } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { supabase } from '../lib/supabase';
-import { notifierDevis } from '../lib/notifierDevis';
+
 import { SITE_IMAGES } from '../data/images';
 import type { HomepageContent } from '../lib/types';
 import { anneesExperience } from '../lib/anciennete';
-import { mesurerDevisEnvoye, mesurerEstimationPhotos } from '../lib/mesure';
-import { ADRESSE_COURTE, ENTREPRISE } from '../data/entreprise';
+import { mesurerEstimationPhotos } from '../lib/mesure';
+import { SERVICES, VOLUMES, useFormulaireDevis, type ChampsDevis } from '../lib/devis';
+import { ADRESSE_COURTE } from '../data/entreprise';
 
 const FACEBOOK_URL = 'https://www.facebook.com/GrammeDemenagements';
 
-const serviceOptions = ['Déménagement', 'Garde-Meubles'];
-const volumes = ['< 20m³', '20–50m³', '50–100m³', 'Je ne sais pas'];
+// Sous-ensemble affiché ici : deux services, et pas de tranche « > 100 m³ ».
+// Les VALEURS viennent du socle — c'est leur divergence qui casse des choses.
+const SERVICES_AFFICHES = SERVICES.filter(
+  (s) => s.valeur === 'demenagement' || s.valeur === 'garde-meuble',
+);
+
+// Les libellés de cette page diffèrent de ceux du socle : « 20–50m³ » avec un
+// tiret demi-cadratin et sans espaces, là où /contact écrit « 20 - 50m³ ». La
+// différence est purement typographique et visible sur soixante-douze pages ;
+// l'harmoniser est une décision de contenu, pas un effet de bord du
+// remaniement. Les valeurs, elles, sont bien les mêmes.
+const LIBELLES_VOLUME: Record<string, string> = {
+  '<20': '< 20m³',
+  '20-50': '20–50m³',
+  '50-100': '50–100m³',
+  'unknown': 'Je ne sais pas',
+};
+const VOLUMES_AFFICHES = VOLUMES.filter((v) => v.valeur in LIBELLES_VOLUME);
 
 const REASSURANCES = () => [
   'Réponse garantie sous 24h ouvrables',
@@ -21,34 +37,6 @@ const REASSURANCES = () => [
   'Assurance tous risques incluse',
   `+${anneesExperience()} ans d'expérience à votre service`,
 ];
-
-interface FormData {
-  service: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  cityFrom: string;
-  cityTo: string;
-  date: string;
-  volume: string;
-  message: string;
-  privacy: boolean;
-}
-
-const initialForm: FormData = {
-  service: serviceOptions[0],
-  firstName: '',
-  lastName: '',
-  email: '',
-  phone: '',
-  cityFrom: '',
-  cityTo: '',
-  date: '',
-  volume: '',
-  message: '',
-  privacy: false,
-};
 
 interface Props {
   data?: HomepageContent['contact'] | null;
@@ -74,11 +62,15 @@ interface Props {
 
 export default function ContactForm({ data, variant = 'complet', villeParDefaut }: Props) {
   const locale = variant === 'locale';
-  const [form, setForm] = useState<FormData>(
-    villeParDefaut ? { ...initialForm, cityFrom: villeParDefaut } : initialForm
-  );
   const [estimationId, setEstimationId] = useState<string | null>(null);
 
+  const { form, set, remplacer, errors, submitted, loading, success, erreurEnvoi, envoyer } =
+    useFormulaireDevis({
+      source: 'formulaire-contact',
+      libelleVilles: 'adresse',
+      valeursInitiales: villeParDefaut ? { cityFrom: villeParDefaut } : undefined,
+      suffixeMessage: estimationId ? `[estimation_id: ${estimationId}]` : undefined,
+    });
   // Retour depuis l'estimateur de volume : pré-remplit le volume et rattache
   // l'estimation au devis via son id (champ caché ajouté au message).
   useEffect(() => {
@@ -88,112 +80,16 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
       const draft = JSON.parse(raw);
       if (draft.estimation_id) setEstimationId(draft.estimation_id);
       if (typeof draft.volume_m3 === 'number') {
-        const bucket = draft.volume_m3 < 20 ? '< 20m³' : draft.volume_m3 <= 50 ? '20–50m³' : '50–100m³';
-        setForm((prev) => ({
-          ...prev,
-          volume: bucket,
-          message: prev.message || `Volume estimé via l'outil photos : ${draft.volume_m3} m³.`,
-        }));
+        const tranche = draft.volume_m3 < 20 ? '<20' : draft.volume_m3 <= 50 ? '20-50' : '50-100';
+        remplacer({
+          volume: tranche,
+          message: `Volume estimé via l'outil photos : ${draft.volume_m3} m³.`,
+        });
       }
     } catch { /* draft corrompu — ignoré */ }
   }, []);
-  const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-  // Message d'échec de l'enregistrement, affiché au-dessus du bouton d'envoi.
-  // Il manquait : la page confirmait quoi qu'il arrive, et le visiteur repartait
-  // convaincu d'avoir déposé une demande qui n'existait nulle part.
-  const [erreurEnvoi, setErreurEnvoi] = useState<string | null>(null);
 
-  const validate = (): boolean => {
-    const e: typeof errors = {};
-    if (!form.firstName.trim()) e.firstName = 'Prénom requis';
-    if (!form.lastName.trim()) e.lastName = 'Nom requis';
-    if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'Email invalide';
-    if (!form.phone.trim()) e.phone = 'Téléphone requis';
-    if (!form.cityFrom.trim()) e.cityFrom = 'Adresse de départ requise';
-    if (!form.cityTo.trim()) e.cityTo = "Adresse d'arrivée requise";
-    if (!form.privacy) e.privacy = 'Vous devez accepter la politique';
-    setErrors(e);
-    return Object.keys(e).length === 0;
-  };
-
-  const SERVICE_DB_MAP: Record<string, string> = {
-    'Déménagement': 'demenagement',
-    'Garde-Meubles': 'garde-meuble',
-  };
-
-  const VOLUME_DB_MAP: Record<string, string> = {
-    '< 20m³': '<20',
-    '20–50m³': '20-50',
-    '50–100m³': '50-100',
-    'Je ne sais pas': 'unknown',
-  };
-
-  const handleSubmit = async (ev: React.FormEvent) => {
-    ev.preventDefault();
-    setSubmitted(true);
-    if (!validate()) return;
-    setErreurEnvoi(null);
-    setLoading(true);
-
-    const serviceType = SERVICE_DB_MAP[form.service] || 'demenagement';
-
-    const { error } = await supabase.from('devis_requests').insert({
-      service_type: serviceType,
-      firstname: form.firstName,
-      lastname: form.lastName,
-      email: form.email,
-      phone: form.phone,
-      departure_city: form.cityFrom,
-      arrival_city: form.cityTo,
-      move_date: form.date || null,
-      volume: VOLUME_DB_MAP[form.volume] || 'unknown',
-      message: estimationId ? `${form.message}\n[estimation_id: ${estimationId}]` : form.message,
-    });
-
-    setLoading(false);
-    if (error) {
-      // `setErrors({ message })` était sans effet : aucun rendu n'affiche
-      // `errors.message`. Le formulaire cessait donc de tourner sans rien dire —
-      // ni confirmation, ni explication. Le message passe par le bandeau, qui
-      // lui est affiché et annoncé aux lecteurs d'écran.
-      setErreurEnvoi(
-        `Votre demande n'a pas pu être enregistrée. Merci de réessayer, ou de nous appeler au ${ENTREPRISE.telephone.affichage}.`,
-      );
-      return;
-    }
-
-    // La base a accepté la demande : c'est ici, et pas plus haut, que la
-    // conversion existe.
-    mesurerDevisEnvoye('formulaire-contact', serviceType);
-
-    notifierDevis({
-      service: form.service,
-      firstName: form.firstName,
-      lastName: form.lastName,
-      email: form.email,
-      phone: form.phone,
-      cityFrom: form.cityFrom,
-      cityTo: form.cityTo,
-      date: form.date,
-      volume: form.volume,
-      message: estimationId ? `${form.message}\n[estimation_id: ${estimationId}]` : form.message,
-    });
-    setSuccess(true);
-    setSubmitted(false);
-    setErrors({});
-    // Même remise à zéro qu'à l'ouverture : sur une page locale, la commune
-    // reste pré-remplie, sinon le second envoi repart d'un champ vide.
-    setForm(villeParDefaut ? { ...initialForm, cityFrom: villeParDefaut } : initialForm);
-    setTimeout(() => setSuccess(false), 5000);
-  };
-
-  const set = (key: keyof FormData, value: string | boolean) =>
-    setForm((prev) => ({ ...prev, [key]: value }));
-
-  const inputClass = (key: keyof FormData) =>
+  const inputClass = (key: keyof ChampsDevis) =>
     `w-full border-2 rounded-xl px-4 py-3 text-base outline-none transition-all focus:ring-2 bg-white ${
       errors[key]
         ? 'border-red-400 focus:ring-red-200 focus:border-red-400'
@@ -322,23 +218,23 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
                 </div>
               )}
 
-              <form method="POST" onSubmit={handleSubmit} className="space-y-5" noValidate
+              <form method="POST" onSubmit={envoyer} className="space-y-5" noValidate
                 toolname="demander_devis_demenagement"
                 tooldescription="Prépare une demande de devis gratuit pour un déménagement ou un garde-meubles chez Déménagements Gramme. Le formulaire est rempli mais reste soumis par la personne : renseigner les champs ne crée aucune demande."
               >
                 <div className="flex flex-wrap gap-3 mb-2">
-                  {serviceOptions.map((s) => (
+                  {SERVICES_AFFICHES.map((s) => (
                     <button
-                      key={s}
+                      key={s.valeur}
                       type="button"
-                      onClick={() => set('service', s)}
+                      onClick={() => set('service', s.valeur)}
                       className={`px-6 py-2.5 rounded-full text-sm font-bold uppercase transition-all duration-200 ${
-                        form.service === s
+                        form.service === s.valeur
                           ? 'bg-navy text-yellow'
                           : 'border-2 border-navy/20 text-navy hover:border-navy/50'
                       }`}
                     >
-                      {s}
+                      {s.libelle}
                     </button>
                   ))}
                 </div>
@@ -460,8 +356,8 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
                       className={inputClass('volume')}
                     >
                       <option value="">Volume estimé</option>
-                      {volumes.map((v) => (
-                        <option key={v} value={v}>{v}</option>
+                      {VOLUMES_AFFICHES.map((v) => (
+                        <option key={v.valeur} value={v.valeur}>{LIBELLES_VOLUME[v.valeur]}</option>
                       ))}
                     </select>
                   </div>
