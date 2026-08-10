@@ -2,26 +2,10 @@ import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Upload, Copy, Trash2, FileText, Image as ImageIcon, Search, Loader as Loader2 } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
-
-interface MediaItem {
-  id: string;
-  filename: string;
-  original_name: string;
-  public_url: string;
-  mime_type: string;
-  size_bytes: number;
-  alt_text: string | null;
-  created_at: string;
-}
-
-function formatSize(bytes: number) {
-  if (bytes < 1024) return `${bytes} B`;
-  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`;
-  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
-}
+import { displayName, formatSize, type LigneMedia } from '../lib/media';
 
 export default function MediaPage() {
-  const [media, setMedia] = useState<MediaItem[]>([]);
+  const [media, setMedia] = useState<LigneMedia[]>([]);
   const [filterType, setFilterType] = useState('Tous');
   const [search, setSearch] = useState('');
   const [copied, setCopied] = useState<string | null>(null);
@@ -39,7 +23,7 @@ export default function MediaPage() {
       .from('gramme_media')
       .select('*')
       .order('created_at', { ascending: false });
-    setMedia((data as MediaItem[]) || []);
+    setMedia((data as LigneMedia[]) || []);
     setLoading(false);
   }
 
@@ -79,7 +63,7 @@ export default function MediaPage() {
     if (fileRef.current) fileRef.current.value = '';
   }
 
-  const handleDelete = async (item: MediaItem) => {
+  const handleDelete = async (item: LigneMedia) => {
     if (!window.confirm('Supprimer ce fichier ?')) return;
     await supabase.storage.from('media').remove([item.filename.includes('/') ? item.filename : `uploads/${item.filename}`]);
     await supabase.from('gramme_media').delete().eq('id', item.id);
@@ -97,7 +81,7 @@ export default function MediaPage() {
   const filtered = media.filter((m) => {
     if (filterType === 'Images' && !isImage(m.mime_type)) return false;
     if (filterType === 'Documents' && isImage(m.mime_type)) return false;
-    if (search && !m.original_name.toLowerCase().includes(search.toLowerCase())) return false;
+    if (search && !displayName(m).toLowerCase().includes(search.toLowerCase())) return false;
     return true;
   });
 
@@ -172,7 +156,7 @@ export default function MediaPage() {
                 {isImage(m.mime_type) ? (
                   <img
                     src={m.public_url}
-                    alt={m.alt_text || m.original_name}
+                    alt={m.alt_text || displayName(m)}
                     className="w-full h-full object-cover"
                   />
                 ) : (
@@ -196,7 +180,9 @@ export default function MediaPage() {
                 </div>
               </div>
               <div className="p-3">
-                <p className="text-[#132073] text-xs font-bold truncate">{m.original_name}</p>
+                <p className="text-[#132073] text-xs font-bold truncate" title={displayName(m)}>
+                  {displayName(m)}
+                </p>
                 <div className="flex items-center justify-between mt-1">
                   <span className="text-[#85868C] text-[11px]">{formatSize(m.size_bytes || 0)}</span>
                   {isImage(m.mime_type) ? (
