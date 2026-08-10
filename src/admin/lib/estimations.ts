@@ -43,6 +43,7 @@ export interface LigneEstimation {
   floor: number | null;
   has_elevator: boolean | null;
   detected_items: DetailsDetectes | null;
+  corrected_items: DetailsDetectes | null;
   volume_m3: number | null;
   volume_min: number | null;
   volume_max: number | null;
@@ -78,8 +79,21 @@ export function estContactable(e: LigneEstimation): boolean {
   return Boolean(e.lead_email || e.lead_phone);
 }
 
+/** L'inventaire du modèle, jamais réécrit. */
 export function pieces(e: LigneEstimation): PieceAnalysee[] {
   return e.detected_items?.rooms ?? [];
+}
+
+/**
+ * L'inventaire qui fait foi : celui de l'opérateur s'il a corrigé, sinon celui
+ * du modèle. Même rôle que `volumeRetenu` pour les volumes.
+ */
+export function piecesRetenues(e: LigneEstimation): PieceAnalysee[] {
+  return e.corrected_items?.rooms ?? pieces(e);
+}
+
+export function estCorrigee(e: LigneEstimation): boolean {
+  return Boolean(e.corrected_items?.rooms?.length);
 }
 
 /** Une estimation dont la date de purge est passée mais que rien n'a supprimée. */
