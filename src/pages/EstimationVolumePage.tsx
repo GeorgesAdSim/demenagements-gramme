@@ -12,6 +12,7 @@ import { supabase } from '../lib/supabase';
 import { notifierDevis } from '../lib/notifierDevis';
 import { compressImage } from '../lib/imageCompression';
 import { mesurerDevisEnvoye } from '../lib/mesure';
+import { ENTREPRISE } from '../data/entreprise';
 import {
   ITEM_LABELS, VOLUME_TABLE, SPECIAL_ITEMS, computeRoomVolumes, computeTotals,
   type DetectedItem,
@@ -154,6 +155,12 @@ export default function EstimationVolumePage() {
   const [callbackMode, setCallbackMode] = useState(false);
   const [callbackForm, setCallbackForm] = useState({ name: '', phone: '' });
   const [callbackSent, setCallbackSent] = useState(false);
+  // Échec de l'enregistrement du rappel. Sans lui, la confirmation s'affichait
+  // même quand la demande n'avait pas été enregistrée.
+  const [callbackErreur, setCallbackErreur] = useState<string | null>(null);
+  // Ce formulaire était le seul des quatre à ne pas se verrouiller pendant
+  // l'envoi : deux clics produisaient deux demandes de rappel.
+  const [callbackEnCours, setCallbackEnCours] = useState(false);
 
   const fileInputs = useRef<Record<string, HTMLInputElement | null>>({});
 
@@ -308,7 +315,10 @@ export default function EstimationVolumePage() {
   };
 
   const requestCallback = async () => {
-    if (!result || !callbackForm.phone.trim()) return;
+    if (!result || !callbackForm.phone.trim() || callbackEnCours) return;
+    setCallbackErreur(null);
+    setCallbackEnCours(true);
+    try {
     await supabase.functions.invoke('estimate-volume', {
       body: { action: 'lead', estimation_id: result.estimation_id, lead_phone: callbackForm.phone, lead_email: callbackForm.name },
     }).catch(() => {});
@@ -341,8 +351,21 @@ export default function EstimationVolumePage() {
         volume: totals ? `${totals.volumeFinal.toFixed(0)} m³ (estimé)` : '',
         message: `Demande de rappel depuis l'estimateur photos. Référence d'estimation : ${result.estimation_id}`,
       });
+      setCallbackSent(true);
+      return;
     }
-    setCallbackSent(true);
+
+    // Hors de ce cas, la demande n'est pas enregistrée : on ne confirme donc
+    // pas. `setCallbackSent(true)` était appelé quoi qu'il arrive, et la
+    // personne repartait persuadée qu'on la rappellerait.
+      setCallbackErreur(
+        `Votre demande de rappel n'a pas pu être enregistrée. Merci de réessayer, ou de nous appeler au ${ENTREPRISE.telephone.affichage}.`,
+      );
+    } finally {
+      // Dans tous les cas : sans quoi un échec laisserait le bouton bloqué et
+      // la personne sans recours.
+      setCallbackEnCours(false);
+    }
   };
 
   const confidenceBadge = result && (
@@ -676,9 +699,19 @@ export default function EstimationVolumePage() {
                   <input id="cb-phone" type="tel" placeholder="Votre téléphone" value={callbackForm.phone}
                     onChange={(e) => setCallbackForm((f) => ({ ...f, phone: e.target.value }))}
                     className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-yellow outline-none" />
-                  <button type="button" onClick={requestCallback} disabled={!callbackForm.phone.trim()}
+                  {callbackErreur && (
+                    <div role="alert" className="rounded-xl border-2 border-red-300 bg-red-50 px-4 py-3">
+                      <p className="text-red-700 text-sm font-semibold">{callbackErreur}</p>
+                    </div>
+                  )}
+                  <button type="button" onClick={requestCallback}
+                    disabled={!callbackForm.phone.trim() || callbackEnCours}
                     className="w-full bg-navy text-yellow font-bold uppercase py-3 rounded-xl text-sm disabled:opacity-40 focus:outline-none focus:ring-2 focus:ring-navy">
-                    <Phone className="w-4 h-4 inline mr-2" />Me faire rappeler
+                    {callbackEnCours ? (
+                      <><Loader2 className="w-4 h-4 inline mr-2 animate-spin" />Envoi…</>
+                    ) : (
+                      <><Phone className="w-4 h-4 inline mr-2" />Me faire rappeler</>
+                    )}
                   </button>
                 </div>
               )

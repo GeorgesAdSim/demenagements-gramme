@@ -134,6 +134,10 @@ export default function ContactDevisPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  // Message d'échec de l'enregistrement, affiché au-dessus du bouton d'envoi.
+  // Il manquait : la page confirmait quoi qu'il arrive, et le visiteur repartait
+  // convaincu d'avoir déposé une demande qui n'existait nulle part.
+  const [erreurEnvoi, setErreurEnvoi] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -157,6 +161,7 @@ export default function ContactDevisPage() {
     ev.preventDefault();
     setSubmitted(true);
     if (!validate()) return;
+    setErreurEnvoi(null);
     setLoading(true);
 
     const { error } = await supabase.from('devis_requests').insert({
@@ -172,26 +177,36 @@ export default function ContactDevisPage() {
       message: form.message,
     });
 
-    // L'affichage du succès ne dépend pas de `error` — c'était déjà le cas
-    // avant, et le changer relèverait d'un autre chantier. La conversion, elle,
-    // ne se compte que si la base a bien enregistré la demande.
-    if (!error) {
-      mesurerDevisEnvoye('contact-devis', form.service);
-      notifierDevis({
-        service: form.service,
-        firstName: form.firstName,
-        lastName: form.lastName,
-        email: form.email,
-        phone: form.phone,
-        cityFrom: form.cityFrom,
-        cityTo: form.cityTo,
-        date: form.date,
-        volume: form.volume,
-        message: form.message,
-      });
+    setLoading(false);
+
+    // La confirmation dépend maintenant du résultat de l'insertion. Elle ne le
+    // faisait pas : une contrainte violée, une base indisponible ou un réseau
+    // coupé produisaient un « merci » identique à un succès, et la demande
+    // n'existait ni en base ni dans une boîte mail. C'est ce qui a rendu
+    // invisibles, plusieurs heures durant, les demandes portant « International »
+    // ou « Monte-Meubles » — deux valeurs qu'une contrainte trop étroite
+    // refusait.
+    if (error) {
+      setErreurEnvoi(
+        `Votre demande n'a pas pu être enregistrée. Merci de réessayer, ou de nous appeler au ${ENTREPRISE.telephone.affichage}.`,
+      );
+      return;
     }
 
-    setLoading(false);
+    mesurerDevisEnvoye('contact-devis', form.service);
+    notifierDevis({
+      service: form.service,
+      firstName: form.firstName,
+      lastName: form.lastName,
+      email: form.email,
+      phone: form.phone,
+      cityFrom: form.cityFrom,
+      cityTo: form.cityTo,
+      date: form.date,
+      volume: form.volume,
+      message: form.message,
+    });
+
     setSuccess(true);
     setSubmitted(false);
     setErrors({});
@@ -460,6 +475,15 @@ export default function ContactDevisPage() {
                       </label>
                       {submitted && errors.privacy && <p className="text-red-500 text-xs mt-1 ml-7">{errors.privacy}</p>}
                     </div>
+
+                    {/* Échec de l'enregistrement. `role="alert"` pour que l'assistance vocale
+                        l'annonce : sans lui, la personne relance le même envoi sans savoir ce
+                        qui a échoué. */}
+                    {erreurEnvoi && (
+                      <div role="alert" className="mb-4 rounded-xl border-2 border-red-300 bg-red-50 px-4 py-3">
+                        <p className="text-red-700 text-sm font-semibold">{erreurEnvoi}</p>
+                      </div>
+                    )}
 
                     <motion.button
                       type="submit"

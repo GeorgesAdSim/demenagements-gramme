@@ -8,7 +8,7 @@ import { SITE_IMAGES } from '../data/images';
 import type { HomepageContent } from '../lib/types';
 import { anneesExperience } from '../lib/anciennete';
 import { mesurerDevisEnvoye, mesurerEstimationPhotos } from '../lib/mesure';
-import { ADRESSE_COURTE } from '../data/entreprise';
+import { ADRESSE_COURTE, ENTREPRISE } from '../data/entreprise';
 
 const FACEBOOK_URL = 'https://www.facebook.com/GrammeDemenagements';
 
@@ -101,6 +101,10 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  // Message d'échec de l'enregistrement, affiché au-dessus du bouton d'envoi.
+  // Il manquait : la page confirmait quoi qu'il arrive, et le visiteur repartait
+  // convaincu d'avoir déposé une demande qui n'existait nulle part.
+  const [erreurEnvoi, setErreurEnvoi] = useState<string | null>(null);
 
   const validate = (): boolean => {
     const e: typeof errors = {};
@@ -132,6 +136,7 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
     ev.preventDefault();
     setSubmitted(true);
     if (!validate()) return;
+    setErreurEnvoi(null);
     setLoading(true);
 
     const serviceType = SERVICE_DB_MAP[form.service] || 'demenagement';
@@ -151,7 +156,13 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
 
     setLoading(false);
     if (error) {
-      setErrors({ message: 'Une erreur est survenue. Merci de réessayer ou de nous appeler au 04 264 50 16.' });
+      // `setErrors({ message })` était sans effet : aucun rendu n'affiche
+      // `errors.message`. Le formulaire cessait donc de tourner sans rien dire —
+      // ni confirmation, ni explication. Le message passe par le bandeau, qui
+      // lui est affiché et annoncé aux lecteurs d'écran.
+      setErreurEnvoi(
+        `Votre demande n'a pas pu être enregistrée. Merci de réessayer, ou de nous appeler au ${ENTREPRISE.telephone.affichage}.`,
+      );
       return;
     }
 
@@ -497,6 +508,15 @@ export default function ContactForm({ data, variant = 'complet', villeParDefaut 
                   </label>
                   {submitted && errors.privacy && <p className="text-red-500 text-xs mt-1">{errors.privacy}</p>}
                 </div>
+
+                {/* Échec de l'enregistrement. `role="alert"` pour que l'assistance vocale
+                    l'annonce : sans lui, la personne relance le même envoi sans savoir ce
+                    qui a échoué. */}
+                {erreurEnvoi && (
+                  <div role="alert" className="mb-4 rounded-xl border-2 border-red-300 bg-red-50 px-4 py-3">
+                    <p className="text-red-700 text-sm font-semibold">{erreurEnvoi}</p>
+                  </div>
+                )}
 
                 <motion.button
                   type="submit"
