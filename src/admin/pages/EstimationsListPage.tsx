@@ -4,13 +4,17 @@ import { Eye, Archive, Trash2, X, AlertTriangle, Loader as Loader2 } from 'lucid
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import { supabase } from '../../lib/supabase';
+import { computeTotals } from '../../lib/volumeBareme';
+import InventaireEditable from '../components/InventaireEditable';
 import {
   estContactable,
+  estCorrigee,
   estPerimee,
-  pieces,
+  piecesRetenues,
   urlsPhotosSignees,
   volumeRetenu,
   type LigneEstimation,
+  type PieceAnalysee,
 } from '../lib/estimations';
 
 // Les quatre valeurs de `estimations_statut_valide`. Toute entrée ajoutée ici
@@ -67,7 +71,7 @@ export default function EstimationsListPage() {
   const [contactablesSeules, setContactablesSeules] = useState(false);
   const [selected, setSelected] = useState<LigneEstimation | null>(null);
   const [notes, setNotes] = useState('');
-  const [ajuste, setAjuste] = useState('');
+  const [inventaire, setInventaire] = useState<PieceAnalysee[]>([]);
   const [photos, setPhotos] = useState<string[]>([]);
   const [photosEtat, setPhotosEtat] = useState<'vide' | 'chargement' | 'ok' | 'erreur'>('vide');
   const [loading, setLoading] = useState(true);
@@ -99,6 +103,13 @@ export default function EstimationsListPage() {
 
   const anonymes = estimations.filter((e) => !estContactable(e)).length;
 
+  // Recalcul du barème à chaque frappe : c'est tout l'intérêt d'éditer
+  // l'inventaire plutôt que de saisir un nombre. La confiance ne sert qu'à la
+  // fourchette, le volume central n'en dépend pas.
+  const totalRecalcule = selected
+    ? computeTotals(inventaire, selected.confidence || 'low').volumeFinal
+    : 0;
+
   async function majStatut(id: string, status: string) {
     const { error: majError } = await supabase
       .from('volume_estimations')
@@ -113,18 +124,17 @@ export default function EstimationsListPage() {
   }
 
   async function enregistrerFiche(e: LigneEstimation) {
-    // Une chaîne vide efface la correction et rend la main au modèle.
-    const brut = ajuste.trim().replace(',', '.');
-    const valeur = brut === '' ? null : Number(brut);
-    if (valeur !== null && (!Number.isFinite(valeur) || valeur <= 0)) {
-      setError('Le volume ajusté doit être un nombre supérieur à zéro, ou vide.');
-      return;
-    }
+    // Le volume enregistré est recalculé par le barème à partir de l'inventaire
+    // corrigé — jamais saisi. Tant que l'opérateur n'a rien touché, on ne pose
+    // ni correction ni volume ajusté : la valeur du modèle continue de faire foi.
+    const modifie = JSON.stringify(inventaire) !== JSON.stringify(piecesRetenues(e));
+    const corrige = modifie || estCorrigee(e);
 
     const patch = {
       notes: notes.trim() || null,
-      volume_ajuste: valeur,
-      manually_adjusted: valeur !== null,
+      corrected_items: corrige ? { rooms: inventaire } : null,
+      volume_ajuste: corrige ? Number(totalRecalcule.toFixed(1)) : null,
+      manually_adjusted: corrige,
       status: 'traite',
     };
     const { error: majError } = await supabase
@@ -152,7 +162,9 @@ export default function EstimationsListPage() {
   async function ouvrirFiche(e: LigneEstimation) {
     setSelected(e);
     setNotes(e.notes || '');
-    setAjuste(e.volume_ajuste === null || e.volume_ajuste === undefined ? '' : String(e.volume_ajuste));
+    // Copie profonde : l'édition ne doit pas modifier la ligne du tableau tant
+    // que rien n'est enregistré.
+    setInventaire(JSON.parse(JSON.stringify(piecesRetenues(e))));
     setPhotos([]);
 
     if (e.status === 'new') majStatut(e.id, 'read');
@@ -175,7 +187,7 @@ export default function EstimationsListPage() {
   function fermer() {
     setSelected(null);
     setNotes('');
-    setAjuste('');
+    setInventaire([]);
     setPhotos([]);
     setPhotosEtat('vide');
   }
@@ -359,44 +371,29 @@ export default function EstimationsListPage() {
                 </div>
                 <div>
                   <span className="text-[#85868C] text-xs uppercase tracking-widest block">Retenu</span>
-                  <p className="font-black text-[#132073] text-lg">{m3(volumeRetenu(selected))}</p>
+                  <p className="font-black text-[#132073] text-lg">{m3(totalRecalcule)}</p>
+                  {/* L'écart n'est lisible que si les deux nombres sont côte à
+                      côte : c'est lui, et pas le total, qui dit si le modèle
+                      s'est trompé. */}
+                  {selected.volume_m3 !== null && Math.abs(totalRecalcule - selected.volume_m3) >= 0.1 && (
+                    <span className="text-[11px] font-bold text-[#85868C]">
+                      {totalRecalcule > selected.volume_m3 ? '+' : '−'}
+                      {Math.abs(totalRecalcule - selected.volume_m3).toFixed(1)} m³ vs modèle
+                    </span>
+                  )}
                 </div>
               </div>
 
               <div className="mb-6">
-                <span className="text-[#85868C] text-xs uppercase tracking-widest block mb-2">Détail par pièce</span>
-                {pieces(selected).length === 0 ? (
-                  <p className="text-[#85868C] text-sm">Aucun détail enregistré.</p>
-                ) : (
-                  <div className="space-y-3">
-                    {pieces(selected).map((p) => (
-                      <div key={p.id} className={`rounded-xl border p-3 ${p.readable ? 'border-[#E5E3DF]' : 'border-red-200 bg-red-50'}`}>
-                        <div className="flex items-center justify-between">
-                          <p className="font-bold text-[#132073] text-sm">{p.label}</p>
-                          <span className="text-[#85868C] text-xs">
-                            {m3(p.volume_meubles)} + {m3(p.volume_cache)} caché
-                          </span>
-                        </div>
-                        {!p.readable && (
-                          <p className="text-red-600 text-xs mt-1">Analyse échouée{p.error ? ` — ${p.error}` : ''}</p>
-                        )}
-                        {p.items.length > 0 && (
-                          <p className="text-[#333333] text-xs mt-2">
-                            {p.items.map((it) => `${it.qty}× ${it.id}${it.fill ? ` (${it.fill})` : ''}`).join(', ')}
-                          </p>
-                        )}
-                        {p.special_handling.length > 0 && (
-                          <p className="text-[#132073] text-xs mt-1 font-bold">Manutention : {p.special_handling.join(', ')}</p>
-                        )}
-                        {p.warnings.length > 0 && (
-                          <ul className="text-[#85868C] text-xs mt-1 list-disc list-inside">
-                            {p.warnings.map((w, k) => <li key={k}>{w}</li>)}
-                          </ul>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                )}
+                <div className="flex items-baseline justify-between mb-2">
+                  <span className="text-[#85868C] text-xs uppercase tracking-widest">
+                    Inventaire {estCorrigee(selected) && '— corrigé'}
+                  </span>
+                  <span className="text-[#85868C] text-[11px]">
+                    Quantités et remplissage éditables — le volume se recalcule
+                  </span>
+                </div>
+                <InventaireEditable pieces={inventaire} onChange={setInventaire} />
               </div>
 
               <div className="mb-6">
@@ -417,18 +414,7 @@ export default function EstimationsListPage() {
                 )}
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                <div>
-                  <label className="block text-[13px] font-bold text-[#132073] mb-1">Volume ajusté (m³)</label>
-                  <input
-                    type="text"
-                    inputMode="decimal"
-                    value={ajuste}
-                    onChange={(ev) => setAjuste(ev.target.value)}
-                    placeholder="Laisser vide pour garder la valeur du modèle"
-                    className="w-full border border-[#E5E3DF] rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#132073]"
-                  />
-                </div>
+              <div className="mb-6">
                 <div>
                   <label className="block text-[13px] font-bold text-[#132073] mb-1">Note interne</label>
                   <textarea
