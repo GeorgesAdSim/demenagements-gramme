@@ -46,6 +46,7 @@ export default function PageEditorPage() {
   const [loading, setLoading] = useState(!isNew);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const [title, setTitle] = useState('');
   const [slug, setSlug] = useState('');
@@ -77,11 +78,18 @@ export default function PageEditorPage() {
 
   async function loadPage(pageId: string) {
     setLoading(true);
-    const { data } = await supabase
+    setError(null);
+    const { data, error: lectureError } = await supabase
       .from('pages')
       .select('*')
       .eq('id', pageId)
       .maybeSingle();
+
+    if (lectureError) {
+      setError(`Impossible de charger la page : ${lectureError.message}`);
+      setLoading(false);
+      return;
+    }
 
     if (data) {
       setTitle(data.title || '');
@@ -109,14 +117,37 @@ export default function PageEditorPage() {
       query.neq('id', pageId);
     }
 
-    const { data } = await query;
+    // Cet échec-là ne bloque pas l'édition, mais il ne doit pas se déguiser en
+    // « aucune autre page dans ce cocon » : le bandeau reste le seul endroit où
+    // l'on apprend que la liste est incomplète. On ne l'efface pas ici, pour ne
+    // pas masquer une erreur d'enregistrement plus grave.
+    const { data, error: coconError } = await query;
+    if (coconError) {
+      setError(`Impossible de charger les autres pages du cocon : ${coconError.message}`);
+      setCoconPages([]);
+      return;
+    }
     setCoconPages(data || []);
   }
 
   const save = useCallback(async (publish?: boolean) => {
     setSaving(true);
+    setError(null);
     const status = publish !== undefined ? (publish ? 'published' : 'draft') : (published ? 'published' : 'draft');
 
+    // `structured_data` et `published_at` figuraient ici et n'existent dans
+    // aucune migration : les colonnes de `pages` sont slug, title, content,
+    // cocon, meta_*, og_image, canonical_url, h1, status, page_type,
+    // is_deletable, ordre, created_at, updated_at. PostgREST répondait donc
+    // PGRST204 à chaque enregistrement — le même refus que celui de la
+    // médiathèque en PR #48 — et rien ne le lisait : l'écran affichait
+    // « Sauvegardé », l'autosave répétait l'échec toutes les 30 s, et le
+    // contenu était perdu au rechargement.
+    //
+    // Elles sont retirées plutôt qu'ajoutées au schéma. `structured_data`
+    // aurait stocké le même JSON-LD constant pour toutes les pages — le
+    // SeoPanel l'affiche en lecture seule, il n'est pas éditable — et
+    // `published_at` n'était lu nulle part dans le dépôt.
     const payload = {
       title,
       slug,
@@ -127,15 +158,23 @@ export default function PageEditorPage() {
       meta_description: metaDesc,
       og_image: ogImage,
       canonical_url: canonicalUrl,
-      structured_data: JSON.parse(DEFAULT_JSON_LD),
       updated_at: new Date().toISOString(),
-      ...(status === 'published' && !published ? { published_at: new Date().toISOString() } : {}),
     };
 
     if (pageId) {
-      await supabase.from('pages').update(payload).eq('id', pageId);
+      const { error: majError } = await supabase.from('pages').update(payload).eq('id', pageId);
+      if (majError) {
+        setError(`Enregistrement refusé : ${majError.message}`);
+        setSaving(false);
+        return;
+      }
     } else {
-      const { data } = await supabase.from('pages').insert(payload).select('id').maybeSingle();
+      const { data, error: creaError } = await supabase.from('pages').insert(payload).select('id').maybeSingle();
+      if (creaError) {
+        setError(`Création refusée : ${creaError.message}`);
+        setSaving(false);
+        return;
+      }
       if (data) {
         setPageId(data.id);
         window.history.replaceState(null, '', `/admin/pages/${data.id}/edit`);
@@ -181,6 +220,13 @@ export default function PageEditorPage() {
           )}
         </div>
       </div>
+
+      {error && (
+        <div className="mx-4 lg:mx-6 mt-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3">
+          <p className="text-red-700 text-sm font-bold">Erreur</p>
+          <p className="text-red-600 text-xs mt-1 break-words">{error}</p>
+        </div>
+      )}
 
       <div className="flex flex-col lg:flex-row">
         <div className="flex-1 lg:w-[65%] p-4 lg:p-6">

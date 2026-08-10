@@ -29,17 +29,31 @@ export default function SettingsPage() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [chargementKo, setChargementKo] = useState(false);
 
   useEffect(() => {
     loadSettings();
   }, []);
 
   async function loadSettings() {
-    const { data } = await supabase
+    setError(null);
+    setChargementKo(false);
+    const { data, error: lectureError } = await supabase
       .from('site_settings')
       .select('*')
       .limit(1)
       .maybeSingle();
+    if (lectureError) {
+      // Sans ce test, une lecture refusée laissait le formulaire à ses valeurs
+      // initiales — toutes vides. Enregistrer par-dessus écrasait alors les
+      // coordonnées de l'entreprise par du vide, sans que rien n'ait signalé
+      // que le chargement avait échoué.
+      setError(`Impossible de charger les paramètres : ${lectureError.message}`);
+      setChargementKo(true);
+      setLoading(false);
+      return;
+    }
     if (data) {
       setSettings(data);
     }
@@ -51,11 +65,25 @@ export default function SettingsPage() {
 
   const handleSave = async () => {
     setSaving(true);
+    setError(null);
     const { id, ...payload } = settings;
     if (id) {
-      await supabase.from('site_settings').update({ ...payload, updated_at: new Date().toISOString() }).eq('id', id);
+      const { error: majError } = await supabase
+        .from('site_settings')
+        .update({ ...payload, updated_at: new Date().toISOString() })
+        .eq('id', id);
+      if (majError) {
+        setError(`Enregistrement refusé : ${majError.message}`);
+        setSaving(false);
+        return;
+      }
     } else {
-      const { data } = await supabase.from('site_settings').insert(payload).select('id').maybeSingle();
+      const { data, error: creaError } = await supabase.from('site_settings').insert(payload).select('id').maybeSingle();
+      if (creaError) {
+        setError(`Enregistrement refusé : ${creaError.message}`);
+        setSaving(false);
+        return;
+      }
       if (data) setSettings((prev) => ({ ...prev, id: data.id }));
     }
     setSaving(false);
@@ -78,6 +106,19 @@ export default function SettingsPage() {
       <div className="bg-white border-b border-[#E5E3DF] px-4 lg:px-8 py-5">
         <h1 className="font-black uppercase text-[#132073] text-xl">PARAMÈTRES DU SITE</h1>
       </div>
+
+      {error && (
+        <div className="mx-4 lg:mx-8 mt-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3">
+          <p className="text-red-700 text-sm font-bold">Erreur</p>
+          <p className="text-red-600 text-xs mt-1 break-words">{error}</p>
+          {chargementKo && (
+            <p className="text-red-600 text-xs mt-2">
+              L'enregistrement est bloqué : le formulaire est vide parce que rien n'a pu être lu,
+              et l'enregistrer écraserait les coordonnées de l'entreprise. Rechargez la page.
+            </p>
+          )}
+        </div>
+      )}
 
       <div className="bg-white rounded-2xl mx-4 lg:mx-8 mt-6 p-6 lg:p-8 border border-[#E5E3DF]">
         <h3 className="font-bold text-[#132073] mb-6">Informations société</h3>
@@ -120,7 +161,7 @@ export default function SettingsPage() {
       <div className="mx-4 lg:mx-8 mt-6 mb-8">
         <button
           onClick={handleSave}
-          disabled={saving}
+          disabled={saving || chargementKo}
           className="bg-[#F0B800] text-[#132073] font-bold uppercase rounded-lg px-8 py-3 hover:bg-[#EAB000] transition-colors disabled:opacity-70 flex items-center gap-2"
         >
           {saving && <Loader2 className="w-4 h-4 animate-spin" />}
