@@ -48,6 +48,7 @@ export default function SitePageEditorPage() {
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const [page, setPage] = useState<PageRow | null>(null);
   const [content, setContent] = useState<Record<string, unknown>>({});
   const [metaTitle, setMetaTitle] = useState('');
@@ -61,11 +62,21 @@ export default function SitePageEditorPage() {
 
   async function loadPage(pageId: string) {
     setLoading(true);
-    const { data } = await supabase
+    setSaveError(null);
+    const { data, error: lectureError } = await supabase
       .from('pages')
       .select('*')
       .eq('id', pageId)
       .maybeSingle();
+
+    if (lectureError) {
+      // `page` reste null, donc l'écran affiche « Page introuvable » et
+      // l'autosave ne démarre pas : sans ce test, une lecture refusée passait
+      // pour une page absente et l'éditeur s'ouvrait sur un contenu vide.
+      setLoadError(lectureError.message);
+      setLoading(false);
+      return;
+    }
 
     if (data) {
       setPage(data as PageRow);
@@ -95,8 +106,11 @@ export default function SitePageEditorPage() {
     setSaving(false);
 
     if (error) {
-      setSaveError('Erreur lors de la sauvegarde');
-      setTimeout(() => setSaveError(null), 5000);
+      // Le message de la base est repris tel quel : « Erreur lors de la
+      // sauvegarde » ne disait ni quelle colonne ni quelle contrainte refusait
+      // l'écriture, et l'autosave rejouait l'échec toutes les 30 s.
+      setSaveError(`Enregistrement refusé : ${error.message}`);
+      setTimeout(() => setSaveError(null), 10000);
     } else {
       const { clearSitePageCache } = await import('../../lib/useSitePageContent');
       clearSitePageCache(page.slug);
@@ -159,7 +173,16 @@ export default function SitePageEditorPage() {
 
   if (!page) {
     return (
-      <div className="p-8 text-center text-[#85868C]">Page introuvable</div>
+      <div className="p-8 text-center">
+        {loadError ? (
+          <div className="mx-auto max-w-xl rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-left">
+            <p className="text-red-700 text-sm font-bold">Impossible de charger la page</p>
+            <p className="text-red-600 text-xs mt-1 break-words">{loadError}</p>
+          </div>
+        ) : (
+          <span className="text-[#85868C]">Page introuvable</span>
+        )}
+      </div>
     );
   }
 
@@ -183,11 +206,6 @@ export default function SitePageEditorPage() {
               Sauvegardé
             </span>
           )}
-          {saveError && (
-            <span className="bg-red-100 text-red-700 rounded-full px-3 py-1 text-xs font-bold">
-              {saveError}
-            </span>
-          )}
           <button
             onClick={() => save()}
             disabled={saving}
@@ -198,6 +216,13 @@ export default function SitePageEditorPage() {
           </button>
         </div>
       </div>
+
+      {saveError && (
+        <div className="mx-4 lg:mx-6 mt-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3">
+          <p className="text-red-700 text-sm font-bold">Erreur</p>
+          <p className="text-red-600 text-xs mt-1 break-words">{saveError}</p>
+        </div>
+      )}
 
       <div className="flex flex-col lg:flex-row">
         <div className="flex-1 lg:w-[65%] p-4 lg:p-6">

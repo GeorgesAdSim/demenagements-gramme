@@ -50,6 +50,7 @@ export default function PagesListPage() {
   const [page, setPage] = useState(1);
   const [pages, setPages] = useState<Page[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const perPage = 8;
 
   useEffect(() => {
@@ -58,10 +59,19 @@ export default function PagesListPage() {
 
   async function fetchPages() {
     setLoading(true);
-    const { data } = await supabase
+    setError(null);
+    const { data, error: lectureError } = await supabase
       .from('pages')
       .select('id, title, slug, cocon, status, updated_at, page_type, is_deletable')
       .order('updated_at', { ascending: false });
+    if (lectureError) {
+      // Une lecture refusée affichait « Aucune page trouvée » et une section
+      // « Pages du site » vide : indiscernable d'une base réellement vide.
+      setError(`Impossible de charger les pages : ${lectureError.message}`);
+      setPages([]);
+      setLoading(false);
+      return;
+    }
     setPages(data || []);
     setLoading(false);
   }
@@ -82,7 +92,15 @@ export default function PagesListPage() {
 
   const handleDelete = async (id: string) => {
     if (!window.confirm('Supprimer cette page ?')) return;
-    await supabase.from('pages').delete().eq('id', id);
+    setError(null);
+    // Même schéma que le bouton « Archiver » des devis corrigé en PR #50 : la
+    // ligne disparaissait de l'écran quoi qu'il arrive, et réapparaissait au
+    // rechargement si la base avait refusé la suppression.
+    const { error: supprError } = await supabase.from('pages').delete().eq('id', id);
+    if (supprError) {
+      setError(`Suppression refusée : ${supprError.message}`);
+      return;
+    }
     setPages((prev) => prev.filter((p) => p.id !== id));
   };
 
@@ -97,6 +115,13 @@ export default function PagesListPage() {
           + NOUVELLE PAGE
         </button>
       </div>
+
+      {error && (
+        <div className="mx-4 lg:mx-8 mt-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3">
+          <p className="text-red-700 text-sm font-bold">Erreur</p>
+          <p className="text-red-600 text-xs mt-1 break-words">{error}</p>
+        </div>
+      )}
 
       {loading ? (
         <div className="flex items-center justify-center py-20">

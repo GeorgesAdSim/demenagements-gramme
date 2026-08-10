@@ -31,15 +31,21 @@ const STATUS_MAP: Record<string, { label: string; cls: string }> = {
 
 export default function DashboardPage() {
   const navigate = useNavigate();
-  const [stats, setStats] = useState({ pages: 0, newDevis: 0, media: 0 });
+  const [stats, setStats] = useState<{
+    pages: number | null;
+    newDevis: number | null;
+    media: number | null;
+  }>({ pages: 0, newDevis: 0, media: 0 });
   const [recentDevis, setRecentDevis] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     loadDashboard();
   }, []);
 
   async function loadDashboard() {
+    setError(null);
     const [pagesRes, devisNewRes, mediaRes, recentDevisRes] = await Promise.all([
       supabase.from('pages').select('id', { count: 'exact', head: true }).eq('status', 'published'),
       supabase.from('devis_requests').select('id', { count: 'exact', head: true }).eq('status', 'new'),
@@ -47,19 +53,36 @@ export default function DashboardPage() {
       supabase.from('devis_requests').select('*').order('created_at', { ascending: false }).limit(5),
     ]);
 
+    // Aucune de ces quatre lectures n'était testée. `count || 0` et
+    // `data || []` donnaient le même écran qu'une base vide : « 0 nouveaux
+    // devis » est le pire des affichages faux ici, puisque c'est le compteur
+    // sur lequel on décide qu'il n'y a rien à traiter.
+    const echecs = [
+      ['pages publiées', pagesRes.error],
+      ['nouveaux devis', devisNewRes.error],
+      ['fichiers médias', mediaRes.error],
+      ['derniers devis', recentDevisRes.error],
+    ].filter(([, e]) => e) as [string, { message: string }][];
+
+    if (echecs.length) {
+      setError(echecs.map(([quoi, e]) => `${quoi} : ${e.message}`).join(' ; '));
+    }
+
+    // Un compteur dont la lecture a échoué vaut null, pas zéro : il s'affiche
+    // « — ». Le tiret dit « inconnu », le zéro affirmait « rien ».
     setStats({
-      pages: pagesRes.count || 0,
-      newDevis: devisNewRes.count || 0,
-      media: mediaRes.count || 0,
+      pages: pagesRes.error ? null : pagesRes.count ?? 0,
+      newDevis: devisNewRes.error ? null : devisNewRes.count ?? 0,
+      media: mediaRes.error ? null : mediaRes.count ?? 0,
     });
     setRecentDevis(recentDevisRes.data || []);
     setLoading(false);
   }
 
   const statCards = [
-    { icon: FileText, value: stats.pages.toString(), label: 'Pages publiées', color: 'bg-[#F0B800]/20' },
-    { icon: Inbox, value: stats.newDevis.toString(), label: 'Nouveaux devis', color: 'bg-red-100', badge: stats.newDevis > 0 },
-    { icon: Image, value: stats.media.toString(), label: 'Fichiers médias', color: 'bg-[#F0B800]/20' },
+    { icon: FileText, value: stats.pages ?? '—', label: 'Pages publiées', color: 'bg-[#F0B800]/20' },
+    { icon: Inbox, value: stats.newDevis ?? '—', label: 'Nouveaux devis', color: 'bg-red-100', badge: (stats.newDevis ?? 0) > 0 },
+    { icon: Image, value: stats.media ?? '—', label: 'Fichiers médias', color: 'bg-[#F0B800]/20' },
   ];
 
   if (loading) {
@@ -81,6 +104,15 @@ export default function DashboardPage() {
           + NOUVELLE PAGE
         </button>
       </div>
+
+      {error && (
+        <div className="mx-4 lg:mx-8 mt-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3">
+          <p className="text-red-700 text-sm font-bold">
+            Le tableau de bord est incomplet
+          </p>
+          <p className="text-red-600 text-xs mt-1 break-words">{error}</p>
+        </div>
+      )}
 
       <motion.div
         variants={stagger}

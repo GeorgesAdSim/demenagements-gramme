@@ -11,6 +11,7 @@ export default function MediaPage() {
   const [copied, setCopied] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [uploading, setUploading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -19,10 +20,16 @@ export default function MediaPage() {
 
   async function fetchMedia() {
     setLoading(true);
-    const { data } = await supabase
+    const { data, error: lectureError } = await supabase
       .from('gramme_media')
       .select('*')
       .order('created_at', { ascending: false });
+    if (lectureError) {
+      setError(`Impossible de charger la médiathèque : ${lectureError.message}`);
+      setMedia([]);
+      setLoading(false);
+      return;
+    }
     setMedia((data as LigneMedia[]) || []);
     setLoading(false);
   }
@@ -31,6 +38,12 @@ export default function MediaPage() {
     const files = e.target.files;
     if (!files?.length) return;
     setUploading(true);
+    setError(null);
+
+    // Les échecs sont accumulés puis affichés ensemble, comme dans
+    // MediaPickerModal : sur un envoi multiple, un fichier en erreur ne doit
+    // pas masquer le sort des autres.
+    const echecs: string[] = [];
 
     for (const file of Array.from(files)) {
       const ext = file.name.split('.').pop();
@@ -41,13 +54,16 @@ export default function MediaPage() {
         .from('media')
         .upload(storagePath, file);
 
-      if (uploadError) continue;
+      if (uploadError) {
+        echecs.push(`${file.name} : ${uploadError.message}`);
+        continue;
+      }
 
       const { data: { publicUrl } } = supabase.storage
         .from('media')
         .getPublicUrl(storagePath);
 
-      await supabase.from('gramme_media').insert({
+      const { error: insertError } = await supabase.from('gramme_media').insert({
         filename,
         original_name: file.name,
         storage_path: storagePath,
@@ -56,17 +72,44 @@ export default function MediaPage() {
         size_bytes: file.size,
         alt_text: file.name.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' '),
       });
+
+      if (insertError) {
+        echecs.push(`${file.name} : ${insertError.message}`);
+      }
     }
 
     setUploading(false);
-    fetchMedia();
+    await fetchMedia();
+    if (echecs.length) {
+      setError(
+        `${echecs.length} fichier(s) n'ont pas pu être ajoutés à la médiathèque — ${echecs.join(' ; ')}`
+      );
+    }
     if (fileRef.current) fileRef.current.value = '';
   }
 
   const handleDelete = async (item: LigneMedia) => {
     if (!window.confirm('Supprimer ce fichier ?')) return;
-    await supabase.storage.from('media').remove([item.filename.includes('/') ? item.filename : `uploads/${item.filename}`]);
-    await supabase.from('gramme_media').delete().eq('id', item.id);
+    setError(null);
+
+    // Le fichier du Storage part en premier, la ligne ensuite. Si la seconde
+    // suppression échoue, la vignette reste — c'est volontaire : elle pointe
+    // alors vers un fichier absent, et la faire disparaître de l'écran
+    // laisserait une ligne morte en base que plus personne ne verrait.
+    const { error: storageError } = await supabase.storage
+      .from('media')
+      .remove([item.filename.includes('/') ? item.filename : `uploads/${item.filename}`]);
+    if (storageError) {
+      setError(`Suppression du fichier refusée : ${storageError.message}`);
+      return;
+    }
+
+    const { error: supprError } = await supabase.from('gramme_media').delete().eq('id', item.id);
+    if (supprError) {
+      setError(`Le fichier a été supprimé du stockage, mais la ligne n'a pas pu être retirée de la médiathèque : ${supprError.message}`);
+      return;
+    }
+
     setMedia((prev) => prev.filter((m) => m.id !== item.id));
   };
 
@@ -99,6 +142,13 @@ export default function MediaPage() {
         </button>
         <input ref={fileRef} type="file" multiple className="hidden" onChange={handleUpload} />
       </div>
+
+      {error && (
+        <div className="mx-4 lg:mx-8 mt-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3">
+          <p className="text-red-700 text-sm font-bold">Erreur</p>
+          <p className="text-red-600 text-xs mt-1 break-words">{error}</p>
+        </div>
+      )}
 
       <div className="bg-white border-b border-[#E5E3DF] px-4 lg:px-8 py-3 flex flex-wrap gap-4 items-center">
         <select
